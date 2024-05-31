@@ -1,0 +1,687 @@
+\documentclass[a4, 11pt]{report}
+
+
+%\pagestyle{myheadings}
+%%\markboth{}{Paper III, 2006  final draft  
+%\ \ \ \ \ 
+%\today 
+%}               
+
+
+
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\rct}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+\DeclareMathOperator{\Var}{Var}
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arsinh}{arsinh}
+
+
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+\def\Q{{\rm Q}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\makeatletter
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+\makeatother
+%%%To raise suffice: e.g.  $\Pi_{\raisemath{2pt}{-}}$.
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+
+\setcounter{page}{2}
+
+
+
+
+\section*{Section A: \ \ \ Pure Mathematics}
+
+
+%%%%%%%%%%%%%% Q1
+\begin{question}
+Let
+\[
+\displaystyle
+I_n=
+ \int_{-\infty}^\infty
+\frac 1 {(x^2+2ax+b)^n}
+\, \d x
+\,,
+\]
+ where $a$ and $b$ are constants with $b > a^2$, and $n$ is a positive
+integer.
+\begin{questionparts}
+\item
+ By using the substitution $x + a = \sqrt{b-   a^2} \, \tan u\,$,
+ or otherwise,
+  show that 
+\[
+I_1 = \dfrac \pi {\sqrt{b-a^2}}\, .
+\] 
+\item  Show that $2n(b - a^2)\, I_{n+1} =(2n - 1) \, I_n\,$.
+\item   Hence prove by induction that 
+\[
+I_n =
+ \frac{\pi}{2^{2n-2}( b - a^2)^{n-\frac12}} 
+\, \binom {2n\! - \!2}{n\!-\!1}
+\,.
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%%%%% Q2
+\begin{question}
+ The distinct points $P(ap^2 , 2ap)$,  $Q(aq^2 , 2aq)$ and $R(ar^2,2ar)$
+ lie on the parabola  $y^2 = 4ax$, where $a>0$.
+The points are such that the normal to the parabola at $Q$ and 
+the normal to the parabola at $R$ both pass through $P$.
+
+
+\begin{questionparts}
+\item Show that $q^2 +qp + 2 = 0$\,.
+\item 
+ Show that 
+$QR$ passes through a certain point that is independent of the 
+choice of $P$.
+\item
+Let $T$ be
+the point of intersection of  $OP$ and $QR$, where
+$O$ is the coordinate origin. Show that $T$
+ lies on a line that is independent of the choice of $P$. 
+
+Show further 
+that the distance  from the $x$-axis to $T$ is less
+than $\dfrac {\;a}{\sqrt2}\,$.
+\end{questionparts}
+
+\end{question} 
+
+
+
+%%%%%%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+\item
+Given that 
+\[
+\int 
+\frac {x^3-2}{(x+1)^2}\, \e ^x \d x = 
+\frac{\P(x)}{\Q(x)}\,\e^x + \text{constant}
+\,,
+\]
+ where $\P(x)$and $\Q(x)$ are polynomials,
+show that
+$\Q(x)$
+has a factor of $x + 1$. 
+
+Show also that
+the degree of $\P(x)$ is exactly one more than the degree of $\Q(x)$,
+and  find $\P(x)$ in the case $\Q(x) =x+1$.
+
+
+\item
+Show that there are no  polynomials $\P(x)$ and $\Q(x)$
+such that 
+\[
+\int \frac 1 {x+1} \, \, \e^x \d x 
+=
+\frac{\P(x)}{\Q(x)}\,\e^x +\text{constant}
+\,.
+\]
+You need consider only the case when $\P(x)$ and $\Q(x)$ 
+have no common factors. 
+\end{questionparts}
+
+
+
+
+
+
+\end{question}
+
+
+
+
+
+%%%%%%%%%%%%%% Q4
+\begin{question}
+\begin{questionparts}
+\item
+By considering
+\ $\displaystyle
+\frac1
+{1+ x^r} 
+-
+\frac1
+{1+ x^{r +1}}
+$ 
+\ for $\vert x \vert \ne 1$, 
+simplify
+\[
+\sum_{r=1}^N
+\frac{x^r}{(1+x^r)(1+x^{r+1})}
+\,.
+\]
+Show that, for $\vert x \vert <1$,
+\[
+\sum_{r=1}^\infty
+\frac{x^r}{(1+x^r)(1+x^{r+1})}
+=
+\frac x {1-x^2}
+\,.
+\]
+
+\item
+Deduce     that
+\[
+\sum_{r=1}^\infty
+\sech(ry)\sech((r +  1)y) = 2\e^{-y} \cosech (2 y)
+\]
+ for $y > 0$.
+
+
+
+Hence simplify  
+\[
+\sum_{r=-\infty}^\infty  \sech(ry) \sech((r + 1)y) 
+\,,\]
+for $y>0$.
+\end{questionparts}
+
+
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item By considering the binomial expansion of $(1+x)^{2m+1}$,
+ prove that 
+\[
+\binom{ 2m \! +\!  1}{ m} < 2^{2m}\,,
+\]
+for any positive integer $m$.
+
+\item
+For any positive integers $r$ and  $s$ with $r<s$, 
+$P_{r,s}$ is defined as follows:
+$P_{r,s}$ is 
+the product of all the prime numbers greater than  $r$ 
+and less than or
+equal to $s$, if there are any such primes numbers; 
+if there are no such primes numbers,
+then $P_{r,s}=1\,$.
+
+For example, $P_{3,7}=35$, $P_{7,10}=1$ and $P_{14,18}=17$.
+ 
+Show that, for any positive integer $m$,
+$
+P_{m+1\,,\, 2m+1} 
+$    
+divides 
+$\displaystyle \binom{ 2m \! +\!  1}{ m} \,,$
+and deduce that
+\[
+P_{m+1\,,\, 2m+1} < 2^{2m}
+\,.
+\]
+
+\item  Show that, if $P_{1,k} < 4^k$ for $k = 2$, $3$,  $\ldots$, $2m$,
+then  
+$ P_{1,2m+1} < 4^{2m+1}\,$.
+
+\item
+Prove that $\P_{1,n}  < 4^n$ for 
+ $n\ge2$.
+\end{questionparts}
+
+\end{question} 
+%%%%%%%%%%%%%% Q6
+\begin{question}
+Show, by finding $R$ and $\gamma$, that 
+$A \sinh x + B\cosh x $ can be written in the 
+form $R\cosh (x+\gamma)$ if $B>A>0$. Determine the corresponding forms
+in the other cases that arise, for $A>0$, according to the value of $B$. 
+
+Two curves have equations  
+$y = \sech x$  
+and $y = a\tanh x + b\,$, where $a>0$.
+\begin{questionparts}
+\item
+In the case $b>a$, show that if the curves intersect then the $x$-coordinates
+of the points of intersection can be written in the form
+\[
+\pm\arcosh \left( \frac 1 {\sqrt{b^2-a^2}}\right) - {\rm artanh \,} \frac a b
+.\]
+
+\item 
+Find the corresponding result 
+in the case $a>b>0\,$. 
+
+\item Find necessary and sufficient conditions on $a$ and $b$ for  the curves to intersect
+at two distinct points.
+\item Find necessary and sufficient conditions on $a$ and $b$ for  the curves to touch
+ and, given that they touch, 
+ express the $y$-coordinate of the point of contact 
+ in terms of $a$.
+
+\end{questionparts}
+\end{question}
+
+
+
+%%%%%%%%%%%%%% Q7
+\begin{question}
+Let $\omega = \e^{2\pi {\rm i}/n}$, where $n$ is a  positive integer.
+Show that, for any complex number $z$,
+\[
+(z-1)(z-\omega) \cdots (z - \omega^{n-1}) = z^n -1\,.
+\]
+
+The points $X_0$, $X_1$, \ldots\,, $X_{n-1}$ lie on a circle 
+with centre $O$ and radius 1,  and are the vertices of 
+a regular polygon. 
+\begin{questionparts}
+\item  The point  $P$ is equidistant from  $X_0$ and $X_1$.
+Show that, if $n$ is even, 
+\[
+|PX_0| \times  |PX_1 |\times \,\cdots\, \times |PX_{n-1}| = |OP|^n +1\,
+,\]
+where  $|PX_ k|$ denotes
+the distance from $P$ to $X_k$.
+
+Give the corresponding result  when $n$ is odd. (There are
+two cases to consider.)
+
+
+\item Show that
+\[
+|X_0 X_1|\times  |X_0 X_2|\times  \,\cdots\, \times |X_0 X_{n-1}| =n\,.
+\] 
+\end{questionparts}
+
+
+\end{question} 
+
+%%%%%%%%%%%%%% Q8
+\begin{question}
+
+\begin{questionparts}
+
+\item
+The function f satisfies, for all $x$,  the equation 
+\[
+\f(x) + (1- x)\f(-x) =  x^2\, .
+\]
+Show that $\f(-x) + (1 + x)\f(x) =  x^2\,$.
+ Hence find $\f(x)$ in terms of $x$. You should
+verify that your function satisfies the original equation.
+
+\item 
+The function ${\rm K}$ is defined, for $x\ne 1$, by 
+\[{\rm K}(x) = \dfrac{x+1}{x-1}\,.\] 
+Show that, for $x\ne1$,
+${\rm K(K(}x)) =x\,$.
+
+The function g satisfies the equation 
+\[
+\g(x)+ x\, \g\Big(\frac{ x+1   }{x-1}\Big)
+ = x \ \ \ \ \ \ \ \ \ \ \  
+( x\ne 1)
+\,.
+\]
+ Show
+that, for $x\ne1$, $\g(x)= \dfrac{2x}{x^2+1}\,$.
+
+\item
+Find $\h(x)$, for $x\ne0$, $x\ne1$, given that 
+\[
+\h(x)+ \h\Big(\frac 1 {1-x}\Big)=  1-x -\frac1{1-x}
+\ \ \ \ \ \ (
+x\ne0, \ \ x\ne1 )
+\,.
+\]
+\end{questionparts}
+
+\end{question} 
+
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+%%%%%%%%%%%%%% Q9
+\begin{question}
+Three pegs $P$, $Q$ and $R$
+ are fixed on a smooth horizontal table in such a way that they
+form the vertices of an equilateral triangle of side $2a$. A particle $X$
+ of mass $m$ lies on the table.
+It is attached to the  pegs by three springs, $PX$, $QX$ and $RX$, each  
+of modulus of elasticity
+$\lambda$ and
+ natural length $l$,
+ where $l < \frac{ \ 2 }{\sqrt3}\, a$.
+Initially the particle is in equilibrium. 
+Show that the extension in each spring is
+$\frac{\ 2}{\sqrt3}\,a -l\,$.
+
+The particle is then pulled a small distance directly towards 
+$P$ and released. Show that the tension $T$ in the spring 
+$RX$ 
+is given by
+\[
+T= \frac {\lambda} l 
+\left( \sqrt{\frac {4a^2}3 + \frac{2ax}{\sqrt3} +x^2\; }\; -l\right)
+,
+\]
+ where $x$ is the displacement of $X$ from its equilibrium position. 
+
+Show further that the particle performs approximate 
+simple harmonic motion with period
+\[
+2\pi \sqrt{ \frac{4mla}{3  (4a-\sqrt3 \, l)\lambda } \; }\,.
+\]
+
+\end{question}
+
+
+%%%%%%%%%%%%%% Q10
+\begin{question}
+A smooth plane is inclined
+at an angle $\alpha$ to the horizontal. A particle $P$ of mass $m$
+ is attached to a fixed point $A$
+ above the plane by a light inextensible string of length $a$.
+The particle rests in equilibrium on the plane,
+and the string makes an angle $\beta$ with the plane.
+
+The particle is given a horizontal impulse parallel 
+to the plane so that it has an initial speed
+of $u$. 
+Show that the particle will not immediately leave the plane 
+if $ag\cos(\alpha + \beta)> u^2 \tan\beta$.
+
+Show further that a necessary condition  for the 
+particle to perform a complete circle whilst in
+contact with the plane is
+$6\tan\alpha  \tan \beta < 1$.
+
+\end{question}
+%%%%%%%%%%%%%% Q11
+\begin{question}
+A car of mass $m$ travels along a straight horizontal road with 
+its engine working  at a
+constant rate $P$. The  resistance to its motion 
+is such that
+the  acceleration of the car is zero 
+ when it is moving with speed
+$4U$. 
+
+\begin{questionparts}
+\item
+Given that the  resistance is proportional to the car's speed, 
+show that 
+the distance~$X_1$ travelled by the car 
+while 
+it accelerates from speed $U$ to speed $2U$, 
+is given by
+\[
+\lambda X_1 = 2\ln \tfrac 9 5 - 1
+\,,
+\]
+where $\lambda= P/(16mU^3)$.
+
+\item
+Given instead that  the  resistance is proportional to the square 
+of the car's speed, show that 
+the distance $X_2$ travelled  by the car while it accelerates from 
+speed  $U$ to speed $2U$
+is given by
+\[
+\lambda X_2 = \tfrac43 \ln \tfrac 98
+\,.
+\] 
+\item
+Given that  $3.17<\ln 24 < 3.18$ and $1.60<\ln 5 < 1.61$,
+determine which is the larger of 
+$X_1$ and $X_2$.
+\end{questionparts} 
+
+\end{question}
+
+
+\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+%%%%%%%%%%%%%% Q12
+\begin{question}
+Let $X$ be a random variable with mean $\mu$ and standard deviation 
+$\sigma$. {\em Chebyshev's inequality}, which you may use without proof,
+is 
+\[
+\P\left(\vert X-\mu\vert > k\sigma\right) \le \frac 1 {k^2}
+\,,
+\]
+where $k$ is any positive number.
+\begin{questionparts}
+\item
+
+The probability of a biased coin landing heads up is $0.2$. It 
+is thrown $100n$ times,  where~$n $ is an integer greater than 1. 
+Let $\alpha $ be the probability that
+the coin lands heads up $N$ times,  where  $16n \le N \le 24n$.
+
+Use Chebyshev's inequality to show that
+\[
+\alpha \ge  1-\frac 1n
+\,.
+\]
+\item
+Use Chebyshev's inequality to show that
+\[
+1+ n + \frac{n^2}{ 2!} + \cdots + \frac {n^{2n}}{(2n)!} \ge 
+\left(1-\frac1n\right)  \e^n
+\,.
+\]
+\end{questionparts}
+
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%% Q13
+\begin{question}
+
+Given a random variable $X$
+ with mean $\mu$ and standard deviation $\sigma$, 
+we define the {\em kurtosis},~ $\kappa$, of $X$
+by
+\[
+\kappa = \frac{ \E\big((X-\mu)^4\big)}{\sigma^4} -3 \,.
+\]
+Show 
+that the random variable $X-a$, where $a$ is a constant, has the same
+kurtosis as $X$.
+
+ 
+
+\begin{questionparts}   
+\item
+Show 
+by integration
+that a random variable which
+is Normally distributed   with mean~0 has kurtosis~0.
+
+\item Let $Y_1$, $Y_2$, $\ldots$\,, $Y_n$ be $n$ independent, identically 
+distributed, random variables with mean 0, and let 
+$T = \sum\limits_{r=1}^n Y_r$. Show that
+\[
+\E(T^4) =  \sum_{r=1}^n \E(Y_r^4) + 
+6 \sum_{r=1}^{n-1}  \sum_{s=r+1}^{n} \E(Y^2_s)
+\E(Y^2_r)
+\,.
+\]
+
+\item
+ Let $X_1$, $X_2$, $\ldots$\,, $X_n$ be $n$ independent, identically 
+distributed, random variables each with kurtosis $\kappa$. Show that the
+kurtosis of their sum is $\dfrac\kappa n\,$.
+
+\end{questionparts}
+
+\end{question}
+
+
+\end{document}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+\nq
+For $k>m>0$, express $\dfrac 1 {(k+m)k(k-m)}$ in the form $\dfrac{A}{k(k-m)} +
+\dfrac{B} {k(k+m)} $,  where $A$ and $B$ are independent of $k$.
+
+By taking $m=1$,  show that 
+\[
+\frac 1 {1^3}+\frac 1 {2^3} + \frac 1 {3^3}  + \cdots 
+\ < \frac 54
+\, .
+\]
+
+Show also that
+\[
+\frac 1{1^3} + \frac 1 {2^3}+ \frac 1 {3^3}  + \cdots \ < \frac {119}{96} \,.
+\]
+\nq
+For $k>m>0$, express $\dfrac 1 {(k+m)k(k-m)}$ in the form $\dfrac{A}{k(k-m)} +
+\dfrac{B} {k(k+m)} $, where $A$ and $B$ are independent of $k$.
+
+By taking $m=1$,  show that 
+\[
+\frac 1 {1^3}+\frac 1 {2^3} + \frac 1 {3^3}  + \cdots 
+\ < \frac 54
+\, .
+\]
+
+Show also that
+\[
+\frac 1{1^3} + \frac 1 {2^3}+ \frac 1 {3^3}  + \cdots \ < \frac {119}{96} \,.
+\]
+

@@ -1,0 +1,566 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2004
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Find all real values of $x$ that satisfy:
+\begin{questionparts}
+\item $ \ds \sqrt{3x^2+1} + \sqrt{x} -2x-1=0 \;;$
+
+\item  $ \ds \sqrt{3x^2+1} - 2\sqrt{x} +x-1=0 \;;$
+
+\item  $ \ds \sqrt{3x^2+1} - 2\sqrt{x} -x+1=0 \;.$
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Prove that, if $\vert \alpha\vert < 2\sqrt{2},$ then there is no
+value of $x$ for which
+\begin{equation}
+x^2 -{\alpha}\vert x \vert + 2 < 0\;.
+\tag{$*$}
+\end{equation}
+Find the solution set of $(*)$ for ${\alpha}=3\,$.
+
+For ${\alpha} > 2\sqrt{2}\,$, 
+the sum of the lengths of the intervals in which  $x$ satisfies  $(*)$ 
+is denoted by $S\,$. Find $S$ in terms of ${\alpha}$  and deduce that
+$S < 2{\alpha}\,$.
+
+Sketch the graph of $S\,$ against $\alpha \,$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The curve $C$ has equation
+$$
+y = x(x+1)(x-2)^4.
+$$
+Determine the coordinates of all the stationary points of $C$ and
+the nature of each. \mbox{Sketch  $C$.}
+
+
+In  separate diagrams draw  sketches of the curves whose equations are: 
+\begin{questionparts}
+\item $ y^2 = x(x+1)(x-2)^4\;$;
+\item $y = x^2(x^2+1)(x^2-2)^4\,$. 
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}$\,$
+\setlength{\unitlength}{1cm}
+\begin{center}
+\hspace{2cm}
+\begin{picture}(6,3.5)
+\put(-1.5,4.3){Figure 1}
+
+\thicklines
+%\put(1,3){\line(3,-2){2}}
+%\put(1,3){\line(2,3){0.5}}
+\put(0,3.75){\line(3,-2){3.5}}
+%\put(3,1.67){\line(2,3){0.5}}
+
+
+\put(-1,3.75){\line(1,0){4.5}}
+\put(2,2.3){\line(0,-1){1.55}}
+\put(-1,2.3){\line(1,0){3}}
+\put(3.5,3.75){\line(0,-1){3}}
+
+
+\put(1.8,2.7){$L$}
+
+\thinlines
+\put(-0.6,2.3){\line(0,1){1.45}}
+\put(2,1){\line(1,0){1.5}}
+\put(2.7,1.1){$b$}
+\put(-0.86, 3){$a$}
+
+\end{picture}
+\hspace{0cm}
+\begin{picture}(6,4.5)
+
+\put(-1.5,4.3){Figure 2}
+
+\thicklines
+\put(1,3){\line(3,-2){2}}
+\put(1,3){\line(2,3){0.5}}
+\put(1.5,3.75){\line(3,-2){2}}
+\put(3,1.67){\line(2,3){0.5}}
+
+
+\put(-1,3.75){\line(1,0){4.5}}
+\put(2,2.3){\line(0,-1){1.55}}
+\put(-1,2.3){\line(1,0){3}}
+\put(3.5,3.75){\line(0,-1){3}}
+
+\put(1.25,3.15){$w$}
+\put(2.6,3.1){$l$}
+
+\thinlines
+\put(-0.6,2.3){\line(0,1){1.45}}
+\put(2,1){\line(1,0){1.5}}
+\put(2.7,1.1){$b$}
+\put(-0.86, 3){$a$}
+
+\end{picture}
+ \end{center}
+
+\vspace*{-10mm}
+\begin{questionparts}
+\item An attempt is made to move a rod of length $L$ from a corridor 
+of width $a$ into a corridor of width~$b$, where $a \ne b.$ The corridors
+meet at right angles, as shown in Figure 1 and the rod remains horizontal.
+Show that if the attempt is to be successful then 
+$$
+L \le a \cosec {\alpha} + b \sec {\alpha} \;,
+$$ 
+where ${\alpha}$ satisfies 
+$$
+\tan^3\alpha =\frac a b \;.
+$$
+
+
+
+\item
+An attempt is made to move a rectangular table-top,  of width $w$ and length $l$,
+from one corridor to the other, as shown in the Figure 2. 
+The table-top remains horizontal.
+Show that if the attempt is to be successful then 
+$$
+l\le a \cosec {\beta} + b \sec {\beta}  -2w \cosec 2{\beta},
+$$ 
+where ${\beta}$ satisfies 
+$$
+w=  \left(\frac {a -b \tan^3 \beta} {1 - \tan^2 \beta} \right)
+\cos \beta \;.
+$$
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Evaluate  $\int_0^{{\pi}} x \sin x\,\d x$
+and $\int_0^{{\pi}} x \cos x\,\d x\;$.
+
+The function $\f$ satisfies the equation
+\begin{equation}
+\f(t)=t + \int_0^{{\pi}} \f(x)\sin(x+t)\,\d x\;. 
+\tag{$*$}
+\end{equation}
+Show that 
+\[
+\f(t)=t + A\sin t + B\cos t\;,        
+\]
+where $A= \int_0^{{\pi}}\,\f(x)\cos x\,\d x\;$ and
+      $B= \int_0^{{\pi}}\,\f(x)\sin x\,\d x\;$. 
+
+Find $A$ and $B$ by substituting for $\f(t)$ and $\f(x)$ in $(*)$
+and equating coefficients of 
+$\sin t$ and $\cos t\,$.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+The vectors ${\bf a}$ and ${\bf b}$ lie in the plane
+$\Pi\,$.  Given that $\vert {\bf a} \vert= 1$  and 
+${\bf a}.{\bf b} = 3,$ find, in terms of
+${\bf a}$ and ${\bf b}\,$, a vector ${\bf p}$ parallel to
+${\bf a}$  and a vector ${\bf q}$  perpendicular to ${\bf a}\,$, both 
+lying in the plane $\Pi\,$, such that 
+$${\bf p}+{\bf q}={\bf a}+{\bf b}\;.$$
+
+The vector ${\bf c}$  is not parallel to the plane $\Pi$ and is such that
+${\bf a}.{\bf c} = -2$ and ${\bf b}.{\bf c} = 2\,$. Given  that
+$\vert {\bf b} \vert = 5\,$, find, in terms of
+${\bf a}, {\bf b}$  and ${\bf c},$ vectors ${\bf P}$, ${\bf Q}$
+and ${\bf R}$  such that ${\bf P}$ and ${\bf Q}$ are parallel to
+${\bf p}$ and ${\bf q},$  respectively, ${\bf R}$
+is perpendicular to the plane $\Pi$  and
+$${\bf P} + {\bf Q} + {\bf R} =  {\bf a}+{\bf b}+{\bf c}\;.$$
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+The function f is defined by
+$$\f(x) = 2\sin x - x\,.$$
+Show graphically that the equation $\f(x)=0$
+has exactly one root in the interval 
+$[\half \pi ,\,{\pi}]\,$. This interval is denoted $I_0$.
+
+In order to determine the root, a sequence of
+intervals $I_1$, $I_2$, \, $\ldots$ is generated in the following way.
+If the interval 
+$I_n=[a_n,b_n]\,$, and $c_n=(a_n+b_n)/2\,$, then
+\begin{equation*}
+I_{n+1}=
+\begin{cases}
+[a_n,c_n] & \text{if $\; \f(a_n)\f(c_n)<0 \,$}; \\[5pt]
+[c_n,b_n] & \text{if $\; \f(c_n)\f(b_n)<0 \,$}.
+\end{cases}
+\end{equation*}
+
+
+By using the approximations $\ds \frac 1{\sqrt{2}} \approx 0.7$ and
+${\pi} \approx \sqrt{10} \,$,
+show that $I_2=[\half{\pi},\,\frac58{\pi}]$ and find $I_3\,$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Let $x$ satisfy the differential equation
+$$
+\frac {\d x}{\d t} = {\big( 1-x^n\big)\vphantom{\Big)}}^{\!1/n} 
+$$
+and   the condition  $x=0$ when $t=0 \,$.
+
+\begin{questionparts}
+\item
+Solve the equation in the case $n=1$ and sketch the graph of the solution for $t>0 \,$.
+
+\item
+Prove that $1-x <  (1-x^2)^{1/2} $ for $0<x<1 \,$. 
+
+Use this result to
+sketch the graph of the solution in the case $n=2$ for $0<t<\frac12 \pi \,$, 
+using the same axes as your previous sketch.
+
+By setting $x=\sin y\,$, solve the equation in this case.
+
+\item
+Use the result (which you need not prove)   
+\[
+(1-x^2)^{1/2} <  (1-x^3)^{1/3} \text{ \ \ for \ \ } 0<x<1 \;,
+\] 
+to sketch, without solving the equation, the graph of the solution
+of the equation in the case $n=3$  using the same axes as your previous sketches.
+Use your sketch to show that $x=1$ at a value of $t$ less than $\frac12 \pi \,$. 
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+The base of a non-uniform solid hemisphere,
+of mass $M,$ has radius $r.$ The distance of the centre of gravity, $G$, 
+of the hemisphere from the base is $p$ and from the centre of the base 
+is $\sqrt{p^2 + q^2} \,$.  The hemisphere rests in equilibrium with  its curved surface
+on a horizontal plane. 
+
+
+A particle of mass $m,\,$ where $m$ is small, 
+is attached to $A\,$, the lowest point of the circumference of the base.  
+In the new position of equilibrium,
+find the angle, $\alpha$, that the base makes with the horizontal.
+
+
+The particle is removed and attached to the point $B$ of the base 
+which is at the other end of the diameter through $A\,$. In the new position
+of equilibrium the base  makes an angle ${\beta}$ 
+with the horizontal.
+Show that
+$$
+\tan(\alpha-\beta)= 
+\frac{2mMrp}  {M^2\left(p^2+q^2\right)-m^2r^2}\;.
+$$ 
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+In this question take $g = 10 ms^{-2}.$
+
+The point $A$ lies on a fixed rough plane inclined at $30^{\circ}$
+to the horizontal and $\ell$ is the line of greatest slope through $A$.
+A particle $P$ is projected up $\ell$ from $A$ with initial 
+speed $6$ms$^{-1}$.
+A time $T$ seconds later, a particle $Q$ is projected from $A$
+up $\ell$, also  with speed $6$ms$^{-1}$.  
+The coefficient of friction between 
+each particle and the plane is $1/(5\sqrt{3})\,$ and the mass of each particle is $4$kg.
+
+
+\begin{questionparts}
+\item Given that $T<1+\sqrt{3/2}$, show 
+that the particles collide at a time $(3-\sqrt6)b+1$ seconds
+after $P$ is projected.
+
+\item In the case $T=1+\sqrt{2/3}\,$, 
+determine the energy lost due to friction from the instant at
+which $P$ is projected  to the time of the collision.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+The maximum power that can be developed by the engine 
+of train $A$, 
+of mass $m$, when travelling at speed $v$ is $Pv^{3/2}\,$, where
+$P$ is a constant. 
+The maximum power that can be developed by the engine of train $B$, 
+of mass $2m$,
+when travelling at speed $v$ is  $2Pv^{3/2}.$   For both $A$ and $B$
+ resistance to motion is equal to $kv$, where $k$ is a constant.
+
+For $t\le0$, the engines are crawling along at very low equal speeds. 
+At $t = 0\,$, both
+drivers switch on full power and at time $t$ the speeds of 
+$A$ and $B$ are $v_{\vphantom{\dot A}\!A}$ and $v_{\vphantom{\dot B}\hspace{-1pt}B},$ respectively.
+
+\begin{questionparts}
+\item
+Show that 
+\[
+v_{\vphantom{\dot A}\!A} = \frac{P^2 \left(1-\e^{-kt/2m}\right)^2}{k^2}
+\]
+and write down the corresponding result for $v_{\vphantom{\dot B}B}$.
+
+\item Find  $v_{\vphantom{\dot B}A}$ and  $v_{\vphantom{\dot B}B}$
+when $9  v_{\vphantom{\dot B}A} =4v_{\vphantom{\dot B}B}\;$.
+
+%Show that 
+%$1 < v_{\vphantom{\dot B}\hspace{-1pt}B} /v_{\vphantom{\dot A}\!A} < 4$ for $t>0\,$.
+
+\item
+Both engines are switched off when  $9  v_{\vphantom{\dot B}A} =4v_{\vphantom{\dot B}B}\,$.
+Show that thereafter $k^2 v_{\vphantom{\dot B}B}^2 = 4 P^2  v_{\vphantom{\dot B}A}\,$.
+ 
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Sketch the graph, for $x \ge 0\,$, of 
+$$ 
+y = kx\e^{-ax^2} \;,
+$$
+where $a$ and $k$ are  positive constants.
+
+
+The random variable $X$ has probability density function
+$\f(x)$ given by
+\begin{equation*}
+\f(x)=
+\begin{cases}
+kx\e^{-ax^2} & \text{for $0 \le x \le 1$}\\[3pt]
+            0 & \text{otherwise}. 
+\end{cases}
+\end{equation*}
+
+Show that $\ds k=\frac{2a}{1-\e^{-a}}$ and find the mode $m$ in terms of $a\,$,
+distinguishing between the cases $a < \frac12$ and $a > \frac12\,$.
+
+Find the median $h$ in terms of $a$\,  and  show that
+$h > m$ if
+$a > -\ln\left(2\e^{-1/2} - 1\right).$
+
+Show that, $-\ln\left(2\e^{-1/2}-1\right)> \frac12 \,$.
+Show also that, 
+if $a > -\ln\left(2\e^{-1/2} - 1\right) \,$,  then 
+$$
+P(X > m \;\vert\; X < h) = 
+{{2\e^{-1/2}-\e^{-a}-1} \over 1-\e^{-a}}\;.
+$$ 
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A bag contains $b$ balls, $r$ of them red and the rest white. 
+In a game the player must remove balls one at a time from the bag (without replacement). 
+She may remove  as many balls as she wishes, but if she removes any red
+ball, she loses and gets no reward at all.
+If she does not remove a red ball,
+she is rewarded with \pounds 1 for each white ball she has removed.
+
+
+If she removes $n$ white balls on her first $n$ draws, calculate her expected 
+gain on the next draw and show that 
+%her expected total reward would be the same as before 
+it is zero 
+if $\ds n = {b-r \over r+1}\,$.
+
+Hence, or otherwise, show that she will maximise her expected total
+reward if she aims to remove $n$ balls, where 
+\[
+n = \mbox{ the integer part of } \ds {b + 1 \over r + 1}\;.
+\]
+
+With this value of $n$, show that in
+the case $r=1$ and $b$ even,
+her expected total reward is $\pounds {1 \over 4}b\,$, and find her expected total reward in
+the case $r=1$ and $b$ odd.
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+Explain why, if $\mathrm{A, B}$ and  $\mathrm{C}$ are three events, 
+\[
+\mathrm{P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(B \cap C) - P(C \cap A) +P(A \cap B \cap C)},
+\]
+where $\mathrm{P(X)}$ denotes the probability of event $\mathrm{X}$.
+
+A cook makes three plum puddings for Christmas. 
+He stirs $r$ silver sixpences thoroughly into the pudding mixture before 
+dividing it into three equal portions. Find an expression for the probability 
+that each pudding contains at least one sixpence. 
+Show that the cook must stir 6 or more sixpences into the mixture 
+if there is to be less than ${1 \over 3}$ chance that 
+at least one of the puddings contains no sixpence.
+
+Given that the cook stirs 6 sixpences into the mixture and   that  
+each pudding contains at least one sixpence, 
+find  the probability that there are two  sixpences in each pudding.
+\end{question}
+	
+\end{document}

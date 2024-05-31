@@ -1,0 +1,504 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2010
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Let $P$ be a given point on a given curve $C$. The {\em osculating 
+circle} to $C$ at $P$
+is defined to be the circle that satisfies the following two
+conditions at $P$: it touches $C$; and  the rate of change of its gradient 
+ is equal to the rate of change of the 
+gradient of $C$.
+
+Find the centre and radius of the osculating circle to the curve $y=1-x+\tan x$
+at the point on the curve with $x$-coordinate $\frac14 \pi$.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Prove that 
+\[
+\cos 3x = 4 \cos^3 x - 3 \cos x \,.
+\]
+Find  and prove a similar result for $\sin 3x$ in terms of $\sin x$.
+
+\begin{questionparts}
+\item Let 
+\[
+{\rm I}(\alpha) = \int_0^\alpha \big(7\sin x - 8 \sin^3 x\big) \d x\,.
+\]
+Show that 
+\[
+{\rm I}(\alpha) = -\tfrac 8 3 c^3 + c +\tfrac5 3\,,
+\]
+where $c = \cos \alpha$.
+Write down one value of $c$ for which ${\rm I}(\alpha) =0$.
+
+\item Useless Eustace believes that 
+\[
+\int \sin^n x \, \d x =\dfrac {\sin^{n+1}x}{n+1}\,
+\]
+ for $n=1, \ 2, \ 3,  \ldots\, $. 
+Show that 
+Eustace would obtain the correct value of ${\rm I}(\beta)\,$, where
+$\cos \beta= -\frac16$.
+
+Find 
+all values of $\alpha$ for which he
+would obtain the correct value of ${\rm I}(\alpha)$.
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The first four terms of a  sequence 
+are given by $F_0=0$, $F_1=1$, $F_2=1$ and $F_3=2$. The general term
+is given by
+\[
+F_n= a\lambda^n+b\mu^n\,,
+\tag{$*$}
+\]
+where $a$, $b$, $\lambda$ and $\mu$ are independent of $n$, and $a$ is
+positive.
+
+\begin{questionparts}
+\item Show that 
+$\lambda^2 +\lambda\mu+ \mu^2 = 2$, and find the values of
+$\lambda$, $\mu$, $a$ and $b$.
+\item Use $(*)$ to evaluate $F_6$.
+\item Evaluate
+$\ds \sum_{n=0}^\infty \frac{F_n}{2^{n+1}}\,.$
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+\begin{questionparts} 
+\item Let  
+\[
+I=\int_0^a \frac {\f(x)}{\f(x)+\f(a-x)} \, \d x\,.
+\]
+Use a substitution to show that 
+\[
+I =
+\int_0^a \frac {\f(a-x)}{\f(x)+\f(a-x)} \, \d x\,
+\]
+and hence evaluate  $I$ in terms of $a$.
+
+Use this result to evaluate the integrals
+\[
+\int_0^1 \frac{\ln (x+1)}{\ln (2+x-x^2)}\, \d x
+\text{ \ \ \ \ \ \ and \ \ \ \ \ }
+\int_0^{\frac\pi 2} \frac{\sin x } {\sin(x+\frac \pi 4 )} \, \d x
+\,.
+\]
+\item
+Evaluate
+\[
+\int_{\frac12}^2 \frac {\sin x}{x \big(\sin x + \sin \frac 1 x\big)} 
+\, \d x\,.
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The points $A$ and $B$ have position vectors
+$\bf i +j+k$
+and $5{\bf i} - {\bf j} -{\bf k}$, respectively, relative to the origin $O$.
+Find $\cos2\alpha$, where $2\alpha$ is the angle $\angle AOB$.
+ 
+\begin{questionparts}
+\item The line $L   _1$ has equation 
+${\bf r} =\lambda(m{\bf i}+n {\bf j} + p{\bf k})$.
+Given that $L   _1$ is inclined equally to $OA$ and to $OB$,
+determine a relationship between $m$, $n$ and~$p$.
+Find 
+also values of $m$, $n$ and~$p$ for which $L   _1$ is the 
+angle bisector of $\angle AOB$.
+
+\item   The line $L   _2$ has equation 
+${\bf r} =\mu(u{\bf i}+v {\bf j} + w{\bf k})$.
+Given that $  L _2$ is inclined at an angle $\alpha$ to $OA$,
+where $2\alpha = \angle AOB$,  determine a relationship between
+$u$, $v$ and $w$.
+
+Hence describe the surface with Cartesian equation 
+$x^2+y^2+z^2 =2(yz+zx+xy)$.
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Each edge of the tetrahedron $ABCD$ has unit length. The face
+$ABC$ is horizontal, and 
+$P$ is the point in  $ABC$ that is vertically below $D$.
+\begin{questionparts}
+\item Find the length of $PD$.
+\item Show that the cosine of the angle between adjacent faces of the 
+tetrahedron is
+$1/3$.
+\item Find the radius of the largest sphere that can fit inside
+the tetrahedron.
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+\item 
+By considering the positions of its turning points, show that  the curve
+with equation
+\[
+y=x^3-3qx-q(1+q)\,,
+\]
+where $q>0$ and $q\ne1$, crosses the $x$-axis once only.
+
+\item 
+Given that $x$ satisfies the cubic equation
+\[
+x^3-3qx-q(1+q)=0\,,
+\]
+and that
+\[
+x=u+q/u\,,
+\]
+obtain  a quadratic equation
+satisfied by $u^3$.
+Hence find the real root of the cubic equation in the case $q>0$, $q\ne1$.
+
+\item The quadratic equation 
+\[
+t^2 -pt +q =0\,
+\]
+ has roots $\alpha $ and $\beta$. Show that
+\[
+\alpha^3+\beta^3 = p^3 -3qp\,.
+\]
+
+It is given that  one of these roots is the square of the other.
+By considering the expression $(\alpha^2 -\beta)(\beta^2-\alpha)$,
+find a relationship between                    $p$ and $q$.
+Given further that  $q>0$, $q\ne1$ and $p$ is real,
+determine  the value of $p$ in terms of $q$.
+\end{questionparts}  
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+The curves $C_1$ and $C_2$ are defined by 
+\[
+y= \e^{-x} \ \ \ (x>0)  \text{ \ \ \ and \ \ \ }
+y= \e^{-x}\sin x \ \ \ (x>0),
+\]
+respectively. Sketch roughly $C_1$ and $C_2$ on the same diagram.
+
+Let $x_n$ denote the $x$-coordinate of the $n$th point of contact
+between the two curves, where $0<x_1<x_2< \cdots$, and let
+$A_n$ denote the area of the region enclosed by the two 
+curves between $x_n$ and $x_{n+1}$. Show that
+\[
+A_n = \tfrac12(\e^{2\pi}-1) \e^{-(4n+1)\pi/2}
+\]
+and hence find $\displaystyle \sum_{n=1}^\infty A_n$.
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+Two points $A$ and $B$ lie on  horizontal ground.
+  A particle $P_1$ is projected from $A$ towards $B$
+at an acute angle of elevation $\alpha$  
+and simultaneously
+a particle $P_2$ is projected from $B$ towards $A$ 
+at an acute angle of elevation $\beta$.
+Given that the  two particles collide in the air
+a horizontal distance $b$ from $B$,
+and that the collision occurs after $P_1$
+has attained its maximum height $h$, show that
+\[
+2h \cot\beta < b < 4h \cot\beta \hphantom{\,,}
+\]
+and
+\[
+2h \cot\alpha < a < 4h \cot\alpha
+\,,
+\]
+where $a$ is the horizontal distance from $A$
+to the point of collision.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+\begin{questionparts}
+\item
+In an experiment,
+a particle $A$ of mass $m$ is at rest on a smooth horizontal table.
+A~particle $B$ of mass $bm$, where $b>1$, is projected along the 
+table directly towards $A$ with speed $u$. The collision is perfectly 
+elastic. 
+
+
+Find an expression for the speed of $A$ after the collision
+  in terms of $b$ and $u$, and 
+show that, irrespective of the relative masses of the particles, 
+$A$ cannot be made to move at twice the initial speed of $B$. 
+
+\item 
+In a second experiment, a particle $B_1$ 
+ is  projected along the table directly towards $A$ with speed $u$. This time, 
+particles $B_2$, $B_3$, $\ldots\,$, $B_n$ are at rest in order 
+on the line between $B_1$ and $A$.
+The mass of $B_i$ ($i=1$, $2$, $\ldots\,$, $n$)
+is $\lambda^{n+1-i}m$, where $\lambda>1$.
+All collisions are perfectly elastic. Show that, by choosing $n$ sufficiently
+large, there is no upper limit on the speed at which $A$ can be made to move.
+
+In the case $\lambda=4$,
+determine the least value of 
+$n$ for which  $A$ moves at more than $20u$. You may use the 
+approximation
+ $\log_{10}2 \approx 0.30103$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A uniform rod $AB$ of length $4L   $ and
+weight $W$ is inclined at an angle $\theta$ to the 
+horizontal. Its lower end $A$ rests on a fixed support and the rod is held
+in equilibrium by a string 
+attached to the rod at a point $C$ which is $3L   $ from $A$.
+The reaction of the support on the rod acts in a direction $\alpha$ to 
+$AC$  and the string is inclined at an angle $\beta$ to $CA$.
+Show that
+\[
+\cot\alpha = 3\tan \theta + 2 \cot \beta\,.
+\]
+
+Given that 
+$\theta =30^\circ$ and $\beta = 45^\circ$,
+show that $\alpha= 15^\circ$.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+The continuous random variable $X$ has probability density 
+function $\f(x)$, where
+\[
+\f(x) = 
+\begin{cases}
+a & \text {for } 0\le x < k \\
+b & \text{for } k \le x \le 1\\
+0 & \text{otherwise},
+\end{cases}
+\]
+where $a>b>0$ and $0<k<1$. Show that $a>1$ and $b<1$. 
+\begin{questionparts}
+\item Show that 
+\[
+\E(X) = \frac{1-2b+ab}{2(a-b)}\,.
+\]
+\item
+Show that the median, $M$, of $X$ is given by 
+$\displaystyle M=\frac 1 {2a}$ if
+$a+b\ge 2ab$ and obtain an expression for the median if
+$a+b\le 2ab$.
+\item Show that $M<   \E(X)\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Rosalind wants to join the Stepney Chess Club. In order to 
+be accepted, she must play a challenge match consisting of several
+games against 
+Pardeep (the Club champion)
+and Quentin (the Club secretary), in which she must win at least one
+game against each of Pardeep and Quentin.
+From past experience, she knows that
+the probability of her winning a single game against 
+Pardeep is $p$ and the probability of her 
+winning a single game against Quentin is $q$,
+where $0<p<q<1$.
+
+\begin{questionparts}
+\item
+The challenge match consists of three games.
+Before the match begins, Rosalind must choose either to 
+play Pardeep twice and Quentin once or to play Quentin twice and
+Pardeep once.
+Show that she should choose  to play Pardeep twice. 
+
+\item
+In order to ease the entry requirements,
+it is decided instead that the  challenge match will consist of 
+four games. 
+Now, before the match begins,
+Rosalind must choose  whether to play Pardeep three times and 
+Quentin once 
+(strategy 1), or
+to play Pardeep twice and Quentin twice (strategy 2) 
+or to play  Pardeep once and Quentin three times (strategy~3).
+
+Show that, if $q-p>\frac 12$, Rosalind should choose strategy 1.
+
+If $q-p<\frac12$, give examples of values of $p$ and $q$ to show
+that strategy 2 can be better or worse than strategy 1.
+\end{questionparts}
+\end{question}
+
+\end{document}

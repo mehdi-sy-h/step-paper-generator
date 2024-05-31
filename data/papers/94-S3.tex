@@ -1,0 +1,442 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1994
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Calculate 
+\[
+\int_{0}^{x}\mathrm{sech}\, t\,\mathrm{d}t.
+\]
+Find the reduction formula involving $I_{n}$ and $I_{n-2}$, where
+\[
+I_{n}=\int_{0}^{x}\mathrm{sech}^{n}t\,\mathrm{d}t
+\]
+and, hence or otherwise, find $I_{5}$ and $I_{6}.$ 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+\begin{questionparts}
+ \item By setting $y=x+x^{-1},$ find the solutions
+of 
+\[
+x^{4}+10x^{3}+26x^{2}+10x+1=0.
+\]
+
+\item Solve 
+\[
+x^{4}+x^{3}-10x^{2}-4x+16=0.
+\]		
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Describe geometrically the possible intersections of a plane with
+a sphere. 
+
+
+Let $P_{1}$ and $P_{2}$ be the planes with equations 
+\begin{alignat*}{1}
+3x-y-1 & =0,\\
+x-y+1 & =0,
+\end{alignat*}
+respectively, and let $S_{1}$ and $S_{2}$ be the spheres with equations
+\begin{alignat*}{1}
+x^{2}+y^{2}+z^{2} & =7,\\
+x^{2}+y^{2}+z^{2}-6y-4z+10 & =0,
+\end{alignat*}
+respectively. Let $C_{1}$ be the intersection of $P_{1}$ and $S_{1},$
+let $C_{2}$ be the intersection of $P_{2}$ and $S_{2}$ and let
+$L$ be the intersection of $P_{1}$ and $P_{2}.$ Find the points
+where $L$ meets each of $S_{1}$ and $S_{2}.$ Determine, giving
+your reasons, whether the circles $C_{1}$ and $C_{2}$ are linked. 
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Find the two solutions of the differential equation 
+\[
+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^{2}=4y
+\]
+which pass through the point $(a,b^{2}),$ where $b\neq0.$
+
+
+Find two distinct points $(a_{1},1)$ and $(a_{2},1)$ such that one
+of the solutions through each of them also passes through the origin.
+Show that the graphs of these two solutions coincide and sketch their
+common graph, together with the other solutions through $(a_{1},1)$
+and $(a_{2},1)$. 
+
+
+Now sketch sufficient members of the family of solutions (for varying
+$a$ and $b$) to indicate the general behaviour. Use your sketch
+to identify a common tangent, and comment briefly on its relevance
+to the differential equation. 
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The function $\mathrm{f}$ is given by $\mathrm{f}(x)=\sin^{-1}x$
+for $-1<x<1.$ Prove that 
+\[
+(1-x^{2})\mathrm{f}''(x)-x\mathrm{f}'(x)=0.
+\]
+Prove also that 
+\[
+(1-x^{2})\mathrm{f}^{(n+2)}(x)-(2n+1)x\mathrm{f}^{(n+1)}(x)-n^{2}\mathrm{f}^{(n)}(x)=0,
+\]
+for all $n>0$, where $\mathrm{f}^{(n)}$ denotes the $n$th derivative
+of $\mathrm{f}$. Hence express $\mathrm{f}(x)$ as a Maclaurin series. 
+
+
+The function $\mathrm{g}$ is given by 
+\[
+\mathrm{g}(x)=\ln\sqrt{\frac{1+x}{1-x}},
+\]
+for $-1<x<1.$ Write down a power series expression for $\mathrm{g}(x),$
+and show that the coefficient of $x^{2n+1}$ is greater than that
+in the expansion of $\mathrm{f},$ for each $n>0$. 
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+The four points $A,B,C,D$ in the Argand diagram (complex plane) correspond
+to the complex numbers $a,b,c,d$ respectively. The point $P_{1}$
+is mapped to $P_{2}$ by rotating about $A$ through $\pi/2$ radians.
+Then $P_{2}$ is mapped to $P_{3}$ by rotating about $B$ through
+$\pi/2$ radians, $P_{3}$ is mapped to $P_{4}$ by rotating about
+$C$ through $\pi/2$ radians and $P_{4}$ is mapped to $P_{5}$ by
+rotating about $D$ through $\pi/2$ radians, each rotation being
+in the positive sense. If $z_{i}$ is the complex number corresponding
+to $P_{i},$ find $z_{5}$ in terms of $a,b,c,d$ and $z_{1}.$ 
+
+
+Show that $P_{5}$ will coincide with $P_{1},$ irrespective of the
+choice of the latter if, and only if \[a-c=\mathrm{i}(b-d)\] and interpret
+this condition geometrically. 
+
+
+The points $A,B$ and $C$ are now chosen to be distinct points on
+the unit circle and the angle of rotation is changed to $\theta,$
+where $\theta\neq0,$ on each occasion. Find the necessary and sufficient
+condition on $\theta$ and the points $A,B$ and $C$ for $P_{4}$
+always to coincide with $P_{1}.$ 
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Let $S_{3}$ be the group of permutations of three objects and $Z_{6}$
+be the group of integers under addition modulo 6. List all the elements
+of each group, stating the order of each element. State, with reasons,
+whether $S_{3}$ is isomorphic with $Z_{6}.$
+
+
+Let $C_{6}$ be the group of 6th roots of unity. That is, $C_{6}=\{1,\alpha,\alpha^{2},\alpha^{3},\alpha^{4},\alpha^{5}\}$
+where $\alpha=\mathrm{e}^{\mathrm{i}\pi/3}$ and the group operation
+is complex multiplication. Prove that $C_{6}$ is isomorphic with
+$Z_{6}.$ Is there any (multiplicative or additive) subgroup of the
+complex numbers which is isomorphic with $S_{3}$? Give a reason for
+your answer. 
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Let $a,b,c,d,p,q,r$ and $s$ be real numbers. By considering the
+determinant of the matrix product 
+\[
+\begin{pmatrix}z_{1} & z_{2}\\
+-z_{2}^{*} & z_{1}^{*}
+\end{pmatrix}\begin{pmatrix}z_{3} & z_{4}\\
+-z_{4}^{*} & z_{3}^{*}
+\end{pmatrix},
+\]
+where $z_{1},z_{2},z_{3}$ and $z_{4}$ are suitably chosen complex
+numbers, find expressions $L_{1},L_{2},L_{3}$ and $L_{4},$ each
+of which is linear in $a,b,c$ and $d$ and also linear in $p,q,r$
+and $s,$ such that 
+\[
+(a^{2}+b^{2}+c^{2}+d^{2})(p^{2}+q^{2}+r^{2}+s^{2})=L_{1}^{2}+L_{2}^{2}+L_{3}^{2}+L_{4}^{2}.
+\]
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A smooth, axially symmetric bowl has its vertical cross-sections determined
+by $s=2\sqrt{ky},$ where $s$ is the arc-length measured from its
+lowest point $V$, and $y$ is the height above $V$. A particle is
+released from rest at a point on the surface at a height $h$ above
+$V$. Explain why 
+\[
+\left(\frac{\mathrm{d}s}{\mathrm{d}t}\right)^{2}+2gy
+\]
+is constant. 
+
+
+Show that the time for the particle to reach $V$ is 
+\[
+\pi\sqrt{\frac{k}{2g}}.
+\]
+Two elastic particles of mass $m$ and $\alpha m,$ where $\alpha<1,$
+are released simultaneously from opposite sides of the bowl at heights
+$\alpha^{2}h$ and $h$ respectively. If the coefficient of restitution
+between the particles is $\alpha,$ describe the subsequent motion. 
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+The island of Gammaland is totally flat and subject to a constant
+wind of $w$ kh$^{-1},$ blowing from the West. Its southernmost shore
+stretches almost indefinitely, due east and west, from the coastal
+city of Alphabet. A novice pilot is making her first solo flight from
+Alphaport to the town of Betaville which lies north-east of Alphaport.
+Her instructor has given her the correct heading to reach Betaville,
+flying at the plane's recommended airspeed of $v$ kh$^{-1},$ where
+$v>w.$ 
+
+
+On reaching Betaport the pilot returns with the opposite heading to
+that of the outward flight and, so featureless is Gammaland, that
+she only realises her error as she crosses the coast with Alphaport
+nowhere in sight. Assuming that she then turns West along the coast,
+and that her outward flight took $t$ hours, show that her return
+flight takes 
+\[
+\left(\frac{v+w}{v-w}\right)t\ \text{hours.}
+\]
+If Betaville is $d$ kilometres from Alphaport, show that, with the
+correct heading, the return flight should have taken 
+\[
+t+\frac{\sqrt{2}wd}{v^{2}-w^{2}}\ \text{hours.}
+\]
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A step-ladder has two sections $AB$ and $AC,$ each of length $4a,$
+smoothly hinged at $A$ and connected by a light elastic rope $DE,$
+of natural length $a/4$ and modulus $W$, where $D$ is on $AB,$
+$E$ is on $AC$ and $AD=AE=a.$ The section $AB,$ which contains
+the steps, is uniform and of weight $W$ and the weight of $AC$ is
+negligible. 
+
+
+The step-ladder rests on a smooth horizontal floor and a man of weight
+$4W$ carefully ascends it to stand on a rung distant $\beta a$ from
+the end of the ladder resting on the floor. Find the height above
+the floor of the rung on which the man is standing when $\beta$ is
+the maximum value at which equilibrium is possible. 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+In certain forms of Tennis two players $A$ and $B$ serve alternate
+games. Player $A$ has probability $p\low_{A}$ of winning a game in which
+she serves and $p\low_{B}$ of winning a game in which player $B$ serves.
+Player $B$ has probability $q\low_{B}=1-p\low_{B}$ of winning a game in
+which she serves and probability $q\low_{A}=1-p\low_{A}$ of winning a game
+in which player $A$ serves. In Shortened Tennis the first player
+to lead by 2 games wins the match. Find the probability $P_{\text{short}}$
+that $A$ wins a Shortened Tennis match in which she serves first
+and show that it is the same as if $B$ serves first. 
+
+
+In Standard Tennis the first player to lead by 2 or more games after
+4 or more games have been played wins the match. Show that the probability
+that the match is decided in 4 games is 
+\[
+p^{2}_Ap_{B}^{2}+q_{A}^{2}q_{B}^{2}+2(p\low_{A}p\low_{B}+q\low_{A}q\low_{B})(p\low_{A}q\low_{B}+q\low_{A}p\low_{B}).
+\]
+If $p\low_{A}=p\low_{B}=p$ and $q\low_{A}=q\low_{B}=q,$ find the probability $P_{\text{stan}}$
+that $A$ wins a Standard Tennis match in which she serves first.
+Show that 
+\[
+P_{\text{stan}}-P_{\text{short}}=\frac{p^{2}q^{2}(p-q)}{p^{2}+q^{2}}.
+\]
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+During his performance a trapeze artist is supported by two identical
+ropes, either of which can bear his weight. Each rope is such that
+the time, in hours of performance, before it fails is exponentially
+distributed, independently of the other, with probability density
+function $\lambda\exp(-\lambda t)$ for $t\geqslant0$ (and 0 for
+$t<0$), for some $\lambda>0.$ A particular rope has already been
+in use for $t_{0}$ hours of performance. Find the distribution for
+the length of time the artist can continue to use it before it fails.
+Interpret and comment upon your result. 
+
+
+Before going on tour the artist insists that the management purchase
+two new ropes of the above type. Show that the probability density
+function of the time until both ropes fail is 
+\[
+\mathrm{f}(t)=\begin{cases}
+2\lambda\mathrm{e}^{-\lambda t}(1-\mathrm{e}^{-\lambda t}) & \text{ if }t\geqslant0,\\
+0 & \text{ otherwise.}
+\end{cases}
+\]
+If each performance lasts for $h$ hours, find the probability that
+both ropes fail during the $n$th performance. Show that the probability
+that both ropes fail during the same performance is $\tanh(\lambda h/2)$. 
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+Three points, $P,Q$ and $R$, are independently randomly chosen on
+the perimeter of a circle. Prove that the probability that at least
+one of the angles of the triangle $PQR$ will exceed $k\pi$ is $3(1-k)^{2}$
+if $\frac{1}{2}\leqslant k\leqslant1.$ Find the probability if $\frac{1}{3}\leqslant k\leqslant\frac{1}{2}.$
+\end{question}
+	
+\end{document}

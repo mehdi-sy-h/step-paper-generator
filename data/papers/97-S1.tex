@@ -1,0 +1,416 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1997
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Show that you can make up 10 pence in eleven ways
+using 10p, 5p, 2p and 1p coins.
+
+In how many ways can you make up 20 pence using 20p,
+10p, 5p, 2p and 1p coins?
+
+\noindent[You are reminded that
+no credit will be given for unexplained answers.]
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+\begin{questionparts}
+\item If
+\[{\mathrm f}(x)=\tan^{-1}x+\tan^{-1}\left(\frac{1-x}{1+x}\right),\]
+find ${\mathrm f}'(x)$. Hence, or otherwise, find a simple expression for 
+${\mathrm f}(x)$.
+\item Suppose that $y$ is a function of $x$ 
+with $0<y<(\pi/2)^{1/2}$ and
+\[x=y\sin y^{2}\]
+for $0<x<(\pi/2)^{1/2}$. Show that
+(for this range of $x$)
+\[\frac{{\mathrm d}y}{{\mathrm d}x}=
+\frac{y}{x+2y^2\sqrt{y^{2}-x^{2}}}.\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Let $a_{1}=3$, $a_{n+1}=a_{n}^{3}$ for $n\geqslant 1$.
+(Thus $a_{2}=3^{3}$, $a_{3}=(3^{3})^{3}$ and so on.)
+\begin{questionparts}
+\item What digit appears in the unit place of $a_{7}$?
+\item Show that $a_{7}\geqslant 10^{100}$.
+\item What is $\dfrac{a_{7}+1}{2a_{7}}$ correct to
+two places of decimals? Justify your answer.
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Find all the solutions of the equation
+\[|x+1|-|x|+3|x-1|-2|x-2|=x+2.\]
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Four rigid rods $AB$, $BC$, $CD$ and $DA$
+are freely jointed together to form a quadrilateral
+in the plane.
+Show
+that if $P$, $Q$, $R$, $S$ are the mid-points of the sides $AB$,
+$BC$, $CD$, $DA$, respectively, then
+\[|AB|^{2}+|CD|^{2}+2|PR|^{2}=|AD|^{2}+|BC|^{2}+2|QS|^{2}.\]
+Deduce that $|PR|^{2}-|QS|^{2}$
+remains constant however the vertices move. (Here $|PR|$
+denotes the length of $PR$.)
+\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Find constants $a_{0}$, $a_{1}$, $a_{2}$, $a_{3}$, $a_{4}$, $a_{5}$, 
+$a_{6}$  and $b$ such that
+\[x^{4}(1-x)^{4}=(a_{6}x^{6}+a_{5}x^{5}+a_{4}x^{4}+a_{3}x^{3}+
+a_{2}x^{2}+a_{1}x+a_{0})(x^{2}+1)+b.\]
+Hence, or otherwise, prove that
+\[\int_{0}^{1}\frac{x^{4}(1-x)^{4}}{1+x^{2}}{\rm d}x
+=\frac{22}{7}-\pi.\]
+Evaluate $\displaystyle{\int_{0}^{1}x^{4}(1-x)^{4}{\rm d}x}$
+and deduce that
+\[\frac{22}{7}>\pi>\frac{22}{7}-\frac{1}{630}.\]
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Find constants $a_{1}$, $a_{2}$, $u_{1}$ and $u_{2}$
+such that,
+whenever ${\mathrm P}$ is a cubic polynomial,
+\[\int_{-1}^{1}{\mathrm P}(t)\,{\mathrm d}t
+=a_{1}{\mathrm P}(u_{1})+a_{2}{\mathrm P}(u_{2}).\]
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+By considering the maximum of $\ln x-x\ln a$, or otherwise,
+show that the equation
+$x=a^{x}$ has no real roots if $a>e^{1/e}$.
+
+How many real roots does the equation have if
+$0<a< 1$? Justify your answer.
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A single stream of cars, each of width $a$
+and exactly in line, is passing along a straight road
+of breadth $b$ with speed $V$. The distance between the
+successive cars is $c$.
+\begin{center}
+\psset{xunit=0.9cm,yunit=0.9cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-5.32,-1.36)(10.5,2.44)
+\psline(-5,2)(10,2)
+\psline(-5,-1)(10,-1)
+\psline(-4,1)(-4,0)
+\psline(-4,1)(-1,1)
+\psline(-1,1)(-1,0)
+\psline(-4,0)(-1,0)
+\psline(1,1)(1,0)
+\psline(1,1)(4,1)
+\psline(4,1)(4,0)
+\psline(4,0)(1,0)
+\psline(6,1)(6,0)
+\psline(6,1)(9,1)
+\psline(9,1)(9,0)
+\psline(9,0)(6,0)
+\psline{->}(-1,0.5)(1,0.5)
+\psline{->}(1,0.5)(-1,0.5)
+\psline{->}(4,0.5)(6,0.5)
+\psline{->}(6,0.5)(4,0.5)
+\psline{->}(-4.6,1)(-4.6,0)
+\psline{->}(-4.6,0)(-4.6,1)
+\psline{->}(10,2)(10,-1)
+\psline{->}(10,-1)(10,2)
+\rput[tl](-5,0.6){$a$}
+\rput[tl](-0.14,0.96){$c$}
+\rput[tl](4.86,0.98){$c$}
+\rput[tl](10.16,0.68){$b$}
+\end{pspicture*}
+\end{center}
+A chicken crosses the road in safety
+at a constant speed $u$ in a straight line  making
+an angle $\theta$ with the direction of traffic. 
+Show that
+\[u\geqslant
+\frac{Va}{c\sin\theta+a\cos\theta}.\]
+
+Show also that if the chicken chooses $\theta$ and $u$
+so that it crosses the road
+at the least possible uniform speed, it crosses
+in time
+\[\frac{b}{V}\left(\frac{c}{a}+\frac{a}{c}\right)
+.
+\]
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+The point $A$ is vertically above 
+the point $B$. A light inextensible
+string, with a smooth ring $P$ 
+of mass $m$ threaded onto it, has its ends
+attached at $A$ and $B$. The plane $APB$ rotates
+about $AB$ with constant angular velocity $\omega$
+so that $P$ describes a horizontal circle of radius $r$
+and the string is taut. The angle $BAP$ has value
+$\theta$ and the angle $ABP$ has value $\phi$.
+Show that
+\[\tan\frac{\phi-\theta}{2}=\frac{g}{r\omega^{2}}.\]
+
+Find the tension in the string
+in terms of $m$, $g$, $r$, $\omega$
+and $\sin\frac{1}{2}(\theta+\phi)$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A particle of unit mass is projected vertically upwards
+in a medium whose resistance is $k$ times the square of the velocity of the
+particle. If the initial velocity is $u$, prove that the velocity
+$v$ after rising through a distance $s$ satisfies
+\begin{equation*}
+v^{2}=u^{2}\e^{-2ks}+\frac{g}{k}(\e^{-2ks}-1). \tag{\ensuremath{*}}
+\end{equation*}
+
+Find an expression for the maximum height of the particle above the
+point of projection.
+
+Does equation $(*)$ still hold on the downward path?
+Justify your answer.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+An experiment produces a random number
+$T$ uniformly distributed on $[0,1]$. 
+Let $X$ be the larger root of the equation
+\[x^{2}+2x+T=0.\]
+What is the probability that $X>-1/3$? Find $\mathrm{E}(X)$
+and show that $\mathrm{Var}(X)=1/18$.
+
+The experiment is repeated independently 800 times generating
+the larger roots $X_{1}$, $X_{2}$, \dots, $X_{800}$. If
+\[Y=X_{1}+X_{2}+\dots+X_{800}.\]
+find an approximate value for  $K$ such that
+\[\mathrm{P}(Y\leqslant K)=0.08.\]
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Mr Blond returns to his flat to find
+it in complete darkness. He knows that this
+means that one of four assassins Mr 1, Mr 2,
+Mr 3 or Mr 4 has set a trap for him.
+His trained instinct tells him that the
+probability that Mr $i$ has set the trap
+is $i/10$. His knowledge of their habits
+tells him that Mr $i$ uses 
+a deadly trained silent anaconda
+with probability
+$(i+1)/10$,
+a bomb with probability
+$i/10$ and a vicious attack canary with probability
+$(9-2i)/10$ $[i=1,2,3,4]$.
+ 
+He now listens carefully and, hearing no singing,
+concludes
+correctly that no canary is involved. If he switches
+on the light and the trap is a bomb he has probability
+$1/2$  of being killed
+but if the trap is an anaconda
+he has probability $2/3$ of survival.
+If he does not switch on the light
+and the trap is a bomb he is certain to survive
+but, if the trap is an anaconda, he has a probability $1/2$
+of being killed.
+His professional pride means that he must enter the flat.
+Advise Mr Blond, giving reasons for your advice.
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+The maximum height $X$ of flood water 
+each year on a certain
+river is a random variable with density function
+\begin{equation*}
+{\mathrm f}(x)=
+\begin{cases}
+\exp(-x)&\text{if $x\geqslant 0$,}\\
+0&\text{otherwise}.
+\end{cases}
+\end{equation*}
+It costs $y$ megadollars each year
+to prepare for flood water
+of height $y$ or less. If $X\leqslant y$ 
+no further costs are incurred
+but if $X\geqslant y$ the cost of flood damage 
+is $r+s(X-y)$ megadollars where $r,s>0$. 
+The total cost $T$ megadollars is thus
+given by
+\begin{equation*}
+T=
+\begin{cases}
+y&\text{if $X\leqslant y$},\\
+y+r+s(X-y)&\text{if $X>y$}.
+\end{cases}
+\end{equation*}
+Show that we can minimise the expected total cost
+by taking 
+\[y=\ln(r+s).\]
+\end{question}
+	
+\end{document}

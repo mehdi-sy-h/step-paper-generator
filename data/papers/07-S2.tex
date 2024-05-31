@@ -1,0 +1,540 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2007
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+{\sl In this question, 
+you are not required to  justify the accuracy of the approximations.}
+
+\begin{questionparts}
+\item Write down the binomial expansion of 
+$\ds \left( 1+\frac k {100} \right)^{\!\frac12}$
+in ascending powers of $k$, up to and including the
+$k^3$ term.
+
+\begin{questionparts}
+\item[\bf {(a)}]
+Use  the value $k=8$ to find an approximation to five decimal
+  places
+for $\sqrt{3}\,$.
+
+\item[\bf {(b)}] By choosing a suitable integer value of $k$,
+find an approximation to five decimal places for $\sqrt6\,$.
+\end{questionparts}
+\item
+By considering the first two terms of the binomial expansion of 
+$\ds \left( 1+\frac k {1000} \right)^{\!\frac13}$, show that
+$\dfrac{3029}{2100}$ is an approximation to $\sqrt[3]{3}\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+A curve has equation $y=2x^3-bx^2+cx$. It  has a
+maximum point at $(p,m)$ and a minimum point at $(q,n)$ where $p>0$ and $n>0$.
+Let $R$ be the 
+ region enclosed by the curve, the line $x=p$ and the line 
+$y=n$.
+\begin{questionparts}
+\item Express $b$ and $c$ in terms of $p$ and $q$.
+\item Sketch the curve. Mark on your sketch the point of inflection
+  and shade the region $R$. Describe the symmetry of the curve.
+\item  Show that $m-n=(q-p)^3$.
+\item  Show that the area of $R$ is $\frac12 (q-p)^4$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+By writing $x=a\tan\theta$, show that, for $a\ne0$, 
+ $\ds \int \frac 1 {a^2+x^2}\,
+\d x =\frac 1 a \arctan \frac x a + \text{constant}\,$.
+
+%[Note: $\arctan$ is another notation for $\tan^{-1}$.]
+
+\begin{questionparts}
+\item Let $\ds I=\int_0^{\frac{1}{2}\pi} 
+\frac {\cos x}{1+\sin^2 x} \, \d x\,$.
+
+\vspace*{2mm}
+{\bf (a)} 
+ Evaluate $I$.
+
+{\bf (b)} Use the substitution $t=\tan \frac12 x$ to show that
+$\ds \int_0^1 \frac {1-t^2}{1+6t^2+t^4} \, \d t = \tfrac12 I\,$.
+
+\item  Evaluate $\ds \int_0^1 \frac {1-t^2}{1+14t^2+t^4} \, \d t \,$.
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Given that $\cos A$, $\cos B$ and $\beta$ are non-zero, show
+that
+the equation
+\[
+\alpha \sin(A-B) + \beta \cos(A+B) = \gamma \sin(A+B)
+\]
+reduces to the form
+\[
+(\tan A-m)(\tan B-n)=0\,,
+\]
+where $m$ and $n$ are independent of $A$ and $B$,
+if and only if $\alpha^2=\beta^2+\gamma^2$. 
+
+Determine all values of $x$, in the range $0\le x <2\pi$, for which: 
+\begin{questionparts}
+\item  $2\sin(x-\frac14\pi) + \sqrt 3 \cos(x+\frac14\pi) =
+\sin(x+\frac14\pi)\, $;
+\item $2\sin(x-\frac16\pi) + \sqrt 3 \cos(x+\frac16\pi) =
+\sin(x+\frac16\pi)\, $;
+\item  $2\sin(x+\frac13\pi) + \sqrt 3 \cos(3x) =
+\sin(3x)\, $.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+In this question, 
+$\f^2(x)$ denotes $\f(\f(x))$, $\f^3(x)$ denotes $\f( \f (\f(x)))\,$,
+and so on.
+
+\begin{questionparts}
+\item 
+The function $\f$ is defined, for $x\ne \pm 1/ \sqrt3\,$,  
+by 
+$$ \f(x) = \ds \frac{x+\sqrt3} {1-\sqrt3\, x }\,.
+$$
+Find by direct calculation $\f^2(x) $ and $\f^3(x)$, and determine
+$\f^{2007}(x)\,$.
+\item Show that 
+$\f^n(x) = \tan(\theta + \frac 13 n\pi)$, where $x=\tan\theta$
+and $n$ is any positive integer.
+
+
+
+\item The function $\g(t)$ is defined, for $\vert t\vert\le1$ by 
+$\g(t) = \frac {\sqrt3}2 t + \frac 12 \sqrt {1-t^2}\,$.
+Find an expression for $\g^n(t)$ for any positive integer $n$.
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item  Differentiate $\ln\big (x+\sqrt{3+x^2}\,\big)$
+and $x\sqrt{3+x^2}$ and simplify your answers.
+
+Hence find
+$\int \! \sqrt{3+x^2}\, \d x$.
+
+\item  Find the two  solutions of the differential equation
+\[
+3\left(\frac{\d y}{\d x}\right)^{\!2} + 2 x \frac {\d y}{\d x} =1
+\]
+that satisfy $y=0$ when $x=1$.
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+A function $\f(x)$ is said to be concave on some interval if 
+$\f''(x)<0$ in that interval. Show that 
+$\sin x$ is concave for $0<x<\pi$ and
+that $\ln x$ is concave for $x>0$.
+
+Let $\f(x)$ be concave on a given  
+interval and let $x_1$, $x_2$, $\ldots$, $x_n$ lie in the 
+interval.
+{\sl Jensen's inequality} states that
+\[
+\frac1 n \sum_{k=1}^n\f(x_k) \le \f \bigg (\frac1 n
+\sum_{k=1}^n x_k\bigg)
+\]
+and that equality holds if and only if $x_1=x_2= \cdots =x_n$. You may
+use this result without proving it.
+
+\begin{questionparts}
+\item 
+Given that $A$, $B$ and $C$ are angles of a triangle, show that
+\[
+\sin A + \sin B + \sin C \le \frac{3\sqrt3}2 \,.
+\]
+\item 
+By choosing a suitable function $\f$, prove that 
+\[
+\sqrt[n]{t_1t_2\cdots t_n}\; \le \; \frac{t_1+t_2+\cdots+t_n}n 
+\]
+for any positive integer $n$ and for any positive numbers $t_1$,
+$t_2$,
+$\ldots$, $t_n$. 
+
+Hence:
+\begin{questionparts}
+\item[\bf (a)] show that 
+$x^4+y^4+z^4 +16 \ge 8xyz$, where $x$, $y$ and $z$ are any 
+positive numbers;
+
+\item[\bf (b)] find the minimum value of  $x^5+y^5+z^5 -5xyz$, 
+where $x$, $y$ and $z$ are any 
+positive numbers.
+\end{questionparts}
+
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+The points $B$ and $C$ have position vectors $\bb$ and $\bc$, 
+respectively, relative to the origin $A$, and $A$, $B$ and $C$
+are not collinear.
+
+\begin{questionparts}
+\item  The point $X$ has position vector 
+$s \bb+t\bc$. Describe the locus of $X$ when $s+t=1$.
+\item  The point $P$
+has position vector $\beta \bb+\gamma\bc$, where $\beta$ and $\gamma$
+are 
+non-zero, and $\beta+\gamma\ne1$.
+The line $AP$ cuts the line $BC$ at $D$. Show that $BD:DC
+=\gamma:\beta$.
+\item  The line $BP$ cuts the line $CA$ at $E$, and the
+  line $CP$ cuts the line $AB$ at $F$. Show that 
+\[
+\frac{AF}{FB} \times \frac{BD}{DC} \times \frac{CE}{EA}=1\,.
+\]
+
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A  solid right circular cone, of mass $M$, has 
+semi-vertical angle $\alpha$ and smooth surfaces. 
+It stands with its base on
+a smooth horizontal table. 
+A particle of mass $m$ 
+is projected 
+ so that it strikes the curved surface of the cone
+at speed $u$. 
+The  coefficient of restitution
+ between the particle  and the cone is $e$.
+The impact has no rotational effect on the cone
+and the cone has no vertical velocity
+after the impact.
+
+\begin{questionparts}
+\item The particle strikes the cone in the direction of the normal at
+  the point of impact. Explain why the trajectory of the particle
+  immediately
+after the impact is parallel to the normal to the surface of the cone.
+Find an expression, in terms of $M$, $m$,
+$\alpha$, $e$ and $u$, for the speed at which the cone slides
+along the table immediately after impact.
+
+\item
+If instead the particle falls vertically onto the cone, show that the speed $w$
+  at which the cone slides
+along the table immediately after impact is given by
+\[
+w= \frac{mu(1+e)\sin\alpha\cos\alpha}{M+m\cos^2\alpha}\,.
+\]
+
+Show also that the value of $\alpha$ for which $w$ is greatest is given by
+\[
+\cos \alpha = \sqrt{ \frac{M}{2M+m}}\ .
+\]
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A solid figure is composed of a uniform solid cylinder 
+of density $\rho$ 
+and a uniform solid hemisphere of density $3\rho$. 
+The cylinder has  circular
+cross-section, with radius 
+$r$, and height $3r$, and the  hemisphere has radius
+$r$. The flat face of the 
+hemisphere is joined to one end of the cylinder, so that their
+centres coincide.
+
+The figure  is held in equilibrium by a force $P$ so that one point of 
+its flat base  is in contact with a rough horizontal plane
+and its base is  inclined
+at an angle $\alpha$ to the horizontal. The force $P$
+is horizontal and  acts through the highest point 
+of the base. The coefficient of friction between the solid and the
+plane is $\mu$.
+Show that 
+\[\mu \ge \left\vert \tfrac98 -\tfrac12 \cot\alpha\right\vert\,.
+\]
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+{\sl In 
+this question take the acceleration due to gravity to
+  be
+$10\,{\rm m \,s}^{-2}$ and neglect  air resistance.}
+
+The  point $O$ lies in a horizontal field. The point $B$
+lies $50\,$m east of $O$. A 
+particle is projected from  $B$ at speed $25\,{\rm m\,s}^{-1}$ at an angle
+$\arctan \frac12$ above the horizontal and in a direction 
+that makes an angle $60^\circ$
+with $OB$; it passes to the north of $O$.
+
+\begin{questionparts}
+\item Taking unit vectors $\mathbf i$, $\mathbf j$ and
+$\mathbf k$ in the directions east, north and vertically 
+upwards, respectively, find the position vector of the particle relative to 
+$O$ at time $t$~seconds after the particle was  projected, and show that
+its distance from $O$ is 
+\[
+5(t^2- \sqrt5 t +10)\, {\rm m}.
+\]
+
+When this distance is shortest, the  particle is at point $P$.
+Find  the position vector of $P$ and its horizontal bearing from $O$.
+
+
+\item Show that the particle reaches its maximum height at $P$.
+\item When the particle is at $P$, a marksman fires a bullet from $O$
+directly at $P$.
+The initial speed of the bullet is $350\,{\rm m\,s}^{-1}$. Ignoring the
+effect of gravity on the bullet show that, when it passes
+through
+$P$, the distance between $P$ and the 
+particle is approximately~$3\,$m.
+ 
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+I have two identical dice. When I throw either one of them, the
+probability
+of it showing a 6 is $p$ and the probability of it not showing a 6 is
+$q$,
+where $p+q=1$.
+As an experiment to determine $p$, I throw the dice simultaneously
+until at least one die shows a 6. If both dice show a six on this 
+throw, I stop. If just one die shows a six, I throw the other die 
+until it shows a 6 and then stop.
+
+
+\begin{questionparts}
+\item Show that the probability that I stop after $r$ throws
+is $pq^{r-1}(2-q^{r-1}-q^r)$, and find an expression for the
+expected number of throws.
+
+[{\bf Note:} You may use the result $\ds \sum_{r=0}^\infty rx^r =
+  x(1-x)^{-2}$.]
+
+\item In a large number of such experiments, the mean number
+of throws was $m$. Find an estimate for $p$ in terms of $m$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Given that $0<r<n$ and $r$ is much smaller than $n$, show that 
+$\dfrac {n-r}n \approx \e^{-r/n}$.
+
+There are $k$ guests at a party. Assuming that there are exactly 365
+days 
+in the year, and that the birthday of any guest is equally likely to 
+fall on any of these days, show that the probability that there are at
+least
+two guests with the same birthday is approximately $1-\e^{-k(k-1)/730}$.
+
+Using the approximation $ \frac{253}{365} \approx \ln 2$, find the
+smallest value of $k$ such that
+the probability that at least two guests share the
+same birthday is at least  $\frac12$.
+
+How many guests must there be at the party for  the probability 
+that at least one guest has the same birthday as the host to be 
+at least $\frac12$?
+
+
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+The random variable $X$ has a  continuous probability density
+function $\f(x)$ given by
+\begin{equation*}
+\f(x) =
+\begin{cases}
+0     & \text{for } x \le 1 \\
+\ln x & \text{for } 1\le x \le k\\
+\ln k & \text{for } k\le x \le 2k\\
+a-bx  & \text{for } 2k \le x \le 4k \\
+0 & \text{for } x\ge 4k
+\end{cases}
+\end{equation*}
+where $k$, $a$ and $b$ are constants. 
+\begin{questionparts}
+\item Sketch the graph of $y=\f(x)$.
+\item Determine $a$ and  $b$ in terms of $k$ and find the numerical 
+values of $k$, $a$ and $b$.
+\item Find the median value of $X$.
+\end{questionparts}
+\end{question}
+	
+\end{document}

@@ -1,0 +1,473 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1996
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Define $\cosh x$ and $\sinh x$ in terms of exponentials and prove,
+from your definitions, that 
+\[
+\cosh^{4}x-\sinh^{4}x=\cosh2x
+\]
+and 
+\[
+\cosh^{4}x+\sinh^{4}x=\tfrac{1}{4}\cosh4x+\tfrac{3}{4}.
+\]
+Find $a_{0},a_{1},\ldots,a_{n}$ in terms of $n$ such that 
+\[
+\cosh^{n}x=a_{0}+a_{1}\cosh x+a_{2}\cosh2x+\cdots+a_{n}\cosh nx.
+\]
+Hence, or otherwise, find expressions for $\cosh^{2m}x-\sinh^{2m}x$
+and $\cosh^{2m}x+\sinh^{2m}x,$ in terms of $\cosh kx,$ where $k=0,\ldots,2m.$ 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+For all values of $a$ and $b,$ either solve the simultaneous equations
+\begin{alignat*}{1}
+x+y+az & =2\\
+x+ay+z & =2\\
+2x+y+z & =2b
+\end{alignat*}
+or prove that they have no solution. 
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Find 
+\[
+\int_{0}^{\theta}\frac{1}{1-a\cos x}\,\mathrm{d}x\,,
+\]
+where $0<\theta<\pi$ and $-1<a<1.$
+
+
+Hence show that 
+\[
+\int_{0}^{\frac{1}{2}\pi}\frac{1}{2-a\cos x}\,\mathrm{d}x=\frac{2}{\sqrt{4-a^{2}}}\tan^{-1}\sqrt{\frac{2+a}{2-a}}\,,
+\]
+and also that 
+\[
+\int_{0}^{\frac{3}{4}\pi}\frac{1}{\sqrt{2}+\cos x}\,\mathrm{d}x=\frac{\pi}{2}\,.
+\]
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Find the integers $k$ satisfying the inequality $k\leqslant2(k-2).$
+
+
+Given that $N$ is a strictly positive integer consider the problem
+of finding strictly positive integers whose sum is $N$ and whose
+product is as large as possible. Call this largest possible product
+$P(N).$ Show that $P(5)=2\times3,P(6)=3^{2},P(7)=2^{2}\times3,P(8)=2\times3^{2}$ and
+$P(9)=3^{3}.$
+
+
+Find $P(1000)$ explaining your reasoning carefully. 
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Show, using de Moivre's theorem, or otherwise, that 
+\[
+\tan7\theta=\frac{t(t^{6}-21t^{4}+35t^{2}-7)}{7t^{6}-35t^{4}+21t^{2}-1}\,,
+\]
+where $t=\tan\theta.$
+
+\begin{questionparts}
+\item By considering the equation $\tan7\theta=0,$ or otherwise, obtain
+a cubic equation with integer coefficients whose roots are 
+\[
+\tan^{2}\left(\frac{\pi}{7}\right),\ \tan^{2}\left(\frac{2\pi}{7}\right)\ \mbox{ and }\tan^{2}\left(\frac{3\pi}{7}\right)
+\]
+and deduce the value of 
+\[
+\tan\left(\frac{\pi}{7}\right)\tan\left(\frac{2\pi}{7}\right)\tan\left(\frac{3\pi}{7}\right)\,.
+\]
+
+\item Find, without using a calculator, the value of 
+\[
+\tan^{2}\left(\frac{\pi}{14}\right)+\tan^{2}\left(\frac{3\pi}{14}\right)+\tan^{2}\left(\frac{5\pi}{14}\right)\,.
+\]
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}  \item Let $S$ be the set of matrices of the form
+\[
+\begin{pmatrix}a & a\\
+a & a
+\end{pmatrix},
+\]
+where $a$ is any real non-zero number. Show that $S$ is closed under
+matrix multiplication and, further, that $S$ is a group under matrix
+multiplication. 
+
+
+\item Let $G$ be a set of $n\times n$ matrices which is a group
+under matrix multiplication, with identity element $\mathbf{E}.$
+By considering equations of the form $\mathbf{BC=D}$ for suitable
+elements $\mathbf{B},$ $\mathbf{C}$ and $\mathbf{D}$ of $G$, show
+that if a given element $\mathbf{A}$ of $G$ is a singular matrix
+(i.e. $\det\mathbf{A}=0$), then all elements of $G$ are singular.
+Give, with justification, an example of such a group of singular matrices
+in the case $n=3.$ \end{questionparts}
+
+
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+	 \item If $x+y+z=\alpha,$ $xy+yz+zx=\beta$ and
+$xyz=\gamma,$ find numbers $A,B$ and $C$ such that 
+\[
+x^{3}+y^{3}+z^{3}=A\alpha^{3}+B\alpha\beta+C.
+\]
+Solve the equations 
+\begin{alignat*}{1}
+x+y+z & =1\\
+x^{2}+y^{2}+z^{2} & =3\\
+x^{3}+y^{3}+z^{3} & =4.
+\end{alignat*}
+
+
+
+\item The area of a triangle whose sides are $a,b$ and $c$ is given
+by the formula 
+\[
+\mathrm{area}=\sqrt{s(s-a)(s-b)(s-c)}
+\]
+where $s$ is the semi-perimeter $\frac{1}{2}(a+b+c).$ If $a,b$
+and $c$ are the roots of the equation 
+\[
+x^{3}-16x^{2}+81x-128=0,
+\]
+find the area of the triangle. 
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+A transformation $T$ of the real numbers is defined by 
+\[
+y=T(x)=\frac{ax-b}{cx-d}\,,
+\]
+where $a,b,c$, $d$ are real numbers such that $ad\neq bc$. Find
+all numbers $x$ such that $T(x)=x.$ Show that the inverse operation,
+$x=T^{-1}(y)$ expressing $x$ in terms of $y$ is of the same form
+as $T$ and find corresponding numbers $a',b',c'$,$d'$. 
+
+
+Let $S_{r}$ denote the set of all real numbers excluding $r$. Show
+that, if $c\neq0,$ there is a value of $r$ such that $T$ is defined
+for all $x\in S_{r}$ and find the image $T(S_{r}).$ What is the
+corresponding result if $c=0$? 
+
+
+If $T_{1},$ given by numbers $a_{1},b_{1},c_{1},d_{1},$ and $T_{2},$
+given by numbers $a_{2},b_{2},c_{2},d_{2}$ are two such transformations,
+show that their composition $T_{3},$ defined by $T_{3}(x)=T_{2}(T_{1}(x)),$
+is of the same form. 
+
+
+Find necessary and sufficient conditions on the numbers $a,b,c,d$
+for $T^{2}$, the composition of $T$ with itself, to be the identity.
+Hence, or otherwise, find transformations $T_{1},T_{2}$ and their
+composition $T_{3}$ such that $T_{1}^{2}$ and $T_{2}^{2}$ are each
+the identity but $T_{3}^{2}$ is not. 
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A particle of mass $m$ is at rest on top of a smooth fixed sphere of radius
+$a$. Show that, if the particle is given a small displacement, it reaches
+the horizontal plane through the centre of the sphere at a distance
+% at least
+$$a(5\sqrt5+4\sqrt23)/27$$
+from the centre of the sphere.
+
+[Air resistance should be neglected.]
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+Two rough solid circular cylinders, of equal radius and length and of uniform
+density, lie side by side on a rough plane inclined at an angle $\alpha$
+to the horizontal, where $0<\alpha<\pi/2$. Their axes are horizontal and
+they touch along their entire length. The weight of the upper cylinder is
+$W_1$ and the coefficient of friction between it and the plane
+is $\mu_1$. The corresponding qunatities for the lower cylinder are $W_2$
+and $\mu_2$ respectively and the coefficient of friction between
+the two cylinders is $\mu$. Show that for equilibrium to be possible:
+
+\begin{questionparts}
+\item $W_1\ge W_2$;
+
+\item $\mu\geqslant\dfrac{W_1+W_2}{W_1-W_2}$;
+
+\item $\mu_{1}\geqslant\left(\dfrac{2W_{1}\cot\alpha}{W_{1}+W_{2}}-1\right)^{-1}\,.$
+\end{questionparts}
+
+Find the similar inequality to \textbf{ (iii)} for $\mu_2$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A smooth circular wire of radius $a$
+is held fixed in a vertical plane with light elastic
+strings of natural length $a$ and modulus $\lambda$ attached to the upper and
+lower extremities, $A$ and $C$ respectively, of the vertical diameter.
+The other ends of the two strings are attached to a small ring $B$ which
+is free to slide on the wire. Show that, while both strings remain taut,
+the equation for the motion of the ring is
+$$2ma \ddot\theta=\lambda(\cos\theta-\sin\theta)-mg\sin\theta,$$
+where $\theta$ is the angle $ \angle{CAB}$.
+
+Initially the system is at rest in equilibrium with
+$\sin\theta=\frac{3}{5}$. Deduce that $5\lambda=24mg$.
+
+The ring is now displaced slightly. Show that, in the ensuing motion, it will
+oscillate with period approximately
+$$10\pi\sqrt{a\over91g}\,.$$
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+
+It has been observed that Professor Ecks proves three types of theorems:
+1, those that are correct and new; 2, those that are correct, but
+already known; 3, those that are false. It has also been observed
+that, if a certain of her theorems is of type $i$, then her next
+theorem is of type $j$ with probability $p\low_{ij},$ where $p\low_{ij}$
+is the entry in the $i$th row and $j$th column of the following
+array: 
+\[
+\begin{pmatrix}0.3 & 0.3 & 0.4\\
+0.2 & 0.4 & 0.4\\
+0.1 & 0.3 & 0.6
+\end{pmatrix}\,.
+\]
+Let $a_{i},$ $i=1,2,3$, be the probability that a given theorem
+is of type $i$, and let $b_{j}$ be the consequent probability that
+the next theorem is of type $j$. 
+
+\begin{questionparts}
+\item Explain why $b_{j}=a\low_{1}p\low_{1j}+a\low_{2}p\low_{2j}+a\low_{3}p\low_{3j}\,.$
+\item Find values of $a\low_{1},a\low_{2}$ and $a\low_{3}$ such that $b_{i}=a_{i}$
+for $i=1,2,3.$
+\item For these values of the $a_{i}$ find the probabilities $q\low_{ij}$
+that, if a particular theorem is of type $j$, then the \textit{preceding
+}theorem was of type $i$. 
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Let $X$ be a random variable which takes only the finite number of
+different possible real values $x_{1},x_{2},\ldots,x_{n}.$ Define
+the expectation $\mathrm{E}(X)$ and the variance $\mathrm{var}(X)$
+of $X$. Show that , if $a$ and $b$ are real numbers, then $\mathrm{E}(aX+b)=a\mathrm{E}(X)+b$
+and express $\mathrm{var}(aX+b)$ similarly in terms of $\mathrm{var}(X)$. 
+
+
+Let $\lambda$ be a positive real number. By considering the contribution
+to $\mathrm{var}(X)$ of those $x_{i}$ for which $\left|x_{i}-\mathrm{E}(X)\right|\geqslant\lambda,$
+or otherwise, show that 
+\[
+\mathrm{P}\left(\left|X-\mathrm{E}(X)\right|\geqslant\lambda\right)\leqslant\frac{\mathrm{var}(X)}{\lambda^{2}}\,.
+\]
+Let $k$ be a real number satisfying $k\geqslant\lambda.$ If $\left|x_{i}-\mathrm{E}(X)\right|\leqslant k$
+for all $i$, show that 
+\[
+\mathrm{P}\left(\left|X-\mathrm{E}(X)\right|\geqslant\lambda\right)\geqslant\frac{\mathrm{var}(X)-\lambda^{2}}{k^{2}-\lambda^{2}}\,.
+\]
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+Whenever I go cycling I start with my bike in good working order.
+However if all is well at time $t$, the probability that I get a
+puncture in the small interval $(t,t+\delta t)$ is $\alpha\,\delta t.$
+How many punctures can I expect to get on a journey during which my
+total cycling time is $T$? 
+
+
+When I get a puncture I stop immediately to repair it and the probability
+that, if I am repairing it at time $t$, the repair will be completed
+in time $(t,t+\delta t)$ is $\beta\,\delta t.$ If $p(t)$ is the
+probability that I am repairing a puncture at time $t$, write down
+an equation relating $p(t)$ to $p(t+\delta t)$, and derive from
+this a differential equation relating $p'(t)$ and $p(t).$ Show that
+\[
+p(t)=\frac{\alpha}{\alpha+\beta}(1-\mathrm{e}^{-(\alpha+\beta)t})
+\]
+satisfies this differential equation with the appropriate initial
+condition. 
+
+
+Find an expression, involving $\alpha,\beta$ and $T$, for the time
+expected to be spent mending punctures during a journey of total time
+$T$. Hence, or otherwise, show that, the fraction of the journey
+expected to be spent mending punctures is given approximately by 
+\[
+\quad\frac{\alpha T}{2}\quad\ \mbox{ if }(\alpha+\beta)T\text{ is small, }
+\]
+and by 
+\[
+\frac{\alpha}{\alpha+\beta}\quad\mbox{ if }(\alpha+\beta)T\text{ is large.}
+\]
+
+\end{question}
+	
+\end{document}

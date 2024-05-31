@@ -1,0 +1,667 @@
+\documentclass[a4, 11pt]{report}
+
+
+%\pagestyle{myheadings}
+%\markboth{}{Paper I, 2006  second vetter draft 
+%\ \ \ \ \ 
+%\today 
+%}               
+
+
+\usepackage{pstricks-add}
+\usepackage{epsfig}
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage{xcolor}
+
+
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\q{{\rm q}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\makeatletter
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+\makeatother
+%%%To raise suffices: e.g.  $\Pi_{\raisemath{2pt}{-}}$.
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%%%%% Q1
+\begin{question}
+\begin{questionparts}
+\item
+For $n=1$, $2$, $3$ and $4$, the functions $\p_n$ and $\q_n$ are
+defined by
+\[
+\p_n(x) = (x+1)^{2n} - (2n+1)x (x^2+x+1)^{n-1}
+\]
+and 
+\[
+\q_n(x) = \frac{x^{2n+1}+1}{x+1}
+\ \ \ \ \ \ \ \ \ \ \ \ (x\ne -1)
+\,.  \ \ \ \ \ \ \ \ \ \   
+\]
+Show that
+ \ $\p_n(x)\equiv \q_n(x)$ \ 
+(for $x\ne-1$)
+ in the cases $n=1$, $n=2$ and $n=3$.
+
+Show also that this does not hold in the case $n=4$.
+
+
+
+
+\item Using  results from part (i):   
+
+\begin{itemize}
+\item[\bf (a)] 
+express
+$ \ \dfrac {300^3 +1}{301}\,$
+ as the product of two factors (neither of which is 1);
+\\
+
+\item[\bf (b)] 
+express 
+$ \ \dfrac {7^{49}+1}{7^7+1}\,$ as the product of two factors (neither of 
+which is 1), each 
+written 
+\\[1mm]
+in terms of 
+various powers of 7 which you should not attempt
+to calculate explicitly. 
+\end{itemize}
+
+\end{questionparts}
+\end{question} 
+
+
+%%%%%%%%%%%%%% Q2
+
+\begin{question}
+Differentiate, with respect to $x$,
+\[
+(ax^2+bx+c)\,\ln  \big( x+\sqrt{1+x^2}\big) +\big(dx+e\big)\sqrt{1+x^2}
+\,,
+\]
+where $a$, $b$, $c$, $d$ and  $e$ are constants. You should simplify your
+answer as far as possible.
+
+Hence integrate:
+\begin{questionparts}
+\item $ \ln \big( x+\sqrt{1+x^2}\,\big) \,;$
+\item $\sqrt{1+x^2} \,; $
+\item $ x\ln \big( x+\sqrt{1+x^2}\,\big) \,.$
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%%%%% Q3
+
+
+\begin{question}
+In this question, $\lfloor x \rfloor$ denotes the greatest integer
+that  is less than or equal to $x$, so that (for example)
+$\lfloor 2.9 \rfloor = 2$,  $\lfloor 2\rfloor = 2$
+and
+ $\lfloor -1.5 \rfloor = -2$.
+
+On separate diagrams draw the graphs, for $-\pi \le x \le \pi$, of:
+\begin{center}
+(i) \ \  $y = \lfloor x \rfloor$; \ \ \ \ \ 
+(ii) \ \ $y=\sin\lfloor x \rfloor$; \ \ \ \ \ 
+(iii) \ \ $y = \lfloor \sin x\rfloor$; \ \ \ \ \ 
+(iv) \ \ $y= \lfloor 2\sin x\rfloor$. 
+\end{center}
+In each case,
+you should indicate clearly the value of $y$ at points where the graph
+is discontinuous.  
+
+\end{question}
+%%%%%%%%%%%%%% Q4
+
+\begin{question}
+\begin{questionparts}
+\item Differentiate
+$\displaystyle
+\;
+\frac z {(1+z^2)^{\frac12}}
+\;$
+with respect to $z$.
+
+
+\item 
+The {\em signed curvature} $\kappa$ of the  curve $y=\f(x)$ is 
+defined by
+\[
+\kappa = \frac {\f''(x)}{\big({1+ (\f'(x))^2\big)^{\frac32}}} 
+\,.\]
+Use this definition to  
+determine all curves for which the signed curvature
+is a non-zero constant. For these
+curves, what is the geometrical significance of $\kappa$?
+\end{questionparts}
+
+\end{question}
+
+
+%%%%%%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item 
+\noindent\vspace{-4cm}
+%%%%%%%The diagram requires scale of 1 unit = 15cm and 11 pt font. 
+\begin{center}
+
+\psset{xunit=15.0cm,yunit=15.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(0.579583766333,2.71182136869)(1.83739646118,3.59292873869)
+\psline(0.630644718793,3.13692729767)(1.31015089163,3.14219478738)
+\pscircle(0.785157750343,3.25807956104){1.75692695495}
+\pscircle(1.00990397805,3.24754458162){1.58572438898}
+\pscircle(0.900067062948,3.16853223594){0.425605184678}
+\rput[tl](0.771128846767,3.26889831096){$A$}
+\rput[tl](0.890844522038,3.17472197974){$B$}
+\rput[tl](1.00098294329,3.26570589295){$C$}
+\rput[tl](0.77272505577,3.12683570963){$P$}
+\rput[tl](0.892440731042,3.12683570963){$Q$}
+\rput[tl](1.01215640631,3.12523950063){$R$}
+\end{pspicture*}
+
+
+\end{center}
+
+\vspace{-6cm}
+The diagram shows three touching
+circles $A$, $B$ and $C$, with a common tangent
+$PQR$.
+ The  radii of the circles are $a$, $b$ and $c$,
+respectively.
+
+Show that 
+\[
+\frac 1 {\sqrt b} = \frac 1 {\sqrt{a}} + \frac1{\sqrt{c}}
+\tag{$*$}
+\]
+and deduce that
+\[
+2\left(\frac1{a^2} + \frac1 {b^2} + \frac1 {c^2}
+\right)
+=
+\left(\frac1 a + \frac1 {b} + \frac1 {c}
+\right)^{\!2}
+.
+\tag{$**$}
+\]
+
+\item
+Instead, let $a$, $b$ and $c$ be  positive numbers,
+with  $b<c<a$, which satisfy $(**)$. Show that they also satisfy $(*)$. 
+\end{questionparts}
+
+
+\end{question}
+%%%%%%%%%%%%%% Q6
+\begin{question}
+The sides $OA$ and $CB$ of the quadrilateral $OABC$ are parallel. The point
+$X$ lies on $OA$, between $O$ and $A$. The position vectors
+of $A$, $B$, $C$ and $X$ relative to the origin $O$ are 
+$\bf a$, $\bf b$, $\bf c$ and $\bf x$, respectively.
+Explain why  $\bf c$ and $\bf x$ can be written in the form
+\[
+{\bf c} = k {\bf a} + {\bf b}
+\text{ \ \ \ \ and \ \ \ \ }
+{\bf x} = m {\bf a}\,,
+\]
+where $k$ and $m$ are scalars, and  
+state the range of values
+that each of $k$ and $m$ can take.
+
+%\begin{questionparts}
+%\item 
+The lines $OB$ and $AC$ intersect at $D$, the lines $XD$ and $BC$
+intersect at $Y$ and the lines $OY$ and $AB$ intersect at $Z$. Show 
+that the position vector of $Z$ relative to $O$ can be written as
+\[
+\frac{ {\bf b} + mk {\bf a}}{mk+1}\,.
+\]
+%\end{questionparts}
+
+The lines $DZ$ and $OA$ intersect at $T$. Show that 
+\[
+OT \times OA = OX\times TA
+\text{ \ \ \ \ and \ \ \ \ }
+\frac 1 {OT} = \frac 1 {OX} + \frac 1 {OA}
+\,,
+\]
+where, for example, $OT$ denotes the length of the line joining
+$O$ and $T$.
+
+
+\end{question}
+
+%%%%%%%%%%%%%% Q7
+\begin{question}
+The set $S$
+% = \{1, 5, 9, 13, \,\ldots \}$ 
+consists of all the 
+positive integers that leave a remainder of 1 upon division by 4.
+The set $T$
+% = \{1, 5, 9, 13, \,\ldots \}$ 
+consists of all the 
+positive integers that leave a remainder of 3 upon division by 4.
+
+
+
+
+\begin{questionparts}
+\item 
+Describe in words the sets 
+$S \cup T$  and  $S \cap T$.
+
+
+\item Prove that the product of any two integers in $S$ is also in $S$.
+Determine whether the product of any two integers in $T$
+is also in  $T$.
+
+\item
+ Given an integer in $T$ that is not a prime number, 
+prove that at least one of its prime factors is in $T$.
+
+\item  
+For any set $X$ of positive integers,
+ an integer in  $X$ (other than 1) is said to be 
+{\em $X$-prime} if it cannot be expressed as the product of
+two or more integers {\em all in $X$} (and all different from 1).
+
+\begin{itemize}
+\item[\bf (a)] Show that every integer  in $T$  is 
+either  $T$-prime or  is the  product of an odd number of 
+$T$-prime integers.
+
+\item[\bf (b)] Find an 
+example of an integer in $S$ that can be expressed as the product
+of  \hbox{$S$-prime} integers in two distinct ways. [Note: 
+ $s_1s_2$ and $s_2s_1$ are not counted as distinct ways of 
+expressing the product of $s_1$ and $s_2$.]
+\end{itemize}
+\end{questionparts}
+
+ 
+\end{question}
+%%%%%%%%%%%%%% Q8
+\begin{question}
+Given an infinite sequence  of numbers
+$u_0$, $u_1$, $u_2$, $\ldots\,$, we define the
+{\em generating function}, $\f$, for the sequence by
+\[
+\f(x) =  u_0 + u_1x +u_2 x^2 +u_3 x^3 + \cdots \,.
+\]
+Issues of convergence can be ignored in this question.
+
+\begin{questionparts}
+
+\item 
+Using the binomial series, show that 
+the sequence given by $u_n=n\,$ has generating function
+$x(1-x)^{-2}$,
+and
+find the sequence that has generating function $x(1-x)^{-3}$. 
+
+Hence, or otherwise, find the generating function for the 
+sequence $u_n =n^2$. You should simplify your answer.
+
+\item 
+\begin{itemize}
+\item[\bf (a)]
+The sequence $u_0$, $u_1$, $u_2$, $\ldots\,$ is 
+ determined by
+$u_{n} = ku_{n-1}$ ($n\ge1$),
+where $k$ is independent of $n$,
+and $u_0=a$. 
+By summing 
+the identity $u_{n}x^n \equiv ku_{n-1}x^n$, or otherwise,
+show that
+ the generating function, f, satisfies
+\[
+\f(x) = a + kx \f(x)
+\,.
+\]
+Write down  an expression for $\f(x)$.
+
+\vspace{3mm}
+\item[\bf (b)]
+The sequence 
+ $u_0$, $u_1$, $u_2$, $\ldots\,$ is 
+ determined by
+$u_{n} = u_{n-1}+ u_{n-2}$ ($n\ge2$)
+and $u_0=0$, $u_1=1$. 
+Obtain the generating function.
+
+\end{itemize}
+\end{questionparts}
+
+\end{question}
+
+
+
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+%%%%%%%%%%%%%% Q9
+\begin{question}
+A horizontal rail is fixed parallel
+to a vertical wall and at
+a distance $d$ from the wall.
+A~uniform rod $AB$
+of length $2a$
+rests in equilibrium on the rail with the end $A$ in contact with 
+the wall. The rod lies in 
+ a vertical plane perpendicular to the wall. It 
+is inclined at an angle~$\theta$ to the 
+vertical (where $0<\theta<\frac12\pi$)
+ and  
+$a\sin\theta < d$,
+as shown in the 
+diagram. 
+
+\begin{center}
+\newrgbcolor{wwwwww}{0.4 0.4 0.4}
+\psset{xunit=1.0cm,yunit=1.0cm}
+\begin{pspicture*}(-2.02,-0.1)(6.98,4.98)
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+
+\psline[linewidth=6.2pt,linestyle=dashed,dash=11pt 1pt,linecolor=wwwwww](-0.12,5)(-0.12,0)
+
+\psline[linewidth=2pt](0,1.86)(5.86,3.34)
+%\psline[linestyle=dotted](0,1.82)(4.02,1.82)
+\psline[linestyle=dotted](4,4.48)(4,0.58)
+\rput[tl](0.15,2.4){$ \theta $}
+\psline[linestyle=dotted](0,4  )(3.98,4  )
+\rput[tl](1.86,4.40){$ d $}
+\rput[tl](0.12,1.78){$ A $}
+\rput[tl](5.66,3.14){$ B $}
+\parametricplot{0.2473863631292545}{1.5708}{1*0.80*cos(t)+0*0.80*sin(t)+0|0*0.80*cos(t)+1*0.80*sin(t)+1.86}
+\begin{scriptsize}
+\psdots[dotsize=5pt 0,dotstyle=*](4,2.78)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+
+
+
+
+The coefficient of friction between the rod and the 
+wall  is $\mu$, and the coefficient of friction between the
+rod and the rail is $\lambda$.
+
+
+Show that in limiting equilibrium, with the rod on the point
+of slipping at both the wall and the rail, the angle $\theta$
+satisfies
+\[
+d\cosec^2\theta = a\big( (\lambda+\mu)\cos\theta + (1-\lambda \mu)\sin\theta
+\big)
+\,.
+\]
+
+Derive the corresponding result  
+if, instead, $ a\sin\theta > d $.
+
+
+\end{question}
+%%%%%%%%%%%%%% Q10
+\begin{question}
+Four particles  $A$, $B$, $C$ and $D$ 
+are initially at rest 
+on a smooth horizontal table. They lie
+equally spaced a small distance apart, in the order $ABCD$, 
+in a straight line.
+Their  masses are $\lambda m$, $m$, $m$ and $m$,
+respectively, where $\lambda>1$.
+
+Particles $A$ and $D$ are simultaneously  projected, both at speed $u$,
+so that they collide with $B$ and $C$ 
+(respectively). In the following collision between $B$ and $C$,
+particle $B$ 
+is brought to rest. The coefficient of restitution in each collision is $e$.
+
+\begin{questionparts}
+\item Show that $e = \dfrac {\lambda-1}{3\lambda+1}$ and 
+deduce that $e<   \frac 13\,$. 
+\item Given also that $C$ and $D$ move towards each other with the
+same speed,  find the value of  $\lambda$ and of $e$.
+\end{questionparts}
+
+
+\end{question}
+%%%%%%%%%%%%%% Q11
+\begin{question}
+The point $O$ is at the top of a vertical tower 
+of height $h$ which stands in the middle of a large horizontal
+	plain. A projectile $P$ is fired from $O$ 
+at a fixed speed $u$ and at an angle $\alpha$
+ above the horizontal.
+
+Show that the distance $x$ from the base of the tower
+when $P$ hits the plain satisfies
+\[
+\frac{gx^2}{u^2} =
+h(1+\cos 2\alpha) + x \sin 2\alpha \,.
+\] 
+
+Show that the greatest value of $x$ as $\alpha$ varies
+occurs when $x=h\tan2\alpha$ and 
+find the corresponding value of $\cos 2\alpha$ in terms of $g$, $h$ and $u$.
+
+Show further that the greatest achievable 
+distance between $O$ and the landing point is $\dfrac {u^2}g +h\,$. 
+
+\end{question}
+\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+%%%%%%%%%%%%%% Q12
+\begin{question}
+\begin{questionparts}
+\item Alice tosses a fair coin twice and Bob tosses a fair coin three times.
+Calculate the probability that Bob gets more heads than Alice.
+\item Alice tosses a fair coin three times
+ and Bob tosses a fair coin four times.
+Calculate the probability that Bob gets more heads than Alice.
+
+\item 
+Let $p_1$ be the probability that Bob gets the same number of heads as
+Alice, and let~$p_2$ be the probability that Bob gets more
+heads than Alice,  when 
+ Alice and Bob each toss a fair coin $n$ times.
+
+Alice tosses a fair coin $n$ times and Bob tosses a fair coin $n+1$ times.
+Express the probability that Bob gets more heads than Alice
+in terms of $p_1$ and $p_2$, and hence obtain a generalisation of the 
+results of parts (i) and (ii).
+
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%%%%%%% Q13
+
+
+\begin{question}
+ An internet tester  sends $n$ e-mails simultaneously at 
+time $t=0$. Their
+arrival times at their destinations 
+are independent random variables each having probability density function
+$\lambda \e^{-\lambda t}$ ($0\le t<\infty$, $ \lambda >0$).
+
+\begin{questionparts}
+\item 
+The random variable $T$ is 
+the time of arrival of the e-mail that arrives first at its destination.
+Show that the probability density function of 
+$T$ is
+\[
+n  \lambda  \e^{-n\lambda t}
+\,,
+\]
+and find the expected value of $T$.
+
+\item
+ Write down the probability
+that the second e-mail to arrive at its destination arrives later than  time $t$
+and hence derive the density function for the time of arrival of the second
+e-mail. Show that the expected time of arrival of the second e-mail is
+  \[
+\frac{1}{\lambda} \left( \frac1{n-1} + \frac 1 n \right)
+.
+\] 
+\end{questionparts}
+
+\end{question}
+
+
+
+\end{document}
+
+\nq
+For $k>m>0$, express $\dfrac 1 {(k+m)k(k-m)}$ in the form $\dfrac{A}{k(k-m)} +
+\dfrac{B} {k(k+m)} $, where $A$ and $B$ are independent of $k$.
+
+By taking $m=1$,  show that 
+\[
+\frac 1 {1^3}+\frac 1 {2^3} + \frac 1 {3^3}  + \cdots 
+\ < \frac 54
+\, .
+\]
+
+Show also that
+\[
+\frac 1{1^3} + \frac 1 {2^3}+ \frac 1 {3^3}  + \cdots \ < \frac {119}{96} \,.
+\]
+\nq
+For $k>m>0$, express $\dfrac 1 {(k+m)k(k-m)}$ in the form $\dfrac{A}{k(k-m)} +
+\dfrac{B} {k(k+m)} $ where $A$ and $B$ are independent of $k$.
+
+By taking $m=1$,  show that 
+\[
+\frac 1 {1^3}+\frac 1 {2^3} + \frac 1 {3^3}  + \cdots 
+\ < \frac 54
+\, .
+\]
+
+Show also that
+\[
+\frac 1{1^3} + \frac 1 {2^3}+ \frac 1 {3^3}  + \cdots \ < \frac {119}{96} \,.
+\]
+

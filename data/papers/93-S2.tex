@@ -1,0 +1,534 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1993
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+In the game of ``Colonel Blotto'' there are two players, Adam and
+Betty. First Adam chooses three non-negative integers $a_{1},a_{2}$
+and $a_{3},$ such that $a_{1}+a_{2}+a_{3}=9,$ and then Betty chooses
+non-negative integers $b_{1},b_{2}$ and $b_{3}$, such that $b_{1}+b_{2}+b_{3}=9.$
+If $a_{1}>b_{1}$ then Adam scores one point; if $a_{1}<b_{1}$ then
+Betty scores one point; and if $a_{1}=b_{1}$ no points are scored.
+Similarly for $a_{2},b_{2}$ and $a_{3},b_{3}.$ The winner is the
+player who scores the greater number of points: if the socres are
+equal then the game is drawn. Show that, if Betty knows the numbers
+$a_{1},a_{2}$ and $a_{3},$ she can always choose her numbers so
+that she wins. Show that Adam can choose $a_{1},a_{2}$ and $a_{3}$
+in such a way that he will never win no matter what Betty does. 
+
+
+Now suppose that Adam is allowed to write down two triples of numbers
+and that Adam wins unless Betty can find one triple that beats both
+of Adam's choices (knowing what they are). Confirm that Adam wins
+by writing down $(5,3,1)$ and $(3,1,5).$ 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+\begin{questionparts} 
+	\item
+Evaluate 
+\[
+\int_{0}^{2\pi}\cos(mx)\cos(nx)\,\mathrm{d}x,
+\]
+where $m,n$ are integers, taking into account any special cases that
+arise. 
+
+
+\item Find ${\displaystyle \int\sqrt{1+\frac{1}{x}}\,\mathrm{d}x}.$
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+\item Solve the differential equation 
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x}-y-3y^{2}=-2
+\]
+by making the substitution $y=-\dfrac{1}{3u}\dfrac{\mathrm{d}u}{\mathrm{d}x}.$
+
+
+\item Solve the differential equation 
+\[
+x^{2}\frac{\mathrm{d}y}{\mathrm{d}x}+xy+x^{2}y^{2}=1
+\]
+by making the substitution 
+\[
+y=\frac{1}{x}+\frac{1}{v},
+\]
+where $v$ is a function of $x$. 
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Two non-parallel lines in 3-dimensional space are given by $\mathbf{r}=\mathbf{p}_{1}+t_{1}\mathbf{m}_{1}$
+and $\mathbf{r}=\mathbf{p}_{2}+t_{2}\mathbf{m}_{2}$ respectively,
+where $\mathbf{m}_{1}$ and $\mathbf{m}_{2}$ are unit vectors. Explain
+by means of a sketch why the shortest distance between the two lines
+is 
+\[
+\frac{\left|(\mathbf{p}_{1}-\mathbf{p}_{2})\cdot(\mathbf{m}_{1}\times\mathbf{m}_{2})\right|}{\left|(\mathbf{m}_{1}\times\mathbf{m}_{2})\right|}.
+\]
+
+
+\begin{questionparts}
+\item Find the shortest distance between the lines in the case 
+\[
+\mathbf{p}_{1}=(2,1,-1)\qquad\mathbf{p}_{2}=(1,0,-2)\qquad\mathbf{m}_{1}=\tfrac{1}{5}(4,3,0)\qquad\mathbf{m}_{2}=\tfrac{1}{\sqrt{10}}(0,-3,1).
+\]
+
+\item Two aircraft, $A_{1}$ and $A_{2},$ are flying in the directions
+given by the unit vectors $\mathbf{m}_{1}$ and $\mathbf{m}_{2}$
+at constant speeds $v_{1}$ and $v_{2}.$ At time $t=0$ they pass
+the points $\mathbf{p}_{1}$ and $\mathbf{p}_{2}$, respectively.
+If $d$ is the shortest distance between the two aircraft during the
+flight, show that 
+\[
+d^{2}=\frac{\left|\mathbf{p}_{1}-\mathbf{p}_{2}\right|^{2}\left|v_{1}\mathbf{m}_{1}-v_{2}\mathbf{m}_{2}\right|^{2}-[(\mathbf{p}_{1}-\mathbf{p}_{2})\cdot(v_{1}\mathbf{m}_{1}-v_{2}\mathbf{m}_{2})]^{2}}{\left|v_{1}\mathbf{m}_{1}-v_{2}\mathbf{m}_{2}\right|^{2}}.
+\]
+
+\item Suppose that $v_{1}$ is fixed. The pilot of $A_{2}$ has chosen $v_{2}$
+so that $A_{2}$ comes as close as possible to $A_{1}.$ How close
+is that, if $\mathbf{p}_{1},\mathbf{p}_{2},\mathbf{m}_{1}$ and $\mathbf{m}_{2}$
+are as in \textbf{(i)}?
+\end{questionparts}
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-0.57,-0.63)(8.51,6.23) \psline(0,0)(7,5) \psline(7,5)(7.75,1.98) \psline(7.75,1.98)(0,0) \parametricplot{-0.6740818217636368}{0.22208190190547994}{1*5.52*cos(t)+0*5.52*sin(t)+1.48|0*5.52*cos(t)+1*5.52*sin(t)+4.9} \psline(7,5)(5.79,1.45) \rput[tl](-0.4,-0.02){$O$} \rput[tl](5.76,1.29){$P$} \rput[tl](8.1,2.01){$R$} \rput[tl](7.2,5.26){$Q$} \psline(7.67,2.29)(7.37,2.22) \psline(7.37,2.22)(7.45,1.91) \end{pspicture*}
+\par\end{center}
+
+
+In the diagram, $O$ is the origin, $P$ is a point of a curve $r=r(\theta)$
+with coordinates $(r,\theta)$ and $Q$ is another point of the curve,
+close to $P$, with coordinates $(r+\delta r,\theta+\delta\theta).$
+The angle $\angle PRQ$ is a right angle. By calculating $\tan\angle QPR,$
+show that the angle at which the curve cuts $OP$ is 
+\[
+\tan^{-1}\left({\displaystyle r\dfrac{\mathrm{d}\theta}{\mathrm{d}r}}\right).
+\]
+
+
+
+Let $\alpha$ be a constant angle, $0<\alpha<\frac{1}{2}\pi$. The
+curve with the equation 
+\[
+r=\mathrm{e}^{\theta\cot\alpha}
+\]
+in polar coordinates is called an \textit{equiangular spiral}. Show
+that it cuts every radius line at an angle $\alpha.$ Sketch the spiral. 
+
+
+Find the length of the complete turn of the spiral beginning at $r=1$
+and going outwards. What is the total length of the part of the spiral
+for which $r\leqslant1$? 
+
+
+{[}You may assume that the arc length $s$ of the curve satisfies
+\[
+{\displaystyle \left(\frac{\mathrm{d}s}{\mathrm{d}\theta}\right)^{2}=r^{2}+\left(\frac{\mathrm{d}r}{\mathrm{d}\theta}\right)^{2}.}]
+\]
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+\textit{In this question, }\textbf{\textit{$\mathbf{A},\mathbf{B}$
+}}\textit{and $\mathbf{X}$ are non-zero $2\times2$ real matrices.}
+
+
+Are the following assertions true or false? You must provide a proof
+or a counterexample in each case. 
+\begin{questionparts}
+\item If $\mathbf{AB=0}$ then $\mathbf{BA=0}.$
+\item $(\mathbf{A-B)(A+B)=}\mathbf{A}^{2}-\mathbf{B}^{2}.$
+\item The equation $\mathbf{AX=0}$ has a non-zero solution $\mathbf{X}$
+if and only if $\det\mathbf{A}=0.$
+\item For any $\mathbf{A}$ and $\mathbf{B}$ there are at most two matrices
+$\mathbf{X}$ such that $\mathbf{X}^{2}+\mathbf{AX}+\mathbf{B}=\mathbf{0}.$ 
+\end{questionparts}
+
+	\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+ The integers $a,b$ and $c$ satisfy 
+\[
+2a^{2}+b^{2}=5c^{2}.
+\]
+By considering the possible values of $a\pmod5$ and $b\pmod5$, show
+that $a$ and $b$ must both be divisible by $5$. 
+
+
+By considering how many times $a,b$ and $c$ can be divided by $5$,
+show that the only solution is $a=b=c=0.$ 
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Suppose that $a_{i}>0$ for all $i>0$. Show that 
+\[
+a_{1}a_{2}\leqslant\left(\frac{a_{1}+a_{2}}{2}\right)^{2}.
+\]
+Prove by induction that for all positive integers $m$ 
+\[
+a_{1}\cdots a_{2^{m}}\leqslant\left(\frac{a_{1}+\cdots+a_{2^{m}}}{2^{m}}\right)^{2^{m}}.\tag{\ensuremath{*}}
+\]
+If $n<2^{m}$, put $b_{1}=a_{2},$ $b_{2}=a_{2},\cdots,b_{n}=a_{n}$
+and $b_{n+1}=\cdots=b_{2^{m}}=A$, where 
+\[
+A=\frac{a_{1}+\cdots+a_{n}}{n}.
+\]
+By applying $(*)$ to the $b_{i},$ show that 
+\[
+a_{1}\cdots a_{n}A^{(2^{m}-n)}\leqslant A^{2^{m}}
+\]
+(notice that $b_{1}+\cdots+b_{n}=nA).$ Deduce the (arithmetic mean)/(geometric
+mean) inequality 
+\[
+\left(a_{1}\cdots a_{n}\right)^{1/n}\leqslant\frac{a_{1}+\cdots+a_{n}}{n}.
+\]
+\end{question}	
+		
+%%%%%%%%%% Q9
+\begin{question}
+\textit{In this question, the argument of a complex number is chosen
+to satisfy $0\leqslant\arg z<2\pi.$}
+
+
+Let $z$ be a complex number whose imaginary part is positive. What
+can you say about $\arg z$?
+
+
+The complex numbers $z_{1},z_{2}$ and $z_{3}$ all have positive
+imaginary part and $\arg z_{1}<\arg z_{2}<\arg z_{3}.$ Draw a diagram
+that shows why 
+\[
+\arg z_{1}<\arg(z_{1}+z_{2}+z_{3})<\arg z_{3}.
+\]
+Prove that $\arg(z_{1}z_{2}z_{3})$ is never equal to $\arg(z_{1}+z_{2}+z_{3}).$ 
+\end{question}
+			
+		
+			
+%%%%%%%%%% Q10
+\begin{question}
+Verify that if 
+\[
+\mathbf{P}=\begin{pmatrix}1 & 2\\
+2 & -1
+\end{pmatrix}\qquad\mbox{ and }\qquad\mathbf{A}=\begin{pmatrix}-1 & 8\\
+8 & 11
+\end{pmatrix}
+\]
+then $\mathbf{PAP}$ is a diagonal matrix. 
+
+
+Put $\mathbf{x}=\begin{pmatrix}x\\
+y
+\end{pmatrix}$ and $\mathbf{x}_{1}=\begin{pmatrix}x_{1}\\
+y_{1}
+\end{pmatrix}.$ By writing 
+\[
+\mathbf{x}=\mathbf{P}\mathbf{x}_{1}+\mathbf{a}
+\]
+for a suitable vector $\mathbf{a},$ show that the equation 
+\[
+\mathbf{x}^{\mathrm{T}}\mathbf{Ax}+\mathbf{b}^{\mathrm{T}}\mathbf{x}-11=0,
+\]
+where $\mathbf{b}=\begin{pmatrix}18\\
+6
+\end{pmatrix}$ and $\mathbf{x}^{\mathrm{T}}$ is the transpose of $\mathbf{x},$
+becomes 
+\[
+3x_{1}^{2}-y_{1}^{2}=c
+\]
+for some constant $c$ (which you should find). 
+\end{question}
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+\textit{In this question, take the value of $g$ to be $10\ \mathrm{ms}^{-2}.$}
+
+
+A body of mass $m$ kg is dropped vertically into a deep pool of liquid.
+Once in the liquid, it is subject to gravity, an upward buoyancy force
+of $\frac{6}{5}$ times its weight, and a resistive force of $2mv^{2}\mathrm{N}$
+opposite to its direction of travel when it is travelling at speed
+$v$ $\mathrm{ms}^{-1}.$ Show that the body stops sinking less than
+$\frac{1}{4}\pi$ seconds after it enters the pool. 
+
+
+Suppose now that the body enters the liquid with speed $1\ \mathrm{ms}^{-1}.$
+Show that the body descends to a depth of $\frac{1}{4}\ln2$ metres
+and that it returns to the surface with speed $\frac{1}{\sqrt{2}}\ \mathrm{ms}^{-1},$
+at a time 
+\[
+\frac{\pi}{8}+\frac{1}{4}\ln\left(\frac{\sqrt{2}+1}{\sqrt{2}-1}\right)
+\]
+seconds after entering the pool.
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}$\,$
+	\vspace{-1cm}	
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-1.28,-0.87)(4.65,6.17) \pscircle(2.59,2.83){1.42} \psline(4,0)(-0.85,3.65) \pscustom{\parametricplot{1.5707963267948966}{2.4966538173979873}{0.61*cos(t)+4|0.61*sin(t)+0}\lineto(4,0)\closepath} \rput[tl](1.44,1.51){$Q_2$} \rput[tl](4.24,3.06){$Q_1$} \rput[tl](4.14,4.45){$W_1$} \rput[tl](-0.19,2.31){$W_2$} \rput[tl](0.76,2.95){$P$} \rput[tl](3.54,0.91){$\alpha$} \psline(4,6)(4,-0.7) \begin{scriptsize} \psdots[dotstyle=*](4,3) \psdots[dotstyle=*](1.65,1.77) \psdots[dotstyle=*](1.17,2.8) \end{scriptsize} \end{pspicture*}
+\par\end{center}
+
+
+A uniform sphere of mass $M$ and radius $r$ rests between a vertical
+wall $W_{1}$ and an inclined plane $W_{2}$ that meets $W_{1}$ at
+an angle $\alpha.$ $Q_{1}$ and $Q_{2}$ are the points of contact
+of the sphere with $W_{1}$ and $W_{2}$ resectively, as shown in
+the diagram. A particle of mass $m$ is attached to the sphere at
+$P$, where $PQ_{1}$ is a diameter, and the system is released. The
+sphere is on the point of slipping at $Q_{1}$ and at $Q_{2}.$ Show
+that if the coefficients of friction between the sphere and $W_{1}$
+and $W_{2}$ are $\mu_{1}$ and $\mu_{2}$ respectively, then 
+\[
+m=\frac{\mu_{2}+\mu_{1}\cos\alpha-\mu_{1}\mu_{2}\sin\alpha}{(2\mu_{1}\mu_{2}+1)\sin\alpha+(\mu_{2}-2\mu_{1})\cos\alpha-\mu_{2}}M.
+\]
+If the sphere is on the point of rolling about $Q_{2}$ instead of
+slipping, show that 
+\[
+m=\frac{M}{\sec\alpha-1}.
+\]
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+The force $F$ of repulsion between two particles with positive charges
+$Q$ and $Q'$ is given by $F=kQQ'/r^{2},$ where $k$ is a positive
+constant and $r$ is the distance between the particles. Two small
+beads $P_{1}$ and $P_{2}$ are fixed to a straight horizontal smooth
+wire, a distance $d$ apart. A third bead $P_{3}$ of mass $m$ is
+free to move along the wire between $P_{1}$ and $P_{3}.$ The beads
+carry positive electrical charges $Q_{1},Q_{2}$ and $Q_{3}.$ If
+$P_{3}$ is in equilibrium at a distance $a$ from $P_{1},$ show
+that 
+\[
+a=\frac{d\sqrt{Q_{1}}}{\sqrt{Q_{1}}+\sqrt{Q_{2}}}.
+\]
+Suppose that $P_{3}$ is displaced slightly from its equilibrium position
+and released from rest. Show that it performs approximate simple harmonic
+motion with period 
+\[
+\frac{\pi d}{(\sqrt{Q_{1}}+\sqrt{Q_{2}})^{2}}\sqrt{\frac{2md\sqrt{Q_{1}Q_{2}}}{kQ_{3}}.}
+\]
+{[}You may use the fact that $\dfrac{1}{(a+y)^{2}}\approx\dfrac{1}{a^{2}}-\dfrac{2y}{a^{3}}$
+for small $y.${]}  
+
+
+
+
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+A ball of mass $m$ is thrown vertically upwards from the floor of
+a room of height $h$ with speed $\sqrt{2kgh},$ where $k>1.$ The
+coefficient of restitution between the ball and the ceiling or floor
+is $a$. Both the ceiling and floor are level. Show that the kinetic
+energy of the ball immediately before hitting the ceiling for the
+$n$th time is 
+\[
+mgh\left(a^{4n-4}(k-1)+\frac{a^{4n-4}-1}{a^{2}+1}\right).
+\]
+Hence show that the number of times the ball hits the ceiling is at
+most 
+\[
+1-\frac{\ln[a^{2}(k-1)+k]}{4\ln a}.
+\]
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+Two computers, LEP and VOZ are programmed to add numbers after first
+approximating each number by an integer. LEP approximates the numbers
+by rounding: that is, it replaces each number by the nearest integer.
+VOZ approximates by truncation: that is, it replaces each number by
+the largest integer less than or equal to the number. The fractional
+parts of the numbers to be added are uniformly and independently distributed.
+(The fractional part of a number $a$ is $a-\left\lfloor a\right\rfloor ,$
+where $\left\lfloor a\right\rfloor $ is the largest integer less
+than or equal to $a$.) Both computers approximate and add 1500 numbers.
+For each computer, find the probability that the magnitude of error
+in the answer will exceed 15. 
+
+
+How many additions can LEP perform before the probability that the
+magnitude of error is less than 10 drops below 0.9? 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+
+At the terminus of a bus route, passengers arrive at an average rate
+of 4 per minute according to a Poisson process. Each minute, on the
+minute, one bus arrives with probability $\frac{1}{4},$ independently
+of the arrival of passengers or previous buses. Just after eight o'clock
+there is no-one at the bus stop. 
+
+\begin{questionparts}
+\item What is the probability that the first bus arrives at $n$ minutes
+past 8?
+\item If the first bus arrives at 8:05, what is the probability that there
+are $m$ people waiting for it?
+\item Each bus can take 25 people and, since it is the terminus, the bus
+arrive empty. Explain carefully how you would calculate, to two significant
+figures, the probability that when the first bus arrives it is unable
+to pick up all the passengers. Your method should need the use of
+a calculator and standard tables only. There is no need to carry out
+the calculation. 
+\end{questionparts}
+\end{question}
+\end{document}

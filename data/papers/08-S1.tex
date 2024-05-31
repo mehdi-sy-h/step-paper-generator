@@ -1,0 +1,498 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2008
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+What does it mean to say that a number $x$ is {\em irrational}?
+
+
+Prove by contradiction statements A and B below, where $p$ and $q$ are
+real numbers.
+\begin{itemize}
+\item [\quad\bf A:] If $pq$ is irrational, then at least one
+of $p$ and $q$ is irrational.
+\item [\quad\bf B:] If $p+q$ is irrational, then at least one of 
+$p$ and $q$ is irrational.
+\end{itemize}
+Disprove  by means of a counterexample  statement C below, 
+where $p$ and $q$ are
+real numbers.
+\begin{itemize}
+\item [\quad\bf C:]
+If $p$ and $q$ are irrational, then $p+q$ is  irrational.
+\end{itemize}
+
+
+If the numbers $\e$, $\pi$, $\pi^2$, $\e^2$ and 
+$\e\pi$ are irrational, prove  that at most one of the numbers
+$\pi+\e$, $\pi -\e$, $\pi^2-\e^2$, $\pi^2+\e^2$ is rational.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The variables $t$ and $x$ are related by
+ $t=x+ \sqrt{x^2+2bx+c\;} \,$, where $b$ and $c$ are constants
+and $b^2<c$.  Show that 
+\[
+\frac{\d x}{\d t} = \frac{t-x}{t+b}\;,
+\]
+and hence
+ integrate
+$ \ \ds \frac1 {\ \sqrt{x^2+2bx+c} \ }\,$.
+
+Verify by direct integration that your result holds also 
+in the case $b^2=c$ if  $x+b>0$ but that your result 
+does not hold in the case
+$b^2=c$ if $x+b<0\,$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Prove that, if $c\ge a$ and $d\ge b$, then 
+\[
+ab+cd\ge bc+ad\,.
+\tag{$*$}
+\]
+
+\begin{questionparts} 
+\item If $x\ge y$, use $(*)$ to show that $x^2+y^2\ge 2xy\,$.
+
+If, further, $x\ge z$ and $y\ge z$, use $(*)$ to
+ show that $z^2+xy\ge xz+yz$ and deduce 
+that $x^2+y^2+z^2\ge xy+yz+zx\,$. 
+
+Prove that 
+the inequality  $x^2+y^2+z^2\ge xy+yz+zx\,$
+holds for all $x$, $y$ and $z$.
+
+
+
+\item Show similarly that the inequality
+\[\frac st +\frac tr +\frac rs 
++\frac ts +\frac rt +\frac sr 
+\ge 6\]
+ holds for all
+positive $r$, $s$ and $t$.
+
+
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+A function $\f(x)$ is said to be {\em convex} in the interval
+ $a< x < b$
+if $\f''(x)\ge0$ for all $x$ in this interval.
+
+\begin{questionparts}
+\item Sketch on the same axes the graphs of $y= \frac23 \cos^2 x$ and
+  $y=\sin x$ in the interval $0\le x \le 2\pi$.
+
+The function $\f(x)$ is defined for $0<x< 2\pi$ by
+\[\f(x) = \e^{\frac23 \sin x}.
+\]
+Determine the intervals in which $\f(x)$ is convex.
+
+
+ \item 
+The function $\g(x)$ is defined for $0< x< \frac12\pi$ by
+\[\g(x) = \e^{-k \tan x}.
+\]
+If $k=\sin 2 \alpha$ and $0<\alpha< \frac{1}{4}\pi$, show that 
+$\g(x)$ is convex in the interval
+ $0<x<\alpha$, 
+and give one other interval in which $\g(x)$ is convex.
+
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The polynomial  $\p(x)$ is given by
+\[
+\ds \p(x)=  x^n +\sum\limits_{r=0}^{n-1}a_rx^r\,,
+\] 
+where $a_0$, $a_1$, $\ldots$ , $a_{n-1}$ are fixed real
+numbers and $n\ge1$.
+Let
+$M$ be the greatest value of $\big\vert \p(x) \big\vert$ for $\vert x \vert\le
+1$. 
+Then {\em Chebyshev's theorem} states that  $M\ge 2^{1-n}$.
+
+\begin{questionparts}
+\item Prove Chebyshev's theorem in the case $n=1$
+and verify that Chebyshev's theorem holds in the following cases:
+
+{\bf (a)} $ \p(x) = x^2 - \frac12\,$;
+
+{\bf (b)} $\p(x) = x^3 -  x \,$.
+
+\item Use Chebyshev's theorem to show that the curve  
+$ \ y= 64x^5+25x^4-66x^3-24x^2+3x+1
+\ $
+has at least one turning point in the
+  interval
+$-1\le x \le 1$.
+
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+The function $\f$ is defined by
+\[
+\f(x) = \frac{\e^x-1}{\e-1},
+\ \ \ \ \
+x\ge0,
+\]
+and the function $\g$ is the inverse function to $\f$, so that
+$\g(\f(x))=x$. Sketch $\f(x)$ and $\g(x)$ on the same axes.
+
+Verify, by evaluating each integral, that
+\[
+\int_0^\frac12 \f(x) \,\d x + \int_0^k \g(x) \,\d x = \frac1 {2(\sqrt \e
+  +1)}\,,
+\]
+where $\displaystyle k= \frac 1{\sqrt\e+1}$, and explain this result by means of a diagram.
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+The point $P$ has coordinates $(x,y)$ with respect to
+the origin $O$. By writing $x=r\cos\theta$ and $y=r\sin\theta$,
+or otherwise,  show that, if the line $OP$ is rotated by $60^\circ$
+clockwise about $O$, the  new $y$-coordinate of $P$
+is $\frac12(y-\sqrt3\,x)$.
+What is the new $y$-coordinate in the case of an anti-clockwise
+rotation by $60^\circ\,$?
+
+An equilateral triangle $OBC$ has vertices at $O$, $(1,0)$ and 
+$(\frac12,\frac12 \sqrt3)$, respectively. 
+The point $P$ has coordinates
+$(x,y)$. 
+The perpendicular distance from $P$ to the line
+through $C$ and $O$ is $h_1$;  
+the perpendicular distance from $P$ to the line
+through $O$ and $B$ is $h_2$; 
+and the perpendicular distance from $P$ to the line through $B$ and $C$ is
+$h_3$.
+
+Show that 
+$h_1=\frac12 \big\vert y-\sqrt3\,x\big\vert$ and find expressions
+for $h_2$ and $h_3$.
+
+
+Show that $h_1+h_2+h_3=\frac12 \sqrt3$ if and only if $P$ lies on or
+in the triangle $OBC$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+\begin{questionparts}
+\item
+The gradient $y'$ of a curve at a point $(x,y)$ satisfies
+\[
+(y')^2 -xy'+y=0\,.
+\tag{$*$}
+\]
+By differentiating $(*)$ with respect to $x$, show that either
+$y''=0$ or $2y'=x\,$. 
+
+Hence show that the curve is either a straight line of the form
+$y=mx+c$, where $c=-m^2$, or the parabola $4y=x^2$.
+
+\item
+The gradient $y'$ of a curve at a point $(x,y)$ satisfies
+\[
+(x^2-1)(y')^2 -2xyy'+y^2-1=0\,.
+\]
+Show that the curve is either a straight line, the form
+of which you should specify,
+or a circle, the equation of which you should determine.
+
+
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+Two identical particles $P$ and $Q$, each of 
+mass $m$, are attached to the ends of a diameter
+of a light thin circular hoop of radius $a$. 
+The hoop rolls without slipping
+ along a straight line
+on a horizontal table with  the plane of the hoop vertical.
+Initially, $P$ is in contact with 
+the table. At time $t$, the hoop has rotated through an angle
+$\theta$. Write down the position at time $t$ of $P$, relative to its starting
+point, in cartesian coordinates, and  determine its speed in
+terms
+of $a$, $\theta$ and $\dot\theta$. 
+Show that the total 
+kinetic energy of the two particles is $2ma^2\dot\theta^2$.
+
+Given that the only external forces on the system are gravity
+and the vertical reaction of the table on the hoop,
+show that the hoop rolls with constant speed.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+On the (flat) planet Zog, the acceleration due to gravity 
+is $g$ up to height $h$ above the surface and $g'$ at greater heights.
+A particle is projected from the surface at speed $V$ and at an 
+angle $\alpha$ to the surface, where $V^2 \sin^2\alpha > 2 gh\,$.
+Sketch, on the same axes,  the trajectories in the cases $g'=g$
+and $g'<g$.
+
+Show that the particle lands a distance $d$ from the point of
+projection given by
+\[
+d = \left(\frac {V-V'} g + \frac {V'}{  g'}  \right)
+V\sin2\alpha\,,
+\]
+where $V' = \sqrt{V^2-2gh\,\rm{cosec}^2\alpha\,}\,$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A straight uniform rod has mass $m$. Its  ends $P_1$ and 
+$P_2$ are attached to small light rings that are constrained to move
+on a rough rigid circular wire with centre $O$
+fixed in a vertical plane, and the angle
+$P_1OP_2$ is a right angle. 
+The rod
+rests with $P_1$ lower than $P_2$, and with both ends lower than $O$.
+The coefficient
+of friction between each of the rings and the wire is $\mu$.  
+ Given that the rod is in limiting equilibrium (i.e. \  on the point of
+ slipping at both ends),
+show that 
+\[
+\tan \alpha = \frac{1-2\mu -\mu^2}{1+2\mu -\mu^2}\,,
+\]
+where $\alpha$ is the angle between $P_1O$ and the vertical 
+($0<\alpha<45^\circ$).
+
+ Let $\theta$ be 
+the acute angle between the rod and the horizontal.
+Show that $\theta =2\lambda$, where
+$\lambda $ is defined by 
+ $\tan \lambda= \mu$ and   $0<\lambda<22.5^\circ$.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+In this question, you may use without proof the results:
+\[
+ \sum_{r=1}^n r = \tfrac12 n(n+1)
+\qquad\text{and}\qquad
+ \sum_{r=1}^n r^2 = \tfrac1 6 n(n+1)(2n+1)\,.
+\]
+
+
+The independent random variables $X_1$ and $X_2$ each take values
+$1$, $2$, $\ldots$, $N$, each value being equally likely. The random
+variable
+$X$ is defined by
+\[
+X= 
+\begin{cases}
+X_1 & \text { if } X_1\ge X_2\\
+X_2 & \text { if } X_2\ge X_1\;.
+\end{cases}
+\]
+
+\begin{questionparts}
+\item Show that $\P(X=r) = \dfrac{2r-1}{N^2}\,$ for $r=1$, $2$, $\ldots$, $N$.
+
+
+
+\item Find an expression for the expectation, $\mu$,  of $X$ and show
+  that $\mu=67.165$ in the case $N=100$. 
+ \item The  median, $m$, of $X$ is defined to be the integer such that
+$\P(X\ge m) \ge \frac 12$ and $\P(X\le m)\ge \frac12$. Find an expression
+for $m$ in terms of $N$
+and give an explicit value for $m$
+ in the case $N=100$.
+
+\item Show that when $N$ is very large,
+\[
+\frac \mu m
+ \approx \frac {2\sqrt2}3\,.
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Three married couples sit down at a round table at which
+there are six chairs. All of the possible seating  arrangements
+ of the six people
+are equally likely.
+
+\begin{questionparts}
+\item
+Show that the probability that each husband sits next to his wife
+is $\frac{2}{15}$.
+\item
+Find the probability that exactly two husbands sit next to their
+wives.
+\item Find the probability that no husband sits next to his wife.
+\end{questionparts}
+\end{question}
+
+\end{document}

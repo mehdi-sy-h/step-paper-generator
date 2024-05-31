@@ -1,0 +1,552 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2005
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Find the three values of $x$ for which the derivative 
+of $x^2 \e^{-x^2}$ is zero.
+
+Given that $a$ and $b$ are
+distinct positive numbers,
+find a  polynomial $\P(x)$ such that the derivative of
+$\P(x)\e^{-x^2}$ is zero for 
+$x=0$, $x=\pm a$ and $x=\pm b\,$, but for no other values of $x$.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+For any positive integer $N$, the function $\f(N)$ is defined by
+\[
+\f(N) = N\Big(1-\frac1{p_1}\Big)\Big(1-\frac1{p_2}\Big)
+\cdots\Big(1-\frac1{p_k}\Big)
+\]
+where $p_1$, $p_2$, $\dots$ , $p_k$ are the only prime numbers that are factors
+ of $N$. 
+\\
+Thus $\f(80)=80(1-\frac12)(1-\frac15)\,$.
+
+
+\begin{questionparts}
+\item
+\textbf{(a)} \ \  Evaluate $\f(12)$  and $\f(180)$. 
+
+\textbf{(b)} \  
+Show that $\f(N)$ is an integer for all $N$.
+\item Prove, or disprove by means of a counterexample, 
+each of the following:
+
+\textbf{(a)} \ \   $\f(m) \f(n) = \f(mn)\,$;
+
+
+\textbf{(b)} \ $\f(p) \f(q) = \f(pq)$ if $p$ and $q$ are distinct prime numbers;
+
+\textbf{(c)}
+  $\f(p) \f(q) = \f(pq)$ only if $p$ and $q$ are distinct prime numbers.
+\item Find 
+a positive integer $m$ and a prime number $p$ such that
+$\f(p^m) = 146410\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Give a sketch, for  
+$0 \le x \le \frac{1}{2}\pi$, of the curve
+$$
+y = (\sin x - x\cos x)\;,
+$$
+and show that $0\le y \le 1\,$.
+
+Show that:
+\begin{questionparts}
+\item \ \ $\displaystyle
+\int_0^{\frac{1}{2}\pi}\,y\;\d x = 2 -\frac \pi 2 \;;
+$
+\item \ \ $\displaystyle
+\int_0^{\frac{1}{2}\pi}\,y^2\,\d x = \frac{\pi^3}{48}-\frac \pi 8 \;.
+$
+\end{questionparts}
+
+Deduce that
+$\pi^3 +18 \pi< 96\,$.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The positive numbers $a$, $b$ and $c$ satisfy
+$bc=a^2+1$. Prove that
+$$
+\arctan\left(\frac1  {a+b}\right)+
+\arctan\left(\frac1 {a+c}\right)=
+\arctan\left(\frac1 a   \right).
+$$
+
+The positive numbers $p$, $q$, $r$, $s$, $t$, $u$ and $v$ satisfy
+$$
+st = (p+q)^2 + 1 \;, \ \ \ \ \ \ uv=(p+r)^2 + 1 \;, \ \ \ \ \ \ 
+qr = p^2+1\;.
+$$
+Prove that 
+$$
+\arctan  \! \!\left(\!\frac1 {p+q+s}\!\right)  + 
+\arctan  \! \!\left(\!\frac 1{p+q+t}\!\right)   + 
+\arctan  \! \!\left(\!\frac 1 {p+r+u}\!\right)  + 
+\arctan  \! \!\left(\!\frac1  {p+r+v}\!\right) 
+=\arctan \! \!\left(    \! \frac1 p \! \right) .
+$$ 
+
+Hence show that
+$$
+\arctan\left(\frac1  {13}\right)
++\arctan\left(\frac1 {21}\right)
++\arctan\left(\frac1  {82}\right)
++\arctan\left(\frac1 {187}\right)
+=\arctan\left(\frac1  {7}\right).
+$$
+[\,Note that $\arctan x$ is another notation for $ \tan^{-1}x \,.\,$] 
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+ The angle $A$ of triangle $ABC$ is a right angle and the sides
+$BC$, $CA$ and $AB$ are  of lengths $a$, $b$ and $c$,
+respectively.  
+Each side of the triangle is  tangent to the circle $S_1$ which is
+of radius $r$.
+Show that $2r = b+c-a$.
+
+
+
+Each vertex of the triangle 
+lies on the circle~$S_2$.
+The ratio of  the area  of the  region between~$S_1$ 
+and the triangle to the area of $S_2$ is denoted by $R\,$. 
+Show that 
+$$
+\pi R = -(\pi-1)q^2 + 2\pi q -(\pi+1) \;,
+$$
+where  $q=\dfrac{b+c}a\,$.
+Deduce that 
+$$
+R\le \frac1 {\pi( \pi - 1)} \;.
+$$
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item  Write down the general term in the expansion
+in  powers of $x$ 
+of  $(1-x)^{-1}$,  $(1-x)^{-2}$ and   $(1-x)^{-3}$, where
+ $\vert x \vert <1\,$.
+
+Evaluate \
+$\ds \sum_{n=1}^\infty n 2^{-n}\;$ \ 
+and \ \
+$\ds \sum_{n=1}^\infty n^22^{-n}\;$.
+
+\item   Show that 
+\ 
+$\ds (1-x)^{-\frac12} = \sum_{n=0}^\infty \frac{(2n)!}{(n!)^2} \, 
+\frac{x^n}{2^{2n}}\,$, \ for $\vert x \vert <1\,$.
+
+Evaluate \
+  $\ds \sum_{n=0}^\infty \frac{(2n)!} {(n!)^2 2^{2n}3^{n}}\; $ \ and \ \ 
+$\ds \sum_{n=1}^\infty \frac{n(2n)!} {(n!)^2 2^{2n}3^{n}}\; $.
+
+
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+The position vectors, relative to an origin $O$,
+at time $t$  of the particles $P$ and $Q$ are
+$$\cos t \; {\bf i} + \sin t\;{\bf j} + 0 \; {\bf k}
+\hbox{ \ \ \ \ \ \ and \ \ \ \ \ \ }
+ \cos (t+\tfrac14{\pi})\, \big[{\tfrac32}{\bf i} + 
+{ \tfrac  {3\sqrt{3}}2} {\bf k}\big]
++
+3\sin(t+\tfrac14{\pi}) \; {\bf j}\;,$$ 
+respectively, where $0\le t \le 2\pi\,$.
+
+
+\begin{questionparts}
+\item
+Give a geometrical description of the motion of $P$ and $Q$.
+
+\item
+Let $\theta$ be the angle $POQ$ at time $t$ that satisfies 
+$0\le\theta\le\pi\,$. Show that
+\[
+\cos\theta = \tfrac{3\surd2}{8} -\tfrac14 \cos( 2t +\tfrac14 \pi)\;.
+\]
+
+
+\item  Show that 
+the total time  for which 
+$\theta \ge \frac14 \pi$ is $\tfrac32 \pi\,$.
+
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+For $x \ge 0$ the curve $C$ is defined by 
+$$
+{\frac{\d y} {\d x}} = \frac{x^3y^2}{(1 + x^2)^{5/2}}
+$$
+with $y = 1$ when $x=0\,$. Show that  
+\[
+\frac 1 y = \frac {2+3x^2}{3(1+x^2)^{3/2}} +\frac13
+\]
+and hence 
+that for large positive $x$ 
+$$
+y \approx 3 - \frac 9 x\;.
+$$ 
+Draw a sketch of $C$.
+
+On a separate diagram draw a sketch of the two curves 
+defined for $x \ge 0$ by
+$$
+\frac {\d z} {\d x} = \frac{x^3z^3}{2(1 + x^2)^{5/2}}
+$$
+with $z = 1$ at $x=0$ on one curve, and
+$z = -1$ at $x=0$ on the other. 
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+ Two particles, $A$ and $B$,  of masses $m$ and $2m$,
+respectively, are placed on a line of greatest slope, $\ell$, of a 
+rough inclined plane which makes
+an angle of $30^{\circ}$ with the horizontal. The coefficient
+of friction between $A$ and the plane is $\frac16\sqrt{3}$ 
+and the coefficient of 
+friction between $B$ and the plane is $\frac13 \sqrt{3}$. 
+The particles  are at rest with
+$B$ higher up $\ell$ than $A$ and are connected by a light inextensible string 
+which is taut. A force $P$ is applied to $B$.
+
+\begin{questionparts}
+\item Show that the least magnitude of $P$ for which 
+the two particles move upwards along $\ell$ is 
+$\frac{11}8 \sqrt{3}\, mg$ and give, in this case,
+ the direction in which $P$ acts.
+
+\item Find the least magnitude of $P$ for which the particles
+do not slip downwards along~$\ell$.
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+ The points $A$ and $B$ are $180$ metres apart and lie 
+ on  horizontal ground. 
+A missile is launched  from $A$ 
+at  speed of $100\,$m\,s$^{-1}$ and at an
+acute angle of elevation to the 
+line $AB$ of $\arcsin \frac35$. A time $T$ seconds later,
+an anti-missile missile  is launched from $B$, 
+at speed of $200\,$m\,s$^{-1}$ 
+and at an acute 
+angle of elevation to the line $BA$ of $\arcsin \frac45$.    
+The motion of both missiles
+takes place in the vertical plane containing $A$ and $B$, and the 
+missiles collide.
+
+Taking $g =10\,$m\,s$^{-2}$ and ignoring air resistance,
+find $T$.
+
+\noindent
+[Note that $\arcsin \frac35$ is another notation for $\sin^{-1} \frac35\,$.]
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A plane is   inclined at an 
+angle $\arctan \frac34$ to the horizontal and 
+ a small, smooth, light pulley~$P$ 
+is fixed to the top of the  plane.  A string, $APB$, passes over the pulley.
+A particle  of mass~$m_1$ 
+is attached to  the string at $A$ and rests on the inclined plane with $AP$ 
+parallel to a line of greatest slope in the plane. 
+A particle of mass $m_2$, where $m_2>m_1$,
+ is attached to the string at $B$ 
+and hangs freely with $BP$ 
+vertical. The coefficient of 
+friction between the particle at $A$ 
+and the plane is $ \frac{1}{2}$.  
+ 
+The system is released from rest with the string taut. 
+Show that the acceleration of the 
+particles is $\ds \frac{m_2-m_1}{m_2+m_1}g$. 
+ 
+At a time $T$ after release, the string breaks.
+Given that the particle at $A$
+does not reach the pulley at any point in its motion,
+find an expression  in terms of $T$ for the time 
+after release at which the particle at $A$ 
+reaches its maximum height. It is found that, regardless 
+of when the string broke, this time is equal to the time 
+taken by the particle at $A$  to descend 
+from its point of maximum height to the point 
+at which it was released. Find the ratio $m_1 : m_2$.  
+
+\noindent
+[Note that $\arctan \frac34$ is another notation for $\tan^{-1} \frac34\,$.]
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+ The twins Anna and Bella share a computer and never sign their e-mails.
+ When I e-mail them, only the twin
+currently online responds.  The
+ probability that it is Anna who is online is $p$ and she answers each
+ question I ask her truthfully with probability $a$, independently of all her
+ other answers, even if a question is repeated. The probability that it is
+ Bella  who is online is~$q$, where $q=1-p$, and she answers each question
+ truthfully with probability $b$, independently of all her other answers,
+ even if a question is repeated.
+
+\begin{questionparts}
+\item
+I send the twins the  e-mail: 
+`Toss a fair coin and answer the following  question. 
+Did the coin come down heads?'. I receive the answer `yes'.
+Show that the probability that the coin
+did come down heads is $\frac{1}{2}$ if and
+only if  $2(ap+bq)=1$.
+
+\item
+I send the twins the e-mail: 
+`Toss a fair coin and answer  the following question. 
+Did the coin come down heads?'. I receive the answer `yes'.
+I then send the e-mail: `Did the coin come down heads?' and I receive
+the answer `no'. Show that the probability (taking into
+account these answers) that the coin did come down heads is $\frac{1}{2}\,$.
+
+\item
+I send the twins the e-mail: `Toss a fair coin and answer the following
+question. Did the coin come down heads?'. I receive the answer `yes'.
+I then send the e-mail: `Did the coin come down heads?' and I receive
+the answer `yes'. Show that, if $2(ap+bq)=1$,
+the probability (taking into account these answers) that the coin did
+come down heads is $\frac{1}{2}\,$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+The number of printing errors on any page of a large book of $N$ pages is 
+modelled by a 
+Poisson variate with parameter $\lambda$ and is statistically 
+independent of the number of printing errors on any other page. The number
+of pages in a random sample of $n$ pages (where $n$ is much smaller than $N$
+ and $n\ge2$)
+which contain fewer than two errors is denoted by $Y$.
+ Show that  $\P(Y=k) = \binom n k p^kq^{n-k}$ where 
+$p=(1+\lambda)e^{-\lambda}$ and $q=1-p\,$.
+
+Show also that, if $\lambda$ is sufficiently small, 
+\begin{questionparts}
+\item $q\approx \frac12 \lambda^2\,$;
+\item the largest value of 
+$n$ for which $\P(Y=n)\ge 1-\lambda$ is approximately $2/\lambda\,$;
+\item $
+\P(Y>1 \;\vert\; Y>0) \approx 1-n(\lambda^2/2)^{n-1}\;.$
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+The probability density function $\f(x)$
+of the random variable $X$ is given by
+$$
+\f(x) = k\left[{\phi}(x) + {\lambda}\g(x)\right],\,\,\,\,
+$$
+where 
+${\phi}(x)$ is the probability density function  
+of a normal variate with mean~0 and variance~1, 
+$\lambda $ is a positive constant, and $\g(x)$ is a probability density function defined by
+\[
+\g(x)=
+\begin{cases}
+1/\lambda  & \mbox{for $0 \le x \le {\lambda}$}\,;\\
+             0& \mbox{otherwise} .
+\end{cases}
+\]
+Find $\mu$, the mean of $X$, in terms of $\lambda$, and prove that 
+$\sigma$, the standard deviation of $X$, satisfies.
+$$
+\sigma^2 = \frac{\lambda^4 +4{\lambda}^3+12{\lambda}+12} 
+         {12(1 + \lambda )^2}\;.
+$$ 
+
+In  the case $\lambda=2$:
+\begin{questionparts}
+\item draw a sketch of the curve $y=\f(x)$;
+\item express the cumulative distribution function of $X$ in terms of $\Phi(x)$,
+the cumulative distribution function corresponding to $\phi(x)$;
+\item evaluate $\P(0<X<\mu+2\sigma)$, given that 
+$\Phi (\frac 23 + \frac23 \surd7)=0.9921$. 
+
+
+\end{questionparts}
+\end{question}
+	
+\end{document}

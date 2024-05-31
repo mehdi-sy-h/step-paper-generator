@@ -1,0 +1,424 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1994
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{pst-coil}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+My house has an attic consisting of a horizontal rectangular base
+of length $2q$ and breadth $2p$ (where $p<q$) and four plane roof
+sections each at angle $\theta$ to the horizontal. Show that the
+length of the roof ridge is independent of $\theta$ and find the
+volume of the attic and the surface area of the roof.  
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Given that $a$ is constant, differentiate the following expressions
+with respect to $x$: 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  $x^{a}$; 
+\item[\bf (ii)] $a^{x}$; 
+\item[\bf (iii)] $x^{x}$; 
+\item[\bf (iv)] $x^{(x^{x})}$;
+\item[\bf (v)] $(x^{x})^{x}.$
+\end{itemize}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+By considering the coefficient of $x^{n}$ in the identity $(1-x)^{n}(1+x)^{n}=(1-x^{2})^{2n},$
+or otherwise, simplify 
+\[
+\binom{n}{0}^{2}-\binom{n}{1}^{2}+\binom{n}{2}^{2}-\binom{n}{3}^{2}+\cdots+(-1)^{n}\binom{n}{n}^{2}
+\]
+in the cases \textbf{(i) }when $n$ is even, \textbf{(ii) }when $n$
+is odd. 
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Show that 
+\begin{questionparts}
+\item $\dfrac{1-\cos\alpha}{\sin\alpha}=\tan\frac{1}{2}\alpha,$ 
+\item  if $\left|k\right|<1$ then ${\displaystyle \int\frac{\mathrm{d}x}{1-2kx+x^{2}}=\frac{1}{\sqrt{1-k^{2}}}\tan^{-1}\left(\frac{x-k}{\sqrt{1-k^{2}}}\right)+C,}$
+where $C$ is a constant of integration. 
+\end{questionparts}
+Hence, or otherwise, show that if $0<\alpha<\pi$ then 
+\[
+\int_{0}^{1}\frac{\sin\alpha}{1-2x\cos\alpha+x^{2}}\,\mathrm{d}x=\frac{\pi-\alpha}{2}.
+\]
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+A parabola has the equation $y=x^{2}.$ The points $P$ and $Q$ with
+coordinates $(p,p^{2})$ and $(q,q^{2})$ respectively move on the
+parabola in such a way that $\angle POQ$ is always a right angle. 
+\begin{questionparts}
+\item Find and sketch the locus of the midpoint $R$ of the chord
+$PQ.$ 
+\item Find and sketch the locus of the point $T$ where the tangents
+to the parabola at $P$ and $Q$ intersect. 
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+The function $\mathrm{f}$ is defined, for any complex number $z$,
+by 
+\[
+\mathrm{f}(z)=\frac{\mathrm{i}z-1}{\mathrm{i}z+1}.
+\]
+Suppose throughout that $x$ is a real number. 
+
+\begin{questionparts}
+\item Show that 
+\[
+\mathrm{Re}\,\mathrm{f}(x)=\frac{x^{2}-1}{x^{2}+1}\qquad\mbox{ and }\qquad\mathrm{Im}\,\mathrm{f}(x)=\frac{2x}{x^{2}+1}.
+\]
+\item Show that $\mathrm{f}(x)\mathrm{f}(x)^{*}=1,$ where $\mathrm{f}(x)^{*}$
+is the complex conjugate of $\mathrm{f}(x)$. 
+\item Find expressions for $\mathrm{Re}\,\mathrm{f}(\mathrm{f}(x))$
+and $\mathrm{Im}\,\mathrm{f}(\mathrm{f}(x)).$ 
+\item Find $\mathrm{f}(\mathrm{f}(\mathrm{f}(x))).$ 
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+From the facts 
+\begin{alignat*}{2}
+1 & \quad=\quad &  & 0\\
+2+3+4 & \quad=\quad &  & 1+8\\
+5+6+7+8+9 & \quad=\quad &  & 8+27\\
+10+11+12+13+14+15+16 & \quad=\quad &  & 27+64
+\end{alignat*}
+guess a general law. Prove it. 
+
+
+Hence, or otherwise, prove that 
+\[
+1^{3}+2^{3}+3^{3}+\cdots+N^{3}=\tfrac{1}{4}N^{2}(N+1)^{2}
+\]
+for every positive integer $N$. 
+
+{[}\textbf{Hint. }\textit{You may
+assume that $1+2+3+\cdots+n=\frac{1}{2}n(n+1)$.}{]} 
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+By means of the change of variable $\theta=\frac{1}{4}\pi-\phi,$
+or otherwise, show that 
+\[
+\int_{0}^{\frac{1}{4}\pi}\ln(1+\tan\theta)\,\mathrm{d}\theta=\tfrac{1}{8}\pi\ln2.
+\]
+Evaluate 
+\[
+{\displaystyle \int_{0}^{1}\frac{\ln(1+x)}{1+x^{2}}\,\mathrm{d}x}\qquad\mbox{ and }\qquad{\displaystyle \int_{0}^{\frac{1}{2}\pi}\ln\left(\frac{1+\sin x}{1+\cos x}\right)\,\mathrm{d}x}.
+\]
+\end{question}	
+	
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+%%%%%%%%%% Q9
+\begin{question}
+A cannon-ball is fired from a cannon at an initial speed $u$. After
+time $t$ it has reached height $h$ and is at a distance $\sqrt{x^{2}+h^{2}}$
+from the cannon. Ignoring air resistance, show that 
+\[
+\tfrac{1}{4}g^{2}t^{4}-(u^{2}-gh)t^{2}+h^{2}+x^{2}=0.
+\]
+Hence show that if $u^{2}>2gh$ then the horizontal range for a given
+height $h$ and initial speed $u$ is less than or equal to 
+\[
+\frac{u\sqrt{u^{2}-2gh}}{g}.
+\]
+Show that there is always an angle of firing for which this value
+is attained. 
+\end{question}
+
+%%%%%%%%%% Q10
+\begin{question}
+One end $A$ of a light elastic string of natural length $l$ and
+modulus of elasticity $\lambda$ is fixed and a particle of mass $m$
+is attached to the other end $B$. The particle moves in a horizontal
+circle with centre on the vertical through $A$ with angular velocity
+$\omega.$ If $\theta$ is the angle $AB$ makes with the downward
+vertical, find an expression for $\cos\theta$ in terms of $m,g,l,\lambda$
+and $\omega.$
+
+
+Show that the motion described is possible only if 
+\[
+\frac{g\lambda}{l(\lambda+mg)}<\omega^{2}<\frac{\lambda}{ml}.
+\]
+\end{question}
+	
+%%%%%%%%%% Q11
+\begin{question}
+ $\,$
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.2,-0.26)(7.1,4.4)
+\pscircle[fillcolor=black,fillstyle=solid,opacity=0.4](5,4){0.19}
+\psline(-2,0)(7,0)
+\psline(0,0)(5,4)
+\psline(5,4)(5,0)
+\psline(-0.08,0.26)(4.88,4.15)
+\rput[tl](-0.4,0.98){$A$}
+\rput[tl](5.59,3){$B$}
+\psline(5.18,4.02)(5.18,3)
+\begin{scriptsize}
+\psdots[dotsize=13pt 0,dotstyle=*](-0.08,0.23)
+\psdots[dotsize=11pt 0,dotstyle=*](5.18,3)
+\end{scriptsize}
+\end{pspicture*}
+\par
+\end{center}
+
+
+The diagram shows a small railway wagon $A$ of mass $m$ standing
+at the bottom of a smooth railway track of length $d$ inclined at
+an angle $\theta$ to the horizontal. A light inextensible string,
+also of length $d$, is connected to the wagon and passes over a light
+frictionless pulley at the top of the incline. On the other end of
+the string is a ball $B$ of mass $M$ which hangs freely. The system
+is initially at rest and is then released. 
+
+
+\begin{questionparts}
+
+
+\item Find the condition which $m,M$ and $\theta$ must satisfy
+to ensure that the ball will fall to the ground. Assuming that this
+condition is satisfied, show that the velocity $v$ of the ball when
+it hits the ground satisfies 
+\[
+v^{2}=\frac{2g(M-m\sin\theta)d\sin\theta}{M+m}.
+\]
+
+
+
+\item Find the condition which $m,M$ and $\theta$ must satisfy
+if the wagon is not to collide with the pulley at the top of the incline.
+\end{questionparts}
+	\end{question}
+	
+
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+%%%%%%%%%% Q12
+\begin{question}	
+There are 28 colleges in Cambridge, of which two (New Hall and Newnham)
+are for women only; the others admit both men and women. Seven women,
+Anya, Betty, Celia, Doreen, Emily, Fariza and Georgina, are all applying
+to Cambridge. Each has picked three colleges at random to enter on
+her application form. 
+
+
+\begin{itemize}[indent]
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  What is the probability that Anya's first choice college is
+single-sex?
+\item[\bf (ii)] What is the probability that Betty has picked Newnham?
+\item[\bf (iii)] What is the probability that Celia has picked at least one
+single-sex college?
+\item[\bf (iv)] Doreen's first choice is Newnham. What is the probability that
+one of her other two choices is New Hall?
+\item[\bf (v)] Emily has picked Newnham. What is the probability that she
+has also picked New Hall?
+\item[\bf (vi)] Fariza's first choice college is single-sex. What is the probability
+that she has also chosen the other single-sex college?
+\item[\bf (vii)] One of Georgina's choices is a single-sex college. What is
+the probability that she has also picked the other single-sex college?
+\end{itemize}
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+I have a bag containing $M$ tokens, $m$ of which are red. I remove
+$n$ tokens from the bag at random without replacement. Let 
+\[
+X_{i}=\begin{cases}
+1 & \mbox{ if the \ensuremath{i}th token I remove is red;}\\
+0 & \mbox{ otherwise.}
+\end{cases}
+\]
+Let $X$ be the total number of red tokens I remove. 
+\begin{itemize}[indent]
+\setlength{\itemsep}{3mm}
+
+\item[\bf (i)] Explain briefly why $X=X_{1}+X_{2}+\cdots+X_{n}.$
+\item[\bf (ii)] Find the expectation $\mathrm{E(}X_{i}).$
+\item[\bf (iii)] Show that $\mathrm{E}(X)=mn/M$. 
+\item[\bf (iv)] Find $\mathrm{P}(X=k)$ for $k=0,1,2,\ldots,n$. 
+\item[\bf (v)] Deduce that 
+\[
+\sum_{k=1}^{n}k\binom{m}{k}\binom{M-m}{n-k}=m\binom{M-1}{n-1}.
+\]
+\end{itemize}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+Each of my $n$ students has to hand in an essay to me. Let $T_{i}$
+be the time at which the $i$th essay is handed in and suppose that
+$T_{1},T_{2},\ldots,T_{n}$ are independent, each with probability
+density function $\lambda\mathrm{e}^{-\lambda t}$ ($t\geqslant0$).
+Let $T$ be the time I receive the first essay to be handed in and
+let $U$ be the time I receive the last one. 
+\begin{questionparts}
+\item Find the mean and variance of $T_{i}.$
+\item Show that $\mathrm{P}(U\leqslant u)=(1-\mathrm{e}^{-\lambda u})^{n}$
+for $u\geqslant0,$ and hence find the probability density function
+of $U$. 
+\item Obtain $\mathrm{P}(T>t),$ and hence find the probability density
+function of $T$. 
+\item Write down the mean and variance of $T$. 
+\end{questionparts}
+\end{question}
+\end{document}

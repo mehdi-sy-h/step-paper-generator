@@ -1,0 +1,609 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2011
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+\item
+Find the general solution of the differential equation
+\[
+\frac{\d u}{\d x} - \left(\frac { x +2}{x+1}\right)u =0\,.
+\]
+
+\item Show that substituting
+$y=z\e^{-x}$ (where $z$ is a function of $x$) into the 
+second order differential equation
+\[
+(x+1) \frac{\d ^2 y}{\d x^2} + x \frac{\d y}{\d x} -y = 0
+\tag{$*$}
+\]
+leads to a first order differential equation for $\dfrac{\d z}{\d x}\,$.
+Find $z$ and hence show that the general solution of $(*)$ is 
+\[
+y= Ax + B\e^{-x}\,,
+\]
+where $A$ and $B$ are arbitrary constants.
+
+\item Find the general solution of the differential equation
+\[
+(x+1) \frac{\d ^2 y}{\d x^2} + x \frac{\d y}{\d x} -y = 
+(x+1)^2                                                             .
+\]
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The polynomial $\f(x)$ is defined by
+\[
+\f(x) =   x^n + a_{\low{n-1}}x^{n-1}
+  + \cdots +     a_{\low2} x^2+  a_{\low1} x + a_{\low0}\,,
+\]
+where $n\ge2$ and the coefficients $a_{\low0}$, $\ldots,$ $a_{\low{n-1}}$ 
+are integers, with $a_0\ne0$. 
+ Suppose that the equation $\f(x)=0$ has a rational root
+$p/q$, where $p$ and $q$ are integers
+with no common factor greater than $1$, and $q>0$. 
+By considering $q^{n-1}\f(p/q)$,
+find the value of $q$ and deduce that any rational root of 
+the equation $\f(x)=0$ must be an integer.
+
+\begin{questionparts}
+\item Show that the $n$th root of $2$ is irrational for $n\ge2$.
+
+\item Show that 
+ the cubic equation 
+\[
+x^3- x +1 =0
+\]
+has no rational roots.
+\item
+Show that 
+the polynomial equation 
+\[
+x^n- 5x +7 =0
+\]
+has no rational roots for $n\ge2$.
+
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Show that, provided $q^2\ne 4p^3$,
+ the polynomial 
+\[
+\hphantom{(p\ne0, \ q\ne0)\hspace{2cm}}
+x^3-3px +q
+\hspace {2cm} (p\ne0, \ q\ne0)
+\]
+ can be written in the 
+form 
+\[ a(x-\alpha)^3 + b(x-\beta)^3\,,
+\]
+where $\alpha$ and $\beta$ are the roots of the quadratic equation
+$pt^2 -qt +p^2=0$, and $a$ and $b$ are constants which you should
+express in terms of $\alpha$ and $\beta$.
+
+Hence show that one solution of 
+ the equation $x^3-24x+48=0\,$ is
+\[
+x= \frac{2 (2-2^{\frac13})}{1-2^{\frac13}}
+\]
+and obtain similar expressions for the other two solutions
+in
+terms of $\omega$,  where $\omega = \mathrm{e}^{2\pi\mathrm{i}/3}\,$.
+ 
+
+Find also the roots of
+$x^3-3px +q=0$
+when 
+$p=r^2$ and $q= 2r^3$ for some non-zero constant $r$.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The following result applies to any
+ function $\f$ 
+which is continuous, has positive  gradient  and satisfies
+$\f(0)=0\,$:
+\[
+ab\le \int_0^a\f(x)\, \d x + \int_0^b \f^{-1}(y)\, \d y\,,
+\tag{$*$}\]
+where  $\f^{-1}$ denotes the inverse function of $\f$, and  
+$a\ge  0$ and $b\ge  0$.
+
+
+
+\begin{questionparts}
+\item
+By considering the graph of $y=\f(x)$, explain briefly why
+the inequality $(*)$ holds.
+
+In the case $a>0$ and $b>0$,
+state a condition on $a$ and $b$ under which  equality  holds.
+\item
+By taking $\f(x) = x^{p-1}$ in $(*)$, where $p>1$, show that if
+$\displaystyle \frac 1p + \frac 1q =1$ then 
+\[
+ab \le \frac{a^p}p + \frac{b^q}q\,.
+\]
+Verify that equality holds under the condition you stated above.
+
+\item
+Show that, for $0\le a \le  \frac12 \pi$ and $0\le b \le 1$,  
+\[
+ab \le  b\arcsin b + \sqrt{1-b^2} \, - \cos a\,.
+\]
+Deduce that,  
+for $t\ge1$, 
+\[
+\arcsin (t^{-1})  \ge t - \sqrt{t^2-1}\,.
+\]
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q5
+\begin{question}
+A  movable  point $P$ has cartesian coordinates $(x,y)$, where 
+$x$ and $y$ are functions of $t$.  The polar coordinates of 
+$P$ with respect to the origin $O$ are $r$ and $\theta$. 
+Starting with the expression 
+\[
+\tfrac12 \int r^2 \, \d \theta
+\] for the area swept out by $OP$, obtain the equivalent expression
+\[
+\tfrac12 \int \left( x\frac{\d y}{\d t} - y \frac{\d x}{\d t}\right)\d t
+\,.
+\tag{$*$}
+\]
+
+The ends of a thin  straight rod $AB$ lie on a closed
+convex curve $\cal C$. The point $P$ on the rod is a fixed 
+distance $a$ from 
+$A$ and a fixed distance $b$ from $B$. 
+The angle between 
+$AB$ and the positive $x$ direction  is $t$. 
+As $A$ and $B$ move anticlockwise round $\cal C$, the angle $t$ increases
+ from $0$ to $2\pi$
+and  $P$ traces
+a closed convex curve $\cal D$ inside $\cal C$, 
+with the origin $O$ lying inside $\cal D$, as shown in the diagram. 
+
+\noindent
+\begin{center}
+\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-3.1,-3.45)(9.16,7.38)	
+\psbezier(0.04,2.13)(-0.22, 3.77)(2.63, 4.87)(3.63, 4.35)
+\psbezier(3.63, 4.35)(4.97, 3.75)(7.09, 1.81)(5.59, 0.23)
+\psbezier(0.04, 2.13)(0.05, 0.29)(3.37, -1.84)(5.59, 0.23)
+\rput{0.2}(3,1.95){\psellipse(0,0)(4.32,3.27)}
+\psline[linewidth=1.6pt](-1.11,0.95)(1.98,5.12)
+\psline{->}(-2.65,1.27)(8.54,1.27)
+\psline{->}(3.79,-3.49)(3.81,6.8)
+\rput[tl](1.31,3.78){$P$}
+\rput[tl](1.24,4.89){$b$}
+\rput[tl](-0.65,2.41){$a$}
+\rput[tl](1.87,5.65){$B$}
+\rput[tl](-1.6,0.95){$A$}
+\rput[tl](3.26,1.11){$O$}
+\rput[tl](5.65,3.17){$\mathcal{D}$}
+\rput[tl](6.73,4.22){$\mathcal{C}$}
+\pscustom[linewidth=0.2pt]{\parametricplot{-0.001127872300442774}{0.9332580339440653}{0.87*cos(t)+-0.87|0.87*sin(t)+1.28}\lineto(-0.87,1.28)\closepath}
+\rput[tl](-0.45,1.7){$t$}
+\rput[tl](3.72,7.25){$y$}
+\rput[tl](8.6,1.4){$x$}
+\begin{scriptsize}
+\psdots[dotsize=5pt 0,dotstyle=*](1.09,3.93)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+Let $(x,y)$ be the coordinates of $P$. Write down the 
+coordinates of $A$ and $B$ in terms of $a$, $b$, $x$, $y$ and $t$.
+
+
+The areas swept out by $OA$, $OB$ and $OP$ are
+denoted by $[A]$, $[B]$ and $[P]$, respectively. 
+Show, using $(*)$, that 
+\[
+[A] = [P] +\pi a^2 - af
+\]
+where 
+\[
+f = \tfrac12 \int _0^{2\pi} \left(
+ \Big(x+\frac{\d y}{\d t}\Big)\cos t
++
+  \Big(y- \frac{\d x}{\d t}\Big)\sin t
+\right) \d t\,.
+\]
+Obtain a corresponding expression for $[B]$ involving $b$. Hence show that
+the area between the curves $\cal C$ and $\cal D$ is $\pi ab$.
+\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+The definite integrals $T$, $U$, $V$ and $X$ are defined by
+\begin{align*}
+T&= \int_{\frac13}^{\frac12} \frac{{\rm artanh}\, t}t \,\d t\,, & 
+U&=  \int _{\ln 2 }^{\ln 3 } \frac{u}{2\sinh u}\, \d u \,, \\[3mm]
+V&= - \int_{\frac13}^{\frac12} \frac{\ln v}{1-v^2} \,\d v \,, &
+X&=  \int _{\frac12\ln2}^{\frac12\ln3} \ln ({\coth x})\, \d x\,.
+\end{align*}
+Show, without evaluating any of them, that $T$, $U$, $V$ and $X$ are
+all equal.
+\end{question}
+		
+%%%%%%%%% Q7
+\begin{question}
+Let
+\[
+T _n    = 
+\left( \sqrt{a+1} + \sqrt a\right)^n\,,
+\]
+where $n$ is a positive integer and $a$ is any given positive integer.
+\begin{questionparts}
+\item
+In the case when $n$ is even, show
+ by induction  that  
+$T_n$ can be written in the form
+\[
+A_n +B_n \sqrt{a(a+1)}\,,
+\]
+ where
+$A_n$ and $B_n$ are integers (depending on $a$ and $n$)
+and $A_n^2 =a(a+1)B_n^2 +1$.
+
+\item In the case when $n$ is odd, show by considering
+$(\sqrt{a+1} +\sqrt a)T_m$ where $m$ is even, or otherwise,
+that  $T_n$ 
+can be written in the form
+\[
+C_n \sqrt {a+1} + D_n \sqrt a \,,
+\]
+where $C_n$ and $D_n$ are integers (depending on $a$ and $n$) and 
+$ (a+1)C_n^2 = a D_n^2 +1\,$.
+
+\item Deduce that, for each $n$, $T_n$ can be written
+as the sum of the square roots of two consecutive integers.
+
+\end{questionparts}
+\end{question}	
+
+%%%%%%%%% Q8
+\begin{question}
+The complex numbers $z$ and $w$ are related by
+\[
+w= \frac{1+\mathrm{i}z}{\mathrm{i}+z}\,.
+\]
+Let $z=x+\mathrm{i}y$ and $w=u+\mathrm{i}v$, 
+where $x$, $y$, $u$ and $v$ are real. 
+Express $u$ and $v$ in terms of $x$ and $y$.
+\begin{questionparts}
+\item 
+By setting $x=\tan(\theta/2)$, or otherwise,
+show that if the locus of $z$ is the real axis $y=0$, $-\infty<x<\infty$,
+then the locus of $w$ is the circle $u^2+v^2=1$ with one point
+omitted.
+\item Find the locus of $w$ when the locus of $z$ is 
+the line segment $y=0$, $-1<x<1\,$.
+\item Find the locus of $w$ when the locus of $z$ is 
+the line segment $x=0$, $-1<y<1\,$.
+\item Find the locus of $w$ when the locus of $z$ is 
+the line $y=1$, $-\infty<x<\infty\,$. 
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+Particles $P$ and $Q$ have masses
+$3m$ and $4m$, respectively. They
+lie on the outer curved surface of a~smooth 
+circular cylinder of radius~$a$
+which is fixed with its axis horizontal.
+They are connected by a light inextensible 
+string of length $\frac12 \pi a$, which passes over the 
+surface of the cylinder. The particles and the string all lie
+in a vertical plane perpendicular to the axis of the cylinder,
+and the axis intersects this plane at $O$.
+Initially, the particles are in equilibrium.
+
+Equilibrium is slightly disturbed and $Q$  begins to
+move downwards. Show that while the two particles
+are still in contact with the cylinder the angle $\theta$
+between $OQ$ and
+the vertical satisfies
+\[
+7a\dot\theta^2 +8g \cos\theta + 6 g\sin\theta =   10g\,.
+\]
+
+\begin{questionparts}
+\item
+Given that $Q$ loses contact with 
+the cylinder first, show that  it does so when~$\theta=\beta$,
+where $\beta$ satisfies 
+
+\[
+15\cos\beta +6\sin\beta =10.
+\] 
+
+\item
+Show also that while $P$ and $Q$ are still in contact 
+with the cylinder 
+the tension in the string is $\frac {12}7 mg(\sin\theta
++\cos\theta)\,$.
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+Particles $P$ and $Q$, each of mass $m$, lie initially at rest
+ a distance $a$ apart on a smooth horizontal plane.
+They are connected by a light elastic string of natural
+length $a$ and modulus of elasticity
+$\frac12 m a \omega^2$, where $\omega$ is a constant.
+ 
+Then $P$ receives an impulse which gives it a 
+velocity $u$ directly away from $Q$. Show that when the string 
+next returns to length $a$, the particles have travelled
+a distance $\frac12 \pi u/\omega\,$, and find the speed of 
+each particle. 
+
+Find also the total time between the impulse and the subsequent 
+collision of the particles.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A thin uniform circular disc of radius $a$ and mass $m$ is held
+in equilibrium in a horizontal plane a distance $b$ below a horizontal
+ceiling, where $b>2a$. It is held in this way by $n$ light
+inextensible vertical strings, each of length $b$; one end of 
+each string is attached to the edge of the disc and the other end is
+attached to a point on the ceiling. The strings are equally 
+spaced around the edge of the disc.
+One of the strings is attached to the point $P$ on the disc
+which has coordinates
+$(a,0,-b)$ with respect to 
+cartesian axes with origin on the ceiling directly above the
+centre of the disc.
+
+
+The disc is then rotated through an angle $\theta$ (where $\theta<\pi$)
+about its vertical axis of symmetry and held at rest by a couple
+acting in the plane of the disc.
+Show that the  string attached to~$P$ now makes an angle $\phi$
+with the vertical,
+where
+\[
+b\sin\phi = 2a \sin\tfrac12 \theta\,.
+\]
+Show further that the magnitude of the couple is
+\[
+\frac {mga^2\sin\theta}{\sqrt{b^2-4a^2\sin^2 \frac12\theta \ } \ }\,.
+\]
+
+The disc is now released from rest. Show that 
+its angular speed, $\omega$, when the strings
+are vertical is given by
+\[
+\frac{a^2\omega^2}{4g} = b-\sqrt{b^2 - 4a^2\sin^2 \tfrac12\theta \;}\,.
+\]
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+The random variable $N$ takes positive integer values
+and has pgf (probability generating function) $\G(t)$.
+The random variables $X_i$, where $i=1$, $2$, $3$, $\ldots,$
+ are independently and identically 
+distributed, each  with pgf ${\H}(t)$. The random variables $X_i$
+are also independent of $N$. The random variable $Y$ is defined by 
+\[
+Y=
+\sum_{i=1}^N X_i \;.
+\] 
+Given  that the pgf of $Y$ is $\G(\H(t))$, 
+show that  
+\[
+\E(Y) = \E(N)\E(X_i)
+\text{ \ \ \ \ and \ \ \ \ }
+\var(Y) = \var(N)\big(\E(X_i)\big)^2 + \E(N) \var(X_i)
+\,.\]
+
+A fair coin is tossed until a head occurs. The total number of tosses is
+$N$. The coin is then tossed a further $N$ times and the total number of
+heads in these $N$ tosses is $Y$. Find in this particular case 
+the pgf of $Y$, $\E(Y)$, $\var(Y)$ and $\P(Y=r)$.
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+In this question, the notation $\lfloor x \rfloor$
+denotes the greatest integer less than or equal to $x$,
+so for example $\lfloor \pi\rfloor = 3$ and $\lfloor 3 \rfloor =3$.
+\begin{questionparts}
+\item
+A bag contains $n$ balls, of which $b$ are black. A sample of $k$ balls
+is drawn, one after another, at random {\sl with} replacement. The random 
+variable $X$ denotes the number of black balls in the sample.
+By considering 
+\[
+\frac{\P(X=r+1)}{\P(X=r)}\,,
+\]
+show that, in the case that it is unique,   
+the most probable number of black balls
+in the sample is 
+\[
+\left\lfloor \frac{(k+1)b}{n}\right\rfloor.
+\]
+Under what circumstances is the answer not unique?
+
+\item A bag contains 
+$n$ balls, of which $b$ are black. A sample of $k$ balls
+(where $k\le b$)
+is drawn, one after another, at random {\sl without} replacement. 
+Find, in the case that it is unique, the most probable number of black
+balls in the sample.
+
+Under what circumstances is the answer not unique?
+
+\end{questionparts} 
+\end{question}
+
+\end{document}

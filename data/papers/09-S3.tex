@@ -1,0 +1,534 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2009
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\i{{\mathrm i}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\q{{\mathrm q}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+The points $S$, $T$, $U$ and $V$ have coordinates
+$(s,ms)$, $(t,mt)$, $(u,nu)$ and $(v,nv)$, respectively.
+The lines $SV$ and $UT$ meet the line $y=0$ at the points
+with coordinates $(p,0)$ and $(q,0)$, respectively.
+Show that 
+\[
+p = \frac{(m-n)sv}{ms-nv}\,,
+\]
+and write down a similar expression for $q$. 
+
+Given that $S$ and $T$ lie on the
+circle $x^2 + (y-c)^2 = r^2$, find a quadratic equation
+ satisfied by $s$ and by $t$, and hence determine $st$ and $s+t$ in 
+ terms of $m$, $c$ and $r$.
+
+ Given that $S$, $T$, $U$ and $V$ lie on the above circle, show that 
+ $p+q=0$.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+\begin{questionparts}
+\item
+Let $\displaystyle y= \sum_{n=0}^\infty a_n x^n\,$, where
+the coefficients $a_n$ are independent of $x$ and are such
+that this series and all others in this question converge.
+Show that 
+\[
+ \displaystyle y'= \sum_{n=1}^\infty na_n x^{n-1}\,,
+\]
+and write down a similar expression for $y''$.
+
+Write out explicitly  each of the three
+series as far as the term containing $a_3$.
+
+\item
+It is given that $y$ satisfies the differential
+equation
+\[
+xy''-y'+4x^3y =0\,.
+\]
+By substituting the series of part (i) into the differential
+equation and comparing coefficients, show that $a_1=0$. 
+
+ Show that, for $n\ge4$, 
+\[ a_n =- \frac{4}{n(n-2)}\, a_{n-4}\,,
+\]
+and  that, if $a_0=1$ and $a_2=0$, then $ y=\cos (x^2)\,$.
+
+Find the corresponding result when $a_0=0$ and $a_2=1$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The function $\f(t)$ is defined, for $t\ne0$, by 
+\[
+\f(t)  = \frac t {\e^t-1}\,.
+\]
+ 
+ \begin{questionparts}
+
+\item 
+By expanding $\e^t$, show that 
+ $\displaystyle \lim _{t\to0} \f(t) = 1\,$.
+ Find $\f'(t)$ and evaluate
+ $\displaystyle  \lim _{t\to0} \f'(t)\,$.
+
+\item
+ Show that $\f(t) +\frac12 t$ is an even function.
+[{\bf Note:} A function $\g(t)$ is said to be {\em even}
+if $\g(t) \equiv  \g(-t)$.]
+
+\item 
+Show with the aid of a sketch that $ \e^t(  1-t)\le 1\,$
+and deduce that $\f'(t)\ne 0$ for $t\ne0$.
+
+\end{questionparts}
+
+Sketch the graph of $\f(t)$.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+For any given (suitable) function $\f$, the {\sl Laplace transform}
+of $\f$ is the function $\F$ defined by
+\[
+\F(s) = \int_0^\infty \e^{-st}\f(t)\d t
+\ \ \ \ \ \ \ \ \ \ (s>0)
+\,.
+\]
+
+\begin{questionparts}
+\item
+Show that the Laplace transform of $\e^{-bt}\f(t)$, where $b>0$,
+is $\F(s+b)$. 
+\item Show that 
+the Laplace transform of $\f(at)$, where $a>0$, is $a^{-1}\F(\frac s a)\,$.
+\item   Show that the Laplace
+transform of $\f'(t)$ is $s\F(s) -\f(0)\,$.
+\item
+In the case $\f(t)=\sin t$, show that $\F(s)= \dfrac 1 {s^2+1}\,$.
+\end{questionparts}
+
+Using only these four results, find the Laplace transform of 
+$\e^{-pt}\cos{qt}\,$, where $p>0$ and $q>0$.
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The numbers $x$, $y$ and $z$ satisfy
+\begin{align*}
+x+y+z&= 1\\
+x^2+y^2+z^2&=2\\
+x^3+y^3+z^3&=3\,.
+\end{align*}
+
+Show that
+
+\[
+yz+zx+xy=-\frac12 \,.\]
+
+Show also that $x^2y+x^2z+y^2z+y^2x+z^2x+z^2y=-1\,$,
+and hence that
+ \[
+ xyz=\frac16 \,.\]
+
+Let $S_n=x^n+y^n+z^n\,$.
+Use the above results to 
+find numbers $a$, $b$ and $c$
+such that the relation 
+\[
+S_{n+1}=aS_{n}+bS_{n-1}+cS_{n-2}\,,
+\]
+holds for all $n$.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Show that $\big\vert \e^{\i\beta} -\e^{\i\alpha}\big\vert
+= 2\sin\frac12 (\beta-\alpha)\,$ for $0<\alpha<\beta<2\pi\,$.
+Hence show that 
+\[
+\big\vert \e^{\i\alpha} -\e^{\i\beta}\big\vert
+\;
+\big\vert \e^{\i\gamma} -\e^{\i\delta}\big\vert
++
+\big\vert \e^{\i\beta} -\e^{\i\gamma}\big\vert
+\;
+\big\vert \e^{\i\alpha} -\e^{\i\delta}\big\vert
+=
+\big\vert \e^{\i\alpha} -\e^{\i\gamma}\big\vert
+\;
+\big\vert \e^{\i\beta} -\e^{\i\delta}\big\vert
+\,,
+\]
+where $0<\alpha<\beta<\gamma<\delta<2\pi$.
+
+Interpret this result as a theorem about  cyclic quadrilaterals.
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+\item 
+ The functions
+$\f_n(x)$  are defined for $n=0$, $1$, $2$, $\ldots$\, , by
+\[
+\f_0(x) = \frac 1 {1+x^2}\, 
+\qquad \text{and}\qquad
+\f_{n+1}(x) =\frac{\d \f_n(x)}{\d x}\,.
+\]
+Prove, for $n\ge1$,   that 
+\[
+(1+x^2)\f_{n+1}(x) + 2(n+1)x\f_n(x) + n(n+1)\f_{n-1}(x)=0\,.
+\]
+
+\item 
+The functions  $\P_n(x)$ are defined for $n=0$, $1$, $2$, $\ldots$\, , by
+\[
+\P_n(x) = (1+x^2)^{n+1}\f_n(x)\,.
+\]
+Find expressions for $\P_0(x)$,  $\P_1(x)$ and   $\P_2(x)$.
+
+
+
+Prove, for $n\ge0$,  that 
+\[
+\P_{n+1}(x) -(1+x^2)\frac {\d \P_n(x)}{\d x}+ 2(n+1)x \P_n(x)=0\,,
+\]
+and   that $\P_n(x)$ is a polynomial of degree $n$.
+
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+Let $m$ be a positive integer and let $n$ be a non-negative integer.                      
+\begin{questionparts}
+\item
+Use the result  $\displaystyle \lim_{t\to\infty}\e^{-mt} t^n=0$ to show that
+\[
+\lim_{x\to0} x^m (\ln x)^n =0\,.
+\]
+
+By writing $x^x$ as  $\e^{x\ln x}$   show that
+\[
+\lim _{x\to0} x^x=1\,.
+\]
+
+\item Let $\displaystyle I_{n} = \int_0^1 x^m (\ln x)^n \d x\,$.
+Show that 
+\[
+I_{n+1} = - \frac {n+1}{m+1} I_{n}
+\]
+and hence evaluate $I_{n}$.
+
+\item Show that 
+\[
+\int_0^1 x^x \d x = 1 -\left(\tfrac12\right)^2 +\left(\tfrac13\right)^3
+-\left(\tfrac14\right)^4 + \cdots \,.
+\]
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A particle is projected under gravity from a point $P$ and passes
+through a point $Q$. The angles of the trajectory with the positive
+horizontal direction at $P$ and at $Q$ are $\theta$ and $\phi$,
+respectively. The angle of elevation   of $Q$ from $P$ is $\alpha$.
+
+\begin{questionparts}
+\item Show that $\tan\theta +\tan\phi = 2\tan\alpha$.
+
+\item It is given that there is a second trajectory from $P$ to $Q$
+with the same speed of projection.
+The angles of this trajectory with the positive
+ horizontal direction at $P$ and at $Q$ are $\theta'$ and $\phi'$,
+ respectively.
+By considering a quadratic
+equation satisfied by $\tan\theta$,
+show that  $\tan(\theta+\theta') = -\cot\alpha$.
+Show also that $\theta+\theta'=\pi+\phi+\phi'\,$.
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}
+A light spring is fixed at its lower end and its axis is
+vertical. When  a certain particle $P$ rests on the top of the 
+spring, the compression is $d$. When, instead, $P$ is dropped onto the 
+top of the spring from a
+height $h$ above it, the compression at time $t$ after $P$ hits the
+top of the spring is $x$. Obtain    a second-order differential
+equation relating $x$ and $t$ for $0\le t \le T$, where $T$ is the time
+at which $P$ first loses contact with the spring.
+
+Find        the  solution of this equation in    the form
+\[
+x= A +  B\cos (\omega t) + C\sin(\omega t)\,,
+\]
+where the constants $A$, $B$, $C$ and $\omega$ are to be given in terms
+of $d$, $g$ and $h$ as appropriate.  
+
+Show that 
+\[
+T 
+= \sqrt{d/g\;} \left (2 \pi - 2 \arctan
+\sqrt{2h/d\;}\;\right)\,.
+\]
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A comet in deep space picks up mass as it travels through a
+large stationary dust cloud. 
+It is subject to a gravitational force of magnitude
+$M\!f$ acting in the direction of its motion.
+When  it entered the 
+cloud, the comet had mass  $M$ and  speed  $V$. 
+After  a time $t$,
+it has travelled a distance $x$ through the cloud, 
+its mass is $M(1+bx)$, where~$b$ is a positive constant, and  its speed
+is $v$. 
+
+\begin{questionparts}
+\item In the case when $f=0$, 
+write down an  equation relating 
+$V$, $x$, $v$ and $b$.
+Hence find an expression for $x$ in  terms of $b$, $V$ and $t$.
+
+\item  In the case when $f$ is a non-zero constant,
+use Newton's second law in the form
+\[
+\text{force} = \text{rate of change of momentum}
+\]
+to show that
+\[
+v = \frac{ft+V}{1+bx}\,.
+\]
+Hence find an expression for $x$ in  terms of $b$, $V$, $f$ and $t$.
+
+Show that it is possible, if $b$, $V$ and $f$ are suitably chosen,
+for the comet to move with constant speed.  Show also 
+that, 
+if the comet does not
+move with constant speed, its speed tends to  a constant as $t\to\infty$. 
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+\begin{questionparts}
+\item
+ Albert tosses a fair coin $k$ times, where $k$ is a given 
+positive integer. The number of heads he gets is $X_1$. He
+then tosses the coin $X_1$ times, getting $X_2$ heads.
+He then tosses the coin $X_2$ times, getting $X_3$ heads. 
+The random variables $X_4$, $X_5$, $\ldots$ are defined similarly.
+Write down $\E(X_1)$. 
+
+By considering $\E(X_2 \; \big\vert \; X_1 = x_1)$, 
+or otherwise, show that $\E(X_2) = \frac14 k$. 
+
+Find $\displaystyle \sum_{i=1}^\infty \E(X_i)$.
+
+
+\item Bertha has $k$ fair coins. She tosses the first coin 
+until she gets a tail. The number of heads she gets before
+the first tail is $Y_1$. She then tosses the second coin
+until she gets a tail and the number of heads she gets with this coin
+before
+the first tail is $Y_2$. The random variables $Y_3$, $Y_4$,
+$\ldots\;$, $Y_k$ are defined similarly, and 
+ $Y= \sum\limits_{i=1}^k Y_i\,$. 
+
+Obtain  the probability generating function of $Y$, and
+use it to find $\E(Y)$, $\var(Y)$ and $\P(Y=r)$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+\begin{questionparts}
+\item The point $P$ lies on the circumference of a circle of unit radius 
+and centre $O$. The angle,~$\theta$,  between $OP$ and the 
+positive $x$-axis is a random variable, uniformly 
+distributed on  the interval  $0\le\theta<2\pi$.
+The cartesian coordinates of $P$ with respect to $O$ are $(X, Y)$.
+Find the probability density function for $X$, and calculate $\var (X)$.
+
+Show that $X$ and $Y$ are uncorrelated and discuss briefly whether they
+are independent.
+
+\item The points $P_i$ ($i=1$, $2$, $\ldots$ , $n$)
+are chosen independently on the circumference of the 
+circle, as in part (i), and have cartesian coordinates $(X_i, Y_i)$. 
+The point $\overline P$ has coordinates $(\overline X, \overline Y)$,
+where 
+$\overline X =\dfrac1n  \sum\limits _{i=1}^n X_i$
+and
+$\overline Y =\dfrac1n  \sum\limits _{i=1}^n Y_i$.
+Show that $\overline X$ and $\overline Y$ 
+are uncorrelated.
+
+Show that, for large $n$, 
+$\displaystyle \P\left(\vert \overline X \vert \le \sqrt{\frac2n}\right)
+\approx 0.95\,$.
+
+\end{questionparts}
+\end{question}
+
+\end{document}

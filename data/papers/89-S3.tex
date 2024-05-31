@@ -1,0 +1,527 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1989
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Prove that the area of the zone of the surface of a sphere between
+two parallel planes cutting the sphere is given by 
+\[
+2\pi\times(\mbox{radius of sphere})\times(\mbox{perpendicular distance between the planes}).
+\]
+A tangent from the origin $O$ to the curve with cartesian equation
+\[
+(x-c)^{2}+y^{2}=c^{2},
+\]
+where $a$ and $c$ are positive constants with $c>a,$ touches the
+curve at $P$. The $x$-axis cuts the curve at $Q$ and $R$, the
+points lying in the order $OQR$ on the axis. The line $OP$ and the
+arc $PR$ are rotated through $2\pi$ radians about the line $OQR$
+to form a surface. Find the area of this surface.
+\end{question}
+\vspace{-1cm}
+%%%%%%%%%%Q2
+\begin{question}
+The points $A,B$ and $C$ lie on the surface of the ground, which
+is an inclined plane. The point $B$ is 100m due north of $A,$ and
+$C$ is 60m due east of $B$. The vertical displacements from $A$
+to $B,$ and from $B$ to $C$, are each 5m downwards. A plane coal
+seam lies below the surface and is to be located by making vertical
+bore-holes at $A,B$ and $C$. The bore-holes strike the coal seam
+at 95m, 45m and 76m below $A,B$ and $C$ respectively. Show that
+the coal seam is inclined at $\cos^{-1}(\frac{4}{5})$ to the horizontal. 
+
+
+The coal seam comes to the surface along a line. Find the bearing
+of this line. 
+\end{question}
+
+\vspace{-1cm}
+%%%%%%%%% Q3
+\begin{question}
+The matrix $\mathbf{M}$ is given by 
+\[
+\mathbf{M}=\begin{pmatrix}\cos(2\pi/m) & -\sin(2\pi/m)\\
+\sin(2\pi/m) & \cos(2\pi/m)
+\end{pmatrix},
+\]
+where $m$ is an integer greater than $1.$ Prove that 
+\[
+\mathbf{M}^{m-1}+\mathbf{M}^{m-2}+\cdots+\mathbf{M}^{2}+\mathbf{M}+\mathbf{I}=\mathbf{O},
+\]
+where $\mathbf{I}=\begin{pmatrix}1 & 0\\
+0 & 1
+\end{pmatrix}$ and $\mathbf{O}=\begin{pmatrix}0 & 0\\
+0 & 0
+\end{pmatrix}.$
+
+
+The sequence $\mathbf{X}_{0},\mathbf{X}_{1},\mathbf{X}_{2},\ldots$
+is defined by 
+\[
+\mathbf{X}_{k+1}=\mathbf{PX}_{k}+\mathbf{Q},
+\]
+where $\mathbf{P,Q}$ and $\mathbf{X}_{0}$ are given $2\times2$
+matrices. Suggest a suitable expression for $\mathbf{X}_{k}$ in terms
+of $\mathbf{P},$ $\mathbf{Q}$ and $\mathbf{X}_{0},$ and justify
+it by induction. 
+
+
+The binary operation $*$ is defined as follows: 
+\[
+\mathbf{X}_{i}*\mathbf{X}_{j}\mbox{ is the result of substituting \ensuremath{\mathbf{X}_{j}}for \ensuremath{\mathbf{X}_{0}}in the expression for \ensuremath{\mathbf{X}_{i}}. }
+\]
+Show that if $\mathbf{P=M},$ the set $\{\mathbf{X}_{1},\mathbf{X}_{2},\mathbf{X}_{3},\ldots\}$
+forms a finite group under the operation $*$. 
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}
+Sketch the curve whose cartesian equation is 
+\[
+y=\frac{2x(x^{2}-5)}{x^{2}-4},
+\]
+and give the equations of the asymptotes and of the tangent to the
+curve at the origin. 
+
+
+Hence, or otherwise, determine (giving reasons) the number of real
+roots of the following equations: 
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] $4x^{2}(x^{2}-5)=(5x-2)(x^{2}-4)$; 
+\item[\bf (ii)] $4x^{2}(x^{2}-5)^{2}=(x^{2}-4)^{2}(x^{2}+1)$; 
+\item[\bf (iii)] $4z^{2}(z-5)^{2}=(z-4)^{2}(z+1)$. 
+	\end{itemize}
+
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+Given that $y=\cosh(n\cosh^{-1}x),$ for $x\geqslant1,$ prove that
+\[
+y=\frac{(x+\sqrt{x^{2}-1})^{n}+(x-\sqrt{x^{2}-1})^{n}}{2}.
+\]
+Explain why, when $n=2k+1$ and $k\in\mathbb{Z}^{+},$ $y$ can also
+be expressed as the polynomial 
+\[
+a_{0}x+a_{1}x^{3}+a_{2}x^{5}+\cdots+a_{k}x^{2k+1}.
+\]
+Find $a_{0},$ and show that 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] $a_{1}=(-1)^{k-1}2k(k+1)(2k+1)/3$; 
+\item[\bf (ii)] $a_{2}=(-1)^{k}2(k-1)k(k+2)(2k+1)/15.$
+	\end{itemize}
+
+Find also the value of ${\displaystyle \sum_{r=0}^{k}a_{r}.}$ 
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+Show that, for a given constant $\gamma$ $(\sin\gamma\neq0)$ and
+with suitable choice of the constants $A$ and $B$, the line with
+cartesian equation $lx+my=1$ has polar equations 
+\[
+\frac{1}{r}=A\cos\theta+B\cos(\theta-\gamma).
+\]
+The distinct points $P$ and $Q$ on the conic with polar equations
+\[
+\frac{a}{r}=1+e\cos\theta
+\]
+correspond to $\theta=\gamma-\delta$ and $\theta=\gamma+\delta$
+respectively, and $\cos\delta\neq0.$ Obtain the polar equation of
+the chord $PQ.$ Hence, or otherwise, obtain the equation of the tangent
+at the point where $\theta=\gamma.$
+
+
+The tangents at $L$ and $M$ to a conic with focus $S$ meet at $T.$
+Show that $ST$ bisects the angle $LSM$ and find the position of
+the intersection of $ST$ and $LM$ in terms of your chosen parameters
+for $L$ and $M.$ 
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+The linear transformation $\mathrm{T}$ is a shear which transforms
+a point $P$ to the point $P'$ defined by 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] $\overrightarrow{PP'}$ makes an acute angle $\alpha$ (anticlockwise)
+with the $x$-axis, 
+\item[\bf (ii)] $\angle POP'$ is clockwise (i.e. the rotation from $OP$ to $OP'$
+clockwise is less than $\pi),$ 
+\item[\bf (iii)] $PP'=k\times PN,$ where $PN$ is the perpendicular onto the line
+$y=x\tan\alpha,$ where $k$ is a given non-zero constant. 
+\end{itemize}
+
+If $\mathrm{T}$ is represented in matrix form by $\begin{pmatrix}x'\\
+y'
+\end{pmatrix}=\mathbf{M}\begin{pmatrix}x\\
+y
+\end{pmatrix},$ show that 
+\[
+\mathbf{M}=\begin{pmatrix}1-k\sin\alpha\cos\alpha & k\cos^{2}\alpha\\
+-k\sin^{2}\alpha & 1+k\sin\alpha\cos\alpha
+\end{pmatrix}.
+\]
+Show that the necessary and sufficient condition for $\begin{pmatrix}p & q\\
+r & t
+\end{pmatrix}$ to commute with $\mathbf{M}$ is 
+\[
+t-p=2q\tan\alpha=-2r\cot\alpha.
+\]
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+Given that 
+\[
+\frac{\mathrm{d}x}{\mathrm{d}t}=4(x-y)\qquad\mbox{ and }\qquad\frac{\mathrm{d}y}{\mathrm{d}t}=x-12(\mathrm{e}^{2t}+\mathrm{e}^{-2t}),
+\]
+obtain a differential equation for $x$ which does not contain $y$.
+Hence, or otherwise, find $x$ and $y$ in terms of $t$ given that
+$x=y=0$ when $t=0$. 
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+		\begin{question}
+Obtain the sum to infinity of each of the following series. 
+
+\begin{questionparts}
+\item $1{\displaystyle +\frac{2}{2}+\frac{3}{2^{2}}+\frac{4}{2^{3}}+\cdots+\frac{r}{2^{r-1}}+\cdots;}$
+\item $1{\displaystyle +\frac{1}{2}\times\frac{1}{2}+\frac{1}{3}\times\frac{1}{2^{2}}+\cdots+\frac{1}{r}\times\frac{1}{2^{r-1}}+\cdots;}$
+\item ${\displaystyle \dfrac{1\times3}{2!}\times\frac{1}{3}+\frac{1\times3\times5}{3!}\frac{1}{3^{2}}+\cdots+\frac{1\times3\times\cdots\times(2k-1)}{k!}\times\frac{1}{3^{k-1}}+\cdots.}$
+\end{questionparts}
+
+[Questions of convergence need not be considered.]
+		\end{question}
+		
+	
+%%%%%%%%%% 10
+\begin{question}
+\begin{questionparts}
+	 \item Prove that 
+\[
+\sum_{r=1}^{n}r(r+1)(r+2)(r+3)(r+4)=\tfrac{1}{6}n(n+1)(n+2)(n+3)(n+4)(n+5)
+\]
+and deduce that 
+\[
+\sum_{r=1}^{n}r^{5}<\tfrac{1}{6}n(n+1)(n+2)(n+3)(n+4)(n+5).
+\]
+\item Prove that, if $n>1,$ 
+\[
+\sum_{r=0}^{n-1}r^{5}>\tfrac{1}{6}(n-5)(n-4)(n-3)(n-2)(n-1)n.
+\]
+\item Let $\mathrm{f}$ be an increasing function. If the limits
+\[
+\lim_{n\rightarrow\infty}\sum_{r=0}^{n-1}\frac{a}{n}\mathrm{f}\left(\frac{ra}{n}\right)\qquad\mbox{ and }\qquad\lim_{n\rightarrow\infty}\sum_{r=1}^{n}\frac{a}{n}\mathrm{f}\left(\frac{ra}{n}\right)
+\]
+both exist and are equal, the definite integral ${\displaystyle \int_{0}^{a}\mathrm{f}(x)\,\mathrm{d}x}$
+is defined to be their common value. Using this definition, prove
+that 
+\[
+\int_{0}^{a}x^{5}\,\mathrm{d}x=\tfrac{1}{6}a^6.
+\]
+\end{questionparts}
+\end{question}
+			
+		
+		
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+A smooth uniform sphere, with centre $A$, radius $2a$ and mass $3m,$
+is suspended from a fixed point $O$ by means of a light inextensible
+string, of length $3a,$ attached to its surface at $C$. A second
+smooth unifom sphere, with centre $B,$ radius $3a$ and mass $25m,$
+is held with its surface touching $O$ and with $OB$ horizontal.
+The second sphere is released from rest, falls and strikes the first
+sphere. The coefficient of restitution between the spheres is $3/4.$
+Find the speed $U$ of $A$ immediately after the impact in terms
+of the speed $V$ of $B$ immediately before impact. 
+
+
+The same system is now set up with a light rigid rod replacing the
+string and rigidly attached to the sphere so that $OCA$ is a straight
+line. The rod can turn freely about $O$. The sphere with centre $B$
+is dropped as before. Show that the speed of $A$ immediately after
+impact is $125U/127.$ 
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+A smooth horizontal plane rotates with constant angular velocity $\Omega$
+about a fixed vertical axis through a fixed point $O$ of the plane.
+The point $A$ is fixed in the plane and $OA=a.$ A particle $P$
+lies on the plane and is joined to $A$ by a light rod of length $b(>a)$
+freely pivoted at $A$. Initially $OAP$ is a straight line and $P$
+is moving with speed $(a+2\sqrt{ab})\Omega$ perpendicular to $OP$
+in the same sense as $\Omega.$ At time $t,$ $AP$ makes an angle
+$\phi$ with $OA$ produced. Obtain an expression for the component
+of the acceleration of $P$ perpendicular to $AP$ in terms of $\dfrac{\mathrm{d}^{2}\phi}{\mathrm{d}t^{2}},\phi,a,b$
+and \nolinebreak $\Omega.$
+
+
+Hence find $\dfrac{\mathrm{d}\phi}{\mathrm{d}t}$, in terms of $\phi,a,b$
+and $\Omega,$ and show that $P$ never crosses $OA.$
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+The points $A,B,C,D$ and $E$ lie on a thin smooth horizontal table
+and are equally spaced on a circle with centre $O$ and radius $a$.
+At each of these points there is a small smooth hole in the table.
+Five elastic strings are threaded through the holes, one end of each
+beging attached at $O$ under the table and the other end of each
+being attached to a particle $P$ of mass $m$ on top of the table.
+Each of the string has natural length $a$ and modulus of elasticity
+$\lambda.$ If $P$ is displaced from $O$ to any point $F$ on the
+table and released from rest, show that $P$ moves with simple harmonic
+motion of period $T$, where 
+\[
+T=2\pi\sqrt{\frac{am}{5\lambda}}.
+\]
+The string $PAO$ is replaced by one of natural length $a$ and modulus
+$k\lambda.$ $P$ is displaced along $OA$ from its equilibrium position
+and released. Show that $P$ still moves in a straight line with simple
+harmonic motion, and, given that the period is $T/2,$ find $k$.
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+\begin{questionparts} \item A solid circular disc has radius $a$ and
+mass $m.$ The density is proportional to the distance from the centre
+$O$. Show that the moment of inertia about an axis through $C$ perpendicular
+to the plane of the disc is $\frac{3}{5}ma^{2}.$
+
+
+\item A light inelastic string has one end fixed at $A$. It passes
+under and supports a smooth pulley $B$ of mass $m.$ It then passes
+over a rough pulley $C$ which is a disc of the type described in
+\textbf{(i)}, free to turn about its axis which is fixed and horizontal.
+The string carries a particle $D$ of mass $M$ at its other end.
+The sections of the string which are not in contact with the pulleys
+are vertical. The system is released from rest and moves under gravity
+for $t$ seconds. At the end of this interval the pulley $B$ is suddenly
+stopped. Given that $m<2M$, find the resulting impulse on $D$ in
+terms of $m,M,g$ and $t$. 
+
+
+{[}You may assume that the string is long enough for there to be no
+collisions between the elements of the system, and that the pulley
+$C$ is rough enough to prevent slipping throughout.{]} \end{questionparts}
+
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+The continuous random variable $X$ is uniformly distributed over
+the interval $[-c,c].$ Write down expressions for the probabilities
+that: 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] $n$ independently selected values of $X$ are all greater than $k$, 
+\item[\bf (ii)] $n$ independently selected values of $X$ are all less than $k$,
+\end{itemize}
+
+where $k$ lies in $[-c,c]$. 
+
+
+A sample of $2n+1$ values of $X$ is selected at random and $Z$
+is the median of the sample. Show that $Z$ is distributed over $[-c,c]$
+with probability density function 
+\[
+\frac{(2n+1)!}{(n!)^{2}(2c)^{2n+1}}(c^{2}-z^{2})^{n}.
+\]
+Deduce the value of ${\displaystyle \int_{-c}^{c}(c^{2}-z^{2})^{n}\,\mathrm{d}z.}$
+
+
+Evaluate $\mathrm{E}(Z)$ and $\mathrm{var}(Z).$  
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+It is believed that the population of Ruritania can be described as
+follows: 
+
+\begin{itemize}[indent]
+\setlength{\itemsep}{3mm}
+
+\item[\bf (i)] $25\%$ are fair-haired and the rest are dark-haired; 
+\item[\bf (ii)] $20\%$ are green-eyed and the rest hazel-eyed; 
+\item[\bf (iii)] the population can also be divided into narrow-headed and broad-headed; 
+\item[\bf (iv)] no arrow-headed person has green eyes and fair hair; 
+\item[\bf (v)] those who are green-eyed are as likely to be narrow-headed as broad-headed; 
+\item[\bf (vi)] those who are green-eyed and broad-headed are as likely to be fair-headed
+as dark-haired; 
+\item[\bf (vii)] half of the population is broad-headed and dark-haired; 
+\item[\bf (viii)] a hazel-haired person is as likely to be fair-haired and broad-headed
+as dark-haired and narrow-headed. 
+\end{itemize}
+
+Find the proportion believed to be narrow-headed. 
+
+
+I am acquainted with only six Ruritanians, all of whom are broad-headed.
+Comment on this observation as evidence for or against the given model. 
+
+
+A random sample of 200 Ruritanians is taken and is found to contain
+50 narrow-heads. On the basis of the given model, calculate (to a
+reasonable approximation) the probability of getting 50 or fewer narrow-heads.
+Comment on the result. 
+\end{question}
+\end{document}

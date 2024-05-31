@@ -1,0 +1,496 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2006
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Find the integer, $n$, that satisfies  
+$n^2 < 33\hspace{1.2pt}127< (n+1)^2$. Find
+also a small integer $m$ such that $(n+m)^2 -33\hspace{1.2pt}127$
+ is a perfect square.
+Hence express $33\hspace{1.2pt}127$ in the form $pq$, where $p$ and $q$ are integers
+greater than $1$. 
+
+By considering the possible factorisations of $33\hspace{1.2pt}127$, show that
+there are exactly two values of $m$ 
+for which  $(n+m)^2 -33\hspace{1.2pt}127$ is a perfect square,
+and find the other value.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+A small goat is tethered by a rope to a point at ground level on a
+side of a 
+square barn  which stands in a large horizontal field of grass. 
+The sides of the barn are of length $2a$
+and  the rope is of length~$4a$. 
+Let $A$ be the area of the grass that the goat can
+graze. Prove that $A\le14\pi a^2$ and determine the minimum value of
+$A$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+In this question $b$, $c$, $p$ and $q$ are real numbers.
+\begin{questionparts}
+\item By considering the graph $y=x^2 + bx + c$ 
+show that $c < 0$ is a sufficient condition for the equation 
+$\displaystyle x^2 + bx + c = 0$ to have distinct real roots. 
+Determine whether $c < 0$ is a necessary condition for the 
+equation to have distinct real roots.
+
+
+\item
+Determine necessary and 
+sufficient conditions for the equation $\displaystyle x^2 + bx + c = 0$
+to have  distinct positive real roots.
+
+
+\item What can be deduced about the 
+number and the nature of the roots of the equation 
+$x^3 + px + q = 0$ if $p>0$ and $q<0$?
+
+What can be deduced if $p<0\,$ and $q<0$? You should consider 
+the different cases that arise according to the value of
+$4p^3+ 27q^2\,$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+By sketching  on the same axes the graphs of  $y=\sin x$ and
+$y=x$, show that, for $x>0$:
+\begin{questionparts}
+\item $x>\sin x\,$;
+\item $\dfrac {\sin x} {x} \approx 1$ for small $x$. 
+\end{questionparts}
+
+A regular polygon has $n$ sides, and perimeter $P$. 
+Show that the area of the polygon is
+\[
+\displaystyle \frac{P^2} { {4n \tan \l\dfrac{ \pi} { n} \r}} \;.
+\]
+Show by differentiation (treating $n$ as a continuous variable)
+  that the area of the polygon 
+increases as $n$ increases with $P$ fixed.
+
+ Show also that, for large $n$, the ratio of the 
+area of the polygon to the 
+area of the smallest circle which can be drawn around the polygon is approximately $1$.
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item
+Use the substitution $u^2=2x+1$ to show that, for $x>4$, 
+\[
+\int \frac{3} { ( x-4 ) \sqrt {2x+1}} \; 
+\d x = \ln \l \frac{\sqrt{2x+1}-3} {\sqrt{2x+1}+3} \r + K\,,
+\]
+where $K$ is a constant.
+
+ 
+\item Show that  $ \displaystyle \int_{\ln 3}^{\ln 8}
+ \frac{2} { \e^x \sqrt{ \e^x + 1}}\; \mathrm{d}x\, = 
+ \frac 7{12} + \ln \frac23 $
+.
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item Show that, if $\l a \, , b\r$  is {\bf any} point on the 
+curve $x^2 - 2y^2 = 1$, 
+then $\l 3a + 4b \, , 2a + 3b \r\,$ also lies on the curve.
+
+\item Determine the smallest positive integers
+$M$ and $N$ such that, if $\l a \,,  b\r$ is {\bf any} point on the curve
+$Mx^2 - Ny^2 = 1$, then $(5a+6b\,, 4a+5b)$ also lies on the curve.
+
+\item Given that the point $\l a \, , b\r$ lies on 
+the curve $x^2 - 3y^2 = 1\,$, 
+find positive integers $P$, $Q$, $R$ and $S$ such that
+the point  $(P a +Q b\,, R a + Sb)$ also lies on the  curve.
+
+
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+\item Sketch on the same axes the functions 
+${\rm cosec}\, x$ and $2x/ \pi$, for 
+$0<x<\pi\,$. Deduce that the equation $x\sin x = \pi/2 $ has exactly
+two roots in the interval  $0<x<\pi\,$.
+
+Show that 
+\[
+\displaystyle \int_{\pi/2}^{\pi} \left \vert x\sin x  - 
+\frac{\pi} { 2} \right \vert \; \mathrm{d}x 
+= 
+2\sin\alpha   +\frac{3\pi^2} 4 - \alpha \pi -\pi -2\alpha
+\cos\alpha -1
+\]
+where $\alpha$ is the larger of the roots referred to above.
+
+
+\item Show that the  region bounded by the positive $x$-axis, the $y$-axis
+  and the curve
+\[y = \Bigl| \vert \e^x - 1 \vert - 1 \Bigr|\] 
+has area $\ln 4-1$.
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+{\it Note that the volume of a 
+tetrahedron is equal to  $\frac1  3$ $\times$ 
+the area of the base $\times$ the height.}
+
+The points $O$, $A$, $B$ and $C$ have coordinates $(0,0,0)$, $(a,0,0)$, $(0,b,0)$
+and $(0,0,c)$, respectively, where $a$, $b$ and $c$ are positive.
+\begin{questionparts}
+\item Find, in terms of $a$, $b$ and $c$,  the volume of the tetrahedron
+  $OABC$.
+\item
+ Let angle $ACB = \theta$. Show that
+\[
+\cos\theta = 
+\frac {c^2}
+{ 
+{ \sqrt{\vphantom{ \dot b}
+(a^2+c^2)(b^2+c^2)} }
+^{\vphantom A}    
+\  }
+\]
+and find, in terms of $a$, $b$ and $c$, the  area of triangle $ABC$.
+% is 
+%$\displaystyle \tfrac12 \sqrt{ \vphantom{\dot A } a^2b^2 +b^2c^2 + c^2 a^2 \;} \;$.
+\end{questionparts}
+
+Hence show that $d$,  the perpendicular distance of the origin from
+the  triangle $ABC$, satisfies
+\[
+\frac 1{d^2} = \frac 1 {a^2} + \frac 1 {b^2} + \frac 1 {c^2} \,.
+\]
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A block of mass $4\,$kg is at rest on a smooth, horizontal
+table. A smooth pulley $P$ is fixed to one edge 
+of the table and a  smooth pulley $Q$ is fixed to the opposite edge. 
+The two pulleys and the block lie in a straight line.
+
+Two horizontal strings are attached to the block. 
+One string runs over pulley $P$; a particle of mass $x\,$kg hangs  at the end of this 
+string. 
+The other string runs over pulley $Q$;   a particle of mass $y\,$kg hangs
+at the end of this string, where $x > y$ and $x + y = 6\,$.
+
+The system is released from rest with the strings taut. 
+When the $4\,$kg block has moved a distance $d$, 
+the string connecting it to the particle of mass $x\,$kg is cut. 
+Show that the time taken by the block from the 
+start of the motion until it first returns to rest 
+(assuming that it does not reach the edge of the table)
+is $\sqrt{d/(5g)\,} \,\f(y)$, where
+\[
+\f(y)= \frac{10}{  \sqrt{6-2y}}+  \left(1 + \frac{4}{ y} \right) \sqrt {6 -2y}.
+\]
+Calculate the value of $y$ for which $\f'(y)=0$.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A particle $P$ is projected in the $x$-$y$ plane,  where the $y$-axis
+is vertical and the $x$-axis is horizontal. 
+The particle is projected with speed $V$ from  the origin at an
+angle of
+$45 ^\circ$ above the positive $x$-axis.
+Determine the equation of the trajectory 
+ of $P$.
+
+
+
+The point of projection (the origin) is on  the floor of a barn. The roof of the barn is 
+given by the equation
+$y= x \tan \alpha +b\,$, where $b>0$ and $\alpha$ is an acute angle. 
+Show that, if  the particle just touches the roof, then  
+$V(-1+ \tan\alpha) =-2 \sqrt{bg}$;  you should justify the choice of the 
+negative root. 
+ If this condition is satisfied,
+find, in terms of $\alpha$, $V$ and $g$,
+ the time after 
+projection at which touching  takes place.
+
+
+
+A particle $Q$ can slide along a 
+smooth rail fixed, in the $x$-$y$ plane, to the under-side of the roof.
+It is projected from the point $(0,b)$ with speed $U$
+at the same time as $P$ is projected from the origin.
+ Given that the particles just touch
+in the course of their motions, show that
+\[
+2 \sqrt 2 \, U \cos \alpha  = V \big(2 +  \sin\alpha\cos\alpha -\sin^2\alpha)
+.
+\]
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Particles  $A_1$, $A_2$, $A_3$, 
+$\ldots$, $A_n$ (where $n\ge 2$) lie at rest in that order in a smooth straight horizontal
+trough. The mass of $A_{n-1}$ is $m$ and the mass of $A_n$ is
+$\lambda m$, where $\lambda>1$.
+Another particle, $A_0$, of mass $m$, 
+slides along the trough with speed $u$ towards the particles and collides with  $A_1$. 
+Momentum and energy are conserved in all  collisions.
+
+
+\begin{questionparts}
+\item Show that 
+it is not possible for  there to be exactly one particle 
+moving after all collisions have taken place.
+\item Show that 
+it is not possible for  $A_{n-1}$ and $A_n$ to be the only particles
+moving after all collisions have taken place.
+\item Show that 
+it is not possible for  $A_{n-2}$, $A_{n-1}$ and $A_n$ to be the only particles
+moving after all collisions have taken place.
+\item Given that there are exactly two 
+particles 
+moving after all collisions have taken place, find the speeds of these
+particles in terms of $u$ and $\lambda$.
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Oxtown and Camville are connected by three roads, 
+which are at risk of being blocked by flooding. 
+On two of the three roads there are two sections 
+which may be blocked. On the third road 
+there is only one section which may be blocked. 
+The probability that each section is blocked is $p$. 
+Each section is blocked independently of the other four sections. 
+Show that the probability that Oxtown is cut off from 
+Camville is $p^3 \l 2-p \r^2$.
+
+I want to travel from Oxtown to Camville. I choose 
+one of the three roads at random and find that my road is not blocked. 
+Find the probability that I would not have reached Camville
+if I had chosen either of the other two roads.
+You should factorise your answer as fully as possible. 
+
+Comment briefly on the value of this probability in the limit $p\to1$.
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A very generous shop-owner is hiding small diamonds in 
+chocolate bars. Each diamond is hidden independently of any other diamond, 
+and on average there is one diamond per kilogram of chocolate.
+
+\begin{questionparts}
+\item I go to the shop and roll a fair six-sided die once. 
+I decide  that if I roll a score of $N$, I will buy $100N$ grams 
+of chocolate. 
+Show that the probability that I will have no diamonds is
+\[
+\frac{\e^{-0.1}}{ 6} \l \frac{1 - \e^{-0.6}  }{  1 - \e^{-0.1}} \r
+\]
+Show also that the expected number of diamonds I find is 0.35.
+
+\item Instead, I decide to roll a fair six-sided 
+die repeatedly until I score a 6. If I roll my first 6 on my $T$th throw, 
+I will buy $100T$ grams of chocolate. 
+Show that the probability that I will have no diamonds is 
+\[
+\frac{\e^{-0.1}}{ 6 - 5\e^{-0.1}}
+\]
+Calculate also the expected number of diamonds that I find.
+(You may find it useful to consider the
+the binomial 
+expansion of $\l 1 - x \r^{-2}$.)
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+\begin{questionparts}
+\item A bag of sweets contains one red sweet and $n$ blue sweets. 
+I take a sweet from the bag, note  its colour, 
+return it  to the bag, then shake the bag. 
+I repeat this until the  sweet I take is the red one.
+Find an expression for the probability that I take
+ the red sweet on the $r$th attempt. 
+What value of $n$ maximises this probability? 
+
+\item Instead, I take sweets from the bag, without 
+replacing them in the bag, until I take the red sweet.
+Find an expression for the probability that I take
+ the red sweet on the $r$th attempt. 
+What value of $n$ maximises this probability? 
+
+\end{questionparts}
+\end{question}
+	
+\end{document}

@@ -1,0 +1,554 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2000
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+ A number of the form $1/N$, where $N$ is  an integer greater
+than 1, is called a {\it unit fraction}.
+
+Noting that 
+\[
+ \frac1 2 =\frac13 + \frac16\\\ 
+\mbox{ \ and \ }
+\frac13 
+= \frac14
++ \frac1{12},
+\]
+guess a general result of the form
+$$
+\frac1N
+=\frac1a +\frac1b
+\eqno(*)
+$$
+and hence
+ prove that any unit fraction can be expressed as the sum of 
+two distinct unit fractions.
+
+By writing $(*)$ in the form 
+\[
+ (a-N)(b-N)=N^2
+\]
+and by considering the factors of $N^2$, show that if $N$ is
+prime, then there is only one way of expressing $1/N$ as the
+sum of two distinct unit fractions.
+
+
+
+Prove similarly that any fraction of the form $2/N$, where $N$ is
+prime number greater than 2, 
+can be expressed uniquely as the sum of two distinct unit
+fractions. 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+ Prove that if ${(x-a)^{2}}$ is a factor of the polynomial
+$\p(x)$, then $\p'(a)=0$.
+Prove a corresponding result if $(x-a)^4$ is a factor of $\p(x).$
+
+Given that the polynomial 
+$$
+x^6+4x^5-5x^4-40x^3-40x^2+32x+k
+$$
+has a factor of the form ${(x-a)}^4$, find $k$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The lengths of the sides $BC$, $CA$, $AB$ of the triangle
+$ABC$  are denoted by $a$, $b$, $c$, respectively. Given that 
+$$ 
+b = 8+{\epsilon}_1, \,
+c=3+{\epsilon}_2,\,
+A=\tfrac{1}{3}\pi + {\epsilon}_3,
+$$
+where ${\epsilon}_1$, ${\epsilon}_2$, and $ {\epsilon}_3$ are small, show that
+$a \approx 7 + {\eta}$, where 
+${\eta}= {\left(13 \, {{\epsilon}_1}-2\,{\epsilon}_2
++ 24{\sqrt 3} \;{{\epsilon}_3}\right)}/14$.
+
+Given now that 
+$$
+{\vert {\epsilon}_1} \vert 
+\le 2 \times 10^{-3}, \ \ \
+{\vert {\epsilon}_2} \vert \le 4\cdot 9\times 10^{-2}, \ \ \  
+{\vert {\epsilon}_3} \vert \le  \sqrt3 \times 10^{-3},
+$$
+find the range of possible values of ${\eta}$.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+ Prove that
+\[
+(\cos\theta +\mathrm{i}\sin\theta)
+(\cos\phi +\mathrm{i}\sin\phi)
+=
+\cos(\theta+\phi) +\mathrm{i}\sin(\theta+\phi)
+\]
+and that, for every positive integer $n$,
+$$
+{(\cos {\theta} + \mathrm{i}\sin {\theta})}^n
+= \cos{n{\theta}} + \mathrm{i}\sin{n{\theta}}.
+$$
+
+
+By considering 
+$(5-\mathrm{i})^2(1+\mathrm{i})$,
+or otherwise,
+prove that
+\[
+\arctan\left(\frac{7}{17}\right)+2\arctan\left(\frac{1}{5}\right)=\frac{\pi}{4}\,.
+\]
+Prove also that 
+\[
+3\arctan\left(\frac{1}{4}\right)+\arctan\left(\frac{1}{20}\right)+\arctan\left(\frac{1}{1985}\right)=\frac{\pi}{4}\,.
+\]
+[Note that $\arctan\theta$ is another notation for $\tan^{-1}\theta$.]
+
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+It is required to approximate a given function $\f(x)$,
+over the interval $0 \le x \le 1$,
+by the linear function $\lambda x$, where $\lambda$ is chosen
+to minimise
+\[
+\int_0^1 \big(\f(x)-\lambda x \big)^{\!2} \,\d x .
+\] 
+Show that
+\[
+\lambda   =  3  \int_0^1 x\f(x)\,\d x.
+\]
+The residual error, $R$, of this approximation process is
+such that 
+ \[
+R^2 =  \int_0^1 \big(\f(x)-\lambda x \big)^{\!2}\,\d x.
+\]
+Show that
+\[
+R^2 =  \int_0^1 \big(\f(x)\big)^{\!2}\,\d x -\tfrac{1}{3}
+\lambda ^2.
+\]
+Given now that 
+$\f(x)= \sin (\pi x/n)$, 
+show that \textbf{(i)} for large 
+$n$, $\lambda \approx \pi/n$ and \textbf{(ii)}
+$\lim_{n \to \infty}R = 0.$
+
+Explain why, prior to any calculation, these results are to be
+expected. 
+
+[You may assume that, when $\theta$ is small,
+$\sin \theta
+\approx \theta-\frac{1}{6}\theta^3$ and 
+$\cos \theta \approx 1 - \frac{1}{2}\theta^2.$]
+
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Show that
+\[
+\sin\theta = \frac {2t}{1+t^2}, \ \ \
+\cos\theta = \frac{1-t^2}{1+t^2}, \ \ \
+\frac{1+\cos\theta}{\sin\theta}  = \tan (\tfrac{1}{2}\pi-\tfrac{1}{2}\theta),
+\]
+where $t =\tan\frac{1}{2}\theta$.
+
+
+Use the substitution $t =\tan\frac{1}{2}\theta$ to show that, for $0<\alpha<\frac{1}{2}\pi$,
+\[
+\int_0^{\frac{1}{2}\pi}
+{1 \over {1 + \cos\alpha \sin \theta}} \,\d\theta  
+=\frac{\alpha}{\sin\alpha}\,,
+\]
+and deduce a similar result for
+\[
+\int_0^{\frac{1}{2}\pi}
+{1 \over {1 + \sin\alpha \cos \theta}} \,\d\theta  \,.
+\]
+
+%$$ 
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+The  line $l$ has vector equation ${\bf r} = \lambda {\bf s}$,
+where 
+\[
+{\bf s} = (\cos\theta+\sqrt3\,) \; {\bf i} +(\surd2\;\sin\theta)\;{\bf j}
++(\cos\theta-\sqrt3\,)\;{\bf k} 
+\]
+and $\lambda$ is a scalar parameter. Find an expression for the 
+angle between $l$ and the line 
+\mbox{${\bf r} = \mu(a\, {\bf i} + b\,{\bf j} +c\,  {\bf k})$}.
+Show that there is a line $m$ through the origin
+such that, whatever the value of 
+ $\theta$, the acute angle between $l$ and $m$ is $\pi/6$.
+
+
+A plane has  equation  $x-z=4\sqrt3$. The line $l$ meets this plane 
+at $P$. Show that, as $\theta$ varies, $P$ describes a circle,
+with its centre on $m$. Find the radius of this circle.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+
+
+
+
+\begin{questionparts}
+\item
+Let $y$ be the solution of the differential equation
+\[
+\frac{\d y}{\d x} +  4x\e^{-x^2} {(y+3)}^{\frac12} = 0 \qquad (x \ge 0),
+\]
+that satisfies the condition $y=6$
+when $x=0$.
+Find $y$ in terms of $x$ and show that  
+$y\to1$ 
+as $x \to \infty$.
+
+\item
+Let $y$ be any solution of the differential equation
+\[
+\frac{\d y}{\d x}  -x\e^{6 x^2} (y+3)^{1-k} = 0 \qquad (x \ge 0).
+\]
+%that satisfies the condition $y=6$
+%when $x=0$.
+Find a value of  $k$ such that,
+as $x \to \infty$,
+$\e^{-3x^2}y$ 
+tends to a finite non-zero  limit, which you should determine.
+\end{questionparts}
+
+\noindent
+[The approximations, valid for small $\theta$, $\sin\theta \approx \theta$
+and $\cos\theta \approx 1-{\textstyle\frac12}\,\theta^2$ may be assumed.]
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+In an aerobatics display, Jane  and Karen jump 
+from a great height and 
+go through a period of free fall before opening their parachutes.
+While in free fall at speed  $v$, Jane experiences  air resistance
+$kv$ per unit mass but  Karen, who spread-eagles, 
+experiences air resistance \mbox{$kv + (2k^2/g)v^2$} per unit mass.
+Show that Jane's speed can never reach $g/k$. Obtain the corresponding
+result for Karen.
+
+Jane opens her parachute when  her speed is 
+$g/(3{k})$. 
+Show that she has then been in free fall
+for time 
+$k^{-1}\ln (3/2)$. 
+ 
+Karen also opens her parachute  when  her speed is 
+$g/(3{k})$. Find the time she has then been in free fall.
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A long light 
+inextensible string passes over a fixed smooth light pulley.
+ A particle of mass 4~kg is attached to one end $A$ of this string
+and the 
+other end is attached to a second smooth light pulley.
+A long light inextensible string $BC$ passes over the second pulley
+and has a particle 
+of mass 2 kg attached at $B$ and a particle of
+mass of 1 kg  attached at $C$.  The
+system is held in equilibrium in a vertical plane. 
+The  string $BC$ is then released from rest.
+Find the accelerations of the two moving particles.
+
+After $T$ seconds, the end $A$ is released so that all three particles
+are now moving in a vertical plane.
+Find the accelerations of $A$, $B$ and $C$ in this second phase of
+the motion.
+Find also, in terms of $g$ and $T$, the speed of $A$ when $B$ has
+moved through a total distance of $0.6gT^{2}$~metres. 
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+The string $AP$ has a natural length of $1\!\cdot5\!$ metres and modulus of
+elasticity equal to $5g$ newtons. The end $A$
+is attached to the ceiling of a room of height $2\!\cdot\!5$ metres and 
+a particle of mass \mbox{$0\!\cdot\!5$ kg}
+is attached to the end $P$.  The  end  $P$  is 
+released from  rest at a point $0\!\cdot\!5$ metres above the floor and vertically
+below $A$.  Show that the string becomes slack, but that $P$ does not
+reach the ceiling.
+
+Show also that while the string is in tension, $P$ executes simple 
+harmonic motion,
+and that the time in seconds that elapses from the instant when $P$ is released
+to the instant when $P$ first returns to its original position is
+$$
+\left(\frac8{3g}\right)^{\!\frac12}+
+\left(\frac3 {5g}\right)^{\!\frac12}
+{\Big(\pi - \arccos (3/7)\Big)}.
+$$  
+
+\noindent
+[Note that $\arccos x$ is another notation for $\cos^{-1} x$.]
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+{\it Tabulated values of ${\Phi}(\cdot)$,
+the cumulative distribution function of a standard normal variable,
+should not be used in this question.} 
+
+ Henry the  commuter lives in Cambridge and his
+working day starts at his office in London at 0900. He
+ catches the 0715
+train to King's Cross with probability $p$, or the 0720 to 
+Liverpool Street with probability $1-p$.
+ Measured in minutes, journey times for the first
+train are $N(55,25)$ and for the second are $N(65,16)$. Journey times
+from King's Cross and Liverpool Street to his office are $N(30,144)$ and
+$N(25,9)$, respectively. Show that Henry is more likely
+to be late for work if he catches the first train.
+\par
+Henry makes $M$ journeys, where $M$ is large.
+Writing $A$ for $1-{\Phi}(20/13)$  and $B$ for $1-{\Phi}(2)$,  
+find, in terms of $A$, $B$, $M$ and $p$,
+the expected number, $L$,
+of times that Henry will be late and show that for all possible
+values of $p$,
+$$
+BM \le L \le AM.
+$$ 
+
+Henry noted that in 3/5 of the occasions when he was late,
+he had caught the King's Cross train. Obtain an estimate of $p$
+in terms of $A$ and $B$.
+
+[A random variable is said to be $N\left({{\mu}, {\sigma}^2}\right)$
+if it has a normal distribution with mean ${\mu}$ 
+and variance ${\sigma}^2$.]
+
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A group of biologists attempts to estimate the magnitude, $N$, 
+of an island population of voles ({\it Microtus agrestis}).   
+Accordingly, the biologists  capture a random sample of 200 voles, mark them
+and release them. A second random sample of 200 voles is then taken
+of which 11 are found to be marked.  Show that the probability, $p_N$, of
+this occurrence is given by
+$$
+p_N = k{{{\big((N-200)!\big)}^2}
+\over
+{N!(N-389)!}},
+$$
+where $k$ is independent of $N$.
+
+The biologists  then estimate $N$ by calculating the value of
+$N$ for which $p_N$ is a maximum. Find this estimate.
+
+All unmarked voles in the second sample  
+are marked and then the entire sample is released.
+Subsequently a third random sample of 200
+voles is taken. Write down the probability
+that this sample contains exactly $j$ marked voles, leaving your 
+answer in terms of binomial coefficients.
+
+Deduce that 
+$$
+      \sum_{j=0}^{200}{389 \choose j}{3247 \choose {200-j}}
+= {3636 \choose 200}.
+$$
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+The random variables $X_1$, $X_2$, $\ldots$ , $X_{2n+1}$ are 
+independently and uniformly distributed on the interval
+$0 \le x \le 1$.  The random variable $Y$ is defined to be the
+median  of  $X_1$, $X_2$, $\ldots$ , $X_{2n+1}$. 
+Given that the probability density function of $Y$ is $\g(y)$, where
+\[
+\mathrm{g}(y)=\begin{cases}
+ky^{n}(1-y)^{n} & \mbox{ if }0\leqslant y\leqslant1\\
+0 & \mbox{ otherwise}
+\end{cases}
+\]
+use the result
+$$
+\int_0^1 {y^{r}}{{(1-y)}^{s}}\,\d y = 
+\frac{r!s!}{(r+s+1)!}
+$$
+to show that $k={(2n+1)!}/{{(n!)}^2}$, and evaluate
+$\E(Y)$ and ${\rm Var}\,(Y)$.
+Hence show that, 
+for any given positive number $d$, the inequality 
+$$
+{\P\left({\vert {Y - 1/2} \vert} < {d/{\sqrt {n}}} \right)} <
+{\P\left({\vert {{\bar X} - 1/2} \vert} < {d/{\sqrt {n}}} \right)}
+$$
+holds provided $n$ is large enough, where
+${\bar X}$ is the mean of  $X_1$, $X_2$, $\ldots$ , $X_{2n+1}$. 
+
+[You may assume that $Y$ and $\bar X$ are normally distributed 
+for large $n$.]
+\end{question}
+	
+\end{document}

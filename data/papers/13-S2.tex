@@ -1,0 +1,602 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2013
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\q{{\mathrm q}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+\item Find the value of $m$ for which  the line 
+$y = mx$ touches  the curve $y = \ln x\,$.  
+
+If instead the line intersects the curve
+when $x = a$ and $x = b$, where $a < b$, show  that $a^b = b^a$. 
+Show by means of a sketch  that $a < \e < b$.
+
+\item  
+The line $y=mx+c$, where $c>0$,
+ intersects the curve $y=\ln x$ when $x=p$ and $x=q$,
+where $p<q$.
+Show by means of a sketch, or otherwise,  that $p^q>q^p\,$.
+
+\item
+Show by means of a sketch that the
+ straight line through the points
+$(p, \ln p)$ and $(q, \ln q)$, where $\e\le p<q\,$,  intersects  the $y$-axis
+at a positive value of $y$.  Which is greater, $\pi^\e$ or $\e^\pi$?
+
+\item
+Show, using a sketch or otherwise, that if $0<p<q$ and 
+ $\dfrac{\ln q - \ln p}{q-p} = \e^{-1}$, then $q^p>p^q$.  
+ 
+\end{questionparts}
+\end{question}
+\vspace{-0.8cm}
+%%%%%%%%%%Q2
+\begin{question}
+For $n\ge 0$, let 
+\[
+I_n = \int_0^1 x^n(1-x)^n\d x\,.
+\]
+
+\begin{questionparts}
+\item
+For $n\ge 1$, show by means of a substitution that 
+\[
+ \int_0^1 x^{n-1}(1-x)^n\d x = \int_0^1 x^n(1-x)^{n-1}\d x\,
+\]
+and deduce that 
+\[
+2
+ \int_0^1 x^{n-1}(1-x)^n\d x = I_{n-1}\,.
+\]
+
+Show also, for $n\ge1$, that
+\[
+I_n = \frac n {n+1} \int_0^1 x^{n-1} (1-x)^{n+1} \d x
+\]
+and hence that $I_n = \dfrac{n}{2(2n+1)} I_{n-1}\,.$
+
+
+\item When $n$ is a
+ positive integer, show that
+\[
+I_n = \frac{(n!)^2}{(2n+1)!}\,.
+\]
+
+\item
+Use the substitution $x= \sin^2 \theta$ to show
+that $I_{\frac12}= \frac \pi 8$, and evaluate $I_{\frac32}$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+\item 
+Given that the cubic equation
+$x^3+3ax^2 + 3bx +c=0$ has three distinct real roots and $c<0$, 
+show with the help of sketches that
+either exactly one of the roots is positive 
+or all three of the roots are positive.
+ 
+\item 
+Given that the     
+equation $x^3 +3ax^2+3bx+c=0$ has three distinct real positive roots 
+show that
+\begin{equation*}
+a^2>b>0, \ \ \ \ a<0, \ \ \ \ c<0\,.
+\tag{$*$}
+\end{equation*}
+
+\noindent[{\bf Hint}: Consider the turning points.]  
+\item Given that the 
+equation $x^3 +3ax^2+3bx+c=0$ has three distinct real roots and that
+\begin{equation*}
+ ab<0, \ \ \ \ c>0\,,
+\end{equation*}
+determine, with the help of sketches,  the signs of the roots.
+  
+\item 
+Show by means of an explicit example 
+(giving values for $a$, $b$ and $c$)
+that it is possible 
+for  the conditions ($*$) to be satisfied even though
+the corresponding cubic equation 
+has only one real root.               
+
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The line passing through the point $(a,0)$ with gradient $b$ intersects 
+the circle of unit radius centred at the origin at $P$ and $Q$, and $M$ is the
+midpoint of
+ the chord $PQ$.
+Find the coordinates of $M$ in terms of $a$ and $b$.
+
+\begin{questionparts}
+ 
+\item Suppose $b$ is fixed and positive. As  
+$a$ varies,  $M$  traces out a curve (the {\em locus} of $M$).
+Show that 
+$x=- by$
+on this curve.
+Given that  $a$ varies with $-1\le a \le 1$, 
+ show that the locus is a line 
+segment of length~$2b/(1+b^2)^\frac12$.
+Give
+a sketch 
+showing the locus 
+and the unit circle. 
+
+
+\item Find the locus of $M$ in the following cases, giving in
+each case its cartesian equation, describing it geometrically and sketching
+it in relation to the unit circle:
+\begin{itemize}
+
+\item [({\bf a})] $a$ is fixed with $0<a<1$, and $b$ varies 
+with  $-\infty <b< \infty$;
+
+\item [({\bf b})] $ab=1$, and $b$  varies  with  
+ $0<b\le1$.
+\end{itemize}
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item A function $\f(x)$ satisfies $\f(x) = \f(1-x)$ for all $x$.
+Show, by differentiating with respect to $x$, that $\f'(\frac12) =0\,$.
+If, in addition,  $\f(x) = \f(\frac1x)$ for all (non-zero) $x$, show that 
+$\f'(-1)=0$ and that  $\f'(2)=0$.
+
+\item  The function $\f$ is defined, for $x\ne0$ and $x\ne1$, by
+\[
+\f(x) = \frac {(x^2-x+1)^3}{(x^2-x)^2} \,. 
+\]
+Show that $\f(x)= \f(\frac 1 x)$ and $\f(x) = \f(1-x)$. 
+
+Given that it has exactly three stationary points, 
+sketch the 
+curve  $y=\f(x)$. 
+
+\item
+Hence, or otherwise,
+ find all the roots of the equation $\f(x) = \dfrac {27} 4\,$
+and state the ranges of values of $x$ for which $\f(x) > \dfrac{27} 4\,$. 
+
+ Find also all  the roots of the  equation $\f(x) = \dfrac{343}{36}\,$
+and state the ranges of values of $x$ for which 
+$\f(x) >   \dfrac{343}{36}$.
+
+ \end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+In this question, the following theorem may be used.\newline 
+{\sl Let $u_1$, $u_2$, $\ldots$ be a sequence of (real) numbers. 
+If the sequence is bounded above (that is, $u_n\le b$ for all $n$, where $b$
+is some  fixed number) and increasing 
+(that is, $u_n\ge u_{n-1}$ for all $n$), then
+the sequence tends to a limit (that is, converges).}
+
+The sequence  $u_1$, $u_2$, $\ldots$ is defined by $u_1=1$ and 
+\[
+u_{n+1} = 1+\frac 1{u_n} \ \ \ \ \ \ \ \ \ \ (n\ge1)\,.
+\tag{$*$}
+\]
+
+
+\begin{questionparts}
+\item Show that, for $n\ge3$, 
+\[
+u_{n+2}-u_n = \frac{u_{n} - u_{n-2}}{(1+u_n)(1+u_{n-2})}
+.
+\]
+\item Prove, by induction or otherwise, that $1\le u_n \le 2$ for all $n$.
+\item 
+Show that the sequence $u_1$, $u_3$, $u_5$, $\ldots$
+tends to a limit, 
+and that the sequence $u_2$, $u_4$, $u_6$, $\ldots$
+tends to a limit. Find these limits and  deduce that the sequence 
+ $u_1$, $u_2$, $u_3$, $\ldots\,$ tends to a limit.
+
+Would this conclusion change if the sequence were 
+defined by $(*)$ and $u_1=3$? 
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+\item
+Write down a solution of the equation
+\[
+x^2-2y^2 =1\,,
+\tag{$*$}
+\]
+for which $x$ and $y$ are non-negative integers.
+
+Show that, if  $x=p$, $y=q$ is a solution of ($*$),
+then so also is $x=3p+4q$, $y=2p+3q$. Hence find two   
+solutions of $(*)$ for which $x$ is a positive odd integer and $y$ is a 
+positive even integer.
+\item Show that, if $x$ is an odd integer and $y$ is an 
+even integer, $(*)$ can be written in the form
+\[
+n^2 = \tfrac12 m(m+1)\,,
+\]
+where $m$ and $n$ are integers.
+
+
+\item
+The positive integers $a$, $b$ and $c$ satisfy
+\[
+b^3=c^4-a^2\,,
+\]
+where $b$ is a prime number. Express $a$ and $c^2$ in terms of $b$ in the 
+two cases that arise.
+
+Find a solution of $a^2+b^3=c^4$, where $a$, $b$ and $c$ are positive 
+integers but  $b$ is not prime.
+\end{questionparts}
+\end{question}
+\vspace{-0.9cm}	
+%%%%%%%%% Q8
+\begin{question}
+The function $\f$ satisfies  $\f(x)>0$ for $x\ge0$ and  is strictly
+decreasing (which means that 
+$\f(b)<\f(a)$
+for $b>a$).     
+   
+\begin{questionparts}
+\item
+
+For $t\ge0$, let  $A_0(t)$ be the area of the largest rectangle 
+with sides parallel to the coordinate axes that can fit in the region
+bounded by the curve $y=\f(x)$, 
+the $y$-axis 
+and the line $y=\f(t)$. Show that $A_0(t)$ 
+can be written in the form
+\[
+A_0(t) =x_0\left( \f(x_0) -\f(t)\right),
+\]
+where $x_0$ satisfies $x_0 \f'(x_0) +\f(x_0) = \f(t)\,$. 
+
+\item The function g is defined,
+for $t>  0$,  by
+\[
+\g(t) =\frac 1t \int_0^t \f(x) \d x\,.
+\]
+Show that $t \g'(t) = \f(t) -\g(t)\,$.
+
+Making use of a sketch show that, for $t>0$, 
+\[
+ \int_0^t \left( \f(x) - \f(t)\right) \d x > 
+A_0(t)
+\]
+and deduce that $-t^2 \g'(t)> A_0(t)$.
+
+\item In the case $\f(x)= \dfrac 1 {1+x}\,$, use the above to establish the inequality
+\[
+\ln \sqrt{1+t} > 1 - \frac 1 {\sqrt{1+t}}
+\,,
+\]
+for $t>0$.
+ 
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+The diagram shows three identical discs in equilibrium in 
+a vertical plane. Two discs rest, not in contact with each other,
+ on a horizontal surface
+and the third disc rests on the other two. The angle at the upper
+vertex of the triangle joining the centres of the discs is $2\theta$.
+
+\begin{center}
+\psset{xunit=0.7cm,yunit=0.7cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-7,-0.42)(7,6.86)
+\psline(-7,0)(7,0)
+\pscircle(-3,2){1.4}
+\pscircle(3,2){1.4}
+\pscircle(0,4.64){1.4}
+\psline(0,4.64)(-3,2)
+\psline(0,4.64)(3,2)
+\psline(0,4.64)(0,0.9)
+\parametricplot{-1.5707963267948966}{-0.722030440522891}{1*cos(t)+0|1*sin(t)+4.64}
+\rput[tl](0.16,4.25){$\theta$}
+\end{pspicture*}
+\end{center}
+
+\noindent
+The weight of each disc is $W$.
+The coefficient of friction between a disc and the horizontal surface
+is $\mu$ and the coefficient of friction between the discs is also $\mu$.
+
+\begin{questionparts} 
+\item Show that the normal reaction between the horizontal surface and 
+a disc in contact with the surface is $\frac32 W\,$. 
+
+\item Find the normal reaction between 
+two discs in contact and show that the magnitude of the                          frictional force between two discs in contact is 
+$\dfrac{W\sin\theta}{2(1+\cos\theta)}\,$.
+
+\item Show that if
+$\mu <2- \surd3\,$ there is no value of $\theta$ for which 
+equilibrium is possible.
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A particle is projected 
+at an angle of elevation $\alpha$ (where $\alpha>0$) from a point
+$A$ on horizontal ground.
+At a general
+point in its trajectory the angle of elevation of the particle
+from $A$ is $\theta$ and 
+its direction of motion is at  an angle $\phi$ above the horizontal
+(with $\phi\ge0$ for the first half of the trajectory and $\phi\le0$
+for the second half).
+
+Let $B$ denote the point on the trajectory at which $\theta = \frac12 \alpha$
+and let $C$ denote the point on the trajectory at which
+ $\phi = -\frac12\alpha$.
+
+\begin{questionparts}
+\item Show that, at a general point on the trajectory,  
+$2\tan\theta = \tan \alpha + \tan\phi\,$.
+\item Show that, if $B$ and $C$ are the same point, then 
+$ \alpha =  60^\circ\,$.
+ \item Given that 
+ $\alpha < 60^\circ\,$,
+determine whether the particle reaches the  point $B$ first or the
+point  $C$ first.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Three identical particles lie, not touching one another, in a straight line
+on a smooth horizontal surface. One particle is projected with speed
+$u$ directly towards the other two which are at rest. The coefficient of 
+restitution in all collisions is $e$, where $0<e<1\,$.
+
+\begin{questionparts}
+\item Show that, after the second collision, the speeds of the particles are
+$\frac12u(1-e)$, $\frac14u (1-e^2)$ and $\frac14u(1+e)^2$. 
+Deduce that there will be a third  collision         
+whatever the value of~$e$.
+\item Show that there will be a fourth collision if and only if 
+$e$ is less than a particular value which you should determine. 
+\end{questionparts} 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+The random variable $U$ has a Poisson distribution with parameter
+$\lambda$. The random variables $X$ and $Y$ are defined as follows.
+\begin{align*}
+X&=
+ \begin{cases} 
+U & \text{ if $U$ is 1, 3, 5, 7, $\ldots\,$} \\
+0 & \text{ otherwise}
+\end{cases}
+\\
+Y&=
+ \begin{cases} 
+U & \text{ if $U$ is 2, 4, 6, 8, $\ldots\,$ } \\
+0 & \text{ otherwise} 
+\end{cases}
+\end{align*}
+
+
+\begin{questionparts}
+\item Find $\E(X)$ and $\E(Y)$ in terms of $\lambda$, $\alpha$ and 
+$\beta$, where
+\[
+\alpha = 1+\frac{\lambda^2}{2!}+\frac{\lambda^4}{4!} +\cdots\,
+\text{ \ \ and \ \ }
+\beta = \frac{\lambda}{1!} + \frac{\lambda^3}{3!} + \frac{\lambda^5}{5!}
++\cdots\,.
+\]
+\item
+Show that 
+\[
+\var(X) = \frac{\lambda\alpha+\lambda^2\beta}{\alpha+\beta}
+ - \frac{\lambda^2\alpha^2}{(\alpha+\beta)^2}
+\]
+and obtain the corresponding expression for $\var(Y)$. Are there any 
+non-zero values of~$\lambda$ for which 
+$ \var(X) + \var(Y) = \var(X+Y)\,$? 
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A biased coin has probability $p$ of showing a head
+and probability $q$ of showing a tail, where $p\ne0$, $q\ne0$
+and $p\ne q$. When the coin is tossed repeatedly, runs occur. 
+A {\em straight run} of length $n$ is a sequence of $n$ consecutive
+heads or $n$ consecutive tails. An {\em alternating run} of length 
+$n$ is a sequence of length $n$ alternating between heads and tails. An 
+alternating run can start with either a head or a tail.
+
+Let $S$ be the length of the longest straight run beginning with the
+first toss and let $A$ be the  length of the longest 
+alternating  run beginning with the
+first toss.
+
+\begin{questionparts}
+\item Explain why  $\P(A=1)=p^2+q^2$ and find $\P(S=1)$. Show that
+ $\P(S=1)<\P(A=1)$.
+\item Show that
+$\P(S=2)= \P(A=2)$
+and determine the relationship between
+$\P(S=3)$ and $ \P(A=3)$.
+
+ \item Show that, for $n>1$, $\P(S=2n)>\P(A=2n)$ and determine
+the corresponding relationship between $\P(S=2n+1)$ and $\P(A=2n+1)$.
+[You are advised {\em not} to  use $p+q=1$ in this part.] 
+\end{questionparts}
+\end{question}
+
+\end{document}

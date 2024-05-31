@@ -1,0 +1,473 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1990
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Prove that both $x^{4}-2x^{3}+x^{2}$ and $x^{2}-8x+17$ are non-negative
+for all real $x$. By considering the intervals $x\leqslant0$, $0<x\leqslant2$
+and $x>2$ separately, or otherwise, prove that the equation 
+\[
+x^{4}-2x^{3}+x^{2}-8x+17=0
+\]
+has no real roots. 
+
+
+Prove that the equation $x^{4}-x^{3}+x^{2}-4x+4=0$ has no real roots.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Prove that if $A+B+C+D=\pi,$ then 
+\[
+\sin\left(A+B\right)\sin\left(A+D\right)-\sin B\sin D=\sin A\sin C.
+\]
+The points $P,Q,R$ and $S$ lie, in that order, on a circle of centre
+$O$. Prove that 
+\[
+PQ\times RS+QR\times PS=PR\times QS.
+\]
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Sketch the curves given by 
+\[
+y=x^{3}-2bx^{2}+c^{2}x,
+\]
+where $b$ and $c$ are non-negative, in the cases: 
+\begin{alignat*}{6}
+\sf{\bf{(i)\ \ }} & 2b<c\sqrt{3}, & \quad & \mathbf{(ii)\ \ } & 2b=c\sqrt{3}\neq0, & \quad & \mathbf{(iii)\ \ } & c\sqrt{3}<2b<2c, & \quad & \mathbf{(iv)\ \ } & b=c\neq0,\\
+\mathbf{(v)\ \ } & b>c>0, &  & \mathbf{(vi)}\ \  & c=0,b\neq0, &  & \mathbf{(vii)\ \ } & c=b=0.
+\end{alignat*}
+Sketch also the curves given by $y^{2}=x^{3}-2bx^{2}+c^{2}x$ in the
+cases \textbf{(i)}, \textbf{(v)} and \textbf{(vii)}. 
+
+
+\end{question}
+
+%%%%%% Q4 
+
+\begin{question}
+A plane contains $n$ distinct given lines, no two of which are parallel,
+and no three of which intersect at a point. By first considering the
+cases $n=1,2,3$ and $4$, provide and justify, by induction or otherwise,
+a formula for the number of line segments (including the infinite
+segments). 
+
+
+Prove also that the plane is divided into $\frac{1}{2}(n^{2}+n+2)$
+regions (including those extending to infinity). 
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+	The distinct points $L,M,P$ and $Q$ of the Argand diagram lie on
+	a circle $S$ centred on the origin and the corresponding complex
+	numbers are $l,m,p$ and $q$. By considering the perpendicular bisectors
+	of the chords, or otherwise, prove that the chord $LM$ is perpendicular
+	to the chord $PQ$ if and only if $lm+pq=0.$ 
+
+
+	Let $A_{1},A_{2}$ and $A_{3}$ be three distinct points on $S$.
+	For any given point $A_{1}'$ on $S$, the points $A_{2}',A_{3}'$
+	and $A_{1}''$ are chosen on $S$ such that $A_{1}'A_{2}',A_{2}'A_{3}'$
+	and $A_{3}'A_{1}''$ are perpendicular to $A_{1}A_{2},A_{2}A_{3}$
+	and $A_{3}A_{1},$ respectively. Show that for exactly two positions
+	of $A_{1}',$ the points $A_{1}'$ and $A_{1}''$ coincide. 
+
+
+	If, instead, $A_{1},A_{2},A_{3}$ and $A_{4}$ are four given distinct
+	points on $S$ and, for any given point $A_{1}',$ the points $A_{2}',A_{3}',A_{4}'$
+	and $A_{1}''$ are chosen on $S$ such that $A_{1}'A_{2}',A_{2}'A_{3}',A_{3}'A_{4}'$
+	and $A_{4}'A_{1}''$ are respectively perpendicular to $A_{1}A_{2},A_{2}A_{3},A_{3}A_{4}$
+	and $A_{4}A_{1},$ show that $A_{1}'$ coincides with $A_{1}''.$ 
+
+
+	Give the corresponding result for $n$ distinct points on $S$.
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+Let $a,b,c,d,p$ and $q$ be positive integers. Prove that:
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] if $b>a$ and $c>1,$ then $bc\geqslant2c\geqslant2+c$; 
+\item[\bf (ii)] if $a<b$ and $d<c$, then $bc-ad\geqslant a+c$; 
+\item[\bf (iii)] if ${\displaystyle \frac{a}{b}<p<\frac{c}{d}}$, then $\left(bc-ad\right)p\geqslant a+c$; 
+\item[\bf (iv)] if ${\displaystyle \frac{a}{b}<\frac{p}{q}<\frac{c}{d}},$ then ${\displaystyle p\geqslant\frac{a+c}{bc-ad}}$
+and ${\displaystyle q\geqslant\frac{b+d}{bc-ad}}$. 
+\end{itemize}
+
+Hence find all fractions with denominators less than 20 which lie
+between $8/9$ and $9/10$.
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+	A damped system with feedback is modelled by the equation 
+	\[
+	\mathrm{f}'(t)+\mathrm{f}(t)-k\mathrm{f}(t-1)=0,\mbox{ }\tag{\ensuremath{\dagger}}
+	\]
+	where $k$ is a given non-zero constant. Show that (non-zero) solutions
+	for $\mathrm{f}$ of the form \phantom{ } $\mathrm{f}(t)=A\mathrm{e}^{pt},$ where
+	$A$ and $p$ are constants, are possible provided $p$ satisfies
+	\[
+	p+1=k\mathrm{e}^{-p}.\mbox{ }\tag{\ensuremath{*}}
+	\]
+	Show also, by means of a sketch, or otherwise, that equation $(*)$
+	can have $0,1$ or $2$ real roots, depending on the value of $k$,
+	and find the set of values of $k$ for which such solutions of $(\dagger)$
+	exist. For what set of values of $k$ do such solutions tend to zero
+	as $t\rightarrow+\infty$?
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+The functions $\mbox{\ensuremath{\mathrm{x}} and \ensuremath{\mathrm{y}}}$
+are related by 
+\[
+\mathrm{x}(t)=\int_{0}^{t}\mathrm{y}(u)\,\mathrm{d}u,
+\]
+so that $\mathrm{x}'(t)=\mathrm{y}(t)$. Show that 
+\[
+\int_{0}^{1}\mathrm{x}(t)\mathrm{y}(t)\,\mathrm{d}t=\tfrac{1}{2}\left[\mathrm{x}(1)\right]^{2}.
+\]
+In addition, it is given that $\mbox{y}(t)$ satisfies 
+\[
+\mathrm{y}''+\mbox{(\ensuremath{\mathrm{y}}}^{2}-1)\mathrm{y}'+\mathrm{y}=0,\mbox{ }(*)
+\]
+with $\mathrm{y}(0)=\mathrm{y}(1)$ and $\mathrm{y}'(0)=\mathrm{y}'(1)$.
+By integrating $(*)$, prove that $\mathrm{x}(1)=0.$ 
+
+
+By multiplying $(*)$ by $\mathrm{x}(t)$ and integrating by parts,
+prove the relation 
+\[
+\int_{0}^{1}\left[\mathrm{y}(t)\right]^{2}\,\mathrm{d}t=\tfrac{1}{3}\int_{0}^{1}\left[\mathrm{y}(t)\right]^{4}\,\mathrm{d}t.
+\]
+Prove also the relation 
+\[
+\int_{0}^{1}\left[\mathrm{y}'(t)\right]^{2}\,\mathrm{d}t=\int_{0}^{1}\left[\mathrm{y}(t)\right]^{2}\,\mathrm{d}t.
+\]
+
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+		\begin{question}
+Show by means of a sketch that the parabola $r(1+\cos\theta)=1$ cuts
+the interior of the cardioid $r=4(1+\cos\theta)$ into two parts. 
+
+
+Show that the total length of the boundary of the part that includes
+the point $r=1,\theta=0$ is $18\sqrt{3}+\ln(2+\sqrt{3}).$ 
+		\end{question}
+		
+	
+%%%%%%%%%% 10
+\begin{question}
+Two square matrices $\mathbf{A}$ and $\mathbf{B}$ satisfies $\mathbf{AB=0}.$
+Show that either $\det\mathbf{A}=0$ or $\det\mathbf{B}=0$ or $\det\mathbf{A}=\det\mathbf{B}=0$.
+If $\det\mathbf{B}\neq0$, what must $\mathbf{A}$ be? Give an example
+to show that the condition $\det\mathbf{A}=\det\mathbf{B}=0$ is not
+sufficient for the equation $\mathbf{AB=0}$ to hold. 
+
+
+Find real numbers $p,q$ and $r$ such that 
+\[
+\mathbf{M}^{3}+2\mathbf{M}^{2}-5\mathbf{M}-6\mathbf{I}=(\mathbf{M}+p\mathbf{I})(\mathbf{M}+q\mathbf{I})(\mathbf{M}+r\mathbf{I}),
+\]
+where $\mathbf{M}$ is any square matrix and $\mathbf{I}$ is the
+appropriate identity matrix. 
+
+
+Hence, or otherwise, find all matrices $\mathbf{M}$ of the form $\begin{pmatrix}a & c\\
+0 & b
+\end{pmatrix}$ which satisfy the equation 
+\[
+\mathbf{M}^{3}+2\mathbf{M}^{2}-5\mathbf{M}-6\mathbf{I}=\mathbf{0}.
+\]
+			\end{question}
+			
+		
+		
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+A disc is free to rotate in a horizontal plane about a vertical axis
+through its centre. The moment of inertia of the disc about this axis
+is $mk^{2}.$ Along one diameter is a narrow groove in which a particle
+of mass $m$ slides freely. At time $t=0,$ the disc is rotating with
+angular speed $\Omega,$ and the particle is at a distance $a$ from
+the axis and is moving towards the axis with speed $V$, where $k^{2}V^{2}=\Omega^{2}a^{2}(k^{2}+a^{2}).$
+Show that, at a later time $t,$ while the particle is still moving
+towards the axis, the angular speed $\omega$ of the disc and the
+distance $r$ of the particle from the axis are related by 
+\[
+\omega=\frac{\Omega(k^{2}+a^{2})}{k^{2}+r^{2}}\qquad\mbox{ and }\qquad\frac{\mathrm{d}r}{\mathrm{d}t}=-\frac{\Omega r(k^{2}+a^{2})}{k(k^{2}+r^{2})^{\frac{1}{2}}}.
+\]
+Deduce that 
+\[
+k\frac{\mathrm{d}r}{\mathrm{d}\theta}=-r(k^{2}+r^{2})^{\frac{1}{2}},
+\]
+where $\theta$ is the angle through which the disc has turned at
+time $t$. By making the substitution $u=1/r$, or otherwise, show
+that $r\sinh(\theta+\alpha)=k,$ where $\sinh\alpha=k/a.$ Hence,
+or otherwise, show that the particle never reaches the axis. 
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+A straight staircase consists of $N$ smooth horizontal stairs each
+of height $h$. A particle slides over the top stair at speed $U$,
+with velocity perpendicular to the edge of the stair, and then falls
+down the staircase, bouncing once on every stair. The coefficient
+of restitution between the particle and each stair is $e$, where
+$e<1$. Show that the horizontal distance $d_{n}$ travelled between
+the $n$th and $(n+1)$th bounces is given by 
+\[
+d_{n}=U\left(\frac{2h}{g}\right)^{\frac{1}{2}}\left(e\alpha_{n}+\alpha_{n+1}\right),
+\]
+where ${\displaystyle \alpha_{n}=\left(\frac{1-e^{2n}}{1-e^{2}}\right)^{\frac{1}{2}}}$. 
+
+
+If $N$ is very large, show that $U$ must satisfy
+\[
+U=\left(\frac{L^{2}g}{2h}\right)^{\frac{1}{2}}\left(\frac{1-e}{1+e}\right)^{\frac{1}{2}},
+\]
+where $L$ is the horizontal distance between the edges of successive
+stairs. 
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+A thin non-uniform rod $PQ$ of length $2a$ has its centre of gravity
+a distance $a+d$ from $P$. It hangs (not vertically) in equilibrium
+suspended from a small smooth peg $O$ by means of a light inextensible
+string of length $2b$ which passes over the peg and is attached at
+its ends to $P$ and $Q$. Express $OP$ and $OQ$ in terms of $a,b$
+and $d$. By considering the angle $POQ$, or otherwise, show that
+$d<a^{2}/b$. 
+
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+The identical uniform smooth spherical marbles $A_{1},A_{2},\ldots,A_{n},$
+where $n\geqslant3,$ each of mass $m,$ lie in that order in a smooth
+straight trough, with each marble touching the next. The marble $A_{n+1},$
+which is similar to $A_{n}$ but has mass $\lambda m,$ is placed
+in the trough so that it touches $A_{n}.$ Another marble $A_{0},$
+identical to $A_{n},$ slides along the trough with speed $u$ and
+hits $A_{1}.$ It is given that kinetic energy is conserved throughout. 
+\begin{questionparts}
+\item Show that if $\lambda<1,$ there is a possible subsequent motion in
+which only $A_{n}$ and $A_{n+1}$ move (and $A_{0}$ is reduced to
+rest), but that if $\lambda>1,$ such a motion is not possible. 
+\item If $\lambda>1,$ show that a subsequent motion in which only $A_{n-1},A_{n}$
+and $A_{n+1}$ move is not possible. 
+\item If $\lambda>1,$ find a possible subsequent motion in which only two
+marbles move. 
+\end{questionparts}
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+A target consists of a disc of unit radius and centre $O$. A certain
+marksman never misses the target, and the probability of any given
+shot hitting the target within a distance $t$ from $O$ it $t^{2}$,
+where $0\leqslant t\leqslant1$. The marksman fires $n$ shots independently.
+The random variable $Y$ is the radius of the smallest circle, with
+centre $O$, which encloses all the shots. Show that the probability
+density function of $Y$ is $2ny^{2n-1}$ and find the expected area
+of the circle. 
+
+
+The shot which is furthest from $O$ is rejected. Show that the expected
+area of the smallest circle, with centre $O$, which encloses the
+remaining $(n-1)$ shots is 
+\[
+\left(\frac{n-1}{n+1}\right)\pi.
+\]
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+Each day, I choose at random between my brown trousers, my grey trousers
+and my expensive but fashionable designer jeans. Also in my wardrobe,
+I have a black silk tie, a rather smart brown and fawn polka-dot tie,
+my regimental tie, and an elegant powder-blue cravat which I was given
+for Christmas. With my brown or grey trousers, I choose ties (including
+the cravat) at random, except of course that I don\textquoteright t
+wear the cravat with the brown trousers or the polka-dot tie with
+the grey trousers. With the jeans, the choice depends on whether it
+is Sunday or one of the six weekdays: on weekdays, half the time I
+wear a cream-coloured sweat-shirt with $E=mc{}^{2}$ on the front
+and no tie; otherwise, and on Sundays (when naturally I always wear
+a tie), I just pick at random from my four ties.
+
+
+This morning, I received through the post a compromising photograph
+of myself. I often receive such photographs and they are equally likely
+to have been taken on any day of the week. However, in this particular
+photograph, I am wearing my black silk tie. Show that, on the basis
+of this information, the probability that the photograph was taken
+on Sunday is $11/68$. 
+
+
+I should have mentioned that on Mondays I lecture on calculus and
+I therefore always wear my jeans (to make the lectures seem easier
+to understand). Find, on the basis of the complete information, the
+probability that the photograph was taken on Sunday.
+
+[The phrase `at random' means `with equal probability'.]
+\end{question}
+\end{document}

@@ -1,0 +1,519 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2010
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Given that 
+\[
+5x^{2}+2y^{2}-6xy+4x-4y\equiv
+a\left(x-y+2\right)^{2}
++b\left(cx+y\right)^{2}+d\,,
+\] 
+find the values of the constants $a$, $b$, $c$
+and $d$.
+
+Solve the simultaneous equations 
+\begin{align*}
+5x^{2}+2y^{2}-6xy+4x-4y&=9\,,
+\\
+6x^{2}+3y^{2}-8xy+8x-8y&=14\,.
+\end{align*}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The 
+curve 
+$\displaystyle y=\Bigl(\frac{x-a}{x-b}\Bigr)\e^{x}$, 
+where $a$ and $b$ are constants, 
+has two stationary points. 
+Show that 
+\[
+a-b<0 \ \  \ \text{or} \ \ \ a-b>4 \,.
+\]
+
+\begin{questionparts}
+\item[(i)]  Show that, in the case $a=0$ and $b= \frac12$,
+there is one stationary point  on either side of the 
+curve's vertical asymptote, and  sketch the curve.
+\item[(ii)] Sketch the curve in the case 
+$  a=\tfrac{9}{2}$ and $b=0\,$. 
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Show that 
+\[
+\sin(x+y) -\sin(x-y) = 2 \cos x \, \sin y
+\]
+and deduce that  
+\[
+\sin A - \sin B = 2
+\cos \tfrac12 (A+B)
+\,
+\sin\tfrac12 (A-B)
+\,.
+\]
+Show also that
+\[
+\cos A - \cos B = 
+-2
+\sin \tfrac12(A+B) 
+\,
+\sin\tfrac12(A-B)\,.
+\] 
+
+The points $P$, $Q$, $R$ and $S$ have coordinates
+$\left(a\cos p,b\sin p\right)$, 
+$\left(a\cos q,b\sin q\right)$, 
+$\left(a\cos r,b\sin r\right)$ and 
+$\left(a\cos s,b\sin s\right)$ respectively,
+where $0\le p<q<r<s<2\pi$, and $a$ and $b$ are positive.
+
+Given that neither of the lines $PQ$ and $SR$ is vertical,
+show that these lines are parallel if and only if 
+\[
+r+s-p-q = 2\pi\,.
+\]
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+ Use the 
+substitution 
+$x=\dfrac{1}{t^{2}-1}\; $, where $t>1$,  
+to show that, for $ x>0$,
+\[
+\int  \frac{1}{\sqrt{x\left(x+1\right) \; } \ }\; \d x
+=2 \ln \left(\sqrt x+ \sqrt{x +1} \; \right)+c
+\,.
+\]
+{\bf [Note} You may use without proof the result 
+$\displaystyle
+\int \! \frac{1}{t^2-a^2} \, \d t 
+= \frac{1}{2a} \ln \left| \frac{t-a}{t+a}\right| + \rm {constant}$.
+{\bf]} 
+
+The section of the curve 
+\[
+y=\dfrac{1}{\sqrt{x}\; }-\dfrac{1}{\sqrt{x+1}\; }
+\] 
+between $x=\frac{1}{8}$ and $x=\frac{9}{16}$ 
+is rotated through $360^{o}$ about the $x$-axis. 
+Show that the  volume 
+enclosed is $2\pi \ln \tfrac{5}{4}\,$. $\phantom{\dfrac AB}$
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+By considering the expansion 
+of $\left(1+x\right)^{n}$ where $n$ is a positive integer, 
+or otherwise, show that:
+\begin{questionparts}
+\item 
+$\displaystyle \begin{pmatrix}n\\0\end{pmatrix}
++\begin{pmatrix}n\\1\end{pmatrix}+
+\begin{pmatrix}n\\2\end{pmatrix}+ 
+\cdots +\begin{pmatrix}n\\n\end{pmatrix}=2^{n}\,;
+$
+\item 
+$\displaystyle
+\begin{pmatrix}n\\1\end{pmatrix}+2\begin{pmatrix}
+n\\2\end{pmatrix}+3\begin{pmatrix}n\\3\end{pmatrix}
++\cdots +n\begin{pmatrix}n\\n\end{pmatrix}=n2^{n-1}\,;
+$
+\item
+$\displaystyle 
+\begin{pmatrix}n\\0\end{pmatrix}
++\dfrac{1}{2}\begin{pmatrix}n\\1\end{pmatrix}
++\dfrac{1}{3}\begin{pmatrix}n \\2\end{pmatrix}+
+\cdots +\dfrac{1}{n+1}\begin{pmatrix}n\\n\end{pmatrix}
+=\dfrac{1}{n+1}\left(2^{n+1}-1\right)\,;$
+\item
+ $\displaystyle
+\begin{pmatrix}n\\1\end{pmatrix}
++2^{2}\begin{pmatrix}n\\2\end{pmatrix}
++3^{2}\begin{pmatrix}n\\3\end{pmatrix}
++ \cdots
++n^{2}\begin{pmatrix}n\\n\end{pmatrix}
+=n\left(n+1\right)2^{n-2}\,.$
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Show that, if  $y=\e^x$, then 
+\[
+(x-1) \frac{\d^2 y}{\d x^2}  -x \frac{\d y}{\d x} 
++y=0\,.
+\tag{$*$}
+\]
+
+In order to find other solutions of this differential equation, now
+let $y=u\e^x$, where $u$ is a function of $x$. 
+By substituting this into   $(*)$, 
+show that 
+\[
+ (x-1) \frac{\d^2 u}{\d x^2} + (x-2) \frac{\d u}{\d x} 
+=0\,.
+\tag{$**$}
+\]
+By setting $ \dfrac {\d u}{\d x}= v$ in $(**)$ and solving the
+resulting first order differential 
+equation for $v$, find~$u$ in terms of $x$.
+Hence  show that $y=Ax + B\e^x$ satisfies $(*)$, where $A$ and $B$
+are any  constants.   
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Relative to a fixed origin 
+$O$, the points 
+$A$ and $B$ have position vectors 
+$\bf{a}$ and $\bf{b}$, respectively. (The points $O$, $A$ and $B$ are not
+collinear.) 
+The point $C$ has position vector $\bf c$ given by  
+\[
+{\bf c} =\alpha {\bf a}+ \beta {\bf b}\,,
+\] 
+where $\alpha$ and $\beta$ are 
+positive constants with $\alpha+\beta<1\,$. 
+The lines $OA$ 
+and $BC$ meet at the point $P$ with position vector $\bf p$
+and the lines $OB$ and $AC$ meet at the point $Q$ with position vector $\bf q$. 
+Show that 
+\[
+{\bf p}  =\frac{\alpha {\bf a} }{1-\beta}\,,
+\] 
+and write down $\bf q$ in terms of 
+    $\alpha,\ \beta$ and $\bf   {b}$.
+
+
+Show  further that the point $R$ 
+with position vector $\bf r$ given by 
+\[
+{\bf r} =\frac{\alpha {\bf a}
++ \beta {\bf b}}{\alpha + \beta}\,,
+\] 
+ lies on the lines $OC$ and $AB$.
+
+The lines $OB$ and $PR$ intersect at the point $S$.  
+Prove that 
+$
+\dfrac{OQ}{BQ} = \dfrac{OS}{BS}\,$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+\begin{questionparts}
+\item Suppose that $a$, $b$ and $c$ are integers 
+that satisfy the equation 
+\[
+a^{3}+3b^{3}=9c^{3}.
+\]
+Explain why $a$ must be divisible by 3,
+and show further that both $b$ and $c$ must also  be divisible by 3. 
+Hence show that the only integer solution is $a=b=c=0\,$.
+
+\item Suppose that $p$, $q$ and $r$ are integers
+that satisfy the equation
+\[
+ p^4 +2q^4 = 5r^4  
+\,.\]
+ By considering the possible final digit of each
+term, or otherwise, show that 
+$p$ and $q$ are divisible by 5. Hence
+show that the only integer solution is $p=q=r=0\,$.
+
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}$\,$
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(0.19,0.2)(4.27,3.8)
+\psline(0.73,3.8)(0.73,0.63)
+\psline(0.28,0.62)(3.61,0.62)
+\psline(0.73,2.13)(3.22,0.62)
+\psline(3.22,0.62)(4.05,1.71)
+\psline(4.05,1.71)(1.58,3.28)
+\psline(0.73,2.13)(1.58,3.28)
+\rput[tl](2.56,0.85){$\alpha$}
+\rput[tl](1.52,1.5){$2a$}
+\rput[tl](3.74,1.33){$2b$}
+\pscustom{\parametricplot{2.5962489219025393}{3.13892917236946}{0.84*cos(t)+3.22|0.84*sin(t)+0.62}\lineto(3.22,0.62)\closepath}
+\end{pspicture*}
+\end{center}
+
+The diagram shows
+a uniform rectangular lamina with sides of lengths $2a$ and $2b$ leaning 
+against a rough vertical wall, 
+with one corner resting on a rough horizontal plane.
+The plane of the lamina is vertical and perpendicular to
+the wall, and one edge
+makes  an angle of $\alpha$ 
+with the horizontal plane. Show that the centre of mass
+of the lamina is a distance $a\cos\alpha + b\sin\alpha$ from the
+wall.
+
+The coefficients of friction at 
+the  two points of contact are each  $\mu$ and the friction
+is limiting at both contacts. 
+Show that
+\[
+a\cos(2\lambda +\alpha) = b\sin\alpha \,,
+\]
+where $\tan\lambda = \mu$.
+
+Show also that if the lamina is square, then $\lambda = \frac{1}{4}\pi -\alpha$.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A particle $P$ moves so that, at time $t$,
+ its displacement 
+$ \bf r $
+ from a fixed origin  is given by 
+\[
+{\bf r} =\left( \e^{t}\cos t \right) {\bf i}+
+\left(\e^t \sin t\right) {\bf j}\,.\]
+Show that the velocity of the particle always makes an 
+angle of $\frac{\pi}{4}$ with the particle's displacement, 
+and that the acceleration of the particle is always
+perpendicular to its displacement. Sketch the path of 
+the particle for $0\le t \le \pi$.
+
+ A second particle $Q$ moves on the same path, passing through
+each point on the path a fixed time $T$ after $P$ does.
+Show that the distance between $P$ and $Q$ is 
+proportional to $\e^{t}$. 
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Two particles  of masses $m$ and $M$, with $M>m$,
+lie in  a smooth circular groove on a horizontal plane. The coefficient
+of restitution between the particles is $e$. The particles are initially
+projected round the groove
+with the same speed $u$ but in opposite directions. Find the
+speeds of the particles after they collide for the first time and show
+that they will both change direction if $2em> M-m$. 
+
+After a further $2n$ collisions, the speed of the particle of mass $m$ is $v$
+and the speed of the particle of mass $M$ is $V$. Given
+that  at each collision both particles change 
+their directions of motion, explain why  
+\[
+mv-MV  = u(M-m),
+\]
+and find $v$ and $V$ in terms of $m$, $M$, $e$, $u$ and $n$.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+A discrete random variable $X$ takes only positive integer values.
+ Define $\E(X)$ for this case, and 
+show that 
+\[\E(X)      =\sum^{\infty}_{n=1}\P\left(X\ge n \right).\]
+
+I am  collecting toy penguins from cereal boxes. Each box 
+contains either one daddy penguin or one mummy penguin. The 
+probability that a given box contains a daddy penguin is $p$ 
+and the probability that a given box contains a mummy penguin is
+$q$,
+where $p\ne0$, $q\ne0$ and $p+q=1\,$.
+
+ Let $X$       be the number of boxes that I
+need to open to get at least one of each kind of penguin. Show that 
+$\P(X\ge 4)= p^{3}+q^{3}$,   and that 
+\[
+\E(X)=\frac{1}{pq}-1.\,
+\] 
+Hence show that $\E(X)\ge 3\,$.
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+The number of texts that George receives on his 
+mobile phone can be modelled by a Poisson random variable 
+with mean $\lambda$ texts per hour. Given that the
+probability George waits between 1 and 2 hours in 
+the morning before he receives his first text is
+$p$, show that
+\[
+p\e^{2\lambda}-\e^{\lambda}+1=0.
+\]
+Given that $4p<1$, show that there are two positive
+values of $\lambda$ that satisfy this equation. 
+
+The
+number of texts that Mildred receives on each
+of her two mobile phones 
+can  be modelled by independent Poisson random variables
+with different means $\lambda_{1}$ and $\lambda_{2}$ texts per hour.
+Given that, for each phone, the probability that Mildred waits between
+1 and 2 hours in the morning before she receives her first 
+text is also $p$, find an expression for $\lambda_{1}+\lambda_{2}$
+in terms of~$p$. 
+
+Find  the probability, in terms of $p$,
+that she waits between 1 and 2 hours in the morning 
+to receive her first text.
+\end{question}
+
+\end{document}

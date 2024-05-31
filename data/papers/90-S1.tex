@@ -1,0 +1,516 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1990
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{pst-coil}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+$\,$
+
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-3.02,0.12)(6.18,5.8) \parametricplot{0.0}{3.141592653589793}{1*4.17*cos(t)+0*4.17*sin(t)+1.63|0*4.17*cos(t)+1*4.17*sin(t)+0.88} \psline(-2.54,0.88)(5.8,0.88) \psline(1.82,0.88)(-1.07,4.05) \psline(-1.07,4.05)(3.33,4.69) \psline(3.33,4.69)(1.82,0.88) \psline(-1.07,4.05)(-2.54,0.88) \psline(3.33,4.69)(5.8,0.88) \rput[tl](1.58,1.5){$\alpha$} \rput[tl](1.18,1.34){$\theta $} \rput[tl](3.42,5.32){$Y$} \rput[tl](-1.24,4.72){$X$} \rput[tl](1.12,5.62){$B$} \rput[tl](-2.92,0.96){$A$} \rput[tl](1.7,0.8){$D$} \rput[tl](5.68,0.84){$C$} \end{pspicture*}
+\par\end{center}
+
+
+In the above diagram, $ABCD$ represents a semicircular window of
+fixed radius $r$ and centre $D$, and $AXYC$ is a quadrilateral
+blind. If $\angle XDY=\alpha$ is fixed and $\angle ADX=\theta$ is
+variable, determine the value of $\theta$ which gives the blind \textbf{maximum}
+area. 
+
+
+If now $\alpha$ is allowed to vary but $r$ remains fixed, find the
+maximum possible area of the blind.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Let $\omega=\mathrm{e}^{2\pi\mathrm{i}/3}.$ Show that $1+\omega+\omega^{2}=0$
+and calculate the modulus and argument of $1+\omega^{2}.$ 
+
+
+Let $n$ be a positive integer. By evaluating $(1+\omega^{r})^{n}$
+in two ways, taking $r=1,2$ and $3$, or otherwise, prove that 
+\[
+\binom{n}{0}+\binom{n}{3}+\binom{n}{6}+\cdots+\binom{n}{k}=\frac{1}{3}\left(2^{n}+2\cos\left(\frac{n\pi}{3}\right)\right),
+\]
+where $k$ is the largest multiple of $3$ less than or equal to $n$.
+Without using a calculator, evaluate 
+\[
+\binom{25}{0}+\binom{25}{3}+\cdots+\binom{25}{24}
+\]
+and 
+\[
+\binom{24}{2}+\binom{24}{5}+\cdots+\binom{24}{23}\,.
+\]
+{[}$2^{25}=33554432.${]} 
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Given a curve described by $y=\mathrm{f}(x)$, and such that $y\geqslant0$,
+a \textit{push-off }of the curve is a new curve obtained as follows:
+for each point $(x,\mathrm{f}(x))$ with position vector $\mathbf{r}$
+on the original curve, there is a point with position vector $\mathbf{s}$
+on the new curve such that $\mathbf{s-r}=\mathrm{p}(x)\mathbf{n},$
+where $\mathrm{p}$ is a given function and $\mathbf{n}$ is the downward-pointing
+unit normal to the original curve at $\mathbf{r}$. 
+
+\begin{questionparts}
+\item For the curve $y=x^{k},$ where $x>0$ and $k$ is a positive integer,
+obtain the function $\mathrm{p}$ for which the push-off is the positive
+$x$-axis, and find the value of $k$ such that, for all points on
+the original curve, $\left|\mathbf{r}\right|=\left|\mathbf{r-s}\right|$. 
+\item Suppose that the original curve is $y=x^{2}$ and $\mathrm{p}$ is such
+that the gradient of the curves at the points with position vectors
+$\mathbf{r}$ and $\mathbf{s}$ are equal (for every point on the
+original curve). By writing $\mathrm{p}(x)=\mathrm{q}(x)\sqrt{1+4x^{2}},$
+where $\mathrm{q}$ is to be determined, or otherwise, find the form
+of $\mathrm{p}$.
+\end{questionparts}
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}
+The sequence $a_{1},a_{2},\ldots,a_{n},\ldots$ forms an arithmetic
+progression. Establish a formula, involving $n,$ $a_{1}$ and $a_{2}$
+for the sum $a_{1}+a_{2}+\cdots+a_{n}$ of the first $n$ terms. 
+
+
+A sequence $b_{1},b_{2},\ldots,b_{n},\ldots$ is called a \textit{double
+arithmetic progression} if the sequence of differences
+\[
+b_{2}-b_{1},b_{3}-b_{2},\ldots,b_{n+1}-b_{n},\ldots
+\]
+is an arithmetic progression. Establish a formula, involving $n,b_{1},b_{2}$
+and $b_{3}$, for the sum $b_{1}+b_{2}+b_{3}+\cdots+b_{n}$ of the
+first $n$ terms of such a progression. 
+
+
+A sequence $c_{1},c_{2},\ldots,c_{n},\ldots$ is called a \textit{factorial
+progression} if $c_{n+1}-c_{n}=n!d$ for some non-zero $d$ and every
+$n\geqslant1$. Suppose $1,b_{2},b_{3},\ldots$ is a double arithmetic
+progression, and also that $b_{2},b_{4},b_{6}$ and $220$ are the first
+four terms in a factorial progression. Find the sum $1+b_{2}+b_{3}+\cdots+b_{n}.$
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts} 
+\item Evaluate 
+\[
+\int_{1}^{3}\frac{1}{6x^{2}+19x+15}\,\mathrm{d}x\,.
+\]
+
+
+
+\item Sketch the graph of the function $\mathrm{f}$, where $\mathrm{f}(x)=x^{1760}-x^{220}+q$,
+and $q$ is a constant. Find the possible numbers of \textit{distinct
+}roots of the equation $\mathrm{f}(x)=0$, and state the inequalities
+satisfied by $q$.
+ \end{questionparts}
+\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+Let $ABCD$ be a parallelogram. By using vectors, or otherwise, prove
+that: 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] $AB^{2}+BC^{2}+CD^{2}+DA^{2}=AC^{2}+BD^{2}$; 
+\item[\bf (ii)] $\left|AC^{2}-BD^{2}\right|$ is 4 times the area of the rectangle
+whose sides are \textit{any} side of the parallelogram and the projection
+of an adjacent side on that side. 
+\end{itemize}
+
+State and prove a result like \textbf{(ii)} about $\left|AB^{2}-AD^{2}\right|$
+and the diagonals.
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+Let $y,u,v,P$ and $Q$ all be functions of $x$. Show that the substitution
+$y=uv$ in the differential equation
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x}+Py=Q
+\]
+leads to an equation for $\dfrac{\mathrm{d}v}{\mathrm{d}x}$ in terms
+of $x,Q$ and $u$, provided that $u$ satisfies a suitable first
+order differential equation. 
+
+
+Hence or otherwise solve
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x}-\frac{2y}{x+1}=\left(x+1\right)^{\frac{5}{2}},
+\]
+given that $y(1)=0$. For what set of values of $x$ is the solution
+valid?
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+Show that
+\[
+\cos\left(\frac{\alpha}{2}\right)\cos\left(\frac{\alpha}{4}\right)=\frac{\sin\alpha}{4\sin\left(\dfrac{\alpha}{4}\right)}\,,
+\]
+where $\alpha\neq k\pi$, $k$ is an integer. 
+
+
+Prove that, for such $\alpha$, 
+\[
+\cos\left(\frac{\alpha}{2}\right)\cos\left(\frac{\alpha}{4}\right)\cdots\cos\left(\frac{\alpha}{2^{n}}\right)=\frac{\sin\alpha}{2^{n}\sin\left(\dfrac{\alpha}{2^{n}}\right)}\,,
+\]
+where $n$ is a positive integer. 
+
+
+Deduce that
+\[
+\alpha=\frac{\sin\alpha}{\cos\left(\dfrac{\alpha}{2}\right)\cos\left(\dfrac{\alpha}{4}\right)\cos\left(\dfrac{\alpha}{8}\right)\cdots}\,,
+\]
+and hence that
+\[
+\frac{\pi}{2}=\frac{1}{\sqrt{\frac{1}{2}}\sqrt{\frac{1}{2}+\frac{1}{2}\sqrt{\frac{1}{2}}}\sqrt{\frac{1}{2}+\frac{1}{2}\sqrt{\frac{1}{2}+\frac{1}{2}\sqrt{\frac{1}{2}}}}\cdots}\,.
+\]
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+\begin{question}
+Let $A$ and $B$ be the points $(1,1)$ and $(b,1/b)$ respectively,
+where $b>1$. The tangents at $A$ and $B$ to the curve $y=1/x$
+intersect at $C$. Find the coordinates of $C$. 
+
+
+Let $A',B'$ and $C'$ denote the projections of $A,B$ and $C$,
+respectively, to the $x$-axis. Obtain an expression for the sum of
+the areas of the quadrilaterals $ACC'A'$ and $CBB'C'$. Hence or
+otherwise prove that, for $z>0$, 
+\[
+\frac{2z}{2+z}\leqslant\ln\left(1+z\right)\leqslant z.
+\]
+\end{question}
+
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q10
+\begin{question}
+In a certain race, runners run 5$\,$km in a straight line to a fixed
+point and then turn and run back to the starting point. A steady wind
+of 3$\,$ms$^{-1}$ is blowing from the start to the turning point.
+At steady racing pace, a certain runner expends energy at a constant
+rate of 300$\,$W. Two resistive forces act. One is of constant magnitude
+50$\,$N. The other, arising from air resistance, is of magnitude
+$2w\,\mathrm{N}$, where $w\,$ms$^{-1}$ is the runner's speed relative
+to the air. Give a careful argument to derive formulae from which
+the runner's steady speed in each half of the race may be found. Calculate,
+to the nearest second, the time the runner will take for the whole
+race. 
+
+
+{[}Effects due to acceleration and deceleration at the start and turn
+may be ignored.{]}
+
+
+The runner may use alternative tactics, expending the same total energy
+during the race as a whole, but applying different constant powers,
+$x_{1}\,$W in the outward trip, and $x_{2}\,$W on the return trip.
+Prove that, with the wind as above, if the outward and return speeds
+are $v_{1}\,$ms$^{-1}$ and $v_{2}\,$ms$^{-1}$ respectively, then
+$v_{1}+v_{2}$ is independent of the choices for $x_{1}$ and $x_{2}$.
+Hence show that these alternative tactics allow the runner to run
+the whole race approximately 15 seconds faster. 
+	\end{question}
+	
+%%%%%%%%%% Q11
+\begin{question}	
+A shell of mass $m$ is fired at elevation $\pi/3$ and speed $v$.
+Superman, of mass $2m$, catches the shell at the top of its flight,
+by gliding up behind it in the same horizontal direction with speed
+$3v$. As soon as Superman catches the shell, he instantaneously clasps
+it in his cloak, and immediately pushes it vertically downwards, without
+further changing its horizontal component of velocity, but giving
+it a downward vertical component of velocity of magnitude $3v/2$.
+Calculate the total time of flight of the shell in terms of $v$ and
+$g$. Calculate also, to the nearest degree, the angle Superman's
+flight trajectory initially makes with the horizontal after releasing
+the shell, as he soars upwards like a bird. 
+
+
+{[}Superman and the shell may be regarded as particles.{]}
+\end{question}
+
+%%%%%%%%%% Q12
+
+\begin{question}$\,$
+
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-3.39,-0.76)(7.24,4.37) \psline(2,0)(6,3) \psline(-2,3)(2,0) \psline(-2,3)(-3,3) \psline(-2,3)(6,3) \psline(6,3)(7,3) \rput[tl](-2.15,3.55){$A$} \rput[tl](2.01,3.8){$B$} \rput[tl](6.08,3.55){$C$} \rput[tl](1.85,-0.15){$D$} \begin{scriptsize} \psdots[dotstyle=*](2,0) \end{scriptsize} \pscoil[coilheight=0.8,coilwidth=0.5](-2.35,3)(6.42,3) \end{pspicture*}
+\par\end{center}
+
+
+In the above diagram, $ABC$ represents a light spring of natural
+length $2l$ and modulus of elasticity $\lambda,$ which is coiled
+round a smooth fixed horizontal rod. $B$ is the midpoint of $AC.$
+The two ends of a light inelastic string of length $2l$ are attached
+to the spring at $A$ and $C$. A particle of mass $m$ is fixed to
+the string at $D$, the midpoint of the string. The system can be
+in equilibrium with the angle $CAD$ equal to $\pi/6.$ Show that
+\[
+mg=\lambda\left(\frac{2}{\sqrt{3}}-1\right).
+\]
+Write the length $AC$ as $2xl$, obtain an expression for the potential
+energy of the system as a function of $x$. 
+
+
+The particle is held at $B$, and the spring is restored to its natural
+length $2l.$ The particle is then released and falls vertically.
+Obtain an equation satisfied by $x$ when the particle next comes
+to rest. Verify numerically that a possible solution for $x$ is approximately
+$0.66.$ 
+\end{question}
+	
+%%%%%%%%%% Q13
+\begin{question}
+A rough circular cylinder of mass $M$ and radius $a$ rests on a
+rough horizontal plane. The curved surface of the cylinder is in contact
+with a smooth rail, parallel to the axis of the cylinder, which touches
+the cylinder at a height $a/2$ above the plane. Initially the cylinder
+is held at rest. A particle of mass $m$ rests in equilibrium on the
+cylinder, and the normal reaction of the cylinder on the particle
+makes an angle of $\theta$ with the upward vertical. The particle
+is on the same side of the centre of the cylinder as the rail. The
+coefficient of friction between the cylinder and the particle and
+between the cylinder and the plane are both $\mu$. Obtain the condition
+on $\theta$ for the particle to rest in equilibrium. Show that, if
+the cylinder is released, equilibrium of both particle and cylinder
+is possible provided another inequality involving $\mu$ and $\theta$
+(which should be found explicitly) is satisfied. Determine the largest
+possible value of $\theta$ for equilibrium, if $m=7M$ and $\mu=0.75$. 
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q14
+\begin{question}
+A bag contains 5 white balls, 3 red balls and 2 black balls. In the
+game of Blackball, a player draws a ball at random from the bag, looks
+at it and replaces it. If he has drawn a white ball, he scores one
+point, while for a red ball he scores two points, these scores being
+added to his total score before he drew the ball. If he has drawn
+a black ball, the game is over and his final score is zero. After
+drawing a red or white ball, he can either decide to stop, when his
+final score for the game is the total so far, or he may elect to draw
+another ball. The starting score is zero. 
+
+
+Juggins' strategy is to continue drawing until either he draws a black
+ball (when of course he must stop, with final score zero), or until
+he has drawn three (non-black) balls, when he elects to stop. Find
+the probability that in any game he achieves a final score of zero
+by employing this strategy. Find also his expected final score. 
+
+
+Muggins has so far scored $N$ points, and is deciding whether to
+draw another ball. Find the expected score if another ball is drawn,
+and suggest a strategy to achieve the greatest possible average final
+score in each game. 
+
+\end{question}
+
+%%%%%%%%%% Q15
+\begin{question}
+A coin has probability $p$ ($0<p<1$) of showing a head when tossed.
+Give a careful argument to show that the $k$th head in a series of
+consecutive tosses is achieved after \textit{exactly }$n$ tosses
+with probability 
+\[
+\binom{n-1}{k-1}p^{k}(1-p)^{n-k}\qquad(n\geqslant k).
+\]
+Given that it took an even number of tosses to achieve exactly $k-1$
+heads, find the probability that exactly $k$ heads are achieved after
+an even number of tosses. 
+
+
+If this coin is tossed until exactly 3 heads are obtained, what is
+the probability that \textit{exactly }2 of the heads occur on even-numbered
+tosses? 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+A bus is supposed to stop outside my house every hour on the hour.
+From long observation I know that a bus will always arrive some time
+between 10 minutes before and ten minutes after the hour. The probability
+it arrives at a given instant increases linearly (from zero at 10
+minutes before the hour) up to a maximum value at the hour, and then
+decreases linearly at the same rate after the hour. Obtain the probability
+density function of $T$, the time in minutes after the scheduled
+time at which a bus arrives. 
+
+
+If I get up when my alarm clock goes off, I arrive at the bus stop
+at 7.55am. However, with probability 0.5, I doze for 3 minutes before
+it rings again. In that case with probability 0.8 I get up then and
+reach the bus stop at 7.58am, or, with probability 0.2, I sleep a
+little longer, not reaching the stop until 8.02am. What is the probability
+that I catch a bus by 8.10am? 
+
+
+I buy a louder alarm clock which ensures that I reach the stop at
+exactly the same time each morning. This clock keeps perfect time,
+but may be set to an incorrect time. If it is correct, the alarm goes
+off so that I should reach the stop at 7.55am. After 100 mornings
+I find that I have had to wait for a bus until \textit{after }9am
+(according to the new clock) on 5 occasions. Is this evidence that
+the new clock is incorrectly set? 
+
+
+{[}The time of arrival of different buses are independent of each
+other.{]} 
+\end{question}
+\end{document}

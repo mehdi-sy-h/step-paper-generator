@@ -1,0 +1,728 @@
+\documentclass[a4, 11pt]{report}
+
+
+%\pagestyle{myheadings}
+%\markboth{}{Paper II, 2007  final draft  
+%\ \ \ \ \ 
+%\today 
+%}               
+\pagestyle{empty}
+
+\usepackage{pstricks-add}
+\usepackage{epsfig}
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage{xcolor}
+
+
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bct}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\rct}[1]{{\color{red}#1}}
+
+
+
+
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{2mm}
+    \setlength{\parskip}{5pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\makeatletter
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+\makeatother
+%%%To raise suffices: e.g.  $\Pi_{\raisemath{2pt}{-}}$.
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+\begin{document}
+
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%%%%% Q1
+\begin{question}
+{\bf Note: } In this question
+you may use without proof the result
+$ \dfrac{\d \ }{\d x}\big(\!\arctan x \big) = \dfrac 1 {1+x^2}\,$.
+
+\vspace{3mm}
+Let
+\[
+I_n = \int_0^1 x^n \arctan x \, \d x \;,
+\]
+where $n=0$, 1, 2, 3, $\ldots$ . 
+
+\begin{questionparts}  
+\item
+ Show that, for $n\ge0\,$, 
+\[
+(n+1)  I_n = \frac \pi 4  - 
+\int _0^1 \frac {x^{n+1}}{1+x^2} \, \d x
+\, 
+\]
+and evaluate $I_0$.
+\item
+Find an expression, in terms of $n$, 
+for $(n+3)I_{n+2}+(n+1)I_{n}\,$.
+
+Use this result to evaluate $I_4$.
+\item
+Prove by induction that, for $n\ge1$, 
+\[
+ (4n+1) I_{4n} 
+=A   - \frac12 \sum_{r=1}^{2n} (-1)^r \frac 1 {r}
+\,,
+\]
+where $A$ is a constant to be determined.
+
+\end{questionparts}
+
+ 
+\end{question}
+
+%%%%%%%%Q2
+\begin{question}
+The sequence of numbers $x_0$, $x_1$, $x_2$, $\ldots$ satisfies 
+\[
+x_{n+1} = \frac{ax_n-1}{x_n+b}
+\,.
+\]
+(You may assume that $a$, $b$ and $x_0$ are such that $x_n+b\ne0\,$.)
+ 
+Find an expression for $x_{n+2}$ in terms of $a$, $b$  and $x_n$.
+
+\begin{questionparts}
+\item
+ Show that $a+b=0$ is a necessary condition for 
+the sequence to be periodic with period~2. 
+
+{\bf Note: } The sequence is said to  be 
+ periodic with period $k$ if $x_{n+k} = x_n$ for all $n$,
+and there is no integer $m$ with $0<m<k$ such that   $x_{n+m} = x_n$
+for all $n$.
+
+\item Find  necessary and sufficient conditions for the sequence to have
+period 4. 
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%%%%%%%%%%Q3
+\begin{question}
+\begin{questionparts}
+\item Sketch, on $x$-$y$ axes, the set of all points satisfying
+$\sin y = \sin x$, for $-\pi \le x \le \pi$ and  $-\pi \le y \le \pi$.
+You should give the equations of all the lines on your sketch.
+
+\item Given that
+\[
+\sin y = \tfrac12 \sin x
+\]
+obtain an expression, in terms of $x$,  for $y'$  when
+$0\le x \le \frac12 \pi$
+and $0\le y \le \frac12 \pi$,
+and show that
+\[
+y'' = - \frac {3\sin x}{(4-\sin^2 x)^{\frac32}}
+\;.
+\]
+Use these results to sketch the
+set of all points satisfying $\sin y = \tfrac12 \sin x$ for
+$0 \le x \le \frac12 \pi$ and
+$0 \le y \le \frac12 \pi$.
+
+
+Hence sketch the set of all points satisfying 
+$\sin y = \tfrac12 \sin x$ for
+$-\pi\! \le \! x \! \le \! \pi$ and
+\mbox{$ -\pi \, \le\, y\, \le\, \pi\,$}.
+
+\item
+Without further calculation,
+sketch the set of all points satisfying
+ $\cos y = \tfrac12 \sin x$ for $- \pi \le x \le \pi$ and
+$ -\pi \le y \le \pi$.
+\end{questionparts}
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%% Q4
+\begin{question}
+The Schwarz inequality
+is
+\[
+\left( \int_a^b \f(x)\, \g(x)\,\d x\right)^{\!\!2}
+\le 
+\left(
+\int_a^b \big( \f(x)\big)^2 \d x 
+\right)
+\left(
+\int_a^b \big( \g(x)\big)^2 \d x 
+\right)
+.
+\tag{$*$}
+\]
+\begin{questionparts}
+\item
+By setting $ \f(x)=1$ in $(*)$, and choosing
+$\g(x)$, 
+$a$ and $b$ suitably, show that for~$t>  0\,$,
+\[
+\frac {\e^t -1}{\e^t+1} \le \frac t 2
+\,.
+\]
+\item
+By setting $ \f(x)= x  $  
+in $(*)$, 
+and choosing $ \g(x)$ suitably,
+show that
+\[
+\int_0^1\e^{-\frac12 x^2}\d x \ge 12 \big(1-\e^{-\frac14})^2
+\,.
+\]
+
+\item
+Use $(*)$  to show that 
+\[
+\frac {64}{25\pi} \le \int_0^{\frac12\pi} 
+\!\!
+{\textstyle \sqrt{\, \sin x\, } }
+\, \d x 
+\le \sqrt{\frac \pi 2 }
+\,.
+\]
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%%%%%%% Q5
+
+\begin{question}
+A curve $C$ is determined by the parametric equations
+\[
+x=at^2 \, , \; y = 2at\,,
+\]
+where $a>0$\,.
+\begin{questionparts}
+\item Show that the normal to 
+$C$ at a point $P$, with non-zero parameter $p$, 
+meets $C$
+again at a point $N$, with parameter $n$, where
+\[
+n=  - \left( p + \frac{2}{p} \right).
+\]
+
+\item
+Show that the distance $\left| PN \right|$ is given by
+\[
+\vert PN\vert^2 = 16a^2\frac{(p^2+1)^3}{p^4}
+\]
+and that this is minimised when $p^2=2\,$. 
+
+\item The point  $Q$, with parameter $q$, 
+is the point at which the circle with 
+diameter $PN$ cuts~$C$ again. 
+By considering the gradients of $QP$ and $QN$,
+show that 
+\[
+2 = p^2-q^2 + \frac{2q}p
+\,.
+\]
+Deduce that  $\left| PN \right|$ is at its minimum when 
+$Q$ is at the origin.
+
+\end{questionparts}
+\end{question}
+
+
+%%%%%%%%%%%%%% Q6
+\begin{question}
+Let
+\[
+S_n = \sum_{r=1}^n \frac 1 {\sqrt r \ }
+\,,
+\]
+where $n$ is a positive integer.
+\begin{questionparts}
+
+
+\item 
+Prove by induction that 
+\[
+ S_n  \le   2\sqrt n -1\,
+.
+\]
+
+\item
+Show that $(4k+1)\sqrt{k+1} > (4k+3)\sqrt k\,$ for $k\ge0\,$.
+
+Determine the smallest number $C$ such that
+\[
+S_n \ge 2\sqrt n + \frac 1 {2\sqrt n} -C
+\,.\]
+ 
+
+\end{questionparts}
+
+\end{question}
+
+%%%%%Q7
+\begin{question}
+%In this question, 
+%the definition of $a^b$ (for $a>0$) is 
+%$ 
+%a^b = \e^{b \ln a} \,.
+%$ 
+%\\
+The functions $\f$ and $\g$ are defined, for $x>0$, by
+\[
+\f(x) = x^x\,, \ \ \ \ \ \g(x) = x^{\f(x)}\,.
+\]
+
+\begin{questionparts}
+\item 
+By taking logarithms, 
+or otherwise, show that $\f(x)> x$ for $0<x<1\,$.
+ Show further that $x<\g(x)<\f(x)$ for $0<x<1\,$. 
+
+Write down the 
+corresponding results for $x>1 \,$. 
+
+\item
+Find the value of 
+$x$ for which $\f'(x)=0\,$. 
+
+\item
+Use the result $x\ln x \to 0$ as $x\to 0$ 
+to
+find  $\lim\limits_{x\to0}\f(x)$,  
+and write down   $\lim\limits_{x\to0}\g(x)\,$. 
+
+\item
+Show that $  x^{-1}+\, \ln x \ge 1\,$ for $x>0$. 
+\\[5pt]
+Using this result, or otherwise, 
+show 
+that~$\g'(x) >0\,$.
+\end{questionparts}
+
+\vspace{3pt}
+Sketch the graphs, for $x>0$,  of $y=x$, \ $y=\f(x)$ and $y=\g(x)$ 
+on the same axes.
+  
+
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%% Q8
+\begin{question}
+All vectors in this question lie in the same plane.
+
+ 
+The vertices of the non-right-angled triangle $ABC$ have position 
+vectors $\bf a$, $\bf b$ and $\bf c$, respectively.
+The non-zero vectors $\bf u$ and $\bf v$ are
+perpendicular to $BC$ and $CA$, respectively.
+
+
+Write down the vector equation of the line through $A$
+perpendicular to $BC$, in terms of 
+ $\bf u$,~$\bf a$  
+and  a parameter $\lambda $.
+
+The line through $A$ perpendicular
+to $BC$ intersects  the line through $B$ perpendicular to $CA$ at $P$. 
+Find
+the position
+vector  of $P$
+ in terms of $\bf a$,~$\bf b$, $\bf c$ and $\bf u$.
+
+Hence show that
+ the line $CP$ is perpendicular to the line $AB$.
+
+
+
+\end{question}
+
+\section*{Section B: \ \ \ Mechanics}
+
+%%%%%%%%%%%%%% Q9
+\begin{question}
+
+
+Two identical rough cylinders of radius 
+$r$
+and weight 
+$W$
+rest, 
+not 
+touching each other
+but a 
+negligible distance apart, 
+on a horizontal floor. 
+A thin flat rough plank  of width $2a$, where 
+$a < r$,
+and weight 
+$kW$
+rests symmetrically and horizontally
+on the cylinders, with its length parallel
+to the axes of the cylinders and its faces horizontal. 
+A vertical cross-section is shown in the diagram below. 
+
+
+\vspace{1.1cm}
+\hspace{5.0cm}
+\begin{pspicture}(9.3,-5.00 )          
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\psline(-2,-3)(7,-3)
+\pscircle(1,-1.5){1.50}
+\pscircle(4.02,-1.5 ){1.50}
+\psline[linewidth=3pt](1.45,-0.06)(3.58,-0.06)
+\end{pspicture}
+\vspace{-1.5cm}
+
+
+The coefficient of friction at all four 
+contacts is 
+$\frac12$.
+The system is in equilibrium.
+
+\begin{questionparts}
+\item
+Let $F$ be the frictional force between one cylinder and the floor,
+and let $R$ be the normal reaction between the plank
+ and one cylinder.
+Show that
+\[
+R\sin\theta = F(1+\cos\theta)\,,
+\]
+where $\theta$ is the acute angle between  the plank and the tangent to 
+the cylinder at the point of contact.
+
+Deduce that $2\sin\theta \le 1+\cos\theta\,$.
+
+
+\item 
+Show that
+\[
+N=  
+\left( 1+\frac2 k\right)\left(\frac{1+\cos\theta}{\sin\theta} \right) F
+\,,
+\]
+where $N$ is the normal reaction between the 
+floor and one cylinder. 
+
+Write down the condition 
+that the cylinder does
+not slip on the floor and 
+show that it is satisfied with no extra restrictions  on $\theta$. 
+
+\item
+Show that $\sin\theta\le\frac45\,$ and hence that $r\le5a\,$.
+
+\end{questionparts}
+\end{question}
+
+
+%%%%%%%%%%%%%% Q10
+\begin{question}
+A car of mass $m$ makes a journey of  distance $2d$ 
+in  a straight line. 
+It  experiences air resistance  and rolling resistance
+so that the total resistance to motion when it is moving with 
+speed $v$ is $Av^2 +R$, where $A$ and $R$ are constants.
+
+
+The car starts from rest and 
+moves with constant acceleration $a$ for a distance $d$.
+Show that the work done by the engine 
+for this half of the journey 
+is
+\[
+\int_0^d  (ma+R+Av^2) \, \d x
+\]
+and that it can be written 
+in the form
+\[
+\int_0^w \frac {(ma+R+Av^2)v}a\;  \d v
+\,,
+\]
+where $w =\sqrt {2ad\,}\,$.
+
+For the second half of the journey, the acceleration of 
+the car is $-a$. 
+
+
+
+\begin{questionparts}
+\item
+In the case $R>ma$, 
+show that the work done by the  
+engine for the whole  journey~is 
+\[
+2Aad^2 +  2Rd
+\,.
+\]
+
+\item
+In the case $ma-2Aad<   R<   ma$, show that  at a certain speed 
+  the driving
+force required to maintain the constant acceleration
+falls to zero. 
+
+Thereafter, the engine does no work
+(and the driver applies the brakes to maintain
+the constant acceleration).
+Show that the  work done by the engine for the whole journey~is  
+\[
+ 2Aad^2 + 2 Rd
+ + \frac{(ma-R)^2}{4Aa} 
+\,
+.\]
+
+
+\end{questionparts}
+\end{question}
+
+
+
+%%%%%%%%%%%%%% Q11
+\begin{question}
+Two thin vertical parallel
+walls, each of height $2a$, stand a distance $a$ apart
+on horizontal ground.
+The projectiles in this
+question move in a plane perpendicular to the walls.
+
+\begin{questionparts}
+\item
+A particle is projected with speed $\sqrt{5ag}$
+towards the two
+walls 
+ from a point $ A$ at ground level.
+It just clears the first wall. By considering the energy
+of the particle, find its 
+speed when it passes over the first wall.
+
+Given that it just clears the second wall, 
+show that
+the angle 
+its trajectory makes with the horizontal when it 
+passes over the first wall 
+is $45^\circ\,$.
+
+ 
+Find the distance of $A$ from the foot of the first wall.
+
+\item 
+A second particle is projected with  speed $\sqrt{5ag}$
+ from a point $B$ at ground level towards the two
+walls. It passes a distance $h$ above the first wall, where $h>0$. 
+Show that it does not clear the second wall.  
+
+\end{questionparts}
+\end{question}
+
+\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+%%%%%%%%%%%%%% Q12
+\begin{question}
+
+Adam 
+and Eve are
+catching fish. 
+The number of fish, $X$,
+that Adam catches in any time interval is Poisson distributed
+with parameter $\lambda t$, where $\lambda$ is a constant and $t$ is the
+length of the time interval.
+The number of fish, $Y$,
+that Eve catches in any time interval is Poisson distributed
+with parameter $\mu t$, where $\mu$ is a constant and $t$ is the
+length of the time interval
+
+
+The two Poisson variables are independent.
+You may assume that 
+that expected time between 
+Adam catching a fish and Adam catching his next fish is $\lambda^{-1}$,
+and similarly for Eve.
+\begin{questionparts}
+\item
+By considering $\P( X + Y = r)$, show that the total number of fish caught 
+by Adam and Eve in time $T$ also has a Poisson distribution.
+\item
+Given that Adam and Eve catch a
+total of $k$ fish in time $T$, 
+where $k$ is fixed, show that the number caught by 
+Adam has a binomial distribution.
+\item
+Given that 
+Adam and Eve start fishing at the same time, find
+the probability that the first fish is caught by Adam.
+\item
+Find the expected time from the moment Adam and Eve 
+start fishing until they have each caught at least one fish.
+
+\end{questionparts}
+\noindent
+[{\bf Note } 
+This question has been redrafted to make the meaning clearer.]
+
+\end{question}
+ 
+%%%%%%%%%%%%%% Q13
+
+\begin{question}
+In a television game show, a contestant has to open a door
+using a key. The contestant is given a 
+bag containing $n$ keys, 
+where $n\ge2$. Only one key in the bag will open the door. 
+There are three versions
+of the game. In each version, the contestant starts by choosing a 
+key at random from the bag.
+\begin{questionparts}
+\item
+In version 1, after each failed attempt at opening the door
+ the key that has
+been tried is put back into the bag and the contestant again
+selects a key at random from the bag.
+By considering the binomial expansion of $( 1 - q)^{-2}$,
+or otherwise, find the expected number of attempts required to open 
+the door.
+\item
+In 
+version 2, after each failed attempt at opening the door
+the key that has been tried is put aside and the contestant 
+selects another key
+at random
+from the bag. Find the expected number of 
+attempts required to open the door.
+\item 
+In version
+3, after each failed attempt at opening the door the key that has
+been~tried is put back into the bag and another incorrect key is added to 
+the bag. 
+The contestant then selects a key at random from the bag. 
+Show that  the probability that the contestant draws the
+correct key at the $k$th attempt is 
+\[
+\frac{n-1}{(n+k-1)(n+k-2)}  
+\,.
+\]
+Show also, using partial fractions, that 
+ the expected number of attempts required to open the door is infinite.
+
+You may use without proof the result that 
+$
+\displaystyle
+\sum_{m=1}^N \dfrac 1 m \to \infty
+ \,
+$
+as $N\to \infty\,$.
+\end{questionparts}
+
+\end{question}
+\end{document}
+
+

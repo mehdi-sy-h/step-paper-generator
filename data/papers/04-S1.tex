@@ -1,0 +1,487 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2004
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+\item
+Express $\left(3+2\sqrt{5} \, \right)^3$ 
+in the form $a+b\sqrt{5}$ where $a$ and $b$ are integers.
+
+\item Find the positive integers $c$ and $d$ such that 
+$\sqrt[3]{99-70\sqrt{2}\;}$ =  $c - d\sqrt{2} \,$.
+
+\item Find the two  real solutions of $x^6 - 198 x^3 + 1 = 0 \,$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The square bracket notation $\boldsymbol{[}  x\boldsymbol{]}$ means 
+the greatest integer less than or equal to $x\,$. 
+For example, $\boldsymbol{[}\pi\boldsymbol{]} = 3\,$, 
+$\boldsymbol{[}\sqrt{24}\,\boldsymbol{]} = 4\,$ 
+and $\boldsymbol{[}5\boldsymbol{]}=5\,$. 
+
+\begin{questionparts}
+\item Sketch the graph of $y = \sqrt{\boldsymbol{[}x\boldsymbol{]}}$ 
+and show that 
+\[
+\displaystyle \int^a_0 \sqrt{\boldsymbol{[}x\boldsymbol{]}} \; 
+\mathrm{d}x = \sum^{a-1}_{r=0} \sqrt{r}
+\] when $a$ is a positive integer.
+
+\item Show that 
+$\displaystyle \int^{a}_0 
+2_{\vphantom{A}}^{\pmb{\boldsymbol {[} } x \pmb{  \boldsymbol{]}} }\; 
+\mathrm{d}x = 2^{a}-1$ 
+when $a$ is a positive integer.
+\item Determine an expression for 
+$\displaystyle \int^{a}_0 2_{\vphantom{\dot A}}^{\pmb{\boldsymbol{[} }x \pmb{ \boldsymbol{]}} } \; 
+\mathrm{d}x$ when $a$ is positive but not an  integer.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+\item
+Show that $x-3$ is a factor of 
+\begin{equation}
+x^3-5x^2+2x^2y+xy^2-8xy-3y^2+6x+6y \;.
+\tag{$*$}
+\end{equation}
+
+Express ($ * $) in the form 
+$(x-3)(x+ay+b)(x+cy+d)$ where $a$, $b$, $c$ and $d$ 
+are integers to be determined. 
+
+\item Factorise 
+$6y^3-y^2-21y+2x^2+12x-4xy+x^2y-5xy^2+10$ into three linear factors.
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+ Differentiate $\sec {t}$ with respect to $t$.
+
+\begin{questionparts}
+\item Use the substitution $x=\sec t$ to show that
+$\displaystyle \int^2_{\sqrt 2} \frac{1}{ x^3\sqrt {x^2-1} } \; \mathrm{d}x
+=\frac{\sqrt 3 - 2}{8} + \frac {\pi}{24} \;.$
+\item Determine 
+$\displaystyle \int \frac{1}  {( x+2)  \sqrt {(x+1)(x+3)} } \; 
+\mathrm{d}x \;$.
+\item Determine 
+$\displaystyle \int \frac {1} {(x+2)  \sqrt {x^2+4x-5} } \; 
+\mathrm{d}x \;$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The positive integers can be split into 
+five distinct arithmetic progressions, as shown:
+\begin{align*}
+A&: \ \ 1, \ 6, \ 11, \ 16, \ ... \\
+B&: \ \ 2, \ 7, \ 12, \ 17, \ ...\\
+C&: \ \ 3, \ 8, \ 13, \ 18, \ ... \\
+D&: \ \ 4, \ 9, \ 14, \ 19, \ ...  \\
+E&: \ \ 5,  10, \ 15, \ 20, \ ...
+\end{align*}
+
+Write down an expression for the value of the general term 
+in each of the five progressions. 
+Hence prove that the sum of any term in $B$ 
+and any term in $C$ is a term in $E$. 
+
+
+Prove also that the square of every term in $B$ is a term in $D$. 
+State and prove a similar claim about the square of every term in $C$.
+
+\begin{questionparts}
+\item Prove that there are no positive integers $x$ and $y$ such that
+\[
+x^2+5y=243\,723 \,.
+\]
+
+\item Prove also that there are no positive integers 
+$x$ and $y$ such that
+\[
+x^4+2y^4=26\,081\,974 \,.
+\]
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+The three points $A$, $B$ and $C$ have coordinates 
+$\l p_1 \, , \; q_1 \r$, $\l p_2 \, , \; q_2 \r$ and 
+$\l p_3 \, , \; q_3 \r\,$, respectively. 
+Find the point of intersection of the line joining 
+$A$ to the midpoint of $BC$, 
+and the line joining~$B$ to the midpoint of $AC$. 
+Verify that this point lies 
+on the line joining $C$ to the midpoint of~$AB$.
+
+
+The point $H$ has coordinates 
+$\l p_1 + p_2 + p_3 \, , \; q_1 + q_2 + q_3 \r\,$. 
+Show that if the line $AH$ intersects the line $BC$ at right angles, 
+then $p_2^2 + q_2^2 = p_3^2 + q_3^2\,$, 
+and write down  a similar result 
+if the line $BH$ intersects the line $AC$ at right angles. 
+
+
+Deduce that if $AH$ is perpendicular to $BC$ and 
+also $BH$ is perpendicular to $AC$, then $CH$ is perpendicular to $AB$.
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+\item
+The function $\f(x)$ is defined for $\vert x \vert < \frac15$ by 
+\[
+\f(x) = \sum_{n=0}^\infty a_n x^n\;,
+\]
+where  
+$a_0=2$, $a_1=7$ and 
+$
+a_n =7a_{n-1} - 10a_{n-2}
+$ 
+for $n\ge{2}\,$. 
+
+Simplify $\f(x) - 7x\f(x) + 10x^2\f(x)\,$, 
+and hence show that 
+$\displaystyle\f(x) = {1\over 1-2x} + {1 \over 1-5x} \;$.
+
+
+Hence show that $a_n=2^n + 5^n\,$.
+
+\item The function $\g(x)$ is defined for $\vert x \vert < \frac13$ by 
+\[
+\g(x) = \sum_{n=0}^\infty b_n x^n \;,
+\]
+where $b_0=5\,$, $b_1 =10 \,$, $b_2=40\,$, $b_3=100$  
+and  $b_n = pb_{n-1} + qb_{n-2}$ for $n\ge{2}\,$. 
+Obtain an expression for $\g(x)$ as the sum of two algebraic fractions and 
+determine $b_n$ in terms of~$n\,$.
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+A sequence $t_0$, $t_1$, $t_2$, $...$ is said to be 
+{\sl strictly increasing}  if $t_{n+1} > t_n$ for all $n\ge{0}\,$.
+
+\begin{questionparts}
+\item
+The terms of the sequence $x_0\,$, $x_1\,$, $x_2\,$, $\ldots$ satisfy
+$$
+\ds x_{n+1}=\frac{x_n^2 +6}{5}
+$$ for $n\ge{0}\,$. 
+Prove that if $x_0 > 3$ then the sequence 
+is strictly increasing.
+
+\item The terms of the sequence $y_0\,$, $y_1\,$, $y_2\,$, $\ldots$
+satisfy
+$$
+\ds y_{n+1}= 5-\frac 6 {y_n}
+$$ 
+for  $n\ge{0}\,$. 
+Prove that if $2 < y_0 < 3$ 
+then the sequence is strictly 
+increasing but that $y_n<3$ for all $n\,$.
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A particle is projected over level ground with a speed  $u$ at 
+an angle $\theta$ above the horizontal. 
+Derive
+ an expression for the greatest height of the particle in terms of $u$, $\theta$ and $g$. 
+
+
+A  particle is  projected from the floor of a horizontal tunnel of height ${9\over 10}d$. 
+Point $P$
+ is  ${1\over 2}d$ metres vertically and $d$ metres horizontally along the tunnel
+ from the point of 
+projection. The particle passes through point $P$ and lands inside the tunnel
+without hitting the roof. Show that
+\[
+\arctan \textstyle {3 \over 5} < \theta < \arctan \, 3 \;.
+\]
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A particle is travelling in a straight line. 
+It accelerates from its initial  velocity $u$  to
+velocity $v$, where $v > \vert u \vert > 0\,$, travelling a distance $d_1$
+with uniform acceleration of magnitude $3a\,$.  
+It then comes to rest after travelling
+a further distance $d_2\,$ with uniform deceleration of  magnitude $a\,$.
+Show that
+\begin{questionparts}
+\item
+if $u>0$ then $3d_1 < d_2\,$;
+\item 
+if $u<0$ then  $d_2 < 3d_1 < 2d_2\,$. 
+\end{questionparts}
+
+
+Show also that
+ the average speed of the particle (that is,  the total distance
+travelled divided by the total time)  is greater  in the case $u>0$ than  in the case $u<0\,$.
+
+\noindent
+{\bf Note:} In this question $d_1$ and $d_2$ are distances travelled by the particle which
+are not the same, in the second case, as displacements from the starting point.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Two uniform ladders $AB$ and $BC$ of equal length are hinged smoothly at $B$.
+The weight of $AB$ is $W$ and the weight of $BC$ is $4W $.
+The ladders stand on rough horizontal ground with  $\angle ABC=60^\circ\,$. 
+ The coefficient of friction between each ladder  and the 
+ground is  $\mu$.
+
+
+A decorator of weight $7W$ begins to climb the ladder $AB$ slowly. 
+When she has climbed up $1 \over 3$ of the ladder, 
+one of the ladders slips.
+Which ladder  slips, and what is the value of $\mu$?
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+In a certain factory, microchips are made by two machines.
+Machine A makes a 
+proportion~$\lambda$ of the chips, where $0 < \lambda < 1$, and machine B makes the rest. 
+A proportion $p$ of the chips  made by machine A are perfect, and
+a  proportion $q$  of those made by machine B are perfect, 
+where $0 < p < 1$ and $0 < q < 1$. The chips are sorted into two groups: group 1
+contains those that are
+perfect and group 2 contains those that are imperfect.
+
+In a large random sample taken from group 1, it is found that
+$\frac 2 5$ 
+were made by machine A. Show that $\lambda$ can estimated as
+\[
+ {2q \over 3p + 2q}\;.
+\]
+
+Subsequently, it is discovered that the sorting process 
+is faulty: there is a probability of $\frac 14$ that a perfect
+ chip is assigned to group 2 and a  probability of $\frac 14$ that an imperfect
+ chip is assigned to group 1. Taking into account this additional information,
+obtain a new  estimate of $\lambda\,$.
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+\begin{questionparts}
+\item Three real numbers are drawn independently from the continuous 
+rectangular distribution on $[ 0, 1 ]\,$. The random variable $X$ is the maximum of the 
+three numbers. Show that the probability that $X \le 0.8$ is $0.512\,$, and calculate the
+ expectation of $X$. 
+
+\item $N$ real numbers are 
+drawn independently from a continuous rectangular distribution on $[ 0, a ]\,$. 
+The random variable $X$ is the maximum of the $N$ numbers. 
+A hypothesis test  with a significance level of 5\% is carried out using  the value, $x$, of
+  $X $. 
+The null hypothesis is that $a=1$ and 
+the alternative hypothesis is that $a<1 \,$. The form of the test is such that
+$H_0$ is rejected 
+if $x<c\,$, for some chosen number $c\,$.
+
+
+Using the approximation 
+ $2^{10} \approx 10^3\,$, determine the smallest 
+integer value of $N$ such that if $x \le 0.8$ 
+the null hypothesis will be rejected.
+
+With this value of $N$,
+write down the probability that the null hypothesis is rejected if $a = 0.8\,$, 
+and find  the probability that the null hypothesis is rejected if $a = 0.9\,$.
+
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+Three pirates are sharing out the contents of a treasure chest containing $n$ 
+gold coins and $2$ lead coins. 
+The first pirate takes out coins one at a time until 
+he takes out one of the lead coins. 
+The second pirate then takes out coins one at a time until she draws 
+the second lead coin. 
+The third pirate takes out all the gold coins remaining in the chest. 
+
+
+Find:
+\begin{questionparts}
+\item the probability that the first pirate will have  some gold coins;
+\item the probability that the  second pirate will have  some gold coins;
+\item the probability that all three pirates will have some gold coins. 
+\end{questionparts}
+\end{question}
+	
+\end{document}

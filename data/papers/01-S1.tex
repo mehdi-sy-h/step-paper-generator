@@ -1,0 +1,414 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2001
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\q{{\mathrm q}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+The points $A$, $B$ and $C$ lie on the sides of   a square of side 1 cm and 
+no two points lie on the same side. 
+Show that the length of
+at least one side of the triangle $ABC$ must be less than or equal to 
+$(\sqrt6 -\sqrt2)$ cm.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Solve  the inequalities
+\begin{questionparts}
+\item $1+2x-x^2 >2/x$ \ \ \ \ \ \ ($x\ne0$) ,
+\item $\sqrt{3x+10} > 2+\sqrt{x+4}$  \ \ \ \ \ \ ($x\ge -10/3$) .
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Sketch, without calculating the stationary points, the graph of
+the function $\f(x)$ given by
+\[
+\f(x) = (x-p)(x-q)(x-r)\;,
+\]
+where $p<q<r$. By considering the quadratic  equation $\f'(x)=0$, or otherwise, show that
+\[
+(p+q+r)^2>3(qr+rp+pq)\;.
+\]
+
+By considering $(x^2+gx+h)(x-k)$, or otherwise, show that
+$g^2>4h\,$ is a sufficient condition but not a necessary condition for the inequality
+\[
+(g-k)^2>3(h-gk)
+\]
+to hold.
+
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Show that $\displaystyle \tan 3\theta = \frac{3\tan\theta -\tan^3\theta}{1-3\tan^2\theta}$ .
+
+Given that $\theta=  \cos^{-1} (2/\sqrt5)$ and
+$0<\theta<\pi/2$, show that
+$
+\tan 3\theta =11/2\;.
+$
+
+Hence, or otherwise, find all solutions of the equations
+\begin{questionparts}
+\item $\displaystyle
+\tan(3\cos^{-1} x) =11/2$ , 
+\item
+$\displaystyle \cos ({\textstyle\frac13}\tan^{-1} y) = 2/\sqrt5$ .
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Show that (for $t>0$)
+\begin{questionparts}
+\item
+$\displaystyle
+\int_0^1 \frac1{(1+tx)^2} \d x = \frac1{(1+t)}\;,
+$
+\item
+$\displaystyle
+\int_0^1 \frac{-2x}{(1+tx)^3} \d x = -\frac1{(1+t)^2}\;.
+$
+\end{questionparts}
+
+Noting that the right hand side of (ii) is the derivative of the right hand side of 
+(i), 
+conjecture the value of
+\[
+ \int_0^1 \frac{6x^2}{(1+x)^{4}} \d x \;.
+\]
+(You need not verify your conjecture.)
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+A spherical loaf of bread is cut into parallel slices of  equal thickness. Show that,
+after any number of the  slices have been eaten, 
+the area of crust remaining is proportional to the number of slices remaining.
+
+A European ruling decrees that a parallel-sliced
+spherical loaf can only be referred to as `crusty' if the ratio of
+volume $V$ (in cubic metres) of bread remaining to area $A$ (in square metres)
+of  crust remaining after any number of slices have been eaten satisfies
+$V/A<1$. Show that the radius of a crusty parallel-sliced
+spherical loaf must be less than $2\frac23$ metres.
+
+[{\sl The area $A$ and volume $V$ formed by rotating a curve in the $x$--$y$ plane 
+round the $x$-axis from $x=-a$ to $x=-a+t$ 
+are given by
+\[
+A= 2\pi\int_{-a}^{-a+t} 
+{ y}\left( 1+ \Big(\frac{\d {y}}{\d x}\Big)^2\right)^{\frac12}
+\d x\;,
+\ \ \ \ \ \ \ \ \ \ \
+V= \pi \int_{-a}^{-a+t} {y}^2 \d x \;. \ \ 
+]
+\]
+}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+In a cosmological model, the radius $\rm R$ of the universe is a function
+of the age $t$ of the universe. The function $\rm R$ satisfies
+the three conditions:
+$$
+\mbox{${\rm R}(0)=0$}, \ \ \ \ \ \ \ \ \
+\mbox{${\rm R'}(t)>0$ for $t>0$}, \ \ \ \ \ \ \ \ \ \  
+\mbox{${\rm R''}(t)<0$ for $t>0$},
+\eqno(*)
+$$
+where ${\rm R''}$ denotes the second derivative of $\rm R$.
+ The function ${\rm H}$ is defined by
+\[
+{\rm H} (t)=  \frac{{\rm R}'(t)}{{\rm R}( t)}\;.
+\]
+
+
+
+\begin{questionparts}
+\item
+Sketch a graph of ${\rm R} (t)$.  By considering a tangent
+to the graph, show that $t<1/{\rm H}(t)$.
+
+\item
+Observations reveal that ${\rm H}(t) = a/t$, where $a$ is constant.
+Derive an expression for~${\rm R}(t)$.
+What range of values of $a$ is consistent with the three conditions~$(*)$?
+
+\item
+Suppose, instead, that observations reveal that ${\rm H}(t)= b t^{-2}$, 
+where $b$ is constant.  Show that this is not consistent 
+with  conditions $(*)$  for any value of $b$.
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Given that $y=x$ and $y=1-x^2$ satisfy  the differential equation
+$$
+\frac{\d^2 {y}}{\d x^2} + \p(x) \frac{\d {y}}{\d x} + \q(x) {y}=0\;,
+\eqno(*)
+$$
+show that $\p(x)= -2x(1+x^2)^{-1}$ and  $\q(x) = 2(1+x^2)^{-1}$. 
+
+Show also that
+$ax+b(1-x^2)$ satisfies the differential equation 
+for any constants $a$ and $b$.
+
+Given instead that $y=\cos^2(\frac{1}{2}x^2)$ and $y=\sin^2(\frac{1}{2}x^2)$ 
+satisfy the  equation $(*)$,
+find $\p(x)$ and~$\q(x)$. 
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A ship sails at $20$ kilometres/hour in a straight line which is, at its closest,
+1 kilometre from a~port. A tug-boat with maximum speed 12 kilometres/hour leaves the 
+port and intercepts the ship, leaving the port at the latest possible time for which the 
+interception is still possible. How far does the tug-boat travel?
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A gun is 
+sited on a horizontal plain and can fire 
+shells in any direction and at any elevation at speed $v$.
+The gun is a distance $d$ from 
+a straight railway line which crosses the plain, where
+$v^2>gd$. The gunner  
+aims to hit the line, choosing the direction and elevation 
+so as to maximize the time of flight of the shell. Show that 
+ the time of 
+flight, $T$, of the shell satisfies 
+\[
+%\frac{2v}{g} \sin \left( \frac12 \arccos \frac{gd}{v^2}\right)\,.
+g^2 T^2 = 2 v^2 +2 \left(v^4 -g^2d^2\right)^{\frac12}\,.
+\]
+
+%Find the time of flight if the gun is constrained so that the angle of elevation
+%$\alpha $ is not greater than $ 45^\circ$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A smooth cylinder with circular cross-section of radius $a$ is held
+with its axis horizontal. A~light elastic band of unstretched 
+length $2\pi a$ and modulus of elasticity
+$\lambda$ is wrapped round the circumference of the cylinder, so that it forms a circle 
+in a plane perpendicular to the axis of the cylinder. A particle of mass $m$ is then
+attached to the  rubber band at its lowest point and released from rest.
+
+\begin{questionparts}
+\item Given that the particle falls to a distance $2a$ below the
+below the axis of the cylinder, but no further, show that
+\[
+\lambda = \frac{9\pi m g}{(3\sqrt3-\pi)^2} \;.
+\]
+\item Given instead that the particle reaches its maximum speed at a
+distance $2a$ below the axis of the cylinder, find a similar expression for 
+$\lambda$\,.
+\end{questionparts} 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Four students, Arthur, Bertha, Chandra and Delilah, exchange gossip.
+When Arthur hears a~rumour, he tells it to one of the other three without 
+saying who told it to him. He decides whom to tell by choosing at
+random amongst the other three, omitting the ones that  he knows have already heard the 
+rumour. When Bertha, Chandra or Delilah hear a rumour, 
+they behave in exactly the same  way (even if they have already heard it themselves). 
+The rumour stops being passed round
+when it is heard by a student who knows that the other three have already heard
+it. 
+
+Arthur starts a rumour and tells it to Chandra. By means of a tree diagram, or otherwise,
+show that  the probability that Arthur rehears it is $3/4$. 
+
+Find also the probability that
+Bertha hears it twice and the probability that Chandra hears it twice.
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Four students, one of whom is a mathematician, take turns at washing up over a long
+period of time. The number of plates broken by any student in this time
+obeys a Poisson distribution, the probability of  any given student breaking 
+$n$ plates  being  $\e^{-\lambda} \lambda^n/n!$ for some fixed constant $\lambda$, independent
+of the number of breakages by other students. 
+Given that five plates are broken, find the probability that 
+three or more  were broken by the 
+mathematician. 
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+On the basis of an interview, the $N$ candidates for admission to a college
+are ranked in order according to their  mathematical potential. The candidates are interviewed 
+in random order (that is, each possible order is equally likely).
+
+\begin{questionparts}
+\item Find the probability that the best amongst the first $n$ candidates
+interviewed is the best overall.
+\item Find the probability that the best amongst the first $n$ candidates
+interviewed is  the best or second best overall.
+\end{questionparts}
+Verify your answers for the case $N=4$, $n=2$ by listing the possibilities.
+ 
+\end{question}
+	
+\end{document}

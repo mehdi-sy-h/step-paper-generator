@@ -1,0 +1,736 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+%\markboth{}{Paper III, 2008   final draft 
+%\ \ \ \ \ 
+%\today 
+%}               
+
+
+\usepackage{pstricks-add}
+\usepackage{epsfig}
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage{xcolor}
+
+
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+\usepackage{verbatim}
+
+
+\newcommand{\bct}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\rct}[1]{{\color{red}#1}}
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{3mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\q{{\rm q}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb {\mathbf b}
+\def\bc {\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\makeatletter
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+\makeatother
+%%%To raise suffices: e.g.  $\Pi_{\raisemath{2pt}{-}}$.
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+\begin{document}
+
+\setcounter{page}{2}
+
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+
+%%%%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+\item 
+The function $\f$  is given by
+\[
+\f(\beta)=\beta - \frac 1 \beta - \frac 1 {\beta^2}
+\ \ \ \ \ \ \ \ (\beta\ne0) \,.
+\]
+Find the stationary point of 
+the curve $y=\f(\beta)\,$ and sketch the curve.
+
+
+Sketch also the curve $y=\g(\beta)\,$, where 
+\[
+\g(\beta) = \beta + \frac 3 \beta - \frac 1 {\beta^2}
+\ \ \ \ \ \ \ \ (\beta\ne0)\,.
+\]
+\item
+Let $u$ and $v$ be the roots of the equation
+\[
+x^2 +\alpha x +\beta = 0
+\,,
+\]
+where $\beta\ne0\,$.
+Obtain expressions in terms of $\alpha$ and $\beta$ for 
+$\displaystyle u+v + \frac 1 {uv}$ and  
+$ \displaystyle \frac 1 u + \frac 1 v + uv\,$.
+
+\item  Given that 
+$\displaystyle u+v + \frac 1 {uv} = -1\,$,   
+and that 
+$u$ and $v$ are real, 
+show  that  $\displaystyle \frac 1 u+ \frac 1 v +  {uv} \le -1\;$.  
+
+
+\item Given  instead that  
+$\displaystyle u+v + \frac 1 {uv} = 3 \;$, and that $u$ and $v$ are real,
+find the greatest value of   
+$\displaystyle  \frac 1 u+ \frac 1v +  {uv}\,$. 
+
+
+\end{questionparts}
+
+
+\end{question}
+
+%%%%%%%%%%%%%% Q2
+\begin{question}
+The sequence of functions 
+$y_0$, $y_1$, $y_2$, $\ldots\,$ is defined by $y_0=1$ and, for $n\ge1\,$,
+\[
+ y_n = (-1)^n \frac {1}{z} \, \frac{\d^{\raisemath{1pt}{n}} z}{\d x^n}
+\,,
+\] 
+where $z= \e^{-x^2}\!$.
+
+\begin{questionparts}
+\item Show that 
+$\dfrac{\d y_n}{\hspace{-4.7pt}\d x} = 2x y_n -y_{n+1}\,$ for $n\ge1\,$.
+\item Prove by induction that, for $n\ge1\,$,
+\[
+y_{n+1}  = 2x y_n  -2ny_{n-1}
+\,.
+\]
+Deduce that, for $n\ge1\,$, 
+\[
+y_{n+1}^2  - {y\vphantom{^2}}_n {y\vphantom{^n}}_{n+2}   
+= 2n
+\big( y_n^2 - {y\vphantom{^n}}_{n-1}{y\vphantom{^2}}_{n+1}) 
++ 2 y_n^2
+\,.
+\]
+\item Hence show that $y_{n}^2 
+- {y\vphantom{^2}}_{n-1} {y\vphantom{^2}}_{n+1} >0$ for $n\ge1\,$.
+\end{questionparts}
+\end{question}
+
+
+%%%%%%%%%%%%% Q3
+\begin{question}
+Show that
+ the second-order differential equation
+\[
+x^2y''+(1-2p) x\, y' + (p^2-q^2) \, y= \f(x)
+\,,
+\]
+where $p$ and $q$ are constants, can be written in the 
+form
+\[
+x^a  
+\big(x^b 
+(x^cy)'\big)' = \f(x)
+\,,
+\tag{$*$}
+\]
+where $a$, $b$ and $c$ are constants. 
+
+\begin{questionparts}
+\item Use $(*)$ to derive the general solution of the equation
+\[
+x^{2}y''+(1-2p)xy'+(p^2-q^{2})y=0
+\]
+in the different cases that arise according to the values of $p$ and $q$.
+
+\item Use $(*)$ to derive the general solution of the equation
+\[
+x^{2}y''+(1-2p)xy'+p^2y=x^{n}
+\]
+in the different cases that arise according to the values of $p$ and $n$.
+
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%%%%%%% Q4
+\begin{question}
+The point $P(a\sec \theta, b\tan \theta )$ 
+lies on the hyperbola 
+\[
+\dfrac{x^{2}}{a^{2}}-\dfrac{y^{2}}{b^{2}}=1\,,
+\]
+where $a>b>0\,$. 
+Show that the equation of the 
+tangent to the hyperbola at $P$ can be written as
+\[
+bx- ay \sin\theta  = 
+ab \cos\theta
+\,.
+\]
+
+\begin{questionparts}
+\item This tangent  meets the 
+lines
+$\dfrac x a = \dfrac yb$ and $\dfrac x a =- \dfrac y b$
+at
+ $S$ and $T$,
+ respectively. 
+
+How is  the mid-point of $ST$
+related to $P$?
+\item
+The point $Q(a\sec \phi, b\tan \phi)$ also lies on the
+hyperbola and  the tangents to the 
+hyperbola at $P$ and $Q$ 
+ are perpendicular.               
+These two  tangents intersect at $(x,y)$. 
+
+Obtain expressions for $x^2$ and $y^2$ in terms of $a$, $\theta$ and $\phi$.
+
+Hence, or otherwise,
+show that
+ $x^2+y^2 = a^2 -b^2$. 
+\end{questionparts}
+\end{question}
+
+
+
+%%%%%%%%%%%%%%%%%% Q5
+
+\begin{question}
+The real numbers $a_1$, $a_2$, $a_3$, $\ldots$ are all positive. For each positive
+integer $n$, $A_n$ and $G_n$ are defined by 
+\[
+A_n = \frac{a_1+a_2 + \cdots + a_n}n 
+\ \ \ \ \ \text{and } \ \ \ \ \ 
+G_n = \big( a_1a_2\cdots a_n\big) ^{1/n}
+\,.
+\]
+\begin{questionparts}
+\item Show that, for any given positive integer $k$, 
+\[
+(k+1) ( A_{k+1} - G_{k+1}) \ge  k (A_k-G_k)
+\]
+if and only if 
+\[\lambda^{k+1}_k -(k+1)\lambda_{\raisemath{-2  pt}{k}} +k \ge 0\,,
+\]
+ where
+$ \lambda_{\raisemath{-2pt}{k}} = \left(\dfrac{a_{k+1}}{G_{k}}\right)^{\frac1 {k+1}}\,$. 
+
+\item
+Let 
+\[
+ \f(x)=x^{k+1} -(k+1)x +k \,,
+\]
+ where
+$x>0$ and $k$ is a positive integer. Show that $\f(x)\ge0$
+and that $\f(x)=0$  
+if and only if
+ $x = 1\,$. 
+
+\item
+Deduce  that:
+\begin{enumerate}
+\item[(a)]
+ $A_n \ge G_n$ for all $n$; 
+\\
+\item[(b)]
+if $A_n=G_n$ for some $n$, then $a_1=a_2 = \cdots = a_n\,$.
+\end{enumerate}
+\end{questionparts}
+\end{question}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item
+The 
+distinct
+points $A$, $Q$ and $C$ lie on a straight line in the Argand diagram,
+and 
+represent the distinct
+complex numbers $a$, $q$ and $c$, respectively. 
+Show that
+$\dfrac {q-a}{c-a}$
+ is real and hence that 
+$(c-a)(q^*-a^*) = (c^*-a^*)(q-a)\,$.
+
+Given that $aa^* = cc^* = 1$, show further that 
+\[
+q+ ac q^* = a+c
+\,.
+\]
+
+\item
+The distinct points $A$, $B$, $C$ and $D$ lie, in anticlockwise order,
+ on the circle of unit radius 
+with centre at the origin  
+(so that, for example, $aa^* =1$).
+The lines $AC$ and $BD$ meet at $Q$.
+Show that 
+\[
+(ac-bd)q^* = (a+c)-(b+d)
+\,,
+\]
+where  
+$b$ and $d$  are complex numbers represented by the 
+points $B$ and $D$
+  respectively,
+and show further that
+\[
+(ac-bd)
+ (q+q^*) = 
+(a-b)(1+cd) +(c-d)(1+ab)
+\,.
+\]
+
+\item
+The lines $AB$ and $CD$
+meet at $P$, which  represents the complex number
+$p$. Given that~$p$ is real, show that $p(1+ab)=a+b\,$.
+Given further that $ac-bd \ne 0\,$,
+show that 
+\[
+p(q+q^*) =  2 
+\,.
+\]
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+\item Use De Moivre's theorem to show that,
+if $\sin\theta\ne0$\,, then
+\[
+\frac{
+\left(\cot \theta + \rm{i}\right)^{2n+1}
+-\left(\cot \theta - \rm{i}\right)^{2n+1}}{2\rm{i}}
+=
+\frac{\sin \left(2n+1\right)\theta}
+{\sin^{2n+1}\theta}
+\,,
+\]
+for any positive integer $n$.
+
+Deduce that the solutions of the equation
+\[
+\binom{2n+1}{1}x^{n}-\binom{2n+1}{3}x^{n-1}
++\cdots +
+\left(-1\right)^{n}=0
+\] 
+are
+\[x=\cot^{2}\left(\frac{m\pi}{2n+1}\right)
+\]
+where $ m=1$, $2$, $\ldots$ , $n\,$.
+
+\item
+Hence show that 
+\[
+\sum_{m=1}^n
+\cot^{2}\left(\frac{m\pi}{2n+1}\right)
+=\frac{n\left(2n-1\right)}{3}.
+\]
+
+\item
+Given that 
+$0<\sin \theta <\theta <\tan \theta$ 
+for 
+$0 < \theta < \frac{1}{2}\pi$, 
+show that 
+\[
+\cot^{2}\theta<\frac{1}{\theta^{2}}<1+\cot^{2}\theta.
+\] 
+Hence show that 
+\[
+\sum^\infty_{m=1}
+\frac{1}{m^2}=
+\frac{\pi^2}{6}\,.\]
+
+\end{questionparts}
+ 
+
+\end{question}
+
+
+
+%%%%%%%%%%%%%% Q8
+\begin{question}
+In this question, you should ignore issues of convergence.
+
+
+\begin{questionparts}
+\item
+Let 
+\[
+I = \int_0^1 \frac{\f(x^{-1}) } {1+x} \, \d x
+\,,
+\] 
+where $\f(x)$ is a function for which the integral exists.
+
+Show that 
+\[
+I = \sum_{n=1}^\infty \int_n^{n+1} \frac{\f(y) } {y(1+y)}\, \d y
+\]
+and deduce that, if $\f(x) = \f(x+1)$ for all $x$, then 
+\[
+I= \int_0^1 \frac{\f(x)}  {1+x} \, \d x
+\,.
+\]
+\item
+The {\em fractional part}, $\{x\}$, of a real number 
+$x$ is defined to be $x-\lfloor x\rfloor$ where 
+$\lfloor x \rfloor$ is 
+the largest integer less than or equal to $x$.
+For example $\{3.2\} = 0.2$ and $\{3\}=0\,$.
+
+Use the result of part (i) to evaluate
+\vspace{3mm}
+\[
+  \displaystyle \int _0^1 \frac { \{x^{-1}\}}{1+x}\, \d x \text{ \ \ and \ \ }
+  \displaystyle \int _0^1 \frac { \{2x^{-1}\}}{1+x}\, \d x \,. 
+\]
+%\item Use the same method to evaluate 
+%\[
+%\int_0^1 \frac {x\{x^{-1}\}}{1-x^2} \, \d x \,.
+%\]
+\end{questionparts}
+\end{question}
+
+\newpage
+
+\section*{Section B: \ \ \ Mechanics}
+
+
+%%%%%%%%%%%%%% Q9
+\begin{question}
+A particle $P$ of mass $m$ is projected 
+with speed $u_0$
+ along a smooth
+horizontal floor
+directly towards a wall.
+ It collides with a particle $Q$ of mass
+$km$ which is moving directly away from the wall
+with speed
+$v_0$. 
+In the subsequent motion, $Q$ collides alternately
+with the wall and with $P$. 
+ The coefficient of restitution between $Q$ and $P$ is $e$, and 
+the coefficient of restitution between~$Q$ and the wall is 1.
+
+Let $u_n$ and $v_n$ be the velocities of  $P$ and $Q$, respectively,
+towards the wall after the $n$th 
+collision between $P$ and $Q$. 
+
+\begin{questionparts}
+\item
+Show that, for $n\ge2$,
+\[
+(1+k)u_{n} - (1-k)(1+e)u_{n-1} + e(1+k)u_{n-2} =0\,.
+\tag{$*$}
+\]
+
+\item
+You are now given that $e=\frac12$ and  $k = \frac1{34}$, and that the 
+solution of  
+$(*)$  is of  the form  
+\[
+\phantom{(n\ge0)}
+u_n=
+A\left( \tfrac 7{10}\right)^n
++
+B\left( \tfrac 5{7 }\right)^n
+\ \ \ \ \ \ 
+(n\ge0)
+\,,
+\]
+where $A$ and $B$ are independent of $n$.
+Find expressions for $A$ and $B$ in terms of $u_0$ and $v_0$.
+
+Show that, if $0<6u_0<v_0$, then $u_n$ will be negative for 
+large $n$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%%%%% Q10
+\begin{question}
+A uniform
+disc  with centre $O$ and radius $a$
+is suspended from a  point $A$ on 
+its circumference, so that it can swing freely about a horizontal 
+axis $L$ through $A$. The plane of the disc is perpendicular to $L$.
+A particle $P$ is attached to a point on the circumference of the 
+disc. The mass of the disc is $M$ 
+and the mass of the particle is $m$.
+
+In equilibrium, the disc hangs with $OP$ horizontal, and  the angle
+between $AO$ and the downward vertical through $A$ is $\beta$.
+Find $\sin\beta$ in terms of $M$ and $m$ 
+and show that
+\[
+\frac{AP}{a}  = \sqrt{\frac{2M}{M+m}} 
+\,.
+\]
+
+The disc is rotated about $L$  and then released. 
+ At later time~$t$, the angle between $OP$ and the 
+horizontal is $\theta$; when $P$ is higher than $O$, $\theta$ is positive
+and when $P$ is lower than $O$, $\theta$ is negative. Show that 
+\[
+\tfrac12 I \dot\theta^2 + (1-\sin\beta)ma^2 \dot \theta^2
++ (m+M)g a\cos\beta \, (1- \cos\theta)  
+\] 
+is constant during the motion, where $I$ is the moment of inertia
+of the disc about $L$.
+
+Given that $m= \frac 32 M$ and that $I= \frac32Ma^2$, 
+show  that the period  of 
+small oscillations  is 
+\[
+3\pi \sqrt{\frac {3a}{5g}}
+\,.
+\]
+
+\end{question}
+
+%%%%%%%%%%%%%% Q11
+
+\begin{question}
+A particle  
+is attached to one end of a light inextensible string of length $ b$. 
+The other end of the string is attached to a 
+fixed point $O$.
+Initially the particle hangs vertically below $O$.
+The particle then receives a horizontal impulse.
+
+The particle moves  in a circular arc with the string taut
+until the acute angle between the string and the upward
+vertical is $\alpha   $, at which time it becomes slack.
+Express $V$, the speed of the particle when the string
+becomes slack, in terms of $ b$, $g$ and $\alpha   $.
+  
+Show that 
+the string becomes taut again a time
+$T$ later, where
+\[
+gT = 4V \sin\alpha     
+\,,\]
+and that just before this time the trajectory of the  
+particle makes an angle $\beta $ with 
+the horizontal where $\tan\beta = 3\tan \alpha \,$.
+
+When the string becomes taut, the momentum of the 
+particle  in the direction of the string is destroyed.
+Show that the particle comes instantaneously to rest 
+at this time if and only if 
+\[
+\sin^2\alpha = \dfrac {1+\sqrt3}4 \,.
+\]
+
+
+\end{question}
+
+\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+%%%%%%%%%%%%%% Q12
+\begin{question}
+A random process generates, independently, $n$
+numbers each of which is drawn from a uniform (rectangular) 
+distribution on  the interval 0 to 1. 
+The random variable $Y_k$
+is defined to be   the $k$th smallest number (so there
+are $k-1$ smaller numbers).
+
+\begin{questionparts}
+\item Show  that, for $0\le y\le1\,$, 
+\[
+{\rm P}\big(Y_k\le y) =\sum^{n}_{m=k}\binom{n}{m}y^{m}\left(1-y\right)^{n-m}
+.
+\tag{$*$}
+\] 
+\item
+Show that 
+\[
+m\binom n m = n \binom {n-1}{m-1}
+\]
+and obtain a similar expression for 
+$\displaystyle (n-m) \, \binom n m\,$.
+
+Starting from $(*)$,
+show that
+the  
+probability density function of $Y_k$ is
+\[
+ n\binom{ n-1}{k-1}
+y^{k-1}\left(1-y\right)^{ n-k}
+\,.            
+\]
+Deduce an expression for
+$
+\displaystyle
+\int_0^1 y^{k-1}(1-y)^{n-k} \, \d y
+\,$.
+\item
+Find $\E(Y_k) $ in terms of $n$ and $k$.
+\end{questionparts}
+\end{question}
+ 
+%%%%%%%%%%%%%% Q13
+\begin{question}
+
+The random variable 
+$X$ takes only non-negative integer 
+values and has  probability generating function 
+$\G(t)$. 
+Show that 
+\[
+\P(X = 0 \text{ or } 2 \text{ or } 4 \text { or }  6 \   \ldots ) 
+= \frac{1}{2}\big(\G\left(1\right)+\G\left(-1\right)\big).
+\]
+
+You are now given that $X$ has a Poisson distribution 
+with mean $\lambda$.  Show that
+\[
+\G(t) = \e^{-\lambda(1-t)}
+\,.
+\]
+\begin{questionparts}
+\item
+The random variable $Y$ is defined by 
+\[
+\P(Y=r)=
+\begin{cases}
+k\P(X=r) &  \text{if $r=0, \ 2, \ 4, \ 6, \ \ldots$ \ }, \\[2mm]
+ 0& \text{otherwise}, 
+\end{cases}
+\]
+where $k$ is an appropriate constant.
+
+Show that
+ the probability generating function of $Y$ is $\dfrac{\cosh\lambda t}{\cosh\lambda}\,$. 
+
+Deduce that 
+\mbox{$\E(Y)<\lambda$} 
+for~$\lambda>0\,$. 
+
+\item The random variable $Z$ is defined by 
+\[\P(Z=r)=
+\begin{cases}
+        c \P(X=r) &  
+\text{if $r = 0, \ 4, \ 8, \ 12, \ \ldots \ $}, \\[2mm]
+ 0& \text{otherwise,} 
+\end{cases}
+\]
+where $c    $ is an appropriate constant.
+
+Is 
+$\E(Z)<\lambda$
+ for all positive values of $\lambda\,$?  
+
+
+\end{questionparts}
+\end{question}
+
+
+\end{document}
+
+

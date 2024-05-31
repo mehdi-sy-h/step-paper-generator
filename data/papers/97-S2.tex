@@ -1,0 +1,397 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1997
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Find the sum of those numbers between 1000 and 6000 every one of whose digits
+is one of the numbers $0,\,2,\,5$ or 7, giving
+ your answer as a product of primes.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Suppose that
+$$3=\frac{2}{ x_1}=x_1+\frac{2}{ x_2}
+=x_2+\frac{2}{ x_3}=x_3+\frac{2}{ x_4}=\cdots.$$
+Guess an expression, in terms of $n$, for $x_n$.
+Then, by induction or otherwise,
+prove the correctness of your guess.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Find constants $a,\,b,\,c$ and $d$ such that
+$$\frac{ax+b}{ x^2+2x+2}+\frac{cx+d}{ x^2-2x+2}=
+\frac{1}{ x^4+4}.$$
+
+\noindent
+Show that
+$$\int_0^1\frac {\d x}{ x^4+4}\;= \frac{1}{16} \ln 5
+ +\frac{1}{8} \tan^{-1}2 .$$
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Show that, when the polynomial
+${\rm p} (x)$ is divided by $(x-a)$, 
+where $a$ is a real number, the remainder is
+${\rm p}(a)$.
+
+\begin{questionparts}
+\item When the polynomial ${\rm p}(x)$ 
+is divided by $x-1,\,x-2,\,x-3$ the
+remainders are
+3,1,5 respectively. Given that 
+$${\rm p}(x)=(x-1)(x-2)(x-3){\rm
+q}(x)+{\rm r} (x),$$
+ where ${\rm q}(x)$
+and ${\rm r}(x)$ are polynomials with ${\rm r}(x)$ 
+having degree less than three,
+find~${\rm r}(x)$.
+
+\item Find a polynomial ${\rm P}(x)$ of degree $n+1$,
+ where $n$ is a  given positive
+integer, such that for each integer $a$ satisfying $0\le a\le n$,
+the remainder when ${\rm P}_n(x)$ is divided by $x-a$ is $a$. 
+\end{questionparts}
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The complex numbers $w=u+\mathrm{i}v$ and $z=x+\mathrm{i}y$ are related by the
+equation
+$$z=
+(\cos v+\mathrm{i}\sin v)\mathrm{e}^u.$$
+Find all $w$ which correspond to $z=\mathrm{i\,e}$.
+
+Find the loci in the $x$--$y$ plane corresponding to the lines $u=$ constant
+in the $u$--$v$ plane. Find also the loci corresponding to the lines $v=$
+constant. Illustrate your answers with clearly labelled sketches.
+
+Identify two subsets $W_1$ and $W_2$ of the $u$--$v$ plane each of
+which is in one-to-one correspondence with the first quadrant
+$\{(x,\,y):\,x>0,\,y>0\}$ of the $x$--$y$ plane.
+Identify also two subsets $W_3$ and $W_4$ each of which
+is in one-to-one correspondence with the set $\{z\,:0<\,\vert z\vert\,<1\}$.
+
+\noindent[{\bf NB} `one-to-one' means here that to each value of 
+$w$ there is only one corresponding value of $z$, and vice-versa.]
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Show that, if $\,\tan^2\phi=2\tan\phi+1$, then $\tan2\phi=-1$.
+
+Find all solutions of the equation
+$$\tan\theta=2+\tan3\theta$$
+which satisfy $0<\theta< 2\pi$,
+expressing your answers as rational multiples of $\pi$. 
+
+Find all solutions of the equation
+the equation
+$$\cot\theta=2+\cot3\theta$$
+which satisfy $$-\frac{3\pi}{2}<\theta<\frac{\pi}{2}.$$
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Let
+$$y^2=x^2(a^2-x^2),$$
+where $a$ is a real constant.
+Find, in terms of $a$, the maximum and minimum values of $y$.
+
+
+Sketch carefully on the same axes the graphs of $y$
+in the cases $a=1$ and $a=2$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+If   ${\rm f}(t)\ge {\rm g}(t)$ for $a\le t\le b$, explain very
+briefly why $\int_a^b {\rm f}(t) \d t \ge \int_a^b {\rm g}(t) \d t$.
+
+Prove that if $p>q>0$ and $x\ge1$ then
+$$\frac{x^p-1}{ p}\ge\frac{x^q-1}{ q}.$$
+Show that this inequality also holds when $p>q>0$ and $0\le x\le1$.
+
+Prove that, if $p>q>0$ and $x\ge0$, then
+$$\frac{1}{ p}\left(\frac{x^p}{ p+1}-1\right)\ge
+\frac{1}{q}\left(\frac{x^q}{ q+1}-1\right).$$
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A uniform solid sphere of diameter $d$ and mass $m$ is drawn
+slowly and without slipping from horizontal ground onto a step of
+height $d/4$ by a horizontal 
+force which is always applied to the highest point of the sphere
+and is always perpendicular to the vertical plane which forms
+the face of the step. Find the maximum horizontal force throughout
+the movement, and prove that the coefficient of friction
+between the sphere and the edge of the step must exceed
+$1/\sqrt{3}$.
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+\noindent{\it In this question the effect of gravity is to be neglected.}
+
+A small body of mass $M$ is moving with velocity $v$ along the axis of
+a long, smooth, fixed, circular cylinder of radius $L$. An internal
+explosion splits the body into two spherical fragments, with masses
+$qM$ and $(1-q)M$, where $q\le\frac{1}{2}$. After bouncing perfectly
+elastically
+off the cylinder (one bounce each) the fragments collide and coalesce
+at a point $\frac{1}{2}L$ from the axis. Show that $q=\frac{3}{ 8}$. 
+
+The collision occurs at a time $5L/v$ after the explosion. Find the
+energy imparted to the fragments by the explosion, and find the
+velocity after coalescence. 
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A tennis player serves from height $H$ above horizontal  ground, hitting
+the ball downwards with speed $v$ at an angle $\alpha$ below the 
+horizontal. The ball just clears the net of height $h$ at horizontal
+distance $a$ from the server and hits the ground a further horizontal
+distance $b$ beyond the net. Show that
+$$
+v^2 = \frac{ g(a+b)^2(1+\tan^2\alpha)}{ 2[H-(a+b)\tan\alpha]}
+$$
+and
+$$
+\tan\alpha = \frac{2a+b }{ a(a+b)}H - \frac{a+b }{ ab}h \,.
+$$
+By considering the signs of $v^2$ and $\tan\alpha$, find upper
+and lower bounds on $H$ for such a serve to be possible.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+The game of Cambridge Whispers starts with the first participant Albert
+flipping an
+un-biased coin and whispering to his neighbour Bertha
+whether it fell `heads' or `tails'. Bertha then whispers this information to
+her neighbour, and so on. The game ends when the final player Zebedee whispers
+to Albert and the game is won, by all players, if what Albert hears is
+correct. The acoustics are such that the listeners have,
+independently at each stage, only
+a probability of 2/3 of hearing correctly what is said. Find the probability
+that the game is won when there are just three players.
+
+By considering the binomial expansion of $(a+b)^n+(a-b)^n$, or otherwise,
+find a concise expression for the probability $P$ that the game is won
+when is it played by $n$ players each having a probability $p$ of hearing
+correctly.
+% Show in particular that, if $n$ is even,
+%$P(n,1/10) = P(n,9/10)$.% How do you explain this apparent anomaly?
+
+To avoid the trauma of a lost game, the rules are now modified to require
+Albert to whisper to Bertha what he
+hears from Zebedee, and so keep the game going, if what he hears
+from Zebedee is not correct. Find the expected total number of times that
+Albert whispers to Bertha before the modified game ends.
+
+\noindent
+[You may use without proof the fact that $\sum_1^\infty kx^{k-1}=(1-x)^{-2}$
+for $\vert x\vert<1$.]
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A needle of length two cm is dropped at random onto a large piece of paper
+ruled with parallel lines two cm apart.
+
+\begin{questionparts}
+	\item By considering the angle
+which the needle makes with the lines, find the probability that the needle
+crosses the nearest line given that its centre is $x$ cm from it, where
+$0<x<1$.
+
+\item Given that the centre of the needle is $x$ cm from the nearest
+line and that the needle crosses that line, find the cumulative
+distribution function for the length of the
+shorter segment of the needle cut off by the line.
+
+\item Find the probability that the needle misses all the lines.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+Traffic enters a tunnel which is 9600 metres long, and in which overtaking
+is impossible. The number of vehicles 
+which enter in any given time is governed by the Poisson distribution with 
+mean 6 cars per minute. All vehicles travel
+at a constant speed until forced to slow down on catching up with a
+slower vehicle ahead. I enter the tunnel travelling at 30
+m$\,$s$^{-1}$
+and all the other traffic is travelling at 32 m$\,$s$^{-1}$. What is
+the expected number of vehicles in
+the queue behind me when I leave the tunnel? 
+
+
+Assuming again that I travel at 30 m$\,$s$^{-1}$, but that all the other
+vehicles are independently equally likely to be travelling at 30 m$\,$s$^{-1}$
+or 32 m$\,$s$^{-1}$, find the probability that 
+ exactly two
+vehicles enter the tunnel within 20 seconds of my doing so
+and catch me up before I leave it.
+Find also the probability that there are exactly two vehicles
+queuing behind me when I leave the tunnel.
+
+
+\noindent [Ignore the lengths of the vehicles.]
+\end{question}
+	
+\end{document}

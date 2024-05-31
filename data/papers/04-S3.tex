@@ -1,0 +1,506 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2004
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Show that
+\[
+\int_0^a \frac{\sinh x}{2\cosh^2 x -1} \, \mathrm{d} x = \frac{1}{2 \sqrt{2}} \ln \l \frac{\sqrt{2}\cosh a -1}{\sqrt{2}\cosh a +1}\r + \frac{1}{2 \sqrt{2}} \ln \l \frac{\sqrt{2}+1}{\sqrt{2}-1}\r
+\]
+and find
+\[
+\int_0^a \frac{\cosh x}{1+2\sinh^2 x} \, \mathrm{d} x \, .
+\]
+
+Hence show that 
+\[
+\int_0^\infty \frac{\cosh x - \sinh x}{1+2\sinh^2 x} \, \mathrm{d} x = \frac{\pi}{2\sqrt{2}} - \frac{1}{2 \sqrt{2}} \ln \l \frac{\sqrt{2}+1}{\sqrt{2}-1}\r \, .
+\]
+
+By substituting $u = \e^x$ in this result, or otherwise, find
+\[
+\int_1^\infty \frac{1}{1+u^4} \, \mathrm{d} u \, .
+\]
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The equation of a curve is $y=\f ( x )$ where
+\[
+\f ( x ) = x-4-{16 \l 2x+1 \r^2 \over x^2 \l x - 4 \r} \;.
+\]
+
+\begin{questionparts}
+\item
+Write down the equations of the vertical and oblique asymptotes to the curve and 
+show that the oblique asymptote is a tangent to the curve. 
+\item
+Show that the equation $\f ( x ) =0$ has a double root.
+\item
+Sketch the curve.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Given that $\f''(x) > 0$ when $a \le x \le b\,$, 
+explain with the aid of a sketch why
+\[
+(b-a) \, \f  \Big( {a+b \over 2} \Big)  
+< \int^b_a \f(x) \, \mathrm{d}x 
+< (b-a) \, \displaystyle \frac{\f(a) + \f(b)}{2} \;.
+\]
+By choosing suitable $a$, $b$ and $\f(x)\,$, show that
+\[
+{4 \over (2n-1)^2} < {1 \over n-1} - {1 \over n} 
+< {1 \over 2} \l {1 \over n^2} + {1 \over (n-1)^2}\r \,,
+\]
+where $n$ is an integer greater than 1.
+
+Deduce that
+\[
+4 \l {1 \over 3^2} +{1 \over 5^2} + {1 \over 7^2} + \cdots \r 
+< 1 
+< {1 \over 2} + 
+\left( {1 \over 2^2} +{1 \over 3^2} + {1 \over 4^2} + \cdots \right)\,.
+\]
+
+Show that  
+\[
+{1 \over 2} \l {1 \over 3^2} 
++ {1 \over 4^2} + {1 \over 5^2} + \frac 1 {6^2} + \cdots \right)
+<
+{1 \over 3^2} +{1 \over 5^2} + {1 \over 7^2} 
++  \cdots
+\]
+ and hence show that
+\[
+ {3 \over 2} \displaystyle 
+< \sum_{n=1}^\infty {1 \over n^2} <{7 \over 4}\;.
+\]
+\end{question}
+
+%%%%%% Q4 
+\begin{question}The triangle $OAB$ is isosceles, 
+with $OA = OB$ and angle $AOB = 2 \alpha$ where $0< \alpha < {\pi \over 2}\,$. 
+The semi-circle $\mathrm{C}_0$ has its centre at the midpoint of the base $AB$ of the triangle, 
+and the sides $OA$ and $OB$ of the triangle are both tangent to the semi-circle. 
+$\mathrm{C}_1, \mathrm{C}_2, \mathrm{C}_3, \ldots$ 
+are circles such that $\mathrm{C}_n$ is tangent to $\mathrm{C}_{n-1}$ 
+and to sides $OA$ and $OB$ of the triangle. 
+
+Let $r_n$ be the radius of $\mathrm{C}_n\,$. Show that
+\[
+\frac{r_{n+1}}{r_n} = \frac{1-\sin\alpha}{1+\sin\alpha}\;.
+\]
+
+Let $S$ be the total area of the semi-circle $\mathrm{C}_0$ and the 
+circles  $\mathrm{C}_1$, $\mathrm{C}_2$, $\mathrm{C}_3$, $\ldots\;$. 
+Show that
+\[
+S = {1 + \sin^2 \alpha  \over 4 \sin \alpha} \, \pi r_0^2 \;.
+\]
+
+Show that there are values of $\alpha$ for which $S$ is more than four fifths 
+of the area of triangle~$OAB$.
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Show that if $\, \cos(x - \alpha) = \cos \beta \,$  
+then either $\, \tan x = \tan ( \alpha + \beta)\,$ or
+$\; \tan x = \tan ( \alpha - \beta)\,$. 
+By choosing suitable values of $x$, $\alpha$ and $\beta\,$,
+give an example to show that if 
+$\,\tan x = \tan ( \alpha + \beta)\,$, 
+then $\,\cos(x - \alpha) \, $ need not equal $ \cos \beta \,$.
+
+Let $\omega$ be the acute angle such that $\tan \omega = \frac 43\,$.
+\begin{questionparts}
+\item For $0 \le x \le 2 \pi$, solve the equation
+\[
+\cos x -7 \sin x = 5
+\]
+giving both solutions in terms of $\omega\,$.
+\item  For $0 \le x \le 2 \pi$, solve the equation
+\[
+2\cos x + 11 \sin x = 10
+\]
+showing that one solution is twice the other and giving both in terms of $\omega\,$.
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Given a sequence $w_0$, $w_1$, $w_2$, $\ldots\,$, the sequence $F_1$, $F_2$, $\ldots$ is
+defined by
+ $$F_n = w_n^2 + w_{n-1}^2 - 4w_nw_{n-1} \,.$$
+Show that
+$\;
+F_{n}-F_{n-1} = \l w_n-w_{n-2} \r \l w_n+w_{n-2}-4w_{n-1} \r \; 
+$ for $n \ge 2\,$.
+
+\begin{questionparts}
+\item
+The sequence $u_0$, $u_1$, $u_2$, $\ldots$ 
+ has $u_0 = 1$, and $u_1 = 2$ and satisfies 
+\[
+u_n = 4u_{n-1} -u_{n-2} \quad (n \ge 2)\;.
+\]
+Prove  that
+\ $
+u_n^2 + u_{n-1}^2 = 4u_nu_{n-1}-3
+\; $
+for  $n \ge 1\,$.
+
+\item
+A sequence $v_0$, $v_1$, $v_2$, $\ldots\,$ has $v_0=1$ and satisfies
+\begin{equation*}
+v_n^2 + v_{n-1}^2 = 4v_nv_{n-1}-3   \quad (n \ge 1).  \tag{$\ast$}
+\end{equation*}
+\makebox[7mm]{(a) \hfill}Find $v_1$ and  prove that,  for each $n\ge2\,$, either 
+$v_n= 4v_{n-1} -v_{n-2}$ or $v_n=v_{n-2}\,$.
+ 
+\makebox[7mm]{(b) \hfill}Show that the sequence, with period 2,  defined  by
+\begin{equation*}
+v_n = 
+\begin{cases}
+1 & \mbox{for $n$ even} \\  
+2 &  \mbox{for $n$   odd}
+\end{cases}
+\end{equation*}
+\makebox[7mm]{\hfill}satisfies $(\ast)$.
+
+\makebox[7mm]{(c) \hfill}Find a sequence $v_n$ with period 4 
+which has $v_0=1\,$,  and satisfies~$(\ast)$.
+\end{questionparts} 
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+For $n=1$, $2$, $3$, $\ldots\,$, let
+\[
+I_n = \int_0^1 {t^{n-1} \over \l t+1 \r^n} \, \mathrm{d} t \, .
+\]
+By considering the greatest value taken by 
+$\ds {t \over t+1}$ for $0 \le t \le 1$ 
+show that 
+$I_{n+1} < {1 \over 2} I_{n}\,$.
+
+Show also that 
+$\; \ds I_{n+1}= - \frac 1{\; n\,  2^n}   + I_{n}\,$.
+
+Deduce that 
+$\; \ds I_n < \frac1 {\; n \, 2^{n-1}}\,$.
+
+Prove that
+\[
+\ln 2 = \sum_{r=1}^n {1 \over \; r\, 2^r} + I_{n+1}
+\]
+and hence show that \hspace{2 pt} ${2 \over 3} < \ln 2 < {17 \over 24}\,$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+ Show that if
+\[
+{\mathrm{d}y \over \mathrm{d} x}=\f(x)y + {\g(x) \over y}
+\]
+then the substitution $u = y^2$ gives a linear differential equation for $u(x)\,$.
+
+Hence or otherwise solve the differential equation
+\[
+{\mathrm{d}y \over \mathrm{d} x}={y \over x} - {1 \over y}\;.
+\]
+
+Determine the solution curves of 
+this equation which pass through 
+$(1 \,,  1)\,$, $(2\, ,  2)$ and 
+$(4 \, , 4)$ and sketch graphs of all three curves on the same axes.
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A circular hoop of radius $a$ is free to rotate about a fixed horizontal 
+axis passing through a point $P$ on its circumference. The plane of the hoop
+is perpendicular to this axis. 
+The hoop hangs in equilibrium with its centre, $O$, vertically below $P$.
+The point $A$ on the hoop is vertically below $O$, so that $POA$ is a diameter of the hoop. 
+
+
+A mouse $M$ runs at constant speed $u$ round the 
+rough inner surface of the lower part of the hoop. 
+Show that the mouse can choose its speed so that the hoop 
+remains in equilibrium with diameter $POA$ vertical.
+
+Describe what happens to the hoop when the mouse passes the point at which angle 
+$AOM =  2 \arctan \mu\,$, 
+where $\mu$ is the coefficient of friction between mouse and hoop.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A particle $P$ of mass $m$ is attached to points $A$ and $B$, where $A$ is a distance $9a$ 
+vertically above $B$, by elastic strings, 
+each of which has modulus of elasticity $6mg$. 
+The string $AP$ has natural length $6a$ and the string 
+$BP$ has natural length $2a$. Let $x$ be the distance $AP$.
+
+The system is released from rest with $P$ 
+on the vertical line $AB$ and $x = 6a$. 
+Show that the acceleration $\ddot{x}$ of $P$ is 
+$\ds{4g \over a}(7a - x)$ for $6a<x<7a$ 
+and 
+$\ds{g \over a}(7a - x)$ for $7a< x < 9a\,$.
+
+Find the time taken for the particle to reach $B$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Particles $P$, of  mass $2$, and $Q$, of  mass $1$, 
+move along a line. Their distances from a fixed point are $x_1$ and $x_2$, respectively
+where $x_2>x_1\,$.
+Each particle is subject  to a repulsive force from the other 
+of magnitude $\displaystyle {2 \over z^3}$, where $z = x_2-x_1 \,$.
+
+Initially, $x_1=0$, $x_2 = 1$, $Q$ is at rest and 
+$P$ moves towards $Q$ with speed 1.  
+Show that $z$ obeys the equation 
+$\displaystyle {\mathrm{d}^2 z \over \mathrm{d}t^2} = {3 \over z^3}$. 
+
+By first writing 
+$\displaystyle {\mathrm{d}^2 z \over \mathrm{d}t^2} = v {\mathrm{d}v \over \mathrm{d}z} \,$, 
+where $\displaystyle v={\mathrm{d}z \over \mathrm{d}t}\,$,
+show that $z=\sqrt{4t^2-2t+1}\,$.
+
+By considering the equation satisfied by $2x_1+x_2\,$,
+find $x_1$ and $x_2$ in terms of $t \,$.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+A team of $m$ players, numbered from $1$ to $m$, 
+puts on a set of a $m$ shirts, similarly numbered from $1$ to $m$. 
+The players change in a hurry, so that the shirts are assigned to them randomly, 
+one to each player.
+
+
+Let $C_i$ be the random variable that takes the value $1$ if player $i$ is wearing shirt $i$, 
+and 0 otherwise. Show that $\mathrm{E}\left(C_1\right)={1 \over m}$ 
+and find 
+$\var \left(C_1\right)$ and $\mathrm{Cov}\left(C_1 \, , \; C_2 \right) \,$.
+
+Let $\, N = C_1 + C_2 + \cdots + C_m \,$ 
+be the random variable whose value is the number of players who are wearing the correct shirt. 
+Show that $\mathrm{E}\left(N\right)= \var \left(N\right) = 1 \,$.
+
+Explain why a Normal approximation to $N$ is not likely to be appropriate for any $m$, 
+but that a Poisson approximation might be reasonable.
+
+In the case $m = 4$, find, by listing equally likely possibilities or otherwise, 
+the probability that no player is wearing the correct shirt 
+and verify that an appropriate Poisson approximation to $N$ 
+gives this probability with a relative error  of about $2\%$. [Use $\e \approx 2\frac{72}{100} \,$.] 
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A men's endurance competition has an unlimited number of rounds. 
+In each round, a competitor has, independently, a probability $p$ of making it through the round; 
+otherwise, he fails the round. 
+Once a competitor fails a round, he drops out of the competition; 
+before he drops out, he takes part in every round. 
+The grand prize is awarded to any competitor who makes it through a round 
+which all the other remaining competitors fail; 
+if all the remaining competitors fail at the same round the grand prize is not awarded.
+
+If the competition begins with three competitors, find the probability that:
+\begin{questionparts}
+\item all three drop out in the same round;
+\item two of them drop out in round $r$ (with $r \ge 2$) and the third in an earlier round;
+\item the grand prize is awarded.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+\textit{In this question, $\Phi(z)$ is the cumulative distribution 
+function of a standard normal random variable.}
+
+A random variable is known to have a 
+Normal distribution with mean $\mu$ and standard deviation 
+either $\sigma_0$ or $\sigma_1$, where $\sigma_0 < \sigma_1\,$. 
+The mean, $\overline{X}$, of a random sample of $n$ values of $X$ 
+is to be used to test the hypothesis 
+$\mathrm{H}_0: \sigma = \sigma_0$ against the alternative $\mathrm{H}_1: \sigma = \sigma_1\,$.
+
+Explain carefully why it is appropriate 
+to use a two sided test of the form: 
+accept $\mathrm{H}_0$ if \phantom{} $\mu - c < \overline{X} < \mu+c\,$, otherwise accept $\mathrm{H}_1$.
+
+Given that the probability of accepting $\mathrm{H}_1$ 
+when $\mathrm{H}_0$ is true is $\alpha$, 
+determine $c$ in terms of $n$,  $\sigma_0$ and $z_{\alpha}$, where 
+$z_\alpha $ is defined by $\ds\Phi(z_{\alpha}) = 1 - \tfrac{1}{2}\alpha$.
+
+The probability of accepting $\mathrm{H}_0$ when $\mathrm{H}_1$ is true
+is denoted by $\beta$. Show that $\beta$ is independent of $n$.
+
+Given that $\Phi(1.960)\approx 0.975$ and that $\Phi(0.063) \approx 0.525\,$, 
+determine, approximately, the minimum value of $\ds \frac{\sigma_1}{\sigma_0}$ 
+if $\alpha$ and $\beta$ are both to be less than $0.05\,$.
+\end{question}
+	
+\end{document}

@@ -1,0 +1,497 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2000
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+ Sketch on the same axes the two curves $C_1$ and $C_2$, given by 
+\begin{center} 
+\begin{tabular}{cccc} 
+$C_1:$ & \ \ $ x y$ & $=$ & $1$ ,\\   
+$C_2:$ & \ \ $x^2-y^2$ & $=$ &  $2$ . 
+\end{tabular} 
+\end{center} 
+The curves 
+intersect at $P$ and $Q$. Given that   
+ the coordinates of $P$ are $(a,b)$ (which you need not evaluate), 
+write down the coordinates of $Q$ in terms of $a$ and $b$. 
+ 
+The tangent to $C_1$ through  $P$ meets the tangent to $C_2$ 
+through $Q$ at the point $M$, and the tangent to $C_2$ through $P$ meets the  
+tangent to $C_1$ through $Q$ at $N$. Show that the coordinates of $M$ are 
+$(-b,a)$ 
+and write down the coordinates of $N$. 
+ 
+Show that $PMQN$ is a square. 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Use the substitution   
+$x = 2-\cos \theta $   
+to evaluate the integral 
+ 
+$$ 
+\int_{3/2}^2 \left(x -  1 \over 3 - x\right)^{\!\frac12}\! \d x.  
+$$  
+ 
+Show that, for $a<b$, 
+$$ 
+\int_p^q \left( x -  a \over b - x\right)^{\!\frac12} \!\d x = 
+\frac{(b-a)(\pi +3{\surd3}  -6)}{12},  
+$$  
+where $p=  {(3a+b)/4}$ and $q={(a+b)/2}$. 
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Given that $\alpha = \e^{\mathrm{i} \pi/3}$ ,  
+prove that  $1 + \alpha^2 = \alpha$. 
+ 
+A triangle in the Argand plane has vertices $A$, $B$, and $C$ 
+ represented by the complex numbers  
+$p$, $q\alpha^2$ and $- r\alpha$   
+respectively, where  $p$, $q$ and $r$  
+are positive real numbers. Sketch the triangle~$ABC$. 
+ 
+Three equilateral triangles $ABL$, $BCM$ and $CAN$ 
+(each lettered clockwise) 
+ are erected on sides $AB$, $BC$ and $CA$ respectively.  
+Show that the complex number representing $N$ is  
+\mbox{$( 1 - \alpha) p- \alpha^2 r$}   
+and find similar expressions for the  
+complex numbers representing $L$ and $M$. 
+ 
+Show that lines $LC$, $MA$ and $NB$ all meet at the origin,  
+and that these three line segments have the  
+common length  $p+q+r$. 
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The function $\f(x)$ is defined by     
+$$ 
+\f(x) = \frac{x( x - 2 )(x-a)}{  x^2 - 1}. 
+$$ 
+ 
+ 
+Prove algebraically that the line $y = x + c$  
+intersects the curve  $y = \f ( x )$ 
+if  $\vert a \vert \ge1$, but there are values of $c$ 
+for which there are no points of intersection if $\vert a \vert <1$. 
+ 
+Find the equation of the oblique asymptote of the curve $y=\f(x)$. 
+Sketch the graph in the two cases 
+ \ \ (i) \ $a<-1$ ; and \ \ (ii) \ $-1<a<-\frac12$.  
+(You need not calculate the turning points.)
+
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Given two non-zero vectors  
+$\mathbf{a}=\begin{pmatrix}a_{1}\\
+a_{2}
+\end{pmatrix}$ and $\mathbf{b}=\begin{pmatrix}b_{1}\\
+b_{2}
+\end{pmatrix}$
+\mbox{define  $\Delta\!\! \left( \bf a, \bf b \right)$ by 
+ $\Delta\!\! \left( \bf a, \bf b \right) = a_1 b_2 - a_2 b_1$.} 
+ 
+ 
+Let $A$, $B$ and $C$ be  points with position vectors $\bf a$, $\bf b$ and $\bf c$,  
+respectively, no two of which are parallel. Let   $P$, $Q$ and $R$ be points with position 
+vectors $\bf p$, $\bf q$ and $\bf r$, respectively, none of which are parallel. 
+ 
+\begin{questionparts} 
+\item
+Show 
+%, by considering first the case  
+%$\displaystyle \bf a =  \pmatrix{\!a_1\!\cr 0 \cr}$,  
+%or otherwise,  
+that there exists a $2 \times 2$ matrix $\bf M$ such that 
+$P$ and  $Q$ 
+are the images of $A$ and  $B$   
+under the transformation represented by $\bf M$. 
+  
+\item
+Show that 
+$ 
+\Delta\!\! \left( \bf a, \bf b \right) \bf c  
++ \Delta\!\! \left( \bf c, \bf a \right) \bf b  
++ \Delta\!\! \left( \bf b, \bf c \right) \bf a = 0.  
+$ 
+ 
+Hence, or otherwise, prove that a necessary and sufficient condition for the points  
+$P$, $Q$, and $R$ 
+to be the images of points $A$, $B$ and  $C$  
+under the transformation represented by some $2 \times 2$ matrix $\bf M$ is that 
+\[ 
+\Delta\!\! \left( \bf a, \bf b \right) :  
+\Delta\!\! \left( \bf b, \bf c \right) :  
+\Delta\!\! \left( \bf c, \bf a \right) =  
+\Delta\!\! \left( \bf p, \bf q \right) :  
+\Delta\!\! \left( \bf q, \bf r \right) :   
+\Delta\!\! \left( \bf r, \bf p \right). 
+\] 
+\end{questionparts} 
+
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Given that 
+\[ 
+x^4 + p x^2 + q x + r = ( x^2 - a x + b ) ( x^2 + a x + c ) , 
+\]  
+express  $p$, $q$ and $r$ in terms of $a$, $b$ and $c$. 
+ 
+Show also that $ a^2$ is a root of the cubic equation 
+$$ 
+u^3 + 2 p u^2 + ( p^2 - 4 r ) u - q^2 = 0 .  
+$$ 
+Explain why this equation  always has a non-negative root,  
+and verify  that $u = 9$ is a root in the  
+case $p = -1$, $q = -6$, $r = 15$ . 
+ 
+Hence, or otherwise, express 
+$$y^4 - 8 y^3 + 23 y^2 - 34 y + 39$$ 
+as a product of two quadratic factors.  
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Given that 
+$$\e = 1 + {1 \over 1 !} + {1 \over 2 !} + {1 \over 3 !} + \cdots + {1 \over r !} + \cdots \; ,$$ 
+use the binomial theorem to show that 
+$$ 
+{\left( 1 + {1 \over n} \right)}^{\!n} < \e 
+$$  
+for any positive integer  $n$. 
+ 
+The product ${\rm P }( n )$  is defined, for any positive integer $n$, by 
+$$ 
+{\rm P} ( n ) = {3 \over 2} \cdot {5 \over 4}  
+\cdot {9 \over 8} \cdot \ldots \cdot {2^n + 1 \over 2^n} . 
+$$ 
+Use the arithmetic-geometric mean inequality, 
+$$ 
+{a_1 + a_2 + \cdots + a_n \over n}  
+\ge 
+ \ {\left( a_1 \cdot a_2 \cdot \ldots \cdot a_n \right)}^{1 \over n}\,, 
+$$  
+to show that ${\rm P }( n ) < \e$  for all $n$ . 
+ 
+ 
+Explain briefly why  
+ ${\rm P} ( n )$  tends to a limit as $n\to\infty$. 
+Show that this limit, $L$, satisfies $2<L\le\e$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+The sequence $a_n$ is defined by $a_0 = 1$ , $a_1 = 1$ , and 
+$$ 
+a_n = {1 + a_{n - 1}^2 \over a_{n - 2} } \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ( n \ge 2 ) . 
+$$ 
+Prove by induction that 
+$$ 
+a_n = 3 a_{n - 1} - a_{n - 2} \ \ \ \ \ \ \ \ \ \ \ ( n \ge2 ) . 
+$$ 
+Hence show that  
+$$  
+a_n = {\alpha^{2 n - 1} + \alpha^{- ( 2 n - 1 )} \over \sqrt 5} 
+\ \ \ \ \ \  (n\ge1), 
+$$ 
+where $\displaystyle{\alpha = {1 + \sqrt 5 \over 2}}$. 
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+Two small discs of masses $m$ and $\mu m$  
+lie on a smooth horizontal surface.  
+The disc of mass $\mu m$ is at rest,  
+and the disc of mass $m$ is projected towards it with velocity $\mathbf{u}$.  
+After the collision, the disc of mass $\mu m$ moves in the direction  
+given by unit vector $\bn$. The collision is perfectly elastic. 
+ 
+\begin{questionparts} 
+\item
+Show that  the speed of the disc of mass $\mu m$ after the collision  
+is \ \ 
+$ 
+\dfrac {2\mathbf{u} \cdot \mathbf{n}}{1+\mu}. 
+$ 
+ 
+\item
+ Given that  the two discs have equal kinetic energy  
+after the collision, 
+find an expression for the cosine of the angle between 
+ $\bf n$ and $\bf u$ and show that  
+$3-\sqrt8\le \mu \le 3+\sqrt8$.  
+\end{questionparts} 
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A sphere of radius $a$ and weight $W$ rests  on horizontal ground.  
+A thin uniform beam of weight $3\sqrt3\,W$ 
+and length $2a$ is freely hinged to the ground at $X$,  
+which is a distance ${\sqrt 3} \, a$  
+from the point  of contact of the sphere  with the ground.  
+The beam rests on the sphere, lying in the same vertical plane 
+as the centre of the  sphere. 
+The coefficients of friction between the beam and the sphere  
+and between 
+the sphere  and the ground are $\mu_1$ and $\mu_2$ respectively. 
+ 
+Given that the sphere is on the point of slipping at its contacts  
+with both the ground and the beam, 
+find the values of $\mu_1$ and $\mu_2$. 
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A thin beam is fixed at a height $2a$ above a horizontal plane. 
+A uniform straight rod $ACB$ of length $9a$ and mass $m$ 
+is supported by the beam at $C$. Initially, the rod  is held  
+so that it is horizontal and perpendicular to the beam. 
+The distance $AC$ is $3a$, and 
+the coefficient of friction between the beam and the rod is $\mu$. 
+ 
+The rod is now released.  
+Find the minimum value of $\mu$ for which $B$ 
+strikes the horizontal plane  
+before slipping takes place at $C$. 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+In a lottery, any one of $N$ numbers, where $N$ is large,  
+is chosen at random and independently for each player by  
+machine. Each week there are $2N$ players 
+ and one winning number is drawn. Write down an  
+exact expression for the probability that there are  
+three or fewer winners in a week, given that you hold  
+a winning ticket that week. Using the fact that  
+$$ 
+{\biggl( 1 - {a \over n} \biggr) ^n \approx \e^{-a}}$$ 
+for $n$ much larger than $a$, or otherwise, show that this probability  
+is approximately ${2 \over 3}$ . 
+ 
+Discuss briefly whether  
+ this probability would  increase or decrease  
+if the numbers were chosen by the players. 
+ 
+ 
+Show that the expected number of winners in a week,  
+given that you hold a winning ticket that week, is 
+$ 3-N^{-1}$. 
+
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A set of $n$ dice  is rolled repeatedly. 
+For each die the probability  
+of showing a six is $p$. Show that  
+the probability that the first of the dice to show a six  
+does so on the $r$th roll is 
+$$q^{n  r } ( q^{-n} - 1 )$$ 
+where $q = 1 - p$. 
+ 
+Determine, and simplify,  
+an expression for the probability generating function  
+for this distribution, in terms of $q$ and $n$. 
+The first of the dice to show a six does so on the $R$th roll. Find the  
+expected value  of $R$ and show that, in the case 
+ $n = 2$, $p=1/6$, this value  is $36/11$. 
+ 
+Show that  the probability that the last of the dice to show a  
+six does so on the $r$th roll 
+is 
+\[ 
+\big(1-q^r\big)^n-\big(1-q^{r-1}\big)^n. 
+\] 
+Find, for the  
+case $n = 2$, the probability generating function. The  
+last of the dice to show a six does so on the $S$th roll. Find the expected value 
+of $S$ and  evaluate this when $p=1/6$. 
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+The random variable $X$ takes  
+only the values $x_1$ and $x_2$  (where $ x_1 \not= x_2 $), 
+ and the random variable $Y$ takes only  
+the values $y_1$ and $y_2$  (where $y_1 \not= y_2$). 
+Their joint distribution is given by  
+$$ 
+\P ( X = x_1 , Y = y_1 ) = a \ ; \ \  
+\P ( X = x_1 , Y = y_2 ) = q - a \ ; \ \  
+\P ( X = x_2 , Y = y_1 ) = p - a \ . 
+$$  
+Show that if $\E(X Y) = \E(X)\E(Y)$ then  
+$$  
+(a - p q ) ( x_1 - x_2 ) ( y_1 - y_2 ) = 0 . 
+$$ 
+Hence show that two random variables each taking  
+only two distinct values are independent if  
+$\E(X Y) = \E(X) \E(Y)$. 
+ 
+Give a  joint distribution for two random variables  
+$A$ and $B$, each taking the three values $- 1$, $0$ and $1$  
+with probability ${1 \over 3}$,  
+which have $\E(A B) = \E( A)\E (B)$, but which are not independent. 
+\end{question}
+	
+\end{document}

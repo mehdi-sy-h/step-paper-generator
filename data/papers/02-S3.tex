@@ -1,0 +1,451 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2002
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Find the area of the region between the curve 
+$\displaystyle y = {\ln x \over x}\,$ and the $x$-axis, for $1 \le x \le a$.
+What happens to this area as $a$ tends to infinity?
+
+Find the volume of the solid obtained when the region  between the curve 
+$\displaystyle y = {\ln x \over x}\,$ and the $x$-axis, for $1 \le x\le a$,
+ is rotated through $2 \pi$ radians about the $x$-axis.
+What happens to this volume as $a$ tends to infinity?
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Prove that  
+$\displaystyle \arctan a + \arctan b = \arctan \l {a + b \over 1-ab} \r\,$
+when $0<a<1$ and $0<b<1\,$.
+
+Prove by induction that, for $n \ge 1\,$,
+\[
+\sum_{r = 1}^n \arctan \l {1 \over r^2 + r + 1} \r = \arctan \l {n \over n+2} \r
+\]
+and hence find
+\[
+\sum_{r = 1}^\infty \arctan \l {1 \over r^2 + r + 1} \r\,.
+\]
+
+Hence prove that 
+\[
+\sum_{r = 1}^\infty \arctan \l {1 \over r^2 - r + 1} \r = {\pi \over 2}\,.
+\]
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Let 
+\[\f(x) = a \sqrt{x} - \sqrt{x - b}\;,
+\]
+ where $x\ge b >0$ and $a>1\,$.
+Sketch the graph of $\f(x)\,$.
+Hence show that the equation $\f(x)  = c$, where $c>0$, 
+has no solution when $c^2 < b \l a^2 - 1 \r\,$.
+Find conditions on $c^2$ in terms of $a$ and $b$ 
+for the equation to have exactly one or exactly two solutions.
+
+Solve the equations 
+\begin{questionparts}
+	\item  $3 \sqrt{x} - \sqrt{x - 2} = 4\, ,$ 
+\item   $3 \sqrt{x} - \sqrt{x - 3} = 5\;$.
+\end{questionparts}
+
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Show that if $x$ and $y$ are positive  and $x^3 + x^2 = y^3 - y^2$ then $x < y\,$.
+
+Show further that if $0 < x \le y - 1$, then $x^3 + x^2 < y^3 - y^2$.
+
+Prove that there does not exist a pair of {\sl positive} integers 
+such that the difference of their cubes is
+ equal to the sum of their squares.
+
+Find all the pairs of integers such that the 
+difference of their cubes  is equal to the sum of their squares.
+
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Give a condition that must be satisfied by  $p$, $q$ and $r$ for it 
+to be possible to write the quadratic polynomial 
+$px^2 + qx + r$ in the form $p \l x + h \r^2$, for some $h$.
+
+Obtain  an equation, which you need not simplify,
+that  must be satisfied by $t$ if it is possible to write 
+\[
+\l x^2 + \textstyle{{1 \over 2}} bx + t \r^2 - \l x^4 + bx^3 + cx^2 +dx +e \r 
+\]
+in the form $k \l x + h \r^2$, for some $k$ and $h$. 
+
+Hence, or otherwise, write $x^4 + 6x^3 + 9x^2 -2x -7$ as a product of two quadratic factors.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Find all the solution curves of the differential equation
+\[
+y^4 \l {\mathrm{d}y \over \mathrm{d}x }\r^{\! \! 4} = \l y^2 - 1 \r^2
+\]
+that  pass through either of the points
+\begin{questionparts}
+\item $\l 0, \, \frac{1}{2}\sqrt3 \r$,
+\item $\l 0, \, \frac{1}{2}\sqrt5 \r$.
+\end{questionparts}
+Show also that $y = 1$ and $y = -1$ are solutions of the differential equation.
+Sketch all these solution curves on a single set of axes.
+
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Given that  $\alpha$ and $\beta$ are acute angles,  show that
+$\alpha + \beta = \tfrac{1}{2}\pi$ if and only if $\cos^2 \alpha + \cos^2 \beta = 1$.
+
+In the $x$--$y$ plane, the point $A$ has coordinates $(0,s)$ and the point
+$C$ has coordinates $(s,0)$, where $s>0$. The point $B$ lies in the 
+first quadrant ($x>0$, $y>0$). The lengths of $AB$, $OB$ and $CB$
+are respectively $a$, $b$ and $c$.
+
+Show that
+\[
+(s^2 +b^2 - a^2)^2 + (s^2 +b^2 -c^2)^2 = 4s^2b^2
+\]
+and hence that
+\[
+(2s^2 -a^2-c^2)^2 + (2b^2 -a^2-c^2)^2 =4a^2c^2\;.
+\]
+
+
+Deduce that
+$$
+\l a - c \r^2 \le 2b^2 \le \l a + c \r^2\;. 
+$$
+
+
+%Show,
+%by considering the case $a=1+\surd2\,$, $b=c=1\,$,
+% that the condition $\l \ast \r\,$ 
+%is not sufficient to ensure that $B$ lies in the first quadrant.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Four complex numbers $u_1$, $u_2$, $u_3$ and $u_4$ 
+have unit modulus, and arguments $\theta_1$, 
+$\theta_2$, $\theta_3$ and $\theta_4$, 
+respectively, with $-\pi < \theta_1 < \theta_2 < \theta_3 < \theta_4 < \pi$.
+
+Show that
+\[
+\arg \l u_1 - u_2 \r  = \tfrac{1}{2} \l  \theta_1 + \theta_2 -\pi \r + 2n\pi
+\]
+where $n =  0 \hspace{4 pt} \mbox{or} \hspace{4 pt} 1\,$.
+Deduce that
+\[
+\arg \l \l u_1 - u_2 \r \l u_4 - u_3 \r \r 
+= \arg \l \l u_1 - u_4 \r \l u_3 - u_2 \r \r + 2n\pi 
+\]
+for some integer $n$.
+
+Prove that
+\[
+| \l u_1 - u_2 \r \l u_4 - u_3 \r | + | \l u_1 - u_4 \r \l u_3 - u_2 \r |
+= | \l u_1 - u_3 \r \l u_4 - u_2 \r |\;.
+\]
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A tall container made of light material of negligible thickness has
+ the form of a  prism, with a square base  of area $a^2$. It contains 
+a volume $ka^3$ of fluid of uniform density. The container is held so that it stands 
+on a rough plane, which   is  inclined at angle 
+$\theta$ to the horizontal,  with two   
+of the edges  of the   base of the container  horizontal. 
+In the case $k> \frac12 \tan\theta$, show that the centre of mass of the fluid
+is at a distance $x$ from the lower side of the container and at a 
+distance $y$ from the base of the container, where
+\[
+\frac x a = \frac12 - \frac {\tan\theta}{12k}\;,
+\ \ \ \ \ \
+\frac y a = \frac k 2 + \frac{\tan^2\theta}{24k}\;.
+\]
+Determine  the corresponding coordinates in the case $k< \frac12 \tan\theta$.
+
+
+The container is now released.
+Given that  $k < {1 \over 2}$, show that the container will topple if $\theta >45^\circ$.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A light hollow cylinder of radius $a$ can rotate freely 
+about its axis of symmetry, 
+which is fixed and horizontal. 
+A particle of mass $m$ is fixed to the cylinder, 
+and a second particle, also of mass $m$, moves 
+on the rough inside surface of the cylinder. 
+Initially, the cylinder is at rest, 
+with the fixed particle on the same horizontal level as its axis
+and the second particle at rest vertically below this axis. 
+The system is then released. 
+Show that, if $\theta$ is the angle through which the cylinder has rotated, then
+\[
+\ddot{\theta} = {g \over 2a} \l \cos \theta - \sin \theta \r \,,
+\]
+provided that the second particle does not slip.
+
+Given that the coefficient of friction is 
+$ (3 + \sqrt{3})/6$, show that  the second particle 
+starts to slip when the cylinder has rotated through $60^\circ$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A particle  moves on a smooth triangular horizontal surface  $AOB$ with angle 
+$AOB = 30^\circ$. 
+The surface  is bounded by two vertical walls 
+$OA$ and $OB$ and the coefficient of restitution 
+between the particle and the walls is $e$, where $e < 1$. 
+The particle, which is initially at point $P$ on the surface 
+and moving with velocity $u_1$, 
+strikes the wall $OA$ at $M_1$, with angle $PM_1A = \theta$, and rebounds, 
+with velocity $v_1$, to strike the wall $OB$ at $N_1$, 
+with angle $M_1N_1B = \theta$. 
+Find $e$ and $\displaystyle {v_1 \over u_1}$ in terms of $\theta$.
+
+The motion continues, 
+with the particle striking side $OA$ at $M_2$, $M_3$,   $ \ldots $ and striking 
+side $OB$ at $N_2$, $N_3$,  $\ldots $. 
+Show that, if $\theta < 60^\circ\,$, 
+ the particle reaches $O$ in a finite time.  
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+In a game, a player tosses a biased coin 
+repeatedly until two successive tails occur, when the game terminates. 
+For each head which occurs the player wins $\pounds 1$. 
+If $E$ is the expected number of tosses of the 
+coin in the course of a game, and $p$ is the probability of a head, explain why
+\[
+E = p \l 1 + E \r + \l 1 - p \r p \l 2 + E \r + 2 \l 1 - p \r ^2\,,
+\]
+and hence determine $E$ in terms of $p$. 
+Find also, in terms of $p$, the expected winnings in the course of a game.
+
+A second game is played, 
+with the same rules, except that the player continues to 
+toss the coin until $r$ successive tails occur. 
+Show that the expected number of tosses in the 
+course of a game is given by the expression 
+$\displaystyle {1 - q^r \over p q^r}\,$, where $q = 1 - p$.
+
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A continuous random variable is said to have an exponential distribution 
+with parameter $\lambda$ if its density function is 
+$\f(t) = \lambda \e ^{- \lambda t} \; \l 0 \le t < \infty \r\,$. 
+If $X_1$ and $X_2$, which are independent random variables, 
+have exponential distributions with parameters $\lambda_1$ and $\lambda_2$ respectively, 
+find an expression for the probability that either $X_1$ or $X_2$ (or both) 
+is less than $x$. Prove that if $X$ is the random variable 
+whose value is the lesser of the values of $X_1$ and $X_2$, 
+then $X$ also has an exponential distribution.
+
+Route A and Route B buses run from my house to my college. 
+The time between buses on each route has an 
+exponential distribution and the mean time between buses is 
+15 minutes for Route A  and 30 minutes for Route B. 
+The timings of the buses on the two routes are independent. 
+If I emerge from my house one day to see a Route A bus 
+and a Route B bus just leaving the stop, 
+show that the median wait for the next bus to my college will be approximately 7 minutes.
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+Prove that, for any two discrete random variables $X$ and $Y$,
+\[
+\mathrm{Var} \left(X + Y \right) 
+= \mathrm{Var}(X) + \mathrm{Var}(Y) +
+2 \, \mathrm{Cov}(X,Y),
+\]
+where $\mathrm{Var}(X)$ 
+is the variance of $X$ and $\mathrm{Cov}(X,Y)$  is 
+the covariance of $X$ and $Y$.
+
+When a Grandmaster plays a sequence of 
+$m$ games of chess, she is, independently,
+ equally likely to win, lose or draw each game. 
+If the values of the random variables $W$, $L$ and $D$ are 
+the numbers of her wins, losses and draws respectively, justify briefly
+the following claims:
+\begin{questionparts}
+\item$W + L + D$ has variance $0\,$;
+\item $W + L$ has a  binomial distribution.
+\end{questionparts}
+Find the value of 
+%$\displaystyle \rho \left[ W , \, L \right] = 
+$\displaystyle {\mathrm{Cov}(W,L) \over \sqrt{\mathrm{Var}(W) \mathrm{Var}(L)}}\;$.
+\end{question}
+	
+\end{document}

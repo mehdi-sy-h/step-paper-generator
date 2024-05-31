@@ -1,0 +1,487 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2015
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+ 
+\makeatletter
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+\makeatother
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+\def\i{{\mathrm i}}
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+\DeclareMathOperator{\sech}{sech}
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+\renewcommand{\.}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\+}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\ud}{\mathop{}\!\mathrm{d}}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+\item Let 
+\[
+I_n= \int_0^\infty \frac 1 {(1+u^2)^n}\, \d u \,,
+\]
+where $n$ is a positive integer. Show that
+\[
+I_n - I_{n+1} = \frac 1 {2n} I_n
+\]
+and deduce that 
+\[
+I_{n+1} = \frac{(2n)!\, \pi}{2^{2n+1}(n!)^2} \,.
+\]
+\item Let 
+\[
+J = \int_0^\infty \f\big( (x- x^{-1})^2\big ) \, \d x \,,
+\]
+where $\f$ is any function for which the integral exists. Show that
+\[
+J =  \int_0^\infty x^{-2} \f\big( (x- x^{-1})^2\big)  \, \d x \, = \frac12  \int_0^\infty 
+(1 + x^{-2}) 
+\f\big( (x- x^{-1})^2\big )
+\, \d x \,
+= \int_0^\infty \f\big(u^2\big) \,\d u \,.
+\]
+\item Hence evaluate\[
+\int_0^\infty \frac {x^{2n-2}}{(x^4-x^2+1)^n} \, \d x \,,
+\]
+where $n$ is a positive integer.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+ If $s_1$, $s_2$, $s_3$, $\ldots$ and $t_1$, $t_2$, $t_3$, $\ldots$ are sequences of positive numbers, we write
+\[
+(s_n)\le  (t_n)
+\]
+to mean
+\begin{center}
+"there exists a positive integer $m$ such that $s_n \le t_n$ whenever $n\ge m$".
+\end{center}
+Determine whether each of the following statements is true or false. In the case of a true statement, you should give a proof which includes an explicit determination of an  appropriate $m$; in the case of a false statement, you should give a  counterexample.
+
+\begin{questionparts}
+\item $(1000n) \le  (n^2)\,$.
+\item If it is not the case that   $(s_n)\le (t_n)$, then it is the case that $(t_n)\le  (s_n)\,$.
+\item If $(s_n)\le  (t_n)$ and $(t_n) \le (u_n)$, then $(s_n)\le (u_n)\,$.
+\item $(n^2)\le  (2^n)\,$.   
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+In this question, $r$ and $\theta$ are polar coordinates with $r \ge0$ and  $- \pi <\theta\le  \pi$,  and $a$ and $b$ are positive constants. 
+Let $L$ be a fixed line and let $A$ be a fixed point not lying on $L$. Then  the locus of points that are a fixed distance (call it $d$) from $L$ measured along lines through $A$ is called a {\em conchoid of Nicomedes}.
+\begin{questionparts}
+\item Show that if
+\[
+\vert r- a \sec\theta \vert = b\,,
+\tag{$*$}
+\]
+where $a>b$, then $\sec\theta >0$.   Show that all points with coordinates satisfying ($*$) lie on a certain conchoid of Nicomedes (you  should identify  $L$, $d$ and $A$). Sketch the locus of these points.
+\item In the case $a<b$, sketch the curve (including the loop for which $\sec\theta<0$) given by 
+\[
+\vert r- a \sec\theta \vert = b\,
+.
+\]
+Find the area of the loop in the case $a=1$ and $b=2$.  
+                             
+[Note: 
+$
+%\displaystyle 
+\int \! \sec\theta \,\d \theta = \ln \vert \sec\theta + \tan\theta \vert + C
+\,.
+$]
+\end{questionparts}\end{question}
+
+%%%%%% Q4 
+\begin{question}
+\begin{questionparts}\item If $a$, $b$ and $c$ are all real, show that the equation
+\[
+z^3+az^2+bz+c=0
+\tag{$*$}
+\]has at least one real root.\item Let
+\[
+S_1= z_1+z_2+z_3, \ \ \ \
+S_2= z_1^2 + z_2^2 + z_3^2, \ \ \ \ 
+S_3= z_1^3 + z_2^3 + z_3^3\,,
+\]
+where $z_1$, $z_2$ and $z_3$ are the roots of the equation  $(*)$. Express $a$ and  $b$ in terms of $S_1$ and  $S_2$, and  show that 
+\[
+6c =- S_1^3 + 3 S_1S_2 - 2S_3\,.
+\]
+\item The six real numbers $r_k$ and $\theta_k$ ($k=1, \ 2, \ 3$), where $r_k>0$ and $-\pi < \theta_k <\pi$, satisfy
+\[
+\textstyle \sum\limits _{k=1}^3 r_k \sin (\theta_k) = 0\,,
+\ \ \ \  
+\textstyle \sum\limits _{k=1}^3 r_k^2 \sin (2\theta_k) = 0\,, 
+\ \ \ \ \
+\textstyle \sum\limits _{k=1}^3 r_k^3 \sin (3\theta_k) = 0\, .
+\]Show that  $\theta_k=0$ for at least one value of $k$. Show further that if $\theta_1=0$ then $\theta_2 = - \theta_3\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item In the following argument to show  that $\sqrt2$ is irrational, give proofs appropriate for steps 3, 5 and~6.
+1. Assume that $\sqrt2$ is rational.
+2. Define  the set $S$ to be  the set  of positive integers  with  the following property: 
+\begin{center}
+$n$ is in $S$ if and only if  $n \sqrt2$ is an integer. 
+\end{center}
+
+3. Show that the set $S$ contains at least one positive integer. 
+4. Define the integer $k$ to be the smallest positive integer in $S$.
+5. Show that $(\sqrt2-1)k$ is in $S$. 
+6. Show that steps 4 and 5 are contradictory and hence that $\sqrt2$ is irrational.
+\item Prove that $2^{\raisemath{2pt}{\frac13}} $  is rational if and only if $2^{\raisemath{2pt}{\frac23}}$ is rational.
+Use an argument similar to that of part (i) to prove that $2^{\raisemath{2pt}{\frac13}} $  and $2^{\raisemath{2pt}{\frac23}}$ are irrational.
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}\item Let $w$ and $z$ be complex numbers, and let $u= w+z$ and $v=w^2+z^2$. Prove that $w$ and $z$ are real if and only if $u$ and $v$ are real and $u^2\le2v$.
+\item The complex numbers $u$, $w$ and $z$ satisfy the equations
+\begin{align*}
+w+z-u&=0 \\
+w^2+z^2 -u^2 &= - \tfrac 23 \\
+w^3+z^3 -\lambda u &= -\lambda\,
+\end{align*}where $\lambda $ is a positive real number. Show that for all values of $\lambda$ except one (which you should find) there are three possible values of $u$, all real.
+
+Are  $w$ and $z$ necessarily real? Give a proof or counterexample.
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+An operator $\rm D$ is defined, for any function $\f$, by
+\[
+{\rm D}\f(x) = x\frac{\d\f(x)}{\d x}
+.\]
+The notation ${\rm D}^n$ means that $\rm D$ is applied $n$ times; for example
+\[
+\displaystyle
+{\rm D}^2\f(x) = x\frac{\d\ }{\d x}\left(  x\frac{\d\f(x)}{\d x} \right)
+\,.
+\]
+Show that, for any constant $a$,  ${\rm D}^2 x^a = a^2 x^a\,$.
+
+\begin{questionparts}\item Show               that if $\P(x)$ is a polynomial of degree $r$ (where $r\ge1$) then, for any positive integer $n$, ${\rm D}^n\P(x)$ is also a polynomial of degree $r$.
+\item Show               that if $n$ and $m$ are  positive integers  with $n<m$, then ${\rm D}^n(1-x)^m$ is divisible by $(1-x)^{m-n}$.
+\item Deduce that, if $m$ and $n$ are positive integers with $n<m$, then 
+\[
+\sum_{r=0}^m (-1)^r \binom m r r^n =0
+\, .
+\]
+
+%\item
+%Let $\f_n(x) = D^n(1-x)^n\,$, 
+%where $n$ is a positive integer. 
+%Prove that  $\f_n(1)=(-1)^nn!\, $. 
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+\begin{questionparts}
+\item Show that under the changes of variable $x= r\cos\theta$ and $y = r\sin\theta$, where $r$ is a function of $\theta$ with $r>0$,  the differential equation
+\[
+(y+x)\frac{\d y}{\d x} =  y-x
+\]
+becomes 
+\[
+\frac{\d r}{\d\theta} +  r=0 \,.
+\]
+Sketch a solution in the $x$-$y$ plane. 
+
+\item Show that the solutions of 
+\[
+\left( y+x -x(x^2+y^2) \right) \, \frac{\d y }{\d x} = y-x - y(x^2+y^2)
+\]can be written in the form 
+\\
+\[
+r^2 = \dfrac 1 {1+A\e^{2\theta}}\,
+\]\\and sketch the different forms of solution that arise according to the value of $A$.
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+ A particle $P$ of mass $m$  moves on a smooth  fixed straight horizontal rail and is attached to a fixed peg $Q$ by a light elastic string of natural length $a$ and modulus $\lambda$. The peg $Q$ is a distance $a$ from the rail. Initially $P$ is at rest with $PQ=a$. 
+ 
+ 
+ An impulse imparts to $P$ a speed $v$ along the rail. Let $x$ be the displacement at time $t$ of $P$ from its initial position. Obtain the equation
+\[
+\dot x^2  = v^2 - k^2 \left( \sqrt{x^2+a^2} -a\right)^{\!2}
+\]
+where $ k^2 = \lambda/(ma)$,  $k>0$ and the dot denotes differentiation with respect to $t$.Find, in terms of $k$, $a$ and $v$, the greatest value, $x_0$, attained by $x$. Find also the acceleration of $P$ at $x=x_0$.
+Obtain, in the form of an integral, an expression for the period of the motion. Show that in the case $v\ll ka$ (that is, $v$ is much less than $ka$), this is approximately
+\[
+\sqrt {\frac {32a}{kv}}
+\int_0^1 \frac 1 {\sqrt{1-u^4}} \, \d u \, .
+\]
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A light rod of length $2a$ has a particle of mass $m$ attached to each end and it moves in  a vertical plane. The midpoint of the rod has coordinates $(x,y)$, where the $x$-axis is horizontal (within the plane of motion) and $y$ is the height above a horizontal table. Initially, the rod is vertical, and at time $t$ later it is inclined at an angle $\theta$ to the vertical.
+Show that the velocity of one particle can be written in the form
+\[
+\begin{pmatrix}
+\dot x + a \dot\theta \cos\theta  \\
+ \dot y - a \dot\theta \sin\theta
+\end{pmatrix}
+\]
+and that 
+\[
+m\begin{pmatrix}
+ \ddot x + a\ddot\theta \cos\theta - a \dot\theta^2 \sin\theta 
+\\
+ \ddot y- a\ddot\theta \sin\theta - a \dot\theta^2 \cos\theta  
+\end{pmatrix}=-T\begin{pmatrix}
+ \sin\theta
+\\
+\cos\theta
+\end{pmatrix}
+-mg
+\begin{pmatrix}
+0 \\ 1
+\end{pmatrix}
+\]where the dots denote differentiation with respect to time $t$ and $T$ is the tension in the rod.  Obtain the corresponding equations for the other particle.Deduce that $\ddot x =0$, $\ddot y = -g$ and $\ddot\theta =0$.Initially, the  midpoint of the rod is a height $h$ above the table, the velocity   of the higher particle is $\Big(\begin{matrix} \, u \, \\ v \end{matrix}\Big)$, and the velocity of the lower particle is $\Big(\begin{matrix}\, 0  \, \\ v\end{matrix}\Big)$. Given that the two  particles hit the table for the first time simultaneously, when the rod has rotated by $\frac12\pi$, show that
+\[
+2hu^2 = \pi^2a^2 g - 2\pi uva \,.
+\]
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+\begin{questionparts}
+\item A horizontal disc of radius $r$ rotates about a vertical axis through its centre with angular speed $\omega$. One end of a light rod is fixed by a smooth hinge to the edge of the disc so that it can rotate freely in  a vertical plane through the centre of the disc. A particle $P$ of mass $m$ is attached to the rod at a distance $d$ from the hinge. The rod makes a constant angle~$\alpha$ with the upward vertical, as shown in the diagram, and $d\sin\alpha <r$.
+
+\begin{center}
+%%%%%%%%% The positions of the letters have been altered manually
+%%%%%%%%%% The arc has been added manually.
+%%%%%%%%%% The xunit and yunit have been chosen manually
+\psset{xunit=0.5cm,yunit=0.5cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-8.18,-6.27)(8.59,7.35)
+\psline[linestyle=dashed,dash=4pt 4pt](6.12,4.08)(6.12,0.08)
+\rput{0}(0,0){\psellipse[fillcolor=black,fillstyle=solid,opacity=0.25](0,0)(6.1,1.08)}
+\rput[tl](5.5 ,1.6 ){$ \alpha $}
+\rput[tl](3.5 ,5.55){$ P $}
+\rput[tl](3.83,2.9){$ d $}
+\psline(0,-1.08)(0,-4)
+\psline(0,6)(0,0)
+\psline(6.12,0.08)(2.66,5.78)
+\psline(0,-1.08)(0,-4)
+\psline(0,6)(0,0)
+\psline(6.12,0.08)(2.66,5.78)
+\parametricplot{1.5707963267948972}{2.1164105724649014}{1*1.75*cos(t)+0*1.75*sin(t)+6.12|0*1.75*cos(t)+1*1.75*sin(t)+0.08}
+\begin{scriptsize}
+\psdots[dotsize=6pt 0,dotstyle=*](3.27,4.77)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+By considering moments about the hinge for the (light) rod, show that the force exerted on the rod by $P$ is parallel to the rod.
+Show also that 
+\[
+r\cot\alpha = a + d \cos\alpha \,,
+\]
+where $a = \dfrac {g \;} {\omega^2}\,$. State clearly the direction of the force exerted by the hinge on the rod, and find an expression for its magnitude in terms of $m$, $g$ and $\alpha$.
+\item The disc and rod rotate as in part (i), but two particles (instead of $P$) are attached to the rod. The  masses of the particles are $m_1$ and $m_2$ and they are attached to the rod at  distances $d_1$ and $d_2$ from the hinge, respectively. The rod makes a  constant  angle $\beta$ with the upward vertical and $d_1\sin\beta <d_2\sin\beta <r$. Show that $\beta$ satisfies an equation of the form
+\[
+r\cot\beta = a+ b \cos\beta \,,
+\]
+where  $b$ should be expressed in terms of $d_1$, $d_2$, $m_1$ and $m_2$.
+
+\end{questionparts} 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+A 6-sided fair die has the numbers 1,  2, 3, 4, 5, 6  on its faces. The die is  thrown $n$ times, the outcome (the number on the top face) of each throw being independent of the outcome of any other throw. The random variable $S_n$ is the sum of the outcomes.
+\begin{questionparts}
+\item The random variable~$R_n$ is the remainder when $S_n$ is divided by 6. Write down the probability generating function, $\G(x)$, of $R_1$ and show that the probability generating function of $R_2$ is also $\G(x)$. Use a generating function to find the probability that $S_n$ is divisible by 6.
+
+\item The random variable $T_n$ is  the remainder when $S_n$ is divided by 5. Write down the probability generating function, $\G_1(x)$, of $T_1$ and show that $\G_2(x)$, the probability generating function of $T_2$, is given by 
+\[
+{\rm G}_2(x) = \tfrac 1 {36} (x^2 +7y) 
+\]where $y= 1+x+x^2+x^3+x^4\,$.
+Obtain the probability generating function of  $T_n$ and hence show that the probability that $S_n$ is divisible by $5$ is 
+\[
+\frac15\left(1- \frac1 {6^n}\right)
+\]
+if $n$ is not divisible by 5. What is the corresponding probability if $n$ is divisible by 5?
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Each of the two independent random variables $X$ and $Y$  is uniformly distributed on the interval~$[0,1]$.
+\begin{questionparts}
+\item By considering the lines $x+y =$ $\mathrm{constant}$ in the $x$-$y$ plane, find the cumulative distribution function of $X+Y$.
+\item  
+Hence show that the probability density function $f$ of $(X+Y)^{-1}$
+is given by 
+\[
+\f(t) = 
+\begin{cases}
+2t^{-2} -t^{-3} & \text{for $ \tfrac12 \le t \le 1$} \\
+t^{-3}  & \text{for $1\le t <\infty$}\\
+0 & \text{otherwise}.
+\end{cases}
+\]
+Evaluate $\E\Big(\dfrac1{X+Y}\Big)\,$.
+
+\item Find the cumulative distribution function of $Y/X$ and use this result to find the probability density function of $\dfrac X {X+Y}$.
+
+Write down $\E\Big( \dfrac X {X+Y}\Big)$ and verify your result by integration.
+
+\end{questionparts}
+\end{question}
+\end{document}

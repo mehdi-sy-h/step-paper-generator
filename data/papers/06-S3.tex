@@ -1,0 +1,577 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2006
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Sketch the curve with cartesian equation 
+\[
+y = \frac{2x(x^2-5)}{x^2-4}
+\]
+and give the equations of the asymptotes and of the tangent to the curve
+at the origin.
+
+Hence determine the number of real roots of the following equations:
+\begin{questionparts}
+\item  $3x(x^2-5)= (x^2-4)(x+3)\,$;
+\item $4x(x^2-5)= (x^2-4)(5x-2)\,$;
+\item  $4x^2(x^2-5)^2= (x^2-4)^2(x^2+1)\,$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Let 
+\[
+I = \int_{-\frac12 \pi}^{\frac12\pi} 
+\frac {\cos^2\theta}{1-\sin\theta\sin2\alpha} \, \d\theta  
+\text{ \ \  and \ \ }
+J = \int_{-\frac12 \pi}^{\frac12\pi} 
+\frac {\sec^2\theta}{1+\tan^2\theta\cos^22\alpha} \, \d\theta
+\]
+where $0<\alpha< \frac14\pi\,$.
+\begin{questionparts}
+\item
+Show that $\displaystyle 
+I = \int_{-\frac12 \pi}^{\frac12\pi} 
+\frac {\cos^2\theta}{1+\sin\theta\sin2\alpha} \, \d\theta \ $ and hence that
+$\displaystyle 
+\ 2I = \int_{-\frac12 \pi}^{\frac12\pi} 
+\frac {2}{1+\tan^2\theta\cos^22\alpha} \, \d\theta\,$.
+
+\item Find $J$.
+
+\item By considering $I\sin^2 2\alpha +J\cos^2 2\alpha $, or otherwise,
+show that  $I =\frac12 \pi \sec^2\alpha$.
+
+\item Evaluate $I$ in the case 
+$\frac14\pi < \alpha < \frac12\pi$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+\item
+Let 
+\[
+\tan x = \sum\limits_{n=0}^\infty a_n x^n
+\text{ \ \ \ and \ \ \ }
+\cot x = \dfrac 1 x +\sum\limits_{n=0}^\infty b_nx^n
+\]
+for $0<x<\frac12\pi\,$. Explain why $a_n=0$ for even $n$.
+
+Prove  the identity
+\[
+\cot x - \tan x \equiv 2 \cot 2x\,
+\]
+and show that \[a_{n} = (1-2^{n+1})b_n\,.\]
+
+\item
+Let 
+$ \displaystyle {\rm cosec}\, x 
+= \frac1x +\sum\limits _{n=0}^\infty c_n x^n\,$ for 
+$0<x<\frac12\pi\,$.
+By considering $\cot x + \tan x$, or otherwise, show that
+\[
+c_n = (2^{-n} -1)b_n
+\,.
+\]
+
+\item Show that 
+\[
+\left(1+x{ \sum\limits_{n=0}^\infty} b_n x^n \right)^2 +x^2
+= \left(1+x{ \sum\limits_{n=0} ^\infty} c_n x^n \right)^2\,.
+\]
+Deduce from this and the previous results that $a_1=1$, and find $a_3$. 
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The function $\f$ satisfies the identity
+\begin{equation}
+\f(x) +\f(y) \equiv \f(x+y) 
+\tag{$*$}
+\end{equation}
+for all $x$ and $y$. Show that $2\f(x)\equiv \f(2x)$ and deduce that 
+$\f''(0)=0$.
+By considering the Maclaurin series for $\f(x)$, find the
+most general function that satisfies $(*)$.
+\newline
+ [{\it Do not
+consider issues of existence or convergence of Maclaurin series
+in this question.}]
+
+\begin{questionparts}
+\item
+By considering the function $\G$, defined by
+$\ln\big(\g(x)\big) =\G(x)$, find the 
+most general function that, for all $x$ and $y$, satisfies the identity
+\[
+\g(x) \g(y) \equiv \g(x+y)\,.
+\]
+
+
+\item
+By considering the function $\H$, defined by
+$\h(\e^u) =\H(u)$, find the 
+most general function that satisfies, for all positive $x$ and $y$, the identity
+\[
+\h(x) +\h(y) \equiv  \h(xy)
+\,.
+\]
+
+\item Find the most general function $\t$ that, for all $x$ and $y$,
+ satisfies the identity
+\begin{equation*}
+\t(x) + \t(y) \equiv \t(z)\,,
+\end{equation*}
+where $z= \dfrac{x+y}{1-xy}\,$.
+
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Show that  the distinct
+complex numbers $\alpha$, $\beta$ and $\gamma$ represent the
+vertices of an equilateral triangle (in clockwise or anti-clockwise order)
+if and only if
+\[
+\alpha^2 + \beta^2 +\gamma^2 -\beta\gamma - \gamma \alpha -\alpha\beta =0\,.
+\]
+
+Show that 
+the roots of the equation 
+\begin{equation*}
+z^3 +az^2 +bz +c=0
+\tag{$*$}
+\end{equation*}
+represent the vertices of an equilateral triangle if and only if $a^2=3b$. 
+
+
+Under the transformation  $z=pw+q$, where $p$ and $q$ are given 
+complex numbers with $p\ne0$, the equation ($*$) becomes
+\[
+w^3 +Aw^2 +Bw +C=0\,.
+\tag{$**$}
+\]
+Show that if the roots of equation $(*)$ represent
+ the vertices of an equilateral triangle,
+then  the roots of equation $(**)$ also
+represent  the vertices of an equilateral triangle.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Show that in polar coordinates the gradient of any curve 
+at the point $(r,\theta)$ is
+\[
+\frac{ \ \ \dfrac{\d r }{\d\theta} \tan\theta + r \ \ }
+{ \dfrac{\d r }{\d\theta} -r\tan\theta}\,.
+\]
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-0.6,-3)(6.8,3) \psline(0,0)(6.54,0) \rput[tl](4.13,-0.22){$O$} \rput[tl](-0.47,0.07){$L$} \rput{-270}(5.75,0.08){\psplot[plotpoints=500]{-12}{12}{x^2/2/3}} \psline(2,1.5)(5.42,1.5) \psline(3.73,-0.74)(5.42,1.5) \psline[linewidth=0.4pt]{->}(3,1.5)(4,1.5) \psline[linewidth=0.4pt]{->}(5.42,1.5)(4.99,0.93) \psline(3.84,0.78)(6.62,2.05) \end{pspicture*}
+\par\end{center}
+
+A mirror is designed so that if an incident ray of light is parallel
+to a fixed line $L$ the  reflected ray passes through a fixed point $O$
+on $L$. Prove that the mirror intersects any plane containing $L$ in
+a parabola. You should assume that the angle between the incident
+ray and 
+the normal to the mirror is the same as the 
+angle between the reflected ray and the normal.
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+\item Solve the equation $u^2+2u\sinh x -1=0$ giving $u$ in terms
+of $x$.
+
+Find the solution of the differential equation
+\[
+\left( \frac{\d y}{\d x}\right)^{\!2} +2 \frac{\d y}{\d x} \sinh x -1 = 0
+\]
+that satisfies $y=0$ and $\dfrac {\d y}{\d x} >0$ at $x=0$.
+
+\item
+Find the solution, not identically zero,  of the differential equation 
+\[
+\sinh y  \left( \frac{\d y}{\d x}\right)^{\!2} 
++2 \frac{\d y}{\d x}  -\sinh y = 0
+\]
+that satisfies $y=0$ at $x=0$,
+expressing your solution in the form
+$\cosh  y=\f(x)$. Show that the asymptotes to the solution curve are
+$y=\pm(-x+\ln 4)$.
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+$\triangle$ is an operation that takes polynomials in $x$ to 
+polynomials in $x$; that is, given any polynomial $\h(x)$, there
+is a polynomial called $\triangle \h(x)$ which is obtained from 
+$\h(x)$ using the rules that define $\triangle$. These rules are as follows:
+\begin{questionparts}
+\item $\triangle x = 1\,$;
+\item
+$\triangle \big( \f(x)+\g(x)\big) = \triangle \f(x) + \triangle
+\g(x)\,$ for any polynomials $\f(x)$ and $\g(x)$;
+\item $\triangle \big( \lambda \f(x)\big) =\lambda \triangle \f(x)$
+for any constant $\lambda$ and any polynomial $\f(x)$;
+\item $\triangle \big( \f(x)\g(x)\big) = \f(x) \triangle \g(x) +
+\g(x)\triangle \f(x)$ for any polynomials 
+$\f(x)$ and $\g(x)$.
+\end{questionparts}
+
+Using these rules show that, 
+if $\f(x)$ is a polynomial of degree zero (that is, a constant),
+then $\triangle \f(x) =0$. Calculate $\triangle x^2$ and $\triangle x^3$.
+
+Prove that $\triangle \h(x) \equiv  \dfrac{\d \h(x)}{\d x \ \ \ }$ for 
+any polynomial $\h(x)$. You should make it  clear whenever you use
+one of the above rules in your proof. $\vphantom{\int}$
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A long, light, inextensible string  passes through a small, smooth ring
+fixed at  the point $O$. One end of the string 
+is attached to a particle $P$ of mass $m$ 
+which hangs freely below $O$. The other end is attached
+to a bead, $B$, also of mass $m$, which is threaded on a smooth rigid wire
+fixed in the same vertical plane as $O$.
+The distance $OB$ is $r$, the distance $OH$ is $h$ 
+and the  height of the bead above the horizontal plane through~$O$ is $y$,
+as shown
+in the diagram.
+
+
+
+
+
+\begin{center}
+\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-3.93,-2.62)(3.97,4.92)
+\psplot[plotpoints=200]{-3.2}{3.2}{4-0.6*x^(2)}
+\rput{0}(0,0){\psellipse(0,0)(0.61,0.16)}
+\psline(0,0)(1.73,2.19)
+\psline[linestyle=dashed,dash=1pt 1pt](-5,0)(5,0)
+\rput[tl](0.46,0.58){$\theta$}
+\rput[tl](0.06,-0.27){$O$}
+\rput[tl](0.15,-1.35){$P$}
+\psline[linestyle=dashed,dash=1pt 1pt](1.73,2.19)(1.73,0)
+\rput[tl](1.85,1){$y$}
+\rput[tl](0.77,1.7){$r$}
+\rput[tl](1.84,2.68){$B$}
+\rput[tl](0.06,4.47){$H$}
+\rput[tl](-0.36,2.3){$h$}
+\psline[linestyle=dashed,dash=1pt 1pt](0,7)(0,0)
+\psline(0,0)(0,-2)
+\begin{scriptsize}
+\psdots[dotsize=5pt 0,dotstyle=*](1.73,2.19)
+\psdots[dotsize=5pt 0,dotstyle=*](0,-2)
+\psdots[dotstyle=*,linecolor=darkgray](0,0)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+
+The shape of the wire
+is such that the system can be in static equilibrium for all positions
+of the bead.
+By considering potential energy, show that the 
+equation of the wire is $y+r =2h$.
+
+The bead is initially at $H$. It is then projected along the wire with
+initial speed $V$. Show that, in the subsequent motion, 
+\[
+\dot \theta = -\frac {h \dot r }{r \sqrt{rh -h^2}}\,
+\] 
+where $\theta$ is given by
+$\theta = \arcsin(y/r)$.
+
+Hence show that the speed of the particle $P$ is 
+$V \Big(\dfrac{r-h}{2r-h}\Big)^{\!\frac12}\,$.
+
+\noindent[{\it Note that $\arcsin \theta$ is another notation for $\sin^{-1}\theta$.}] 
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A disc rotates freely  in a horizontal plane about a vertical axis
+through its centre. The moment of inertia of the disc about this axis
+is $mk^2$ (where $k>0$). Along one diameter is a smooth narrow 
+groove in which a particle of 
+mass $m$ slides freely. At time $t=0\,$, the disc is rotating with angular 
+speed $\Omega$, and the particle is a distance $a$ from the axis and
+is moving with speed~$V$ along the groove, towards
+the axis, where 
+$k^2V^2 = \Omega^2a^2(k^2+a^2)\,$.
+
+Show that, at a later time $t$, while the particle is still moving towards
+the axis, the angular speed $\omega$ of the disc and the distance $r$ of 
+the particle from the axis are related by
+\[
+\omega = \frac{\Omega(k^2+a^2)}{k^2+r^2}
+\text{ \ \ and \ \ }
+\left(\frac{\d r}{\d t}\right)^{\!2} = \frac{\Omega^2r^2(k^2+a^2)^2}{k^2(k^2+r^2)}\;.
+\]
+Deduce that 
+\[
+k\frac{\d r}{\d\theta} = -r(k^2+r^2)^{\frac12}\,,
+\]
+where $\theta $ is the angle through which the disc has turned by time $t$.
+
+By making the substitution $u=k/r$, or otherwise, show that 
+$r\sinh (\theta+\alpha) = k$, where $\sinh \alpha = k/a\,$. Deduce that
+the particle never reaches the axis.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A lift of mass $M$ and 
+its counterweight of mass $M$ are connected by a light 
+inextensible cable which passes over a fixed frictionless pulley. The lift is
+constrained to move vertically between smooth guides. The distance between
+the floor and the ceiling of the lift is $h$. Initially, the lift is at
+rest, and the distance between the top of the lift and the pulley is
+greater than $h$. A small tile of mass $m$ becomes detached from the
+ceiling of the lift and falls to the floor of the lift.
+Show that the speed of the tile just before the impact
+is
+\[
+\sqrt{\frac{(2M-m)gh \;}{M}}\;.
+\]
+
+The coefficient of restitution between the tile 
+and the floor of the lift is $e$.
+Given that  the magnitude of the impulsive 
+force on the lift due to tension in the cable  
+is equal to the magnitude of the impulsive force on the counterweight 
+due to tension in the cable,
+show that the loss of energy of the system due to the impact is $mgh(1-e^2)$.
+Comment on this result.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Fifty times a year, 1024 tourists disembark from a cruise liner at
+a port.
+ From there they must travel to the  city centre either by bus or by taxi.
+Tourists  are equally likely to be directed to the bus station
+or to the taxi rank. Each bus of the bus company holds 32 passengers, and the
+company currently runs 15 buses. The company makes a profit of $\pounds$1 
+for each passenger carried. It carries as many passengers as it can, with
+any excess being (eventually) transported by taxi. Show that  the 
+largest annual licence fee, in pounds, that  the company should consider paying to be allowed
+to run an extra bus is approximately
+\[
+1600 \Phi(2) -  \frac{800}{\sqrt{2\pi}}\big(1- \e^{-2}\big)\,,
+\]
+where  
+$\displaystyle \Phi(x) =\dfrac1{\sqrt{2\pi}} \int_{-\infty}^x \e^{-\frac12t^2}\d t\,$.
+
+\noindent[{\it You should not consider continuity corrections.}]
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Two points are chosen independently at random on the perimeter
+(including the diameter) of a semicircle of unit radius.
+The area of the triangle whose vertices are these
+ two points  and the midpoint of the diameter is denoted by the random
+variable $A$. Show that the expected value of $A$ is $(2+\pi)^{-1}$.
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+For any random variables $X_1$ and $X_2$, state the relationship between
+$\E(aX_1+bX_2)$ and $\E(X_1)$ and $\E(X_2)$, where $a$ and $b$ are constants. 
+If $X_1$ and $X_2$ are independent,
+state the relationship between $\E(X_1X_2)$ and $\E(X_1)$ and $\E(X_2)$.
+
+An industrial process produces rectangular plates.
+The length and the breadth of the plates are modelled by
+independent random
+variables  $X_1$ and $X_2$
+with  non-zero means  $\mu_1$ and  $\mu_2$ 
+and   non-zero
+standard deviations $\sigma_1$ and $\sigma_2$, respectively.
+Using the results in the paragraph above, and without quoting a
+formula
+for $\var(aX_1+bX_2)$, 
+find the means and standard deviations of the
+perimeter $P$ and area $A$ of the plates. 
+Show that $P$ and $A$ are not independent.
+
+The random variable $Z$ is defined by  $Z=P-\alpha A$, where $\alpha $ is a 
+constant. Show that $Z$ and~$A$ are not independent if 
+\[
+\alpha \ne \dfrac{2(\mu_1^{\vphantom2} \sigma_2^2 +\mu_2^{\vphantom2}\sigma_1^2)}
+{ \mu_1^2 \sigma_2^2 +\mu_2^2\sigma_1^2 + \sigma_1^2\sigma_2^2 }
+\;.
+\]
+
+Given that $X_1$ and $X_2$ can each take values 1 and 3 only, and that
+they each take these values with probability $\frac 12$, 
+ show that $Z$ and $A$ are not independent for any value of $\alpha$.
+\end{question}
+	
+\end{document}

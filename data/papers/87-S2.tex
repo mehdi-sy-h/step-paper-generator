@@ -1,0 +1,515 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1987
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Prove that: 
+
+\begin{questionparts}
+\item if $a+2b+3c=7x$, then 
+\[
+a^{2}+b^{2}+c^{2}=\left(x-a\right)^{2}+\left(2x-b\right)^{2}+\left(3x-c\right)^{2};
+\]
+
+\item if $2a+3b+3c=11x$, then 
+\[
+a^{2}+b^{2}+c^{2}=\left(2x-a\right)^{2}+\left(3x-b\right)^{2}+\left(3x-c\right)^{2}.
+\]
+
+\end{questionparts}
+Give a general result of which \textbf{(i) }and \textbf{(ii) }are
+special cases.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Show that if at least one of the four angles $A\pm B\pm C$ is a multiple
+of $\pi$, then 
+\begin{alignat*}{1}
+\sin^{4}A+\sin^{4}B+\sin^{4}C & -2\sin^{2}B\sin^{2}C-2\sin^{2}C\sin^{2}A\\
+ & -2\sin^{2}A\sin^{2}B+4\sin^{2}A\sin^{2}B\sin^{2}C=0.
+\end{alignat*}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+	Let $a$ and $b$ be positive integers such that $b<2a-1$. For any
+	given positive integer $n$, the integers $N$ and $M$ are defined
+	by 
+	\[
+	[a+\sqrt{a^{2}-b}]^{n}=N-r,
+	\]
+	\[
+	[a-\sqrt{a^{2}-b}]^{n}=M+s,
+	\]
+	where $0\leqslant r<1$ and $0\leqslant s<1$. Prove that 
+
+\begin{itemize}
+	\item[\bf (i)] $M=0$, 
+	\vspace{2mm}
+	\item[\bf (ii)] $r=s$, 
+	\vspace{2mm}
+	\item[\bf (iii)] $r^{2}-Nr+b^{n}=0.$
+\end{itemize}
+
+	Show that for large $n$, $\left(8+3\sqrt{7}\right)^{n}$ differs
+	from an integer by about $2^{-4n}$.
+\end{question}
+
+%%%%%% Q4 
+
+\begin{question}
+Explain the geometrical relationship between the points in the Argand
+diagram represented by the complex numbers $z$ and $z\mathrm{e}^{\mathrm{i}\theta}.$ 
+
+
+Write down necessary and sufficient conditions that the distinct complex
+numbers $\alpha,\beta$ and $\gamma$ represent the vertices of an
+equilateral triangle taken in anticlockwise order. 
+
+
+Show that $\alpha,\beta$ and $\gamma$ represent the vertices of
+an equilateral triangle (taken in any order) if and only if 
+\[
+\alpha^{2}+\beta^{2}+\gamma^{2}-\beta\gamma-\gamma\alpha-\alpha\beta=0.
+\]
+Find necessary and sufficient conditions on the complex coefficients
+$a,b$ and $c$ for the roots of the equation 
+\[
+z^{3}+az^{2}+bz+c=0
+\]
+to lie at the vertices of an equilateral triangle in the Argand digram. 
+
+
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+	If $y=\mathrm{f}(x)$, then the inverse of $\mathrm{f}$ (when it
+	exists) can be obtained from\textit{ Lagrange's identity}. This identity,
+	which you may use without proof, is
+	\[
+	\mathrm{f}^{-1}(y)=y+\sum_{n=1}^{\infty}\frac{1}{n!}\frac{\mathrm{d}^{n-1}}{\mathrm{d}y^{n-1}}\left[y-\mathrm{f}\left(y\right)\right]^{n},
+	\]
+	provided the series converges. 
+
+\begin{questionparts}
+	\item Verify Lagrange's identity when $\mathrm{f}(x)=\alpha x$, $(0<\alpha<2)$. 
+	\item Show that one root of the equation 
+	\[
+	\tfrac{1}{2}=x-\tfrac{1}{4}x^{3}
+	\]
+	 is
+	\[
+	x=\sum_{n=0}^{\infty}\frac{\left(3n\right)!}{n!\left(2n+1\right)!2^{4n+1}}
+	\]
+
+	\item Find a solution for $x$, as a series in $\lambda,$ of the equation
+	\[
+	x=\mathrm{e}^{\lambda x}.
+	\]
+
+\end{questionparts}
+
+	{[}You may assume that the series in part \textbf{(ii) }converges,
+	and that the series in part \textbf{(iii) }converges for suitable
+	$\lambda$.{]}
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+	Let
+	\[
+	I=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\frac{\cos^{2}\theta}{1-\sin\theta\sin2\alpha}\,\mathrm{d}\theta\, ,
+	\]
+	where $0<\alpha<\frac{1}{4}\pi$. Show that
+	\[
+	I=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\frac{\cos^{2}\theta}{1+\sin\theta\sin2\alpha}\,\mathrm{d}\theta\, ,
+	\]
+	and hence that
+
+
+	\[
+	I=\frac{\pi}{\sin^{2}2\alpha}-\cot^{2}2\alpha\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\frac{\sec^{2}\theta}{1+\cos^{2}2\alpha\tan^{2}\theta}\,\mathrm{d}\theta.
+	\]
+
+
+
+	Show that $I=\frac{1}{2}\pi\sec^{2}\alpha$, and state the value of
+	$I$ if $\frac{1}{4}\pi<\alpha<\frac{1}{2}\pi$.
+	
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+A definite integral can be evaluated approximately by means of the Trapezium rule:
+
+
+	\[
+	\int_{x_{0}}^{x_{N}}\mathrm{f}(x)\,\mathrm{d}x\approx\tfrac{1}{2}h\left\{ \mathrm{f}\left(x_{0}\right)+2\mathrm{f}\left(x_{1}\right)+\ldots+2\mathrm{f}\left(x_{N-1}\right)+\mathrm{f}\left(x_{N}\right)\right\} ,
+	\]
+	where the interval length $h$ is given by $Nh=x_{N}-x_{0}$, and
+	$x_{r}=x_{0}+rh$. Justify briefly this approximation. 
+
+
+	Use the Trapezium rule with intervals of unit length to evaluate approximately
+	the integral 
+	\[
+	\int_{1}^{n}\ln x\,\mathrm{d}x,
+	\]
+	where $n(>2)$ is an integer. Deduce that $n!\approx\mathrm{g}(n)$,
+	where 
+	\[
+	\mathrm{g}(n)=n^{n+\frac{1}{2}}\mathrm{e}^{1-n},
+	\]
+	and show by means of a sketch, or otherwise, that 
+	\[
+	n!<\mathrm{g}(n).
+	\]
+	By using the Trapezium rule on the above integral with intervals of
+	width $k^{-1}$, where $k$ is a positive integer, show that 
+	\[
+	\left(kn\right)!\approx k!n^{kn+\frac{1}{2}}\left(\frac{\mathrm{e}}{k}\right)^{k\left(1-n\right)}.
+	\]
+	Determine whether this approximation or $\mathrm{g}(kn)$ is closer
+	to $\left(kn\right)!$.
+	
+	
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+		Let $\mathbf{r}$ be the position vector of a point in three-dimensional
+		space. Describe fully the locus of the point whose position vector
+		is $\mathbf{r}$ in each of the following four cases: 
+
+		\begin{questionparts}
+		\item $\left(\mathbf{a-b}\right) \cdot \mathbf{r}=\frac{1}{2}(\left|\mathbf{a}\right|^{2}-\left|\mathbf{b}\right|^{2});$
+		\item $\left(\mathbf{a-r}\right)\cdot\left(\mathbf{b-r}\right)=0;$
+		\item $\left|\mathbf{r-a}\right|^{2}=\frac{1}{2}\left|\mathbf{a-b}\right|^{2};$ 
+		\item $\left|\mathbf{r-b}\right|^{2}=\frac{1}{2}\left|\mathbf{a-b}\right|^{2}.$ 
+		\end{questionparts}
+
+		Prove algebraically that the equations \textbf{(i) }and \textbf{(ii)
+		}together are equivalent to \textbf{(iii) }and \textbf{(iv) }together.
+		Explain carefully the geometrical meaning of this equivalence.
+		
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+		\begin{question}
+		For any square matrix $\mathbf{A}$ such that $\mathbf{I-A}$ is non-singular
+		(where $\mathbf{I}$ is the unit matrix), the matrix $\mathbf{B}$
+		is defined by 
+		\[
+		\mathbf{B}=(\mathbf{I+A})(\mathbf{I-A})^{-1}.
+		\]
+		Prove that $\mathbf{B}^{\mathrm{T}}\mathbf{B}=\mathbf{I}$ if and
+		only if $\mathbf{A+A}^{\mathrm{T}}=\mathbf{O}$ (where $\mathbf{O}$
+		is the zero matrix), explaining clearly each step of your proof.
+
+
+		{[}\textit{You may quote standard results about matrices without proof.}{]}
+		\end{question}
+		
+	
+%%%%%%%%%% 10
+\begin{question}
+	The set $S$ consists of $N(>2)$ elements $a_{1},a_{2},\ldots,a_{N}.$
+	$S$ is acted upon by a binary operation $\circ,$ defined by 
+	\[
+	a_{j}\circ a_{k}=a_{m},
+	\]
+	where $m$ is equal to the greater of $j$ and $k$. 
+
+
+	Determine, giving reasons, which of the four group axioms hold for
+	$S$ under $\circ,$ and which do not. 
+
+
+	Determine also, giving reasons, which of the group axioms hold for
+	$S$ under $*$, where $*$ is defined by 
+	\[
+	a_{j}*a_{k}=a_{n},
+	\]
+	where $n=\left|j-k\right|+1$.
+			\end{question}
+			
+		
+		
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+	A rough ring of radius $a$ is fixed so that it lies in a plane inclined
+	at an angle $\alpha$ to the horizontal. A uniform heavy rod of length
+	$b(>a)$ has one end smoothly pivoted at the centre of the ring, so
+	that the rod is free to move in any direction. It rests on the circumference
+	of the ring, making an angle $\theta$ with the radius to the highest
+	point on the circumference. Find the relation between $\alpha,\theta$
+	and the coefficient of friction, $\mu,$ which must hold when the
+	rod is in limiting equilibrium. 
+
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+A long, inextensible string passes through a small fixed ring. One
+end of the string is attached to a particle of mass $m,$ which hangs
+freely. The other end is attached to a bead also of mass $m$ which
+is threaded on a smooth rigid wire fixed in the same vertical plane
+as the ring. The curve of the wire is such that the system can be
+in static equilibrium for all positions of the bead. The shortest
+distance between the wire and the ring is $d(>0).$ Using plane polar
+coordinates centred on the ring, find the equation of the curve. 
+
+
+The bead is set in motion. Assuming that the string remains taut,
+show that the speed of the bead when it is a distance $r$ from the
+ring is 
+\[
+\left(\frac{r}{2r-d}\right)^{\frac{1}{2}}v,
+\]
+where $v$ is the speed of the bead when $r=d.$ 
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+Ice snooker is played on a rectangular horizontal table, of length
+$L$ and width $B$, on which a small disc (the \textit{puck}) slides
+without friction. The table is bounded by smooth vertical walls (the
+\textit{cushions}) and the coefficient of restitution between the
+puck and any cushion is $e$. If the puck is hit so that it bounces
+off two adjacent cushions, show that its final path (after two bounces)
+is parallel to its original path. 
+
+
+The puck rests against the cushion at a point which divides the side
+of length $L$ in the ratio $z:1$. Show that it is possible, whatever
+$z$, to hit the puck so that it bounces off the three other cushions
+in succession clockwise and returns to the spot at which it started. 
+
+
+By considering these paths as $z$ varies, explain briefly why there
+are two different ways in which, starting at any point away from the
+cushions, it is possible to perform a shot in which the puck bounces
+off all four cushions in succession clockwise and returns to its starting
+point.
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+A thin uniform elastic band of mass $m,$ length $l$ and modulus
+of elasticity $\lambda$ is pushed on to a smooth circular cone of
+vertex angle $2\alpha,$ in such a way that all elements of the band
+are the same distance from the vertex. It is then released from rest.
+Let $x(t)$ be the length of the band at time $t$ after release,
+and let $t_{0}$ be the time at which the band becomes slack. 
+
+
+Assuming that a small element of the band which subtends an angle
+$\delta\theta$ at the axis of the cone experiences a force, due to
+the tension $T$ in the band, of magnitude $T\delta\theta$ directed
+towards the axis, and ignoring the effects of gravity, show that 
+\[
+\frac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}}+\frac{4\pi^{2}\lambda}{ml}(x-l)\sin^{2}\alpha=0,\qquad(0<t<t_{0}).
+\]
+Find the value of $t_{0}.$ 
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+A train of length $l_{1}$ and a lorry of length $l_{2}$ are heading
+for a level crossing at speeds $u_{1}$ and $u_{2}$ respectively.
+Initially the front of the train and the front of the lorry are at
+distances $d_{1}$ and $d_{2}$ from the crossing. Find conditions
+on $u_{1}$ and $u_{2}$ under which a collision will occur. On a
+diagram with $u_{1}$ and $u_{2}$ measured along the $x$ and $y$
+axes respectively, shade in the region which represents collision. 
+
+
+Hence show that if $u_{1}$ and $u_{2}$ are two independent random
+variables, both uniformly distributed on $(0,V)$, then the probability
+of a collision in the case when initially the back of the train is
+nearer to the crossing than the front of the lorry is 
+\[
+\frac{l_{1}l_{2}+l_{2}d_{1}+l_{1}d_{2}}{2d_{2}\left(l_{2}+d_{2}\right)}.
+\]
+Find the probability of a collision in each of the other two possible
+cases. 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+My two friends, who shall remain nameless, but whom I shall refer
+to as $P$ and $Q$, both told me this afternoon that there is a body
+in my fridge. I'm not sure what to make of this, because $P$ tells
+the truth with a probability of only $p$, while $Q$ (independently)
+tells the truth with probability $q$. I haven't looked in the fridge
+for some time, so if you had asked me this morning, I would have said
+that there was just as likely to be a body in it as not. Clearly,
+in view of what $P$ and $Q$ told me, I must revise this estimate.
+Explain carefully why my new estimate of the probability of there
+being a body in the fridge should be 
+\[
+\frac{pq}{1-p-q+2pq}.
+\]
+I have now been to look in the fridge, and there is indeed a body
+in it; perhaps more than one. It seems to me that only my enemy $A$,
+or my enemy $B$, or (with a bit of luck) both $A$ and $B$ could
+be in my fridge, and this morning I would have judged these three
+possibilities to be equally likely. But tonight I asked $P$ and $Q$
+separately whether or not $A$ was in the fridge, and they each said
+that he was. What should be my new estimate of the probability that
+both $A$ and $B$ are in my fridge?
+
+
+Of course, I tell the truth always.
+\end{question}
+\end{document}

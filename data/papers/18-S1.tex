@@ -1,0 +1,701 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+%\markboth{}{Paper I, 2018 second vetter draft  
+%\ \ \ \ \ \
+%\today
+%}               
+
+
+\usepackage{pstricks-add}
+\usepackage{epsfig}
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage{xcolor}
+
+
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+\usepackage{verbatim}
+
+
+\newcommand{\bct}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\rct}[1]{{\color{red}#1}}
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\c{{\rm c}}
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\q{{\rm q}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+\def\z{{\rm z}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb {\mathbf b}
+\def\bc {\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\makeatletter
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+\makeatother
+%%%To raise suffices: e.g.  $\Pi_{\raisemath{2pt}{-}}$.
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+\setcounter{page}{2}
+
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%%%%%%%Q1
+\begin{question}
+
+
+The line $y=a^2 x$ 
+and  the curve 
+ $y=x(b-x)^2$, where $0<a<b\,$, 
+intersect at the origin 
+$O$ and at points $P$ and $Q $. The $x$-coordinate of 
+$P$ is less than the $x$-coordinate  of $Q$. 
+Find the coordinates of $P$  and $Q$, 
+and sketch the line and the
+curve   on the same axes. 
+
+Show that the equation
+of the tangent to the curve at $P$ is
+\[
+y = a(3a-2b)x + 2a(b-a)^2
+.
+\]
+
+This tangent meets the $y$-axis at $R$. 
+The area of the region between the curve and the line 
+segment $OP$ is denoted by $S$.
+Show that 
+\[
+S= \frac1{12}(b-a)^3(3a+b)\,.
+\] 
+
+The area of triangle 
+$OPR$ is denoted by~$T$. 
+Show  that $S>\frac{1}{3}T\,$.
+
+
+\end{question}
+
+%%%%%%%%%%%%%%%%%Q2
+
+\begin{question}
+If $x=\log_bc\,$, express $c$ in terms of $b$ and $x$
+and prove that
+$
+\dfrac{\log_a c}{\log_a b}
+=
+\ds \log_b c 
+\,$.
+
+\begin{questionparts}
+\item Given that $\pi^2 < 10\,$, prove that
+\[
+\frac{1}{\log_2 \pi}+\frac{1}{\log_5 \pi} > 2\,.
+\]
+\item Given that $\ds \log_2  \frac{\pi}{\e}  > \frac{1}{5}$ 
+and that $\e^2 < 8$, prove that $\ln \pi > \frac{17}{15}\,$.
+
+\item Given that $\e^3 >20$, \,
+$\pi^2 < 10\,$ 
+ and  $\log_{10}2 >\frac{3}{10}\,$, 
+prove that $\ln \pi < \frac{15}{13}\,$.
+\end{questionparts}
+
+\end{question}
+
+
+%%%%%%%%%%%%%%%%Q3
+\begin{question}
+The points $R$ and $S$ have coordinates $(-a\,,\, 0)$ and $(2a\,,\, 0)$, 
+respectively, where $a > 0\,$. 
+The point $P$ has coordinates $(x\,,\, y)$ where $y > 0$ and $x < 2a\,$. 
+Let $\angle PRS = \alpha $ and $\angle PSR = \beta\,$.
+
+\begin{questionparts}
+\item
+ Show that, if $\beta = 2 \alpha\,$, then $P$
+ lies on the curve $y^2=3(x^2-a^2)\,$.
+
+\item
+Find the possible relationships between $\alpha$ and $\beta$ when 
+$0 < \alpha < \pi\,$ and
+$P$ lies on the curve $y^2=3(x^2-a^2)\,$.
+
+\end{questionparts}
+
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%%%%Q4
+\begin{question}
+The function  $\f$ is defined  by
+\[
+\phantom{\ \ \ \ \ \ \ \ \ \ \ \ (x>0, \  \ x\ne1)}
+\f(x) 
+= 
+\frac{1}{x\ln x} 
+\left(1 -  (\ln x)^2 \right)^2
+\ \ \ \ \ \ \ \ \ \ \  \ (x>0, \  \ x\ne1)
+\,.\]
+Show that,\, 
+when $( \ln x )^2 = 1\,$,\, 
+both $\f(x)=0$ and $\f'(x)=0\,$. 
+
+The function $\F$ is defined by
+\begin{equation*}
+\F(x) 
+= 
+\begin{cases} 
+     \ds \int_{ 1/\text{\footnotesize e}}^x   
+\f(t) \; \mathrm{d}t \hfill 
+& \text{ for } 0<x<1\,, 
+\\[7mm]
+      \ds \int_{\text{\footnotesize e}}^x \f(t) \; \mathrm{d}t  \hfill 
+& \text{ for } x>1\,. \\
+  \end{cases} 
+\end{equation*}
+
+\begin{questionparts}
+\item Find $\F(x)$ explicitly and hence 
+show that $\F(x^{-1})=\F(x)\,$.
+\item Sketch 
+the curve with equation $y=\F(x)\,$.
+%You may assume that $\dfrac{ (\ln x)^k} x\to 0$ as $x\to\infty$ for 
+%any constant $k$.
+
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%%%%%%%%%%%%%Q5
+
+
+\begin{question}
+\begin{questionparts}
+\item Write down the most general polynomial of degree 4 that 
+leaves a remainder of 1 when divided by any of 
+$x-1\,$, $x-2\,$, $x-3\,$  or $x-4\,$.
+
+
+\item
+The polynomial $\P(x)$ has degree $N$, where $N\ge1\,$,  
+and satisfies
+\[
+\P(1) = \P(2) = \cdots = \P(N) =1\,.
+\]
+Show that $\P(N+1) \ne 1\,$. 
+
+Given that $\P(N+1)= 2\,$, find $\P(N+r)$ where $r$ is a positive integer.
+ Find a positive integer $r$, independent of $N$, 
+such that  $\P(N+r) = N+r\,$.
+
+\item
+The polynomial ${\rm S}(x)$ has degree 4. It has 
+integer coefficients and the coefficient of $x^4$ is 1. It
+satisfies
+\[
+{\rm S}(a)    =
+{\rm S}(b)    =
+{\rm S}(c)    =
+{\rm S}(d)    = 2001\,,
+\]
+where $a$, $b$, $c$ and $d$ are distinct (not necessarily positive)
+integers.
+
+\begin{itemize}
+\item[{\bf (a)}]
+Show that there is no integer $e$
+such that ${\rm S}(e) = 2018\,$.
+
+\medskip
+\item[{\bf (b)}]
+Find  the number of  ways the  (distinct) integers $a$, $b$, $c$ and  $d$ 
+can be chosen  such that   
+${\rm S}(0) = 2017$ 
+ and 
+ $a < b<  c< d\,$. 
+
+\end{itemize}
+\end{questionparts}
+\end{question}
+
+
+
+%%%%%%%%%%%%%%Q6
+\begin{question}
+Use the identity
+\[
+2 \sin P\,\sin Q = \cos(Q-P)-\cos(Q+P)\,
+\] 
+to show that
+ \[
+2\sin\theta
+\,\big  (\sin\theta + \sin 3\theta + \cdots + \sin (2n-1)\theta\,\big ) =
+ 1-\cos 2n\theta
+\,.
+\]        
+\begin{questionparts}
+\item Let $A_n$ be the approximation to the area under the 
+curve $y=\sin x$ from $x=0$ to $x=\pi$, 
+using $n$ rectangular strips each of width 
+$\frac{{\displaystyle \pi}}{\displaystyle n}$, such that the
+midpoint of the top of each strip lies on the curve.
+Show that
+\[
+A_n \sin \left( \frac{\pi}{2n} \right) = \frac \pi n\,.
+\]
+
+\item Let $B_n$ be the approximation to the 
+area under the curve $y=\sin x$ 
+from $x=0$ to $x=\pi\,$, using the trapezium rule with $n$ 
+strips each of width $\frac{\displaystyle \pi}{ \displaystyle n}$.
+Show that 
+\[B_n \sin \left( \frac{\pi}{2n} \right) 
+= 
+\frac{\pi}{n} \cos \left( \frac{\pi}{2n} \right)
+.
+\]
+\item Show that
+\[
+\frac{1}{2}(A_n + B_n) = B_{2n}\,,
+\]
+and that
+\[
+ A_n B_{2n} = A^2_{2n}\, .
+\]
+
+\end{questionparts}
+
+\end{question}
+
+
+
+
+%%%%%%%%%%Q7
+\begin{question}
+
+\begin{questionparts}
+\item
+ In the cubic equation $x^3-3pqx+pq(p+q)=0\,$, 
+where $p$ and $q$ are distinct real numbers, 
+use the substitution
+\[
+x=\frac{pz+q}{z+1}
+\]
+to show that the equation reduces to $az^3+b = 0\,$, 
+where $a$ and $b$ are to be expressed in terms of $p$ and $q$.
+
+\item
+Show further that the equation $x^3 - 3cx + d = 0\,$, where $c$ and $d$ 
+are non-zero real numbers,  
+can be written in the form 
+$x^3-3pqx+pq(p+q)=0\,$, 
+where $p$ and $q$ are distinct real numbers, provided $d^2 > 4c^3\,$.
+
+\item Find the real root of the cubic equation $x^3+6x-2=0\,$.
+
+\item  Find the roots of the equation $x^3 - 3p^2x +2p^3=0\,$, 
+and hence show how the equation $x^3 - 3cx + d = 0$ 
+can be solved in the case $d^2 = 4c^3\,$.
+
+
+\end{questionparts}
+
+\end{question}
+
+
+%%%%%%%%%%%%%%%Q8
+                                                              
+\begin{question}
+The functions $\s$ and $\c$ satisfy $\s(0)= 0\,$, $\c(0)=1\,$ and
+\[
+\s'(x) = \c(x)^2
+,\]
+\[
+\c'(x)=-\s(x)^2.
+\]
+You may assume that $\s$ and $\c$  are uniquely defined  by these conditions.
+
+\begin{questionparts}
+\item Show that $\s(x)^3+\c(x)^3$ is constant, and deduce
+that
+ $\s(x)^3+\c(x)^3=1\,$.
+
+\item
+Show that 
+\[
+\frac{\d   }{\d x} \, \Big( \s(x) \c(x) \Big) = 2\c(x)^3-1
+\]
+and find (and simplify) an expression in terms of $\c(x)$ for 
+$\dfrac{\d  }{\d x} \left( \dfrac{\s(x)}{\c(x)} \right)
+$.
+
+\item Find the integrals
+\[
+\int \s(x)^2 \, \d x 
+\ \ \ \ \ \
+\text{and}
+\ \ \ \ \ \
+\int \s(x)^5 \, \d x
+\,.
+\]
+ 
+\item 
+Given that $\s$ has an inverse function, $\s^{-1}$,
+use the substitution $u = \s(x)$ to show that
+\[
+\int \frac{1}{(1-u^3)^{\frac{2}{3}}} \, \d u = \s^{-1}(u) 
+\, + 
+\text{\,constant}.
+\]
+
+\item Find, in terms of $u$, the integrals
+\[
+\int \frac{1}{{(1-u^3)}^{\frac{4}{3}}} \, \d u 
+\ \ \ \ \ \
+\text{and}
+\ \ \ \ \ \
+\int {(1-u^3)}^{\frac{1}{3}} \, \d u \,.
+\]
+
+\end{questionparts}
+
+\end{question}
+
+
+
+
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+%%%%%%%%%%%%%%%%%%Q9
+\begin{question}
+A straight
+road leading to my house consists of two sections. 
+The first section is inclined downwards
+at a constant angle $\alpha$
+ to the horizontal and ends in traffic lights; 
+the second section is inclined
+upwards at an angle $\beta$ to the horizontal and ends at my house. 
+The distance between the traffic lights and my house
+is $d$. 
+
+I have a go-kart which I start from rest, pointing downhill,
+ a distance $x$ 
+from the traffic lights on the downward-sloping section. 
+The go-kart is not powered in any way,  
+all resistance forces are negligible, and
+there is no sudden change of speed as I pass the traffic lights.
+Given that I  reach my house,
+ show that 
+$x \sin \alpha\ge d \sin\beta\,$.
+
+Let $T$ be the total time taken  to 
+ reach my house.
+Show that
+\[
+\left(\frac{g\sin\alpha}2 \right)^{\!\frac12} T = 
+(1+k) \sqrt{x} - \sqrt{k^2 x -kd\;}  
+\,,
+\]
+where $k = \dfrac{\sin\alpha}{\sin\beta}\,$.
+
+Hence determine, in terms of $d$ and $k$, the value of $x$
+ which minimises $T$. [You need not 
+justify the fact that the  stationary value
+is a minimum.]
+
+\end{question}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%Q9 
+\setcounter{qnumber}{9}
+\begin{question}
+A train is made up of two engines, each of mass $M$, and $n$ carriages, 
+each of mass $m$. One of the engines is at 
+the front of the train, 
+and the other is coupled between the $k$th and $(k+1)$th carriages. 
+When the train is accelerating along a straight, horizontal track, 
+the resistance to the motion of each carriage is $R$ 
+ and the driving force on each engine is $D$, 
+where $2D >nR\,$.
+The tension in the coupling between the 
+engine at the front 
+and the first carriage is $T$.
+
+\begin{questionparts}
+\item Show that  
+\[
+T = \frac{n(mD+MR)}{nm+2M}\,.
+\]
+
+\item Show that $T$ 
+is greater than  the tension in any other 
+coupling provided that $k> \frac12n\,$.
+\item
+Show also that, if $k> \frac12n\,$, then at least one of the 
+couplings is in compression (that is, there is a negative tension
+ in the 
+coupling).
+
+
+
+\end{questionparts}
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%%%%%%Q11
+
+\begin {question}
+The point $O$ lies on a rough plane that is inclined at an angle 
+$\alpha$
+ to the horizontal,
+where $\alpha<45^\circ$.
+ The point~$A$ lies on the plane
+a distance $d$ from $O$ up the line $L$ of greatest slope through $O$.
+The point $B$, which is not on the rough plane, 
+ lies in the same vertical plane as $O$ and~$A$, 
+and
+ $AB$ is horizontal.
+The distance from $O$ to $B$ is $d$.
+
+A particle $P$ of mass $m$ rests on $L$ between $O$ and $A$. 
+One end of a  light inelastic string is attached to $P$. The string
+passes over a smooth light pulley fixed at $B$ 
+and its other end is attached to a freely 
+hanging particle of mass $\lambda m$.
+
+\begin{questionparts}
+\item
+Show that  the acute angle, $\theta$, between the string and the line $L$ 
+satisfies $\alpha \le \theta \le 2\alpha\,$.
+
+\item
+Given that $P$ can rest in equilibrium at 
+every point on $L$ between  $O$ and $A$, 
+show that $2 \lambda \sin \alpha\le   1\,$.
+\item
+The coefficient of friction  
+between $P$ and the plane is $\mu$, and the acute angle 
+$\beta$    is given by   $\mu = \tan\beta\,$.
+  Show that if $\beta \ge 2 \alpha\,$,
+then a necessary condition 
+for equilibrium  
+to be possible for every position of~$P$ on $L$ between $O$ and $A$
+is
+\[
+\lambda \le
+ \frac {\sin(\beta -\alpha)}{\cos(\beta-2\alpha)}
+\,.
+\]
+ Obtain the corresponding result if  
+ $\alpha\le  \beta\le 2\alpha\,$.
+
+
+\end{questionparts}
+
+\end{question}
+\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%Q12
+\begin{question} A bag contains 
+three coins. 
+The probabilities of their showing  heads when 
+tossed are $p_1$, $p_2$ and $p_3$. 
+
+\begin{questionparts}
+
+\item
+A coin is taken at random from the bag and tossed. 
+What is the probability that
+it shows a  head?
+ 
+
+\item A coin is taken at random from the bag (containing three coins)
+and tossed; 
+the coin is returned to the bag and  again a coin is taken at
+random from the bag and tossed.
+ Let $N_1$ be the random 
+variable whose value is the number of heads shown 
+on the two tosses. Find the expectation  
+of~$N_1$ in terms of $p$, where $p = \frac{1}{3}(p_1+p_2+p_3)\,$,
+and show that  $\var(N_1) =2p(1-p)\,$. 
+
+  
+\item Two of the coins are taken at random from the 
+bag (containing three coins) and tossed. Let $N_2$ be the random variable 
+whose value is the number of heads showing on the two coins. 
+Find $\E(N_2)$ and $\var(N_2)$.  
+
+\item
+Show  that $\var(N_2)\le  \var(N_1)$,  with equality if and only if
+ $p_1=p_2=p_3\,$.
+ 
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%%%%%%%%%Q13
+\begin{question}
+A multiple-choice test consists of five questions. 
+For each question, $n$ answers are given ($n\ge2$) only
+one of which is correct and  candidates either
+attempt the question by choosing one of the $n$ 
+given answers or do
+not attempt it. 
+
+For each question attempted, candidates receive two marks for the 
+correct answer
+and  lose one mark for an incorrect answer. 
+No marks are gained or lost for questions that are  not attempted.
+The pass mark is five.
+
+Candidates A, B and C  don't understand any of the questions 
+so, for any question which they attempt, 
+they each choose one of the $n$ given answers at random, 
+independently of their choices for any other question.
+
+
+
+\begin{questionparts}
+\item
+Candidate A  chooses in advance to attempt exactly $k$ of the five
+questions, where $k=0$, 1, 2, 3, 4~or~5. 
+Show that, in order to have the greatest probability of passing the test,
+ she should choose $k=4\,$.                      
+
+\item
+Candidate B chooses at random  the number of questions he will attempt, 
+the  six possibilities being equally likely.
+Given that  Candidate B passed the test find, in terms of~$n$,  
+the probability that 
+he attempted exactly four questions. 
+
+%Show that this probability is an increasing function of $n$.
+
+\item For each of the five questions
+ Candidate C decides whether to attempt the question
+ by tossing a biased  coin. The coin has a probability
+of $\frac n{n+1}$ of showing a head, and she attempts the
+question if it shows a head. Find the probability, in terms of $n$,
+that Candidate C passes the test.
+
+ 
+
+
+\end{questionparts}
+\end{question}
+
+
+
+
+
+%%%%%%%%%%Q13
+
+
+
+
+
+
+
+\end{document}

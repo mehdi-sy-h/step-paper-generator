@@ -1,0 +1,483 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1988
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+The function $\mathrm{f}$ is defined, for $x\neq1$ and $x\neq2$
+by
+\[
+\mathrm{f}(x)=\frac{1}{\left(x-1\right)\left(x-2\right)}
+\]
+Show that for $\left|x\right|<1$
+\[
+\mathrm{f}(x)=\sum_{n=0}^{\infty}x^{n}-\frac{1}{2}\sum_{n=0}^{\infty}\left(\frac{x}{2}\right)^{n}
+\]
+and that for $1<\left|x\right|<2$ 
+\[
+\mathrm{f}(x)=-\sum_{n=1}^{\infty}x^{-n}-\frac{1}{2}\sum_{n=0}^{\infty}\left(\frac{x}{2}\right)^{n}
+\]
+Find an expression for $\mbox{f}(x)$ which is valid for $\left|x\right|>2$.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The numbers $x,y$ and $z$ are non-zero, and satisfy
+\[
+2a-3y=\frac{\left(z-x\right)^{2}}{y}\quad\mbox{ and }\quad2a-3z=\frac{\left(x-y\right)^{2}}{z},
+\]
+for some number $a$. If $y\neq z$, prove that 
+\[
+x+y+z=a,
+\]
+and that 
+\[
+2a-3x=\frac{\left(y-z\right)^{2}}{x}.
+\]
+Determine whether this last equation holds \textit{only} if $y\neq z$. 
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The quadratic equation $x^{2}+bx+c=0$, where $b$ and $c$ are real,
+has the properly that if $k$ is a (possibly complex) root, then $k^{-1}$
+is a root. Determine carefully the restriction that this property
+places on $b$ and $c$. If, in addition to this property, the equation
+has the further property that if $k$ is a root, then $1-k$ is a
+root, find $b$ and $c$. 
+
+
+Show that 
+\[
+x^{3}-\tfrac{3}{2}x^{2}-\tfrac{3}{2}x+1=0
+\]
+is the only cubic equation of the form $x^{3}+px^{2}+qx+r=0$, where
+$p,q$ and $r$ are real, which has both the above properties.
+\end{question}
+
+%%%%%% Q4 
+
+\begin{question}
+The complex number $w$ is such that $w^{2}-2x$ is real. 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] Sketch the locus of $w$ in the Argand diagram. 
+\item[\bf (ii)] If $w^{2}=x+\mathrm{i}y,$ describe fully and sketch the locus of
+points $(x,y)$ in the $x$-$y$ plane. 
+\end{itemize}
+
+The complex number $t$ is such that $t^{2}-2t$ is imaginary. If
+$t^{2}=p+\mathrm{i}q$, sketch the locus of points $(p,q)$ in the
+$p$-$q$ plane. 
+
+
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+	By considering the imaginary part of the equation $z^{7}=1,$ or otherwise,
+	find all the roots of the equation 
+	\[
+	t^{6}-21t^{4}+35t^{2}-7=0.
+	\]
+	You should justify each step carefully. 
+
+
+	Hence, or otherwise, prove that 
+	\[
+	\tan\frac{2\pi}{7}\tan\frac{4\pi}{7}\tan\frac{6\pi}{7}=\sqrt{7}.
+	\]
+	Find the corresponding result for 
+	\[
+	\tan\frac{2\pi}{n}\tan\frac{4\pi}{n}\cdots\tan\frac{(n-1)\pi}{n}
+	\]
+	in the two cases $n=9$ and $n=11.$
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Show that the following functions are positive when $x$ is positive: 
+
+\begin{itemize}
+ \setlength{\itemsep}{3mm}
+\item[\bf (i)] $x-\tanh x$
+\item[\bf (ii)] $x\sinh x-2\cosh x+2$
+\item[\bf (iii)] $2x\cosh2x-3\sinh2x+4x$. 
+\end{itemize}
+
+The function $\mathrm{f}$ is defined for $x>0$ by 
+\[
+\mathrm{f}(x)=\frac{x(\cosh x)^{\frac{1}{3}}}{\sinh x}.
+\]
+Show that $\mathrm{f}(x)$ has no turning points when $x>0,$ and
+sketch $\mathrm{f}(x)$ for $x>0.$ 
+
+\end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+The integral $I$ is defined by 
+\[
+I=\int_{1}^{2}\frac{(2-2x+x^{2})^{k}}{x^{k+1}}\,\mathrm{d}x
+\]
+where $k$ is a constant. Show that
+\[
+I=\int_{0}^{1}\frac{(1+x^{2})^{k}}{(1+x)^{k+1}}\,\mathrm{d}x=\int_{0}^{\frac{1}{4}\pi}\frac{\mathrm{d}\theta}{\left[\sqrt{2}\cos\theta\cos\left(\frac{1}{4}\pi-\theta\right)\right]^{k+1}}=2\int_{0}^{\frac{1}{8}\pi}\frac{\mathrm{d}\theta}{\left[\sqrt{2}\cos\theta\cos\left(\frac{1}{4}\pi-\theta\right)\right]^{k+1}}.
+\]
+Hence show that 
+\[
+I=2\int_{0}^{\sqrt{2}-1}\frac{(1+x^{2})^{k}}{(1+x)^{k+1}}\,\mathrm{d}x
+\]
+Deduce that
+\[
+\int_{1}^{\sqrt{2}}\left(\frac{2-2x^{2}+x^{4}}{x^{2}}\right)^{k}\frac{1}{x}\,\mathrm{d}x=\int_{1}^{\sqrt{2}}\left(\frac{2-2x+x^{2}}{x}\right)^{k}\frac{1}{x}\,\mathrm{d}x
+\]
+\end{question}
+	
+%%%%%%%%% Q8
+\begin{question}
+In a crude model of population dynamics of a community of aardvarks
+and buffaloes, it is assumed that, if the numbers of aardvarks and
+buffaloes in any year are $A$ and $B$ respectively, then the numbers
+in the following year at $\frac{1}{4}A+\frac{3}{4}B$ and $\frac{3}{2}B-\frac{1}{2}A$
+respectively. It does not matter if the model predicts fractions of
+animals, but a non-positive number of buffaloes means that the species
+has become extinct, and the model ceases to apply. Using matrices
+or otherwise, show that the ratio of the number of aardvarks to the
+number of buffaloes can remain the same each year, provided it takes
+one of two possible values. 
+
+
+Let these two possible values be $x$ and $y$, and let the numbers
+of aardvarks and buffaloes in a given year be $a$ and $b$ respectively.
+By writing the vector $(a,b)$ as a linear combination of the vectors
+$(x,1)$ and $(y,1),$ or otherwise, show how the numbers of aardvarks
+and buffaloes in subsequent years may be found. On a sketch of the
+$a$-$b$ plane, mark the regions which correspond to the following
+situations 
+\begin{itemize}
+ \setlength{\itemsep}{3mm}
+\item[\bf (i)] an equilibrium population is reached as time $t\rightarrow\infty$; 
+\item[\bf (ii)] buffaloes become extinct after a finite time; 
+\item[\bf (iii)] buffaloes approach extinction as $t\rightarrow\infty.$ 
+\end{itemize}
+\end{question}
+		
+		
+%%%%%%%%% Q9
+\begin{question}
+Give a careful argument to show that, if $G_{1}$ and $G_{2}$ are
+subgroups of a finite group $G$ such that every element of $G$ is
+either in $G_{1}$ or in $G_{2},$ then either $G_{1}=G$ or $G_{2}=G$. 
+
+
+Give an example of a group $H$ which has three subgroups $H_{1},H_{2}$
+and $H_{3}$ such that every element of $H$ is either in $H_{1},H_{2}$
+or $H_{3}$ and $H_{1}\neq H,H_{2}\neq H,H_{3}\neq H$. 
+\end{question}
+		
+	
+%%%%%%%%%% 10
+\begin{question}
+The surface $S$ in 3-dimensional space is described by the equation
+\[
+\mathbf{a}\cdot\mathbf{r}+ar=a^{2},
+\]
+where $\mathbf{r}$ is the position vector with respect to the origin
+$O$, $\mathbf{a}(\neq\mathbf{0})$ is the position vector of a fixed
+point, $r=\left|\mathbf{r}\right|$ and $a=\left|\mathbf{a}\right|.$
+Show, with the aid of a diagram, that $S$ is the locus of points
+which are equidistant from the origin $O$ and the plane $\mathbf{r}\cdot\mathbf{a}=a^{2}.$
+
+
+The point $P$, with position vector $\mathbf{p},$ lies in $S$,
+and the line joining $P$ to $O$ meets $S$ again at $Q$. Find the
+position vector of $Q$. 
+
+
+The line through $O$ orthogonal to $\mathbf{p}$ and $\mathbf{a}$
+meets $S$ at $T$ and $T'$. Show that the position vectors of $T$
+and $T'$ are 
+\[
+\pm\frac{1}{\sqrt{2ap-a^{2}}}\mathbf{a}\times\mathbf{p},
+\]
+where $p=\left|\mathbf{p}\right|.$ 
+
+
+Show that the area of the triangle $PQT$ is 
+\[
+\frac{ap^{2}}{2p-a}.
+\]
+			\end{question}
+			
+		
+		
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+A heavy particle lies on a smooth horizontal table, and is attached
+to one end of a light inextensible string of length $L$. The other
+end of the string is attached to a point $P$ on the circumference
+of the base of a vertical post which is fixed into the table. The
+base of the post is a circle of radius $a$ with its centre at a point
+$O$ on the table. Initially, at time $t=0$, the string is taut and
+perpendicular to the line $OP.$ The particle is then struck in such
+a way that the string starts winding round the post and remains taut.
+At a later time $t$, a length $a\theta(t)\ (<L)$ of the string is
+in contact with the post. Using cartesian axes with origin $O$, find
+the position and velocity vectors of the particle at time $t$ in
+terms of $a,L,\theta$ and $\dot{\theta},$ and hence show that the
+speed of the particle is $(L-a\theta)\dot{\theta}.$ 
+
+
+If the initial speed of the particle is $v$, show that the particle
+hits the post at a time $L^{2}/(2av).$ 
+
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+One end of a thin uniform inextensible, but perfectly flexible, string
+of length $l$ and uniform mass per unit length is held at a point
+on a smooth table a distance $d(<l)$ away from a small vertical hole
+in the surface of the table. The string passes through the hole so
+that a length $l-d$ of the string hangs vertically. The string is
+released from rest. Assuming that the height of the table is greater
+than $l$, find the time taken for the end of the string to reach
+the top of the hole. 
+
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+A librarian wishes to pick up a row of identical books from a shelf,
+by pressing her hands on the outer covers of the two outermost books
+and lifting the whole row together. The covers of the books are all
+in parallel vertical planes, and the weight of each book is $W$.
+With each arm, the librarian can exert a maximum force of $P$ in
+the vertical direction, and, independently, a maximum force of $Q$
+in the horizontal direction. The coefficient of friction between each
+pair of books and also between each hand and a book is $\mu.$ Derive
+an expression for the maximum number of books that can be picked up
+without slipping, using this method. 
+
+
+{[}You may assume that the books are thin enough for the rotational
+effect of the couple on each book to be ignored.{]}
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+Two particles of mass $M$ and $m$ $(M>m)$ are attached to the ends
+of a light rod of length $2l.$ The rod is fixed at its midpoint to
+a point $O$ on a horizontal axle so that the rod can swing freely
+about $O$ in a vertical plane normal to the axle. The axle rotates
+about a \textit{vertical }axis through $O$ at a constant angular
+speed $\omega$ such that the rod makes a constant angle $\alpha$
+$(0<\alpha<\frac{1}{2}\pi)$ with the vertical. Show that 
+\[
+\omega^{2}=\left(\frac{M-m}{M+m}\right)\frac{g}{l\cos\alpha}.
+\]
+
+
+
+Show also that the force of reaction of the rod on the axle is inclined
+at an angle 
+\[
+\tan^{-1}\left[\left(\frac{M-m}{M+m}\right)^{2}\tan\alpha\right]
+\]
+with the downward vertical. 
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+An examination consists of several papers, which are marked independently.
+The mark given for each paper can be an integer from $0$ to $m$
+inclusive, and the total mark for the examination is the sum of the
+marks on the individual papers. In order to make the examination completely
+fair, the examiners decide to allocate the mark for each paper at
+random, so that the probability that any given candidate will be allocated
+$k$ marks $(0\leqslant k\leqslant m)$ for a given paper is $(m+1)^{-1}$.
+If there are just two papers, show that the probability that a given
+candidate will receive a total of $n$ marks is 
+\[
+\frac{2m-n+1}{\left(m+1\right)^{2}}
+\]
+for $m<n\leqslant2m$, and find the corresponding result for $0\leqslant n\leqslant m$. 
+
+
+If the examination consists of three papers, show that the probability
+that a given candidate will receive a total of $n$ marks is 
+\[
+\frac{6mn-4m^{2}-2n^{2}+3m+2}{2\left(m+1\right)^{2}}
+\]
+in the case $m<n\leqslant2m$. Find the corresponding result for $0\leqslant n\leqslant m$,
+and deduce the result for $2m<n\leqslant3m$. 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+Find the probability that the quadratic equation 
+\[
+X^{2}+2BX+1=0
+\]
+has real roots when $B$ is normally distributed with zero mean and
+unit variance. 
+
+
+Given that the two roots $X_{1}$ and $X_{2}$ are real, find: 
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] the probability that both $X_{1}$ and $X_{2}$ are greater than $\frac{1}{5}$;
+\item[\bf (ii)] the expected value of $\left|X_{1}+X_{2}\right|$; 
+\end{itemize}
+
+giving your answers to three significant figures.
+\end{question}
+\end{document}

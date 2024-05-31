@@ -1,0 +1,523 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1988
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Sketch the graph of 
+\[
+y=\frac{x^{2}\mathrm{e}^{-x}}{1+x},
+\]
+for $-\infty<x<\infty.$ 
+
+
+Show that the value of 
+\[
+\int_{0}^{\infty}\frac{x^{2}\mathrm{e}^{-x}}{1+x}\,\mathrm{d}x
+\]
+lies between $0$ and $1$. 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The real numbers $u_{0},u_{1},u_{2},\ldots$ satisfy the difference
+equation 
+\[
+\alpha u_{n+2}+bu_{n+1}+cu_{n}=0\qquad(n=0,1,2,\ldots),
+\]
+where $a,b$ and $c$ are real numbers such that the quadratic equation
+\[
+ax^{2}+bx+c=0
+\]
+has two distinct real roots $\alpha$ and $\beta.$ Show that the
+above difference equation is satisfied by the numbers $u_{n}$ defined
+by 
+\[
+u_{n}=A\alpha^{n}+B\beta^{n},
+\]
+where 
+\[
+A=\frac{u_{1}-\beta u_{0}}{\alpha-\beta}\qquad\mbox{ and }\qquad B=\frac{u_{1}-\alpha u_{0}}{\beta-\alpha}.
+\]
+Show also, by induction, that these numbers provide the only solution. 
+
+
+Find the numbers $v_{n}$ $(n=0,1,2,\ldots)$ which satisfy 
+\[
+8(n+2)(n+1)v_{n+2}-2(n+3)(n+1)v_{n+1}-(n+3)(n+2)v_{n}=0
+\]
+with $v_{0}=0$ and $v_{1}=1.$ 
+
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+	Give a parametric form for the curve in the Argand diagram determined
+	by $\left|z-\mathrm{i}\right|=2.$ 
+
+
+	Let $w=(z+\mathrm{i})/(z-\mathrm{i}).$ Find and sketch the locus,
+	in the Argand diagram, of the point which represents the complex number
+	$w$ when
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  $\left|z-\mathrm{i}\right|=2;$ 
+\item[\bf (ii)]  $z$ is real; 
+\item[\bf (iii)]  $z$ is imaginary. 
+\end{itemize}
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}
+	A kingdom consists of a vast plane with a central parabolic hill.
+	In a vertical cross-section through the centre of the hill, with the
+	$x$-axis horizontal and the $z$-axis vertical, the surface of the
+	plane and hill is given by 
+	\[
+	x=\begin{cases}
+	\dfrac{1}{2a}(a^{2}-x^{2}) & \mbox{ for }\left|x\right|\leqslant a,\\
+	0 & \mbox{ for }\left|x\right|>a.
+	\end{cases}
+	\]
+	The whole surface is formed by rotating this cross-section about the
+	$z$-axis. In the $(x,z)$ plane through the centre of the hill, the
+	king has a summer residence at $(-R,0)$ and a winter residence at
+	$(R,0)$, where $R>a.$ He wishes to connect them by a road, consisting
+	of the following segments: 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] a path in the $(x,z)$ plane joining $(-R,0)$ to $(-b,(a^{2}-b^{2})/2a),$
+	where $0\leqslant b\leqslant a.$
+\item[\bf (ii)] a horizontal semicircular path joining the two points $(\pm b,(a^{2}-b^{2})/2a),$
+	if $b\neq0;$
+\item[\bf (iii)] a path in the $(x,z)$ plane joining $(b,(a^{2}-b^{2})/2a)$ to $(R,0).$
+	\end{itemize}
+
+	The king wants the road to be as short as possible. Advise him on
+	his choice of $b.$
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+A firm of engineers obtains the right to dig and exploit an undersea
+tunnel. Each day the firm borrows enough money to pay for the day's
+digging, which costs $\pounds c,$ and to pay the daily interest of
+$100k\%$ on the sum already borrowed. The tunnel takes $T$ days
+to build, and, once finished, earns $\pounds d$ a day, all of which
+goes to pay the daily interest and repay the debt until it is fully
+paid. The financial transactions take place at the end of each day's
+work. Show that $S_{n},$ the total amount borrowed by the end of
+day $n$, is given by 
+\[
+S_{n}=\frac{c[(1+k)^{n}-1]}{k}
+\]
+for $n\leqslant T$. 
+
+
+Given that $S_{T+m}>0,$ where $m>0,$ express $S_{T+m}$ in terms
+of $c,d,k,T$ and $m.$ 
+
+
+Show that, if $d/c>(1+k)^{T}-1,$ the firm will eventually pay off
+the debt. 
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+Let $\mathrm{f}(x)=\sin2x\cos x.$ Find the 1988th derivative of $\mathrm{f}(x).$
+
+
+Show that the smallest positive value of $x$ for which this derivative
+is zero is $\frac{1}{3}\pi+\epsilon,$ where $\epsilon$ is approximately
+equal to 
+\[
+\frac{3^{-1988}\sqrt{3}}{2}.
+\]
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+For $n=0,1,2,\ldots,$ the functions $y_{n}$ satisfy the differential
+equation 
+\[
+\frac{\mathrm{d}^{2}y_{n}}{\mathrm{d}x^{2}}-\omega^{2}x^{2}y_{n}=-(2n+1)\omega y_{n},
+\]
+where $\omega$ is a positive constant, and $y_{n}\rightarrow0$ and
+$\mathrm{d}y_{n}/\mathrm{d}x\rightarrow0$ as $x\rightarrow+\infty$
+and as $x\rightarrow-\infty.$ Verify that these conditions are satisfied,
+for $n=0$ and $n=1,$ by 
+\[
+y_{0}(x)=\mathrm{e}^{-\lambda x^{2}}\qquad\mbox{ and }\qquad y_{1}(x)=x\mathrm{e}^{-\lambda x^{2}}
+\]
+for some constant $\lambda,$ to be determined. 
+
+
+Show that 
+\[
+\frac{\mathrm{d}}{\mathrm{d}x}\left(y_{m}\frac{\mathrm{d}y_{n}}{\mathrm{d}x}-y_{n}\frac{\mathrm{d}y_{m}}{\mathrm{d}x}\right)=2(m-n)\omega y_{m}y_{n},
+\]
+and deduce that, if $m\neq n,$ 
+\[
+\int_{-\infty}^{\infty}y_{m}(x)y_{n}(x)\,\mathrm{d}x=0.
+\] 
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+Find the equations of the tangent and normal to the parabola $y^{2}=4ax$
+at the point $(at^{2},2at).$
+
+
+For $i=1,2,$ and 3, let $P_{i}$ be the point $(at_{i}^{2},2at_{i}),$
+where $t_{1},t_{2}$ and $t_{3}$ are all distinct. Let $A_{1}$ be
+the area of the triangle formed by the tangents at $P_{1},P_{2}$
+and $P_{3},$ and let $A_{2}$ be the area of the triangle formed
+by the normals at $P_{1},P_{2}$ and $P_{3}.$ Using the fact that
+the area of the triangle with vertices at $(x_{1},y_{1}),(x_{2},y_{2})$
+and $(x_{3},y_{3})$ is the absolute value of 
+\[
+\tfrac{1}{2}\det\begin{pmatrix}x_{1} & y_{1} & 1\\
+x_{2} & y_{2} & 1\\
+x_{3} & y_{3} & 1
+\end{pmatrix},
+\]
+show that $A_{3}=(t_{1}+t_{2}+t_{3})^{2}A_{1}.$
+
+
+Deduce a necessary and sufficient condition in terms of $t_{1},t_{2}$
+and $t_{3}$ for the normals at $P_{1},P_{2}$ and $P_{3}$ to be
+concurrent.
+		
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+		\begin{question}
+Let $G$ be a finite group with identity $e.$ For each element $g\in G,$
+the order of $g$, $o(g),$ is defined to be the smallest positive
+integer $n$ for which $g^{n}=e.$
+\begin{questionparts}
+\item Show that, if $o(g)=n$ and $g^{N}=e,$ then $n$ divides $N.$
+\item Let $g$ and $h$ be elements of $G$. Prove that, for any integer
+$m,$ 
+\[
+gh^{m}g^{-1}=(ghg^{-1})^{m}.
+\]
+
+\item Let $g$ and $h$ be elements of $G$, such that $g^{5}=e,h\neq e$
+and $ghg^{-1}=h^{2}.$ Prove that $g^{2}hg^{-2}=h^{4}$ and find $o(h).$ 
+\end{questionparts}
+
+		\end{question}
+		
+	
+%%%%%%%%%% 10
+\begin{question}
+Four greyhounds $A,B,C$ and $D$ are held at positions such that
+$ABCD$ is a large square. At a given instant, the dogs are released
+and $A$ runs directly towards $B$ at constant speed $v$, $B$ runs
+directly towards $C$ at constant speed $v$, and so on. Show that
+$A$'s path is given in polar coordinates (referred to an origin at
+the centre of the field and a suitable initial line) by $r=\lambda\mathrm{e}^{-\theta},$
+where $\lambda$ is a constant. 
+
+
+Generalise this result to the case of $n$ dogs held at the vertices
+of a regular $n$-gon ($n\geqslant3$). 
+			\end{question}
+			
+		
+		
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+A uniform ladder of length $l$ and mass $m$ rests with one end in
+contact with a smooth ramp inclined at an angle of $\pi/6$ to the
+vertical. The foot of the ladder rests, on horizontal ground, at a
+distance $l/\sqrt{3}$ from the foot of the ramp, and the coefficient
+of friction between the ladder and the ground is $\mu.$ The ladder
+is inclined at an angle $\pi/6$ to the horizontal, in the vertical
+plane containing a line of greatest slope of the ramp. A labourer
+of mass $m$ intends to climb slowly to the top of the ladder. 
+
+
+\noindent \begin{center}
+\psset{xunit=1.2cm,yunit=1.2cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-1.32,-1.38)(8.14,5.24) \pspolygon[linewidth=0pt,fillcolor=black,fillstyle=solid,opacity=0.1,linecolor=white](0,5)(0,0)(3,0) \psline(0,0)(8,0) \psline(0,5)(3,0) \psline(1.81,1.98)(7,0) \psline(3,0)(3,1) \pscustom{\parametricplot{1.5707963267948966}{2.1112158270654806}{0.7*cos(t)+3|0.7*sin(t)+0}\lineto(3,0)\closepath} \pscustom{\parametricplot{2.7769413914856056}{3.141592653589793}{1*cos(t)+7|1*sin(t)+0}\lineto(7,0)\closepath} \rput[tl](2.55,1.15){$\tfrac{1}{6}\pi$} \rput[tl](5.4,0.5){$\tfrac{1}{2}\pi$} \rput[tl](0.5,2.32){$\text{ramp}$} \psline{->}(2.98,-0.46)(7,-0.48) \psline{->}(7,-0.48)(2.98,-0.46) \rput[tl](4.68,-0.6){$l\sqrt{3}$} \end{pspicture*}
+\par\end{center}
+\begin{questionparts}
+\item Find the value of $\mu$ if the ladder slips as soon as the labourer
+reaches the midpoint. 
+\item Find the minimum value of $\mu$ which will ensure that the labourer
+can reach the top of the ladder. 
+\end{questionparts}
+
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+A smooth billiard ball moving on a smooth horizontal table strikes
+another identical ball which is at rest. The coefficient of restitution
+between the balls is $e(<1)$. Show that after the collision the angle
+between the velocities of the balls is less than $\frac{1}{2}\pi.$
+
+
+Show also that the maximum angle of deflection of the first ball is
+\[
+\sin^{-1}\left(\frac{1+e}{3-e}\right).
+\]
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+A goalkeeper stands on the goal-line and kicks the football directly
+into the wind, at an angle $\alpha$ to the horizontal. The ball has
+mass $m$ and is kicked with velocity $\mathbf{v}_{0}.$ The wind
+blows horizontally with constant velocity $\mathbf{w}$ and the air
+resistance on the ball is $mk$ times its velocity relative to the
+wind velocity, where $k$ is a positive constant. Show that the equation
+of motion of the ball can be written in the form 
+\[
+\frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}+k\mathbf{v}=\mathbf{g}+k\mathbf{w},
+\]
+where $\mathbf{v}$ is the ball's velocity relative to the ground,
+and $\mathbf{g}$ is the acceleration due to gravity. 
+
+
+By writing down horizontal and vertical equations of motion for the
+ball, or otherwise, find its position at time $t$ after it was kicked. 
+
+
+On the assumption that the goalkeeper moves out of the way, show that
+if $\tan\alpha=\left|\mathbf{g}\right|/(k\left|\mathbf{w}\right|),$
+then the goalkeeper scores an own goal. 
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+A small heavy bead can slide smoothly in a vertical plane on a fixed
+wire with equation 
+\[
+y=x-\frac{x^{2}}{4a},
+\]
+where the $y$-axis points vertically upwards and $a$ is a positive
+constant. The bead is projected from the origin with initial speed
+$V$ along the wire. 
+
+\begin{questionparts}
+\item Show that for a suitable value of $V$, to be determined, a motion
+is possible throughout which the bead exerts no pressure on the wire. 
+\item Show that $\theta,$ the angle between the particle's velocity at
+time $t$ and the $x$-axis, satisfies 
+\[
+\frac{4a^{2}\dot{\theta}^{2}}{\cos^{6}\theta}+2ga(1-\tan^{2}\theta)=V^{2}.
+\]
+
+\end{questionparts}
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+Each day, books returned to a library are placed on a shelf in order
+of arrival, and left there. When a book arrives for which there is
+no room on the shelf, that book and all books subsequently returned
+are put on a trolley. At the end of each day, the shelf and trolley
+are cleared. There are just two-sizes of book: thick, requiring two
+units of shelf space; and thin, requiring one unit. The probability
+that a returned book is thick is $p$, and the probability that it
+is thin is $q=1-p.$ Let $M(n)$ be the expected number of books that
+will be put on the shelf, when the length of the shelf is $n$ units
+and $n$ is an integer, on the assumption that more books will be
+returned each day than can be placed on the shelf. Show, giving reasoning,
+that 
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] $M(0)=0;$
+\item[\bf (ii)] $M(1)=q;$
+\item[\bf (iii)] $M(n)-qM(n-1)-pM(n-2)=1,$ for $n\geqslant2.$
+\end{itemize}
+Verify that a possible solution to these equations is 
+\[
+M(n)=A(-p)^{n}+B+Cn,
+\]
+where $A,B$ and $C$ are numbers independent of $n$ which you should
+express in terms of $p$. 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+Balls are chosen at random without replacement from an urn originally
+containing $m$ red balls and $M-m$ green balls. Find the probability
+that exactly $k$ red balls will be chosen in $n$ choices $(0\leqslant k\leqslant m,0\leqslant n\leqslant M).$ 
+
+
+The random variables $X_{i}$ $(i=1,2,\ldots,n)$ are defined for
+$n\leqslant M$ by 
+\[
+X_{i}=\begin{cases}
+0 & \mbox{ if the \ensuremath{i}th ball chosen is green}\\
+1 & \mbox{ if the \ensuremath{i}th ball chosen is red. }
+\end{cases}
+\]
+Show that 
+\begin{itemize}
+\setlength{\itemsep}{2mm}
+\item[\bf (i)] $\mathrm{P}(X_{i}=1)=\dfrac{m}{M}.$
+\item[\bf (ii)] $\mathrm{P}(X_{i}=1\mbox{ and }X_{j}=1)=\dfrac{m(m-1)}{M(M-1)}$,
+for $i\neq j$. 
+\end{itemize}
+
+Find the mean and variance of the random variable $X$ defined by
+\[
+X=\sum_{i=1}^{n}X_{i}.
+\]
+\end{question}
+\end{document}

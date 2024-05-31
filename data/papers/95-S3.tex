@@ -1,0 +1,449 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1995
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Find the simultaneous solutions of the three linear equations
+\begin{alignat*}{1}
+a^{2}x+ay+z & =a^{2}\\
+ax+y+bz & =1\\
+a^{2}bx+y+bz & =b
+\end{alignat*}
+for all possible real values of $a$ and $b$. 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+If 
+\[
+\mathrm{I}_{n}=\int_{0}^{a}x^{n+\frac{1}{2}}(a-x)^{\frac{1}{2}}\,\mathrm{d}x,
+\]
+show that $\mathrm{I}_{0}=\pi a^{2}/8.$
+
+
+Show that $(2n+4)\mathrm{I}_{n}=(2n+1)a\mathrm{I}_{n-1}$ and hence
+evaluate $\mathrm{I}_{n}$. 
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+What is the general solution of the differential equation 
+\[
+\frac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}}+2k\frac{\mathrm{d}x}{\mathrm{d}t}+x=0
+\]
+for each of the cases: (i) $k>1;$ (ii) $k=1$; (iii) $0<k<1$? 
+
+
+In case (iii) the equation represents damped simple harmonic motion
+with damping factor $k$. Let $x(0)=0$ and let $x_{1},x_{2},\ldots,x_{n},\ldots$
+be the sequence of successive maxima and minima, so that if $x_{n}$
+is a maximum then $x_{n+1}$ is the next minimum. Show that $\left|x_{n+1}/x_{n}\right|$
+takes a value $\alpha$ which is independent of $n$, and that 
+\[
+k^{2}=\frac{(\ln\alpha)^{2}}{\pi^{2}+(\ln\alpha)^{2}}.
+\]
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Let 
+\[
+\mathrm{C}_{n}(\theta)=\sum_{k=0}^{n}\cos k\theta
+\]
+and let 
+\[
+\mathrm{S}_{n}(\theta)=\sum_{k=0}^{n}\sin k\theta,
+\]
+where $n$ is a positive integer and $0<\theta<2\pi.$ Show that 
+\[
+\mathrm{C}_{n}(\theta)=\frac{\cos(\tfrac{1}{2}n\theta)\sin\left(\frac{1}{2}(n+1)\theta\right)}{\sin(\frac{1}{2}\theta)},
+\]
+and obtain the corresponding expression for $\mathrm{S}_{n}(\theta)$. 
+
+
+Hence, or otherwise, show that for $0<\theta<2\pi,$ 
+\[
+\left|\mathrm{C}_{n}(\theta)-\frac{1}{2}\right|\leqslant\frac{1}{2\sin(\frac{1}{2}\theta)}.
+\]
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Show that $y=\sin^{2}(m\sin^{-1}x)$ satisfies the differential equation
+\[
+(1-x^{2})y^{(2)}=xy^{(1)}+2m^{2}(1-2y),
+\]
+and deduce that, for all $n\geqslant1,$ 
+\[
+(1-x^{2})y^{(n+2)}=(2n+1)xy^{(n+1)}+(n^{2}-4m^{2})y^{(n)},
+\]
+where $y^{(n)}$ denotes the $n$th derivative of $y$. 
+
+
+Derive the Maclaurin series for $y$, making it clear what the general
+term is. 
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+The variable non-zero complex number $z$ is such that 
+\[
+\left|z-\mathrm{i}\right|=1.
+\]
+Find the modulus of $z$ when its argument is $\theta.$ Find also
+the modulus and argument of $1/z$ in terms of $\theta$ and show
+in an Argand diagram the loci of points which represent $z$ and $1/z$. 
+
+
+Find the locus $C$ in the Argand diagram such that $w\in C$ if,
+and only if, the real part of $(1/w)$ is $-1$. 
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Consider the following sets with the usual definition of multiplication
+appropriate to each. In each case you may assume that the multiplication
+is associative. In each case state, giving adequate reasons, whether
+or not the set is a group. 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+
+\item[\bf (i)] the complex numbers of unit modulus; 
+\item[\bf (ii)] the integers modulo 4; 
+\item[\bf (iii)] the matrices 
+\[
+\mathrm{M}(\theta)=\begin{pmatrix}\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{pmatrix},
+\]
+where $0\leqslant\theta<2\pi$; 
+\item[\bf (iv)] the integers $1,3,5,7$ modulo 8; 
+\item[\bf (v)] the $2\times2$ matrices all of whose entries are integers; 
+\item[\bf (vi)] the integers $1,2,3,4$ modulo 5. 
+\end{itemize}
+
+In the case of each pair of groups above state, with reasons, whether
+or not they are isomorphic. 
+
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+A plane $\pi$ in 3-dimensional space is given by the vector equation
+$\mathbf{r}\cdot\mathbf{n}=p,$ where $\mathbf{n}$ is a unit vector
+and $p$ is a non-negative real number. If $\mathbf{x}$ is the position
+vector of a general point $X$, find the equation of the normal to
+$\pi$ through $X$ and the perpendicular distance of $X$ from $\pi$. 
+
+
+The unit circles $C_{i},$ $i=1,2,$ with centres $\mathbf{r}_{i},$
+lie in the planes $\pi_{i}$ given by $\mathbf{r}\cdot\mathbf{n}_{i}=p_{i},$
+where the $\mathbf{n}_{i}$ are unit vectors, and $p_{i}$ are non-negative
+real numbers. Prove that there is a sphere whose surface contains
+both circles only if there is a real number $\lambda$ such that 
+\[
+\mathbf{r}_{1}+\lambda\mathbf{n}_{1}=\mathbf{r}_{2}\pm\lambda\mathbf{n}_{2}.
+\]
+Hence, or otherwise, deduce the necessary conditions that 
+\[
+(\mathbf{r}_{1}-\mathbf{r}_{2})\cdot(\mathbf{n}_{1}\times\mathbf{n}_{2})=0
+\]
+and that 
+\[
+(p_{1}-\mathbf{n}_{1}\cdot\mathbf{r}_{2})^{2}=(p_{2}-\mathbf{n}_{2}\cdot\mathbf{r}_{1})^{2}.
+\]
+Interpret each of these two conditions geometrically. 
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+ A thin circular disc of mass $m$, radius $r$ and with its centre
+of mass at its centre $C$ can rotate freely in a vertical plane about
+a fixed horizontal axis through a point $O$ of its circumference.
+A particle $P$, also of mass $m,$ is attached to the circumference
+of the disc so that the angle $OCP$ is $2\alpha,$ where $\alpha\leqslant\pi/2$. 
+
+\begin{questionparts}
+\item In the position of stable equilibrium $OC$ makes an angle $\beta$
+with the vertical. Prove that 
+\[
+\tan\beta=\frac{\sin2\alpha}{2-\cos2\alpha}.
+\]
+
+\item The density of the disc at a point distant $x$ from $C$ is $\rho x/r.$
+Show that its moment of inertia about the horizontal axis through
+$O$ is $8mr^{2}/5$. 
+\item The mid-point of $CP$ is $Q$. The disc is held at rest with $OQ$
+horizontal and $C$ lower than $P$ and it is then released. Show
+that the speed $v$ with which $C$ is moving when $P$ passes vertically
+below $O$ is given by 
+\[
+v^{2}=\frac{15gr\sin\alpha}{2(2+5\sin^{2}\alpha)}.
+\]
+Find the maximum value of $v^{2}$ as $\alpha$ is varied. 
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A cannon is situated at the bottom of a plane inclined at angle $\beta$
+to the horizontal. A (small) cannon ball is fired from the cannon
+at an initial speed $u.$ Ignoring air resistance, find the angle
+of firing which will maximise the distance up the plane travelled
+by the cannon ball and show that in this case the ball will land at
+a distance 
+\[
+\frac{u^{2}}{g(1+\sin\beta)}
+\]
+from the cannon.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A ship is sailing due west at $V$ knots while a plane, with an airspeed
+of $kV$ knots, where $k>\sqrt{2},$ patrols so that it is always
+to the north west of the ship. If the wind in the area is blowing
+from north to south at $V$ knots and the pilot is instructed to return
+to the ship every thirty minutes, how long will her outward flight
+last? 
+
+
+Assume that the maximum distance of the plane from the ship during
+the above patrol was $d_{w}$ miles. If the air now becomes dead calm,
+and the pilot's orders are maintained, show that the ratio $d_{w}/d_{c}$
+of $d_{w}$ to the new maximum distance, $d_{c}$ miles, of the plane
+from the ship is 
+\[
+\frac{k^{2}-2}{2k(k^{2}-1)}\sqrt{4k^{2}-2}.
+\]
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+The random variables $X$ and $Y$ are independently normally distributed
+with means 0 and variances 1. Show that the joint probability density
+function for $(X,Y)$ is 
+\[
+\mathrm{f}(x,y)=\frac{1}{2\pi}\mathrm{e}^{-\frac{1}{2}(x^{2}+y^{2})}\qquad-\infty<x<\infty,-\infty<y<\infty.
+\]
+If $(x,y)$ are the coordinates, referred to rectangular axes, of
+a point in the plane, explain what is meant by saying that this density
+is radially symmetrical. 
+
+
+The random variables $U$ and $V$ have a joint probability density
+function which is radially symmetrical (in the above sense). By considering
+the straight line with equation $U=kV,$ or otherwise, show that 
+\[
+\mathrm{P}\left(\frac{U}{V}<k\right)=2\mathrm{P}(U<kV,V>0).
+\]
+Hence, or otherwise, show that the probability density function of
+$U/V$ is 
+\[
+\mathrm{g}(k)=\frac{1}{\pi(1+k^{2})}\qquad-\infty<k<\infty.
+\]
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A message of $10^{k}$ binary digits is sent along a fibre optic cable
+with high probabilities $p_{0}$ and $p_{1}$ that the digits 0 and
+1, respectively, are received correctly. If the probability of a digit
+in the original message being a 1 is $\alpha,$ find the probability
+that the entire message is received correctly. 
+
+
+Find the probability $\beta$ that a randomly chosen digit in the
+message is received as a 1 and show that $\beta=\alpha$ if, and only
+if 
+\[
+\alpha=\frac{q_{0}}{q_{1}+q_{0}},
+\]
+where $q_{0}=1-p_{0}$ and $q_{1}=1-p_{1}.$ If this condition is
+satisfied and the received message consists entirely of zeros, what
+is the probability that it is correct? 
+
+
+If now $q_{0}=q_{1}=q$ and $\alpha=\frac{1}{2},$ find the approximate
+value of $q$ which will ensure that a message of one million binary
+digits has a fifty-fifty chance of being received entirely correctly. 
+
+
+The probability of error $q$ is proportional to the square of the
+length of the cable. Initially the length is such that the probability
+of a message of one million binary bits, among which 0 and 1 are equally
+likely, being received correctly is $\frac{1}{2}.$ What wold this
+probability become if a booster station were installed at its mid-point,
+assuming that the booster station re-transmits the received version
+of the message, and assuming that terms of order $q^{2}$ may be ignored? 
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+A candidate finishes examination questions in time $T$, where $T$
+has probability density function 
+\[
+\mathrm{f}(t)=t\mathrm{e}^{-t}\qquad t\geqslant0,
+\]
+the probabilities for the various questions being independent. Find
+the moment generating function of $T$ and hence find the moment generating
+function for the total time $U$ taken to finish two such questions.
+Show that the probability density function for $U$ is 
+\[
+\mathrm{g}(u)=\frac{1}{6}u^{3}\mathrm{e}^{-u}\qquad u\geqslant0.
+\]
+Find the probability density function for the total time taken to
+answer $n$ such questions.
+\end{question}
+	
+\end{document}

@@ -1,0 +1,391 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1995
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts} 
+\item Find the real values of $x$ for which 
+\[
+x^{3}-4x^{2}-x+4\geqslant0.
+\]
+\item Find the three lines in the $(x,y)$ plane on which 
+\[
+x^{3}-4x^{2}y-xy^{2}+4y^{3}=0.
+\]
+\item On a sketch shade the regions of the $(x,y)$ plane for which
+\[
+x^{3}-4x^{2}y-xy^{2}+4y^{3}\geqslant0.
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+\begin{questionparts} 
+\item Suppose that 
+\[
+S=\int\frac{\cos x}{\cos x+\sin x}\,\mathrm{d}x\quad\mbox{ and }\quad T=\int\frac{\sin x}{\cos x+\sin x}\,\mathrm{d}x.
+\]
+By considering $S+T$ and $S-T$ determine $S$ and $T$. 
+\item Evaluate ${\displaystyle \int_{\frac{1}{4}}^{\frac{1}{2}}(1-4x)\sqrt{\frac{1}{x}-1}\,\mathrm{d}x}$
+by using the substitution $x=\sin^{2}t.$ 
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+ \item If $\mathrm{f}(r)$ is a function defined
+for $r=0,1,2,3,\ldots,$ show that 
+\[
+\sum_{r=1}^{n}\left\{ \mathrm{f}(r)-\mathrm{f}(r-1)\right\} =\mathrm{f}(n)-\mathrm{f}(0).
+\]
+\item If $\mathrm{f}(r)=r^{2}(r+1)^{2},$ evaluate $\mathrm{f}(r)-\mathrm{f}(r-1)$
+and hence determine ${\displaystyle \sum_{r=1}^{n}r^{3}.}$
+\item Find the sum of the series $1^{3}-2^{3}+3^{3}-4^{3}+\cdots+(2n+1)^{3}.$ 
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+By applying de Moivre's theorem to $\cos5\theta+\mathrm{i}\sin5\theta,$
+expanding the result using the binomial theorem, and then equating
+imaginary parts, show that 
+\[
+\sin5\theta=\sin\theta\left(16\cos^{4}\theta-12\cos^{2}\theta+1\right).
+\]
+Use this identity to evaluate $\cos^{2}\frac{1}{5}\pi$, and deduce
+that $\cos\frac{1}{5}\pi=\frac{1}{4}(1+\sqrt{5}).$ 
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+If 
+\[
+\mathrm{f}(x)=nx-\binom{n}{2}\frac{x^{2}}{2}+\binom{n}{3}\frac{x^{3}}{3}-\cdots+(-1)^{r+1}\binom{n}{r}\frac{x^{r}}{r}+\cdots+(-1)^{n+1}\frac{x^{n}}{n}\,,
+\]
+show that 
+\[
+\mathrm{f}'(x)=\frac{1-(1-x)^{n}}{x}\,.
+\]
+Deduce that 
+\[
+\mathrm{f}(x)=\int_{1-x}^{1}\frac{1-y^{n}}{1-y}\,\mathrm{d}y.
+\]
+Hence show that 
+\[
+\mathrm{f}(1)=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\,.
+\]
+
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item In the differential equation 
+\[
+\frac{1}{y^{2}}\frac{\mathrm{d}y}{\mathrm{d}x}+\frac{1}{y}=\mathrm{e}^{2x}
+\]
+make the substitution $u=1/y,$ and hence show that the general solution
+of the original equation is 
+\[
+y=\frac{1}{A\mathrm{e}^{x}-\mathrm{e}^{2x}}\,.
+\]
+\item Use a similar method to solve the equation 
+\[
+\frac{1}{y^{3}}\frac{\mathrm{d}y}{\mathrm{d}x}+\frac{1}{y^{2}}=\mathrm{e}^{2x}.
+\]
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Let $A,B,C$ be three non-collinear points in the plane. Explain briefly
+why it is possible to choose an origin equidistant from the three
+points. Let $O$ be such an origin, let $G$ be the centroid of the
+triangle $ABC,$ let $Q$ be a point such that $\overrightarrow{GQ}=2\overrightarrow{OG},$
+and let $N$ be the midpoint of $OQ.$ 
+
+\begin{questionparts}
+\item Show that $\overrightarrow{AQ}$ is perpendicular to $\overrightarrow{BC}$
+and deduce that the three altitudes of $\triangle ABC$ are concurrent. 
+\item Show that the midpoints of $AQ,BQ$ and $CQ$, and the midpoints of
+the sides of $\triangle ABC$ are all equidistant from $N$. 
+\end{questionparts}
+
+{[}The \textit{centroid }of $\triangle ABC$ is the point $G$ such
+that $\overrightarrow{OG}=\frac{1}{3}(\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC}).$
+The \textit{altitudes }of the triangle are the lines through the vertices
+perpendicular to the opposite sides.{]} 
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Find functions $\mathrm{f,g}$ and $\mathrm{h}$ such that 
+\[
+\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}+\mathrm{f}(x)\frac{\mathrm{d}y}{\mathrm{d}x}+\mathrm{g}(x)y=\mathrm{h}(x)\tag{\ensuremath{*}}
+\]
+is satisfied by all three of the solutions $y=x,y=1$ and $y=x^{-1}$
+for $0<x<1.$ 
+
+
+If $\mathrm{f,g}$ and $\mathrm{h}$ are the functions you have found
+in the first paragraph, what condition must the real numbers $a,b$
+and $c$ satisfy in order that 
+\[
+y=ax+b+\frac{c}{x}
+\]
+should be a solution of $(*)$?
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A particle is projected from a point $O$ with speed $\sqrt{2gh},$
+where $g$ is the acceleration due to gravity. Show that it is impossible,
+whatever the angle of projection, for the particle to reach a point
+above the parabola 
+\[
+x^{2}=4h(h-y),
+\]
+where $x$ is the horizontal distance from $O$ and $y$ is the vertical
+distance above $O$. State briefly the simplifying assumptions which
+this solution requires. 
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A small ball of mass $m$ is suspended in equilibrium by a light elastic
+string of natural length $l$ and modulus of elasticity $\lambda.$
+Show that the total length of the string in equilibrium is $l(1+mg/\lambda).$ 
+
+
+If the ball is now projected downwards from the equilibrium position
+with speed $u_{0},$ show that the speed $v$ of the ball at distance
+$x$ below the equilibrium position is given by 
+\[
+v^{2}+\frac{\lambda}{lm}x^{2}=u_{0}^{2}.
+\]
+At distance $h$, where $\lambda h^{2}<lmu_{0}^{2},$ below the equilibrium
+position is a horizontal surface on which the ball bounces with a
+coefficient of restitution $e$. Show that after one bounce the velocity
+$u_{1}$ at $x=0$ is given by 
+\[
+u_{1}^{2}=e^{2}u_{0}^{2}+\frac{\lambda}{lm}h^{2}(1-e^{2}),
+\]
+and that after the second bounce the velocity $u_{2}$ at $x=0$ is
+given by 
+\[
+u_{2}^{2}=e^{4}u_{0}^{2}+\frac{\lambda}{lm}h^{2}(1-e^{4}).
+\]
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Two identical uniform cylinders, each of mass $m,$ lie in contact
+with one another on a horizontal plane and a third identical cylinder
+rests symmetrically on them in such a way that the axes of the three
+cylinders are parallel. Assuming that all the surfaces in contact
+are equally rough, show that the minimum possible coefficient of friction
+is $2-\sqrt{3}.$ 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+A school has $n$ pupils, of whom $r$ play hocket, where $n\geqslant r\geqslant2.$
+All $n$ pupils are arranged in a row at random. 
+
+\begin{questionparts}
+\item What is the probability that there is a hockey player at each end
+of the row?
+\item What is the probability that all the hockey players are standing together?
+\item By considering the gaps between the non-hockey-players, find the probability
+that no two hockey players are standing together, distinguishing between
+cases when the probability is zero and when it is non-zero. 
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A scientist is checking a sequence of microscope slides for cancerous
+cells, marking each cancerous cell that she detects with a red dye.
+The number of cancerous cells on a slide is random and has a Poisson
+distribution with mean $\mu.$ The probability that the scientist
+spots any one cancerous cell is $p$, and is independent of the probability
+that she spots any other one. 
+\begin{questionparts}
+\item Show that the number of cancerous cells which she marks on a single
+slide has a Poisson distribution of mean $p\mu.$ 
+\item Show that the probability $Q$ that the second cancerous cell which
+she marks is on the $k$th slide is given by 
+\[
+Q=\mathrm{e}^{-\mu p(k-1)}\left\{ (1+k\mu p)(1-\mathrm{e}^{-\mu p})-\mu p\right\} .
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+\begin{questionparts}
+\item Find the maximum value of $\sqrt{p(1-p)}$
+as $p$ varies between $0$ and $1$. 
+\item Suppose that a proportion $p$ of the population is female.
+In order to estimate $p$ we pick a sample of $n$ people at random
+and find the proportion of them who are female. Find the value of
+$n$ which ensures that the chance of our estimate of $p$ being more
+than $0.01$ in error is less than 1\%. 
+\item Discuss how the required value of $n$ would be affected if
+(a) $p$ were the proportion of people in the population who are left-handed;
+(b) $p$ were the proportion of people in the population who are millionaires. 
+\end{questionparts}
+\end{question}
+	
+\end{document}

@@ -1,0 +1,616 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2013
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+\def\i{{\mathrm i}}
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Given that $t= \tan \frac12 x$, show that 
+$\dfrac {\d t}{\d x} = \frac12(1+t^2)$ and $ \sin x = \dfrac {2t}{1+t^2}\,$.
+
+Hence show that
+\[
+\int_0^{\frac12\pi} \frac 1{1+a \sin x}\, \d x = 
+\frac2 {\sqrt{1-a^2}} \arctan \frac{\sqrt{1-a}}{\sqrt{1+a}}\,
+\ \ \ \ \ \ \ \ \ \ \ (0<a<1).
+\]
+
+Let 
+\[
+I_n = \int_0^{\frac12\pi} \frac{ \sin ^nx}{2+\sin x} \, \d  x
+\ \ \ \ \ \ \ \ \ \ \ (n\ge0).
+\]
+By considering  
+$I_{n+1}+2I_{n}\,$, or otherwise,  evaluate $I_3$.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+In this question, you may ignore questions of convergence.
+
+Let $y= \dfrac {\arcsin x}{\sqrt{1-x^2}}\,$. Show that 
+\[
+(1-x^2)\frac {\d y}{\d x} -xy -1 =0 
+\]
+and prove that, for 
+any positive integer $n$,
+\[
+(1-x^2) \frac{\d^{n+2}y}{\d x^{n+2}} - (2n+3)x \frac{\d ^{n+1}y}{\d x ^{n+1}}
+-(n+1)^2 \frac{\d^ny}{\d x^n}=0\,
+.
+\]
+Hence obtain  the                
+Maclaurin series for $ \dfrac {\arcsin x}{\sqrt{1-x^2}}\,$, giving  the   
+general term for  odd and for even powers of $x$. 
+
+Evaluate the infinite sum
+\[
+1 + \frac 1 {3!} + \frac{2^2}{5!} + \frac {2^2\times 3^2}{7!}+\cdots + 
+\frac {2^2\times 3^2\times \cdots \times n^2}{(2n+1)!} + \cdots\,.
+\] 
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The four vertices  $P_i$ ($i= 1, 2, 3, 4$) of a regular tetrahedron
+lie on the surface of a sphere 
+with centre at $O$ and of radius 1.  
+The position vector of $P_i$ with respect to $O$ is ${\bf p}_i$
+ ($i= 1, 2, 3, 4$). Use the fact             that
+${\bf p}_1+ {\bf p}_2+{\bf p}_3+{\bf p}_4={\bf 0}\,$ 
+to show that
+ ${\bf p}_i \,.\, {\bf p}_j =-\frac13\,$
+ for $i\ne j$. 
+
+Let $X$ be any point on the surface of the sphere, and let
+$XP_i$ denote the length of the line joining $X$ and $P_i$
+ ($i= 1, 2, 3, 4$).
+
+\begin{questionparts}
+\item
+By writing  $(XP_i) ^2$ as $({\bf p}_i- {\bf x)}\,.\,({\bf p}_i- {\bf x})$,
+where ${\bf x}$ is the position vector of $X$ with respect to $O$,
+ show that  
+ \[
+\sum_{i=1}^4(XP_i) ^2 =8\,.
+\]
+
+\item Given that $P_1$ has coordinates $(0,0,1)$ and that 
+the coordinates of $P_2$ are of the form $(a,0,b)$, where $a>0$,
+show that  $a=2\sqrt2/3$ and $b=-1/3$,
+ and find the coordinates of $P_3$ and $P_4$. 
+\item Show that 
+\[
+\sum_{i=1}^4 (XP_i)^4 = 4 \sum_{i=1}^4 (1- {\bf x}\,.\,{\bf p}_i)^2\,.
+\]
+By letting the coordinates of $X$ be $ (x,y,z)$, show further that $
+\sum\limits_{i=1}^4 (XP_i)^4$ is independent of the position of $X$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Show that $(z-\e^{\i\theta})(z-\e^{-\i\theta})=z^2 -2z\cos\theta +1\,$.
+
+Write down the $(2n)$th roots of $-1$ in the form $\e^{\i\theta}$, where
+$-\pi <\theta \le \pi$, and deduce that
+\[
+z^{2n} +1 
+= \prod_{k=1}^n \left(z^2-2z \cos\left( \tfrac{(2k-1)\pi}{2n}\right) +1\right)
+\,.
+\]
+Here, $n$ is a positive integer, and the $\prod$ notation denotes the product.
+ 
+\begin{questionparts}
+\item By substituting $z=\i$ show that, when $n$ is even,
+\[
+\cos  \left(\tfrac \pi {2n}\right) 
+\cos  \left(\tfrac {3\pi} {2n}\right) 
+\cos  \left(\tfrac {5\pi} {2n}\right) 
+\cdots
+\cos  \left(\tfrac{(2n-1) \pi} {2n}\right) 
+ = {(-1\vphantom{\dot A})}^{\frac12 n} 2^{1-n}
+\,.
+\]
+\item 
+Show that, when $n$ is odd,       
+\[
+\cos^2  \left(\tfrac \pi {2n}\right) 
+\cos ^2 \left(\tfrac {3\pi} {2n}\right) 
+\cos ^2 \left(\tfrac {5\pi} {2n}\right) 
+\cdots
+\cos ^2 \left(\tfrac{(n-2) \pi} {2n}\right) 
+= n 2^{1-n} 
+\,.
+\]
+ You may use without proof         
+the fact that
+$1+z^{2n}= (1+z^2)(1-z^2+z^4 - \cdots + z^{2n-2})\,$
+ when $n$ is odd.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+In this question, you may assume that, if $a$, $b$ and $c$ are positive integers
+such that $a$ and $b$ are coprime
+and $a$ divides $bc$, then $a$ divides $c$. (Two positive integers are
+said to be {\em coprime} if their highest common factor is 1.)
+
+\begin{questionparts}
+\item
+Suppose that there are positive integers $p$, $q$, $n$ and $N$ such that $p$ and $q$
+are coprime and  $q^nN=p^n$. Show that $N=kp^n$ for some positive integer $k$
+and deduce the value of~$q$.
+
+Hence prove that, for any positive integers $n$ and $N$, $\sqrt[n]N$
+ is either a positive integer or irrational.
+
+\item
+Suppose that there are positive integers $a$, $b$, $c$ and $d$ such that 
+$a$ and $b$ are coprime and $c$ and $d$ are coprime,
+and $a^ad^b = b^a c^b \,$.
+Prove that $d^b = b^a$ and deduce that, if $p$ is a prime factor of $d$, then
+$p$ is also a prime factor of $b$.
+
+If $p^m$ and $p^n$ are the highest powers of  the prime number $p$ that divide 
+$d$ and $b$, respectively, express $b$ in terms of $a$, $m$ and $n$ and hence show that
+$p^n\le n$. Deduce the value of $b$. (You may assume that
+if $x>0$ and $y\ge2$ then 
+ $y^x>x$.)
+
+Hence prove that, 
+if $r$ is a positive rational number such that $r^r$ is rational, then
+$r$ is a positive integer.
+
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Let $z$ and $w$ be complex numbers. Use a diagram to show that
+ $\vert z-w \vert \le \vert z\vert + \vert w \vert\,.$
+
+For any complex numbers $z$ and $w$,  $E$ is defined by 
+\[
+E = zw^* + z^*w +2 \vert zw \vert\,.
+\]
+
+\begin{questionparts}
+\item
+Show that 
+ $\vert z-w\vert^2 = \left( \vert z \vert + \vert w\vert\right)^2 -E\,$,
+and deduce that $E$ is real and non-negative.
+
+\item Show that 
+ $\vert 1-zw^*\vert^2 = \left ( 1 +\vert zw \vert \right)^2 -E\,$.
+\end{questionparts}
+
+Hence show  that, if both $\vert z \vert >1$ and $\vert w \vert >1$, then
+\[
+ \frac {\vert z-w\vert} {\vert 1-zw^*\vert } 
+\le \frac{\vert z \vert   +\vert w\vert  }{1+\vert z  w \vert}\,.
+\]
+Does this inequality also hold if  both $\vert z \vert <1$ and 
+$\vert w \vert <1$?
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+\item Let $y(x)$ be a solution of the differential equation 
+$  \dfrac {\d^2 y}{\d x^2}+y^3=0$ 
+with $y = 1$ and $\dfrac{\d y}{\d x} =0$ at $x=0$, and let
+ \[
+{\rm E} (x)=
+\left ( \frac {\d y}{\d x}\right)^{\!\!2} + \tfrac 12 y^4\,.
+\]
+Show by differentiation that ${\rm E}$
+is constant and deduce that $ \vert y(x) \vert \le 1$ for all $x$.
+
+
+\item Let $v(x)$ be a solution of the differential equation 
+$ 
+\dfrac{\d^2 v}{\d x^2} + x \dfrac {\d v}{\d x} +\sinh v =0
+$  
+with $v = \ln 3$ and $\dfrac{\d v}{\d x} =0$ at $x=0$, and let
+ \[
+{\rm E} (x)=
+\left ( \frac {\d v}{\d x}\right)^{\!\!2} + 2 \cosh v\,.
+\]
+Show that $\dfrac{\d{\rm E}}{\d x}\le 0$ for $x\ge0$ 
+and deduce that $\cosh v(x) \le \frac53$
+ for $x\ge0$.
+
+
+
+\item Let $w(x)$ be a solution of the differential equation 
+\[
+\frac{\d^2 w}{\d x^2} + (5\cosh x - 4 \sinh x -3) \frac{\d w}{\d x} + 
+(w\cosh w + 2 \sinh w) =0
+\]
+with $\dfrac{\d w }{\d x}=\dfrac 1 { \sqrt 2 }$ and $w=0$ at $x=0$. 
+Show that $\cosh w(x)  \le \frac54$ for $x\ge0$. 
+
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+Evaluate $\displaystyle \sum_{r=0}^{n-1} \e^{2\i(\alpha + r\pi/n)}$
+where $\alpha$ is a fixed angle and $n\ge2$. 
+
+The fixed point $O$ is a distance $d$ from a fixed line $D$.
+For any point $P$, let
+$s$ be the distance from $P$ to $D$ and let $r$
+ be the distance from $P$ to $O$. Write
+down an expression for $s$ in terms of $d$, $r$ and the angle $\theta$, 
+where $\theta$
+ is as shown
+in the diagram below.
+
+
+
+
+
+%\vspace{-1cm}
+\begin{center}
+\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-6.44,-2.23)(2.5,6.7)
+\psbezier(-5.93, 5.21)(1.07, 4.02)(1.05, 0.57)(-1.07, -1.78)
+\psline(2,6)(2,-2)
+\psline(2,4)(-1.99,3.99)
+\psline(-1.99,3.99)(-5,0)
+\psline(-5,0)(2,0)
+\psline{<->}(-5.02,-0.25)(2,-0.25)
+\pscustom{\parametricplot[linewidth=0.1pt]{-0.0}{0.9245031027687439}{1*cos(t)+-5|1*sin(t)+0}\lineto(-5,0)\closepath}
+\rput[tl](-3.7,2.48){$r$}
+\rput[tl](-5.5,0.05){$O$}
+\rput[tl](-4.5,0.5){$\theta$}
+\rput[tl](-6.33,5.61){$E$}
+\rput[tl](-1.7,-0.38){$d$}
+\rput[tl](0.01,4.45){$s$}
+\rput[tl](-2.15,4.55){$P$}
+\rput[tl](1.84,6.66){$D$}
+\end{pspicture*}     
+\end{center}
+
+ The curve $E$ shown in the diagram is 
+such that, for any point $P$ on $E$, the 
+relation
+$ 
+r = k s
+$ holds, 
+where $k$ is a fixed number with $0< k <1$. 
+
+
+Each of the $n$ lines $L_1$, $\ldots\,$, $L_n$   
+passes through $O$
+and the angle between adjacent lines is~$\frac \pi n$. The line $L_j$ 
+($j=1$,  $\ldots\,$, $n$) 
+intersects $E$ in two points forming a chord of length $l_j$.   
+Show that, for $n\ge2$, 
+\[
+\sum_{j=1}^n \frac 1 {l_j} = \frac {(2-k^2)n} {4kd}\,.
+\]
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A sphere of radius $R$ and uniform density $\rho_{\text{s}}$ is floating in 
+a large tank of liquid of uniform density $\rho$. 
+Given that the centre of the sphere is a distance 
+$x$ above the level of the liquid, where $x<R$, show that the volume
+of liquid displaced is 
+\[
+\frac \pi 3 (2R^3-3R^2x +x^3)\,. 
+\]
+
+The sphere is acted upon by two forces only: its weight and 
+an upward force equal in magnitude to the weight of the liquid it has 
+displaced. Show that
+\[
+4 R^3\rho_{\text{s}} (g+\ddot x) = (2R^3 -3R^2x +x^3)\rho g\,.
+\]
+Given that the sphere is in equilibrium when $x=\frac12 R$, find 
+$\rho_{\text{s}}$ in terms of $\rho$. Find, in terms of $R$ and $g$,
+ the period of small oscillations 
+about this equilibrium position.
+\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A uniform rod $AB$ has mass $M$ and length $2a$. The point
+$P$ lies on the rod a distance $a-x$ from~$A$. Show that the 
+moment of inertia of the rod about an axis through $P$ and 
+perpendicular to 
+the rod is
+\[
+\tfrac13 M(a^2 +3x^2)\,.
+\]
+
+The rod is free 
+to rotate, in a horizontal plane, about a fixed vertical axis through $P$. 
+Initially the rod is at rest. The end $B$ is struck by a particle of
+mass $m$ moving horizontally with speed $u$ in a direction
+perpendicular to the rod.
+The coefficient of restitution between the rod and the particle is $e$.
+Show that the angular velocity of the rod immediately after impact
+is 
+\[
+\frac{3mu(1+e)(a+x)}{M(a^2+3x^2) +3m(a+x)^2}\,.
+\]
+
+In the case $m=2M$, find the value of $x$ for which the angular velocity 
+is greatest and show that this angular velocity is $u(1+e)/a\,$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+An equilateral triangle, comprising three light rods each of
+length $\sqrt3a$, has a particle of mass $m$ attached to each of 
+its vertices. The triangle is suspended horizontally from a point vertically
+above its centre by three identical springs, so that the springs and 
+rods form a tetrahedron.
+ Each spring has natural length $a$ and modulus
+of elasticity $kmg$, and is light. 
+Show that when the springs make an angle $\theta$
+with the horizontal the tension in each spring is
+\[
+\frac{ kmg(1-\cos\theta)}{\cos\theta}\,.
+\]
+Given that the triangle is in equilibrium when $\theta = \frac16 \pi$, show
+that $k=4\sqrt3 +6$.
+
+The triangle is released from rest from the position 
+at which $\theta=\frac13\pi$.
+Show that when it passes through the equilibrium position its speed $V$ 
+satisfies 
+\[
+V^2 = \frac{4ag}3(6+\sqrt3)\,.
+\]
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+A list consists only of letters $A$ and $B$ arranged in 
+a row. In the list, there are 
+$a$ letter $A$s and $b$ letter $B$s, where $a\ge2$ and $b\ge2$, and
+  $a+b=n$.
+Each possible ordering of the letters is equally probable.
+The random variable $X_1$ is defined by
+\[
+X_1 = 
+\begin{cases}
+1 & \text{if the first letter in the row is $A$};\\
+0 & \text{otherwise.}
+\end{cases}
+\]
+The random variables $X_k$ ($2 \le k \le n$) are defined by
+\[
+X_k = 
+\begin{cases}
+1 & \text{if the $(k-1)$th  letter  is $B$ and the $k$th is $A$};\\
+0 & \text{otherwise.}
+\end{cases}
+\]
+The random variable $S$ is defined by $S = \sum\limits_ {i=1}^n X_i\,$.
+\begin{questionparts}
+\item Find expressions for $\E(X_i)$, 
+distinguishing between the cases $i=1$ and $i\ne1$, and show
+that $\E(S)= \dfrac{a(b+1)}n\,$.
+\item Show that:
+\begin{questionparts}
+\item[\bf (a)] for $j\ge3$, \  $\E(X_1X_j) = \dfrac{a(a-1)b}{n(n-1)(n-2)}\,$;
+
+\item[\bf (b)] $\ds \sum\limits_{i=2}^{n-2} \bigg( \sum\limits_{j=i+2}^n \E(X_iX_j)\bigg)
+= \dfrac{a(a-1)b(b-1)}{2n(n-1)}\,$;
+
+\item[\bf (c)] $\var(S) = \dfrac {a(a-1)b(b+1)}{n^2(n-1)}\,$.
+\end{questionparts}
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+\begin{questionparts}
+\item
+The continuous random variable $X$ satisfies
+$0\le X\le 1$, and has probability density function
+$\f(x)$ and cumulative distribution
+function $\F(x)$. The 
+greatest value of $\f(x)$ is~$M$, so that $0\le \f(x) \le M$. 
+
+\begin{questionparts}
+\item[\bf (a)]
+Show that $0\le \F(x) \le Mx$ for $0\le x\le1$.
+
+\item[\bf (b)]
+For any function $\g(x)$, show that
+\[
+\int_0^1 2 \g(x) \F(x) \f(x) \d x =  \g(1) - 
+ \int_0^1 \g'(x) \big( \F(x)\big)^2 \d x
+\,.
+\]
+\end{questionparts}
+\item
+The 
+continuous random variable $Y$ 
+satisfies
+$0\le Y\le 1$, and has probability density function
+$k \F(y) \f(y)$, where $\f$ and $\F$ are as above. 
+
+\begin{questionparts}
+\item[\bf (a)]
+Determine the
+value of the constant $k$.
+\item[\bf (b)]
+Show that
+\[
+1+ \frac{nM}{n+1}\mu_{n+1} - \frac{nM}{n+1}
+\le \E(Y^n) \le 2M\mu_{n+1}\,,
+\]
+where $\mu_{n+1} = \E(X^{n+1})$ and $n\ge0$.
+\item[\bf (c)]
+Hence  show that, for $n\ge 1$,
+\[
+\mu _n \ge \frac{n}{(n+1)M} -\frac{n-1}{n+1}
+\,.\]
+
+\end{questionparts}
+\end{questionparts}
+\end{question}
+
+\end{document}

@@ -1,0 +1,443 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2003
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+It is given that $\sum\limits_{r=-1}^ {n} r^2$  can be written  in the form 
+$pn^3 +qn^2+rn+s\,$, where $p\,$, $q\,$, $r\,$ and $s$ are numbers. By setting $n=-1$, $0$, $1$  and $2$,
+obtain four  equations that must be satisfied by $p\,$, $q\,$, $r\,$ and $s$ 
+and hence show that
+\[
+{\ts \sum\limits_{r=0} ^n} r^2= {\textstyle \frac16} n(n+1)(2n+1)\;.
+\]
+
+Given that $\sum\limits_{r=-2}^ nr^3$  can be written  in the form 
+$an^4 +bn^3+cn^2+dn +e\,$,
+show similarly that
+\[
+{\ts \sum\limits_{r=0} ^n} r^3= {\textstyle \frac14} n^2(n+1)^2\;.
+\]
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The first question on an examination paper is:
+
+\hspace*{3cm}
+Solve for $x$ the equation \ \ \
+$\ds
+\frac 1x = \frac 1 a + \frac 1b \;.
+$
+
+\noindent
+where (in the question) $a$ and $b$ are given non-zero real numbers.
+One candidate writes $x=a+b$ as the solution. Show that there
+are no values of $a$ and $b$ for which this will give the correct answer.
+
+The  next question on the  examination paper is:
+
+\hspace*{3cm}
+Solve for $x$ the equation \ \ \ 
+$\ds
+\frac 1x = \frac 1 a + \frac 1b  +\frac 1c \;.
+$
+
+\noindent
+where (in the question) $a\,$, $b$ and $c$  are given non-zero numbers.
+The  candidate uses the same technique, giving the answer as
+$\ds
+x = a + b  +c \;.
+$
+Show that the candidate's
+answer will be correct if and only if  $a\,$, $b$ and $c$
+satisfy at least one of the equations
+$a+b=0\,$, $b+c=0$ or $c+a=0\,$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+\item
+ Show that  $ 2\sin(\half\theta)=\sin \theta$ 
+if and only if $\sin(\half\theta)=0\,$. 
+
+\item Solve the equation $2\tan (\half\theta) = \tan\theta\,$.
+ 
+\item
+Show that $2\cos(\half \theta)=\cos \theta$ 
+if and only if $\theta=(4n+2)\pi\pm 2\phi$ where $\phi$ is 
+defined by
+$\cos \phi=\half(\sqrt 3-1)\;$, $0\le \phi\le \frac{1}{2}\pi$, and 
+$n$ is any integer. 
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Solve the inequality
+$$\frac{\sin\theta+1}{\cos\theta}\le1\;$$
+where $0\le\theta<2\pi\,$ and $\cos\theta\ne0\,$.
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item
+In the binomial 
+expansion of $(2x+1/x^{2})^{6}\;$ for $x\ne0$, show that the
+ term which is independent of $x$ is $240$. 
+
+Find the term which is independent of $x$ in the binomial 
+expansion of $(ax^3+b/x^{2})^{5n}\,$.
+
+\item Let $\f(x) =(x^6+3x^5)^{1/2}\,$. By considering the expansion 
+ of
+$(1+3/x)^{1/2}\,$ show that the term
+which is independent of $x$ in the expansion 
+of $\f(x)$ in powers of $1/x\,$,  for $ \vert x\vert>3\,$, is $27/16\,$. 
+
+Show that there is no term independent of $x\,$ in the
+expansion  of $\f(x)$ in powers of $x\,$,  for $ \vert x\vert<3\,$. 
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+ Evaluate the following integrals, in the different cases that
+arise according to the value
+ of the positive constant
+$a\,$:
+\begin{questionparts}
+\item \hspace{1cm}
+$\ds
+\int_0^1  \frac 1 {x^2 + (a+2)x +2a} \; \d x  \;;
+$
+\\[3mm]
+
+\item
+\hspace{1cm}
+$\ds
+\int _{1}^2\frac 1 {u^2 +au +a-1} \; \d u  \;.
+$
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Let $k$ be an integer satisfying $0\le k \le 9\,$.
+Show that  $0\le 10k-k^2\le 25$ and that 
+$k(k-1)(k+1)$ is 
+divisible by $3\,$.
+
+For each $3$-digit number $N$, where $N\ge100$, let $S$  be the sum of the
+hundreds digit, the square of the {tens} digit and the
+cube of the {units} digit. Find the numbers $N$ such that
+$S=N$.
+
+\noindent[Hint: write $N=100a+10b+c\,$ where $a\,$, $b\,$ and $c$ are the
+digits of $N\,$.]
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+A liquid of fixed volume $V$ is made up of two chemicals $A$ and $B\,$. 
+A reaction takes place in which $A$ converts to $B\,$. The volume 
+of $A$ at time $t$ is $xV$ 
+and the volume of $B$ at time 
+$t$ is $yV$ where $x$ and $y$ depend on $t$ and $x+y=1\,$. 
+The rate at which $A$ converts into $B$ is given by $kVxy\,$,
+ where $k$ is a  positive constant. Show that if both $x$ and $y$ are
+ strictly positive at the start, then at time $t$
+\[
+y= \frac {D\e^{kt}}{1+D \e^{kt}} \;,
+\]
+where $D$ is a constant. 
+
+Does 
+$A$ ever completely convert to
+ $B\,$? Justify your answer.
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A particle is projected with speed  $V$ 
+at an angle $\theta$ above  the horizontal. 
+The particle passes through the  point $P$ which is a horizontal distance
+$d$ and a vertical distance
+$h$  from the point of projection. 
+Show that 
+\[
+T^2 -2kT + \frac{2kh}{d}+1=0\;,
+\]
+where $T=\tan\theta$ and $\ds k= \frac{V^2}{gd}\,$.
+
+%Derive an equation relating $\tan \theta$, $V$, $g$, $d$ and $h$. 
+Show that, if 
+$\displaystyle {kd > h + \sqrt {h^2 + d^2}}\;$,
+ there are two distinct possible angles of projection.
+
+
+
+Let these two angles be $\alpha$ and $\beta$. 
+Show that 
+$\displaystyle \alpha + \beta = \pi - \arctan ( {d/  h}) \,$.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+$ABCD$ is a uniform rectangular lamina and $X$ is a point on $BC\,$.
+The lengths of $AD$, $AB$ and $BX$ are  $p\,$, $q$ and $r$ respectively. 
+The triangle $ABX$ is cut off the lamina.
+Let $(a,b)$ be the position of the centre of gravity of the lamina,
+where the axes are such that 
+the coordinates of $A\,$, $D$ and $C$  are $(0,0)\,$,
+$(p,0)$ and $(p,q)$ respectively. Derive equations for
+$a$ and $b$ in terms of $p\,$, $q$ and $r\,$.
+
+ 
+When the resulting trapezium is freely suspended from the point $A\,$, 
+the side $AD$ is inclined at $45^\circ$ below the horizontal. 
+Show that 
+$\displaystyle r = q - \sqrt{q^2 - 3pq + 3p^2}\,$. You should justify 
+carefully the choice of sign in front of the square root.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A smooth plane is inclined at an angle $\alpha$ to the horizontal.
+$A$ and $B$ are two points a distance~$d$ apart
+on a line of greatest slope of the  plane, with $B$ higher than $A$. 
+A particle is projected up the plane from $A$ towards $B$ with 
+initial speed  $u$, and simultaneously another particle 
+is released from rest at $B\,$. Show that they collide after 
+a time $\displaystyle {d /u}\,$.
+
+The coefficient of restitution between the two particles is $e$ and both
+particles have mass $m\,$. 
+Show that the loss of kinetic energy in the collision is 
+$\frac14 {m u^2 \big( 1 - e^2 \big) }\,$.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+In a bag are $n$ balls numbered 1, 2, $\ldots\,$, $n\,$. When a ball is taken
+out of the bag, each ball is equally likely to be taken. 
+\begin{questionparts}
+\item A ball is taken out of the bag. The number on the ball is noted
+and the ball is replaced in the bag. The process is repeated once.
+Explain why the expected value of the product of the numbers on the two balls
+is 
+\[
+\frac 1 {n^2}  \sum_{r=1}^n\sum_{s=1}^n rs 
+\]
+and simplify this expression.
+
+\item
+ A ball is taken out of the bag. The number on the ball is noted
+and the ball is {\sl not} replaced in the bag. Another ball is taken out of the 
+bag and the number on this ball is noted.
+Show that the expected value of the product of the two numbers is 
+\[
+\frac{(n+1)(3n+2)}{12}\;.
+\]
+\end{questionparts}
+
+\noindent{\bf Note: } $\ds\sum_{r=1}^n r = \frac12 n(n+1)$ \ \ and \  \
+ $\ds\sum_{r=1}^n r^2 = \frac16 n(n+1)(2n+1)\;$.
+
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+If a football match ends in a draw, 
+there may be a "penalty shoot-out". Initially the 
+teams each take 5 shots at
+goal. If one team scores more times than the other, 
+then that team wins. If the scores are level, the
+teams take shots alternately until 
+one team scores and the other team does not score,
+both teams having taken the same number of shots. The team that scores wins.
+
+Two teams, Team A and Team B, take part in a penalty shoot-out.
+Their probabilities of  scoring when they take a single 
+shot are  $p_A$ and $p_B$ respectively.
+Explain why the
+probability $\alpha$  of neither side having won at the end of the 
+initial $10$-shot  period is given by
+$$\alpha =\sum_{i=0}^5\binom{5}{i}^2(1-p_A)^i(1-p_B)^i\,p_A^{5-i}p_B^{5-i}.$$
+
+
+Show that the expected number of shots  taken is 
+$\ds10+ \frac{2\alpha}\beta\;,$ 
+where
+$\beta=p_A+p_B-2p_Ap_B\,.$
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+ Jane goes out with any of her friends 
+who call, except that she never  goes out with more
+than two friends in a day. The number of her friends who call
+on a given day follows  a Poisson distribution with parameter $2$.
+Show that the average number of friends she sees in a day is~$2-4\e^{-2}\,$.
+
+Now Jane has a new friend who calls on any given day with 
+probability $p$. Her old friends call as before, independently
+of the new friend.  She never  goes out with more
+than two friends in a day. Find the average  number of friends she now
+sees in a day.
+\end{question}
+	
+\end{document}

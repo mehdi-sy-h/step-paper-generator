@@ -1,0 +1,475 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1998
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Let
+$$
+{\rm f}(x)=\sin^2x + 2 \cos x + 1
+$$
+for $0 \le x \le 2\pi$. Sketch the curve $y={\rm f}(x)$, giving
+the coordinates of the stationary points. Now let
+$$
+\hspace{0.6in}{\rm g}(x)={a{\rm f}(x)+b \over c{\rm f}(x)+d} 
+\hspace{0.8in} 
+ad\neq bc\,,\; d\neq -3c\,,\;
+d\neq c\;.
+$$
+Show that the stationary points of $y={\rm g}(x)$ occur at the same
+values of $x$ as those of $y={\rm f}(x)$, and find the corresponding 
+values of ${\rm g}(x)$.
+
+Explain why, if $d/c <-3$ or $d/c>1$, $|{\rm g}(x)|$ 
+cannot be arbitrarily large.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Let 
+$$
+{\rm I}(a,b) = \int_0^1 t^{a}(1-t)^{b} \, \d t \;
+\qquad (a\ge0,\ b\ge0) .$$ 
+
+
+\begin{questionparts}
+\item Show that  ${\rm I}(a,b)={\rm I}(b,a)$,
+\item Show that ${\rm I}(a,b)={\rm I}(a+1,b)+{\rm I}(a,b+1)$.
+\item Show that $(a+1){\rm I}(a,b)=b{\rm I}(a+1,b-1)$ 
+when $a$ and $b$ are positive  
+and hence calculate ${\rm I}(a,b)$ when $a$ and $b$ are positive integers.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The value $V_N$ of a bond after $N$ days is determined by the equation
+$$
+V_{N+1} = (1+c) V_{N} -d \qquad (c>0, \ d>0),
+$$
+where $c$ and $d$ are given  constants. 
+By looking for
+solutions of the form $V_T= A k^T + B$ for some constants $A,B$ and $k$,
+or otherwise, find $V_N$ in terms of $V_0$. 
+
+What is the solution for $c=0$? Show that this is the limit 
+(for fixed $N$) as $c\rightarrow 0$ of your solution for $c>0$.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Show that the equation (in plane polar
+coordinates) $r=\cos\theta$, for $-\frac{1}{2}\pi \le \theta \le
+\frac{1}{2}\pi$, represents  a circle.
+
+Sketch the curve $r=\cos2\theta$ for $0\le\theta\le 2\pi$, 
+and describe the curves
+$r=\cos2n\theta$, where $n$ is an integer. Show that the area
+enclosed by such a curve is independent of $n$.
+
+Sketch also the curve $r=\cos3\theta$ for $0\le\theta\le 2\pi$.
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The exponential of a square matrix ${\bf A}$ is defined to be
+$$
+\exp ({\bf A}) = \sum_{r=0}^\infty {1\over r!} {\bf A}^r \,,
+$$
+where ${\bf A}^0={\bf I}$  and  $\bf I$ is the identity matrix. 
+
+Let 
+$$
+{\bf M}=\left(\begin{array}{cc} 0 & -1 \\ 1 & \phantom{-} 0
+\end{array}
+\right) \,.
+$$
+Show that ${\bf M}^2=-{\bf I}$ and hence
+ express $\exp({\theta {\bf M}})$ as a single  $2\times 2$ matrix,
+where $\theta$ is a real number.
+Explain the geometrical significance of $\exp({\theta {\bf M}})$.
+
+Let
+ $$
+{\bf N}=\left(\begin{array}{rr} 0 & 1 \\ 0 & 0 \end{array}\right) \,.
+$$
+Express
+similarly  $\exp({s{\bf N}})$, where $s$ is  a real number, and
+ explain the geometrical significance of $\exp({s{\bf N}})$.
+
+For which values of $\theta$ does
+$$
+\exp({s{\bf N}})\; \exp({\theta {\bf M}})\,  = \,
+\exp({\theta {\bf M}})\;\exp({s{\bf N}})
+$$
+for all $s$?
+Interpret this fact geometrically.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item
+Show that four vertices of a cube, no two of which are adjacent,
+form the vertices of a regular tetrahedron. 
+Hence, or otherwise, find the volume of a regular 
+tetrahedron whose edges are of unit length.
+\item
+Find the volume of a regular octahedron whose edges are of unit length.
+\item
+Show that the centres of the faces of a cube form the vertices
+of a regular octahedron. Show that its volume is half that of the 
+tetrahedron whose vertices are the vertices of the cube.
+\end{questionparts}
+
+\noindent
+[{\em A regular tetrahedron (octahedron) 
+has four (eight) faces, all equilateral triangles.}]
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Sketch the graph of ${\rm f}(s)={ \e}^s(s-3)+3$ for $0\le s<\infty$. Taking
+${\e\approx 2.7}$, find the smallest positive integer, $m$, such that
+${\rm f}(m) >0$.
+
+Now let
+$$
+{\rm b}(x) = {x^3 \over \e^{x/T} -1} \,
+$$
+where $T$ is a positive constant. 
+Show that ${\rm b}(x)$ has a single turning
+point in $0 <x<\infty$. By considering the behaviour for small $x$
+and for large $x$, sketch ${\rm b}(x)$ for $0\le x < \infty$.
+
+Let 
+$$
+ \int_0^\infty {\rm b}(x)\,\d x =B,
+$$
+which may be assumed to be finite.
+Show that $B = K  T^n$ where $K$ is a constant,  and $n$ is an
+integer which you should determine.
+
+Given that $\displaystyle{B \approx 2 \int_0^{Tm} {\rm b}(x) {\,\rm d }x}$,   
+use your graph of ${\rm b}(x)$ to  find a rough estimate for $K$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+\begin{questionparts}
+%\item[(i)] Consider the sphere of radius $a$ and centre the origin.
+%Show that the line through the point with position vector
+%${\bf b}$ and parallel to a unit 
+%vector ${\bf m}$ intersects the sphere at two points if
+%$$
+%a^2 > {\bf b}.{\bf b} -({\bf b}.{\bf m})^2 \,.
+%$$
+%What is the corresponding condition for there to be precisely one
+%point of intersection?
+%If this point has position vector ${\bf p}$, show that the line
+%is perpendicular to ${\bf p}$.
+
+\item Show that the line ${\bf r} ={\bf b} + \lambda {\bf m}$,
+where $\bf m$ is a unit vector,
+intersects the sphere ${\bf r}\cdot {\bf r} = a^2$ at two points if
+$$
+a^2 > {\bf b}\cdot{\bf b} -({\bf b}\cdot{\bf m})^2 \,.
+$$
+Write down  the corresponding condition for there to be precisely one
+point of intersection.
+If this point has position vector ${\bf p}$, show that ${\bf m}\cdot{\bf p}=0$.
+
+\item
+Now consider a second sphere of radius $a$
+and a plane perpendicular to a unit vector~${\bf n}$.
+The centre of the sphere 
+has position vector ${\bf d}$
+and the 
+minimum distance from the origin to the plane is $l$. What is the
+condition for the plane to be tangential to this second sphere?
+
+\item
+Show that the first and second spheres intersect at right angles 
+({\em i.e.\ }the two radii to each point of 
+intersection are perpendicular) if
+$$
+{\bf d}\cdot{\bf d} = 2 a^2 \,.
+$$
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A uniform right circular cone of mass $m$ has 
+base of radius $a$ and perpendicular
+height $h$ from base to apex. 
+Show that its moment of inertia about its axis is ${3\over 10} ma^2$, 
+and calculate its moment of inertia about an axis through
+its apex parallel to its base.
+\newline[{\em Any theorems used should be stated clearly.}]
+
+The cone is now suspended from its apex and allowed
+to perform small oscillations. Show that their
+period is
+$$
+2\pi\sqrt{ 4h^2 + a^2\over 5gh} \,.
+$$
+\newline[{\em You may assume that the centre of mass of the cone
+is a distance ${3\over 4}h$ from its apex.}]
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+Two identical spherical balls, moving on a horizontal, smooth table, collide
+in such a way that both momentum and kinetic energy are conserved. 
+Let ${\bf v}_1$ and ${\bf v}_2$ be the
+ velocities of the balls before the collision 
+and let ${\bf v}'_1$ and ${\bf v}'_2$ be 
+the velocities of the balls after the collision, where
+  ${\bf v}_1$, ${\bf v}_2$, ${\bf v}'_1$ and ${\bf v}'_2$ are two-dimensional 
+vectors. Write down 
+the equations for conservation of momentum and kinetic energy in terms of 
+these vectors. Hence show that their relative speed is also conserved.
+
+Show that, if one ball is initially at rest but after the collision
+both balls are moving, their final velocities are perpendicular.
+
+Now suppose that one ball is initially at rest, and the second is
+moving with speed $V$. After a collision in which they lose
+a proportion $k$ of their original kinetic energy ($0\le k\le 1$), 
+the direction of motion of the second ball has changed by an angle 
+$\theta$. Find a quadratic equation satisfied by the final speed of the 
+second ball, with coefficients depending on $k$, $V$ and $\theta$. 
+Hence show that $k\le \frac{1}{2}$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Consider a simple pendulum of length $l$ and angular displacement
+$\theta$, which is {\bf not} assumed to be small. Show that
+$$
+{1\over 2}l \left({\d\theta\over \d t}\right)^2 = g(\cos\theta
+-\cos\gamma)\,,
+$$
+where $\gamma$ is the maximum value of $\theta$. Show also that
+the period $P$ is given by
+$$
+P= 2 \sqrt{l\over g} \int_0^\gamma \left(
+\sin^2(\gamma/2)-\sin^2(\theta/2)
+\right)^{-{1\over 2}} \,\d\theta \,.
+$$
+By using the substitution $\sin(\theta/2)=\sin(\gamma/2) \sin\phi$,
+and then finding an approximate expression for the integrand using
+the binomial expansion,
+show that for small values of $\gamma$ the period is approximately
+$$
+2\pi \sqrt{l\over g} \left(1+{\gamma^2\over 16}\right) \,.
+$$
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+The mountain villages $A,B,C$ and $D$ lie at the vertices of a
+tetrahedron, and each pair of villages is joined by a road. After
+a snowfall the probability that any road is blocked is $p$, and 
+is independent of the conditions of any other road. The 
+probability that, after a snowfall,
+ it is possible to travel from any village to
+any other village by some route is $P$.  Show that 
+$$
+P =1- p^2(6p^3-12p^2+3p+4).
+$$
+
+%In the case $p={1\over 3}$ show that this probability is ${208 \over 243}$.
+
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Write down the probability of obtaining $k$ heads in $n$ tosses
+of a fair coin. Now suppose that $k$ is known but $n$ is unknown.
+A {\em maximum likelihood estimator} (MLE) of $n$ is defined
+to be a value (which must be an integer) of $n$ which maximizes 
+the probability of $k$ heads.
+
+A friend has thrown a fair coin a number of times. She
+tells you that she has observed one head. Show that in this case there
+are {\em two} MLEs of the number of tosses she has made. 
+
+She now tells you that in a repeat of the exercise she has 
+observed $k$ heads.  Find the two MLEs of the number of tosses 
+she has made. 
+
+She next uses a coin biased with probability $p$ (known) of showing 
+a head, and again tells you that she has observed $k$ heads.
+Find the MLEs of the number of tosses made. What is the condition for 
+the MLE to be unique?
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+A hostile naval power possesses a large, unknown number $N$ of 
+submarines. Interception of radio signals yields a small number $n$ 
+of their identification numbers $X_i$ ($i=1,2,...,n$), which are taken
+to be independent and uniformly distributed over the continuous range
+from $0$ to $N$. Show that $Z_1$ and $Z_2$, defined by
+$$
+Z_1 = {n+1\over n} {\max}\{X_1,X_2,...,X_n\} 
+\hspace{0.3in} {\rm and} \hspace{0.3in}
+Z_2 = {2\over n} \sum_{i=1}^n X_i \;,
+$$
+both have means equal to $N$.
+
+Calculate the variance of $Z_1$ and of $Z_2$. Which estimator
+do you prefer, and why?
+\end{question}
+	
+\end{document}

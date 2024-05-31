@@ -1,0 +1,579 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1992
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+
+
+\item Given that 
+\[
+\mathrm{f}(x)=\ln(1+\mathrm{e}^{x}),
+\]
+prove that $\ln[\mathrm{f}'(x)]=x-\mathrm{f}(x)$ and that $\mathrm{f}''(x)=\mathrm{f}'(x)-[\mathrm{f}'(x)]^{2}.$
+Hence, or otherwise, expand $\mathrm{f}(x)$ as a series in powers
+of $x$ up to the term in $x^{4}.$ 
+
+
+\item Given that 
+\[
+\mathrm{g}(x)=\frac{1}{\sinh x\cosh2x},
+\]
+explain why $\mathrm{g}(x)$ can not be expanded as a series of non-negative
+powers of $x$ but that $x\mathrm{g}(x)$ can be so expanded. Explain
+also why this latter expansion will consist of even powers of $x$
+only. Expand $x\mathrm{g}(x)$ as a series as far as the term in $x^{4}.$
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The matrices $\mathbf{I}$ and $\mathbf{J}$ are 
+\[
+\mathbf{I}=\begin{pmatrix}1 & 0\\
+0 & 1
+\end{pmatrix}\quad\mbox{ and }\quad\mathbf{J}=\begin{pmatrix}1 & 1\\
+1 & 1
+\end{pmatrix}
+\]
+respectively and $\mathbf{A}=\mathbf{I}+a\mathbf{J},$ where $a$
+is a non-zero real constant. Prove that 
+\[
+\mathbf{A}^{2}=\mathbf{I}+\tfrac{1}{2}[(1+2a)^{2}-1]\mathbf{J}\quad\mbox{ and }\quad\mathbf{A}^{3}=\mathbf{I}+\tfrac{1}{2}[(1+2a)^{3}-1]\mathbf{J}
+\]
+and obtain a similar form for $\mathbf{A}^{4}.$
+
+
+If $\mathbf{A}^{k}=\mathbf{I}+p_{k}\mathbf{J},$ suggest a suitable
+form for $p_{k}$ and prove that it is correct by induction, or otherwise. 
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Sketch the curve $C_{1}$ whose parametric equations are $x=t^{2},$
+$y=t^{3}.$
+
+
+The circle $C_{2}$ passes through the origin $O$. The points $R$
+and $S$ with real non-zero parameters $r$ and $s$ respectively
+are other intersections of $C_{1}$ and $C_{2}.$ Show that $r$ and
+$s$ are roots of an equation of the form 
+\[
+t^{4}+t^{2}+at+b=0,
+\]
+where $a$ and $b$ are real constants. 
+
+
+By obtaining a quadratic equation, with coefficients expressed in
+terms of $r$ and $s$, whose roots would be the parameters of any
+further intersections of $C_{1}$ and $C_{2},$ or otherwise, show
+that $O$, $R$ and $S$ are the only real intersections of $C_{1}$
+and $C_{2}.$  
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}
+A set of curves $S_{1}$ is defined by the equation 
+\[
+y=\frac{x}{x-a},
+\]
+where $a$ is a constant which is different for different members
+of $S_{1}.$ Sketch on the same axes the curves for which $a=-2,-1,1$
+and $2$. 
+
+
+A second of curves $S_{2}$ is such that at each intersection between
+a member of $S_{2}$ and a member of $S_{1}$ the tangents of the
+intersecting curves are perpendicular. On the same axes as the already
+sketched members of $S_{1},$ sketch the member of $S_{2}$ that passes
+through the point $(1,-1)$. 
+
+
+Obtain the first order differential equation for $y$ satisfied at
+all points on all members of $S_{1}$ (i.e. an equation connecting
+$x,y$ and $\mathrm{d}y/\mathrm{d}x$ which does not involve $a$). 
+
+
+State the relationship between the values of $\mathrm{d}y/\mathrm{d}x$
+on two intersecting curves, one from $S_{1}$ and one from $S_{2},$
+at their intersection. Hence show that the differential equation for
+the curves of $S_{2}$ is 
+\[
+x=y(y-1)\dfrac{\mathrm{d}y}{\mathrm{d}x}.
+\]
+Find an equation for the member of $S_{2}$ that you have sketched.
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+The tetrahedron $ABCD$ has $A$ at the point $(0,4,-2)$. It is symmetrical
+about the plane $y+z=2,$ which passes through $A$ and $D$. The
+mid-point of $BC$ is $N$. The centre, $Y$, of the sphere $ABCD$
+is at the point $(3,-2,4)$ and lies on $AN$ such that $\overrightarrow{AY}=3\overrightarrow{YN}.$
+Show that $BN=6\sqrt{2}$ and find the coordinates of $B$ and $C$. 
+
+
+The angle $AYD$ is $\cos^{-1}\frac{1}{3}.$ Find the coordinates
+of $D$. {[}There are two alternative answers for each point.{]}  
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+Given that ${\displaystyle I_{n}=\int_{0}^{\pi}\frac{x\sin^{2}(nx)}{\sin^{2}x}\,\mathrm{d}x,}$
+where $n$ is a positive integer, show that $I_{n}-I_{n-1}=J_{n},$
+where 
+\[
+J_{n}=\int_{0}^{\pi}\frac{x\sin(2n-1)x}{\sin x}\,\mathrm{d}x.
+\]
+Obtain also a reduction formula for $J_{n}.$
+
+
+The curve $C$ is given by the cartesian equation 
+\[
+y=\dfrac{x\sin^{2}(nx)}{\sin^{2}x},
+\]
+ where $n$ is a positive integer and $0\leqslant x\leqslant\pi.$
+Show that the area under the curve $C$ is $\frac{1}{2}n\pi^{2}.$ 
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+The points $P$ and $R$ lie on the sides $AB$ and $AD,$ respectively,
+of the parallelogram $ABCD.$ The point $Q$ is the fourth vertex
+of the parallelogram $APQR.$ Prove that $BR,CQ$ and $DP$ meet in
+a point. 
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+Show that 
+\[
+\sin(2n+1)\theta=\sin^{2n+1}\theta\sum_{r=0}^{n}(-1)^{n-r}\binom{2n+1}{2r}\cot^{2r}\theta,
+\]
+where $n$ is a positive integer. Deduce that the equation 
+\[
+\sum_{r=0}^{n}(-1)^{r}\binom{2n+1}{2r}x^{r}=0
+\]
+has roots $\cot^{2}(k\pi/(2n+1))$ for $k=1,2,\ldots,n$. 
+
+
+Show that 
+
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  ${\displaystyle \sum_{k=1}^{n}\cot^{2}\left(\frac{k\pi}{2n+1}\right)=\frac{n(2n-1)}{3}},$ 
+
+
+\item[\bf (ii)] ${\displaystyle \sum_{k=1}^{n}\tan^{2}\left(\frac{k\pi}{2n+1}\right)=n(2n+1)},$ 
+
+
+\item[\bf (iii)] ${\displaystyle \sum_{k=1}^{n}\mathrm{cosec}^{2}\left(\frac{k\pi}{2n+1}\right)=\frac{2n(n+1)}{3}}.$
+\end{itemize}
+
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+		\begin{question}
+The straight line $OSA,$ where $O$ is the origin, bisects the angle
+between the positive $x$ and $y$ axes. The ellipse $E$ has $S$
+as focus. In polar coordinates with $S$ as pole and $SA$ as the
+initial line, $E$ has equation $\ell=r(1+e\cos\theta).$ Show that,
+at the point on $E$ given by $\theta=\alpha,$ the gradient of the
+tangent to the ellipse is given by 
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\sin\alpha-\cos\alpha-e}{\sin\alpha+\cos\alpha+e}.
+\]
+The points on $E$ given by $\theta=\alpha$ and $\theta=\beta$ are
+the ends of a diameter of $E$. Show that 
+\[
+\tan(\alpha/2)\tan(\beta/2)=-\frac{1+e}{1-e}.
+\]
+{[}\textbf{Hint. }A diameter of an ellipse is a chord through its
+centre.{]} 
+		\end{question}
+		
+	
+%%%%%%%%%% 10
+\begin{question}
+Sketch the curve $C$ whose polar equation is 
+\[
+r=4a\cos2\theta\qquad\mbox{ for }-\tfrac{1}{4}\pi<\theta<\tfrac{1}{4}\theta.
+\]
+The ellipse $E$ has parametric equations 
+\[
+x=2a\cos\phi,\qquad y=a\sin\phi.
+\]
+Show, without evaluating the integrals, that the perimeters of $C$
+and $E$ are equal. 
+
+
+Show also that the areas of the regions enclosed by $C$ and $E$
+are equal.  
+\end{question}
+			
+		
+		
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}$\,$
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-1,0.3)(5.98,5.3)
+\psline(0,5)(0,1)
+\psline{->}(0,3)(2,3)
+\psline(5,5)(5,1)
+\rput[tl](-0.54,5.26){$A$}
+\rput[tl](-0.56,3.16){$O$}
+\rput[tl](-0.58,1.06){$B$}
+\rput[tl](1.64,3.62){$V$}
+\rput[tl](5.22,5.26){$X$}
+\rput[tl](5.28,1.34){$Y$}
+\end{pspicture*}
+\end{center}
+$AOB$ represents a smooth vertical wall and $XY$ represents a parallel
+smooth vertical barrier, both standing on a smooth horizontal table.
+A particle $P$ is projected along the table from $O$ with speed
+$V$ in a direction perpendicular to the wall. At the time of projection,
+the distance between the wall and the barrier is $(75/32)VT$, where
+$T$ is a constant. The barrier moves directly towards the wall, remaining
+parallel to the wall, with initial speed $4V$ and with constant acceleration
+$4V/T$ directly away from the wall. The particle strikes the barrier
+$XY$ and rebounds. Show that this impact takes place at time $5T/8$. 
+
+
+The barrier is sufficiently massive for its motion to be unaffected
+by the impact. Given that the coefficient of restitution is $1/2$,
+find the speed of $P$ immediately after impact. 
+
+
+$P$ strikes $AB$ and rebounds. Given that the coefficient of restitution
+for this collision is also $1/2,$ show that the next collision of
+$P$ with the barrier is at time $9T/8$ from the start of the motion.  
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}$\,$
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.31,-0.3)(7.31,3.5)
+\parametricplot{3.141592653589793}{6.283185307179586}{1*2.5*cos(t)+0*2.5*sin(t)+2.5|0*2.5*cos(t)+1*2.5*sin(t)+3}
+\psline(-2,0)(7,0)
+\psline(0.65,1.31)(-0.98,0.16)
+\psline(-0.98,0.16)(5.96,0.16)
+\psline(5.96,0.16)(4.41,1.39)
+\psline[linestyle=dashed,dash=1pt 1pt](5,3)(2.36,3.01)
+\psline[linestyle=dashed,dash=1pt 1pt](2.36,3.01)(3.63,0.77)
+\rput[tl](3.85,0.77){$P$}
+\parametricplot{-1.0566941425542427}{-0.004136610689158271}{0.82*cos(t)+2.36|0.82*sin(t)+3.01}
+\rput[tl](2.74,2.9){$\theta$}
+\rput[tl](1.84,3.4){$O$}
+\begin{scriptsize}
+\psdots[dotstyle=*](2.36,3.01)
+\psdots[dotstyle=*](3.63,0.77)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+A smooth hemispherical bowl of mass $2m$ is rigidly mounted on a
+light carriage which slides freely on a horizontal table as shown
+in the diagram. The rim of the bowl is horizontal and has centre $O$.
+A particle $P$ of mass $m$ is free to slide on the inner surface
+of the bowl. Initially, $P$ is in contact with the rim of the bowl
+and the system is at rest. The system is released and when $OP$ makes
+an angle $\theta$ with the horizontal the velocity of the bowl is
+$v$? Show that 
+\[3v=a\dot{\theta}\sin\theta
+\]
+and that 
+\[
+v^{2}=\frac{2ga\sin^{3}\theta}{3(3-\sin^{2}\theta)},
+\]
+where $a$ is the interior radius of the bowl. 
+
+
+Find, in terms of $m,g$ and $\theta,$ the reaction between the bowl
+and the particle. 
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}$\,$
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.8,-2.34)(3.26,4.36)
+\pspolygon[linewidth=0.4pt](0.22,-0.18)(0.4,0.04)(0.18,0.22)(0,0)
+\pscircle(0,0){2}
+\psline(2,0)(2,4)
+\rput[tl](2.24,2.64){$\pi b$}
+\rput[tl](2.22,0.02){$C$}
+\rput[tl](2.24,4.3){$A$}
+\rput[tl](1.32,2.1){$Q$}
+\rput[tl](-0.42,0.08){$O$}
+\rput[tl](1.6,-1.38){$P$}
+\psline[linestyle=dashed,dash=3pt 3pt](1.27,1.54)(0,0)
+\psline[linestyle=dashed,dash=3pt 3pt](0,0)(1.54,-1.27)
+\rput[tl](0.06,1.1){$2b$}
+\begin{scriptsize}
+\psdots[dotsize=2pt 0,dotstyle=*](2,4)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+A uniform circular disc of radius $2b,$ mass $m$ and centre $O$
+is free to turn about a fixed horizontal axis through $O$ perpendicular
+to the plane of the disc. A light elastic string of modulus $kmg$,
+where $k>4/\pi,$ has one end attached to a fixed point $A$ and the
+other end to the rim of the disc at $P$. The string is in contact
+with the rim of the disc along the arc $PC,$ and $OC$ is horizontal.
+The natural length of the string and the length of the line $AC$
+are each $\pi b$ and $AC$ is vertical. A particle $Q$ of mass $m$
+is attached to the rim of the disc and $\angle POQ=90^{\circ}$ as
+shown in the diagram. The system is released from rest with $OP$
+vertical and $P$ below $O$. Show that $P$ reaches $C$ and that
+then the upward vertical component of the reaction on the axis is
+$mg(10-\pi k)/3$. 
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}$\,$
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.26,-2.36)(6,5.7)
+\pscircle(0,0){2}
+\psline(-1.52,1.3)(1.38,4.08)
+\psline{->}(0,0)(0,5)
+\psline{->}(0,0)(5,0)
+\psline(0,0)(-1.52,1.3)
+\psline(0,2)(4,2)
+\parametricplot{0.0}{2.4340509797353143}{0.6*cos(t)+0|0.6*sin(t)+0}
+\rput[tl](1.58,4.34){$P$}
+\rput[tl](4.22,2.14){$B$}
+\rput[tl](0.44,0.92){$\theta$}
+\rput[tl](-2,1.75){$Q$}
+\rput[tl](-0.26,-0.06){$O$}
+\rput[tl](5.14,0.12){$x$}
+\rput[tl](-0.08,5.4){$y$}
+\begin{scriptsize}
+\psdots[dotstyle=*](1.38,4.08)
+\psdots[dotstyle=*](4,2)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+A horizontal circular disc of radius $a$ and centre $O$ lies on
+a horizontal table and is fixed to it so that it cannot rotate. A
+light inextensible string of negligible thickness is wrapped round
+the disc and attached at its free end to a particle $P$ of mass $m$.
+When the string is all in contact with the disc, $P$ is at $A$.
+The string is unwound so that the part not in contact with the disc
+is taut and parallel to $OA$. $P$ is then at $B$. The particle
+is projected along the table from $B$ with speed $V$ perpendicular
+to and away from $OA$. In the general position, the string is tangential
+to the disc at $Q$ and $\angle AOQ=\theta.$ Show that, in the general
+position, the $x$-coordinate of $P$ with respect to the axes shown
+in the figure is $a\cos\theta+a\theta\sin\theta,$ and find $y$-coordinate
+of $P$. Hence, or otherwise, show that the acceleration of $P$ has
+components $a\theta\dot{\theta}^{2}$ and $a\dot{\theta}^{2}+a\theta\ddot{\theta}$
+along and perpendicular to $PQ,$ respectively. 
+
+
+The friction force between $P$ and the table is $2\lambda mv^{2}/a,$
+where $v$ is the speed of $P$ and $\lambda$ is a constant. Show
+that 
+\[
+\frac{\ddot{\theta}}{\dot{\theta}}=-\left(\frac{1}{\theta}+2\lambda\theta\right)\dot{\theta}
+\]
+and find $\dot{\theta}$ in terms of $\theta,\lambda$ and $a$. Find
+also the tension in the string when $\theta=\pi.$ 
+\end{question}
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+A goat $G$ lies in a square field $OABC$ of side $a$. It wanders
+randomly round its field, so that at any time the probability of its
+being in any given region is proportional to the area of this region.
+Write down the probability that its distance, $R$, from $O$ is less
+than $r$ if $0<r\leqslant a,$ and show that if $r\geqslant a$ the
+probability is 
+\[
+\left(\frac{r^{2}}{a^{2}}-1\right)^{\frac{1}{2}}+\frac{\pi r^{2}}{4a^{2}}-\frac{r^{2}}{a^{2}}\cos^{-1}\left(\frac{a}{r}\right).
+\]
+Find the median of $R$ and probability density function of $R$. 
+
+
+The goat is then tethered to the corner $O$ by a chain of length
+$a$. Find the conditional probability that its distance from the
+fence $OC$ is more than $a/2$.  
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+The probability that there are exactly $n$ misprints in an issue
+of a newspaper is $\mathrm{e}^{-\lambda}\lambda^{n}/n!$ where $\lambda$
+is a positive constant. The probability that I spot a particular misprint
+is $p$, independent of what happens for other misprints, and $0<p<1.$
+
+
+\begin{questionparts}
+	\item If there are exactly $m+n$ misprints, what
+is the probability that I spot exactly $m$ of them?
+
+
+\item Show that, if I spot exactly $m$ misprints, the probability
+that I have failed to spot exactly $n$ misprints is 
+\[
+\frac{(1-p)^{n}\lambda^{n}}{n!}\mathrm{e}^{-(1-p)\lambda}.
+\]
+\end{questionparts}
+
+\end{question}
+\end{document}

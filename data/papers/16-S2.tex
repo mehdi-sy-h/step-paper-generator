@@ -1,0 +1,663 @@
+\documentclass[a4, 11pt]{report}
+
+
+%\pagestyle{myheadings}
+%\markboth{}{Paper II, 2006  second vetter draft 
+%\ \ \ \ \ 
+%\today 
+%}               
+
+
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\k{{\rm k}}
+
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\makeatletter
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+\makeatother
+%%%To raise suffices: e.g.  $\Pi_{\raisemath{2pt}{-}}$.
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%%%%% Q1
+
+\begin{question}
+The curve $C_1$ has parametric equations $x=t^2$, $y= t^3$, where 
+$-\infty < t < \infty\,$. 
+Let $O$ denote the point $(0,0)$.
+The points $P$ and $Q$ on $C_1$  are such that $\angle POQ$ is
+a right angle. Show that the tangents to $C_1$  at $P$ and $Q$ 
+intersect on the curve $C_2$  with equation $4y^2=3x-1$.
+
+Determine whether  $C_1$ and $C_2$ meet, and sketch the two
+curves on the same axes.
+
+\end{question}
+
+
+%%%%%%%%%%%%%% Q2
+\begin{question}
+Use the factor theorem to show that $a+b-c$ is a factor of 
+\[
+(a+b+c)^3 -6(a+b+c)(a^2+b^2+c^2) +8(a^3+b^3+c^3)
+\,.
+\tag{$*$}
+\]
+Hence factorise ($*$) completely.
+
+\begin{questionparts}
+\item 
+Use the result above to solve the equation
+\[
+(x+1)^3 -3  (x+1)(2x^2 +5) +2(4x^3+13)=0\,.
+\]
+
+
+\item
+By setting  $d+e=c$, or otherwise, show that 
+$(a+b-d-e)$ is a factor of 
+\[
+(a+b+d+e)^3 -6(a+b+d+e)(a^2+b^2+d^2+e^2) +8(a^3+b^3+d^3+e^3)
+\,
+\]
+and factorise this expression completely.
+  
+Hence solve the equation
+\[
+(x+6)^3 - 6(x+6)(x^2+14) +8(x^3+36)=0\,.
+\]
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%%%%%%% Q4
+\begin{question}
+For each non-negative integer $n$, the polynomial $\f_n$ is defined by
+\[
+\f_n(x) = 1 + x + \frac{x^2}{2!} + \frac {x^3}{3!} + \cdots + \frac{x^n}{n!}
+\,.
+\]
+\begin{questionparts}
+\item
+Show that  $\f'_{n}(x) = \f_{n-1}(x)\,$ (for $n\ge1$).
+\item 
+Show that, if $a$  is a real root 
+of  the equation \[\f_n(x)=0\,,\tag{$*$}\] then $a<0$.
+\item
+Let $a$ and $b$ be  distinct real 
+roots of ($*$), for $n\ge2$. Show that  $\f_n'(a)\, \f_n'(b)>0\,$
+and use a sketch to deduce
+that  $\f_n(c)=0$ for some number $c$ between $a$ and $b$.
+
+Deduce that ($*$ )  has at most one real root.
+How many real roots does ($*$)  have 
+if $n$ is odd?
+How many real roots does ($*$) have 
+if $n$ is even?
+
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%%%%%%% Q4
+\begin{question}
+Let 
+\[
+y=\dfrac{x^2+x\sin\theta+1}{x^2+x\cos\theta+1}
+\,.\]
+\begin{questionparts}
+\item
+Given that
+$x$ is real, show that
+\[
+(y\cos\theta -\sin\theta)^2 \ge 4 (y-1)^2
+\,.
+\]
+Deduce that 
+\[
+y^2+1
+\ge 
+4(y-1)^2 
+\,,
+\]
+and hence that 
+\[
+\dfrac {4-\sqrt7}3 
+\le y \le
+\dfrac {4+\sqrt7}3 \,.
+\]
+\item
+In the case $y=   
+\dfrac {4+\sqrt7}3 \,$,  show that \[\sqrt{y^2+1}=2(y-1)\]
+and find the corresponding values of $x$ and
+ $\tan\theta$.
+\end{questionparts}
+
+
+\end{question} 
+
+%%%%%%%%%%%%%% Q5
+\begin{question}
+In this question, the definition of $\displaystyle\binom pq$ 
+is taken to be
+\[
+\binom pq =
+\begin{cases}
+\dfrac{p!}{q!(p-q)!} & \text{ if } p\ge q\ge0 \,,\\[4mm]
+0 & \text{ otherwise } .
+\end{cases}
+\]
+\begin{questionparts}
+\item
+Write down the coefficient of $x^n$ in the binomial expansion
+for $(1-x)^{-N}$, where $N$ is a positive integer, and write
+down the expansion
+using the $\Sigma$ summation notation. 
+
+By considering  
+$ 
+(1-x)^{-1} (1-x)^{-N}
+\,
+,$ 
+where $N$ is a positive integer, show that
+\[
+\sum_{j=0}^n \binom { N+j -1}{j} = \binom{N+n}{n}\,.
+\]
+\item
+Show that,
+for any positive integers $m$, $n$ and $r$ with $r\le m+n$,
+\[
+\binom{m+n} r = \sum _{j=0}^r \binom m j \binom n {r-j}
+\,.
+\]
+
+\item
+Show that, for any positive integers $m$ and $N$, 
+\[
+\sum_{j=0}^n(-1)^{j}   \binom {N+m} {n-j} \binom {m+j-1}{j  } =
+\displaystyle \binom N n 
+.
+\]
+
+\end{questionparts}
+
+
+\end{question}
+
+
+%%%%%%%%%%%%%% Q6
+\begin{question}
+This question concerns solutions of 
+ the differential equation
+\[
+(1-x^2) \left(\frac{\d y}{\d x}\right)^2 + k^2 y^2 = k^2\,
+\tag{$*$}
+\]
+where $k$ is a positive integer. 
+
+For each value of $k$, let $y_k(x)$  be
+the solution of $(*)$ that satisfies $y_k(1)=1$; 
+you may 
+assume that
+there is only one such solution for each value of $k$.
+
+
+
+\begin{questionparts}
+\item
+Write down the differential equation satisfied by $y_1(x)$ and
+verify that $y_1(x) = x\,$. 
+\item 
+Write down the differential equation satisfied by $y_2(x)$ and
+verify that  $y_2(x) = 2x^2-1\,$.
+\item 
+Let $z(x) = 2\big(y_n(x)\big)^2 -1$. Show that
+\[
+ (1-x^2) \left(\frac{\d z}{\d x}\right)^2 +4n^2 z^2 = 4n^2\,
+\]
+and hence obtain an expression for $y_{2n}(x)$ in terms of $y_n(x)$.
+\item 
+Let $v(x) = y_n\big(y_m(x)\big)\,$. 
+Show that $v(x) = y_{mn}(x)\,$.
+\end{questionparts}
+\end{question}
+
+
+%%%%%%%%%%%%%% Q7
+\begin{question}
+Show that 
+\[
+\int_0^a \f(x) \d x= \int _0^a \f(a-x) \d x\,,
+\tag{$*$}
+\]
+where f is any function for which the integrals exist.
+\begin{questionparts}
+\item Use ($*$)  to evaluate
+\[
+\int_0^{\frac12\pi} \frac{\sin x}{\cos x + \sin x} \, \d x
+\,.
+\]
+\item Evaluate
+\[
+\int_0^{\frac14\pi} \frac{\sin x}{\cos x + \sin x} \, \d x
+\,.
+\]
+\item Evaluate
+\[
+\int_0^{\frac14\pi} \ln (1+\tan x) \, \d x
+\,.
+\]
+\item Evaluate
+\[
+\int_0^{\frac14 \pi}
+ \frac x {\cos x \, (\cos x + \sin x)}\, \d x
+\,.
+\]
+\end{questionparts}
+
+\end{question} 
+
+%%%%%%%%%%%%%% Q8
+\begin{question}
+Evaluate  the integral
+\[
+\hphantom{ \ \ \ \ \ \ \ \ \ 
+(m> \tfrac12)\,.}
+\int_{m-\frac12} ^\infty \frac 1{x^2}\,  \d x 
+{ \ \ \ \ \ \ \ \ \ 
+(m> \tfrac12)\,.}
+\]
+Show by means 
+of a sketch that 
+\[
+\sum_{r=m}^n \frac 1 {r^2} 
+\approx \int_{m-\frac12}^{n+\frac12} \frac1 {x^2} \, \d x
+\,,
+\tag{$*$}
+\]
+where $m$ and $n$ are positive integers with $m<n$.
+
+\begin{questionparts}
+\item You are given that the infinite series $\displaystyle
+\sum_{r=1}^\infty \frac 1 {r^2}$
+converges to a value denoted by $E$.
+Use~$(*)$ to obtain the following approximations for $E$:
+\[
+E\approx 2\,; \ \ \ \
+E\approx \frac53\,; \ \ \ \
+E\approx \frac{33}{20}
+\,.\]
+\item Show that, when $r$ is large,  the error 
+in approximating 
+$\dfrac 1{r^2}$ 
+ by 
+$\displaystyle \int_{r-\frac12}^{r+\frac12} \frac 1 {x^2} \, \d x$
+  is approximately~$\dfrac 1{4r^4}\,$.
+
+Given that $E \approx 1.645$, show that 
+$\displaystyle \sum_{r=1}^\infty \frac1{r^4} \approx 1.08\, $.  
+
+\end{questionparts}
+
+\end{question}
+
+
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+%%%%%%%%%%%%%% Q9
+\begin{question}
+A small bullet of mass $m$ is fired into a block of wood of mass $M$ which is
+at rest. 
+The speed
+of the bullet on entering the block is $u$.  Its trajectory 
+within the block is a horizontal
+straight line and  the resistance to the 
+bullet's motion is $R$, which is constant.
+
+\begin{questionparts}
+\item The block is fixed. The bullet travels a distance
+$a$ inside the block before coming to rest.
+Find an expression for $a$ in terms of $m$, $u$ and $R$.
+
+\item Instead, the block is free to move on a smooth horizontal 
+table. The bullet travels a distance $b$ inside the block
+before coming to rest relative to the block, at which time the 
+block has moved a distance $c$ on the table. 
+Find expressions for $b$ and $c$ in terms of $M$, $m$ and $a$.
+ \end{questionparts} 
+
+\end{question}
+
+
+%%%%%%%%%%%%%% Q10
+\begin{question}
+A thin uniform wire is bent into the shape of an isosceles 
+triangle $ABC$,
+where 
+$AB$ and~$AC$ are of equal length  and the angle
+at $A$ is $2\theta$.
+%Show that the centre of mass of the wire is a distance
+%\[
+%\dfrac{b\cos\theta}{2(1+\sin\theta)}\]
+% from the side $BC$.
+%
+The triangle $ABC$  hangs
+on a small rough horizontal peg
+with the side $BC$ resting on the 
+peg. 
+ The coefficient of friction between the wire and the peg
+is $\mu$.
+The  plane containing $ABC$ is vertical.  
+Show that the triangle can rest 
+in equilibrium with the peg in contact with any point on $BC$ provided 
+\[
+\mu \ge 2\tan\theta(1+\sin\theta)
+\,.
+\]
+\end{question}
+
+
+%%%%%%%%%%%%%% Q11
+\begin{question}
+\begin{questionparts}
+\item
+Two particles move on a smooth horizontal surface.
+The positions, in Cartesian coordinates, of the 
+particles at time $t$
+are $(a+ut\cos\alpha \,,\, ut\sin\alpha)$  and 
+$(vt\cos\beta\,,\, b+vt\sin\beta )$, where $a$, $b$, $u$ and $v$ are positive
+constants, $\alpha$ and $\beta$ are constant acute angles, and $t\ge0$.
+
+Given that the two particles collide, show  that 
+\[
+u \sin(\theta+\alpha)  = v\sin(\theta +\beta)\,,
+\]
+where $\theta $ is the acute angle satisfying $\tan\theta = \dfrac b a$. 
+
+\item A gun is placed on
+ the top of a vertical tower of height $b$ 
+which stands
+on  horizontal ground. 
+The gun fires a  bullet with speed  $v$ and  (acute) angle of 
+elevation $\beta$.
+Simultaneously, a target
+is projected 
+from a point on the ground
+ a horizontal distance $a$ from the foot of the tower.
+The target is projected with speed $u$ and (acute) angle of elevation 
+$\alpha$, in a direction
+directly away from the tower.
+ 
+Given that  the target is hit before it reaches the ground,
+show that
+\[
+2u\sin\alpha (u\sin\alpha - v\sin\beta)>bg\,.
+\]
+
+Explain, with reference to part (i), why the target can
+only be hit if  $\alpha>\beta$. 
+\end{questionparts}
+
+
+
+\end{question}
+
+
+\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+%%%%%%%%%%%%%% Q12
+\begin{question}
+Starting with the result $\P(A\cup B) = \P(A)+P(B) - \P(A\cap B)$, prove
+that 
+\[
+\P(A\cup B\cup C) = \P(A)+\P(B)+\P(C)  
+- \P(A\cap B) - \P(B\cap C) - \P(C \cap A)
++ \P(A\cap B\cap C)
+\,.
+\] 
+Write down, without proof, the  corresponding result for four events
+$A$, $B$, $C$ and $D$.
+
+A pack of $n$ cards, numbered $1$, $2$, \ldots , $n$, is shuffled 
+and laid out in a row. The result of the shuffle is that each card is 
+equally likely to be in any position in the row. Let $E_i$ be
+the event that the card bearing the number $i$  is in the $i$th position in the row.
+Write down the following probabilities:
+\begin{questionparts}
+\item $\P(E_i)$\,;
+\item $\P(E_i\cap E_j)$, where $i\ne j$;
+\item  $\P(E_i\cap E_j\cap E_k)$, where $i\ne j$, $j\ne k$ and $k\ne i$.
+\end{questionparts} 
+Hence show that the probability that at least one card is in the same position
+as the number it bears is
+\[
+1 - \frac 1 {2!} + \frac 1{3!} - \cdots + (-1)^{n+1} \frac 1 {n!}\,.
+\]
+
+Find the probability that exactly one card is in the same position
+as the number it bears.
+
+\end{question}
+
+
+
+
+%%%%%%%%%
+
+%%%%% Q13
+\begin{question}
+\begin{questionparts}
+\item
+  The random variable $X$ has a binomial distribution with parameters 
+$n$ and
+$p$, where $n=16$ and 
+$p=\frac12$. 
+Show, using an approximation in terms of the 
+ standard normal
+density function 
+$\displaystyle
+\tfrac{1}{\sqrt{2\pi}} \, \e ^{-\frac12 x^2}
+$\,, that 
+\[
+\P(X=8) \approx \frac 1{2\sqrt{2\pi}}
+\,.
+\]
+\item By considering a binomial 
+distribution with parameters $2n$ and~$\frac12$, show that 
+\[
+(2n)! \approx \frac {2^{2n} (n!)^2}{\sqrt{n\pi}} \,.
+\]
+\item By considering a Poisson  distribution with parameter $n$, 
+ show that  
+\[
+n! \approx \sqrt{2\pi n\, } \, \e^{-n} \, n^n \,.
+\]
+
+\end{questionparts}
+
+\end{question}
+
+
+\end{document}
+
+
+
+\end{document}
+\begin{question}
+A particle is projected with speed $u$ at an angle $\theta$ 
+above the horizontal over level ground. The particle just clears
+three thin walls which are perpendicular to the plane of the particle's
+trajectory. Two of the walls are of height $h$ and are a distance
+$2a$ apart. The third wall is of height $h+k$, where $k>0$,
+and is half way between the other two walls. 
+
+Show that $\sec^2\theta = \dfrac{2ku^2}{ga^2}$. 
+
+Express $\tan\theta$
+and $u$ in terms of $a$, $h$, $k$ and $g$. 
+
+\bluecomment{This was thought too easy, I recall. But I'm not sure at 
+the moment what, if anything, can be done to increase the level of difficulty.
+
+There was some discussion about whether they would quote the geometric 
+equation of the trajectory, prove it or not use it. I can't remember
+what the conclusion was (if there was a conclusion).
+Maybe we should start with a level playing field by
+asking them
+to derive the $y= x\tan\theta \cdots$ equation.
+
+The result for $\sec^2\alpha$ came out quite quickly from the geometric 
+equation, so if we get them to derive the geometric equation, we could just
+ask them to find
+$\tan\theta $ interms of  $a$, $h$, $k$ (unless there is some quick way
+of getting this).
+
+What do you think?
+
+}
+\end{question}
+
+\nq
+For $k>m>0$, express $\dfrac 1 {(k+m)k(k-m)}$ in the form $\dfrac{A}{k(k-m)} +
+\dfrac{B} {k(k+m)} $, where $A$ and $B$ are independent of $k$.
+
+By taking $m=1$,  show that 
+\[
+\frac 1 {1^3}+\frac 1 {2^3} + \frac 1 {3^3}  + \cdots 
+\ < \frac 54
+\, .
+\]
+
+Show also that
+\[
+\frac 1{1^3} + \frac 1 {2^3}+ \frac 1 {3^3}  + \cdots \ < \frac {119}{96} \,.
+\]
+\nq
+For $k>m>0$, express $\dfrac 1 {(k+m)k(k-m)}$ in the form $\dfrac{A}{k(k-m)} +
+\dfrac{B} {k(k+m)} $, where $A$ and $B$ are independent of $k$.
+
+By taking $m=1$,  show that 
+\[
+\frac 1 {1^3}+\frac 1 {2^3} + \frac 1 {3^3}  + \cdots 
+\ < \frac 54
+\, .
+\]
+
+Show also that
+\[
+\frac 1{1^3} + \frac 1 {2^3}+ \frac 1 {3^3}  + \cdots \ < \frac {119}{96} \,.
+\]
+

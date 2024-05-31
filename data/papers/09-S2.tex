@@ -1,0 +1,516 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2009
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\q{{\mathrm q}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Two curves have equations 
+$\; x^4+y^4=u\;$ and $\; xy = v\;$, where $u$ and $v$ are positive
+constants. State the equations of the lines of symmetry of each curve.
+
+ The curves 
+intersect at the distinct points $A$, $B$, $C$ and $D$
+(taken anticlockwise from $A$).
+The coordinates of $A$ are $(\alpha,\beta)$,
+where $\alpha>\beta>0$. Write down, in terms of 
+$\alpha$ and $\beta$, the coordinates of
+$B$, $C$ and~$D$. 
+
+
+Show that the quadrilateral $ABCD$ is a rectangle and find its area
+in terms of $u$ and $v$ only. Verify that, for the case
+$u=81$ and $v=4$, the area is $14$.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The curve $C$ has equation
+\[
+y= a^{\sin (\pi \e^ x)}\,,
+\]
+where $a>1$.
+
+\begin{questionparts}
+\item Find the coordinates of the stationary points on $C$.
+
+\item Use the approximations $\e^t \approx 1+t$ and $\sin t \approx t$ 
+(both valid for small values of $t$) 
+ to show that 
+\[
+y\approx 1-\pi x \ln a \;
+\]
+for small values of $x$.
+
+\item Sketch $C$.
+
+\item By approximating $C$ by means of straight lines joining consecutive
+stationary points, show that the area between $C$ and the $x$-axis
+between the $k$th and $(k+1)$th maxima is approximately
+\[
+\Big( \frac {a^2+1}{2a} \Big)
+\ln \Big ( 1+ \big( k-\tfrac34)^{-1} \Big)\,.
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Prove that          
+\[
+\tan \left ( \tfrac14 \pi -\tfrac12 x \right)\equiv \sec x -\tan x\,.
+\tag{$*$}
+\]
+
+\begin{questionparts}
+\item Use $(*)$ to find the value of        
+$\tan\frac18\pi\,$. Hence show that 
+\[
+\tan \tfrac{11}{24} \pi = \frac{\sqrt3 + \sqrt2 -1}{\sqrt3
+  -\sqrt6+1}\;.
+\]
+
+\item Show that 
+\[
+ \frac{\sqrt3 + \sqrt2 -1}{\sqrt3
+  -\sqrt6+1}= 2+\sqrt2+\sqrt3+\sqrt6\,.
+\]
+
+
+\item Use $(*)$ to show that
+\[
+\tan \tfrac1{48}\pi = 
+\sqrt{16+10\sqrt2+8\sqrt3 +6\sqrt6 \ }-2-\sqrt2-\sqrt3-\sqrt6\,.
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The polynomial  $\p(x)$ is  of degree 9 and  
+$\p(x)-1$ is  exactly divisible by $(x-1)^5$.
+
+\begin{questionparts}
+\item Find the value of $\p(1)$.
+
+\item Show that $\p'(x)$ is exactly divisible by $(x-1)^4$.
+
+\item 
+ Given also 
+ that $\p(x)+1$ is exactly divisible by
+  $(x+1)^5$, find $\p(x)$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Expand and simplify $(\sqrt{x-1}+1)^2\,$.
+\begin{questionparts}
+\item Evaluate
+\[
+\int_{5}^{10}
+ \frac{ \sqrt{x+2\sqrt{x-1} \;} + \sqrt{x-2\sqrt{x-1} \;} }
+{\sqrt{x-1}} \,\d x\;.
+\] 
+\item
+Find the total area between the curve
+\[
+y= \frac{\sqrt{x-2\sqrt{x-1}\;}}{\sqrt{x-1}\;}
+\] and the $x$-axis
+between the points $x=\frac54$ and $x=10$.
+\item Evaluate
+\[
+\int_{\frac54}^{10}
+ \frac{ \sqrt{x+2\sqrt{x-1}\;} + \sqrt{x-2\sqrt{x+1}+2 \;} }
+{\sqrt{x^2-1}  } \;\d x\;.
+\] 
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+The Fibonacci sequence $F_1$, $F_2$, $F_3$, $\ldots$ is defined by
+$F_1=1$, $F_2= 1$  and 
+\[
+F_{n+1} = F_n+F_{n-1} \qquad\qquad (n\ge 2).
+\]
+Write down the  values of $F_3$, $F_4$, $\ldots$, $F_{10}$.
+
+Let $\displaystyle   S=\sum_{i=1}^\infty \dfrac1 {F_i}\,$.
+
+
+\begin{questionparts}
+\item 
+Show that $\displaystyle \frac 1{F_i}>\frac1{2F_{i-1}}\,$ for $i\ge4$
+  and deduce that $S>3\,$.
+
+Show also that  $S<3\frac23\,$.
+
+\item 
+Show further that $3.2 <S<3.5\,$.
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Let $y= (x-a)^n \e^{bx} \sqrt{1+x^2}\,$, where $n$ and  $a$ are 
+constants and $b$ is a non-zero
+constant. Show that
+\[
+\frac{\d y}{\d x} = \frac{(x-a)^{n-1} \e^{bx} \q(x)}{\sqrt{1+x^2}}\,,
+\]
+where $\q(x)$ is a cubic polynomial. 
+
+Using this result, determine:
+\begin{questionparts}
+\item $\displaystyle \int \frac {(x-4)^{14} \e^{4x}(4x^3-1)}
+{\sqrt{1+x^2\;}} \, \d x\,;$
+\item $\displaystyle \int \frac{(x-1)^{21}\e^{12x}(12x^4-x^2-11)}
+{\sqrt{1+x^2\;}}\,\d x\,;$
+\item $\displaystyle \int \frac{(x-2)^{6}\e^{4x}(4x^4+x^3-2)}
+{\sqrt{1+x^2\;}}\,\d x\,.$
+
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+The non-collinear points $A$, $B$ and $C$ have position vectors 
+$\bf a$, $\bf b$ and $\bf c$, respectively. The points $P$ and
+$Q$ have position vectors $\bf p$ and $\bf q$, respectively, given by 
+\[
+{\bf p}= \lambda {\bf a} +(1-\lambda){\bf b}
+\text{ \ \ \ and \ \ \ }
+{\bf q}= \mu {\bf a} +(1-\mu){\bf c}
+\]
+where $0<\lambda<1$ and $\mu>1$. Draw a diagram showing $A$, $B$, $C$,
+$P$ and $Q$.
+
+Given that $CQ\times BP = AB\times AC$, find $\mu$ in terms of
+$\lambda$, and show that, for all values of $\lambda$,  the 
+the line  $PQ$  passes through the fixed 
+point $D$, with position vector ${\bf d}$ given by
+${\bf d= -a +b +c}\,$.
+ What 
+can be said about the quadrilateral $ABDC$?
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+\begin{questionparts}
+
+\item
+A uniform lamina $OXYZ$ is in the shape of the trapezium 
+ shown in the diagram.
+It is right-angled at $O$ and
+$Z$, and $OX$ is parallel to $YZ$. The lengths of the sides are
+given by $OX=9\,$cm, $XY=41\,$cm, $YZ=18\,$cm and $ZO=40\,$cm.
+Show that its centre of mass is a distance $7\,$cm from the edge $OZ$.
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(2.34,0.37)(6.59,5.33) \psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1,Dy=1,ticksize=-2pt 0,subticks=2]{->}(0,0)(2.34,0.37)(6.59,5.33)[$x$,140] [$y$,-40] \psline(3.1,4.85)(6.04,4.85) \psline(6.04,4.85)(4.77,0.87) \psline(3.1,4.85)(3.1,0.87) \psline(3.1,0.87)(4.77,0.87) \rput[tl](4.39,5.2){$18$} \rput[tl](6.2,5.2){$Y$} \rput[tl](2.8,5.2){$Z$} \rput[tl](2.67,0.92){$O$} \rput[tl](4.86,0.95){$X$} \rput[tl](5.61,3.1){$41$} \rput[tl](3.88,0.8){$9$} \rput[tl](2.6,3.15){$40$} \end{pspicture*}
+\end{center}
+\item
+The diagram shows a tank with no lid made of thin sheet metal. The base 
+$OXUT$, the back $OTWZ$ and the front $XUVY$ are rectangular, 
+and each end is a trapezium as in part \textbf{(i)} . The width of 
+the tank is $d\,$cm.
+\begin{center}
+\psset{xunit=1cm,yunit=1.1cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(2.42,0.4)(10.98,6.5) \psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1,Dy=1,ticksize=-2pt 0,subticks=2]{->}(0,0)(2.42,0.4)(10.93,6.45)[$x$,140] [$y$,-40] \psline(3.1,4.85)(6.04,4.85) \psline(6.04,4.85)(4.77,0.87) \psline(3.1,4.85)(3.1,0.87) \psline(3.1,0.87)(4.77,0.87) \rput[tl](4.4,4.76){$18$} \rput[tl](6,5.25){$Y$} \rput[tl](2.73,5.15){$Z$} \rput[tl](2.67,0.92){$O$} \rput[tl](4.82,0.89){$X$} \rput[tl](5.61,3.1){$41$} \rput[tl](3.88,0.8){$9$} \rput[tl](2.6,3.1){$40$} \psline(3.1,4.85)(8,6) \psline(8,6)(10.71,6) \psline(10.71,6)(6.04,4.85) \psline(10.71,6)(9.45,1.99) \psline(9.45,1.99)(4.77,0.87) \psline[linestyle=dashed,dash=3pt 1pt](8,6)(8,2) \psline[linestyle=dashed,dash=3pt 1pt](8,2)(3.1,0.87) \psline[linestyle=dashed,dash=3pt 1pt](8,2)(9.45,1.99) \psline(8,6)(8,5.33) \rput[tl](7.88,6.35){$W$} \rput[tl](10.67,6.35){$V$} \rput[tl](9.64,2.16){$U$} \rput[tl](8.05,2.35){$T$} \rput[tl](7.43,1.45){$d$} \rput[tl](5.91,5.9){$d$} \end{pspicture*}
+\end{center}
+
+\vspace*{3mm}
+ Show that the centre of mass of the tank, when empty,
+is a distance 
+\[
+\frac {3(140+11d)}{5(12+d)}\,\text{cm}
+\]
+from the back of the tank.
+
+
+The tank is then filled with a liquid.  
+The mass per unit volume of this liquid  is $k$ times the 
+mass per unit area of the sheet metal.
+ In the case $d=20$, find an expression for the
+distance of the centre of mass of the filled tank from the back of the tank.
+
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}$\,$
+\begin{center}
+\psset{xunit=1.5cm,yunit=1.5cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-2.73,-2.6)(3.4,1.82) 
+\psline{->}(-2.73,0)(2.5,0)
+\psline{->}(0,-2.2)(0,1.5)
+\rput[tl](2.55,0.05){$x$}
+\rput[tl](-0.05,1.75){$y$}
+\rput[tl](-2.09,-0.3){$P_1$} \rput[tl](-1.11,-0.3){$P_2$} \rput[tl](-0.55,-0.6){$P_3$} \rput[tl](-0.55,-1.6){$P_4$} \rput[tl](0.07,0.3){$O$} \psline{->}(-2.1,0.4)(-1.6,0.4) \psline{->}(0.4,-1.9)(0.4,-1.4) \rput[tl](-1.55,0.45){$u$} \rput[tl](0.32,-1.2){$u$} \begin{scriptsize} \psdots[dotsize=18pt 0,dotstyle=*](-1,0) \psdots[dotsize=18pt 0,dotstyle=*](-2,0) \psdots[dotsize=18pt 0,dotstyle=*](0,-0.7) \psdots[dotsize=18pt 0,dotstyle=*](0,-1.7) \end{scriptsize} \end{pspicture*}
+\end{center}
+
+Four particles $P_1$, $P_2$, $P_3$ and
+$P_4$, of masses $m_1$, $m_2$, $m_3$ and $m_4$, respectively, are arranged
+on smooth horizontal axes as shown in the diagram. 
+
+Initially, $P_2$ and $P_3$ are stationary, and 
+both $P_1$ and $P_4$ are moving towards $O$ with speed $u$.
+Then $P_1$ and $P_2$ collide, at the same moment as
+$P_4$ and $P_3$ collide. Subsequently, $P_2$ and 
+$P_3$ collide at $O$, as do $P_1$ and $P_4$ some time later. 
+The coefficient of
+restitution between each pair of particles is~$e$, and $e>0$.
+
+Show that initially $P_2$ and $P_3$ are equidistant from $O$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A train consists of an engine and $n$ trucks.
+ It is travelling along a straight
+horizontal section of track. The mass of the engine and of each 
+ truck is $M$. The resistance to motion
+ of the engine and of each 
+ truck is $R$, which is constant. 
+The maximum power at which the engine can work
+is  $P$. 
+
+Obtain an expression for the acceleration  of the train
+when its speed is $v$ and  the engine is working at maximum power.
+
+
+The train starts from rest with the engine working at
+maximum power. Obtain an expression for the
+time $T$ taken to reach a given speed $V$, and 
+show that this speed is only achievable  if
+\[
+P>(n+1)RV\,.
+\]
+\begin{questionparts}
+
+\item In the case when $(n+1) RV/P$ is small, use the approximation
+$\ln (1-x) \approx -x -\frac12 x^2$ (valid for small $ x $)
+to obtain the  approximation
+\[
+PT\approx \tfrac 12 (n+1) MV^2\,
+\]
+and interpret this result.
+
+\item In the general case, the distance moved from rest in time $T$ is $X$.
+{\em Write down}, with explanation,
+an equation relating $P$, $T$, $X$, $M$, $V$, $R$ and $n$ and hence
+show that
+\[
+X= \frac{2PT - (n+1)MV^2}{2(n+1)R}
+\,.
+\]
+
+
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+A continuous random variable $X$ has probability density function
+given by
+\[
+\f(x) = 
+\begin{cases}
+0 & \mbox{for } x<0 \\
+k\e^{-2 x^2} & \mbox{for } 0\le x< \infty \;,\\
+\end{cases}
+\] 
+where $k$ is a constant.
+
+\begin{questionparts}
+\item Sketch the graph of $\f(x)$.
+\item Find the value of  $k$.
+\item Determine $\E(X)$ and  $\var(X)$.
+\item Use statistical tables  to find,
+to three significant figures, the median value of $X$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Satellites are launched using two different types of rocket: the
+Andover and the Basingstoke. The Andover has four engines and the 
+Basingstoke has six. Each engine has a probability~$p$ of
+failing during any given launch. 
+After the launch, the rockets are retrieved
+and repaired by replacing some or all of the engines. The cost
+of replacing each engine is $K$.
+
+For the Andover, 
+if  more than one engine fails, all four engines are replaced.
+Otherwise, only the  failed engine (if there is one) is replaced.
+Show that the expected repair cost for a single launch
+using the Andover is 
+\[
+4Kp(1+q+q^2-2q^3) \ \ \ \ \ \ \ \ \ \ \ \ \ (q=1-p)
+\tag{*}
+\]
+
+For the Basingstoke, if more than two engines fail, all six engines
+are replaced. Otherwise only the failed engines (if there are any)
+are replaced.
+Find, in a form similar to $(*)$, the expected repair cost for 
+a single launch using the  Basingstoke.
+
+Find the values of $p$ for which the expected repair cost for the Andover
+is  $\frac23$  of the expected repair cost for the Basingstoke.
+\end{question}
+
+\end{document}

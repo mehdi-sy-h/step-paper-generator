@@ -1,0 +1,446 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1988
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Sketch the graph of the function $\mathrm{h}$, where 
+\[
+\mathrm{h}(x)=\frac{\ln x}{x},\qquad(x>0).
+\]
+Hence, or otherwise, find all pairs of distinct positive integers
+$m$ and $n$ which satisfy the equation 
+\[
+n^{m}=m^{n}.
+\]
+
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The function $\mathrm{f}$ and $\mathrm{g}$ are related (for all
+real $x$) by 
+\[
+\mathrm{g}(x)=\mathrm{f}(x)+\frac{1}{\mathrm{f}(x)}\,.
+\]
+Express $\mathrm{g}'(x)$ and $\mathrm{g}''(x)$ in terms of $\mathrm{f}(x)$
+and its derivatives. 
+
+
+If $\mathrm{f}(x)=4+\cos2x+2\sin x$, find the stationary points of
+$\mbox{\ensuremath{\mathrm{g}}}$ for $0\leqslant x\leqslant2\pi,$
+and determine which are maxima and which are minima.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Two points $P$ and $Q$ lie within, or on the boundary of, a square
+of side 1cm, one corner of which is the point $O$. Show that the
+length of at least one of the lines $OP,PQ$ and $QO$ must be less
+than or equal to $(\sqrt{6}-\sqrt{2})$ cm.
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}
+Each of $m$ distinct points on the positive $y$-axis is joined by
+a line segment to each of $n$ distinct points on the positive $x$-axis.
+Except at the endpoints, no three of these segments meet in a single
+point. Derive formulae for 
+
+\begin{questionparts}
+\item the number of such line segments; 
+\item the number of points of intersections of the segments, ignoring intersections
+at the endpoints of the segments. 
+\end{questionparts}
+
+If $m=n\geqslant3,$ and the two segments with the greatest number
+of points of intersection, and the two segments with the least number
+of points of intersection, are excluded, prove that the average number
+of points of intersection per segment on the remaining segments is
+\[
+\frac{n^{3}-7n+2}{4(n+2)}\,.
+\]
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+	Given that $b>a>0$, find, by using the binomial theorem, coefficients
+$c_{m}$ ($m=0,1,2,\ldots$) such that
+\[
+\frac{1}{\left(1-ax\right)\left(1-bx\right)}=c_{0}+c_{1}x+c_{2}x^{2}+\ldots+c_{m}x^{m}+\cdots
+\]
+for $b\left|x\right|<1$. 
+
+
+Show that 
+\[
+c_{m}^{2}=\frac{a^{2m+2}-2(ab)^{m+1}+b^{2m+2}}{(a-b)^{2}}\,.
+\]
+
+
+
+Hence, or otherwise, show that
+\[
+c_{0}^{2}+c_{1}^{2}x+c_{2}^{2}x^{2}+\cdots+c_{m}^{2}x^{m}+\cdots=\frac{1+abx}{\left(1-abx\right)\left(1-a^{2}x\right)\left(1-b^{2}x\right)}\,,
+\]
+for $x$ in a suitable interval which you should determine. 
+\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+The complex numbers $z_{1},z_{2},\ldots,z_{6}$ are represented by
+six distinct points $P_{1},P_{2},\ldots,P_{6}$ in the Argand diagram.
+Express the following statements in terms of complex numbers: 
+
+\begin{questionparts}
+\item $\overrightarrow{P_{1}P_{2}}=\overrightarrow{P_{5}P_{4}}$ and $\overrightarrow{P_{2}P_{3}}=\overrightarrow{P_{6}P_{5}}\,$; 
+\item $\overrightarrow{P_{2}P_{4}}$ is perpendicular to $\overrightarrow{P_{3}P_{6}}\,$. 
+\end{questionparts}
+
+If \textbf{(i) }holds, show that $\overrightarrow{P_{3}P_{4}}=\overrightarrow{P_{1}P_{6}}\,$. 
+
+
+Suppose that the statements \textbf{(i) }and \textbf{(ii) }both hold,
+and that $z_{1}=0,$ $z_{2}=1,$ $z_{3}=z,$ $z_{5}=\mathrm{i}$ and
+$z_{6}=w.$ Determine the conditions which $\mathrm{Re}(z)$ and $\mathrm{Re}(w)$
+must satisfy in order that $P_{1}P_{2}P_{3}P_{4}P_{5}P_{6}$ should
+form a convex hexagon. 
+
+
+Find the distance between $P_{3}$ and $P_{6}$ when $\tan(\angle P_{3}P_{2}P_{6})=-2/3.$ 
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+The function $\mathrm{f}$ is defined by 
+\[
+\mathrm{f}(x)=ax^{2}+bx+c.
+\]
+Show that 
+\[
+\mathrm{f}'(x)=\mathrm{f}(1)\left(x+\tfrac{1}{2}\right)+\mathrm{f}(-1)\left(x-\tfrac{1}{2}\right)-2\mathrm{f}(0)x.
+\]
+
+
+
+If $a,b$ and $c$ are real and such that $\left|\mathrm{f}(x)\right|\leqslant1$
+for $\left|x\right|\leqslant1$, show that $\left|\mathrm{f}'(x)\right|\leqslant4$
+for $\left|x\right|\leqslant1$. 
+
+
+Find particular values of $a,b$ and $c$ such that, for the corresponding
+function $\mathrm{f}$ of the above form $\left|\mathrm{f}(x)\right|\leqslant1$
+for all $x$ with $\left|x\right|\leqslant1$ and $\left\mathrm{f}'(x)\right=4$
+for some $x$ satisfying $\left|x\right|\leqslant1$.
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+$ABCD$ is a skew (non-planar) quadrilateral, and its pairs of opposite
+sides are equal, i.e. $AB=CD$ and $BC=AD$. Prove that the line joining
+the midpoints of the diagonals $AC$ and $BD$ is perpendicular to
+each diagonal.
+		
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+\begin{question}
+Find the following integrals:
+
+\begin{questionparts}
+\item $\ {\displaystyle \int_{1}^{\mathrm{e}}\frac{\ln x}{x^{2}}\,\mathrm{d}x}\,,$
+\item $\ {\displaystyle \int\frac{\cos x}{\sin x\sqrt{1+\sin x}}\,\mathrm{d}x.}$
+\end{questionparts}
+\end{question}
+
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q10
+\begin{question}
+A sniper at the top of a tree of height $h$ is hit by a bullet fired
+from the undergrowth covering the horizontal ground below. The position
+and elevation of the gun which fired the shot are unknown, but it
+is known that the bullet left the gun with speed $v$. Show that it
+must have been fired from a point within a circle centred on the base
+of the tree and of radius $(v/g)\sqrt{v^{2}-2gh}$. 
+
+
+{[}Neglect air resistance.{]}
+
+	\end{question}
+	
+%%%%%%%%%% Q11
+\begin{question}	
+Derive a formula for the position of the centre of mass of a uniform
+circular arc of radius $r$ which subtends an angle $2\theta$ at
+the centre. 
+
+
+\noindent \begin{center}
+\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-2.27,-5.26)(3.1,3.1) \psline(-2,2)(2,2) \psline(2,2)(2,-3) \psline(2,-3)(-2,-3) \psline(-2,-3)(-2,2) \parametricplot{3.141592653589793}{6.283185307179586}{1*2*cos(t)+0*2*sin(t)+0|0*2*cos(t)+1*2*sin(t)+-3} \psline{->}(0,-3)(-1.15,-4.63) \psline{->}(-1.15,-4.63)(0,-3) \psline{->}(0,-2.52)(-2,-2.52) \psline{->}(-2,-2.52)(0,-2.52) \psline{->}(0,-2.52)(2,-2.52) \psline{->}(2,-2.52)(0,-2.52) \psline{->}(2.42,1.96)(2.42,-3) \psline{->}(2.42,-3)(2.42,1.96) \psline{->}(-1.96,2.36)(1.95,2.37) \psline{->}(1.95,2.37)(-1.96,2.36) \rput[tl](-1.01,-1.94){$r$} \rput[tl](1.02,-1.94){$r$} \rput[tl](-0.45,-3.8){$r$} \rput[tl](2.59,-0.3){$2h$} \rput[tl](-0.23,3.06){$2r$} \end{pspicture*}
+\par\end{center}
+
+
+A plane framework consisting of a rectangle and a semicircle, as in
+the above diagram, is constructed of uniform thin rods. It can stand
+in equilibrium if it is placed in a vertical plane with any point
+of the semicircle in contact with a horizontal floor. Express $h$
+in terms of $r$. 
+\end{question}
+
+%%%%%%%%%% Q12
+
+\begin{question}A skater of mass $M$ is skating inattentively on a smooth frozen
+canal. She suddenly realises that she is heading perpendicularly towards
+the straight canal bank at speed $V$. She is at a distance $d$ from
+the bank and can choose one of two methods of trying to avoid it;
+either she can apply a force of constant magnitude $F$, acting at
+right-angles to her velocity, so that she travels in a circle; or
+she can apply a force of magnitude $\frac{1}{2}F(V^{2}+v^{2})/V^{2}$
+directly backwards, where $v$ is her instantaneous speed. Treating
+the skater as a particle, find the set of values of $d$ for which
+she can avoid hitting the bank. Comment \textbf{briefly} on the assumption
+that the skater is a particle. 
+\end{question}
+	
+%%%%%%%%%% Q13
+\begin{question}
+A piece of circus apparatus consists of a rigid uniform plank of mass
+1000$\,$kg, suspended in a horizontal position by two equal light
+vertical ropes attached to the ends. The ropes each have natural length
+10$\,$m and modulus of elasticity 490$\,$000 N. Initially the plank
+is hanging in equilibrium. Nellie, an elephant of mass 4000$\,$kg,
+lands in the middle of the plank while travelling vertically downwards
+at speed 5$\,$ms$^{-1}.$ While carrying Nellie, the plank comes
+instantaneously to rest at a negligible height above the floor, and
+at this instant Nellie steps nimbly and gently off the plank onto
+the floor. Assuming that the plank remains horizontal, and the rope
+remain vertical, throughout the motion, find to three significant
+figures its initial height above the floor. 
+
+
+During the motion after Nellie alights, do the ropes ever become slack?
+
+
+{[}Take $g$ to be $9.8\mbox{\,\ ms}^{-1}.${]} 
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q14
+\begin{question}
+Let $X$ be a standard normal random variable. If $M$ is any real
+number, the random variable $X_{M}$ is defined in terms of $X$ by
+\[
+X_{M}=\begin{cases}
+X & \mbox{if }X<M,\\
+M & \mbox{if }X\geqslant M.
+\end{cases}
+\]
+Show that the expectation of $X_{M}$ is given by 
+\[
+\mathrm{E}(X_{M})=-\phi(M)+M(1-\Phi(M)),
+\]
+where $\phi$ is the probability density function, and $\Phi$ is
+the cumulative distribution function of $X$. 
+
+
+Fifty times a year, 1024 tourists disembark from a cruise liner at
+the port of Slaka. From there they must travel to the capital either
+by taxi or by bus. Officials of HOGPo are equally likely to direct
+a tourist to the bus station or to the taxi rank. Each bus of the
+bus coorperative holds 31 passengers, and the coorperative currently
+runs 16 buses. The bus coorperative makes a profit of 1 vloska for
+each passenger carried. It carries all the passengers it can, with
+any excess being (eventually) transported by taxi. What is the larges
+annual bribe the bus coorperative should consider paying to HOGPo
+in order to be allowed to run an extra bus?
+\end{question}
+
+%%%%%%%%%% Q15
+\begin{question}
+In Fridge football, each team scores two points for a goal and one
+point for a foul committed by the opposing team. In each game, for
+each team, the probability that the team scores $n$ goals is $\left(3-\left|2-n\right|\right)/9$
+for $0\leqslant n\leqslant4$ and zero otherwise, while the number
+of fouls committed against it will with equal probability be one of
+the numbers from $0$ to $9$ inclusive. The numbers of goals and
+fouls of each team are mutually independent. What is the probability
+that in some game a particular team gains more than half its points
+from fouls?
+
+
+In response to criticisms that the game is boring and violent, the
+ruling body increases the number of penalty points awarded for a foul,
+in the hope that this will cause large numbers of fouls to be less
+probable. During the season following the rule change, 150 games are
+played and on 12 occasions (out of 300) a team committed 9 fouls.
+Is this good evidence of a change in the probability distribution
+of the number of fouls? Justify your answer. 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+Wondergoo is applied to all new cars. It protects them completely
+against rust for three years, but thereafter the probability density
+of the time of onset of rust is proportional to $t^{2}/(1+t^{2})^{2}$
+for a car of age $3+t$ years $(t\geqslant0)$. Find the probability
+that a car becomes rusty before it is $3+t$ years old. 
+
+
+Every car is tested for rust annually on the anniversary of its manufacture.
+If a car is not rusty, it will certainly pass; if it is rusty, it
+will pass with probability $\frac{1}{2}.$ Cars which do not pass
+are immediately taken off the road and destroyed. What is the probability
+that a randomly selected new car subsequently fails a test taken on
+the fifth anniversary of its manufacture?
+
+
+Find also the probability that a car which was destroyed immediately
+after its fifth anniversary test was rusty when it passed its fourth
+anniversary test.
+	\end{question}
+\end{document}

@@ -1,0 +1,666 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2012
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\q{{\mathrm q}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Given that $\displaystyle z = y^n \left( \frac{\d y}{\d x}\right)^{\!2}$, show that
+\[
+\frac{\d z}{\d x} = 
+y^{n-1} \frac{\d y}{\d x} \left( n \left(\frac{\d y}{\d x}\right)^{\!2} + 2y \frac{\d^2y}{\d x^2}\right)
+.
+\]
+\begin{questionparts}
+\item
+Use the above result to show that the solution to the equation
+\[
+\left(\frac{\d y}{\d x}\right)^{\!2}
++ 2y \frac{\d^2y}{\d x^2} = \sqrt y \ \ \ \ \ \ \ \ \ \ (y>0)
+\]
+that satisfies $y=1$ and $\dfrac{\d y}{\d x}=0$ when $x=0$ is 
+$y= \big  ( \frac38 x^2+1\big)^{\frac23}$.
+\item
+Find the solution to the equation
+\[
+\left(\frac{\d y}{\d x}\right)^{\!2}
+ -y \frac{\d^2y}{\d x^2} + y^2=0 
+\]
+that satisfies $y=1$ and $\dfrac{\d y}{\d x}=0$ when $x=0$.
+
+
+\end{questionparts}
+\end{question}
+\vspace{-0.5cm}
+
+%%%%%%%%%%Q2
+\begin{question}
+In this question, $\vert x \vert <1$ and you may ignore issues of convergence.
+
+\begin{questionparts}
+
+\item
+Simplify 
+\[
+ (1-x)(1+x)(1+x^2)(1+x^4) \cdots (1+x^{2^n})\,,
+\]
+where $n$ is a positive integer,
+and deduce that
+\[
+\frac1{1-x} 
+= (1+x)(1+x^2)(1+x^4) \cdots (1+x^{2^n}) + \frac {x^{2^{n+1}}}{1-x}\,.
+\]
+ Deduce further that
+\[
+\ln(1-x) = - \sum_{r=0}^\infty \ln \left  (1+ x ^{2^r}\right)
+\,,
+\]
+and hence that 
+\[
+\frac1 {1-x} = \frac 1 {1+x} + \frac {2x}{1+x^2} + \frac {4x^3}{1+x^4}
++\cdots\,.
+\]
+
+\item
+Show that
+
+\[
+\frac{1+2x}{1+x+x^2} = \frac{1-2x}{1-x+x^2} + \frac{2x-4x^3}{1-x^2+x^4}
++ \frac {4x^3-8x^7}{1-x^4+x^8} + \cdots\,.
+\]
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+It is given that the two curves
+\[
+y=4-x^2
+\text{ \ \ \ and \ \ \ }
+m  x = k-y^2\,,
+\]
+where $m>0$, 
+touch exactly once. 
+
+\begin{questionparts}
+\item
+In each of the following four cases, sketch the two curves on a single
+diagram, noting the coordinates of any intersections with the axes:
+
+\textbf{(a)} $k <0\, $;
+
+\textbf{(b)} $0<k<16$, $k/m < 2\,$;
+
+\textbf{(c)} $k>16$, $k/m >2\,$;
+
+\textbf{(d)} $k>16$, $k/m <2\,$.
+
+
+ 
+
+\item
+Now set $m=12$.\\
+Show that the $x$-coordinate of any point at which
+the two curves meet satisfies
+\[
+x^4-8x^2 +12x +16-k=0\,.
+\]
+
+ Let $a$ be the value of $x$ at the point where the
+curves touch. Show that $a$ satisfies
+\[
+a^3 -4a +3 =0
+\]
+and hence find the three possible values of $a$.
+
+Derive also the equation
+\[
+k= -4a^2 +9a +16\,.
+\]
+Which of the four sketches in  
+part (i) arise?
+
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+\begin{questionparts}
+\item
+ Show that
+\[
+\sum_{n=1} ^\infty 
+\frac{n+1}{n!} 
+=  2\e - 1 
+\]
+and  
+\[
+\sum _{n=1}^\infty 
+\frac {(n+1)^2}{n!} = 5\e-1\,.
+\]
+Sum the series   \ $\displaystyle 
+\sum _{n=1}^\infty 
+\frac {(2n-1)^3}{n!} 
+ \,.$ 
+\item
+Sum the series
+$\displaystyle 
+\sum_{n=0}^\infty \frac{(n^2+1)2^{-n}}{(n+1)(n+2)}\,$,
+giving your answer in terms of natural logarithms.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item The point with coordinates $(a, b)$, 
+where $a$ and $b$  are rational numbers,
+  is called:
+\newline
+\hspace*{1cm} 
+an {\em integer rational point} if both $a$ and $b$ are integers;
+\newline\hspace*{1cm}
+a {\em non-integer rational point} if neither $a$ nor $b$ is an integer.
+
+
+
+
+
+\begin{itemize}
+
+\item[\bf (a)]
+Write down an integer rational point and a non-integer rational point
+on the circle $x^2+y^2 =1$.
+
+\item [\bf (b)]
+ Write down an integer rational point on the circle
+$x^2+y^2=2$.
+Simplify
+\[
+(\cos\theta + \sqrt m \sin\theta)^2 +
+(\sin\theta - \sqrt m \cos\theta)^2 \,
+\]
+and hence obtain a non-integer rational point on the circle $x^2+y^2=2\,$.
+\end{itemize}
+
+\item
+The point with coordinates $(p+\sqrt 2 \, q\,,\, r+\sqrt 2 \, s)$, where
+ $p$, $q$, $r$ and $s$ 
+are rational numbers, is called:
+\newline\hspace*{1cm}
+an {\em integer $2$-rational point} if all of 
+ $p$, $q$, $r$ and $s$ 
+ are integers;
+\newline\hspace*{1cm}
+a {\em non-integer $2$-rational point} if none of  
+ $p$, $q$, $r$ and $s$ 
+ is an integer.
+
+
+\begin{itemize}
+\item[\bf (a)]
+Write down an  integer $2$-rational point, and 
+obtain a non-integer $2$-rational point, on  the circle $x^2+y^2=3\,$.
+
+\item [\bf(b)]
+Obtain a non-integer $2$-rational point 
+on the circle $x^2+y^2=11\,$.
+
+\item [\bf(c)]Obtain a  non-integer $2$-rational point 
+on the hyperbola $x^2-y^2 =7 $.
+
+\end{itemize}
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Let  $x+{\rm i} y$ be a root of 
+the quadratic equation $z^2 + pz +1=0$, where 
+$p$ is a real number. Show that $x^2-y^2 +px+1=0$ and $(2x+p)y=0$.
+Show further that 
+\[
+\text{\ either \ } p=-2x \text{ \ \ or \ \ } p=-(x^2+1)/x \text{ \ with  \ }
+x\ne0 \,.
+\]
+
+Hence show that the set of  points in the Argand diagram 
+that can (as $p$ varies)
+represent roots 
+of the quadratic equation consists of the real axis with
+one point missing and a circle.
+This set of points is called
+the {\em root locus} of the 
+quadratic equation.
+
+Obtain and sketch in the Argand diagram the root locus of the
+equation
+\[
+pz^2 +z+1=0\,
+\]
+and the root locus of the equation
+\[
+pz^2 + p^2z +2=0\,.
+\]
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+A pain-killing drug is injected into the bloodstream. It 
+then diffuses into the brain, where it is absorbed. 
+The quantities at time $t$ of the drug in the blood
+and the brain respectively are $y(t)$
+and $z(t)$.  These satisfy 
+\[
+\dot y = - 2(y-z)\,, 
+\ \ \ \ \ \ \ 
+\dot z = - \dot y -3z\, ,
+\]
+where the dot denotes differentiation with respect to $t$.
+
+Obtain a second order differential equation for $y$ and hence derive
+the solution
+\[
+y= A\e^{-t} + B\e ^{-6t}\,,
+\ \ \ \ \ \ \
+z= \tfrac12 A \e^{-t} - 2 B \e^{-6t}\,,
+\] 
+where $A$ and $B$ are arbitrary constants.
+
+
+\begin{questionparts}
+\item Obtain the solution that satisfies 
+$z(0)=0$ and $y(0)=  5$. The quantity
+of the drug in the brain for this solution is
+denoted by $z_1(t)$.
+
+\item Obtain the  solution that satisfies
+$ 
+z(0)=z(1)= c$,
+where $c$ is a given constant.
+%\[
+%C=2(1-\e^{-1})^{-1} - 2(1-\e^{-6})^{-1}\,.
+%\]
+ The quantity
+of the drug in the brain for this solution is
+denoted by $z_2(t)$.
+
+\item Show that for $0\le t \le 1$, 
+\[
+z_2(t) = \sum _{n=-\infty}^{0} z_1(t-n)\,,
+\]
+provided $c$ takes a particular value that you should find.
+
+ 
+\end {questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+The sequence $F_0$, $F_1$, $F_2$, $\ldots\,$ is defined
+by $F_0=0$, $F_1=1$ and, for $n\ge0$,
+\[
+F_{n+2} = F_{n+1} + F_n
+\,.
+\]
+
+\begin{questionparts}
+\item Show that $F_0F_3-F_1F_2 = F_2F_5- F_3F_4\,$.
+\item
+Find the values of $F_nF_{n+3} - F_{n+1}F_{n+2}$
+in the two cases that arise.
+\item 
+Prove that, for $r=1$, $2$, $3$, $\ldots\,$, 
+\[
+\arctan \left( \frac 1{F_{2r}}\right)
+=\arctan \left( \frac 1{F_{2r+1}}\right)+
+\arctan \left( \frac 1{F_{2r+2}}\right)
+\]
+and hence evaluate the following sum (which you may assume converges): 
+\[
+\sum_{r=1}^\infty \arctan \left( \frac 1{F_{2r+1}}\right)
+\,.
+\]
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A pulley consists of a disc of radius $r$
+with centre $O$
+and a light thin axle through $O$ perpendicular
+to the plane of the disc. The disc is non-uniform,
+its  mass  is $M$  and its
+centre of mass is at $O$. The
+ axle is fixed and horizontal.
+
+
+Two particles, of masses $m_1$ and $m_2$ where $m_1>m_2$,
+are connected by a light inextensible string which passes over
+the pulley. 
+The contact between the string 
+and the pulley is rough enough to prevent the string sliding. 
+The pulley turns and  the vertical force on the axle is
+ found, by measurement, to be~$P+Mg$. 
+\begin{questionparts}
+\item
+The moment of inertia of the pulley about its axle is calculated 
+assuming that the pulley rotates without friction about its axle. 
+Show that the calculated value is
+\[
+\frac{((m_1 + m_2)P - 4m_1m_2g)r^2}
+{(m_1 + m_2)g - P}\,.
+\tag{$*$}\]
+ \item
+Instead, the moment of inertia of the pulley about its axle
+is calculated
+assuming that a couple of magnitude $C$ due to      
+friction acts on the axle of the pulley. 
+Determine whether
+this calculated value  is greater or 
+smaller than $(*)$.
+
+Show that $C<(m_1-m_2)rg$.
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A small ring of mass $m$ 
+is free to slide without friction on  a hoop of radius $a$. 
+The hoop is fixed in a vertical plane. 
+The ring is connected by a light elastic string of natural length $a$ 
+to the highest point of the hoop. 
+The ring is initially at rest at the lowest 
+point of the hoop and is then slightly displaced. 
+In the subsequent motion the  
+angle of the string to the downward vertical is $\phi$.
+Given that the ring first comes to rest just as the string becomes slack,
+find an expression for the modulus of elasticity of the string in terms
+of $m$ and  $g$.
+ 
+Show that, throughout the motion, the magnitude $R$  of the reaction
+between the ring and the hoop is given by
+\[
+R  = ( 12\cos^2\phi -15\cos\phi +5) mg
+\]
+and 
+that $R$ is non-zero throughout the motion.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+One end of a thin heavy uniform inextensible perfectly flexible rope of length $2L$
+and mass $2M$
+is attached to a fixed point $P$. A particle of mass $m$ is 
+attached to the other end. Initially, the particle is held at
+$P$ and the rope hangs vertically in a loop below $P$. The particle is then released
+so that it and a section of the rope (of decreasing length)
+fall vertically as shown in the diagram. 
+
+\begin{center}
+\psset{xunit=1.0cm,yunit=0.9cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(0.13,-0.26)(3.26,5.51)
+\psline(1,5)(3,5)
+\psline[linewidth=0.1pt,linestyle=dashed,dash=2pt 2pt]{<->}(1.52,0)(1.52,5)
+\psline[linewidth=0.1pt,linestyle=dashed,dash=2pt 2pt]{<->}(2.53,3.2)(2.53,5)
+\psline(2.1,3.18)(2.06,0.25)
+\psline(2,5)(2.02,0.26)
+\psline(2.02,0.26)(2.03,0)
+\psline(2.03,0)(2.06,0.25)
+\rput[tl](1.94,5.45){$P$}
+\rput[tl](2.6,4.25){$x$}
+\rput[tl](0.2,2.85){$L+\frac{1}{2}x$}
+\begin{scriptsize}
+\psdots[dotsize=4pt 0,dotstyle=*](2.1,3.18)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+You may assume that
+each point on the moving section of the rope falls at the same speed as the 
+particle. Given that energy is conserved, show 
+that, when  the particle has fallen a distance $x$ (where $x<   2L$),
+its speed $v$ is given by
+\[
+v^2 = \frac { 2g x \big( mL +ML - \frac14 Mx)}{mL +ML - \frac12 Mx}\,.
+\]  
+
+Hence show that the acceleration of the particle is 
+\[
+ g +
+ \frac{ Mgx\big(mL+ML- \frac14 Mx\big)}{2\big(mL +ML -\frac12 Mx\big)^2}\,
+\,.\] 
+Deduce that the acceleration of the particle after it is 
+released is greater than $g$.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+\begin{questionparts}
+\item A point $P$ lies in an equilateral 
+triangle $ABC$ of height 1. The perpendicular
+distances from $P$ to the sides $AB$, $BC$ and $CA$ are
+$x_1$, $x_2$ and $x_3$, respectively. By considering the
+areas of triangles with one vertex at $P$, show
+that  $x_1+x_2+x_3=1$.
+
+Suppose now that $P$ is placed at random in the equilateral triangle
+(so that the probability of it lying in any given region of the triangle is
+proportional to the area of that region).  The perpendicular
+distances from $P$ to the sides $AB$, $BC$ and $CA$ are
+random variables $X_1$, $X_2$ and $X_3$, respectively.
+In the case $X_1= \min(X_1,X_2,X_3)$, give a sketch showing
+the region of the triangle in which $P$ lies. 
+
+Let $X= \min(X_1,X_2,X_3)$. Show that
+the probability density function for $X$ is 
+given by
+\[
+\f(x) = 
+\begin{cases}
+6(1-3x) & 0 \le x \le \frac13\,, \\
+0 & \text{otherwise}\,.
+\end{cases}
+\]
+Find the expected value of $X$.
+
+\item
+A point is chosen at random in a regular tetrahedron of height 1.
+Find the expected value of the distance from the point to the 
+closest face.
+\newline
+[The volume of a tetrahedron is 
+$\frac13 \times \text{area of base}\times\text{height}$ and its centroid
+is a distance $\frac14\times \text{height}$ from the base.]
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+\begin{questionparts}
+\item The random variable $Z$ has a 
+Normal distribution with mean $0$ and variance $1$. 
+Show that the expectation of $Z$ given that $a < Z < b$ is
+\[
+ \frac{\exp(- \frac12 a^2) - \exp(- \frac12 b^2) }
+{\sqrt{2\pi\,} \,\big(\Phi(b) - \Phi(a)\big)},
+\]
+where $\Phi$ denotes the cumulative distribution function for $Z$.
+
+\item The random variable $X$ 
+has a
+ Normal distribution with mean $\mu$ and variance $\sigma^2$. 
+Show that 
+\[
+\E(X \,\vert\, X>0) = \mu + \sigma \E(Z \,\vert\,Z > -\mu/\sigma).
+\]
+Hence, or otherwise, 
+show that the expectation, $m$, of $\vert X\vert $ is given by			
+\[
+m= 
+\mu \big(1 - 2 \Phi(- \mu / \sigma)\big)
++
+ \sigma \sqrt{2 / \pi}\; \exp(- \tfrac12 \mu^2 / \sigma^2) 
+\,.
+\]
+Obtain an expression for the variance 
+of $\vert X \vert$ in terms of $\mu $, $\sigma $  and $m$.
+\end{questionparts} 
+\end{question}
+
+\end{document}

@@ -1,0 +1,549 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1989
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Prove that $\cos3\theta=4\cos^{3}\theta-3\cos\theta$. 
+
+
+Show how the cubic equation 
+\[
+24x^{3}-72x^{2}+66x-19=0\tag{\ensuremath{*}}
+\]
+can be reduced to the form 
+\[
+4z^{3}-3z=k
+\]
+by means of the substitution $y=x+a$ and $z=by$, for suitable values
+of the constants $a$ and $b$. Hence find the three roots of the
+equation $(*)$, to three significant figures.
+
+
+Show, by means of a counterexample, or otherwise, that not all cubic
+equations of the form 
+\[
+x^{3}+\alpha x^{2}+\beta x+\gamma=0
+\]
+can be solved by this method.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Let 
+\begin{alignat*}{2}
+\tan x & =\ \ \, \quad{\displaystyle \sum_{n=0}^{\infty}a_{n}x^{n}} &  & \text{ for small }x,\\
+x\cot x & =1+\sum_{n=1}^{\infty}b_{n}x^{n}\quad &  & \text{ for small }x\text{ and not zero}.
+\end{alignat*}
+Using the relation 
+\[
+\cot x-\tan x=2\cot2x,\tag{\ensuremath{*}}
+\]
+ or otherwise, prove that $a_{n-1}=(1-2^{n})b_{n}$, for $n\geqslant1$. 
+
+
+Let 
+\[
+x\mathrm{cosec}x=1+{\displaystyle \sum_{n=1}^{\infty}c_{n}x^{n}\quad\text{ for small }x\neq0. \qquad \qquad \, }
+\]
+Using a relation similar to $(*)$ involving $2\mathrm{cosec}2x$, or
+otherwise, prove that 
+\[
+c_{n}=\frac{2^{n-1}-1}{2^{n}-1}\frac{1}{2^{n-1}}a_{n-1}\qquad(n\geqslant1).
+\]
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+	The real numbers $x$ and $y$ are related to the real numbers $u$
+	and $v$ by 
+	\[
+	2(u+\mathrm{i}v)=\mathrm{e}^{x+\mathrm{i}y}-\mathrm{e}^{-x-\mathrm{i}y}.
+	\]
+	Show that the line in the $x$-$y$ plane given by $x=a$, where $a$
+	is a positive constant, corresponds to the ellipse 
+	\[
+	\left(\frac{u}{\sinh a}\right)^{2}+\left(\frac{v}{\cosh a}\right)^{2}=1
+	\]
+	in the $u$-$v$ plane. Show also that the line given by $y=b$, where
+	$b$ is a constant and $0<\sin b<1,$ corresponds to one branch of
+	a hyperbola in the $u$-$v$ plane. Write down the $u$ and $v$ coordinates
+	of one point of intersection of the ellipse and hyperbola branch,
+	and show that the curves intersect at right-angles at this point. 
+
+
+	Make a sketch of the $u$-$v$ plane showing the ellipse, the hyperbola
+	branch and the line segments corresponding to: 
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] $x=0$; 
+\item[\bf (ii)] $y=\frac{1}{2}\pi,$ $\quad 0\leqslant x\leqslant a.$ 
+\end{itemize}
+\end{question}
+
+%%%%%% Q4 
+
+\begin{question}
+The function $\mathrm{f}$ is defined by 
+\[
+\mathrm{f}(x)=\frac{\left(x-a\right)\left(x-b\right)}{\left(x-c\right)\left(x-d\right)}\qquad\left(x\neq c,\ x\neq d\right),
+\]
+where $a,b,c$ and $d$ are real and distinct, and $a+d\neq c+d$.
+Show that 
+\[
+\frac{x\mathrm{f}'(x)}{\mathrm{f}(x)}=\left(1-\frac{a}{x}\right)^{-1}+\left(1-\frac{b}{x}\right)^{-1}-\left(1-\frac{c}{x}\right)^{-1}-\left(1-\frac{d}{x}\right)^{-1},
+\]
+$(x\neq0,x\neq a,x\neq b)$ and deduce that when $\left|x\right|$
+is much larger than each of $\left|a\right|,\left|b\right|,\left|c\right|$
+and $\left|d\right|,$ the gradient of $\mathrm{f}(x)$ has the same
+sign as $(a+b-c-d).$ 
+
+
+It is given that there is a real value of real value of $x$ for which
+$\mathrm{f}(x)$ takes the real value $z$ if and only if 
+\[
+[\left(c-d\right)^{2}z+\left(a-c\right)\left(b-d\right)+\left(a-d\right)\left(b-c\right)]^{2}\geqslant4\left(a-c\right)\left(b-d\right)\left(a-d\right)\left(b-c\right).
+\]
+Describe briefly a method by which this result could be proved, but
+do not attempt to prove \nolinebreak it. 
+
+
+Given that $a<b$ and $a<c<d$, make sketches of the graph of $\mathrm{f}$
+in the four distinct cases which arise, indicating the cases for which
+the range of $\mathrm{f}$ is not the whole of $\mathbb{R}.$ 
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+	\begin{questionparts}
+		\item 
+Show that in polar coordinates, the gradient of any curve at the point
+$(r,\theta)$ is 
+\[
+\left.\left(\frac{\mathrm{d}r}{\mathrm{d}\theta}\tan\theta+r\right)\right/\left(\frac{\mathrm{d}r}{\mathrm{d}\theta}-r\tan\theta\right).
+\]
+
+
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-0.6,-3)(6.8,3) \psline(0,0)(6.54,0) \rput[tl](4.13,-0.22){$O$} \rput[tl](-0.47,0.07){$L$} \rput{-270}(5.75,0.08){\psplot[plotpoints=500]{-12}{12}{x^2/2/3}} \psline(2,1.5)(5.42,1.5) \psline(3.73,-0.74)(5.42,1.5) \psline[linewidth=0.4pt]{->}(3,1.5)(4,1.5) \psline[linewidth=0.4pt]{->}(5.42,1.5)(4.99,0.93) \psline(3.84,0.78)(6.62,2.05) \end{pspicture*}
+\par\end{center}
+
+
+\item A mirror is designed so that any ray of light which hits one side
+of the mirror and which is parallel to a certain fixed line $L$ is
+reflected through a fixed point $O$ on $L$. For any ray hitting
+the mirror, the normal to the mirror at the point of reflection bisects
+the angle between the incident ray and the reflected ray, as shown
+in the figure. Prove that the mirror intersects any plane containing
+$L$ in a parabola.
+\end{questionparts}
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+	The function $\mathrm{f}$ satisfies the condition $\mathrm{f}'(x)>0$
+	for $a\leqslant x\leqslant b$, and $\mathrm{g}$ is the inverse of
+	$\mathrm{f}.$ By making a suitable change of variable, prove that
+	\[
+	\int_{a}^{b}\mathrm{f}(x)\,\mathrm{d}x=b\beta-a\alpha-\int_{\alpha}^{\beta}\mathrm{g}(y)\,\mathrm{d}y,
+	\]
+	where $\alpha=\mathrm{f}(a)$ and $\beta=\mathrm{f}(b)$. Interpret
+	this formula geometrically, in the case where $\alpha$ and $a$ are
+	both positive. 
+
+
+	Prove similarly and interpret (for $\alpha>0$ and $a>0$) the formula
+	\[
+	2\pi\int_{a}^{b}x\mathrm{f}(x)\,\mathrm{d}x=\pi(b^{2}\beta-a^{2}\alpha)-\pi\int_{\alpha}^{\beta}\left[\mathrm{g}(y)\right]^{2}\,\mathrm{d}y.
+	\]
+	
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+	By means of the substitution $x^{\alpha},$ where $\alpha$ is a suitably
+	chosen constant, find the general solution for $x>0$ of the differential
+	equation 
+	\[
+	x\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}-b\frac{\mathrm{d}y}{\mathrm{d}x}+x^{2b+1}y=0,
+	\]
+	where $b$ is a constant and $b>-1$. 
+
+
+	Show that, if $b>0$, there exist solutions which satisfy $y\rightarrow1$
+	and $\mathrm{d}y/\mathrm{d}x\rightarrow0$ as $x\rightarrow0$, but
+	that these conditions do not determine a unique solution. For what
+	values of $b$ do these conditions determine a unique solution?
+	
+	
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+		Let $\Omega=\exp(\mathrm{i}\pi/3).$ Prove that $\Omega^{2}-\Omega+1=0.$
+
+
+		Two transformations, $R$ and $T$, of the complex plane are defined
+		by 
+		\[
+		R:z\longmapsto\Omega^{2}z\qquad\mbox{ and }\qquad T:z\longmapsto\dfrac{\Omega z+\Omega^{2}}{2\Omega^{2}z+1}.
+		\]
+		 Verify that each of $R$ and $T$ permute the four point $z_{0}=0,$
+		$z_{1}=1,$ $z_{2}=\Omega^{2}$ and $z_{3}=-\Omega.$ Explain, without
+		explicitly producing a group multiplication table, why the smallest
+		group of transformations which contains elements $R$ and $T$ has
+		order at least 12. 
+
+
+		Are there any permutations of these points which cannot be produced
+		by repeated combinations of $R$ and $T$?
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+		\begin{question}
+The matrix $\mathbf{F}$ is defined by 
+\[
+\mathbf{F}=\mathbf{I}+\sum_{n=1}^{\infty}\frac{1}{n!}t^{n}\mathbf{A}^{n},
+\]
+where $\mathbf{A}=\begin{pmatrix}-3 & -1\\
+8 & 3
+\end{pmatrix},$ and $t$ is a variable scalar. Evaluate $\mathbf{A}^{2},$ and show
+that 
+\[
+\mathbf{F}=\mathbf{I}\cosh t+\mathbf{A}\sinh t.
+\]
+Show also that $\mathbf{F}^{-1}=\mathbf{I}\cosh t-\mathbf{A}\sinh t,$
+and that $\dfrac{\mathrm{d}\mathbf{F}}{\mathrm{d}t}=\mathbf{FA}.$
+
+
+The vector $\mathbf{r}=\begin{pmatrix}x(t)\\
+y(t)
+\end{pmatrix}$ satisfies the differential equation 
+\[
+\frac{\mathrm{d}\mathbf{r}}{\mathrm{d}t}+\mathbf{A}\mathbf{r}=\mathbf{0},
+\]
+with $x=\alpha$ and $y=\beta$ at $t=0.$ Solve this equation by
+means of a suitable matrix integrating factor, and hence show that
+\begin{alignat*}{1}
+x(t) & =\alpha\cosh t+(3\alpha+\beta)\sinh t\\
+y(t) & =\beta\cosh t-(8\alpha+3\beta)\sinh t.
+\end{alignat*}
+		\end{question}
+		
+	
+%%%%%%%%%% 10
+\begin{question}
+State carefully the conditions which the fixed vectors $\mathbf{a,b,u}$
+and $\mathbf{v}$ must satisfy in order to ensure that the line $\mathbf{r=a+}\lambda\mathbf{u}$
+intersects the line $\mathbf{r=b+\mu}\mathbf{v}$ in exactly one point. 
+
+
+Find the two values of the fixed scalar $b$ for which the planes
+with equations 
+\[
+\left.\begin{array}{c}
+x+y+bz=b+2\\
+bx+by+z=2b+1
+\end{array}\right\} \tag{\ensuremath{*}}
+\]
+do not intersect in a line. For other values of $b$, express the
+line of intersection of the two planes in the form $\mathbf{r=a}+\lambda\mathbf{u},$
+where $\mathbf{a\cdot u}=0$. 
+
+
+Find the conditions which $b$ and the fixed scalars $c$ and $d$
+must satisfy to ensure that there is exactly one point on the line
+\[
+\mathbf{r=}\left(\begin{array}{c}
+0\\
+0\\
+c
+\end{array}\right)+\mu\left(\begin{array}{c}
+1\\
+d\\
+0
+\end{array}\right)
+\]
+whose coordinates satisfy both equations $(*)$. 
+			\end{question}
+			
+		
+		
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+	A lift of mass $M$ and its counterweight of mass $M$ are connected
+	by a light inextensible cable which passes over a light frictionless
+	pulley. The lift is constrained to move vertically between smooth
+	guides. The distance between the floor and the ceiling of the lift
+	is $h$. Initially, the lift is at rest, and the distance between
+	the top of the lift and the pulley is greater than $h$. A small tile
+	of mass $m$ becomes detached from the ceiling of the lift. Show that
+	the time taken for it to fall to the floor is 
+	\[
+	t=\sqrt{\frac{\left(2M-m\right)h}{Mg}}.
+	\]
+	The collision between the tile and the lift floor is perfectly inelastic.
+	Show that the lift is reduced to rest by the collision, and that the
+	loss of energy of the system is $mgh$.
+
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+A uniform rectangular lamina of sides $2a$ and $2b$ rests in a vertical
+plane. It is supported in equilibrium by two smooth pegs fixed in
+the same horizontal plane, a distance $d$ apart, so that one corner
+of the lamina is below the level of the pegs. Show that if the distance
+between this (lowest) corner and the peg upon which the side of length
+$2a$ rests is less than $a$, then the distance between this corner
+and the other peg is less than $b$. 
+
+
+Show also that 
+\[
+b\cos\theta-a\sin\theta=d\cos2\theta,
+\]
+where $\theta$ is the acute angle which the sides of length $2b$
+make with the horizontal.
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+A body of mass $m$ and centre of mass $O$ is said to be \textit{dynamically
+equivalent }to a system of particles of total mass $m$ and centre
+of mass $O$ if the moment of inertia of the system of particles is
+the same as the moment of inertia of the body, about any axis through
+$O$. Show that this implies that the moment of inertia of the system
+of particles is the same as that of the body about \textit{any }axis. 
+
+
+Show that a uniform rod of length $2a$ and mass $m$ is dynamically
+equivalent to a suitable system of three particles, one at each end
+of the rod, and one at the midpoint. 
+
+
+Use this result to deduce that a uniform rectangular lamina of mass
+$M$ is dynamically equivalent to a system consisting of particles
+each of mass $\frac{1}{36}M$ at the corners, particles each of mass
+$\frac{1}{9}M$ at the midpoint of each side, and a particle of mass
+$\frac{4}{9}M$ at the centre. Hence find the moment of inertia of
+a square lamina, of side $2a$ and mass $M,$ about one of its diagonals. 
+
+
+The mass per unit length of a thin rod of mass $m$ is proportional
+to the distance from one end of the rod, and a dynamically equivalent
+system consists of one particle at each end of the rod and one at
+the midpoint. Write down a set of equations which determines these
+masses, and show that, in fact, only two particles are required. 
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+One end of a light inextrnsible string of length $l$ is fixed to
+a point on the upper surface of a thin, smooth, horizontal table-top,
+at a distance $(l-a)$ from one edge of the table-top. A particle
+of mass $m$ is fixed to the other end of the string, and held a distance
+$a$ away from this edge of the table-top, so that the string is horizontal
+and taut. The particle is then released. Find the tension in the string
+after the string has rotated through an angle $\theta,$ and show
+that the largest magnitude of the force on the edge of the table top
+is $8mg/\sqrt{3}.$  
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+Two points are chosen independently at random on the perimeter (including
+the diameter) of a semicircle of unit radius. What is the probability
+that exactly one of them lies on the diameter?
+
+
+Let the area of the triangle formed by the two points and the midpoint
+of the diameter be denoted by the random variable $A$. 
+\begin{questionparts}
+\item Given that exactly one point lies on the diameter, show that the expected
+value of $A$ is \nolinebreak $\left(2\pi\right)^{-1}$. 
+\item Given that neither point lies on the diameter, show that the expected
+value of $A$ is $\pi^{-1}$. {[}You may assume that if two points
+are chosen at random on a line of length $\pi$ units, the probability
+density function for the distance $X$ between the two points is $2\left(\pi-x\right)/\pi^{2}$
+for $0\leqslant x\leqslant\pi.${]}
+\end{questionparts}
+
+Using these results, or otherwise, show that the expected value of
+$A$ is $\left(2+\pi\right)^{-1}$. 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+Widgets are manufactured in batches of size $(n+N)$. Any widget has
+a probability $p$ of being faulty, independent of faults in other
+widgets. The batches go through a quality control procedure in which
+a sample of size $n$, where $n\geqslant2$, is taken from each batch
+and tested. If two or more widgets in the sample are found to be faulty,
+all widgets in the batch are tested and all faults corrected. If fewer
+than two widgets in the sample are found to be faulty, the sample
+is replaced in the batch and no faults are corrected. Show that the
+probability that the batch contains exactly $k$, where $k\leqslant N$,
+faulty widgets after quality control is 
+\[
+\frac{\left[N+1+k\left(n-1\right)\right]N!}{\left(N-k+1\right)!k!}p^{k}\left(1-p\right)^{N+n-k},
+\]
+and verify that this formula also gives the correct answer for $k=N+1$. 
+
+
+Show that the expected number of faulty widgets in a batch after quality
+control is 
+\[
+\left[N+n+pN(n-1)\right]p(1-p)^{n-1}.
+\]
+\end{question}
+\end{document}

@@ -1,0 +1,594 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2005
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Show that $\sin A = \cos B$ if and only if $\ds A = (4n+1)\frac{\pi}{2}
+\pm B$ for some integer $n$.
+
+Show also that 
+$\big\vert\sin x \pm \cos x \big\vert \le \sqrt{2}$ for all values of $x$ and
+deduce  that there are no solutions to the equation $\sin
+\left( \sin x \right) = \cos \left( \cos x \right)$.
+
+Sketch, on the same axes, the graphs of $y= \sin \left( \sin x \right)$ and
+$y = \cos \left( \cos x \right)$. Sketch, not on the previous axes,
+the graph of  $y= \sin \left(2 \sin x \right)$.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Find the general solution of the differential equation  
+$\ds \frac{\mathrm{d}y}{\mathrm{d}x} = -\frac{xy}{x^2+a^2}\;$,  
+where $a\ne0\,$, and show that it can be written in the form
+$\ds y^2(x^2+a^2)= c^2\,$,  
+where $c$ is an arbitrary constant.
+Sketch this curve. 
+ 
+Find an expression for  
+$\ds \frac{\mathrm{d}}{\mathrm{d}x} (x^2+y^2)$  
+and  show that
+\[
+ \frac{\mathrm{d^2}}{\mathrm{d}x^2} (x^2+y^2) = 
+2\left(1 -\frac {c^2}{(x^2+a^2)^2} \right) + \frac{8c^2x^2}{(x^2+a^2)^3}\;.
+\]
+
+\begin{questionparts}
+\item
+Show that, if $0<c<a^2$,  
+the points on the curve whose distance from the origin  
+is least are $\ds \l 0\,,\;\pm \frac{c}{a}\r$. 
+ \item
+If $c>a^2$, determine the points  
+on the curve whose distance from the origin is least. 
+ \end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Let  
+$\f(x)=x^2+px+q$ and $\g(x)=x^2+rx+s\,$.  
+Find an expression for $\f ( \g (x))$  
+and hence find a necessary and sufficient condition  
+on $a$, $b$ and $c$  for it to be possible to  
+write the quartic expression $x^4+ax^3+bx^2+cx+d$  
+in the form $\f ( \g (x))$, for some choice of values  
+of $p$, $q$, $r$ and~$s$.  
+ 
+Show further that this condition holds  
+if and only if it is possible to write  
+the quartic expression  
+$x^4+ax^3+bx^2+cx+d$ in the form $(x^2+vx+w)^2-k$,  
+for some choice of values of $v$, $w$ and $k$. 
+ 
+Find the roots of the quartic equation $x^4-4x^3+10x^2-12x+4=0\,$. 
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The sequence $u_n$ ($n= 1, 2, \ldots$) satisfies the recurrence relation 
+\[ 
+u_{n+2}= \frac{u_{n+1}}{u_n}(ku_n-u_{n+1})  
+\] 
+where  $k$ is a constant. 
+ 
+If $u_1=a$ and $u_2=b\,$,  
+where $a$ and  $b$ are non-zero and $b \ne ka\,$, prove by induction that 
+\[ 
+u_{2n}=\Big(\frac b a \Big) u_{2n-1} 
+\] 
+\[ 
+u_{2n+1}= c u_{2n} 
+\] 
+for $n \ge 1$,  
+where $c$ is a constant to be found in terms of $k$, $a$ and $b$. 
+Hence express $u_{2n}$ and $u_{2n-1}$ in terms of $a$, $b$, $c$ and $n$. 
+ 
+Find conditions on $a$, $b$ and $k$ in the three cases: 
+\begin{questionparts}
+\item the sequence $u_n$ is geometric;
+\item $u_n$ has period 2; 
+\item the sequence $u_n$  has period 4. 
+\end{questionparts} 
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Let $P$ be the point on 
+the curve
+$y=ax^2+bx+c$ (where $a$ is non-zero) at which the gradient  
+is $m$. 
+Show   that the equation of the tangent at $P$ is 
+\[ 
+y-mx=c-\frac{(m-b)^2}{4a}\;. 
+\] 
+ 
+Show that the curves  
+$y=a_1 x^2+b_1 x+c_1$ 
+and $y=a_2 x^2+b_2 x+c_2$  
+(where $a_1$ and $a_2$ 
+are non-zero) have a common tangent  
+with gradient $m$ if and only if 
+\[ 
+(a_2 -a_1 )m^2 +
+2(a_1 b_2-a_2 b_1)m +
+4a_1 a_2(c_2-c_1)+
+a_2 b_1^2-a_1 b_2 ^2=0\;. 
+\] 
+
+Show that, in the case  $a_1 \ne a_2 \,$, 
+the two curves have exactly one common  
+tangent if and only if they touch each other.
+In the case $a_1 =a_2\,$, 
+find  a necessary and sufficient condition  
+for the two curves to have exactly one common tangent.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+In this question, you may use without proof the results
+\[
+4 \cosh^3 y - 3 \cosh y = \cosh (3y)
+\ \ \ \ \text{and} \ \ \ \ 
+\mathrm{arcosh} \, y = \ln ( y+\sqrt{y^2-1}).
+\] 
+ 
+\noindent[
+{\bf Note: } $\mathrm{arcosh}y$ is another notation for 
+$\cosh^{-1}y\,$]
+
+Show that the equation $x^3 - 3a^2x = 2a^3 \cosh T$  
+is satisfied by $ 2a \cosh \l \frac13 T \r$  
+and hence that, if $c^2\ge b^3>0$,  
+one of the roots of the equation $x^3-3bx=2c$  
+is $\ds u+\frac{b}{u}$, where 
+$u = (c+\sqrt{c^2-b^3})^{\frac13}\;$. 
+ 
+Show that the other two roots of  
+the equation $x^3-3bx=2c$ are the roots of the  
+quadratic equation  
+\[\ds x^2 + \Big( u+\frac{b}{u}\Big) x + u^2+\frac{b^2}{u^2}-b=0\, ,\]  
+and find these roots in terms of $u$, $b$  and $\omega$,  
+where $\omega = \frac{1}{2}(-1 + \mathrm{i}\sqrt{3})$. 
+ 
+Solve completely the equation $x^3-6x=6\,$. 
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Show  that if  
+$\ds \int\frac1{u \, \f(u)}\; \d u  = \F(u) + c\;$,  
+then $\ds \int\frac{m}{x \, \f(x^m)} \;\d x = \F(x^m) + c\;$, 
+where $m\ne0$.
+
+ 
+Find:  
+\begin{questionparts} 
+\item $\ds \int\frac1{x^n-x} \, \d x\,$; 
+\item $\ds \int\frac1 {\sqrt{x^n+x^2}}\, \d x\,$. 
+\end{questionparts} 
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+In this question, $a$ and $c$ are distinct non-zero complex numbers.  
+The complex conjugate of any complex number $z$ is denoted by  
+$z^*$. 
+ 
+Show that  
+\[ 
+|a - c|^2 = aa^* + cc^* -ac^* - ca^* 
+\] 
+and hence prove that the triangle  
+$OAC$ in the Argand diagram,  
+whose vertices are represented by  
+$0$, $a$ and $c$ respectively, is right angled at $A$  
+if and only if $2aa^* = ac^*+ca^*\,$. 
+ 
+Points $P$ and $P'$ in the Argand diagram  
+are represented by the complex numbers $ab$ and  
+$\ds \frac{a}{b^*}\,$, where $b$ is a non-zero complex number.  
+A circle in the Argand diagram has centre $C$ and passes through the point $A$,
+ and is such that $OA$ is a tangent to the circle.
+Show that  the point $P$ lies on the circle  
+if and only if the point $P'$ lies on the circle.  
+
+ 
+Conversely, show that if the points represented  
+by the complex numbers $ab$ and $\ds \frac{a}{b^*}$,  
+for some non-zero complex number $b$ with $bb^* \ne 1\,$,  
+both lie on a circle centre $C$ in the Argand diagram  
+which passes through $A$, then $OA$ is a tangent to the circle.  
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+Two particles, A and B, 
+move without friction along a horizontal line which is 
+perpendicular to a vertical wall. 
+The coefficient of restitution between the two particles is $e$ 
+and the coefficient of restitution between particle B 
+and the wall is also $e$, where $0<e<1$. 
+The mass of particle~A is $4em$ (with $m>0$), 
+and the mass of particle B is $(1-e)^2m$\,. 
+ 
+Initially, A is moving towards the wall with speed $(1-e)v$ 
+(where $v>0$) and B is moving away from the wall and towards A 
+with speed $2ev$. The two particles collide at a 
+distance $d$ from the wall. Find the speeds of A and B after the collision. 
+ 
+When B strikes the wall, it rebounds along the same line. 
+Show that a second collision will take place, 
+at a distance $de$ from the wall. 
+ 
+Deduce that further collisions will take place. Find 
+the distance from the wall at which the $n$th collision takes place,
+and show that the times between successive collisions are equal. 
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+Two thin discs, each of radius $r$ and mass $m$, are held on a rough
+horizontal surface with their centres a distance $6r$ apart. A thin light
+ elastic band, of natural length $2\pi r$ and modulus $\dfrac{\pi mg}{12}$, 
+is wrapped once round
+the discs, its straight sections being parallel. The contact between the
+elastic band and the discs is smooth. The coefficient of static 
+friction between
+each disc and the horizontal surface is $\mu$, and each disc
+experiences a force due to friction equal to $\mu mg$ when it is
+sliding.
+
+The discs are released simultaneously.  If the discs collide, 
+they rebound and  a half of their total
+kinetic energy is lost in the collision. 
+
+\begin{questionparts}
+\item Show that the discs start sliding, but
+come to rest before colliding, if and only if \mbox{$\frac23 <\mu <1$}.
+
+\item Show that, if the discs collide at least once, 
+their total kinetic energy
+just before the first collision is $\frac43 mgr(2-3\mu)$.
+\item
+Show that if $\frac 4 9 > \mu^2 >\frac{5}{27}$ the discs come to
+rest exactly once after the first collision.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A horizontal spindle rotates freely in a fixed bearing. 
+Three light rods are each attached by one end to the spindle
+so that they rotate in a vertical plane.
+A particle of mass $m$ is fixed to the other   end 
+of each of the three rods.
+The rods 
+ have lengths $a$, $b$ and $c$, with  $a > b > c\,$ 
+and the angle between any pair of rods is
+$\frac23 \pi$.
+The angle between the rod of length $a$ and the vertical  is
+$\theta$, 
+as shown in the diagram.
+
+\vspace*{-0.1in}
+\begin{center}
+\psset{xunit=0.45cm,yunit=0.45cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-6.49,-3.44)(6.06,9.38)
+\psline[linestyle=dashed,dash=1pt 1pt](0,9.15)(0,-3.05)
+\psline(0,2.51)(2.41,8.3)
+\psline(0,2.51)(3.89,-0.76)
+\psline(0,2.51)(-4.39,0.87)
+\parametricplot{-2.7855695569416454}{1.176155335856138}{1*1.77*cos(t)+0*1.77*sin(t)+0|0*1.77*cos(t)+1*1.77*sin(t)+2.51}
+\parametricplot{1.1701030633139027}{1.5707963267948966}{1*2.47*cos(t)+0*2.47*sin(t)+0|0*2.47*cos(t)+1*2.47*sin(t)+2.54}
+\rput[tl](0.08,4.53){$\theta$}
+\rput[tl](0.59,3.24){$\frac{2}{3}\pi$}
+\rput[tl](-0.46,2.08){$\frac{2}{3}\pi$}
+\rput[tl](1.56,6.08){$a$}
+\rput[tl](2.57,1.3){$b$}
+\rput[tl](-2.8,2.31){$c$}
+\begin{scriptsize}
+\psdots[dotsize=6pt 0,dotstyle=*](2.41,8.3)
+\psdots[dotsize=6pt 0,dotstyle=*](3.89,-0.76)
+\psdots[dotsize=6pt 0,dotstyle=*](-4.39,0.87)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+
+ 
+Find an expression for the energy of the system and 
+show that, if the system is in equilibrium, then 
+\[ 
+\tan \theta = -\frac{(b-c) \sqrt{3}}{2a-b-c}\;. 
+\] 
+Deduce that there are exactly two equilibrium positions 
+and determine
+which of the two equilibrium positions is stable. 
+ 
+Show that, for the system to make complete revolutions, 
+it must pass through its position of stable equilibrium 
+with an angular velocity of at least 
+\[ 
+\sqrt{\frac{4gR}{a^2+b^2+c^2}} \, , \]
+where $2R^2 =  (a-b)^2+(b-c)^2 +(c-a)^2 \;$. 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+ Five independent timers time a runner as she runs four laps of a track.
+Four of the timers measure the individual lap times, the results of the
+measurements being the random variables $T_1$ to
+$T_4$, each of which has  variance $\sigma^2$ and 
+expectation equal to the true
+time for the lap. The fifth timer measures the total time 
+for the race, the result of the measurement being the random variable
+$T$ which has  variance $\sigma^2$ and
+expectation equal to the true race time (which 
+is equal to the sum of the four true lap times).
+                                
+                                                
+Find a random variable $X$ of the form $aT+b(T_1+T_2+T_3+T_4)$,
+where $a$ and $b$ are constants independent
+of the true lap times,
+ with
+the two properties:
+
+(1) \ whatever the true lap times, the expectation of $X$ is equal to
+the true race time;
+
+(2) \ the variance of $X$ is as small as possible.
+
+
+Find also a random variable $Y$ of the form 
+$cT+d(T_1+T_2+T_3+T_4)$, 
+where $c$ and $d$ are constants independent
+of the true lap times,
+ with
+the property that, whatever the true lap times, the expectation of $Y^2$ is
+equal to $\sigma^2$.
+
+In one particular race, $T$ takes the value 220 seconds and
+$(T_1 + T_2 + T_3 + T_4)$ takes the value $220.5$ seconds. Use the random 
+variables $X$ and $Y$ to estimate an interval
+in which the true race time lies.
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A pack of cards consists of  $n+1$ cards, 
+which are printed with the integers from 
+$0$ to $n$.   A~game consists of drawing cards  repeatedly at 
+random from the pack until the 
+card printed with 0 is drawn, at which point  the game ends. 
+After each draw, the player 
+receives $\pounds 1$ if the card  drawn shows any of the 
+integers from $1$ to $w$ inclusive but receives nothing 
+if  the card  drawn shows any of the 
+integers from $w+1$ to $n$ inclusive.
+
+\begin{questionparts}
+\item[\bf (i)]  In one version of the game, each card drawn is replaced immediately
+and randomly in the pack.
+Explain clearly why the probability that the player 
+wins a total of exactly $\pounds 3$ 
+is equal to the probability of the following event 
+occurring:
+out of the first four cards drawn which show 
+ numbers in the range $0$ to $w$, 
+the numbers on the first three are non-zero and the  
+number on the fourth is zero.
+Hence show that the probability that the player 
+wins a total  of exactly  $\pounds 3$ is equal to $\ds \frac{w^3}{(w+1)^4}$. 
+ 
+Write down the probability that the player wins a total of exactly 
+$\pounds r$ and hence find the  expected total win.  
+ 
+\item[\bf (ii)] In another version of the game,  
+each card drawn is removed from the pack.
+Show that the  expected total win in this version is 
+half of the expected total win in the other version. 
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+In this question, 
+you may use the result 
+\[
+\ds \int_0^\infty \frac{t^m}{(t+k)^{n+2}} \; \mathrm{d}t
+=\frac{m!\, (n-m)!}{(n+1)! \, k^{n-m+1}}\;,
+\]
+where $m$ and $n$ are positive integers with $n\ge m\,$,  and where $k>0\,$. 
+ 
+The random variable $V$ has density function 
+\[ 
+\f(x) 
+= \frac{C \, k^{a+1} \, x^a}{(x+k)^{2a+2}} \quad \quad (0 \le x < \infty) \;,
+\] 
+where $a$ is a positive integer. 
+Show that  $\ds C = \frac{(2a+1)!}{a! \, a!}\;$. 
+ 
+Show, by means of a suitable substitution, that 
+\[ 
+\int_0^v \frac{x^a}{(x+k)^{2a+2}} \; \mathrm{d}x 
+= \int_{\frac{k^2}{v}}^\infty \frac{u^a}{(u+k)^{2a+2}} \; \mathrm{d}u  
+\] 
+and deduce that the median value of $V$ is  $k$. 
+Find the expected value of $V$. 
+ 
+The random variable $V$ represents the speed
+of a randomly chosen gas molecule. 
+The time taken for such a particle to travel a fixed distance $s$ is 
+given by the random variable $\ds T=\frac{s}{V}$. 
+ 
+Show that 
+\begin{equation}
+\mathrm{P}(T<t) = \ds \int_{\frac{s}{t}}^\infty \frac{C \, k^{a+1} \, 
+x^a}{(x+k)^{2a+2}}\; \mathrm{d}x 
+\tag{$ *$}
+\end{equation}
+and hence find the density function of $T$. 
+You may find it helpful to make the substitution $\ds u = \frac{s}{x}$ 
+in the integral $(*)$. 
+ 
+Hence show that the product of the median time 
+and the median speed is equal to the distance~$s$, 
+but that the product of the 
+expected time and the expected speed is greater than~$s$. 
+
+\end{question}
+	
+\end{document}

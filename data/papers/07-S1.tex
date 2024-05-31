@@ -1,0 +1,585 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2007
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+A positive integer with $2n$ digits (the first of which must not be $0$) is
+called a {\sl balanced number} if the sum of the first
+$n$ digits equals the sum of the last $n$ digits.
+For example,
+$1634$ is a  $4$-digit balanced number,
+but $123401$ is not a balanced number.
+
+\begin{questionparts}
+\item
+Show that seventy $4$-digit balanced numbers can 
+be made using the digits $0, 1, 2, 3$ and~$4$.
+
+\item
+Show that 
+\  $\frac16 {k \left( k+1 \right) \left( 4k+5 \right) }$  
+\ $4$-digit balanced numbers can be made using the digits $0$ to $k$.
+
+
+{\it You may use the identity 
+$\ds \sum _{r=0}^{n} r^2 \equiv \tfrac{1}{6} {n \left( n+1 \right) 
+\left( 2n+1 \right) } \;$.}
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+\begin{questionparts}
+\item Given that $A = \arctan \frac12$
+and that $B = \arctan\frac13\,$ (where $A$ and $B$
+are acute) show, by considering $\tan \left( A + B \right)$, 
+that $A + B = {\frac{1}{4}\pi  }$.
+
+
+The non-zero integers $p$ and $q$ satisfy
+\[
+\displaystyle \arctan {\frac1 p} + \arctan {\frac1  q}
+= {\frac\pi 4}\,.
+\] 
+Show that \mbox{$ \left ( p-1 \right) \left(q-1 \right) = 2$} and 
+hence determine $p$ and $q$.
+
+
+
+\item Let $r$, $s$ and $t$ be positive integers
+such that  the highest common factor of $s$ and $t$ is $1$. Show that, if
+\[
+\arctan {\frac1  r} + \arctan \frac s {s+t} = {\frac\pi  4}\,,
+\]
+then there are only two possible values for $t$, and give $r$ in terms of $s$ in each case.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Prove the identities
+$\cos^4\theta -\sin^4\theta \equiv \cos 2\theta$ and
+ $\cos^4 \theta + \sin^4 \theta \equiv 1 - {\frac12}
+\sin^2 2 \theta$. Hence or otherwise evaluate
+\[
+\int_0^{\frac{1}{2}\pi} \cos^4 \theta \; \d \theta \;\;\;\;
+\mbox{and}\;\;\;\; \int_0^{\frac{1}{2}\pi} \sin^4 \theta \; \d \theta \,.
+\]
+Evaluate also
+\[
+\int_0^{\frac{1}{2}\pi} \cos^6 \theta \; \d \theta \;\;\;\;
+\mbox{and}\;\;\;\; \int_0^{\frac{1}{2}\pi} \sin^6 \theta \; \d \theta \,.
+\]
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Show that 
+$x^3-3xbc + b^3 + c^3$ can be written in the form
+$\left( x+ b+ c \right) {\rm Q}( x)$,
+where ${\rm Q}( x )$ is a quadratic expression.
+Show that $2{\rm Q }( x )$ can be written
+as the sum of three expressions, each of which is a perfect square.
+
+
+It is given that the equations
+$ay^2 + by + c =0$ and $by^2 + cy + a = 0$
+have a common root $k$. The coefficients $a$, $b$ and $c$ are
+real, $a$ and $b$ are both non-zero, and $ac \neq b^2$. Show that
+\[
+\left( ac - b^2 \right) k = bc - a^2
+\]
+and determine a similar expression involving $k^2$. Hence show that
+\[
+\left( ac - b^2 \right) \left(ab-c^2 \right) = \left( bc - a^2 \right)^2
+\]
+and that $ a^3 -3abc + b^3 +c^3 = 0\,$. Deduce that either $k=1$
+or  the two equations are identical.
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+{\it Note: a regular octahedron is a polyhedron with eight faces
+each of which is an equilateral \hbox{triangle}.}
+\begin{questionparts}
+\item
+Show that the angle between any two faces of a regular
+octahedron is $\arccos \left( -{\frac1  3} \right)$.
+
+\item
+Find the  ratio of the volume of a regular octahedron to the volume of 
+the cube whose vertices are the centres  of the faces of the 
+octahedron.
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item
+Given that 
+$x^2 - y^2 = \left( x - y \right)^3$ 
+and that $x-y = d$ (where $d \neq 0$), 
+express each of $x$ and $y$ in terms of $d$. 
+Hence find a pair of integers $m$ and $n$
+satisfying $m-n = \left( \sqrt {m} - \sqrt{n} \right)^3$
+where $m > n > 100$.
+
+\item
+Given that $x^3 - y^3 = \left( x - y \right)^4$ 
+and that $x-y = d$ (where $d \neq 0$),
+show that $3xy = d^3 - d^2$. Hence show that
+\[
+2x = d \pm d \sqrt {\frac{4d-1 }{3}}
+\]
+and determine a pair of distinct positive integers $m$ and $n$
+such that $m^3 - n^3 = \left( m - n \right)^4$.
+
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+\item The line $L_1$ has vector equation
+$\displaystyle
+{\bf r} =
+\begin{pmatrix}
+  1 \\
+  0 \\
+  2
+\end{pmatrix}
++
+\lambda
+\begin{pmatrix}
+\hphantom{-}  2 \\
+ \hphantom{-} 2 \\
+  -3
+\end{pmatrix}
+$.
+
+The line $L_2$ has vector equation
+$\displaystyle
+{\bf r} =
+\begin{pmatrix}
+ \hphantom{-} 4 \\
+  -2 \\
+ \hphantom{-} 9
+ \end{pmatrix}
++
+\mu
+\begin{pmatrix}
+ \hphantom{-} 1 \\
+ \hphantom{-} 2 \\
+  -2
+\end{pmatrix}
+.
+$
+
+Show that the distance $D$
+between a point on $L_1$ and a point on $L_2$
+can be expressed in the form
+\[
+D^2 = \left(3\mu -4 \lambda-5 \right)^2 + \left( \lambda -1 \right)^2 + 36\,.
+\]
+Hence determine the minimum distance
+between these two lines and find the coordinates
+of the points on the two lines that are the minimum distance apart.
+
+
+\item
+The line $L_3$ has vector equation
+${\bf r} =
+\begin{pmatrix}
+  2 \\
+  3 \\
+  5
+\end{pmatrix}
++
+\alpha
+\begin{pmatrix}
+  0 \\
+  1 \\
+  0
+\end{pmatrix}
+.
+$
+
+The line $L_4$ has vector equation
+$
+{\bf r} =
+\begin{pmatrix}
+\hphantom{-}  3 \\
+\hphantom{-}  3 \\
+  -2
+\end{pmatrix}
++
+\beta
+\begin{pmatrix}
+\,  4k\\
+  1-k \\
+ \!\!\! -3k
+\end{pmatrix}
+.
+$
+
+Determine the minimum distance between these two lines,
+explaining geometrically the two different cases that arise
+ according to the value of $k$.
+
+
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+A curve is given by the equation
+\[
+y = ax^3 - 6ax^2+ \left( 12a + 12 \right)x - \left( 8a + 16 \right)\,,
+\tag{$*$}
+\]
+where $a$ is a real number. Show that this curve touches the curve 
+with equation
+\[
+y=x^3
+\tag{$**$}
+\]
+ at $\left( 2 \, , \, 8 \right)$. 
+Determine the coordinates of any other point of
+intersection of the two curves.
+
+\begin{questionparts}
+\item Sketch on the same axes the curves $(*)$
+and $(**)$ when $a = 2$.
+
+\item Sketch on the same axes the curves $(*)$
+and $(**)$
+when $a = 1$.
+
+\item Sketch on the same axes the curves $(*)$
+and $(**)$
+when $a = -2$.
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A particle of weight $W$ is  placed on a rough plane
+inclined at an angle of $\theta$ to the horizontal.
+The coefficient of friction between the particle and
+the plane is $\mu$. A horizontal force $X$ acting on
+the particle is just sufficient to prevent the
+particle from sliding down the plane; when a horizontal
+force $kX$ acts on the particle, the particle is
+about to slide up the plane. Both horizontal forces act in the vertical
+plane containing the line of greatest slope.
+
+Prove that
+\[
+\left( k-1 \right) \left( 1 + \mu^2 \right)
+ \sin \theta \cos \theta = \mu \left( k + 1 \right)
+\]
+and hence that 
+$\displaystyle k \ge \frac{ \left( 1+ \mu \right)^2}
+{ \left( 1 - \mu \right)^2}$ .
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+The Norman army is advancing with constant speed $u$
+towards the Saxon army, which is at rest.
+When the armies are $d$ apart, a Saxon horseman rides from
+the Saxon army directly towards the Norman army
+at constant speed $x$.
+Simultaneously a Norman horseman rides from the Norman
+army directly towards the Saxon army at constant speed $y$, where $y >
+u$. 
+The horsemen ride their horses so that $y - 2x < u < 2y - x$.
+
+
+When each horseman reaches the opposing army,
+he immediately rides straight back to his own army
+without changing his speed. Represent this information
+on a displacement-time graph, and show that the two
+horsemen pass each other at distances
+\[
+\frac{xd }{ x + y} \;\;
+\mbox{and} \;\; \frac{xd(2y -x-u)}
+{(u+x ) ( x + y )}
+\]
+from the Saxon army.
+
+
+Explain briefly what will happen in the cases
+(i) $u > 2y - x$
+and (ii) $u < y - 2x$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A smooth, straight, narrow tube of length $L$
+ is fixed at an angle of $30^\circ$ to the horizontal.
+A~particle is fired up the tube, from the lower end,
+with initial velocity $u$.
+When the particle reaches the upper end of the tube,
+it continues its motion until it returns to the same
+level as the lower end of the tube, having travelled 
+a horizontal distance $D$ after leaving the tube.
+Show that $D$ satisfies the equation
+\[
+4gD^2 - 2 \sqrt{3} \left( u^2 - Lg \right)D
+- 3L \left( u^2 - gL \right) = 0
+\]
+and hence that 
+\[ 
+\frac{{\rm d}D}{ {\rm d}L}
+= - \frac{ 2\sqrt{3}gD - 3(u^2-2gL)}
+{ 8gD - 2 \sqrt{3} \left(u^2 - gL \right)}.
+\]
+
+
+
+The final  horizontal displacement 
+of the particle from the lower end of the tube is $R$. 
+Show that $\dfrac{\d R}{\d L} = 0$ when $2D = L \sqrt 3$, 
+and determine, in terms of $u$ and $g$,
+ the corresponding value of $R$.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+\begin{questionparts}
+\item A bag contains $N$ sweets (where $N \ge 2$),
+of which $a$ are red. Two sweets are drawn
+from the bag without replacement. Show that
+the probability that the first sweet is red
+is equal to the probability that the second sweet is red.
+
+\item There are two bags, each containing $N$ sweets (where $N \ge 2$).
+The first bag contains $a$ red sweets, and the
+second bag contains $b$ red sweets. There is also a
+biased coin, showing Heads with probability $p$ and Tails with probability $q$, where $p+q = 1$.
+
+The coin is tossed. If it shows Heads then a
+sweet is chosen from the first bag and transferred
+to the second bag; if it shows Tails then a sweet
+is chosen from the second bag and transferred
+to the first bag. The coin is then tossed a second time:
+if it shows Heads then a sweet is chosen from the first bag,
+and if it shows Tails then a sweet is chosen from the second bag.
+
+Show that the probability that the first sweet
+is red is equal to the probability that the second sweet is red.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A bag contains eleven small discs, 
+which are identical except that six of the discs are blank 
+and five of the discs are numbered, 
+using the numbers 1, 2, 3, 4 and 5. 
+The bag is shaken, and four discs are taken one at a time without replacement.
+
+Calculate the probability that:
+\begin{questionparts}
+\item all four discs taken are numbered;
+\item all four discs taken are numbered, 
+given that the disc numbered ``3'' is taken first;
+\item exactly two numbered discs are taken, 
+given that the disc numbered ``3'' is taken first;
+\item exactly two numbered discs are taken, 
+given that the disc numbered ``3'' is taken;
+\item
+exactly two numbered discs are taken, 
+given that a numbered disc is taken first;
+\item exactly two numbered discs are taken, 
+given that a numbered disc is taken.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+The discrete random variable $X$
+has a Poisson distribution with mean $\lambda$.
+
+\begin{questionparts}
+\item Sketch the graph $y=\l x+1 \r \e^{-x}$,
+stating the coordinates of the turning point
+and the points of intersection with the axes. 
+
+It is known that $\P(X \ge 2) = 1-p$,
+where $p$ is a given number in the range $0 < p <1$.
+Show that this information determines a unique value
+(which you should not attempt to find) of $\lambda$.
+
+\item  It is known (instead) that $\P \l X = 1 \r = q$,
+where $q$ is a given number in the range $0 < q <1$.
+Show that this information determines a unique value of
+$\lambda$ (which you should find) for exactly
+one value of $q$ (which you should also find).
+
+\item It is known (instead) that 
+$\P \l X = 1 \, \vert \, X \le 2 \r =  r$,
+where $r$ is a given number in the range $0<r<1$.
+ Show that this information determines a unique value of
+$\lambda$ (which you should find) for exactly
+one value of $r$ (which you should also find).
+\end{questionparts}
+\end{question}
+	
+\end{document}

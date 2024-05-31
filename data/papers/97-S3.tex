@@ -1,0 +1,413 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1997
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+\item By considering the series expansion of
+$(x^2+5x+4){\rm \; e}^x$ show that
+\[10{\rm\,  e}=4+\frac{3^2}{1!}+\frac{4^2}{2!}+\frac{5^2}{3!}+\cdots\;.\]
+
+\item Show that
+\[5{\rm\,  e}=1+\frac{2^2}{1!}+\frac{3^2}{2!}+\frac{4^2}{3!}+\cdots\;.\]
+
+\item Evaluate
+\[1+\frac{2^3}{1!}+\frac{3^3}{2!}+\frac{4^3}{3!}+\cdots\;.\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Let \[\mathrm{f}(t)=\frac{\ln t}t\quad\text{ for }t>0.\]
+Sketch the graph of $\mathrm{f}(t)$ and find its maximum
+value. How many positive values of $t$ correspond to a
+given value of $\mathrm f(t)$?
+
+Find how many positive values of $y$ satisfy
+\(x^y=y^x\) for a given positive value of $x$. Sketch the
+set of points $(x,y)$ which satisfy \(x^y=y^x\) with $x,y>0$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+By considering the solutions of the equation $z^n-1=0$, or
+otherwise,  show that
+\[(z-\omega)(z-\omega^2)\dots(z-\omega^{n-1})=1+z+z^2+\dots+z^{n-1},\]
+where $z$ is any complex number and
+$\omega={\rm e}^{2\pi i/n}$.
+
+Let $A_1,A_2,A_3,\dots,A_n$ be points equally
+spaced around a circle of radius $r$ centred at
+$O$ (so that they are the vertices of a regular $n$-sided
+polygon).
+
+Show that
+\[\overrightarrow{OA_1}+\overrightarrow{OA_2}+\overrightarrow{OA_3}
++\dots+\overrightarrow{OA_n}=\mathbf0.\]
+Deduce, or prove otherwise, that
+\[\sum_{k=1}^n|A_1A_k|^2=2r^2n.\]
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+In this question,
+you may assume that if $k_1,\dots,k_n$ are distinct positive real
+numbers, then
+\[\frac1n\sum_{r=1}^nk_r>\left({\prod\limits_{r=1}^n}
+k_r\right )^{\!\! \frac1n},\]
+i.e.\ their arithmetic mean is greater than their geometric mean.
+
+Suppose that $a$, $b$, $c$ and $d$ are positive real numbers such
+that the polynomial
+\[{\rm f}(x)=x^3-4ax^2+6b^2x^2-4c^3x+d^4\]
+has four distinct positive roots.
+
+\begin{questionparts}
+\item Show that $pqr,qrs,rsp$ and $spq$ are distinct, where $p,q,r$ and $s$ are the roots of the polynomial $\mathrm{f}$.
+\item By considering the relationship between the coefficients of $\mathrm{f}$ and
+its roots, \mbox{show that $c>d$.}
+\item Explain why the polynomial $\mathrm{f}'(x)$ must have three distinct roots. 
+\item By differentiating $\mathrm{f}$, show that $b>c$.
+
+\item  Show that $a>b$.
+\end{questionparts}
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Find the ratio, over one revolution, of the distance moved by a
+wheel rolling on a flat surface to the distance traced out by a point
+on its circumference.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+ Suppose that $y_n$ satisfies the equations
+\[(1-x^2)\frac{{\rm d}^2y_n}{{\rm d}x^2}-x\frac{{\rm
+d}y_n}{{\rm d}x}+n^2y_n=0,\]
+\[y_n(1)=1,\quad y_n(x)=(-1)^ny_n(-x).\]
+If 
+$x=\cos\theta$, show that
+\[\frac{{\rm d}^2y_n}{{\rm d}\theta^2}+n^2y_n=0,\] and hence
+obtain
+$y_n$ as a function of
+$\theta$. Deduce that for $|x|\leqslant1$
+\[y_0=1,\quad y_1=x,\]
+\[y_{n+1}-2xy_n+y_{n-1}=0.\]
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+ For each positive integer $n$,
+let
+\begin{align*}
+a_n&=\frac1{n+1}+\frac1{(n+1)(n+2)}+\frac1{(n+1)(n+2)(n+3)}+\cdots;\\
+b_n&=\frac1{n+1}+\frac1{(n+1)^2}+\frac1{(n+1)^3}+\cdots.
+\end{align*}
+
+\begin{questionparts}
+\item Evaluate $b_n$.
+
+\item Show that $0<a_n<1/n$.
+
+\item Deduce that $a_n=n!{\rm e}-[n!{\rm e}]$ (where $[x]$ is
+the integer part of $x$).
+
+\item Hence show that $\mathrm{e}$ is irrational.
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Let $R_{\alpha}$ be
+the $2\times2$ matrix that represents a rotation through the
+angle $\alpha$ and let
+$$A=\begin{pmatrix}a&b\\b&c\end{pmatrix}.$$
+
+\begin{questionparts}
+\item Find in
+terms of $a$, $b$ and $c$ an angle $\alpha$ such that
+$R_{-\alpha}AR_{\alpha}$ is a diagonal matrix (i.e.\ has the
+value zero in top-right and bottom-left positions).
+
+\item Find values of $a$, $b$ and $c$ such that the equation of the
+ellipse
+\[x^2+(y+2x\cot2\theta)^2=1\qquad(0<\theta<\tfrac{1}{4}\pi)\]
+can be expressed in the form
+\[\begin{pmatrix}x&y\end{pmatrix}A\begin{pmatrix}x\\y\end{pmatrix}=1.\]
+Show that, for this $A$,  $R_{-\alpha}AR_{\alpha}$ is  diagonal if
+ $\alpha=\theta$. Express the non--zero elements
+of this matrix in terms of $\theta$.
+
+\item Deduce, or show otherwise,  that the minimum and maximum distances from
+the centre to the circumference of this ellipse
+ are
+$\tan\theta$ and $\cot\theta$.
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A uniform rigid rod $BC$ is suspended from a fixed point $A$
+by light stretched springs $AB,AC$. The springs are of different
+natural lengths but the ratio of tension to extension is the same
+constant $\kappa$ for each. The rod is {\em not} hanging
+vertically. Show that the ratio of the lengths of the stretched
+springs is equal to the ratio of the natural lengths of the unstretched
+springs.
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+By pressing a finger down on it, a uniform spherical marble of 
+radius $a$  is made to slide  along a 
+horizontal table top with an initial linear velocity $v_0$
+and an initial {\sl backward} angular velocity $\omega_0$ about the
+horizontal axis perpendicular to $v_0$. The frictional
+force  between the marble and the table is constant (independent of
+speed).
+
+
+For what value of $v_0/(a\omega_0)$ does the marble
+
+\begin{questionparts}
+\item slide to a complete stop,
+
+\item  come to a stop and then roll back towards its initial position
+with linear speed $v_0/7$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question} $\,$
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-1.14,-1.32)(3.52,3.04) \psline(-0.92,2.74)(-0.06,-0.6) \psline(-0.06,-0.6)(2.66,-0.6) \psline(2.66,-0.6)(3.38,2.74) \psline[linewidth=0.1pt,linestyle=dashed,dash=2pt 2pt](1.22,-0.6)(1.22,2.74) \psline(3.07,2.11)(1.22,-0.6)  \psline{<->}(1.37,-0.6)(3.17,1.99)  \psline{<->}(1.06,-0.6)(1.05,1.76)
+\psdots[dotstyle=*](1.22,1.86)
+ \rput[tl](0.88,2.2){$\mathrm{G}$} \rput[tl](0.73,0.6){$h$} \pscustom{\parametricplot{0.9714278016111888}{1.5707963267948966}{0.83*cos(t)+1.22|0.83*sin(t)+-0.6}\lineto(1.22,-0.6)\closepath} \rput[tl](2.36,0.54){$l$} \rput[tl](1.46,0.7){$\beta $} \rput[tl](1.15,-0.69){$O$} \begin{scriptsize} \psdots[dotsize=10pt 0,dotstyle=*](3.07,2.11) \end{scriptsize} \end{pspicture*}
+\par\end{center}
+A heavy symmetrical bell and clapper can both swung freely in a vertical
+plane about a point $O$ on a horizontal beam at the apex of the bell.
+The mass of the bell is $M$ and its moment of inertia about the beam
+is $Mk^{2}$. Its centre of mass, $G$, is a distance $h$ from $O$.
+The clapper may be regarded as a small heavy ball on a light rod of
+length $l$. Initially the bell is held with its axis vertical and
+its mouth above the beam. The clapper ball rests against the side
+of the bell, with the rod making an angle $\beta$ with the axis.
+The bell is then released. Show that, at the moment when the clapper
+and bell separate, the clapper rod makes an angle $\alpha$ with the
+upwards vertical, where 
+\[
+\cot\alpha=\cot\beta-\frac{k^{2}}{hl}\mathrm{cosec}\beta.
+\]
+
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+\begin{questionparts}
+\item I toss a biased coin which has a probability
+$p$ of landing heads and a probability $q=1-p$ of landing tails.
+Let $K$ be the number of tosses required to obtain the first head
+and let 
+\[
+\mathrm{G}(s)=\sum_{k=1}^{\infty}\mathrm{P}(K=k)s^{k}.
+\]
+Show that 
+\[
+\mathrm{G}(s)=\frac{ps}{1-qs}
+\]
+and hence find the expectation and variance of $K$. 
+\item I sample cards at random with replacement from a normal
+pack of $52$. Let $N$ be the total number of draws I make in order
+to sample every card at least once. By expressing $N$ as a sum $N=N_{1}+N_{2}+\cdots+N_{52}$
+of random variables, or otherwise, find the expectation of $N$. Estimate
+the numerical value of this expectation, using the approximations
+$\mathrm{e}\approx2.7$ and $1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\approx0.5+\ln n$
+if $n$ is large.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Let $X$ and $Y$ be independent standard normal random
+variables: the probability density function, $\f$, of each
+is therefore given by 
+\[
+\f(x)=\left(2\pi\right)^{-\frac{1}{2}}\e^{-\frac{1}{2}x^{2}}.
+\]
+
+
+\begin{questionparts}
+\item  Find the moment generating function $\mathrm{E}(\e^{\theta X})$
+of $X$. 
+\item  Find the moment generating function of $aX+bY$ and hence
+obtain the condition on $a$ and $b$ which ensures that $aX+bY$
+has the same distribution as $X$ and $Y$. 
+\item  Let $Z=\e^{\mu+\sigma X}$. Show that 
+\[
+\mathrm{E}(Z^{\theta})=\e^{\mu\theta+\frac{1}{2}\sigma^{2}\theta^{2}},
+\]
+and hence find the expectation and variance of $Z$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+An industrial process produces rectangular plates of mean
+length $\mu_{1}$ and mean breadth $\mu_{2}$. The length and breadth
+vary independently with non-zero standard deviations $\sigma_{1}$
+and $\sigma_{2}$ respectively. Find the means and standard deviations
+of the perimeter and of the area of the plates. Show that the perimeter
+and area are not independent.
+\end{question}
+	
+\end{document}

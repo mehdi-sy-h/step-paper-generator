@@ -1,0 +1,553 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2014
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+\RequirePackage{asymptote}
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+ 
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+\def\i{{\mathrm i}}
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+\begin{asydef}
+  import markers;
+  import geometry;
+  import graph;
+  usepackage("amsmath");
+\end{asydef}
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+\renewcommand{\.}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\+}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\ud}{\mathop{}\!\mathrm{d}}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+ \emph{All numbers referred to in this question are non-negative
+    integers.}
+
+\begin{questionparts}
+\item Express each of the numbers 3, 5, 8, 12 and 16 as the
+    difference of two non-zero squares.
+\item Prove that any odd number can be written as the difference of
+    two squares.
+\item Prove that all numbers of the form $4k$, where $k$ is a non-negative
+integer, can be written as the
+    difference of two squares.
+\item Prove that no number of the form $4k+2$, where $k$ is a non-negative
+integer,  can be written as the
+    difference of two squares. 
+	
+\item Prove that any number of the form $pq$, where $p$ and $q$ are prime
+numbers greater than~2, can be written as the difference of two
+squares in exactly two distinct ways. Does this result hold if 
+$p$ is a prime greater than 2 and $q=2$?
+
+\item Determine the number of  distinct ways  in which 
+675 can be written as the difference of 
+two squares.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+\begin{questionparts}
+\item
+Show that $\int \ln (2-x) \ud x = -(2-x)\ln (2-x) + (2-x) + c \,,\  $ 
+where $x<2$.
+
+\item
+  Sketch the curve  $A$ given by
+$y= \ln \vert x^2-4\vert$.
+
+  \item Show that the area of the finite region enclosed by the 
+positive $x$-axis, the
+    $y$-axis and the curve $A$ is $4\ln(2+\sqrt3)-2\sqrt3\,$.
+
+  \item The curve $B$ is given by 
+$y= \big\vert \ln \vert x^2-4\vert \big\vert\,$.
+Find the area between the curve $B$
+and the $x$-axis with $| x| <2$. 
+ 
+[\textit{Note:
+    you may assume that $t \ln t \to 0$ as $t\to 0$.}]
+
+  \end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+ The numbers $a$ and $b$, where $b>a\ge0$,  are such that 
+  \[
+  \int_a^b x^2 \ud x = \left ( \int_a^b x \ud x\right)^{\!\!2}\,.
+  \]
+
+  \begin{questionparts}
+  \item In the case $a=0$ and $b>0$, find the  value of~$b$.
+
+  \item In the case $a=1$, show that $b$ satisfies
+    \[
+    3b^3 -b^2-7b -7 =0\,.
+    \]
+    Show further, with the help of a sketch, that there is only one
+    (real) value of~$b$ that satisfies this equation and that it lies
+    between $2$ and~$3$.
+
+  \item Show that  $3p^2 + q^2 = 3p^2q$, 
+    where $p=b+a$ and $q=b-a$, and express $p^2$ in terms of~$q$. 
+   Deduce that $1<b-a\le\frac43$.
+
+  \end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+  An accurate clock has an hour hand of length $a$ and a minute hand
+  of length $b$ (where $b>a$), both measured from the pivot at the
+  centre of the clock face. Let $x$ be the  distance between the ends
+  of the hands when the angle between the hands is $\theta$, where
+$0\le\theta<\pi$. 
+
+Show that the rate of increase of $x$ is  greatest
+  when $x=(b^2-a^2)^\frac12$.
+
+  In the case when $b=2a$ and the clock starts at mid-day (with both
+  hands pointing vertically upwards), show that this occurs for the
+  first time a little less than 11 minutes later.
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+  \begin{questionparts}
+\item
+Let $\.f(x) = (x+2a)^3 -27 a^2 x$, where $a\ge 0$. 
+ By sketching  $\.f(x)$, show that $\.f(x)\ge 0$ for~$x \ge0$. 
+
+
+    \item Use part (i) to 
+find the greatest value of $xy^2$ in the region of the 
+$x$-$y$ plane given by $x\ge0$, $y\ge0$ and $x+2y\le 3\,$.
+For what values of $x$ and $y$ is this greatest value achieved?
+
+\item Use part (i) to show that 
+   $(p+q+r)^3 \ge 27pqr$
+    for any non-negative numbers $p$, $q$ and~$r$.
+ If 
+   $(p+q+r)^3 =   27pqr$,
+ what relationship must $p$, $q$ and $r$
+    satisfy? 
+
+  \end{questionparts}
+
+\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+  \begin{questionparts}
+  \item The sequence of numbers $u_0, u_1, \ldots $ is given by
+    $u_0=u$ and, for $n\ge 0$,
+    \begin{equation}
+      \label{eq:6*}
+      u_{n+1} =4u_n(1- u_n)\,.
+      \tag{$*$}
+    \end{equation}
+    In the case $u= \sin^2\theta$ for some given angle $\theta$, write
+    down and simplify expressions for $u_1$ and $u_2$ in terms of
+    $\theta$. Conjecture an expression for $u_n$ and prove your
+    conjecture.
+
+  \item The sequence of numbers $v_0, v_1, \ldots $ is given by $v_0=
+    v$ and, for $n\ge 0$,
+    \[
+    v_{n+1} = -pv_n^2 +qv_n +r\,,
+    \]
+    where $p$, $q$ and $r$ are given numbers, with $p\ne0$. Show that
+    a substitution of the form $v_n =\alpha u_n +\beta$, where
+    $\alpha$ and $\beta$ are suitably chosen, results in the
+    sequence~\eqref{eq:6*} provided that
+    \[
+    4pr = 8 +2q -q^2 \,.
+    \]
+    Hence obtain the sequence satisfying
+    $v_0=1$ and, for $n\ge0$, $v_{n+1} = -v_n^2 +2 v_n +2 \,$.
+  \end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+  In the triangle $OAB$, the point $D$ divides the side $BO$ in the
+  ratio $r:1$ (so that $BD = rDO$), and the point $E$ divides the
+  side $OA$ in the ratio $s:1$ (so that $OE =s EA$), 
+where $r$ and $s$ are both positive.  
+  \begin{questionparts}
+  \item 
+The lines $AD$ and $BE$ intersect at
+ $G$. 
+Show that  
+    \[
+\+g=    \frac{rs}{1+r+rs} \, \+a + \frac 1 {1+r+rs} \, \+b \,,
+    \]
+    where \+a, \+b and \+g are the position vectors with respect to
+$O$ of $A$, $B$ and $G$,
+    respectively.                       
+  \item 
+The line through $G$ and~$O$ meets $AB$ at
+ $F$.
+Given that $F$ divides $AB$ in the ratio $t:1$, find an
+    expression for~$t$ in terms of $r$ and~$s$. 
+    
+  \end{questionparts}  
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+  Let $L_a$ denote the line joining the points $(a,0)$ and $(0, 1-a)$,
+  where $0<   a <   1$.  The line~$L_b$ is defined similarly.
+  \begin{questionparts}
+  \item Determine the point of intersection of $L_a$ and $L_b$, where
+    $a\ne b$.
+  \item Show that this point of intersection, in the limit as $b\to
+    a$, lies on the curve~$C$ given by
+    \[
+    y=(1-\sqrt x)^2\, \ \ \ \ (0<   x <   1)\,.
+    \]
+  \item Show that every tangent
+    to~$C$ is of the form~$L_a$ for some~$a$.
+  \end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+
+  A particle of mass $m$
+  is projected due east at speed $U$ from a point on horizontal
+  ground at an angle $\theta$ above the horizontal, where $0<\theta<
+  90^\circ$.  In addition to the  gravitational force $mg$, it
+  experiences a horizontal  force of magnitude $mkg$, where $k$ is a positive
+constant, acting due west
+  in the plane of motion of the particle.  Determine expressions in
+  terms of $U$, $\theta$ and~$g$ for the time, $T_H$, at which the
+  particle reaches its greatest height and the time, $T_L   $, 
+at which it
+  lands.
+
+  Let $T = U\cos\theta /(kg)$.  By considering the relative
+  magnitudes of $T_H$, $T_L   $ and $T$, or otherwise, sketch the
+  trajectory of the particle in the cases
+$k\tan\theta<\frac12$,  \ \ $\frac12 < k\tan\theta<1$, and $k\tan\theta>1$.
+What happens when $k\tan\theta =1$?
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+  \begin{questionparts}
+  \item A uniform spherical ball of mass $M$ and radius $R$ is
+    released from rest with its centre a distance $H+R$ above
+    horizontal ground.  The coefficient of restitution between the
+    ball and the ground is $e$.  Show that, after bouncing, the centre
+    of the ball reaches a height $R+He^2$ above the ground.
+    
+  \item A second uniform spherical ball, of mass $m$ and radius $r$,
+    is now released from rest together with the first ball (whose
+    centre is again a distance $H+R$ above the ground when it is
+    released).  The two balls are initially one on top of the other, with
+    the second ball (of mass~$m$) above the first.  The two balls
+    separate slightly during their fall, with their centres remaining
+    in the same vertical line, so that they collide immediately after the
+    first ball has bounced on the ground. The coefficient of 
+    restitution between the balls is also $e$.  The centre of the
+    second ball attains a height $h$ above the ground.
+
+    Given that $R=0.2$, $r=0.05$, $H=1.8$, $h=4.5$ and $e=\frac23$,
+    determine the value of~$M/m$.
+  \end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+  The diagrams below show two separate systems of particles, strings
+  and pulleys.  
+In both systems, 
+the pulleys  are smooth and
+  light, the strings are light and inextensible, the particles
+  move vertically and   
+the pulleys labelled  with $P$ are fixed.
+The masses of the particles are as indicated on the diagrams.
+
+  \begin{center}
+\psset{xunit=0.7cm,yunit=0.7cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-0.6,-5.31)(12.33,7.94)
+\pspolygon(1,-3)(1,-2)(0,-2)(0,-3)
+\pspolygon(4.01,-1)(4.01,0)(3.01,0)(3.01,-1)
+\pspolygon(10.3,-1)(10.3,0)(9.3,0)(9.3,-1)
+\pspolygon(11.76,-3)(11.76,-2)(10.76,-2)(10.76,-3)
+\pspolygon(8,0)(8,1)(7,1)(7,0)
+\pscircle(2,6){1.05}
+\pscircle(9,6){1.05}
+\psline(3.5,6)(3.49,0)
+\psline(0.5,6.01)(0.5,-2)
+\psline(1,-3)(1,-2)
+\psline(1,-2)(0,-2)
+\psline(0,-2)(0,-3)
+\psline(0,-3)(1,-3)
+\psline(4.01,-1)(4.01,0)
+\psline(4.01,0)(3.01,0)
+\psline(3.01,0)(3.01,-1)
+\psline(3.01,-1)(4.01,-1)
+\psline(7.5,5.99)(7.51,1.01)
+\psline(10.5,6)(10.48,3.98)
+\pscircle(10.5,3.25){0.51}
+\psline(9.77,3.26)(9.77,-0.01)
+\psline(11.23,3.26)(11.23,-2)
+\psline(10.3,-1)(10.3,0)
+\psline(10.3,0)(9.3,0)
+\psline(9.3,0)(9.3,-1)
+\psline(9.3,-1)(10.3,-1)
+\psline(11.76,-3)(11.76,-2)
+\psline(11.76,-2)(10.76,-2)
+\psline(10.76,-2)(10.76,-3)
+\psline(10.76,-3)(11.76,-3)
+\psline(8,0)(8,1)
+\psline(8,1)(7,1)
+\psline(7,1)(7,0)
+\psline(7,0)(8,0)
+\rput[tl](0.16,-2.33){$M$}
+\rput[tl](3.2,-0.4){$m$}
+\rput[tl](7.18,0.67){$M$}
+\rput[tl](9.46,-0.4){$m_1$}
+\rput[tl](10.91,-2.4){$m_2$}
+\rput[tl](1.82,6.14){$P$}
+\rput[tl](8.84,6.14){$P$}
+\rput[tl](10.22,3.48){$P_1$}
+\rput[tl](1.06,-3.72){$\text{System I}$}
+\rput[tl](8.11,-3.68){$\text{System II}$}
+\end{pspicture*}
+  \end{center}
+
+  \begin{questionparts}
+  \item For system I show that                              
+    the acceleration,  $a_1$, of the particle of
+    mass~$M$, measured in the downwards direction,  is  given by
+\[
+a_1= \frac{M-m}{M+m} \, g
+\,,
+\]
+where $g$ is the acceleration due to gravity.
+Give an expression for the  force on the pulley due to the tension
+in the string.
+
+
+  \item For system II
+ show that the  acceleration, $a_2$, of the particle of
+    mass $M$,  measured in the downwards direction, is given by
+    \[
+    a_2= \frac{ M - 4\mu}{M+4\mu}\,g \,,
+    \]
+where $\mu = \dfrac{m_1m_2}{m_1+m_2}$.
+
+In the case $m= m_1+m_2$, show that $a_1=   a_2$ if and only if 
+ $m_1=m_2$.
+  \end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+  A game in a casino is played with a fair coin and an unbiased
+  cubical die whose faces are labelled $1, 1, 1, 2, 2$ and $3.$  In each
+  round of the game, the die is rolled once and the coin is tossed
+  once. The outcome of the round is a random variable $X$. The value,
+  $x$, of $X$ is determined as follows. If the result of the toss is
+  heads then $x= \vert ks -1\vert$, and if the result of the toss is
+  tails then $x=\vert k-s\vert$, where $s$ is the number on the die
+  and $k$~is a given number.  Show that $\.E(X^2) = k +13(k-1)^2 /6$.
+
+  Given that both $\.E(X^2)$ and $\.E(X)$ are positive integers, and
+  that $k$ is a single-digit positive integer, determine the value
+  of~$k$, and write down the probability distribution of~$X$.
+
+  A gambler pays  $\pounds 1$ to play the game, which
+  consists of two rounds. The gambler is paid:
+\newline\hspace*{1cm}
+ $\pounds w$, where $w$~is an integer, if 
+the sum of the outcomes of the two rounds
+  exceeds $25$;
+\newline\hspace*{1cm}
+ $\pounds 1$ if the sum of the outcomes equals $25$;
+\newline\hspace*{1cm}
+nothing if the sum of the outcomes is less that $25$.
+\newline   
+Find, in terms of~$w$, an expression
+  for the amount the gambler expects to be paid in a game, and deduce
+  the maximum possible value of~$w$, given that the casino's owners
+ choose~$w$
+  so that the game is in their favour.
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+  A continuous random variable $X$ has a \emph{triangular}
+  distribution, which means that it has a   probability density function 
+  of the form
+  \[
+  \.f(x) =
+  \begin{cases}
+    \.g(x) & \text{for $a<   x \le c$}  \\
+    \.h(x) & \text{for   $c\le x <   b$} \\
+    0 & \text{otherwise,}
+  \end{cases}
+  \]
+  where $\.g(x)$ is an increasing linear function with $\.g(a)=0$,
+  $\.h(x)$ is a decreasing linear function with $\.h(b) =0$, and
+  $\.g(c)=\.h(c)$.
+
+  Show that $\.g(x) = \dfrac{2(x-a)}{(b-a)(c-a)}$ and find a similar
+  expression for $\.h(x)$.
+
+  \begin{questionparts}
+  \item Show that the mean of the distribution is $\frac13(a+b+c)$.
+  \item Find the median of the distribution in the different cases that arise.
+  \end{questionparts}
+\end{question}
+\end{document}

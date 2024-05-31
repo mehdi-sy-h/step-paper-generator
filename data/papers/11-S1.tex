@@ -1,0 +1,506 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2011
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+\item Show that the gradient of the curve
+ $\; \dfrac a x + \dfrac by =1$, where $b\ne0$, 
+ is $\; -\dfrac{ay^2}{bx^2}\,$.
+
+The point $(p,q)$ lies on both the straight line 
+$ax+by=1$ and the curve $\dfrac a x + \dfrac by =1\,$, 
+where $ab\ne0$.
+Given that, at this point, the line and the curve have the
+same gradient, show that $ p=\pm q\,$. 
+
+Show further that
+either $
+(a-b)^2 =1\,$ or $(a+b)^2 =1\,$.
+
+\item Show that if the straight line 
+$ax+by=1$, where $ab\ne0$,
+is a normal to 
+the curve $\dfrac a x - \dfrac by =1$, then 
+$a^2-b^2 = \frac12\,$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The number $E$ is defined by
+$\displaystyle 
+E= \int_0^1 \frac{\e^x}{1+x} \, \d x\,.$
+
+Show that 
+\[
+\int_0^1 \frac{x \e^x}{1+x} \, \d x = \e -1 -E\,
+,\]
+and evaluate $\displaystyle \int_0^1 \frac{x^2\e^x}{1+x} \, \d x$
+in terms of $\e$ and $E$.
+
+Evaluate also, in terms of $E$ and $\rm e$ as appropriate:
+\begin{questionparts}
+\item 
+$\displaystyle
+\int_0^1
+\frac{\e^{\frac{1-x}{1+x}}}{1+x}\, \d x\,;
+$
+\item
+$\displaystyle 
+\int_1^{\sqrt2} \frac {\e^{x^2}}x \, \d x \, $.
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Prove the identity
+\[
+4\sin\theta \sin(\tfrac13\pi-\theta) \sin (\tfrac13\pi+\theta)= 
+\sin 3\theta\,
+.
+\tag{$*$}\]
+
+\begin{questionparts}
+\item By differentiating $(*)$, or otherwise, show that
+\[
+ \cot \tfrac19\pi  - \cot \tfrac29\pi + \cot \tfrac49\pi = \sqrt3\,.
+\]
+\item
+By setting $\theta = \frac16\pi-\phi$ in $(*)$, or otherwise,
+obtain  a similar identity for $\cos3\theta$ and deduce that
+\[
+\cot \theta \cot (\tfrac13\pi-\theta) \cot (\tfrac13\pi+\theta) =\cot3\theta\,.
+\]
+Show that
+\[
+\cosec \tfrac19\pi  -\cosec \tfrac59\pi +\cosec \tfrac79\pi = 2\sqrt3\,.
+\]
+
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The distinct points $P$ and $Q$, with coordinates $(ap^2,2ap)$
+and $(aq^2,2aq)$ respectively, lie on the curve $y^2=4ax$. 
+The tangents to the curve at $P$ and $Q$ meet at the point $T$.
+Show that $T$ has coordinates $\big(apq, a(p+q)\big)$.
+You may assume that $p\ne0$ and $q\ne0$.
+
+The point $F$ has coordinates $(a,0)$ and $\phi$ is
+the angle $TFP$. Show that 
+\[
+\cos\phi = \frac{pq+1}{\sqrt{(p^2+1)(q^2+1)}\ }
+\]
+and deduce that the line $FT$ bisects the angle $PFQ$. 
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Given that $0<k<1$, show with the help of a sketch that the equation
+\[
+\sin x = k x
+\tag{$*$}\]
+has a unique solution in the range $0<x<   \pi$. 
+
+Let  
+\[
+I= \int_0^\pi \big\vert \sin x -kx\big\vert \, \d x\,.
+\]
+Show that
+\[
+I= \frac{\pi^2 \sin\alpha }{2\alpha} -2\cos\alpha - \alpha \sin\alpha\,,
+\]
+where 
+$\alpha$ is the unique solution of $(*)$.
+
+Show that $I$, regarded as a function of $\alpha$, has
+a unique stationary value and that this stationary value
+ is a minimum. Deduce that
+the smallest value of $I$ is
+\[
+ -2 \cos \frac{\pi}{\sqrt2}\,
+.\]
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Use the binomial expansion to show that  the 
+coefficient of $x^r$ in the expansion  of 
+$(1-x)^{-3}$ is~$\frac12 (r+1)(r+2)\,$.
+
+\begin{questionparts}
+\item
+Show that the coefficient of $x^r$ in the expansion of 
+\[
+\frac{1-x+2x^2}{(1-x)^3}
+\]
+is $r^2+1$ and hence find the sum of the series
+\[
+1+\frac22+\frac54+\frac{10}8+\frac{17}{16}+\frac{26}{32}+\frac{37}{64} 
++\frac{50}{128}+ \cdots \,.
+\]
+\item Find the sum of the series
+\[
+1+2+\frac94+2+\frac{25}{16}+\frac{9}{8}+\frac{49}{64} 
++ \cdots \,. 
+\]
+
+\end{questionparts} 
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+In this question, you may assume that $\ln (1+x) \approx x -\frac12 x^2$
+when $\vert x \vert $ is small.
+
+The height of the water in a tank at time $t$  is $h$. 
+The initial height of the water 
+is $H$ and
+water flows   into the tank  at a constant rate.
+The cross-sectional area of the 
+tank is constant. 
+
+
+\begin{questionparts}
+\item 
+Suppose
+that water leaks out 
+at a rate proportional to the height of the water in the tank,
+and that when the height
+ reaches $\alpha^2 H$, where $\alpha$ is a constant greater than 1,
+the height remains constant. 
+Show that
+\[
+\frac {\d h}{\d t } = k( \alpha^2 H -h)\,,
+\]
+for some positive constant $k$. Deduce
+that
+the time $T$ taken for the water to reach height $\alpha H$
+is given by 
+\[
+kT = \ln \left(1+\frac1\alpha\right)\,,
+\]
+and that $kT\approx \alpha^{-1}$ for large values of $\alpha$.  
+
+\item Suppose  that  the rate at which water leaks out of  the 
+tank is proportional to $\sqrt h$ (instead of $h$),
+and that when the height
+ reaches $\alpha^2 H$, where $\alpha$ is a constant greater than 1,
+the height remains constant. 
+ Show that 
+the time $T'$ taken for the water to reach height $\alpha H$ is
+given by
+\[
+cT'=2\sqrt H \left( 1 - \sqrt\alpha +\alpha \ln
+\left(1+\frac1 {\sqrt\alpha} \right)\right)\,
+\]
+ for some positive constant $c$,
+and that $ cT'\approx \sqrt H$ for large values of $\alpha$. 
+\end{questionparts} 
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+\begin{questionparts}
+\item
+The numbers $m$ and $n$ satisfy
+\[
+m^3=n^3+n^2+1\,.
+\tag{$*$}
+\]
+
+\begin{itemize}\setlength{\labelsep}{3.5 mm}
+\item[{\bf (a)}]
+Show that $m>n$. Show also that 
+ $m<n+1$ if and only if $2n^2+3n>0\,$. 
+Deduce that $n<m<n+1$ unless $-\frac32 \le n \le 0\,$.
+
+\item[{\bf (b)}] 
+Hence show that the only solutions of $(*)$ for which both $m$ and 
+$n$ are integers are $(m,n) = (1,0)$ and $(m,n)= (1,-1)$.
+
+\end{itemize}        
+\item
+Find all integer solutions of the equation
+\[
+p^3=q^3+2q^2-1\,.
+\]
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A particle is projected at an angle $\theta$ above the horizontal
+from a point on a horizontal plane. The particle
+just passes over two walls that are
+ at horizontal distances $d_1$ and $d_2$ from the point
+of projection  and are of heights $d_2$ and $d_1$, respectively.
+Show that
+\[
+\tan\theta = \frac{d_1^2+d_\subone d_\subtwo +d_2^2}{d_\subone d_\subtwo}\,.
+\]
+
+Find (and simplify)
+an  expression 
+ in terms of $d_1$ and $d_2$ only 
+for the range of the particle.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A particle, $A$, is dropped from a point $P$ which is
+at a height $h$ above a horizontal 
+plane. 
+A~second particle, $B$, is dropped from $P$ and first collides
+with $A$ after $A$ has bounced on the plane and before $A$
+reaches $P$ again. The bounce and the collision  are both
+perfectly elastic. Explain why the speeds of $A$ and $B$ immediately
+before the first collision are the same.
+
+The masses of $A$ and $B$ are $M$ and $m$, respectively, where $M>3m$,
+and the speed of the particles immediately before
+the first collision is $u$. 
+Show that both particles move upwards after their 
+first collision and that the maximum height of $B$ above the 
+plane after the first collision
+ and before the second  collision is 
+\[
+ h+ \frac{4M(M-m)u^2}{(M+m)^2g}\,.
+\]
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A thin non-uniform bar $AB$ of length $7d$
+ has centre of mass 
+at a point $G$, where $AG=3d$.
+A light inextensible string has one end attached to $A$ and
+the other end attached to $B$. The string is hung over a smooth
+peg $P$ and the bar hangs freely in equilibrium  with $B$ lower than~$A$.
+Show that 
+\[
+3\sin\alpha = 4\sin\beta\,,
+\]
+where $\alpha$ and $\beta$ are the angles $PAB$ and $PBA$, respectively.
+
+Given that $\cos\beta=\frac45$ and that $\alpha$ is acute, 
+find in terms of $d$
+the length of the string and
+show that the angle of inclination of the bar to the horizontal
+is $\arctan \frac17\,$.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+I am selling raffle tickets for $\pounds1$ per ticket.
+In the  queue for tickets,
+there are $m$ people each with a single $\pounds1$ coin and $n$
+people each with a single $\pounds2$ coin. Each person in the 
+queue wants to buy a single raffle ticket and each arrangement
+of people in the queue is equally likely to occur.
+Initially, I have no coins and
+a large supply of tickets. I stop selling tickets if 
+I cannot give the required change.
+
+\begin{questionparts}
+\item In the case $n=1$ and $m\ge1$, find the probability
+that I am able to sell one ticket to each person in the queue.
+\item By considering the first three people in the queue, 
+show that the probability that I am able to sell one ticket
+to each person in the queue in the case $n=2$ and $m\ge2$ is
+$\dfrac{m-1}{m+1}\,$.
+\item 
+Show that the probability that I am able to sell one ticket
+to each person in the queue in the case $n=3$ and $m\ge3$ is
+$\dfrac{m-2}{m+1}\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+In this question, you may use without proof
+the following
+result:
+\[
+\int \sqrt{4-x^2}\, \d x 
+= 2 \arcsin (\tfrac12 x ) + \tfrac 12 x \sqrt{4-x^2} +c\,.
+\] 
+
+A random variable $X$ has probability
+density function $\f$ given by
+\[
+\f(x) = 
+\begin{cases}
+2k & -a\le x <0     \\[3mm]
+k\sqrt{4-x^2} & \phantom{-} 0\le x \le 2 \\[3mm]
+0 & \phantom{-}\text{otherwise},
+\end{cases}
+\]
+where $k$ and $a$ are positive constants.
+
+\begin{questionparts}
+\item Find, in terms of $a$, the mean of $X$. 
+\item Let $d$ be the value of $X$ such that $\P(X> d)=\frac1 {10}\,$. Show
+that $d<0$ if $2a>   9\pi$ and find an expression for $d$ in terms of $a$
+in this case.
+\item Given that $d=\sqrt 2$, find $a$.
+\end{questionparts}
+\end{question}
+
+\end{document}

@@ -1,0 +1,975 @@
+\documentclass[a4, 11pt]{report}
+
+
+%\pagestyle{myheadings}
+%\markboth{}{Paper I, 2017 final draft  
+%\ \ \ \ \ \
+%\today
+%}               
+\pagestyle{empty}
+
+
+
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+\usepackage[utf8]{inputenc}
+\usepackage{pstricks-add}
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bct}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\rct}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+\item Use   the substitution $u= x\sin x +\cos x$ to find
+\[
+\int \frac{x }{x\tan x +1 } \, \d x
+\,.
+\]
+
+Find by means of a similar substitution, or otherwise,   
+\[
+\int \frac{x }{x\cot x -1 } \, \d x
+\,.
+\]
+\item Use a substitution  to find
+\vspace{2mm}
+\[
+\int \frac{x\sec^2 x \, \tan x}{x\sec^2 x -\tan x} \,\d x
+\,
+\]
+\vspace{2mm}
+and 
+\vspace{2mm}
+\[
+\int \frac{x\sin x \cos x}{(x-\sin x \cos x)^2} \, \d x
+\,.
+\]
+\end{questionparts}
+
+
+
+
+\end{question}
+
+
+%%%%%%%%%%%%Q2
+\begin{question}           
+\begin{questionparts}
+\item The inequality $\dfrac 1 t \le 1$ holds for $t\ge1$.
+By integrating both sides of this  inequality 
+over
+\\[3mm]
+ the interval $1\le t \le x$,
+show that 
+\[ 
+\ln x \le x-1
+\tag{$*$}
+\]
+ for $x \ge 1$. Show similarly 
+that $(*)$ also holds for $0 < x \le 1$.
+
+\item
+Starting from the inequality
+$\dfrac{1}{t^2} \le \dfrac1 t $ for $t \ge 1$,
+show that 
+\[ 
+\ln x \ge 1-\frac{1}{x}
+\tag{$**$}
+\]
+for $x > 0$.
+
+\item
+Show, by integrating ($*$) and ($**$), that
+\[
+\frac{2}{ y+1} \le \frac{\ln  y}{ y-1} \le \frac{ y+1}{2 y}
+\] 
+for $ y > 0$ and $ y\ne1$.
+
+
+
+
+\end{questionparts}
+\end{question}
+
+
+
+%%%%%%%%%%%%%%%%Q3
+\begin{question}
+The points $P(ap^2, 2ap)$ and $Q(aq^2, 2aq)$, where $p>0$ and $q<0$,
+ lie on the curve $C$ with equation 
+$$y^2= 4ax\,,
+$$ 
+where $a>0\,$. Show that the equation of the tangent to $C$ at $P$ is
+$$y= \frac 1 p \, x +ap\,.$$
+
+The tangents to the curve at $P$ and at $Q $ meet at $R$.      
+These tangents meet the 
+$y$-axis at $S$ and $T$ respectively, and $O$ is the origin.
+Prove that the area of triangle $OPQ$ is  twice the area of triangle $RST$.
+
+\end{question}
+
+%%%%%%%%%%%%%%%%%%Q4
+\begin{question}
+\begin{questionparts}
+\item
+Let $r$ be a real number with $\vert r \vert<1$ and let 
+\[
+S = \sum_{n=0}^\infty r^n\,.
+\]
+ You may assume  without proof 
+that $S = \ds \frac{1}{1-r}\, $.
+
+
+
+Let $p= 1 + r +r^2$.
+Sketch the graph of the function $1+r+r^2$ 
+and deduce 
+that $\frac{3}{4} \le  p < 3\,$.
+
+Show that,
+if $1 <  p < 3$, 
+ then the value of $ p$  determines $r$, and hence $S$,
+uniquely. 
+
+Show also
+that, if $\frac{3}{4} <  p < 1$, then there are two possible values of 
+$S$ and these values  satisfy the equation $(3- p)S^2-3S+1=0$.
+
+\item 
+Let $r$ be a real number with $\vert r \vert<1$ and let 
+\[
+T =\sum_{n=1}^\infty nr^{n-1}
+\,.
+\]
+ You may assume without proof that 
+$
+T = \ds \dfrac{1}{(1-r)^2}\,.
+$
+
+
+Let $ q= 1+2r+3r^2$.
+Find the set of values of $ q$ that  determine $T$ uniquely.
+
+Find the set of values of $ q$ 
+for which $T$ has two possible values. 
+Find also   a quadratic equation,
+with coefficients 
+depending on $ q$, that is satisfied by these two values.
+
+
+\end{questionparts}
+
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%%Q5
+\begin{question}
+A circle of radius $a$
+is centred at the origin $O$. A rectangle $PQRS$ lies in the 
+minor sector $OMN$ of this circle 
+where $M$ is $(a,0)$ and $N$ is $(a \cos \beta, a \sin \beta)$, 
+and $\beta$ is a constant with $0 < \beta < \frac{\pi}{2}\,$. 
+Vertex $P$ lies on the positive $x$-axis at $(x,0)$; 
+vertex $Q$ lies on $ON$; vertex $R$ lies on the arc of the circle 
+between $M$ and $N$; and vertex $S$ lies on the positive $x$-axis at $(s,0)$.
+
+Show that the area $A$ of the rectangle can be written in the form
+\[
+A= x(s-x)\tan\beta
+\,.
+\]
+Obtain an expression for $s$ in terms of $a$, $x$ and $\beta$, and use it to
+show  that
+\[
+\frac{\d A}{\d x} =
+(s-2x) \tan \beta  - \frac {x^2} s \tan^3\beta
+\,.
+\]
+Deduce that  the greatest possible area of 
+rectangle $PQRS$ occurs when
+$s= x(1+\sec\beta)$ and show that this greatest area is $\tfrac12 a^2 \tan \frac12 \beta\,$.
+
+Show also that this greatest area occurs when $\angle ROS = \frac12\beta\,$.
+
+\end{question}
+
+\vspace{-3mm}
+%%%%%%Q6
+
+\begin{question}
+
+In this question, you may assume that, if a continuous  function 
+takes both positive and negative values in an interval, then
+it takes the value $0$ at some point in that interval. 
+
+
+\begin{questionparts}
+\item
+The function  $\f$ is continuous and $\f(x)$ is non-zero for some value 
+of $x$ in the interval $0\le x \le 1$. Prove by contradiction, or otherwise,
+ that if
+\[
+\int_0^1 \f(x) \d x = 0\,,
+\]
+then 
+ $\f(x)$ takes both positive and negative values 
+in the interval $0\le x\le 1$.
+
+
+\item The function  $\g$ is continuous and
+\[
+\int_0^1 \g(x) \, \d x = 1\,,
+ \quad 
+\int_0^1 x\g(x) \, \d x = \alpha\, , 
+\quad 
+\int_0^1 x^2\g(x) \, \d x = \alpha^2\,.
+\tag{$*$}
+\] 
+ Show, by considering
+\[
+\int_0^1 (x - \alpha)^2 \g(x) \, \d x
+\,,
+\]
+ that
+$\g(x)=0$ for some value of $x$ in the interval $0\le x\le 1$.
+
+Find a function of the  form $\g(x) = a+bx$ that satisfies the conditions
+$(*)$ and verify that $\g(x)=0$ for some value of $x$ in the interval 
+$0\le x \le 1$.
+\item
+The function $\h$ has a continuous derivative $\h'$ and
+\[
+\h(0) = 0\,,
+\quad 
+\h(1) = 1\,,
+\quad 
+\int_0^1 \h(x) \, \d x = \beta\,, 
+\quad 
+\int_0^1 x \h(x) \, \d x = \ts \frac{1}{2} \ds \beta (2 - \beta)
+\,.
+\] 
+Use the result in part \bf (ii) \rm to show that $\h^\prime(x)=0$ 
+for some value of $x$ in the interval $0\le x\le 1$.
+
+\end{questionparts}
+
+
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%%%%%Q7
+\begin{question}
+
+
+The triangle $ABC$ has side lengths $\left| BC \right| = a$, 
+$\left| CA \right| = b$ and $\left| AB \right| = c$.
+Equilateral triangles 
+$BXC$, \; $CY\!A$  \hspace{0.0mm} and  $AZB$ are erected on the sides of the  triangle $ABC$, 
+with~$X$ on the other side of $BC$ from $A$, and similarly for $Y$ and $Z$. 
+Points $L$, $M$ and $N$ are the centres 
+of rotational symmetry of triangles $BXC$, $CY\!A$ and $AZB$ respectively. 
+
+
+
+
+
+\begin{questionparts}
+\item
+Show that $| CM| =  \dfrac {\ b} {\sqrt3} \,$
+and write down the corresponding expression for $| CL|$.
+
+\item Use the cosine rule to show that
+\[
+6 \left| LM \right|^2 = a^2+b^2+c^2 + 4\sqrt3 \, \Delta \,,
+\]
+where 
+$\Delta$ is the area of triangle $ABC$. 
+Deduce
+ that $LMN$ is an equilateral triangle.
+
+Show further that the areas of triangles $LMN$ and $ABC$ are equal
+if and only if
+\[
+a^2+b^2 +c^2 = 4\sqrt3 \, \Delta
+\,.
+\]
+\item
+Show that 
+the conditions
+\[
+(a -b)^2 = -2ab \big( 1 -\cos(C-60^\circ)\big) 
+\,\]
+and 
+\[
+a^2+b^2 +c^2 = 4\sqrt3 \, \Delta
+\]
+are equivalent.
+
+
+Deduce
+that the areas of triangles $LMN$ and $ABC$ are equal
+if and only if
+$ABC$ is equilateral.
+
+
+
+
+
+
+\end{questionparts}
+\end{question}
+
+  
+%%%%%%%%%%%%%%%Q8
+\begin{question}           
+ Two sequences are defined by $a_1 = 1$ and $b_1 = 2$ and, for $n \ge 1$,
+\begin{equation*}
+\begin{split}
+a_{n+1} & = a_n+ 2b_n \,,
+\\
+b_{n+1} & = 2a_n + 5b_n \,. 
+\end{split}
+\end{equation*}
+Prove by induction that, for all $n \ge 1$, 
+\[
+a_n^2+2a_nb_n  - b_n^2 = 1 
+\,.
+\tag{$*$}\]
+\begin{questionparts}
+\item
+Let $c_n = \dfrac{a_n}{b_n}$\,.
+Show that $b_n  \ge  2 \times 5^{n-1}$
+and use $(*)$ to show  that  
+\[
+c_n \to \sqrt 2 -1 
+\text{ as }  n\to\infty\,.
+ \]
+\item
+Show also that
+$c_n > \sqrt2 -1$ and hence that $\dfrac2 {c_n+1}<\sqrt2<c_n+1
+$\,.
+
+Deduce that  $\dfrac{140}{99}<   \sqrt{2} < \dfrac{99}{70 }\,$.
+
+\end{questionparts}
+\end{question}
+\newpage
+
+\section*{Section B: \ \ \ Mechanics}
+
+
+%%%%%%%%%%%%%%%%%%Q9 
+
+\begin{question}
+
+A particle is projected at speed $u$ from a point $O$ on a horizontal plane.
+It
+passes through a fixed point $P$ which is at a horizontal distance $d$
+from $O$ and at   a height  
+$d \tan \beta$ above the plane, where $d>0$ and
+ $\beta $ is an acute angle.
+The  
+ angle of projection $\alpha$ is chosen so that $u$ is as small as
+possible. 
+
+\begin{questionparts}
+\item
+Show 
+that 
+ $u^2 = gd \tan \alpha$ and 
+$2\alpha = \beta + 90^\circ\,$.
+\item
+At what angle to the horizontal is the particle travelling when it 
+passes through~$P$? Express your answer in terms of $\alpha$ in its 
+simplest form.
+\end{questionparts}
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%Q10
+
+\begin{question}
+
+Particles $P_1$, $P_2$, $\ldots$
+are at rest on the $x$-axis, and the 
+$x$-coordinate of $P_n$ is $n$. 
+The  mass of~$P_n$ is $\lambda^nm$.
+Particle $P$, of mass $m$, is projected 
+from the origin at speed $u$ towards $P_1$.
+A~series of collisions takes place, and the coefficient of 
+restitution at each collision is $e$, where $0<e<1$. The speed of 
+$P_n$ immediately after its first collision is $u_n$ and the 
+speed of $P_n$ immediately after its second collision is  $v_n$.
+No external forces act on the particles.
+
+
+\begin{questionparts}
+
+\item Show that $u_1=\dfrac{1+e}{1+\lambda}\, u$ and find  expressions for 
+$u_n$ and $v_n$  in terms of $e$, $\lambda$, $u$ and $n$.
+
+\item Show that, if $e > \lambda$, then each particle (except $P$)
+ is involved 
+in exactly two collisions.
+
+\item Describe what happens if $e=\lambda$ and show that, in this case, 
+the fraction of the initial kinetic energy lost approaches $e$ as the number of 
+collisions increases.
+
+\item Describe what happens if $\lambda e=1$. What fraction of the initial
+kinetic energy is \mbox{eventually} lost in this case?
+
+\end{questionparts}
+
+\end{question}
+
+
+
+%%%%%%%%%%%%%%%%%%Q11
+
+\begin{question}
+
+A plane makes 
+an acute angle $\alpha$ 
+with the horizontal.
+A box in the shape of a cube is fixed  onto  the plane 
+ in such a way that four of its edges are horizontal and two of its sides
+are vertical.
+
+
+A uniform rod of length $2L$ and weight $W$ rests  with 
+its lower end at $A$ on the bottom of the box and 
+its upper end at $B$ on a side of the box, as shown in the diagram below.
+ The vertical plane containing the 
+rod  is parallel to the vertical sides of the box   
+and cuts the lowest edge of the box
+at $O$. The rod makes an acute angle~$\beta$ with the side of the box at $B$.
+
+The coefficients of friction between the rod 
+and the box at the two points of contact 
+are both $\tan \gamma$, where $0<   \gamma<\frac12\pi$.
+%The  frictional force on the rod at $A$ acts toward $O$, 
+%and the frictional force on the rod at~$B$
+%acts away from $O$.
+
+The rod is in limiting equilibrium, with the end at $A$
+ on the point of slipping in the direction away from $O$ and the end at $B$
+on the point of slipping towards $O$. Given that
+$\alpha < \beta$,
+show that $\beta = \alpha + 2\gamma$. 
+
+[{\bf Hint}: You may find it helpful to take moments about the midpoint of 
+the rod.]
+\vspace{-1.5cm}
+\begin{center}
+\newrgbcolor{zzttqq}{0.6 0.2 0}
+\newrgbcolor{xdxdff}{0.49 0.49 1}
+\psset{xunit=6mm  ,yunit=6mm  }
+\begin{pspicture*}(-8.3,-6.72)(15.56,8.3)
+\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\pspolygon[linewidth=1.2pt,
+%linecolor=zzttqq,
+](0,-3)(-1.55,2.8)(4.24,4.35)(5.87,-1.41)
+\psline(-2.54,-3   )(12,-3)
+\psline(-2.46,-3.62)(11.59,0.11)
+%\psline[linewidth=1.2pt,linecolor=zzttqq](0,-3)(-1.55,2.8)
+%\psline[linewidth=1.2pt,linecolor=zzttqq](-1.55,2.8)(4.24,4.35)
+%\psline[linewidth=1.2pt,linecolor=zzttqq](4.24,4.35)(5.87,-1.41)
+%\psline[linewidth=1.2pt,linecolor=zzttqq](5.87,-1.41)(0,-3)
+\rput[tl](2.6 ,-2.4 ){$ A $}
+\rput[tl](-1.8 ,1.6){$ B $}
+\rput[tl](-0.2,-3.15 ){$ O $}
+\rput[tl](1.4 ,-2.7){$ \alpha $}
+\rput[tl](-0.8,0.8){$ \beta $}
+\psline[linewidth=2.3pt](-1.20,1.52)(2.8,-2.22)
+\pscustom[linecolor=black,fillcolor=zzttqq,fillstyle=none,opacity=0.0]{\parametricplot{-0.0127510246967992202}{0.2471697861109875}{1*1.84*cos(t)+0*1.84*sin(t)+-0.0|0*1.84*cos(t)+1*1.84*sin(t)+-2.98}\lineto(0,-2.99)\closepath}
+\pscustom[linecolor=black,fillcolor=zzttqq,fillstyle=none,opacity=0.0]{\parametricplot{4.974188368183839}{5.533030852440859}{1*1.45*cos(t)+0*1.45*sin(t)+-1.21|0*1.45*cos(t)+1*1.45*sin(t)+1.52}\lineto(-1.21,1.52)\closepath}
+\end{pspicture*}
+\end{center}
+
+
+\end{question}
+
+\newpage
+
+\section*{Section C: \ \ \ Probability and Statistics}
+
+\vspace{-3mm}
+
+%%%%%%%Q12
+
+\begin{question}
+
+
+In a lottery, each of the $N$ participants pays $\pounds c$ 
+to the organiser and picks 
+a number from $1$ to $N$. 
+The organiser picks at random the winning number from $1$ to $N$  and 
+all those participants who picked this number receive an equal 
+share of the prize, $\pounds J$.
+
+
+
+\begin{questionparts}
+
+\item 
+The participants pick their numbers 
+independently and with equal probability. 
+Obtain  an expression for the 
+probability that no participant picks the 
+winning number, and hence determine the organiser's expected profit.
+
+Use  the approximation
+\[
+\left( 1 - \frac{a}{N} \right)^N \approx \e^{-a}
+\tag{$*$}
+\]
+ to 
+show that if $2Nc = J$ then the organiser will expect to make a loss.
+
+{\bf Note}: $\e > 2$.  
+ 
+\item Instead of the numbers being equally popular, 
+a fraction $\gamma$ of the numbers are popular and the rest are unpopular.
+For each participant,  
+the probability of picking any given popular number is 
+$\dfrac{a}{N}$ and the probability of picking
+   any given unpopular number is~$\dfrac{b}{N}\,$. 
+
+Find a relationship between $a$, $b$ and $\gamma$.
+
+Show that,
+using the 
+approximation $(*)$,  
+ the organiser's expected profit can be \mbox{expressed} 
+in the form
+\[
+A\e^{-a} + B\e^{-b} +C
+\,,
+\]
+where $A$, $B$ and $C$ can be written in terms of  $J$, $c$, $N$ and $\gamma$. 
+
+
+
+In the case $\gamma = \frac18$ and $a=9b$, find $a$ and $b$. Show that,
+ if  
+ $2Nc = J$, then
+ the organiser will expect to make a profit.
+
+{\bf Note}: $\e < 3$.  
+
+
+\end{questionparts}
+\end{question}
+
+\vspace{-2mm}
+%%%%%%%%Q13
+
+
+\begin{question}
+I have a sliced loaf which initially contains $n$ slices of bread. 
+Each time I finish setting a STEP question, I make myself a snack:
+either toast, using one slice of bread;
+or a sandwich, using two slices of bread. 
+I make 
+ toast with probability~$p$ and I make a sandwich  
+ with probability $q$, where $p+q=1$, 
+unless there is only one slice left in which case I must, of course, 
+make toast.
+ 
+Let $s_r$ ($1 \le r \le n$) be the probability that 
+the $r${th} slice of bread is the second of two slices 
+used to make a sandwich 
+and  let $t_r$ ($1 \le r \le n$) be the probability that the 
+$r${th} slice of bread is used to make toast. What is the value of $s_1$? 
+
+Explain why the following equations hold:
+\begin{align*}
+\phantom{\hspace{2cm} (2\le r \le n-1)}   
+t_r &= (s_{r-1}+ t_{r-1})\,p  
+\hspace{2cm}
+(2\le r \le n-1)\,;
+\\
+ \phantom{\hspace{1.53cm} (2\le r \le n) }           
+s_r &= 1- (s_{r-1} + t_{r-1})
+ \hspace{1.53cm}
+( 2\le r \le n )\,.           
+\end{align*}
+Hence, or otherwise, show that $s_{r} = q(1-s_{r-1})$ for
+$2\le r\le n-1$\,.
+
+Show further that 
+\[
+\phantom{\hspace{2.7cm} (1\le r\le n)\,,}
+s_r = \frac{q+(-q)^r}{1+q}
+\hspace{2.7cm}
+(1\le r\le n-1)\,,
+\,
+\hspace{0.14cm}
+\]
+and find the corresponding expression for $t_r$.
+
+Find also expressions for $s_n$ and $t_n$ in terms of $q$.
+%\item
+%\end{questionparts}
+
+
+
+
+\end{question}
+
+\end{document}
+
+
+
+%%%%%%%%%%%%%% spare Q1
+\begin{question}
+If $\f$ is a function defined on the interval $0 \le x \le y$, and $\f(x) > 0$ for $0 \le x \le y$, then the geometric mean of $\f$ over this interval is
+\[
+\G(\f) = e^{\frac{1}{y}\int_0^y \ln \f(x) \, \d x}.
+\]
+\begin{questionparts}
+\item  Prove that, for all $a > 1$,
+\[
+a^{\frac{1}{y}\int_0^y \log_a \f(x) \, \d x}= \G(\f).
+\]
+
+\item Prove that, if $h(x) = f(x)g(x)$, where $\f(x) > 0$ and $\g(x) > 0$ for $0 \le x \le y$, then $\G(\h)= \G(\f) \G(\g)$.
+
+\item Prove that, for all $a > 0$, if $\f(x) = a^x$, then $\ds \G(\f)= \sqrt{f(y)}$.
+
+\item Prove that if $f(0) = 1$, and $\ds \G(\f)= \sqrt{f(y)}$ for all $y \ge 0$, then $\f(x) = a^x$ for some $a >0$.
+
+\end{questionparts}
+
+\bluecomment{I liked this, but thought it probably too sophisticated for 
+Paper I. I suggest moving it to another paper rather than butchering it.
+Would you be happy with that?
+
+}
+\end{question}
+
+
+%%%%%%%%%%%%%%% spare Q2
+\begin{question}
+
+Let $\ds \f(x) = \frac{1}{\sqrt{x}}$
+           
+\begin{questionparts}
+\item Estimate the area under the curve $y=\f(x)$ from $x=1$ to $x=n+1$ using the trapezium rule with strips of width 1.
+ 
+Hence show that
+\[
+\sum_{r=1}^n{\frac{1}{\sqrt{r}}} \ge 2 \sqrt{n +1} -\frac{3}{2} -\frac{1}{2 \sqrt{n+1}}.
+\]
+
+\item Find the area of the trapezium formed by the lines $x= r - \frac{1}{2}$ and $x = r + \frac{1}{2}$, the x-axis, and the tangent at $(r \, , \; \f(r))$ to the curve $y=\f(x)$.
+
+Hence show that 
+\[
+\sum_{r=1}^n{\frac{1}{\sqrt{r}}} \le 2 \sqrt{n + \tfrac{1}{2}} -\sqrt{2}.
+\]
+
+\item Show that when $n=24$, the average of the bounds in \bf (i) \rm and \bf (ii) \rm will certainly differ from the true value of $\ds \sum_{r=1}^n{\frac{1}{\sqrt{r}}}$ by less than one percent.
+
+\end{questionparts}
+
+\bluecomment{This seems good (though I haven't worked through it carefully).
+But I don't think we can use it this year: Paper II
+has
+\[
+2\sqrt{n} + \frac1{2\sqrt n}+C\ge \sum \frac {1}{\sqrt r} \ge 2\sqrt n 
+\]
+The Paper II  proof uses induction, so it is not the same question;
+maybe they are sufficiently different to use both if we are stuck,
+but it is better to put it in the bag for next year.
+}
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%%% removed parts of Q7
+\item  
+ Show that, for $x>1$,
+\[
+\ln x <  \tfrac{1}{2} \left( x-1/x \right)
+\,.
+\]
+\item Show that, for $x>0$,
+\[
+\ln x \le \frac{(x+5)(x-1)}{2(2x+1)}
+\,.
+\]
+
+
+
+\begin{question}
+
+Two particles are able to move without friction on the $x$-axis. 
+When the particles are a distance $x \le d$ apart, 
+the repulsive force between them is given 
+by $\ds \Phi \left( 1-\frac{x}{d} \right)$, and is zero otherwise.
+
+
+
+Particle 1, with mass $m_1$, is at $x=x_1$, 
+and particle 2, with mass $m_2$, is at $x=x_2$; 
+initially, $x_1 = 0$ and $x_2=d$ and both particles are at rest. 
+For $t \ge 0$, a constant force 
+$\alpha \Phi$, with $\alpha  \le 1$, is exerted on particle 1, 
+in the direction of the positive $x$-axis.
+
+\begin{questionparts}
+
+\item Show that, while $0 \le x_2 - x_1 \le d$,
+
+\[
+\frac{\d^2 (x_2 - x_1)}{\d t^2} = \frac{m_1+m_2}{m_1m_2}\Phi 
+\left( 1-\frac{x_2-x_1}{d} \right) -\frac{\alpha \Phi}{m_1}
+\]
+
+\item Show that this equation, and the initial 
+conditions on $x_1$ and $x_2$, are 
+satisfied by $x_2 - x_1 = A \cos^2(\omega t) +c$, 
+for suitable values of $A$ and $c$, 
+which you should determine in terms of $\Phi$, $d$ and $\alpha$.
+
+\item Find expressions for $x_1$ and $x_2$ as functions of time.
+
+\item Evaluate $x_2 - x_1$ and $\ds \frac{\d (x_2 - x_1)}{\d t}$ 
+at $\ds t = \frac{\pi}{\omega}$. 
+If the constant force $\alpha \Phi$ acts only for 
+$0 \le t \le \ds \frac{\pi}{\omega}$,  
+explain how the particles will move for $\ds t > \frac{\pi}{\omega}$.
+
+\end{questionparts}
+
+\end{question}
+
+
+
+
+%%%%%%%%Q13
+
+\begin{question}
+
+
+
+Errors occur in a process at unpredictable times. 
+The number of errors that occur in any particular time 
+interval is modelled by a random variable $N$. 
+It is assumed that the distribution of $N$ 
+depends only on the length of the time interval, and 
+that the numbers of errors that occur in any two independent 
+time intervals are independent of each other. 
+Let $\f_r(t)$ be the probability that exactly $r$ errors 
+occur in a time interval of length $t$.
+
+
+
+\begin{questionparts}
+
+\item Explain why $\f_0(t+s) = \f_0(t) \f_0(s)$. 
+Assuming that the function $\f$ is sufficiently 
+smooth, differentiate this equation with respect to $s$ and 
+then set $s = 0$. Deduce that $\f_0(t) = \e^{- \lambda t}$ 
+for some positive value of $\lambda$.
+
+\item Write $\f_1(t+s)$ in terms of  
+$\f_0(t)$, $\f_0(s)$,$\f_1(t)$ and $\f_1(s)$ and show that
+
+$\f'_1(t) = k\e^{- \lambda t}-\lambda \f_1(t)$, 
+where $k = \f'_1(0)$. By considering the differential 
+equation satisfied by $\g(t) = \f_1(t) \e^{\lambda t}$, 
+show that $\f_1(t) = \lambda t \e^{-\lambda t}$. 
+
+\item Show that 
+$\f_2(t) = \left(c t + \frac{1}{2}\lambda^2 t^2 \right) \e^{-\lambda t}$, 
+where $c$ is a constant, and explain why you would expect $c$ to be zero.
+
+\end{questionparts}
+\bluecomment{I like this, but prefer to put it on the shelf for two
+reasons. 
+
+One is that when in the past
+I have tried to introduce partial differentiation
+to obtain a functional equation, I have always been told off --- so 
+probably Paper I is not the place to try it.
+
+Second is that I ditched one of Neil's Paper II questions
+and suggested exactly this idea as a replacement
+(well before I saw your question). 
+I don't know
+yet whether he has adopted my suggestion.
+}
+\end{question}
+
+%%%%%%%%%%%%%%% removed parts of Q10
+\begin{questionparts}
+\item Show 
+the midpoint of the rod is a distance
+ $L \sin(\alpha+\beta)$ from the vertical through $B$
+and find the distance of $A$ from this vertical.
+
+Deduce that, 
+if the wall and the floor are smooth, the base of the rod 
+will begin to slide towards $O$ if $\beta < \alpha$ and away 
+from $O$ if $\beta > \alpha$. What will happen if $\beta = \alpha$?
+
+\item 
+
+%%%%%%%%%%%%%%% your version of Q13
+
+\begin{question}
+A frog is climbing out of a dry well that is $n$ bricks deep. 
+From the $r$th brick ($1\le r \le  n-1$), counting from the bottom of
+the well,
+he  either:
+\begin{itemize} 
+\item
+hops onto the $(r+1)$th brick; or 
+\item
+jumps that over that brick onto the $(r+2)$th brick (or out of the 
+well from the $(n-1)$th brick). 
+\end{itemize}
+If he
+lands on the $n$th brick, he just hops out of the well;
+otherwise, he hops with probability~$p$ 
+and jumps with probability~$q$, where $p>0$, $q>0$ and $p+q=1$. 
+He starts from the first brick.
+
+Let $u_r$ ($2\le r \le n$)
+be the probability that he lands on the $r$th brick during his climb.
+Express $u_r$, for $4\le r \le n$,
+ in terms of $u_{r-1}$, $u_{r-2}$, $p$ and $q$. 
+Deduce that
+\[
+u_r- u_{r-1} = -q (u_{r-1}-u_{r-2})
+\]
+and hence show that, for $2\le r\le n$,
+\[
+u_r = \frac{1-(-q)^r}{1+q}
+\,.\]

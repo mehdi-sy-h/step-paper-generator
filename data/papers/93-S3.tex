@@ -1,0 +1,524 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1993
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+The   curve $P$ has the parametric equations
+$$
+x= \sin\theta, \quad y=\cos2\theta
+\qquad\hbox{ for }-\pi/2 \le \theta \le \pi/2.
+$$
+Show that $P$ is part of the parabola $y=1-2x^2$ and sketch $P$.
+
+Show that the length of $P$ is $\surd (17) + {1\over 4} \sinh^{-1}4$.
+
+Obtain the volume of the solid enclosed when  $P$ 
+is rotated through $2\pi$ radians about the line $y=-1$.
+
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The curve $C$ has the equation $x^3+y^3 = 3xy$.
+\begin{questionparts}
+\item Show that there is no point of inflection on $C$. You may assume that
+the origin is not a point of inflection.
+
+\item The part of $C$ which lies in the first quadrant is a closed loop
+touching the axes at the origin. By converting to polar coordinates,
+or otherwise, evaluate the area of this loop. 
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The matrices $\mathbf{A},\mathbf{B}$ and $\mathbf{M}$ are given
+by 
+\[
+\mathbf{A}=\begin{pmatrix}a & 0 & 0\\
+b & c & 0\\
+d & e & f
+\end{pmatrix},\quad\mathbf{B}=\begin{pmatrix}1 & p & q\\
+0 & 1 & r\\
+0 & 0 & 1
+\end{pmatrix},\quad\mathbf{M}=\begin{pmatrix}1 & 3 & 2\\
+4 & 13 & 5\\
+3 & 8 & 7
+\end{pmatrix},
+\]
+where $a,b,\ldots,r$ are real numbers. Given that $\mathbf{M=AB},$
+show that $a=1,b=4,c=1,d=3,e=1,f=-2,p=3,q=2$ and $r=-3$ gives the
+\textit{unique }solution for $\mathbf{A}$ and $\mathbf{B}.$ Evaluate
+$\mathbf{A}^{-1}$ and $\mathbf{B}^{-1},$
+
+
+Hence, or otherwise, solve the simultaneous equations 
+\begin{alignat*}{1}
+x+3y+2z & =7\\
+4x+13y+5z & =18\\
+3x+8y+7z & =25.
+\end{alignat*}
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}
+Sum the following infinite series.
+
+\begin{questionparts}
+	\item $\displaystyle 1 + 
+{1 \over 3} \bigg({1\over 2}\bigg)^2 +{1 \over 5 }\bigg({1\over 2}\bigg)^4
++ \cdots + {1 \over 2n+1} \bigg({1 \over 2}\bigg)^{2n} + \cdots$ .
+
+\item $\displaystyle 
+2 -x -x^3 +2x^4 - \cdots + 2x^{4k} - x^{4k+1} - x^{4k+3} +\cdots$
+where $|x|<1$.
+
+\item  $\displaystyle  \sum _{r=2}^\infty
+ {r\,  2^{r-2} \over 3^{r-1} }.$
+
+\item $\displaystyle\sum_{r=2}^\infty
+ {2 \over r(r^2-1) }$.
+ \end{questionparts}
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+The set $S$ consists of ordered pairs of complex numbers
+$(z_1,z_2)$ and a binary operation  $\circ$ on $S$  is defined by
+$$
+(z_1,z_2)\circ(w_1,w_2)=
+(z_1w_1-z_2w^*_2, \; z_1w_2+z_2w^*_1).
+$$
+Show that the operation $\circ$ is associative and determine whether
+it is commutative. Evaluate $(z,0)\circ(w,0)$, $(z,0)\circ(0,w)$,
+$(0,z)\circ(w,0)$ and $(0,z)\circ(0,w)$.
+
+The set $S_1$ is the subset of $S$ consisting of $A$, $B$, $\ldots\,$, $H$,
+where $A=(1,0)$, $B=(0,1)$, $C=(i,0)$, $D=(0,i)$, $E=(-1,0)$, $F=(0,-1)$,
+$G=(-i,0)$ and $H=(0,-i)$. Show that $S_1$ is closed under $\circ$ and 
+that it has an identity element. Determine the inverse and order of
+each element of $S_1$. Show that $S_1$ is a group under 
+$\circ$.
+\hfil\break
+[You are not required to compute the multiplication table
+in full.]
+
+Show that $\{A,B,E,F\}$ is a subgroup of $S_1$ and determine whether
+it is isomorphic to the group generated by the $2\times2$ matrix
+$\begin{pmatrix}0 & 1\\
+-1 & 0
+\end{pmatrix}$ under 
+matrix multiplication.
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+The point in the Argand diagram representing the complex number
+$z$ lies on the circle with centre $K$ and radius $r$, where $K$
+represents the complex number $k$. Show that 
+$$
+zz^* -kz^* -k^*z +kk^* -r^2 =0.
+$$
+
+The points $P$, $Q_1$ and $Q_2$ represent the complex numbers
+$z$, $w_1$ and $w_2$ respectively. The point $P$ lies on the circle
+with $OA$ as diameter, where $O$ and $A$ represent $0$ and 
+$2i$ respectively. Given that $w_1=z/(z-1)$, find the equation of the 
+locus $L$ of $Q_1$ in terms of $w_1$ and describe 
+the geometrical form of $L$.
+
+Given that $w_2=z^*$, show that the locus of $Q_2$ is also $L$. Determine the
+positions of $P$ for which $Q_1$ coincides with $Q_2$.
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+The real numbers $x$ and $y$ satisfy the simultaneous equations
+$$
+\sinh (2x) = \cosh y
+\qquad\hbox{and}\qquad
+\sinh(2y) = 2 \cosh x.
+$$
+Show that $\sinh^2 y$ is a root of the equation
+$$
+4t^3 + 4t^2 -4t -1=0
+$$
+and demonstrate that this gives at most one valid solution for $y$. Show that
+the relevant value of $t$ lies between $0.7$ and $0.8$, and use an
+iterative process to find $t$ to 6 decimal places.
+
+Find $y$ and hence find $x$, checking your answers and stating the final 
+answers to four decimal places.
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+A square pyramid has its base vertices at the points $A$ $(a,0,0)$,
+$B$ $(0,a,0)$, $C$ $(-a,0,0)$ and $D$ $(0,-a,0)$, and its vertex at 
+$E$ $(0,0,a)$. The point $P$ lies  on $AE$ with $x$-coordinate $\lambda a$,
+where $0<\lambda<1$, and the point $Q$ lies on $CE$ with $x$-coordinate
+$-\mu a$, where $0<\mu<1$. The plane $BPQ$ cuts $DE$
+at $R$ and the $y$-coordinate of $R$ is $-\gamma a$. Prove that 
+$$
+\gamma = {\lambda \mu \over \lambda + \mu - \lambda \mu}.
+$$
+
+Show that the quadrilateral $BPRQ$ cannot be a parallelogram.
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+		\begin{question}
+For the real numbers $a_1$, $a_2$, $a_3$, $\ldots$,
+\begin{questionparts}
+\item prove that $a_1^2+a_2^2 \ge 2a_1a_2$,
+\item prove that $a_1^2+a_2^2 +a_3^2  \ge a_2a_3 + a_3a_1 +a_1a_2$,
+\item prove that $3(a_1^2+a_2^2 +a_3^2 +a_4^2)
+ \ge 2(a_1a_2+a_1a_3 + a_1a_4 +a_2a_3 + a_2a_4 +a_3a_4)$,
+\item state and prove a generalisation of (iii) to the case of $n$ real
+numbers,
+\item prove that 
+$$
+\left(\sum_{i=1}^n a_i \right)^2 \ge {2n\over n-1} \sum_{i,j} a_ia_j,
+$$
+where the latter sum is taken over all pairs $(i,j)$ with $1\le i<j\le
+n$. 
+\end{questionparts}
+		\end{question}
+		
+	
+%%%%%%%%%% 10
+\begin{question}
+The transformation $T$ of the point $P$ in the $x$,$y$ plane to
+the point $P'$ is constructed as follows:
+\hfil\break
+Lines are drawn through $P$ parallel to the lines $y=mx$ and $y=-mx$
+to cut the line $y=kx$ at $Q$ and $R$ respectively, $m$ and $k$ being
+given constants. $P'$ is the fourth vertex of the parallelogram
+$PQP'R$. 
+
+Show that if $P$ is $(x_1,y_1)$ then $Q$ is 
+$$
+\left( {mx_1-y_1 \over m-k}, {k(mx_1-y_1)\over m-k}\right).
+$$
+Obtain the coordinates of $P'$ in terms of 
+$x_1$, $y_1$, $m$ and $k$, and express $T$ as a matrix transformation.
+Show that  areas are transformed under $T$ into areas of the same 
+magnitude.  
+\end{question}
+			
+		
+		
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+\textit{In this question, all gravitational forces are to be neglected. }
+
+
+A rigid frame is constructed from 12 equal uniform rods, each of length
+$a$ and mass $m,$ forming the edges of a cube. Three of the edges
+are $OA,OB$ and $OC,$ and the vertices opposite $O,A,B$ and $C$
+are $O',A',B'$ and $C'$ respectively. Forces act along the lines
+as follows, in the directions indicated by the order of the letters:
+\begin{alignat*}{3}
+2mg\mbox{ along }OA, & \qquad & mg\mbox{ along }AC', & \qquad & \sqrt{2}mg\mbox{ along }O'A,\\
+\sqrt{2}mg\mbox{ along }OA', &  & 2mg\mbox{ along }C'B, &  & mg\mbox{ along }A'C.
+\end{alignat*}
+
+\begin{questionparts}
+\item The frame is freely pivoted at $O$. Show that the direction of the line
+about which it will start to rotate is
+$\begin{pmatrix}1\\
+1\\
+2
+\end{pmatrix}$ with respect to axes
+along $OA$, $OB$ and $OC$ respectively.
+
+\item Show that the moment of inertia of the rod 
+$OA$ about the axis $OO'$ is $2ma^2/9$ and about a parallel axis through
+ its mid-point is $ma^2/18$. Hence find the 
+moment of inertia of $B'C$ about $OO'$ and show that the moment of inertia
+of the frame about $OO'$ is $14ma^2/3$.  If the frame
+ is freely pivoted about the line $OO'$ and the forces continue 
+to act along the specified lines, find the initial angular 
+acceleration of the frame.   
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+$ABCD$ is a horizontal line with 
+$AB=CD=a$ and $BC=6a$. 
+There are
+fixed smooth pegs at $B$ and $C$.
+A uniform string of natural length $2a$ and modulus of elasticity
+$kmg$ is stretched from $A$ to $D$, passing over the pegs at 
+$B$ and $C$. A particle of mass $m$ is attached to the midpoint $P$
+of the string.  When the
+system is in equilibrium, $P$ is a distance $a/4$ below $BC$. Evaluate
+$k$.
+
+The particle is pulled down to a point $Q$, which is
+at a distance $pa$ below
+the mid-point of $BC$, and is released from rest. $P$ rises to 
+a point $R$, which is at 
+ a distance $3a$ above $BC$. Show that $2p^2-p-17=0$.
+
+Show also that the tension in the strings is less when the 
+particle is at $R$ than when the particle is at $Q$.
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+	$\ $\vspace{-1cm}
+	
+	\noindent
+	\begin{center}
+		\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(-3.18,-6.26)(2.72,2.3)
+		\pscircle(0,0){2}
+		\psline[linewidth=1.2pt](-2,0)(-2,-4)
+		\psline[linewidth=1.2pt](2,0)(2,-5)
+		\rput[tl](-2.5,0.14){$R$}
+		\rput[tl](0.2,0.2){$O$}
+		\rput[tl](2.2,0.14){$Q$}
+		\rput[tl](-2.1,-4.26){$S$}
+		\rput[tl](1.86,-5.2){$P$}
+		\parametricplot[linewidth=1.2pt]{0.0}{3.141592653589793}{1*2*cos(t)+0*2*sin(t)+0|0*2*cos(t)+1*2*sin(t)+0}
+		\begin{scriptsize}
+		\psdots[dotstyle=+,dotsize=6pt](0,0)
+		\end{scriptsize}
+		\end{pspicture*}
+		\end{center}
+		
+		
+A uniform circular disc with  radius $a$, mass $4m$ and centre $O$ is freely
+mounted on a fixed horizontal axis which is
+perpendicular to its plane and passes through $O$. A uniform heavy chain
+$PS$ of length $(4+\pi)a$, mass $(4+\pi)m$ and negligible thickness is
+hung over the rim of the disc as shown in the diagram: $Q$ and $R$ are
+the points of the chain at the same level as $O$. The contact between the
+chain and the rim of the disc is sufficiently rough to prevent slipping.
+Initially, the system is at rest with $PQ=RS =2a$. A particle of mass 
+$m$ is attached to the chain at $P$ and the system is released. 
+By considering the energy of the system, show that when $P$ has descended
+a distance $x$, its speed $v$ is given by
+$$
+(\pi+7)av^2 = 2g(x^2+ax).
+$$
+
+By considering the part $PQ$ of the chain as a body of variable mass, show 
+that when $S$ reaches $R$ the tension in the chain at $Q$ is
+$$
+{5\pi -2 \over \pi +7} mg.
+$$ 
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+A particle rests at a point $A$ on a horizontal table and is joined to a
+point $O$ on the table by a taut inextensible string of length $c$. The
+particle is projected vertically upwards at a speed $64\surd(6gc)$. It
+next strikes the table at a point $B$ and rebounds. The coefficient
+of restitution for any impact between the particle and the table is
+${1\over 2}$. After rebounding at $B$, the particle will rebound
+alternately at $A$ and $B$ until the string becomes slack. Show that 
+when the string  becomes slack the particle is at height $c/2$ above
+the table.
+
+Determine whether the first rebound {\it between} $A$ and $B$ is
+nearer to $A$ or to $B$.
+\end{question}
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+The probability of throwing a head with a certain coin is $p$ and
+the probability of throwing a tail is $q=1-p$. 
+The coin is thrown until at least two heads and at least two tails have
+been thrown; this happens when the coin has been thrown $N$ times.
+Write down an expression for the probability that $N=n$.
+                                                  
+Show that the expectation of $N$ is 
+$$
+2\bigg({1\over pq} -1-pq\bigg).
+$$  
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+The time taken for me to set an acceptable examination question it $T$
+hours. The distribution of $T$ is a truncated normal distribution with
+probability density $\f$  where
+
+\[
+\mathrm{f}(t)=\begin{cases}
+\dfrac{1}{k\sigma\sqrt{2\pi}}\exp\left(-\dfrac{1}{2}\left(\dfrac{t-\sigma}{\sigma}\right)^{2}\right) & \mbox{ for }t\geqslant0\\
+0 & \mbox{ for }t<0.
+\end{cases}
+\]
+Sketch the graph of $\f(t)$. Show that $k$ is approximately $0.841$
+ and obtain the mean of $T$ as a multiple of
+$\sigma$.
+
+Over a period of years, I find that the mean setting time is 3 hours.
+ \begin{questionparts}                  
+\item Find the approximate probability that none of the 16
+questions on next year's paper will take more than 4 hours to set.
+                       
+\item Given that a particular question is unsatisfactory after 2 hours work, 
+find the probability that it will still be unacceptable after a further
+2 hours work.
+\end{questionparts}
+
+\end{question}
+\end{document}

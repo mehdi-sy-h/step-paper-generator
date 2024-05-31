@@ -1,0 +1,582 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1991
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+If $\theta+\phi+\psi=\tfrac{1}{2}\pi,$ show that 
+\[
+\sin^{2}\theta+\sin^{2}\phi+\sin^{2}\psi+2\sin\theta\sin\phi\sin\psi=1.
+\]
+By taking $\theta=\phi=\tfrac{1}{5}\pi$ in this equation, or otherwise,
+show that $\sin\tfrac{1}{10}\pi$ satisfies the equation 
+\[
+8x^{3}+8x^{2}-1=0.
+\]
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Frosty the snowman is made from two uniform spherical snowballs, of
+initial radii $2R$ and $3R.$ The smaller (which is his head) stands
+on top of the larger. As each snowball melts, its volume decreases
+at a rate which is directly proportional to its surface area, the
+constant of proportionality being the same for both snowballs. During
+melting each snowball remains spherical and uniform. When Frosty is
+half his initial height, find the ratio of his volume to his initial
+volume. 
+
+
+If $V$ and $S$ denote his total volume and surface area respectively,
+find the maximum value of $\dfrac{\mathrm{d}V}{\mathrm{d}S}$ up to
+the moment when his head disappears.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+A path is made up in the Argand diagram of a series of straight line
+segments $P_{1}P_{2},$ $P_{2}P_{3},$ $P_{3}P_{4},\ldots$ such that
+each segment is $d$ times as long as the previous one, $(d\neq1)$,
+and the angle between one segment and the next is always $\theta$
+(where the segments are directed from $P_{j}$ towards $P_{j+1}$,
+and all angles are measured in the anticlockwise direction). If $P_{j}$
+represents the complex number $z_{j},$ express 
+\[
+\frac{z_{n+1}-z_{n}}{z_{n}-z_{n-1}}
+\]
+as a complex number (for each $n\geqslant2$), briefly justifying
+your answer. 
+
+
+If $z_{1}=0$ and $z_{2}=1$, obtain an expression for $z_{n+1}$
+when $n\geqslant2$. By considering its imaginary part, or otherwise,
+show that if $\theta=\frac{1}{3}\pi$ and $d=2$, then the path crosses
+the real axis infinitely often.  
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}
+$\ $\vspace{-1cm}
+
+
+
+\noindent \begin{center}
+\psset{xunit=1cm,yunit=1cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(0.3,-0.03)(8.14,7.64) \pspolygon[linewidth=0pt,linecolor=lightgray,hatchcolor=lightgray,fillstyle=hlines,hatchangle=45.0,hatchsep=0.17](3,5)(3,3)(5,3)(5,5) \psline(1,7)(1,1) \psline(1,1)(7,1) \psline(7,1)(7,7) \psline(7,7)(1,7) \rput[tl](1.15,6.88){$D$} \rput[tl](1.15,1.5){$A$} \rput[tl](6.6,1.5){$B$} \rput[tl](6.6,6.88){$C$} \rput[tl](2.91,1.5){$E$} \rput[tl](0.53,0.88){$(0,0)$} \rput[tl](6.71,0.88){$(12,0)$} \rput[tl](2.73,0.88){$(4,0)$} \rput[tl](0.55,7.5){$(0,12)$} \rput[tl](6.73,7.5){$(12,12)$} \rput[tl](3.1,3.3){$X$} \rput[tl](4.7,3.3){$Y$} \rput[tl](3.14,4.9){$T$} \rput[tl](4.7,4.87){$Z$} \rput[tl](2.73,2.92){$(4,4)$} \rput[tl](4.8,2.93){$(8,4)$} \rput[tl](4.8,5.5){$(8,8)$} \rput[tl](2.73,5.5){$(4,8)$} \psline(3,5)(3,3) \psline(3,3)(5,3) \psline(5,3)(5,5) \psline(5,5)(3,5) \end{pspicture*}
+\par\end{center}
+
+
+\vspace{-0.5cm}
+The above diagram is a plan of a prison compound. The outer square
+$ABCD$ represents the walls of the compound (whose height may be
+neglected), while the inner square $XYZT$ is the Black Tower, a solid
+stone structure. A guard patrols along segment $AE$ of the walls,
+for a distance of up to 4 units from $A$. Determine the distance
+from $A$ of points at which the area of the courtyard that he can
+see is
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  as small as possible, 
+\item[\bf (ii)] as large as possible. 
+\end{itemize}
+
+[\textbf{Hint. }It is suggested that you express the area he \textit{cannot
+}see in terms of $p$, his distance from $A$.]
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+A set of $n$ distinct vectors $\mathbf{a}_{1},\mathbf{a}_{2},\ldots,\mathbf{a}_{n},$
+where $n\geqslant2$, is called \textit{regular }if it satisfies the
+following two conditions: 
+
+\begin{questionparts}
+\item there are constants $\alpha$ and $\beta$, with $\alpha>0$, such
+that for any $i$ and $j$, 
+\[
+\mathbf{a}_{i}\cdot\mathbf{a}_{j}=\begin{cases}
+\alpha^{2} & \mbox{ when }i=j\\
+\beta & \mbox{ when }i\neq j,
+\end{cases}
+\]
+
+\item the centroid of $\mathbf{a}_{1},\mathbf{a}_{2},\ldots,\mathbf{a}_{n}$
+is the origin $\mathbf{0}.$ {[}The centroid of vectors $\mathbf{b}_{1},\mathbf{b}_{2},\ldots,\mathbf{b}_{m}$
+is the vector $\frac{1}{m}(\mathbf{b}_{1}+\mathbf{b}_{2}+\cdots+\mathbf{b}_{m}).${]} 
+\end{questionparts}
+
+Prove that \textbf{(i) }and \textbf{(ii) }imply that $(n-1)\beta=-\alpha^{2}.$
+
+
+If $\mathbf{a}_{1}=\begin{pmatrix}1\\
+0
+\end{pmatrix},$ where $\mathbf{a}_{1},\mathbf{a}_{2},\ldots,\mathbf{a}_{n}$ is a
+regular set of vectors in 2-dimensional space, show that either $n=2$
+or $n=3$, and in each case find the other vectors in the set. 
+
+
+Hence, or otherwise, find all regular sets of vectors in 3-dimensional
+space for which $\mathbf{a}_{1}=\begin{pmatrix}1\\
+0\\
+0
+\end{pmatrix}$ \phantom{ } and $\mathbf{a}_{2}$ lies in the $x$-$y$ plane. 
+\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+Criticise each step of the following arguments. You should correct
+the arguments where necessary and possible, and say (with justification)
+whether you think the conclusion are true even though the argument
+is incorrect. 
+
+\begin{questionparts}
+\item The function $g$ defined by 
+\[
+\mathrm{g}(x)=\frac{2x^{3}+3}{x^{4}+4}
+\]
+satisfies $\mathrm{g}'(x)=0$ only for $x=0$ or $x=\pm1.$ Hence
+the stationary values are given by $x=0$, $\mathrm{g}(x)=\frac{3}{4}$
+and $x=\pm1,$ $\mathrm{g}(x)=1.$ Since $\frac{3}{4}<1,$ there is
+a minimum at $x=0$ and maxima at $x=\pm1.$ Thus we must have $\frac{3}{4}\leqslant\mathrm{g}(x)\leqslant1$
+for all $x$. 
+\item ${\displaystyle \int(1-x)^{-3}\,\mathrm{d}x=-3(1-x)^{-4}}\quad$ and so
+$\quad{\displaystyle \int_{-1}^{3}(1-x)^{-3}\,\mathrm{d}x=0.}$
+\end{questionparts}
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+According to the Institute of Economic Modelling Sciences, the Slakan
+economy has alternate years of growth and decline, as in the following
+model. The number $V$ of vloskan (the unit of currency) in the Slakan
+Treasury is assumed to behave as a continuous variable, as follows.
+In a year of growth it increases continuously at an annual rate $aV_{0}\left(1+(V/V_{0})\right)^{2}.$
+During a year of decline, as long as there is still money in the Treasury,
+the amount decreases continuously at an annual rate $bV_{0}\left(1+(V/V_{0})\right)^{2};$
+but if $V$ becomes zero, it remains zero until the end of the year.
+Here $a,b$ and $V_{0}$ are positive constants. A year of growth
+has just begun and there are $k_{0}V_{0}$ vloskan in the Treasury,
+where $0\leqslant k_{0}<a^{-1}-1$. Explain the significance of these
+inequalities for the model to be remotely sensible. 
+
+
+If $k_{0}$ is as above and at the end of one year there are $k_{1}V_{0}$
+vloskan in the Treasury, where $k_{1}>0$, find the condition involving
+$b$ which $k_{1}$ must satisfy so that there will be some vloskan
+left after a further year. Under what condition (involving $a,b$
+and $k_{0}$) does the model predict that unlimited growth will take
+place in the third year (but not before)?
+
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+\begin{questionparts}
+\item{By a substitution of the form $y=k-x$ for suitable $k$, prove
+that, for any function $\mathrm{f}$, 
+\[
+\int_{0}^{\pi}x\mathrm{f}(\sin x)\,\mathrm{d}x=\pi\int_{0}^{\frac{1}{2}\pi}\mathrm{f}(\sin x)\,\mathrm{d}x.
+\]
+Hence or otherwise evaluate 
+\[
+\int_{0}^{\pi}\frac{x}{2+\sin x}\,\mathrm{d}x.
+\]
+}
+\item{Evaluate 
+\[
+\int_{0}^{1}\frac{(\sin^{-1}t)\cos\left[(\sin^{-1}t)^{2}\right]}{\sqrt{1-t^{2}}}\,\mathrm{d}t.
+\]
+{[}No credit will be given for numerical answers obtained by use of
+a calculator.{]} } \end{questionparts}
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+\begin{question}
+\begin{questionparts}
+\item{Suppose that the real number $x$ satisfies the $n$ inequalities
+\begin{alignat*}{2}
+1<\  & x &  & <2\\
+2<\  & x^{2} &  & <3\\
+3<\  & x^{3} &  & <4\\
+ & \vdots\\
+n<\  & x^{n} &  & <n+1
+\end{alignat*}
+Prove without the use of a calculator that $n\leqslant4$. }
+
+
+\item{If $n$ is an integer strictly greater than 1, by considering
+how many terms there are in 
+\[
+\frac{1}{n+1}+\frac{1}{n+2}+\cdots+\frac{1}{n^{2}},
+\]
+or otherwise, show that 
+\[
+\frac{1}{n}+\frac{1}{n+1}+\cdots+\frac{1}{n^{2}}>1.
+\]
+Hence or otherwise find, with justification, an integer $N$ such
+that ${\displaystyle {\displaystyle \sum_{n=1}^{N}\frac{1}{n}>10.}}$} 
+\end{questionparts}
+\end{question}
+
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q10
+\begin{question}
+ $\ $\vspace{-1cm}
+
+
+
+\noindent \begin{center}
+\psset{xunit=1.1cm,yunit=0.7cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-0.32,-0.43)(11.1,8.55) \pspolygon[linewidth=0pt,linecolor=white,hatchcolor=black,fillstyle=hlines,hatchangle=45.0,hatchsep=0.11](0,0)(0,-0.2)(10,-0.2)(10,0) \psline(0,0)(10,0) \psline(0,8)(1,5.5) \psline(1,5.5)(2,4) \psline(3,3)(4,2.5) \psline(5,2.3)(6,2.5) \psline(2,4)(3,3) \psline[linestyle=dashed,dash=1pt 1pt](4,2.5)(5,2.3) \parametricplot[linestyle=dashed,dash=1pt 1pt]{5.080052976030177}{5.934024592002003}{1*5.25*cos(t)+0*5.25*sin(t)+4.11|0*5.25*cos(t)+1*5.25*sin(t)+7.4} \psline(9,5.5)(10,8) \psline(1,5.5)(1,0) \psline(2,4)(2,0) \psline(3,3)(3,0) \psline(4,2.5)(4,0) \psline(5,2.3)(5,0) \psline(6,2.51)(6,0) \psline(9,5.5)(9,0) \rput[tl](0.02,8.53){$A_0$} \rput[tl](1.03,6.06){$A_1$} \rput[tl](2.01,4.52){$A_2$} \rput[tl](2.98,3.56){$A_3$} \rput[tl](3.98,3.12){$A_n$} \rput[tl](4.8,2.9){$A_{n+1}$} \rput[tl](5.75,3.2){$A_{n+2}$} \rput[tl](8.1,6.1){$A_{2n+1}$} \rput[tl](10.13,8.19){$A_{2n+2}$} \end{pspicture*}
+\par\end{center}
+
+
+The above diagram represents a suspension bridge. A heavy uniform
+horizontal roadway is attached by vertical struts to a light flexible
+chain at points $A_{1}=(x_{1},y_{1}),$ $A_{2}=(x_{2},y_{2}),\ldots,$
+$A_{2n+1}=(x_{2n+1},y_{2n+1}),$ where the coordinates are referred
+to horizontal and vertically upward axes $Ox,Oy$. The chain is fixed
+to external supports at points 
+\[
+A_{0}=(x_{0},y_{0})\quad\mbox{ and }\quad A_{2n+2}=(x_{2n+2},y_{2n+2})
+\]
+at the same height. The weight of the chain and struts may be neglected.
+Each strut carries the same weight $w$. The horizontal spacing $h$
+between $A_{i}$ and $A_{i+1}$ (for $0\leqslant i\leqslant2n+1$)
+is constant. Write down equations satisfied by the tensions $T_{i}$
+in the portion $A_{i-1}A_{i}$ of the chain for $1\leqslant i\leqslant n+1$.
+Hence or otherwise show that 
+\[
+\frac{h}{y_{n}-y_{n+1}}=\frac{3h}{y_{n-1}-y_{n}}=\cdots=\frac{(2n+1)y}{y_{0}-y_{1}}.
+\]
+Verify that the points $A_{0},A_{1},\ldots,A_{2n+1},A_{2n+2}$ lie
+on a parabola. 
+	\end{question}
+	
+%%%%%%%%%% Q11
+\begin{question}	
+A piledriver consists of a weight of mass $M$ connected to a lighter
+counterweight of mass $m$ by a light inextensible string passing
+over a smooth light fixed pulley. By considerations of energy or otherwise,
+show that if the weights are released from rest, and move vertically,
+then as long as the string remains taut and no collisions occur, the
+weights experience a constant acceleration of magnitude 
+\[
+g\left(\frac{M-m}{M+m}\right).
+\]
+Initially the weight is held vertically above the pile, and is released
+from rest. During the subsequent motion both weights move vertically
+and the only collisions are between the weight and the pile. Treating
+the pile as fixed and the collisions as completely inelastic, show
+that, if just before a collision the counterweight is moving with
+speed $v$, then just before the next collision it will be moving
+with speed $mv/\left(M+m\right)$. {[}You may assume that when the
+string becomes taut, the momentum lost by one weight equals that gained
+by the other.{]}
+
+
+Further show that the times between successive collisions with the
+pile form a geometric progression. Show that the total time before
+the weight finally comes to rest is three times the time from the
+start to the first impact. 
+\end{question}
+
+%%%%%%%%%% Q12
+
+\begin{question}$\ $\vspace{-1.5cm}
+
+
+
+\noindent \begin{center}
+\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-2.4,-1.16)(12.46,5.7) \psline(0,0)(6,4) \psline(10,0)(5,5) \rput[tl](5.08,5.53){$D$} \rput[tl](5.31,4.3){$B$} \rput[tl](3.39,2.99){$2l$} \pscustom[fillcolor=black,fillstyle=solid,opacity=0]{\parametricplot{0.0}{0.5880026035475675}{1.23*cos(t)+0|1.23*sin(t)+0}\lineto(0,0)\closepath} \rput[tl](0.67,0.39){$\alpha$} \pscustom[fillcolor=black,fillstyle=solid,opacity=0]{\parametricplot{2.356194490192345}{3.141592653589793}{1.23*cos(t)+10|1.23*sin(t)+0}\lineto(10,0)\closepath} \rput[tl](9.09,0.56){$\beta$} \psline{->}(8,2)(8,1.3) \rput[tl](7.64,1.31){$Mg$} \rput[tl](9.17,1.38){$x$} \rput[tl](7.27,3.32){$x$} \rput[tl](-0.29,-0.18){$A$} \rput[tl](10.15,-0.2){$C$} \psline(-2,0)(12,0) \end{pspicture*}
+\par\end{center}
+
+
+The above diagram illustrates a makeshift stepladder, made from two
+equal light planks $AB$ and $CD$, each of length $2l$. The plank
+$AB$ is smoothly hinged to the ground at $A$ and makes an angle
+of $\alpha$ with the horizontal. The other plank $CD$ has its bottom
+end $C$ resting on the same horizontal ground and makes an angle
+$\beta$ with the horizontal. It is pivoted smoothly to $B$ at a
+point distance $2x$ from $C$. The coefficient of friction between
+$CD$ and the ground is $\mu.$ A painter of mass $M$ stands on $CD$,
+half between $C$ and $B$. Show that, for equilibrium to be possible,
+\[
+\mu\geqslant\frac{\cot\alpha\cot\beta}{2\cot\alpha+\cot\beta}.
+\]
+Suppose now that $B$ coincides with $D$. Show that, as $\alpha$
+varies, the maximum distance from $A$ at which the painter will be
+standing is 
+\[
+l\sqrt{\frac{1+81\mu^{2}}{1+9\mu^{2}}}.
+\]
+\end{question}
+	
+%%%%%%%%%% Q13
+\begin{question}
+ $\ $\vspace{-1.5cm}
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-0.08,-2.26)(6.28,6.22) \psline(0,0)(1,4) \psline(1,4)(5,4) \psline(5,4)(6,0) \psline(6,0)(0,0) \psline[linewidth=1.2pt](3,6)(3,4) \psline[linewidth=1.2pt](3,0)(3,-2) \parametricplot[linewidth=2pt]{0.0}{3.141592653589793}{1*2*cos(t)+0*2*sin(t)+3|0*2*cos(t)+1*2*sin(t)+0} \psdot[dotstyle=*](1,-0.8) \psline{->}(1,-0.6)(1,-0.1) \rput[tl](0.84,-1.04){$m$} \rput[tl](0.6,0.45){$A$} \rput[tl](2.86,2.4){$B$} \rput[tl](5.15,0.45){$C$} \psline[linewidth=1.2pt,linestyle=dashed,dash=1pt 2pt](3,4)(3,2.42) \psline[linewidth=1.2pt,linestyle=dashed,dash=1pt 2pt](3,0)(3,2) \rput[tl](1.2,-0.26){$V$} \end{pspicture*}
+\par\end{center}
+
+
+A heavy smooth lamina of mass $M$ is free to slide without rotation
+along a straight line on a fixed smooth horizontal table. A smooth
+groove $ABC$ is inscribed in the lamina, as indicated in the above
+diagram. The tangents to the groove at $A$ and at $B$ are parallel
+to the line. When the lamina is stationary, a particle of mass $m$
+(where $m<M$) enters the groove at $A$. The particle is travelling,
+with speed $V$, parallel to the line and in the plane of the lamina
+and table. Calculate the speeds of the particle and of the lamina,
+when the particle leaves the groove at $C$. 
+
+
+Suppose now that the lamina is held fixed by a peg attached to the
+line. Supposing that the groove $ABC$ is a semicircle of radius $r$,
+obtain the value of the average force per unit time exerted on the
+peg by the lamina between the instant that the particle enters the
+groove and the instant that it leaves it.
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q14
+\begin{question}
+A set of $2N+1$ rods consists of one of each length $1,2,\ldots,2N,2N+1$,
+where $N$ is an integer greater than 1. Three different rods are
+selected from the set. Suppose their lengths are $a,b$ and $c$,
+where $a>b>c$. Given that $a$ is even and fixed, show, by considering
+the possible values of $b$, that the number of selections in which
+a triangle can then be formed from the three rods is 
+\[
+1+3+5+\cdots+(a-3),
+\]
+where we allow only non-degenerate triangles (i.e. triangles with
+non-zero area). 
+
+
+Similarly obtain the number of selections in which a triangle may
+be formed when $a$ takes some fixed odd value. Write down a formula
+for the number of ways of forming a non-degenerate triangle and verify
+it for $N=3$. 
+
+
+Hence show that, if three rods are drawn at random without replacement,
+then the probability that they can form a non-degenerate triangle
+is 
+\[
+\frac{(N-1)(4N+1)}{2(4N^{2}-1)}.
+\]
+\end{question}
+
+%%%%%%%%%% Q15
+\begin{question}
+A fair coin is thrown $n$ times. On each throw, 1 point is scored
+for a head and 1 point is lost for a tail. Let $S_{n}$ be the points
+total for the series of $n$ throws, i.e. $S_{n}=X_{1}+X_{2}+\cdots+X_{n},$
+where 
+\[
+X_{j}=\begin{cases}
+1 & \mbox{ if the \ensuremath{j}th throw is a head}\\
+-1 & \mbox{ if the \ensuremath{j}th throw is a tail.}
+\end{cases}
+\]
+
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  If $n=10\,000,$ find an approximate value for the probability that
+$S_{n}>100.$
+\item[\bf (ii)] Find an approximate value for the least $n$ for which $\mathrm{P}(S_{n}>0.01n)<0,01.$ 
+\end{itemize}
+
+Suppose that instead no points are scored for the first throw, but
+that on each successive threw, 2 points are scored if both it and
+the first throw are heads, two points are deducted if both are tails,
+and no points are scored or lost if the throws differ. Let $Y_{k}$
+be the score on the $k$th throw, where $2\leqslant k\leqslant n.$
+Show that $Y_{k}=X_{1}+X_{k}.$
+
+
+Calculate the mean and variance of each $Y_{k}$ and determine whether
+it is true that 
+\[
+\mathrm{P}(Y_{2}+Y_{3}+\cdots+Y_{n}>0.01(n-1))\rightarrow0\quad\mbox{ as }n\rightarrow\infty.
+\]
+
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+At any instant the probability that it is safe to cross a busy road
+is $0.1$. A toad is waiting to cross this road. Every minute she
+looks at the road. If it is safe, she will cross; if it is not safe,
+she will wait for a minute before attempting to cross again. Find
+the probability that she eventually crosses the road without mishap. 
+
+
+Later on, a frog is also trying to cross the same road. He also inspects
+the traffic at one minute intervals and crosses if it is safe. Being
+more impatient than the toad, he may also attempt to cross when it
+is not safe. The probability that he will attempt to cross when it
+is not safe is $n/3$ if $n\leqslant3,$ where $n$ minutes have elapsed
+since he firrst inspected the road. If he attempts to cross when it
+is not safe, he is run over with probability $0.8,$ but otherwise
+he reaches the other side safely. Find the probability that he eventually
+crosses the road without mishap. 
+
+
+What is the probability that both reptiles safely cross the road with
+the frog taking less time than the toad? If the frog has not arrived
+at the other side 2 minutes after he began his attempt to cross, what
+is the probability that the frog is run over (at some stage) in his
+attempt to cross?
+
+
+{[}Once moving, the reptiles spend a negligible time on their attempt
+to cross the road.{]}
+\end{question}
+\end{document}

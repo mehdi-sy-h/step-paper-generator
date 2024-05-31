@@ -1,0 +1,544 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1993
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{pst-coil}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+I have two dice whose faces are all painted different colours. I number
+the faces of one of them $1,2,2,3,3,6$ and the other $1,3,3,4,5,6.$
+I can now throw a total of 3 in two different ways using the two number
+$2$'s on the first die once each. Show that there are seven different
+ways of throwing a total of 6. 
+
+
+I now renumber the dice (again only using integers in the range 1
+to 6) with the results shown in the following table 
+
+
+\noindent \begin{center}
+\begin{tabular}{llllllllllll}
+Total shown by the two dice & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\tabularnewline
+Different ways of obtaining the total & 0 & 2 & 1 & 1 & 4 & 3 & 8 & 6 & 5 & 6 & 0\tabularnewline
+\end{tabular}
+\par\end{center}
+
+
+Find how I have numbered the dice explaining your reasoning. 
+
+
+{[}You will only get high marks if the examiner can follow your argument.{]} 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+If $\left|r\right|\neq1,$ show that 
+\[
+1+r^{2}+r^{4}+\cdots+r^{2n}=\frac{1-r^{2n+2}}{1-r^{2}}\,.
+\]
+If $r\neq1,$ find an expression for $\mathrm{S}_{n}(r),$ where 
+\[
+\mathrm{S}_{n}(r)=r+r^{2}+r^{4}+r^{5}+r^{7}+r^{8}+r^{10}+\cdots+r^{3n-1}.
+\]
+Show that, if $\left|r\right|<1,$ then, as $n\rightarrow\infty,$
+\[
+\mathrm{S}_{n}(r)\rightarrow\frac{1}{1-r}-\frac{1}{1-r^{3}}\,.
+\]
+If $\left|r\right|\neq1,$ find an expression for $\mathrm{T}_{n}(r),$
+where 
+\[
+\mathrm{T}_{n}(r)=1+r^{2}+r^{3}+r^{4}+r^{6}+r^{8}+r^{9}+r^{10}+r^{12}+r^{14}+r^{15}+r^{16}+\cdots+r^{6n}.
+\]
+If $\left|r\right|<1,$ find the limit of $\mathrm{T}_{n}(r)$ as
+$n\rightarrow\infty.$
+
+
+What happens to $\mathrm{T}_{n}(r)$ as $n\rightarrow\infty$ in the
+three cases $r>1,r=1$ and $r=-1$? In each case give reasons for
+your answer. 
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+\item Find all the integer solutions with $1\leqslant p\leqslant q\leqslant r$
+of the equation 
+\[
+\frac{1}{p}+\frac{1}{q}+\frac{1}{r}=1\,,
+\]
+showing that there are no others. 
+\item The integer solutions with $1\leqslant p\leqslant q\leqslant r$
+of 
+\[
+\frac{1}{p}+\frac{1}{q}+\frac{1}{r}>1\,,
+\]
+include $p=1$, $q=n,$ $r=m$ where $n$ and $m$ are any integers
+satisfying $1\leqslant m\leqslant n.$ Find all the other solutions,
+showing that you have found them all. 
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+By making the change of variable $t=\pi-x$ in the integral 
+\[
+\int_{0}^{\pi}x\mathrm{f}(\sin x)\,\mathrm{d}x,
+\]
+or otherwise, show that, for any function $\mathrm{f},$ 
+\[
+\int_{0}^{\pi}x\mathrm{f}(\sin x)\,\mathrm{d}x=\frac{\pi}{2}\int_{0}^{\pi}\mathrm{f}(\sin x)\,\mathrm{d}x\,.
+\]
+Evaluate 
+\[
+\int_{0}^{\pi}\frac{x\sin x}{1+\cos^{2}x}\,\mathrm{d}x\quad\mbox{ and }\quad\int_{0}^{2\pi}\frac{x\sin x}{1+\cos^{2}x}\,\mathrm{d}x\,.
+\]
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+If $z=x+\mathrm{i}y$ where $x$ and $y$ are real, define $\left|z\right|$
+in terms of $x$ and $y$. Show, using your definition, that if $z_{1},z_{2}\in\mathbb{C}$
+then $\left|z_{1}z_{2}\right|=\left|z_{1}\right|\left|z_{2}\right|.$ 
+
+Explain, by means of a diagram, or otherwise, why $\left|z_{1}+z_{2}\right|\leqslant\left|z_{1}\right|+\left|z_{2}\right|.$ 
+
+
+Suppose that $a_{j}\in\mathbb{C}$ and $\left|a_{j}\right|\leqslant1$
+for $j=1,2,\ldots,n.$ Show that, if $\left|z\right|\leqslant\frac{1}{2},$
+then 
+\[
+\left|a_{n}z^{n}+a_{n-1}z^{n-1}+\cdots+a_{1}z\right|<1,
+\]
+and deduce that any root $w$ of the equation 
+\[
+a_{n}z^{n}+a_{n-1}z^{n-1}+\cdots+a_{1}z+1=0
+\]
+must satisfy $\left|x\right|>\frac{1}{2}.$ 
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+Let $N=10^{100}.$ The graph of 
+\[
+\mathrm{f}(x)=\frac{x^{N}}{1+x^{N}}+2
+\]
+for $-3\leqslant x\leqslant3$ is sketched in the following diagram. 
+
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-4.15,-1.01)(4.08,4.09) \psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1,Dy=1,ticksize=0pt 0,subticks=2]{->}(0,0)(-4.15,-1.01)(4.08,4.09)[$x$,140] [$y$,-40] \psline(-4,3)(-1,3) \psline(-1,3)(-1,2) \psline(-1,2)(1,2) \psline(1,2)(1,3) \psline(1,3)(4,3) \rput[tl](-1.39,-0.2){$-1$} \rput[tl](1,-0.2){$1$} \rput[tl](0.19,1.9){$2$} \rput[tl](0.19,3.18){$3$} \end{pspicture*}
+\par\end{center}
+
+
+Explain the main features of the sketch. 
+
+
+Sketch the graphs for $-3\leqslant x\leqslant3$ of the two functions
+\[
+\mathrm{g}(x)=\frac{x^{N+1}}{1+x^{N}}
+\]
+and 
+\[
+\mathrm{h}(x)=10^{N}\sin(10^{-N}x).
+\]
+In each case explain briefly the main features of your sketch. 
+
+	\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Sketch the curve 
+\[
+\mathrm{f}(x)=x^{3}+Ax^{2}+B
+\]
+first in the case $A>0$ and $B>0$, and then in the case $A<0$ and
+$B>0.$
+
+
+Show that the equation 
+\[
+x^{3}+ax^{2}+b=0,
+\]
+where $a$ and $b$ are real, will have three distinct real roots
+if 
+\[
+27b^{2}+3a^{3}b<0,
+\]
+but will have fewer than three if 
+\[
+27b^{2}+4a^{3}b<0.
+\]
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+\begin{questionparts}
+\item Prove that the intersection of the surface
+of a sphere with a plane is always a circle, a point or the empty
+set. Prove that the intersection of the surfaces of two spheres with
+distinct centres is always a circle, a point or the empty set. 
+
+
+{[}If you use coordinate geometry, a careful choice of origin and
+axes may help.{]} 
+
+
+\item The parish council of Little Fitton have just bought a modern
+sculpture entitled `Truth, Love and Justice pouring forth their blessings
+on Little Fitton.' It consists of three vertical poles $AD,BE$ and
+$CF$ of heights 2 metres, 3 metres and 4 metres respectively. Show
+that $\angle DEF=\cos^{-1}\frac{1}{5}.$
+
+
+Vandals now shift the pole $AD$ so that $A$ is unchanged and the
+pole is still straight but $D$ is vertically above $AB$ with $\angle BAD=\frac{1}{4}\pi$
+(in radians). Find the new angle $\angle DEF$ in radians correct
+to four figures. 
+\end{questionparts}
+\end{question}	
+		
+%%%%%%%%%% Q9
+\begin{question}
+In the manufacture of Grandma's Home Made Ice-cream, chemicals $A$
+and $B$ pour at constant rates $a$ and $b-a$ litres per second
+($0<a<b$) into a mixing vat which mixes the chamicals rapidly and
+empties at a rate $b$ litres per second into a second mixing vat.
+At time $t=0$ the first vat contains $K$ litres of chemical $B$
+only. Show that the volume $V(t)$ (in litres) of the chemical $A$
+in the first vat is governed by the differential equation 
+\[
+\dot{V}(t)=-\frac{bV(t)}{K}+a,
+\]
+and that 
+\[
+V(t)=\frac{aK}{b}(1-\mathrm{e}^{-bt/K})
+\]
+for $t\geqslant0.$
+
+
+The second vat also mixes chemicals rapidly and empties at the rate
+of $b$ litres per second. If at time $t=0$ it contains $L$ litres
+of chemical $C$ only (where $L\neq K$), how many litres of chemical
+$A$ will it contain at a later time $t$? 
+\end{question}
+			
+		
+			
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+%%%%%%%%%% Q10
+\begin{question}
+A small lamp of mass $m$ is at the end $A$ of a light rod $AB$
+of length $2a$ attached at $B$ to a vertical wall in such a way
+that the rod can rotate freely about $B$ in a vertical plane perpendicular
+to the wall. A spring $CD$ of natural length $a$ and modulus of
+elasticity $\lambda$ is joined to the rod at its mid-point $C$ and
+to the wall at a point $D$ a distance $a$ vertically above $B$.
+The arrangement is sketched below. 
+
+
+\noindent \begin{center}
+\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-1.55,-0.7)(4.5,5.27) \psline(0,5)(0,-1.16) \psline(0,0)(3.11,3.89) \pscoil[coilheight=1,coilwidth=0.2,coilarm=0.05](0,2.53)(1.47,1.84)
+ \rput[tl](-0.56,0.41){$B$} \rput[tl](1.59,1.89){$C$} \rput[tl](3.41,4.28){$A$} \rput[tl](-0.56,2.84){$D$} \parametricplot{0.7583777142101807}{3.8999703677999737}{1*0.16*cos(t)+0*0.16*sin(t)+3.22|0*0.16*cos(t)+1*0.16*sin(t)+3.77} \psline(3.1,3.66)(3.33,3.88) \begin{scriptsize} \psdots[dotsize=5pt 0](0,0) \psdots[dotstyle=*](3.11,3.89) \psdots[dotstyle=*](0,2.53) \end{scriptsize} \end{pspicture*}
+\par\end{center}
+
+
+Show that if $\lambda>4mg$ the lamp can hang in equilibrium away
+from the wall and calculate the angle $\angle DBA$. 
+\end{question}
+	
+%%%%%%%%%% Q11
+\begin{question}
+A piece of uniform wire is bent into three sides of a square $ABCD$
+so that the side $AD$ is missing. Show that if it is first hung up
+by the point $A$ and then by the point $B$ then the angle between
+the two directions of $BC$ is $\tan^{-1}18.$ 
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+In a clay pigeon shoot the target is launched vertically from ground
+level with speed $v$. At a time $T$ later the competitor fires a
+rifle inclined at angle $\alpha$ to the horizontal. The competitor
+is also at ground level and is a distance $l$ from the launcher.
+The speed of the bullet leaving the rifle is $u$. Show that, if the
+competitor scores a hit, then 
+\[
+l\sin\alpha-\left(vT-\tfrac{1}{2}gT^{2}\right)\cos\alpha=\frac{v-gT}{u}l.
+\]
+Suppose now that $T=0$. Show that if the competitor can hit the target
+before it hits the ground then $v<u$ and 
+\[
+\frac{2v\sqrt{u^{2}-v^{2}}}{g}>l.
+\]
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+A train starts from a station. The tractive force exerted by the engine
+is at first constant and equal to $F$. However, after the speed attains
+the value $u$, the engine works at constant rate $P,$ where $P=Fu.$
+The mass of the engine and the train together is $M.$ Forces opposing
+motion may be neglected. Show that the engine will attain a speed
+$v$, with $v\geqslant u,$ after a time 
+\[
+t=\frac{M}{2P}\left(u^{2}+v^{2}\right).
+\]
+Show also that it will have travelled a distance 
+\[
+\frac{M}{6P}(2v^{3}+u^{2})
+\]
+in this time. 
+
+
+
+
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+%%%%%%%%%% Q14
+\begin{question}
+When he sets out on a drive Mr Toad selects a speed $V$ kilometres
+per minute where $V$ is a random variable with probability density
+\[
+\alpha v^{-2}\mathrm{e}^{-\alpha v^{-1}}
+\]
+ and $\alpha$ is a strictly
+positive constant. He then drives at constant speed, regardless of
+other drivers, road conditions and the Highway Code. The traffic lights
+at the Wild Wood cross-roads change from red to green when Mr Toad
+is exactly 1 kilometre away in his journey towards them. If the traffic
+light is green for $g$ minutes, then red for $r$ minutes, then green
+for $g$ minutes, and so on, show that the probability that he passes
+them after $n(g+r)$ minutes but before $n(g+r)+g$ minutes, where
+$n$ is a positive integer, is 
+\[
+\mathrm{e}^{-\alpha n(g+r)}-\mathrm{e}^{-\alpha\left(n(g+r)\right)+g}.
+\]
+Find the probability $\mathrm{P}(\alpha)$ that he passes the traffic
+lights when they are green. 
+
+
+Show that $\mathrm{P}(\alpha)\rightarrow1$ as $\alpha\rightarrow\infty$
+and, by noting that $(\mathrm{e}^{x}-1)/x\rightarrow1$ as $x\rightarrow0$,
+or otherwise, show that 
+\[
+\mathrm{P}(\alpha)\rightarrow\frac{g}{r+g}\quad\mbox{ as }\alpha\rightarrow0.
+\]
+{[}NB: the traffic light show only green and red - not amber.{]} 
+\end{question}
+
+%%%%%%%%%% Q15
+\begin{question}
+Captain Spalding is on a visit to the idyllic island of Gambriced.
+The population of the island consists of the two lost tribes of Frodox
+and the latest census shows that $11/16$ of the population belong
+to the Ascii who tell the truth $3/4$ of the time and $5/16$ to
+the Biscii who always lie. The answers of an Ascii to each question
+(even if it is the same as one before) are independent. 
+
+
+Show that the probability that an Ascii gives the same answer twice
+in succession to the same question is $5/8$. Show that the probability
+that an Ascii gives the same answer twice is telling the truth is
+$9/10.$ 
+
+
+Captain Spalding addresses one of the natives as follows. 
+
+
+\hspace{1.5em} \textsl{Spalding: }My good man, I'm afraid I'm lost. Should I go left or right to reach the nearest town?\nolinebreak
+
+
+\hspace{1.5em}\textsl{Native: }Left.
+
+
+\hspace{1.5em}\textsl{Spalding: }I am a little deaf. Should I go left or right to
+reach the nearest town?
+
+
+\hspace{1.5em}\textsl{Native (patiently): }Left.
+
+
+Show that, on the basis of this conversation, Captain Spalding should
+go left to try and reach the nearest town and that there is a probability
+$99/190$ that this is the correct direction. 
+
+
+The conversation resumes as follows. 
+
+
+\hspace{1.5em}\textsl{Spalding: }I'm sorry I didn't quite hear that. Should I go
+left or right to reach the nearest town?
+
+
+\hspace{1.5em}\textsl{Native (loudly and clearly): }Left.
+
+
+Shouls Captain Spalding go left or right and why? Show that if he
+follows your advice the probability that this is the correct direction
+is $331/628$. 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+By making the substitution $y=\cos^{-1}t,$ or otherwise, show that
+\[
+\int_{0}^{1}\cos^{-1}t\,\mathrm{d}t=1.
+\]
+A pin of length $2a$ is thrown onto a floor ruled with parallel lines
+equally spaced at a distance $2b$ apart. The distance $X$ of its
+centre from the nearest line is a uniformly distributed random variable
+taking values between $0$ and $b$ and the acute angle $Y$ the pin
+makes with a direction perpendicular to the line is a uniformly distributed
+random variable taking values between $0$ and $\pi/2$. $X$ and
+$Y$ are independent. If $X=x$ what is the probability that the pin
+crosses the line? 
+
+
+If $a<b$ show that the probability that the pin crosses a line for
+a general throw is $\dfrac{2a}{\pi b}.$
+\end{question}
+\end{document}

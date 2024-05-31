@@ -1,0 +1,468 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2003
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Given that $x+a>0$ and $x+b>0\,$, and that $b>a\,$, show that   
+\[  
+\frac{\mathrm{d} \ }{\mathrm{d} x}   
+\arcsin \l \frac{x + a }{ \ x + b} \r =   
+\frac{ \sqrt{\;b - a\;}} {\vphantom{\Big(} \l x + b \r \sqrt{ a + b + 2x\;} \ \ }  
+\]  
+and find $\displaystyle   
+\frac{\mathrm{d} \ }{  \mathrm{d} x} \;  \mathrm{arcosh} \l \frac{x + b }{ \ x + a} \r \,$.  
+  
+Hence, or otherwise, integrate, for $x > -1\,$,  
+\begin{questionparts}  
+\item $\displaystyle \int
+\frac{1}{ \vphantom{\dot (}\l x + 1 \r \sqrt{x + 3} \ } \; \mathrm{d} x\;$,  
+\item $\displaystyle \int
+\frac{1} {\vphantom{\dot (}\l x + 3 \r \sqrt{x + 1} \ } \; \mathrm{d} x\;$.  
+\end{questionparts}  
+  
+\noindent[You may use the results \  
+$\ds \frac{\d \ }{\d x} \arcsin x = \frac 1 {\sqrt{1-x^2\;}\;}$  
+\ and \   
+$\ds \frac{\d \ }{\d x} \; {\rm arcosh } \; x = \frac 1 {\sqrt{x^2-1}\;}\;$. \ ]  
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+ Show that 
+ $\ds   
+ ^{2r} \! {\rm C}_r =\frac{1\times3\times\dots\times (2r-1)}{r!} \, \times 2^r
+ \;,
+ $
+ for $r\ge1\,$.
+ 
+ \begin{questionparts}  
+ \item Give  the first four terms of the binomial series for 
+ $\l 1 - p \r^{-\frac12}$.  
+  
+ By choosing a suitable value for $p$ in this series, or otherwise, show that 
+ $$
+ \displaystyle \sum_{r=0}^\infty \frac{  {\vphantom {\A}}^{2r} \! {\rm C}_r }{ 8^r} = \sqrt 2
+ \;
+ .$$  
+  
+ \item Show that 
+ $$
+ \displaystyle 
+ \sum_{r=0}^\infty   
+ \frac{\l 2r + 1 \r \; {\vphantom{A}}^{2r} \! {\rm C} _r }{ 5^r} =\big( \sqrt 5\big)^3
+ \;.
+ $$ 
+ \end{questionparts}  
+  
+ [{\bf Note: } 
+ $
+ {\vphantom{A}}^n {\rm C}_r
+ $ 
+ is an alternative notation for  
+ $\ds \
+ \binom n r 
+ \,
+ $ for $r\ge1\,$, and $
+ {\vphantom{A}}^0 {\rm C}_0 =1
+ $ .]
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+If $m$ is a positive integer,    
+show that $\l 1+x \r^m + \l 1-x \r^m \ne 0$ for any real $x\,$.   
+   
+The function $\f$ is defined by   
+\[   
+\f (x) = \frac{ (1+x )^m - ( 1-x )^m}{ (1+x )^m + (1-x )^m}   
+\;.   
+\]   
+Find and simplify an expression for $\f'(x)$.   
+   
+In the case $m=5\,$,   
+sketch the curves    
+$y = \f (x)$ and  $\displaystyle y = \frac1 { \f (x )}\;$. 
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+A curve is defined parametrically by   
+\[   
+x=t^2 \;, \ \ \    
+y=t (1 + t^2 )   
+\;.   
+\]   
+The tangent at the  point with parameter $t$, where $t\ne0\,$, meets the    
+curve again at the point with parameter $T$, where $T\ne t\,$. Show that   
+\[   
+T = \frac{1 - t^2 }{2t} \mbox { \ \ \ and \ \ \ } 3t^2\ne 1\;.   
+\]   
+Given a point $P_0\,$ on the curve, with parameter $t_0\,$,    
+a sequence of points $P_0 \, , \; P_1 \, , \; P_2 \, , \ldots$    
+on the curve is constructed such that the tangent at $P_i$ meets    
+the curve again at $P_{i+1}$. If $t_0 = \tan \frac{ 7 } {18}\pi\,$,    
+show that $P_3 = P_0$ but $P_1\ne P_0\,$.    
+Find a second value of $t_0\,$, with $t_0>0\,$,   
+for which $P_3 = P_0$ but  $P_1\ne P_0\,$.   
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Find the coordinates of the turning point on the curve $y = x^2 - 2bx + c\,$.   
+ Sketch the curve in the case that the equation $x^2 - 2bx + c=0$ has two    
+distinct real roots. Use your sketch to determine necessary and sufficient   
+conditions on $b$ and $c$ for the equation $x^2 - 2bx + c = 0$    
+to have two distinct real roots. Determine   
+necessary and sufficient   
+conditions on $b$ and $c$ for this equation to have two distinct positive roots.   
+   
+Find the coordinates of the turning points on the curve    
+$y = x^3 - 3b^2x + c$ (with $b>0$) and hence determine necessary and sufficient   
+conditions on $b$ and $c$ for the equation $x^3 - 3b^2x + c = 0$    
+to have three distinct real roots. Determine necessary and sufficient   
+conditions on $a\,$, $b$ and $c$ for the equation    
+$\l x - a \r^3 - 3b^2 \l x - a \r + c = 0$ to have three distinct positive roots.   
+   
+Show that the equation $2x^3 - 9x^2 + 7x - 1 = 0$ has three distinct positive roots.   
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Show that 
+\[   
+\ts
+2\sin \frac12 \theta \, \cos r\theta  = \sin\big(r+\frac12\big)\theta -
+\sin\big(r-\frac12\big)\theta
+\;.   
+\]   
+Hence, or otherwise,    
+find all solutions of the equation   
+\[   
+\cos a\theta + \cos (a + 1) \theta + \dots + \cos(b-2)\theta+\cos (b - 1 ) \theta = 0
+\;,   
+\]   
+where $a$ and $b$ are positive integers with $a < b-1\,$.  
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+In the $x$--$y$ plane, the point $A$ has coordinates    
+$(a\,,0)$ and the point $B$ has coordinates $(0\,,b)\,$,    
+where $a$ and $b$ are positive.    
+The point $P\,$, which is distinct from $A$ and $B$, has coordinates~$(s,t)\,$.
+$X$ and $Y$ are the feet of the perpendiculars from $P$ to the $x$--axis and
+$y$--axis respectively, and     
+$N$ is the foot of the perpendicular from $P$ to the line $AB\,$.   
+Show that the coordinates $(x\,,y)$ of $N$ are given by   
+\[   
+x= \frac {ab^2 -a(bt-as)}{a^2+b^2} \;, \ \ \    
+y = \frac{a^2b +b(bt-as)}{a^2+b^2} \;.   
+\]   
+   
+Show that, if    
+$\ds   \
+\left( \frac{t-b} s\right)\left( \frac t {s-a}\right) = -1\;$, then $N$ lies on    
+the line $XY\,$.   
+   
+Give a geometrical interpretation of this result.   
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+\begin{questionparts}
+\item Show that the gradient at a point $\l x\,, \, y \r$ on the curve 
+\[
+\l y + 2x \r^3 \l y - 4x \r = c\;,
+\]
+where $c$ is a constant, is given by
+\[
+\frac{\d y}{\d x} = \frac{16 x -y}{2y-5x} \;.
+\]
+
+\item By considering the derivative with respect to $x$ of 
+$\l y + ax \r^n \l y + bx \r\,$, or otherwise, 
+find the general solution of the differential equation
+\[
+\frac{\mathrm{d}y}{ \mathrm{d}x} = \frac{10x - 4y}{  3x - y}\;.
+\]
+
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A particle $P$ of mass $m$ is constrained to move on a vertical 
+circle of smooth wire with centre~$O$ and of radius $a$. 
+$L$ is the lowest point of the circle and $H$ the highest and 
+$\angle LOP = \theta\,$. The particle is attached to $H$ by an 
+elastic string of natural length $a$ and modulus of elasticity~$\alpha mg\,$, 
+where $\alpha > 1\,$.  Show that,  if $\alpha>2\,$, there is an
+equilibrium position with $0<\theta<\pi\,$.
+
+   
+Given that $\alpha =2+\sqrt 2\,$, and that 
+$\displaystyle \theta = \tfrac{1}{2}\pi + \phi\,$, show that   
+\[   
+\ddot{\phi} \approx -\frac{g (\sqrt2+1)}{2a }\, \phi
+\]   
+when $\phi$ is small.   
+   
+For this value of $\alpha$, 
+explain briefly what happens to the particle if it 
+is given a small displacement when $ \theta = \frac{1}{2}\pi$.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A particle moves along the $x$-axis in such a way that 
+its acceleration is  
+$kx \dot{x}\,$ where  $k$ is a positive constant.
+When $t = 0$,  $x = d$ (where $d>0$) and $\dot{x} =U\,$.   
+\begin{questionparts}   
+\item Find $x$ as a function of $t$ in the case $U = kd^2$ 
+and show that $x$ tends to infinity as $t$~tends~to 
+$\displaystyle \frac{\pi }{2 dk}\,$.   
+\item If $U < 0$, find $x$ as a function of $t$ 
+and show that it tends to a limit, which you should state in terms of $d$ and $U\,$, 
+as $t$~tends to infinity.   
+\end{questionparts}   
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Point $B$ is a distance $d$ due south of point $A$ on a horizontal plane. 
+Particle $P$ is at rest at $B$ at $t=0$, when it begins 
+to move with constant acceleration $a$ in a straight line
+with  fixed bearing~$\beta\,$. 
+Particle $Q$ is projected  from 
+point $A$ at $t=0$ and moves in a straight line with constant
+speed $v\,$. Show that if the direction of projection of $Q$ can be chosen so that
+$Q$ strikes $P$, then   
+\[   
+v^2 \ge ad \l 1 - \cos \beta \r\;.   
+\]   
+
+Show further that if $v^2 >ad(1-\cos\beta)$ then the direction of projection of $Q$
+can be chosen so that $Q$ strikes $P$ before $P$ has moved a distance $d\,$.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Brief interruptions to my work occur on average every ten minutes 
+and the number of interruptions in any given time period has a Poisson distribution. 
+Given that an interruption has just occurred, find the probability 
+that I will have less than $t$ minutes to work before the next interruption. 
+If the random variable $T$ is the time I have to work before the next interruption, 
+find the probability density function of $T\,$.   
+      
+I need an uninterrupted half hour to finish an important paper.  
+Show that the expected number of interruptions before my first 
+uninterrupted period of half an hour or more is $\e^3-1$. 
+Find also the expected length of time between interruptions 
+that are less than half an hour apart.
+Hence write down 
+the expected wait before my first uninterrupted period of half an hour or more.
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+In a rabbit warren, underground chambers 
+$A, B, C$ and $D$ are at the vertices of a square, 
+and burrows join $A$ to $B$, \  $B$ to $C$, \ $C$ to $D$ and $D$ to $A$. 
+Each of the chambers also has a tunnel to the surface. 
+A rabbit finding itself in any chamber runs along one 
+of the two burrows to a neighbouring chamber, or 
+leaves the burrow through the tunnel to the surface. 
+Each of these three possibilities is equally likely.
+
+Let $p_A\,$, $p_B\,$, $p_C$ and $p_D$ be the probabilities 
+of a rabbit leaving the burrow through the tunnel from chamber $A$, 
+given that it is currently in chamber $A, B, C$ or $D$, respectively.
+\begin{questionparts}
+\item Explain why  $p_A = \frac13 + \frac13p_B + \frac13 p_D$.
+\item Determine $p_A\,$.
+\item Find the probability 
+that a rabbit which starts in chamber $A$ does not visit chamber~$C$, 
+given that it eventually leaves the burrow through the tunnel in chamber $A$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+Write down the probability generating function for 
+the score on a standard, fair six-faced die whose faces are labelled 
+$1, 2, 3, 4, 5, 6$. Hence show that the probability 
+generating function for the sum of the scores on two standard, 
+fair six-faced dice, rolled independently, can be written as
+\[
+\frac1{36} t^2 \l 1 + t \r^2 \l 1 - t + t^2 \r^2 \l 1 + t + t^2 \r^2 \;.
+\]
+
+Write down, in factorised form, the probability generating functions for 
+the scores on two fair six-faced dice whose faces are labelled with the 
+numbers $1, 2, 2, 3, 3, 4$ and $1, 3, 4, 5, 6, 8,$ 
+and hence show that when these dice are rolled independently, 
+the probability of any given sum of the scores is the same as for the two standard 
+fair six-faced dice.
+
+Standard, fair four-faced dice are tetrahedra whose faces are labelled $1, 2, 3, 4,$ 
+the score being taken from the face which is not 
+visible after throwing, and each score being equally likely. 
+Find all the ways in which two fair four-faced dice can have 
+their faces labelled with positive integers if the probability 
+of any given sum of the scores is to be the same as for the two standard 
+fair four-faced dice.
+\end{question}
+	
+\end{document}

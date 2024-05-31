@@ -1,0 +1,466 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1999
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+How many integers greater than
+or equal to zero and less than a million 
+are
+not divisible by 2 or 5? What is the average value
+of these integers?
+
+How many integers greater than or equal to zero and less than
+4179 are not divisible by 3 or~7? What is the average value
+of these integers?
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+A point moves in the $x$-$y$ plane so that the sum of the squares
+of its distances from the three fixed points $(x_{1},y_{1})$,
+$(x_{2},y_{2})$, and $(x_{3},y_{3})$ is always $a^{2}$.
+Find the equation of the locus of the point and interpret
+it geometrically.
+Explain why $a^2$ cannot be less 
+than the sum of the squares of the 
+distances of the three points from their centroid.
+
+\noindent
+[The {\sl centroid } has coordinates
+$(\bar x, \bar y)$ where 
+$
+3\bar x = x_1+x_2+x_3,$
+$
+3\bar y = y_1+y_2+y_3.
+\;$]
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The $n$ positive  numbers  $x_{1},x_{2},\dots,x_{n}$, where  $n\ge3$,
+satisfy
+$$
+x_{1}=1+\frac{1}{x_{2}}\, ,\ \ \ 
+x_{2}=1+\frac{1}{x_{3}}\, , \ \ \
+\dots\; ,
+\ \ \ x_{n-1}=1+\frac{1}{x_{n}}\, ,
+$$
+and also
+$$
+\ x_{n}=1+\frac{1}{x_{1}}\, .
+$$
+Show that
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  $x_{1},x_{2},\dots,x_{n}>1$,
+
+\item[\bf (ii)] ${\displaystyle x_{1}-x_{2}=-\frac{x_{2}-x_{3}}{x_{2}x_{3}}}$,
+
+\item[\bf (iii)] $x_{1}=x_{2}=\cdots=x_{n}$.
+\end{itemize}
+\vspace{2mm}
+Hence find the value of $x_1$. 
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Sketch the following subsets of the $x$-$y$ plane:
+
+\begin{questionparts}
+\item $|x|+|y|\le 1$ ;
+
+\item $|x-1|+|y-1|\le 1 $ ;
+
+\item $|x-1|-|y+1|\le 1 $ ;
+
+\item $|x|\, |y-2|\le 1$ .
+
+\end{questionparts}
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+For this question, you may use the following 
+approximations, valid if $\theta $ is  small: \ 
+$\sin\theta \approx \theta$ and $\cos\theta \approx 1-\theta^2/2\,$.
+
+A satellite $X$ is directly above the point $Y$
+on the Earth's surface and can just be seen 
+(on the horizon) from
+another point $Z$ on the Earth's surface.
+The radius of the Earth  is $R$ and the height of
+the satellite above the Earth is $h$.  
+
+\begin{questionparts}
+\item Find the distance $d$
+of $Z$ from $Y$ along the Earth's surface.
+\item If the satellite is in low orbit (so that $h$ is
+small compared with $R$),
+ show that
+$$d \approx  k(Rh)^{1/2},$$ where $k$ is to be found.
+\item If the satellite is very distant from the Earth (so that $R$ is small
+compared with $h$), show that 
+$$d\approx aR+b(R^2/h),$$
+where $a$ and $b$ are to be found.
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item Find the greatest and least values of $bx+a$
+for $-10\leqslant x \leqslant 10$, distinguishing
+carefully between the cases $b>0$, $b=0$ and $b<0$.
+
+\item Find the greatest and least values of $cx^{2}+bx+a$,
+where $c\ge0$,
+for $-10\leqslant x \leqslant 10$, distinguishing
+carefully between the cases that can arise
+for different values of $b$ and $c$.
+
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Show that $\sin(k\sin^{-1} x)$, 
+where $k$ is a constant,
+satisfies the  differential equation
+$$
+(1-x^{2})\frac {\d^2 y}{\d x^2} -x\frac{\d y}{\d x}
++k^{2}y=0.
+\eqno(*)
+$$
+
+In the particular case when $k=3$, find the  solution
+ of  equation
+$(*)$ of the form
+\[
+y=Ax^{3}+Bx^{2}+Cx+D,
+\]
+that satisfies $y=0$ and $\displaystyle \frac{\d y}{\d x}=3$ at $x=0$.
+
+Use this result to express $\sin 3\theta$ in terms of powers of $\sin\theta$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+The function $\f$ satisfies  $0\leqslant\f(t)\leqslant K$
+when $0\leqslant t\leqslant x$. Explain by means of a sketch, or
+otherwise,  why  
+\[0\leqslant\int_{0}^{x} \f (t)\,{\mathrm d}t
+\leqslant Kx.\]
+By considering 
+$\displaystyle \int_{0}^{1}\frac{t}{n(n-t)}\,{\mathrm d}t$, or otherwise,
+show that, if $n>1$,
+\[
+0\le \ln \left( \frac n{n-1}\right)  -\frac 1n \le \frac 1 {n-1} - \frac 1n
+\]
+and deduce that
+\[
+0\le \ln N -\sum_{n=2}^N \frac1n  \le 1.
+\]
+Deduce that as $N\to \infty$
+\[
+ \sum_{n=1}^N \frac1n \to\infty.
+\]
+Noting that $2^{10}=1024$, show also that  if $N<10^{30}$ then
+\[
+ \sum_{n=1}^N \frac1n <101.
+\]
+
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A tortoise and a hare have a race to the vegetable patch, a
+distance $X$ kilometres from the starting post, and back.
+The tortoise sets off immediately, at a steady $v$ kilometers per
+hour. The hare goes to sleep for half an hour and then sets off
+at a steady speed $V$ kilometres per hour. The hare overtakes
+the tortoise half a kilometre from the starting post, and continues
+on to the vegetable patch, where she has another half an hour's 
+sleep before setting  off for the return journey
+at her previous pace. One and quarter kilometres from the 
+vegetable patch, she 
+passes the tortoise, still plodding gallantly and steadily 
+towards the vegetable 
+patch. Show that 
+\[
+V= \frac{10}{4X-9}
+\]
+and find
+$v$ in terms of $X$. 
+
+Find $X$ if
+the hare  arrives back at the starting post
+one and a half  hours after the start of the race.
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A particle is attached to a point $P$ of an 
+unstretched light uniform
+spring $AB$ of modulus of elasticity $\lambda$ in such a way that
+$AP$ has length $a$ and $PB$ has length $b$.
+The ends $A$ and $B$ of the spring are
+now fixed to points in a vertical line a distance $l$ apart,
+The particle oscillates
+along this line. Show that
+the motion is simple harmonic. Show also that the period
+is the same whatever the value of $l$
+ and whichever end of the string is uppermost.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+The force of attraction between two
+stars of masses $m_{1}$ and $m_{2}$ 
+a distance $r$ apart is
+$\gamma m_{1}m_{2}/r^{2}$. 
+The Starmakers of Kryton
+place three stars of equal mass $m$ at the
+corners of an equilateral triangle of side $a$.
+Show that it is possible for each star to revolve
+round the centre of mass of the system with angular velocity
+$(3\gamma m/a^{3})^{1/2}$.
+
+Find a corresponding result if the Starmakers  place a fourth star,
+of mass $\lambda m$, at the centre of mass of the system.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+\begin{questionparts}
+\item Prove that if $x>0$ then $x+x^{-1}\ge2.\;$
+
+I have a pair of six-faced dice, each with faces numbered from 1 to 6.
+The probability of throwing $i$ with the first die
+is $q_{i}$ and the  
+probability of throwing $j$ with the second die
+is $r_{j}$ ($1\le i,j \le 6$). The two dice are thrown independently
+and the sum noted. By considering the
+probabilities of throwing 2, 12 and 7, show
+the sums 2, 3, \dots, 12 are not equally likely.
+
+\item
+The first die described above is thrown twice
+and the two numbers on the die  noted.
+Is it possible to find values of $q_{j}$
+so that the probability that the numbers are the same
+is less than~$1/36$?
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Bar magnets are placed randomly end-to-end in a straight line.
+If adjacent magnets have ends of opposite polarities facing each
+other, they join together to form a single unit.
+If they have ends of the same polarity facing each other, they
+stand apart. Find the expectation
+and variance of the number of separate units in terms of the total
+number $N$ of magnets.
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+When I throw a dart at a target, the probability that it lands a 
+distance $X$ from the centre is a random variable with density
+function
+\[
+\mathrm{f}(x)=\begin{cases}
+2x & \text{ if }0\leqslant x\leqslant1;\\
+0 & \text{ otherwise.}
+\end{cases}
+\]
+I score points according to the position of the dart as follows:
+%\begin{center}
+%\begin{tabular}{c|c}
+%Range of $X$ & my score \\[1mm]
+%\hline\\
+%$0\le X< \frac14$ & 4 \\[2mm]
+%$\frac14\le X< \frac12$ & 3 \\[2mm]
+%$\frac12\le X< \frac34$ & 2 \\[2mm]
+%$\frac34\le X\le 1$ & 1 
+%\end{tabular}
+%\end{center}
+%\newline\hspace*{10mm} 
+if~$0\le X< \frac14$, my score is 4;  
+%\newline\hspace*{10mm} 
+if~$\frac14\le X< \frac12$, my score is  3;
+%\newline\hspace*{10mm} 
+if $\frac12\le X< \frac34$, my score is  2;
+%\newline\hspace*{10mm} 
+if $\frac34\le X\le 1$, my score is  1. 
+
+\begin{questionparts}
+\item Show that my expected score from one dart is 15/8.
+\item I play a game with the following rules. 
+I start off with a total score 0, and each time~I throw a dart
+my score on that throw is added to my total. Then:
+\newline
+\hspace*{10mm} 
+if my new total is greater than 3, I have lost and the game ends;
+\newline
+\hspace*{10mm} if my new total is 3, I have won and the game ends;
+\newline
+\hspace*{10mm} if my new total is less than 3, I throw again.
+
+ Show that, if I
+have won such a game, the probability that I threw the dart three
+times is 343/2231.
+\end{questionparts}
+\end{question}
+	
+\end{document}

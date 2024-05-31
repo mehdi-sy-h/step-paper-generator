@@ -1,0 +1,542 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2012
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+The line $L$ has equation $y=c-mx$, with $m>0$ and $c>0$. 
+It passes through the  point 
+$R(a,b)$ and cuts the axes at the points $P(p,0)$ and $Q(0,q)$,
+where $a$, $b$, $p$ and $q$ are all positive. Find $p$ and $q$
+in terms of $a$, $b$ and $m$.
+
+As $L$ varies with $R$ remaining fixed, show that
+the minimum value of the sum of the distances 
+of $P$ and $Q$ from the origin is $(a^{\frac12} + b^{\frac12})^2$,
+and find in  a similar form 
+the minimum distance between $P$ and $Q$. (You may assume
+that any stationary values   of these distances are minima.) 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+\begin{questionparts}
+\item
+Sketch the curve 
+$
+y= x^4-6x^2+9 
+$
+giving the coordinates of the stationary points.
+
+Let $n$ be the number of distinct real values of $x$ for which 
+\[
+x^4-6x^2 +b=0.
+\] 
+State the values of $b$, if any, for which
+\ (a) $n=0\,$;
+\ (b) $n=1\,$;
+\ (c) $n=2\,$;
+\ (d) $n=3\,$;
+\ (e) $n=4\,$.
+
+\item
+For which values of $a$ does the curve $y= x^4-6x^2 +ax +b$
+have a point at which 
+both $\dfrac{\d y}{\d x}=0$ and $\dfrac{\d^2y}{\d x^2}=0\,$?
+
+ For these values of $a$,
+find the number of distinct real values of $x$ for which 
+$\vphantom{\dfrac{A}{B}}$
+\[
+x^4-6x^2 +ax +b=0\,,
+\]
+ in the different cases that arise according to the
+value of $b$. 
+
+\item Sketch the curve $y= x^4-6x^2 +ax$ in the case $a>8\,$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+\item
+Sketch the curve $y=\sin x$ for $0\le x \le \tfrac12 \pi$
+and add to your diagram the 
+tangent to the curve at the origin and the chord joining the 
+origin to the point $(b, \sin b)$, where $0<b<\frac12\pi$.
+
+By considering areas, show that 
+\[
+1-\tfrac12 b^2 <\cos b < 1-\tfrac 12 b \sin b\,.
+\]
+
+\item By considering the curve $y=a^x$, where $a>1$, show
+that 
+\[
+\frac{2(a-1)}{a+1} < \ln a < -1 + \sqrt{2a-1\,}\,.
+\]
+[{\bf Hint}: You may wish to write $a^x$ as $\e^{x\ln a}$.]
+\end{questionparts} 
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The curve $C$ has equation $xy = \frac12$.
+The tangents to $C$ at the distinct
+points 
+$
+P\big(p, 
+\frac1 
+{
+\rule[0pt]{0pt}{2.7mm}
+\mbox{\fontsize{10pt}{13}\selectfont$2p$}
+}
+\big)
+$
+and
+$
+Q\big(q, 
+\frac1 
+{
+\rule[0pt]{0pt}{2.7mm}
+\mbox{\fontsize{10pt}{13}\selectfont$2q$}
+}
+\big),
+$
+where $p$ and $q$ are positive,
+intersect at $T$ and the normals to $C$
+ at these points intersect at~$N$. Show that 
+ $T$ is the point 
+\[
+\left( \frac{2pq}{p+q}\,,\, \frac 1 {p+q}\right)\!.
+\] 
+
+In the case $pq=\frac12$, find the coordinates of $N$. Show (in this case)
+that
+$T$ and $N$ lie on the line $y=x$ and are such that the 
+product of their distances from the origin is constant.
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+ Show that 
+\[
+\int_0^{\frac14\pi} \sin (2x) \ln(\cos x)\, \d x = \frac14(\ln 2 -1)\,,
+\]
+and that 
+\[
+\int_0^{\frac14\pi} \cos (2x) \ln(\cos x)\, \d x = \frac18(\pi -\ln 4-2)\,.
+\]
+
+Hence evaluate
+\[
+\int_{\frac14\pi}^{\frac12\pi}
+ \big ( \cos(2x) + \sin (2x)\big) \, \ln \big( \cos x + \sin x\big)\, \d x\,.
+\]
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+A thin circular path with diameter $AB$ is laid on horizontal ground.
+A vertical flagpole is erected with its base at a point $D$
+on the diameter $AB$. The angles of 
+elevation of the top of the flagpole from $A$ and $B$ are $\alpha$ and
+$\beta$ respectively (both are acute). 
+The point $C$ lies on the circular path  
+with $DC$ perpendicular to $AB$ and the angle of elevation of the top of the
+flagpole from $C$ is $\phi$. Show that $\cot\alpha\cot \beta  = \cot^2\phi$.
+
+
+Show that, for any $p$ and $q$,
+\[
+\cos p \cos q \sin^2\tfrac12(p+q) 
+- \sin p\sin q \cos^2 \tfrac12 (p+q) = 
+\tfrac12 \cos(p+q) -\tfrac12 \cos(p+q)\cos(p-q)
+.\]
+Deduce that, if $p$ and $q$ are positive and  $ p+q  \le \tfrac12 \pi$,
+then
+\[
+ \cot p\cot q\,
+\ge \cot^2 \tfrac12(p+q) \,
+\]
+and hence show 
+that $\phi \le \tfrac12(\alpha+\beta)$ 
+when $ \alpha +\beta \le \tfrac12 \pi\,$.
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+A sequence of numbers $t_0$, $t_1$, $t_2$, $\ldots\,$ satisfies
+\[
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  
+t_{n+2} = p t_{n+1}+qt_{n}  \ \ \ \ \ \ \ \ \ \ (n\ge0),
+\]
+where $p$ and $q$ are real. Throughout this question, $x$, $y$ and $z$ are non-zero real numbers.
+\begin{questionparts}
+\item Show that, if $t_n=x$ for all values of $n$,
+then $p+q=1$ and $x$ can be any (non-zero) real number.
+\item 
+Show that, if $t_{2n} = x$ and $t_{2n+1}=y$ for all values of $n$,
+then $q\pm p=1$. Deduce that either $x=y$ or $x=-y$, unless
+$p$ and $q$ take certain values that you should identify.
+\item 
+Show that, if $t_{3n} = x$,  $t_{3n+1}=y$ and $t_{3n+2}=z$
+for all values of $n$,
+ then
+\[ 
+p^3+q^3 +3pq-1=0\,.
+\]
+ Deduce that either $p+q=1$ or 
+$(p-q)^2 +(p+1)^2+(q+1)^2=0$. Hence show that either 
+$x=y=z$ or $x+y+z=0$.
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+\begin{questionparts}
+\item
+Show that substituting  $y=xv$, where $v$ is a function of $x$,  in the 
+ differential equation
+\[ 
+\hphantom{(x\ne0)\hspace*{2cm}}
+xy \frac{\d y}{\d x} +y^2- 2x^2 =0
+{\hspace*{2cm}(x\ne0)}
+\]
+leads to  the differential equation
+\[
+xv\frac{\d v}{\d x} +2v^2 -2=0\,.
+\]
+Hence show that the general solution can be written in the form 
+\[
+x^2(y^2 -x^2) = C 
+\,,
+\] where $C$ is a constant. 
+
+
+\item
+Find the general solution of the differential equation
+\[
+\hphantom{(x\ne0)\hspace*{2cm}}
+ y \frac{\d y}{\d x} +6x +5y=0\, 
+{\hspace*{2cm}(x\ne0)}
+.
+\]
+
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A tall shot-putter
+projects a small shot 
+from a point $2.5\,$m above the ground, which is horizontal. 
+The speed of projection is
+$10\,$m\,s$^{- 1}$  and the  angle of projection is $\theta$
+ above the horizontal. 
+Taking the acceleration due to gravity to be $10\,$m\,s$^{-2}$, 
+show that the time, 
+in seconds, that elapses before the shot hits the ground is 
+\[
+\frac1{\sqrt2}\left ( \sqrt{1-c}+ \sqrt{2-c}\right),
+\]
+where $c = \cos2\theta$.
+
+Find an expression for the range in terms of $c$ and show that
+it is greatest when $c= \frac15\,$.
+
+ Show that the extra distance attained 
+by projecting the shot at this angle rather than at an angle of $45^\circ$
+ is $5(\sqrt6 -\sqrt2 -1)\,$m.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+I        stand  at the top of a vertical well.
+The   
+depth of the well, from the top to the surface of the water, is
+$D$. I  drop  a stone from 	
+the top of the well and 
+measure  the time that
+ elapses between the release of the stone and the moment when 
+I   hear the splash  of the stone entering the water.
+
+In order to gauge the depth of the well,  
+I  climb  a distance $\delta$  down into the well 
+and drop a stone from my new position. The
+time until I hear the splash is $t$ less than the previous time.
+Show that
+\[
+t = \sqrt{\frac{2D}g} -
+ \sqrt{\frac{2(D-\delta)}g} + \frac \delta u\,,
+\]
+where $u$ is the (constant) speed of sound.
+Hence show that
+\[
+D = \tfrac12 gT^2\,,
+\]
+where $T= \dfrac12 \beta + \dfrac \delta{\beta g}$ 
+and $\beta = t - \dfrac \delta u\,$.
+	
+
+Taking
+$u=300\,$m\,s$^{-1}$ 
+and $g=10\,$m\,s$^{-2}$,
+show that if $t= \frac 15\,$s and  $\delta=10\,$m, 
+ the well is approximately $185\,$m deep.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+The diagram shows two particles, $A$ of mass $5m$ and $B$ of mass $3m$, 
+connected by a light  inextensible string
+which passes over two smooth, 
+light, fixed pulleys, $Q$ and  $R$, 
+and under a smooth pulley $P$ which has mass $M$ and is free to move 
+vertically.
+
+Particles $A$ and $B$ lie on fixed rough planes
+inclined to the horizontal at angles of $\arctan \frac 7{24}$ and
+$\arctan\frac43$ respectively.
+The segments $AQ$ and $RB$ of the string are 
+parallel to their respective planes, and segments $QP$
+ and 
+$PR$ are vertical. 
+The coefficient of friction between each particle and its plane is $\mu$.
+
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-1.07,-0.16)(9.6,4.76)
+\pscircle[fillcolor=black,fillstyle=solid,opacity=0.15](5,4){0.25}
+\pscircle[fillcolor=black,fillstyle=solid,opacity=0.15](6.5,4){0.25}
+\pspolygon[linewidth=0pt,fillcolor=black,fillstyle=solid,opacity=0.3](-1,0)(5,0)(5,4)
+\pspolygon[linewidth=0pt,fillcolor=black,fillstyle=solid,opacity=0.3](9.5,0)(6.5,0)(6.5,4)
+
+\psline(1.63,2.12)(4.85,4.2)
+\psline(8.29,2.04)(6.712,4.13)
+\psline(5.25,4)(5.25,1.5)
+\psline(6.25,3.99)(6.25,1.5)
+\rput[tl](4.85,4.68){$Q$}
+\rput[tl](6.38,4.64){$R$}
+\rput[tl](8.29,2.72){$B$}
+\rput[tl](5.6,0.85){$P$}
+\rput[tl](1.54,2.85){$A$}
+\begin{scriptsize}
+\psdots[dotsize=28.5pt,dotstyle=*](5.75,1.5)
+\psdots[dotsize=17pt 0,dotstyle=*](1.63,2.12)
+\psdots[dotsize=15pt 0,dotstyle=*](8.29,2.04)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+\begin{questionparts}
+\item Given that the system is in equilibrium, 
+with both $A$ and $B$ on the point of moving up their    planes,
+determine the value of $\mu$  and show that $M = 6m$.
+
+\item In the case when $M = 9m$, determine the 
+initial accelerations of $A$, $B$ and $P$ in terms of $g$.
+
+
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Fire extinguishers may become faulty at any time
+after  manufacture and 
+are tested 
+annually on the
+ anniversary of  manufacture.
+
+The time $T$ years after manufacture
+ until a fire extinguisher
+becomes faulty
+ is modelled by the continuous
+probability density function 
+\[
+\f(t) =
+\begin{cases}
+\dfrac{2t}{(1+t^2)^2}& \text{for $t\ge0$}\,,\\[4mm]
+ \ \ \ \ 0& \text{otherwise}.
+\end{cases}
+\]
+A faulty fire extinguisher will fail an annual test
+with probability $p$, in which case it is destroyed immediately. A non-faulty
+fire extinguisher will always pass the test. All of the annual tests
+are independent.
+
+Show that the probability 
+that a randomly chosen fire extinguisher will be destroyed exactly
+three years after its manufacture is $p(5p^2-13p +9)/10$. 
+
+Find the probability that a randomly chosen
+ fire extinguisher
+that was destroyed exactly three years after its manufacture
+was faulty 18 months after its manufacture.
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+I choose at random an integer in the 
+range 10000 to 99999, all choices being
+equally likely. Given that my choice
+does not contain the digits 0, 6, 7, 8 or 9,
+show that the expected number of different digits
+in my choice is 3.3616.
+\end{question}
+
+\end{document}

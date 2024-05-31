@@ -1,0 +1,498 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2009
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+A {\em proper factor} of an integer  $N$ is a positive integer,
+not $1$ or $N$, that divides $N$.
+
+\begin{questionparts}
+\item Show that $3^2\times 5^3$ has exactly $10$ proper factors. Determine
+how  many other integers of the form $3^m\times5^n$ (where $m$ and $n$
+are integers) have exactly 10 proper factors.
+
+
+\item Let $N$ be the smallest positive 
+integer that has exactly $426$ proper
+factors. Determine~$N$, giving your answer in terms of its prime factors.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+A curve has the equation                           
+\[
+y^3 = x^3 +a^3+b^3\,,
+\]
+where $a$ and $b$ are positive constants. Show that the tangent
+to the curve 
+at the point $(-a,b)$~is 
+\[
+b^2y-a^2x = a^3+b^3\,.
+\]
+
+In the case $a=1$ and $b=2$, show that the $x$-coordinates of the 
+points where the tangent meets the curve satisfy
+\[
+7x^3 -3x^2 -27x-17 =0\,.
+\]
+Hence find  positive integers $p$, $q$, $r$ and $s$ such that
+\[
+p^3 = q^3 +r^3 +s^3\,.
+\]
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+\item
+ By considering the equation $x^2+x-a=0\,$, 
+show that the equation
+$x={(a-x)\vphantom M}^{\frac12}$ has one real solution when $a\ge0$ and no
+real solutions when $a<0\,$.
+
+Find the number of distinct real solutions of the equation
+\[
+x={\big((1+a)x-a\big)}^{\!\frac13}
+\]
+in the cases that arise according to the value of $a$.
+\item Find the number of distinct real solutions of the equation
+\[
+x={(b+x)\vphantom M}^{\frac12}
+\]
+in the cases that arise according to the value of $b\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The sides of a triangle have lengths
+$p-q$, $p$ and $p+q$, where $p>q>  0\,$.
+The largest
+and smallest angles of the triangle are $\alpha$ and $\beta$,
+respectively.
+Show by means of the cosine rule that
+\[ 4(1-\cos\alpha)(1-\cos\beta) = \cos\alpha + \cos\beta
+\,.
+\]
+
+In the case $\alpha = 2\beta$, 
+show that $\cos\beta=\frac34$ and hence find the
+ratio of the lengths of the sides of the triangle.
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+A right circular cone has base radius $r$, height $h$ and
+slant length $\ell$. Its volume $V$, and the area~$A$ of its curved
+surface,
+are given by
+\[
+V= \tfrac13 \pi r^2 h \,, \ \ \ \ \ \ \ 
+A = \pi r\ell\,.
+\]
+\vspace*{-1cm}
+\begin{questionparts}
+\item Given that
+$A$ is fixed and $r$ is chosen so that 
+  $V$ is at its stationary value, show that $A^2 = 3\pi^2r^4$ and that
+$
+\ell  =\sqrt3\,r$.
+
+\item Given, instead, that  $V$ is fixed and $r$ is chosen so that
+$A$ is at its stationary value, find~$h$ in terms of $r$.
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item
+Show that, for $m>0\,$, 
+\[
+\int_{1/m}^m \frac{x^2}{x+1} \, \d x 
+= \frac{(m-1)^3(m+1)}{2m^2}+ \ln m\,.
+\]
+\item
+Show by means of a substitution that
+\[
+\int_{1/m}^m \frac1 {x^n(x+1)}\,\d x
+ = \int_{1/m}^m \frac {u^{n-1}}{u+1}\,\d u \,.
+\]
+\item
+Evaluate:
+\begin{itemize}
+\item[\bf (a)]  \quad
+$\displaystyle \int_{1/2}^2 \frac {x^5+3}{x^3(x+1)}\,\d x \;;$
+\\
+\item[\bf (b)]
+\quad
+ $\displaystyle \int_1^2 \frac{x^5+x^3 +1}{x^3(x+1)}\, \d x\;. $
+\end{itemize}
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Show that, for any integer $m$, 
+\[
+\int_0^{2\pi} \e^x \cos mx \, \d x = \frac
+    {1}{m^2+1}\big(\e^{2\pi}-1\big)\,.
+\]
+
+\begin{questionparts}
+\item
+Expand 
+ $\cos(A+B) +\cos(A-B)$.  Hence show that
+\[\displaystyle 
+\int_0^{2\pi} \e^x \cos x \cos 6x \, \d x\, 
+= \tfrac{19}{650}\big( \e^{2\pi}-1\big)\,.
+\]
+\item Evaluate $\displaystyle 
+\int_0^{2\pi} \e^x \sin 2x \sin 4x \cos x \, \d x\,$.
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+\begin{questionparts}
+\item
+ The equation of the circle $C$ is 
+\[
+(x-2t)^2 +(y-t)^2 =t^2,
+\]
+where $t$ is a positive number.
+Show that $C$ touches the line $y=0\,$.
+
+Let $\alpha$ be the acute angle between the $x$-axis and the 
+line joining the origin to the centre of $C$. Show that $\tan2\alpha
+=\frac43$ and deduce that $C$ touches the line $3y=4x\,$.
+
+\item Find the equation of the incircle of the triangle formed by 
+the lines $y=0$, $3y=4x$ and $4y+3x=15\,$.
+
+{\bf Note:} The {\em incircle} of a triangle is the circle,
+lying totally inside the
+triangle, that touches all three sides.
+
+
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+Two particles $P$ and $Q$ are projected simultaneously from points
+$O$ and $D$, respectively, where~$D$ is a distance $d$ directly
+above $O$. The initial speed of $P$ is $V$ and its angle of projection
+{\em above} the horizontal is $\alpha$. The initial speed of $Q$ is 
+$kV$, where $k>1$, and its angle of projection {\em below} the horizontal
+is $\beta$. The particles collide at time $T$ after projection.
+
+Show that $\cos\alpha = k\cos\beta$ and that  
+$T$ satisfies the equation
+\[
+(k^2-1)V^2T^2 +2dVT\sin\alpha -d^2 =0\,.
+\]
+
+Given that the particles collide when $P$ reaches its maximum height,
+find an expression for~$\sin^2\alpha$ in terms of $g$, $d$, $k$ and
+$V$,
+and deduce that 
+\[
+gd\le (1+k)V^2\,.
+\]
+
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A triangular wedge is fixed to a horizontal surface. The 
+ base angles
+of the wedge are $\alpha$ and $\frac\pi 2-\alpha$.
+Two particles, of masses $M$ and $m$, lie on different faces of 
+the wedge, and are connected by a light inextensible string
+which passes over a smooth pulley at the apex of the wedge, as
+shown in the diagram. 
+The contacts between the particles and the wedge are smooth.
+  
+\begin{center} \psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-0.12,-0.34)(8.27,3.81)
+\pspolygon(5.74,3.35)(5.89,3.08)(6.15,3.24)(6,3.5)
+\pscircle[linewidth=0.4pt,fillcolor=black,fillstyle=solid,opacity=0.4](5.99,3.5){0.23}
+\psline(0,0)(6,3.5)
+\psline(8,0)(6,3.5)
+\psline(6.2,3.59)(7.03,2.13)
+\psline(5.87,3.69)(1.99,1.44)
+\psline(0,0)(8,0)
+\rput[tl](0.91,0.44){$\alpha$}
+\rput[tl](6.54,0.63){$\frac{\pi}{2}-\alpha$}
+\rput[tl](1.38,1.99){$M$}
+\rput[tl](7.31,2.6){$m$}
+\begin{scriptsize}
+\psdots[dotsize=12pt 0,dotstyle=*](7.03,2.13)
+\psdots[dotsize=12pt 0,dotstyle=*](1.99,1.4)
+\end{scriptsize}
+\end{pspicture*}
+  \end{center}
+  
+\begin{questionparts}
+\item
+Show that if $\tan \alpha> \dfrac m M $
+the particle of mass $M$ will slide down the face of the wedge.
+
+\item 
+
+Given that $\tan \alpha = \dfrac{2m}M$, show that the magnitude of the
+acceleration of the
+particles is
+\[
+\frac{g\sin\alpha}{\tan\alpha +2}
+\]
+and that this             is maximised at
+$4m^3=M^3\,$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Two particles 
+move on a smooth horizontal table and collide. 
+The  masses of the particles are $m$ and $M$.  Their 
+velocities before the collision are $u{\bf i}$ and $v{\bf i}\,$, 
+respectively, where $\bf i$ is a unit vector and $u>v$.  
+Their velocities  after the collision are $p{\bf i}$ and $q{\bf i}\,$, 
+respectively.
+The coefficient of 
+restitution between the two particles is $e$, where $e<1$. 
+
+\begin{questionparts}
+\item Show that the 
+loss of kinetic energy due to the collision is
+\[
+\tfrac12 m (u-p)(u-v)(1-e)\,,
+\]
+and deduce that $u\ge p$.
+
+\item
+Given that each particle loses the same (non-zero)
+amount of kinetic energy in
+the collision, show that
+\[
+u+v+p+q=0\,,
+\]
+and that, if $m\ne M$, 
+\[
+e= \frac{(M+3m)u + (3M+m)v}{(M-m)(u-v)}\,.
+\]
+
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Prove that, for any real numbers $x$ and $y$, $x^2+y^2\ge2xy\,$.
+
+\begin{questionparts}
+\item Carol has two bags of sweets. The first bag contains $a$ red sweets  
+and $b$ blue sweets, whereas the second bag contains $b$ red sweets   and
+$a$ blue  sweets, where $a$ and $b$ are positive integers. Carol shakes
+the bags and picks
+one sweet from each bag without looking. Prove that the probability
+that
+the sweets  are of the same colour 
+cannot exceed  the probability that
+they are of different colours.
+\item Simon has three bags of sweets. The first bag
+contains
+$a$ red sweets, $b$ white sweets and $c$ yellow sweets, where $a$, $b$ and
+$c$ are positive integers. The second
+bag contains
+$b$ red sweets, $c$ white sweets and $a$ yellow sweets. The third
+bag contains
+$c$ red sweets, $a$ white sweets and $b$ yellow sweets.
+Simon shakes the bags and 
+picks one sweet from each bag without looking.
+Show that the probability that exactly two of the sweets are of the 
+same colour is
+\[
+\frac {3(a^2b+b^2c+c^2a+ab^2 + bc^2 +ca^2)}{(a+b+c)^3}\,,
+\]
+and find the probability that the sweets are all of the same colour.
+Deduce that the probability that exactly two of 
+the sweets are of the same colour is at least 6 times the probability
+that the sweets are all of the same colour.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+I seat $n$ boys and $3$ girls in a line    at random, so 
+that each order of the $n+3$ children
+is as likely to occur as any other. Let $K$ be the maximum number of 
+consecutive girls in the line so, for example, $K=1$ if  
+there is at least one boy between 
+ each pair of girls.
+\begin{questionparts}
+\item Find $\P(K=3)$.
+\item Show that 
+\[\P(K=1)=
+\frac{n(n-1)}{(n+2)(n+3)}\,.
+\]
+\item Find $\E(K)$.
+\end{questionparts}
+\end{question}
+
+\end{document}

@@ -1,0 +1,378 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1996
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+A cylindrical biscuit tin has volume $V$ and surface area $S$ (including
+the ends). Show that the minimum possible surface area for a given
+value of $V$ is $S=3(2\pi V^{2})^{1/3}.$ For this value of $S$
+show that the volume of the largest sphere which can fit inside the
+tin is $\frac{2}{3}V$, and find the volume of the smallest sphere
+into which the tin fits. 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+ \begin{questionparts}
+\item Show that 
+\[
+\int_{0}^{1}\left(1+(\alpha-1)x\right)^{n}\,\mathrm{d}x=\frac{\alpha^{n+1}-1}{(n+1)(\alpha-1)}
+\]
+when $\alpha\neq1$ and $n$ is a positive integer. 
+\item Show that if $0\leqslant k\leqslant n$ then the coefficient
+of $\alpha^{k}$ in the polynomial 
+\[
+\int_{0}^{1}\left(\alpha x+(1-x)\right)^{n}\,\mathrm{d}x
+\]
+is 
+\[
+\binom{n}{k}\int_{0}^{1}x^{k}(1-x)^{n-k}\,\mathrm{d}x\,.
+\]
+\item Hence, or otherwise, show that 
+\[
+\int_{0}^{1}x^{k}(1-x)^{n-k}\,\mathrm{d}x=\frac{k!(n-k)!}{(n+1)!}\,.
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Let $n$ be a positive integer. 
+\begin{questionparts}
+\item Factorise $n^{5}-n^{3},$ and show that it
+is divisible by 24. 
+\item Prove that $2^{2n}-1$ is divisible by 3. 
+\item If $n-1$ is divisible by 3, show that $n^{3}-1$ is divisible
+by 9. 
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Show that 
+\[
+\int_{0}^{1}\frac{1}{x^{2}+2ax+1}\,\mathrm{d}x=\begin{cases}
+\dfrac{1}{\sqrt{1-a^{2}}}\tan^{-1}\sqrt{\dfrac{1-a}{1+a}} & \text{ if }\left|a\right|<1,\\
+\dfrac{1}{2\sqrt{a^{2}-1}}\ln\left|a+\sqrt{a^{2}-1}\right| & \text{ if }\left|a\right|>1.
+\end{cases}
+\]
+
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item Find all rational numbers $r$ and $s$ which satisfy 
+\[
+(r+s\sqrt{3})^{2}=4-2\sqrt{3}.
+\]
+\item Find all real numbers $p$ and $q$ which satisfy 
+\[
+(p+q\mathrm{i})^{2}=(3-2\sqrt{3})+2(1-\sqrt{3})\mathrm{i}.
+\]
+\item Solve the equation 
+\[
+(1+\mathrm{i})z^{2}-2z+2\sqrt{3}-2=0,
+\]
+writing your solutions in as simple a form as possible. 
+\end{questionparts}
+
+{[}No credit will be given to answers involving use of calculators.{]} 
+
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Let $\mathrm{f}(x)=\dfrac{\sin(n+\frac{1}{2})x}{\sin\frac{1}{2}x}$
+for $0<x\leqslant\pi.$ 
+\begin{questionparts}
+\item Using the formula 
+\[
+2\sin\tfrac{1}{2}x\cos kx=\sin(k+\tfrac{1}{2})x-\sin(k-\tfrac{1}{2})x
+\]
+(which you may assume), or otherwise, show that 
+\[
+\mathrm{f}(x)=1+2\sum_{k=1}^{n}\cos kx\,.
+\]
+\item Find ${\displaystyle \int_{0}^{\pi}\mathrm{f}(x)\,\mathrm{d}x}$
+and ${\displaystyle \int_{0}^{\pi}\mathrm{f}(x)\cos x\,\mathrm{d}x}.$ 
+\end{questionparts}
+
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{questionparts}
+\item At time $t=0$ a tank contains one unit of water. Water flows
+out of the tank at a rate proportional to the amount of water in the
+tank. The amount of water in the tank at time $t$ is $y$. Show that
+there is a constant $b<1$ such that $y=b^{t}.$ 
+\item Suppose instead that the tank contains one unit of water at
+time $t=0,$ but that in addition to water flowing out as described,
+water is added at a steady rate $a>0.$ Show that 
+\[
+\frac{\mathrm{d}y}{\mathrm{d}t}-y\ln b=a,
+\]
+and hence find $y$ in terms of $a,b$ and $t$. 
+\end{questionparts}
+
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+\begin{questionparts}
+\item By using the formula for the sum of a geometric series, or
+otherwise, express the number $0.38383838\ldots$ as a fraction in
+its lowest terms. 
+\item Let $x$ be a real number which has a recurring decimal expansion
+\[
+x=0\cdot a_{1}a_{2}a_{2}\cdots,
+\]
+so that there exists positive integers $N$ and $k$ such that $a_{n+k}=a_{n}$
+for all $n>N.$ Show that 
+\[
+x=\frac{b}{10^{N}}+\frac{c}{10^{N}(10^{k}-1)}\,,
+\]
+where $b$ and $c$ are integers to be found. Deduce that $x$ is
+rational. 
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A bungee-jumper of mass $m$ is attached by means of a light rope
+of natural length $l$ and modulus of elasticity $mg/k,$ where $k$
+is a constant, to a bridge over a ravine. She jumps from the bridge
+and falls vertically towards the ground. If she only just avoids hitting
+the ground, show that the height $h$ of the bridge above the floor
+of the ravine satisfies 
+\[
+h^{2}-2hl(k+1)+l^{2}=0,
+\]
+and hence find $h.$ Show that the maximum speed $v$ which she attains
+during her fall satisfies 
+\[
+v^{2}=(k+2)gl.
+\]
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A spaceship of mass $M$ is at rest. It separates into two parts in
+an explosion in which the total kinetic energy released is $E$. Immediately
+after the explosion the two parts have masses $m_{1}$ and $m_{2}$
+and speeds $v_{1}$ and $v_{2}$ respectively. Show that the minimum
+possible relative speed $v_{1}+v_{2}$ of the two parts of the spaceship
+after the explosion is $(8E/M)^{1/2}.$ 
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A particle is projected under the influence of gravity from a point
+$O$ on a level plane in such a way that, when its horizontal distance
+from $O$ is $c$, its height is $h$. It then lands on the plane
+at a distance $c+d$ from $O$. Show that the angle of projection
+$\alpha$ satisfies 
+\[
+\tan\alpha=\frac{h(c+d)}{cd}
+\]
+and that the speed of projection $v$ satisfies 
+\[
+v^{2}=\frac{g}{2}\left(\frac{cd}{h}+\frac{(c+d)^{2}h}{cd}\right)\,.
+\]
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+An examiner has to assign a mark between 1 and $m$ inclusive to each
+of $n$ examination scripts ($n\leqslant m$). He does this randomly,
+but never assigns the same mark twice. If $K$ is the highest mark
+that he assigns, explain why 
+\[
+\mathrm{P}(K=k)=\left.\binom{k-1}{n-1}\right/\binom{m}{n}
+\]
+for $n\leqslant k\leqslant m,$ and deduce that 
+\[
+\sum_{k=n}^{m}\binom{k-1}{n-1}=\binom{m}{n}\,.
+\]
+Find the expected value of $K$. 
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+I have a Penny Black stamp which I want to sell to my friend Jim,
+but we cannot agree a price. So I put the stamp under one of two cups,
+jumble them up, and let Jim guess which one it is under. If he guesses
+correctly, I add a third cup, jumble them up, and let Jim guess correctly,
+adding another cup each time. The price he pays for the stamp is $\pounds N,$
+where $N$ is the number of cups present when Jim fails to guess correctly.
+Find $\mathrm{P}(N=k)$. Show that $\mathrm{E}(N)=\mathrm{e}$ and
+calculate $\mathrm{Var}(N).$ 
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+A biased coin, with a probability $p$ of coming up heads and a probability
+$q=1-p$ of coming up tails, is tossed repeatedly. Let $A$ be the
+event that the first run of $r$ successive heads occurs before the
+first run of $s$ successive tails. If $H$ is the even that on the
+first toss the coin comes up heads and $T$ is the event that it comes
+up tails, show that 
+\begin{alignat*}{1}
+\mathrm{P}(A|H) & =p^{\alpha}+(1-p^{\alpha})\mathrm{P}(A|T),\\
+\mathrm{P}(A|T) & =(1-q^{\beta})\mathrm{P}(A|H),
+\end{alignat*}
+where $\alpha$ and $\beta$ are to be determined. Use these two equations
+to find $\mathrm{P}(A|H),$ $\mathrm{P}(A|T),$ and hence $\mathrm{P}(A).$
+\end{question}
+	
+\end{document}

@@ -1,0 +1,477 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1999
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Consider the cubic equation
+\[
+x^3-px^2+qx-r=0\;,
+\]
+where $p\ne0$ and $r\ne 0$.
+
+\begin{questionparts}
+
+\item If the three roots    
+can be written in the form $ak^{-1}$, $a$ and $ak$ for some 
+constants $a$ and $k$, show that 
+one root is $q/p$ and that
+$
+q^3 -rp^3=0\;.
+$
+
+\item
+If $
+r=q^3/p^3\;$, show that $q/p$ is a root and that the product of the 
+other two roots is $(q/p)^2$. Deduce that the roots are 
+in geometric progression.
+
+\item
+Find a necessary and sufficient condition involving $p$, $q$ and $r$ 
+for the  roots 
+ to be  in  arithmetic progression.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+\begin{questionparts}
+
+\item
+Let $\f(x)=(1+x^2)\e^x$. Show that $\f'(x)\ge 0$ and sketch the graph
+of $\f(x)$. 
+Hence, or otherwise, show that
+the equation
+\[
+ (1+x^2)\e^x = k,
+\]
+where $k$ is a constant,
+has exactly one real root if  $k>0$ and no real roots if  $k\le 0$.
+
+
+\item
+Determine 
+the number of real roots of the equation
+$$
+(\e^x-1) - k \tan^{-1} x=0
+$$ 
+in the cases (a) $0<k\le 2/\pi$ and (b) $2/\pi<k<1$.
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Justify, by means of a sketch, the formula
+$$
+\lim_{n\rightarrow\infty}\left\{{1\over n}\sum_{m=1}^n
+\f(1+m/n)\right\} = \int_1^2 \f(x)\,\d x \,.
+$$
+Show that 
+$$
+\lim_{n\rightarrow\infty}\left\{{1\over n+1} + {1\over n+2} + \cdots
++ {1\over n+n}\right\} = \ln 2 \,.
+$$
+Evaluate
+$$
+\lim_{n\rightarrow\infty}\left\{{n\over n^2+1} + {n\over n^2+4}
+ + \cdots + {n\over n^2+n^2}\right\}\,.
+$$
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+A polyhedron is a solid bounded by $F$ plane faces, which meet in
+$E$ edges and $V$ vertices. You may assume {\em Euler's
+formula}, that $V-E+F=2$.
+
+In a regular polyhedron the faces are equal regular $m$-sided
+polygons, $n$ of which meet at each vertex. Show that
+$$
+F={4n\over h}  \,,
+$$
+where $h=4-(n-2)(m-2)$.
+
+By considering the possible values of $h$, 
+or otherwise, prove that there
+are only five regular polyhedra, and find $V$, $E$ and $F$ for each.
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The sequence $u_0$,  $u_1$, $u_2$, ... is defined by 
+$$
+u_0=1,\hspace{0.2in} u_1=1,\hspace{0.3in} u_{n+1}=u_n+u_{n-1}
+\hspace{0.2in}{\rm for}\hspace{0.1in}n \ge 1\,.
+$$
+Prove that
+$$
+u^2_{n+2} + u^2_{n-1} = 2( u^2_{n+1} + u^2_n ) \,.
+$$
+Using induction, or otherwise, prove the following result:
+\[
+u_{2n}  =  u^2_n + u^2_{n-1} 
+\mbox{ \ \ \ and \ \ \ }
+ u_{2n+1} =  u^2_{n+1} - u^2_{n-1} 
+\]
+for any positive integer $n$.
+
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+A closed curve is given by the equation
+$$
+x^{2/n} + y^{2/n} = a^{2/n} \eqno(*)
+$$
+where $n$ is an odd integer and $a$ is a positive constant.
+Find a parametrization $x=x(t)$, $y=y(t)$ which
+describes the curve  anticlockwise as $t$ ranges from $0$ to $2\pi$. 
+
+Sketch the curve in the case $n=3$, justifying the main features 
+of your sketch.
+
+The area $A$ enclosed by such a curve
+is given by the formula
+$$
+A= {1\over 2} \int_0^{2\pi} \left[ x(t) {\d y(t)\over \d t} -
+y(t) {\d x(t)\over \d t} \right] \,\d t \,.
+$$
+Use this result to find the area enclosed by ($*$) for $n=3$.
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Let $a$ be a non-zero real number and define a binary operation
+on the set of real numbers by
+$$
+x*y = x+y+axy \,.
+$$
+Show that the operation $*$ is associative.
+
+Show that $(G,*)$ is a group, where
+$G$ is the set of all real numbers except for one number which you should 
+identify.
+
+Find a subgroup of $(G,*)$ which has exactly 2 elements.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+The function $y(x)$ is  defined for $x\ge0$ and satisfies the conditions
+ \[
+y=0
+\mbox{ \ \  and \ \ }
+\frac{\d y}{\d x}=1
+\mbox{ \  \  at $x=0$}.
+\]
+When $x$ is in the range $2(n-1)\pi< x <2n\pi$, where $n$ is a positive 
+integer, $y(t)$ satisfies the differential
+equation 
+$$
+{\d^2y \over \d x^2} + n^2 y=0. 
+$$
+Both $y$ and $\displaystyle \frac{\d y}{\d x} $ are continuous at $x=2n\pi$ for 
+$n=0,\; 1,\;2,\; \ldots\;$. 
+
+\begin{questionparts}
+\item Find $y(x)$ for $0\le x \le 2\pi$. 
+
+\item Show that $y(x) = \frac12 \sin 2x $ for 
+$2\pi\le x\le 4\pi$, and find $y(x)$ for all $x\ge0$.
+
+\item Show that 
+$$
+\int_0^\infty y^2 \,\d x = \pi \sum_{n=1}^\infty {1\over n^2} \,.
+$$
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+The gravitational force between two point 
+particles of masses $m$ and $m'$ is mutually attractive and has magnitude
+$$
+{G m m' \over r^2}\,,
+$$
+where $G$ is a constant and $r$ is the distance between them.
+
+A particle of unit mass 
+lies on the axis of a thin uniform circular ring of radius
+$r$ and mass $m$, at a distance $x$ from its centre. Explain why
+the net force on the particle is directed towards the centre of
+the ring and show that its magnitude is
+$$
+{G m x \over (x^2 + r^2)^{3/2}} \,.
+$$
+
+The particle now lies inside a thin hollow spherical
+shell of uniform density, mass $M$ and radius $a$, at a distance
+$b$ from its centre. Show that the particle
+experiences no gravitational force due to the shell.
+
+%Explain without calculation the effect on this result if
+%the shell has finite thickness $x$. 
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A chain of mass $m$ and length $l$ is composed of $n$ small smooth  links.
+It is suspended vertically over a horizontal table with
+its end just touching the table, and released so that it
+collapses inelastically onto the table.
+Calculate the change in momentum of the $(k+1)$th link from the bottom
+of the chain as it
+falls onto the table.
+
+Write down an expression for the total impulse sustained by the table 
+in this way from  the whole chain. By approximating the
+sum by an integral, show that 
+this  
+total impulse  is approximately 
+\[
+{\textstyle \frac23} m \surd(2gl)
+\]
+when $n$ is large.
+
+
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Calculate the moment of inertia of a 
+uniform thin
+ circular hoop of mass $m$ and radius $a$ about an axis perpendicular to the 
+plane of the hoop through a point on its circumference.
+
+The hoop, which is rough,  
+rolls with speed $v$ on a rough  horizontal
+table straight towards the edge and rolls over the edge without initially 
+losing contact with the edge. Show that the hoop will lose contact with
+the edge when it has rotated about the edge of the table
+through an angle $\theta$, where
+\[
+\cos\theta = \frac 12 +\frac {v^2}{2ag}.
+\]
+
+%Give the corresponding result for a smooth hoop and table.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+In the game of endless cricket the scores
+$X$ and $Y$ of the two sides are such that 
+\[
+\P (X=j,\ Y=k)=\e^{-1}\frac{(j+k)\lambda^{j+k}}{j!k!},\]
+for some positive constant $\lambda$, where $j,k = 0$, $1$, $2$, $\ldots$\ .
+\begin{questionparts}
+\item[\bf(i)] Find $\P(X+Y=n)$ for each $n>0$.
+
+\item[\bf(ii)] Show that $2\lambda \e^{2\lambda-1}=1$.
+
+\item[\bf(iii)] Show that $2x \e^{2x-1}$ is an increasing function
+of $x$ for $x>0$ and deduce that the equation in (ii) has
+at most one solution and hence determine $\lambda$.
+
+\item[\bf(iv)] Calculate the expectation $\E(2^{X+Y})$.
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+The cakes in our canteen each contain
+exactly four currants, each currant being   randomly placed in the cake.
+I take a proportion $X$ of a cake where $X$ is a random 
+variable with density function
+\[{\mathrm f}(x)=Ax\]
+for $0\leqslant x\leqslant 1$ where $A$ is a constant.
+
+\begin{questionparts}
+\item[\bf(i)] What is the expected number of currants in my
+portion?
+
+\item[\bf(ii)] If I find all  four currants in my portion,
+what is the probability that I took more than
+half the cake?
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+In the basic version of Horizons (H1) the player has 
+a maximum of $n$ turns, where $n \ge 1$.
+At each turn, she has a probability $p$ 
+of success, where $0 < p < 1$. If her first success is at the 
+$r$th turn, where $1 \le r \le n$, she collects $r$ pounds 
+and then withdraws from the game. Otherwise, her winnings are nil.
+Show that  in H1, her expected winnings are
+$$
+p^{-1}\left[1+nq^{n+1}-(n+1)q^n\right]\quad\hbox{pounds},
+$$
+where $q=1-p$.
+
+The rules of H2 are the same as those of H1, except that
+$n$ is randomly selected from a Poisson distribution 
+with parameter $\lambda$. If $n=0$ her winnings are nil. 
+Otherwise she plays H1 with the selected $n$.
+Show that in H2, her expected winnings are
+$$ 
+{1 \over p}{\left(1-{\e^{-{\lambda}p}}\right)}
+    -{{\lambda}q}{\e^{-{\lambda}p}}
+\quad\hbox{pounds}.
+$$
+
+\end{question}
+	
+\end{document}

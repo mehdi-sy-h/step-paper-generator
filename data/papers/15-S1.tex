@@ -1,0 +1,352 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2015
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+\RequirePackage{asymptote}
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+ 
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+\def\i{{\mathrm i}}
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+\begin{asydef}
+  import markers;
+  import geometry;
+  import graph;
+  usepackage("amsmath");
+\end{asydef}
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+\renewcommand{\.}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\+}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\ud}{\mathop{}\!\mathrm{d}}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+
+\begin{question}
+\begin{questionparts}
+\item  Sketch the curve $y = \e^x (2x^2 -5x+ 2)\,.$ 
+
+Hence determine how many real values of $x$ satisfy the equation $\e^x (2x^2 -5x+ 2)= k$ in the different cases that arise according to the value of $k$.{\em You may assume that $x^n \e^x\to 0$ as $x\to-\infty$ for any integer $n$.} 
+\item Sketch  the curve  $\displaystyle y = \e^{x^2}  (2x^4 -5x^2+ 2)\,$.
+\end{questionparts}
+\end{question}
+%%%%%%%%%%Q2
+\begin{question}
+\begin{questionparts}
+\item Show that $\cos 15^\circ = \dfrac{\sqrt3 +1}{2\sqrt2}$ and find a similar expression for $\sin 15^\circ$.
+\item
+Show that $\cos \alpha$ is a root of the equation 
+\[
+4x^3-3 x -\cos 3\alpha =0\,,
+\]
+and find the other two roots in terms of $\cos\alpha$ and $\sin\alpha$.
+\item Use parts (i) and (ii) to solve the equation $y^3-3y -\sqrt2 =0\,$, giving your answers in surd form. 
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+A prison consists of a square courtyard of side $b$  bounded by a perimeter wall and a square building  of side $a$ placed centrally within the courtyard. The sides of the building are parallel to the perimeter walls.
+Guards can stand either at the middle of a perimeter wall or in a corner of the courtyard. If the guards wish to see as great a length of the perimeter wall as possible, determine which of these positions is preferable.  You should consider separately  the cases $b<3a$   and  $b>3a\,$.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The midpoint of a rod of length  $2b$ slides on the curve $y =\frac14 x^2$, $x\ge0$, in such a way that the rod is always tangent, at its midpoint,  to the curve. Show that the curve traced out by one end of the rod can be written in the form
+\begin{align*}
+x& =  2  \tan\theta - b  \cos\theta \\
+y& = \tan^2\theta - b \sin\theta 
+\end{align*}
+for some suitably chosen angle $\theta$ which satisfies $0\le  \theta < \frac12\pi\,$. 
+
+When one end of the rod is at a point $A$ on the $y$-axis, the midpoint is at point $P$ and $\theta = \alpha$. Let $R$ be the region bounded by the following:  
+
+\hspace{2cm}
+the curve $y=\frac14x^2$ between the origin and $P$;
+
+\hspace{2cm}
+the $y$-axis between $A$ and the origin;
+
+\hspace{2cm}
+the half-rod $AP$. 
+\noindent
+Show that the area of $R$ is $\frac 23 \tan^3 \alpha$.
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item The function $\f$ is defined, for $x>0$, by
+\[
+\f(x) =\int_{1}^3 (t-1)^{x-1} \, \d t
+\,.
+\]
+By evaluating the integral, sketch the curve $y=\f(x)$.
+\item The function $\g$ is defined, for  $-\infty<x<\infty$, by
+\[
+\g(x)= \int_{-1}^1 \frac 1 {\sqrt{1-2xt +x^2} \ }\,  \d t
+\,.\]
+By evaluating the integral,  sketch the curve  $y=\g(x)$.
+\end{questionparts}
+\end{question}	
+
+%%%%%%%%% Q6
+\begin{question}
+ The vertices of a plane quadrilateral are labelled $A$, $B$, $A'$ and $B'$, in clockwise order. A point  $O$ lies in the same plane and within the quadrilateral. The angles $AOB$ and $A'OB'$ are right angles, and $OA=OB$ and $OA'=OB'$.
+ 
+Use position   vectors relative to $O$ to show that the midpoints of $AB$, $BA'$, $A'B'$ and $B'A$ are the vertices of a square.
+Given that the lengths of $OA$ and $OA'$ are fixed (and the conditions of the first paragraph still hold), find the value of angle $BOA'$ for which the area of the square is greatest.
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+ Let 
+\[
+\f(x) = 3ax^2 - 6x^3\,
+\]
+and, for  each real number $a$, let ${\rm M}(a)$ be the greatest value of $\f(x)$ in the interval $-\frac13 \le x \le 1$.
+Determine ${\rm M} (a)$ for $a\ge0$. [The formula for ${\rm M} (a)$ is different in different ranges of $a$; you will need to identify three ranges.]\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+Show that:              
+\begin{questionparts}
+\item $1+2+3+ \cdots + n = \frac12 n(n+1)$;
+\item if  $N$ is a positive integer,  $m$ is a non-negative integer and $k$ is a positive odd integer, then $(N-m)^k +m^k$ is divisible by $N$.
+\end{questionparts}
+Let  $S = 1^k+2^k+3^k + \cdots + n^k$, where $k$ is a positive  odd integer. Show that if $n$ is odd then $S$ is divisible by $n$ and that if $n$ is even then  $S$ is divisible by $\frac12 n$.
+Show further that $S$ is divisible by $1+2+3+\cdots +n$. 
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+  A short-barrelled machine gun stands on horizontal ground. The gun  fires bullets, from ground level,  at speed $u$  continuously from $t=0$ to $t= \dfrac{\pi}{ 6\lambda}$, where $\lambda$ is a positive constant, but does not fire outside this time period. During this time period, the angle of elevation $\alpha$ of the barrel  decreases from $\frac13\pi$ to $\frac16\pi$ and is given at time $t$ by   
+\[
+\alpha =\tfrac13 \pi - \lambda t\,.
+\] Let $k = \dfrac{g}{2\lambda u}$. Show that, in the case $\frac12 \le k \le \frac12 \sqrt3$, the last bullet to hit the ground does so\\[2pt] at a distance 
+\[
+\frac{ 2 k u^2 \sqrt{1-k^2}}{g}
+\] from the gun.
+What is the corresponding result if $k<\frac12$?
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A bus has the shape of a cuboid of length $a$ and height $h$. It is travelling northwards on a journey of fixed distance at constant speed $u$ (chosen by the driver). The maximum speed of the bus is $w$. Rain is falling from the southerly direction at speed $v$ in straight lines inclined to the horizontal at angle $\theta$, where $0<\theta<\frac12\pi$.
+By considering first the case $u=0$, show that for $u>0$ the total amount of  rain that hits the roof and the back or front of the bus in unit time is proportional to
+\[
+h\big \vert v\cos\theta - u \big\vert + av\sin\theta
+\,.
+\]
+Show that, in order to encounter as little rain as possible on the journey, the driver should choose $ u=w$  if either  $w< v\cos\theta$ or $ a\sin\theta > h\cos\theta$. How should the speed be chosen if $w>v\cos\theta$ and $ a\sin\theta < h\cos\theta$? Comment on the case $ a\sin\theta = h\cos\theta$.
+How should the driver choose $u$ on the return journey?
+
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Two long circular cylinders of equal radius lie in equilibrium on an inclined plane,  in \mbox{contact} with one another and with their axes horizontal. The weights of the upper and lower \mbox{cylinders} are  $W_1$ and $W_2$, respectively, where $W_1>W_2$\,. The coefficients of friction \mbox{between} the \mbox{inclined} plane and the upper and lower cylinders are $\mu_1$ and $\mu_2$, respectively, and the \mbox{coefficient} of friction \mbox{between} the two cylinders is $\mu$. The angle of inclination of the plane is~$\alpha$ (which is positive). \begin{questionparts}
+\item Let $F$ be the magnitude of the frictional force between the two cylinders, and let $F_1$ and $F_2$ be the magnitudes of the frictional forces between the upper cylinder and the plane, and the lower cylinder and the plane, respectively. Show that $F=F_1=F_2\,$.
+\item  Show that
+\[
+\mu \ge \dfrac{W_1+W_2}{W_1-W_2}
+\,,\]
+and that
+\[
+ \tan\alpha \le \frac{ 2 \mu_1 W_1}{(1+\mu_1)(W_1+ W_2)}\,.
+\]
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+The number $X$ of casualties arriving at a hospital each day  follows a Poisson distribution with mean 8; that is,
+\[
+\P(X=n) = \frac{ \e^{-8}8^n}{n!}\,,
+\ \ \ \  n=0, \ 1, \ 2, \ \ldots \ .
+\]
+Casualties require surgery with probability $\frac14$. The number of casualties arriving on any given day is independent of the number arriving on any other day and the casualties require surgery  independently of one another.
+\begin{questionparts}
+\item What is the probability that, on a day when exactly $n$ casualties arrive, exactly $r$ of them require surgery?
+\item Prove (algebraically) that the number requiring surgery each day also follows a Poisson distribution, and state its mean.\item Given that in a particular randomly chosen week a total of 12 casualties require surgery on Monday and Tuesday,  what is the  probability that 8 casualties require surgery on Monday? You should give your answer as a fraction in its lowest terms.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A fair die with faces numbered $1$, $\ldots\,$, $6$ is thrown repeatedly. The events $A$,  $B$, $C$, $D$ and $E$ are defined as follows.\\
+\hspace*{20pt} 
+$A$: \ 
+the first 6 arises on the $n$th throw.\\
+\hspace*{20pt}
+$B$: \ at least one 5 arises before the first 6. \\
+\hspace*{20pt}
+$C$: \ at least one 4 arises before the first 6. \\
+\hspace*{20pt} 
+$D$: \ exactly one 5 arises before the first 6. \\
+\hspace*{20pt} 
+$E$: \ exactly one 4 arises before the first 6.
+
+Evaluate the following probabilities: 
+
+({\bf i}) \  $\P(A)$ \ \  \ \ 
+({\bf  ii}) \  $\P(B)$ \ \ \ \
+({\bf iii}) \ $\P(B\cap C)$ \ \ \ \ 
+({\bf iv}) \ $\P(D)$ \ \ \ \ 
+({\bf v}) 
+ \ $\P(D\cup E)$
+\,.
+
+\noindent
+For some parts of this question, you may want to make use of the binomial expansion in the form:
+\[
+(1-x)^{-n} = 1 +nx +\frac {n(n+1)}2 x^2 + \cdots + 
+\frac {(n+r-1)!}{r! (n-1)!}x^r +\cdots
+\ .
+\]
+\end{question}
+
+\end{document}

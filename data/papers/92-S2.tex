@@ -1,0 +1,481 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1992
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Find the limit, as $n\rightarrow\infty,$ of each of the following.
+You should explain your reasoning briefly. 
+\begin{alignat*}{4}
+\mathbf{(i)\ \ } & \dfrac{n}{n+1}, & \qquad & \mathbf{(ii)\ \ } & \dfrac{5n+1}{n^{2}-3n+4}, & \qquad & \mathbf{(iii)\ \ } & \dfrac{\sin n}{n},\\
+\\
+\mathbf{(iv)\ \ } & \dfrac{\sin(1/n)}{(1/n)}, &  & \mathbf{(v)}\ \  & (\arctan n)^{-1}, &  & \mathbf{(vi)\ \ } & \dfrac{\sqrt{n+1}-\sqrt{n}}{\sqrt{n+2}-\sqrt{n}}.
+\end{alignat*}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Suppose that $y$ satisfies the differential equation 
+\[
+y=x\frac{\mathrm{d}y}{\mathrm{d}x}-\cosh\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right).\tag{\ensuremath{*}}
+\]
+By differentiating both sides of $(*)$ with respect to $x$, show
+that either 
+\[
+\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}=0\qquad\mbox{ or }\qquad x-\sinh\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)=0.
+\]
+Find the general solutions of each of these two equations. Determine
+the solutions of $(*)$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+In the figure, the large circle with centre $O$ has radius $4$ and
+the small circle with centre $P$ has radius $1$. The small circle
+rolls around the inside of the larger one. When $P$ was on the line
+$OA$ (before the small circle began to roll), the point $B$ was
+in contact with the point $A$ on the large circle. 
+
+
+\noindent \begin{center}
+\psset{xunit=0.7cm,yunit=0.7cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-4.56,-4.33)(4.85,4.44) \pscircle(0,0){2.8} \pscircle(2.16,2.08){0.7} \psline(0,0)(4,0) \psline(0,0)(3.66,3.54) \rput[tl](-0.61,-0.05){$O$} \rput[tl](4.3,0.1){$A$} \pscustom{\parametricplot{0.0}{0.7687330396835076}{0.65*cos(t)+0|0.65*sin(t)+0}\lineto(0,0)\closepath} \rput[tl](2.19,2.03){$P$} \parametricplot{1.9074711461816238}{3.0492633188581943}{1*0.71*cos(t)+0*0.71*sin(t)+2.2|0*0.71*cos(t)+1*0.71*sin(t)+2.11} \psline{->}(1.97,2.78)(2.33,2.87) \rput[tl](0.5,2.34){$B$} \rput[tl](0.8,0.71){$\phi$} \begin{scriptsize} \psdots[dotstyle=*](0,0) \psdots[dotstyle=*](2.16,2.08) \psdots[dotstyle=*](1.16,2.12) \end{scriptsize} \end{pspicture*}
+\par\end{center}
+
+
+Sketch the curve $C$ traced by $B$ as the circle rolls. Show that
+if we take $O$ to be the origin of cartesian coordinates and the
+line $OA$ to be the $x$-axis (so that $A$ is the point $(4,0)$)
+then $B$ is the point 
+\[
+(3\cos\phi+\cos3\phi,3\sin\phi-\sin3\phi).
+\]
+It is given that the area of the region enclosed by the curve $C$
+is 
+\[
+\int_{0}^{2\pi}x\frac{\mathrm{d}y}{\mathrm{d}\phi}\,\mathrm{d}\phi,
+\]
+where $B$ is the point $(x,y).$ Calculate this area.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+$\lozenge$ is an operation which take polynomials in $x$ to polynomials
+in $x$; that is, given a polynomial $\mathrm{h}(x)$ there is another
+polynomial called $\lozenge\mathrm{h}(x)$. It is given that, if $\mathrm{f}(x)$
+and $\mathrm{g}(x)$ are any two polynomials in $x$, the following
+are always true: 
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] $\lozenge(\mathrm{f}(x)\mathrm{g}(x))=\mathrm{g}(x)\lozenge\mathrm{f}(x)+\mathrm{f}(x)\lozenge\mathrm{g}(x),$ 
+\item[\bf (ii)] $\lozenge(\mathrm{f}(x)+\mathrm{g}(x))=\lozenge\mathrm{f}(x)+\lozenge\mathrm{g}(x),$ 
+\item[\bf (iii)] $\lozenge x=1$
+\item[\bf (iv)] if $\lambda$ is a constant then $\lozenge(\lambda\mathrm{f}(x))=\lambda\lozenge\mathrm{f}(x).$
+
+\end{itemize}
+
+Show that, if $\mathrm{f}(x)$ is a constant (i.e., a polynomial of
+degree zero), then $\lozenge\mathrm{f}(x)=0.$ 
+
+Calculate $\lozenge x^{2}$ and $\lozenge x^{3}.$ Prove that $\lozenge\mathrm{h}(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}(\mathrm{h}(x))$
+for any polynomial $\mathrm{h}(x)$. 
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+	Explain what is meant by the order of an element $g$ of a group $G$. 
+
+
+	The set $S$ consists of all $2\times2$ matrices whose determinant
+	is $1$. Find the inverse of the element $\mathbf{A}$ of $S$, where
+	\[
+	\mathbf{A}=\begin{pmatrix}w & x\\
+	y & x
+	\end{pmatrix}.
+	\]
+	Show that $S$ is a group under matrix multiplication (you may assume
+	that matrix multiplication is associative). For which elements $\mathbf{A}$
+	is $\mathbf{A}^{-1}=\mathbf{A}$? Which element or elements have order
+	2? Show that the element $\mathbf{A}$ of $S$ has order 3 if, and
+	only if, $w+z+1=0.$ Write down one such element.
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+Sketch the graphs of $y=\sec x$ and $y=\ln(2\sec x)$ for $0\leqslant x\leqslant\frac{1}{2}\pi$.
+Show graphically that the equation 
+\[
+kx=\ln(2\sec x)
+\]
+has no solution with $0\leqslant x<\frac{1}{2}\pi$ if $k$ is a small
+positive number but two solutions if $k$ is large. 
+
+
+Explain why there is a number $k_{0}$ such that 
+\[
+k_{0}x=\ln(2\sec x)
+\]
+has exactly one solution with $0\leqslant x<\frac{1}{2}\pi$. Let
+$x_{0}$ be this solution, so that $0\leqslant x_{0}<\frac{1}{2}\pi$
+and $k_{0}x_{0}=\ln(2\sec x)$. Show that 
+\[
+x_{0}=\cot x_{0}\ln(2\sec x_{0}).
+\]
+Use any appropriate method to find $x_{0}$ correct to two decimal
+places. Hence find an approximate value for $k_{0}$. 
+	\end{question}
+	
+	%%%%%%%%% Q7
+	\begin{question}
+The cubic equation 
+\[
+x^{3}-px^{2}+qx-r=0
+\]
+has roots $a,b$ and $c$. Express $p,q$ and $r$ in terms of $a,b$
+and $c$. 
+
+
+\begin{questionparts}
+\item If $p=0$ and two of the roots are equal to each other, show
+that 
+\[
+4q^{3}+27r^{2}=0.
+\]
+\item Show that, if two of the roots of the original equation are
+equal to each other, then 
+\[
+4\left(q-\frac{p^{2}}{3}\right)^{3}+27\left(\frac{2p^{3}}{27}-\frac{pq}{3}+r\right)^{2}=0.
+\]
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+	\begin{question}	
+Calculate the following integrals
+
+
+\begin{questionparts}
+\item ${\displaystyle \int\frac{x}{(x-1)(x^{2}-1)}\,\mathrm{d}x}$; 
+\item ${\displaystyle \int\frac{1}{3\cos x+4\sin x}\,\mathrm{d}x}$; 
+\item ${\displaystyle \int\frac{1}{\sinh x}\,\mathrm{d}x}.$ 
+\end{questionparts}
+\end{question}	
+		
+%%%%%%%%%% Q9
+\begin{question}
+Let $\mathbf{a},\mathbf{b}$ and $\mathbf{c}$ be the position vectors
+of points $A,B$ and $C$ in three-dimensional space. Suppose that
+$A,B,C$ and the origin $O$ are not all in the same plane. Describe
+the locus of the point whose position vector $\mathbf{r}$ is given
+by 
+\[
+\mathbf{r}=(1-\lambda-\mu)\mathbf{a}+\lambda\mathbf{b}+\mu\mathbf{c},
+\]
+where $\lambda$ and $\mu$ are scalar parameters. By writing this
+equation in the form $\mathbf{r}\cdot\mathbf{n}=p$ for a suitable
+vector $\mathbf{n}$ and scalar $p$, show that 
+\[
+-(\lambda+\mu)\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})+\lambda\mathbf{b}\cdot(\mathbf{c}\times\mathbf{a})+\mu\mathbf{c}\cdot(\mathbf{a}\times\mathbf{b})=0
+\]
+for all scalars $\lambda,\mu.$ 
+
+Deduce that 
+\[
+\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})=\mathbf{b}\cdot(\mathbf{c}\times\mathbf{a})=\mathbf{c}\cdot(\mathbf{a}\times\mathbf{b}).
+\]
+Say briefly what happens if $A,B,C$ and $O$ are all in the same
+plane. 
+\end{question}
+			
+		
+			
+%%%%%%%%%% Q10
+\begin{question}
+Let $\alpha$ be a fixed angle, $0<x\leqslant\frac{1}{2}\pi.$ In
+each of the following cases, sketch the locus of $z$ in the Argand
+diagram (the complex plane): 
+
+
+\begin{questionparts}
+\item ${\displaystyle \arg\left(\frac{z-1}{z}\right)=\alpha,}$
+\item ${\displaystyle \arg\left(\frac{z-1}{z}\right)=\alpha-\pi,}$
+\item $\left|\dfrac{z-1}{z}\right|=1.$ 
+\end{questionparts}
+
+
+Let $z_{1},z_{2},z_{3}$ and $z_{4}$ be four points lying (in that
+order) on a circle in the Argand diagram. If 
+\[
+w=\frac{(z_{1}-z_{2})(z_{3}-z_{4})}{(z_{4}-z_{1})(z_{2}-z_{3})}
+\]
+show, by considering $\arg w$, that $w$ is real. 
+\end{question}
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+I am standing next to an ice-cream van at a distance $d$ from the
+top of a vertical cliff of height $h$. It is not safe for me to go
+any nearer to the top of the cliff. My niece Padma is on the broad
+level beach at the foot of the cliff. I have just discovered that
+I have left my wallet with her, so I cannot buy her an ice-cream unless
+she can throw the wallet up to me. She can throw it at speed $V$,
+at any angle she chooses and from anywhere on the beach. Air resistance
+is negligible; so is Padma's height compared to that of the cliff.
+Show that she can throw the wallet to me if and only if 
+\[
+V^{2}\geqslant g(2h+d).
+\]
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+In the figure, $W_{1}$ and $W_{2}$ are wheels, both of radius $r$.
+Their centres $C_{1}$ and $C_{2}$ are fixed at the same height,
+a distance $d$ apart, and each wheel is free to rotate, without friction,
+about its centre. Both wheels are in the same vertical plane. Particles
+of mass $m$ are suspended from $W_{1}$ and $W_{2}$ as shown, by
+light inextensible strings would round the wheels. A light elastic
+string of natural length $d$ and modulus elasticity $\lambda$ is
+fixed to the rims of the wheels at the points $P_{1}$ and $P_{2}.$
+The lines joining $C_{1}$ to $P_{1}$ and $C_{2}$ to $P_{2}$ both
+make an angle $\theta$ with the vertical. The system is in equilibrium. 
+
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-4.94,-1.8)(5.1,3.96) \psline(-4,1)(4,1) \pscircle(-3,2){1.41} \pscircle(3,2){1.41} \psline(-3,2)(-4,1) \psline(-3,2)(-3,0.59) \psline(3,2)(4,1) \psline(3,2)(3,0.59) \psline(1.59,1.98)(1.58,-1) \psline(-1.59,1.96)(-1.6,-1.06) \parametricplot{-2.356194490192345}{-1.5707963267948966}{0.4*cos(t)+-3|0.4*sin(t)+2} \parametricplot{-1.5707963267948966}{-0.7853981633974483}{0.4*cos(t)+3|0.4*sin(t)+2} \rput[tl](-2.88,2.24){$C_1$} \rput[tl](3.22,2.24){$C_2$} \rput[tl](-4.58,1.04){$P_1$} \rput[tl](4.32,1.02){$P_2$} \rput[tl](-1.7,-1.36){$m$} \rput[tl](1.44,-1.4){$m$} \rput[tl](-3.24,3.88){$W_1$} \rput[tl](2.76,3.86){$W_2$} \rput[tl](-3.42,1.5){$\theta$} \rput[tl](3.14,1.52){$\theta$} \begin{scriptsize} \psdots[dotstyle=*](-4,1) \psdots[dotstyle=*](4,1) \psdots[dotstyle=*](1.58,-1) \psdots[dotstyle=*](-1.6,-1.06) \end{scriptsize} \end{pspicture*}
+\par\end{center}
+
+
+\vspace{-0.5cm}
+Show that
+\[ \sin2\theta=\frac{mgd}{\lambda r}.
+\]For what value or values of
+$\lambda$ (in terms of $m,d,r$ and $g$) are there
+
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  no equilibrium positions, 
+\item[\bf (ii)] just one equilibrium position, 
+\item[\bf (iii)] exactly two equilibrium positions, 
+\item[\bf (iv)] more than two equilibrium positions?
+\end{itemize}
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+Two particles $P_{1}$ and $P_{2}$, each of mass $m$, are joined
+by a light smooth inextensible string of length $\ell.$ $P_{1}$
+lies on a table top a distance $d$ from the edge, and $P_{2}$ hangs
+over the edge of the table and is suspended a distance $b$ above
+the ground. The coefficient of friction between $P_{1}$ and the table
+top is $\mu,$ and $\mu<1$. The system is released from rest. Show
+that $P_{1}$ will fall off the edge of the table if and only if 
+\[
+\mu<\frac{b}{2d-b}.
+\]
+Suppose that $\mu>b/(2d-b)$ , so that $P_{1}$ comes to rest on the
+table, and that the coefficient of restitution between $P_{2}$ and
+the floor is $e$. Show that, if $e>1/(2\mu),$ then $P_{1}$ comes
+to rest before $P_{2}$ bounces a second time. 
+
+
+
+
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-3.36,-3.71)(5.32,4.49) \pspolygon[linewidth=0pt,linecolor=white,hatchcolor=black,fillstyle=hlines,hatchangle=45.0,hatchsep=0.19](-3,4.22)(-3,4)(5,4)(5,4.22) \pscircle(-1,2){1} \pscircle(3,2){1} \pscircle(1,-1){1} \psline(0,2)(0,-1) \psline(2,2)(2,-1) \psline(-2,2)(-2,-1) \psline(4,2)(4,-1) \psline{->}(-2,-1.44)(-2,-2) \rput[tl](-2.25,-2.31){$m_1g$} \psline{->}(4,-1.44)(4,-2) \rput[tl](3.74,-2.25){$m_2g$} \psline{->}(1,-1)(1.02,-2.78) \rput[tl](0.72,-3.06){$m_3g$} \psline(-1,2)(-1,4) \psline(3,2)(3,4) \psline(-3,4)(5,4) \rput[tl](-1.19,1.67){$P_1$} \rput[tl](2.83,1.64){$P_2$} \rput[tl](0.83,-0.5){$P_3$} \begin{scriptsize} \psdots[dotstyle=*](-1,2) \psdots[dotstyle=*](3,2) \psdots[dotstyle=*](1,-1) \psdots[dotstyle=*](-2,-1) \psdots[dotstyle=*](4,-1) \end{scriptsize} \end{pspicture*}
+\par\end{center}
+
+
+\noindent In the diagram $P_{1}$ and $P_{2}$ are smooth light pulleys
+fixed at the same height, and $P_{3}$ is a third smooth light pulley,
+freely suspended. A smooth light inextensible string runs over $P_{1},$
+under $P_{3}$ and over $P_{2},$ as shown: the parts of the string
+not in contact with any pulley are vertical. A particle of mass $m_{3}$
+is attached to $P_{3}.$ There is a particle of mass $m_{1}$ attached
+to the end of the string below $P_{1}$ and a particle of mass $m_{2}$
+attached to the other end, below $P_{2}.$ The system is released
+from rest. Find the tension in the string, and show that the pulley
+$P_{3}$ will remain at rest if 
+\[
+4m_{1}m_{2}=m_{3}(m_{1}+m_{2}).
+\]
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+A point moves in unit steps on the $x$-axis starting from the origin.
+At each step the point is equally likely to move in the positive or
+negative direction. The probability that after $s$ steps it is at
+one of the points $x=2,x=3,x=4$ or $x=5$ is $\mathrm{P}(s).$ Show
+that $\mathrm{P}(5)=\frac{3}{16},$ $\mathrm{P}(6)=\frac{21}{64}$
+and 
+\[
+\mathrm{P}(2k)=\binom{2k+1}{k-1}\left(\frac{1}{2}\right)^{2k}
+\]
+where $k$ is a positive integer. Find a similar expression for $\mathrm{P}(2k+1).$ 
+
+
+Determine the values of $s$ for which $\mathrm{P}(s)$ has its greatest
+value. 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+
+A taxi driver keeps a packet of toffees and a packet of mints in her
+taxi. From time to time she takes either a toffee (with probability
+$p$) or mint (with probability $q=1-p$). At the beginning of the
+week she has $n$ toffees and $m$ mints in the packets. On the $N$th
+occasion that she reaches for a sweet, she discovers (for the first
+time) that she has run out of that kind of sweet. What is the probability
+that she was reaching for a toffee?
+\end{question}
+\end{document}

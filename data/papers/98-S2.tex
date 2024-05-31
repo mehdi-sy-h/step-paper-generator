@@ -1,0 +1,410 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1998
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Show that, if $n$ is an integer such that
+$$(n-3)^3+n^3=(n+3)^3,\eqno{(*)}$$
+then $n$ is even and $n^2$ is a factor of $54$. Deduce that
+there is no integer $n$ which satisfies the equation $(*)$.
+
+Show that, if $n$ is an integer such that
+
+$$(n-6)^3+n^3=(n+6)^3,\eqno{(**)}$$
+then $n$ is even. Deduce that there
+is no integer $n$ which satisfies the equation $(**)$.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Use the first four terms of the
+binomial expansion of  $(1-1/50)^{1/2}$, writing $1/50 = 2/100$ to simplify 
+the calculation,  to derive the approximation
+$\sqrt 2 \approx 1.414214$.
+
+Calculate similarly an approximation to
+the cube root of 2 to six decimal places by considering
+$(1+N/125)^a$, where $a$ and $N$ are suitable numbers.
+
+\noindent
+[You need not justify the accuracy of your approximations.]
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Show that the sum $S_N$ of the first $N$ terms of the series
+$${1\over1\cdot2\cdot3}+{3\over2\cdot3\cdot4}+{5\over3\cdot4\cdot5}+\cdots
++{2n-1\over n(n+1)(n+2)}+\cdots$$
+is
+$${1\over2}\left({3\over2}+{1\over N+1}-{5\over N+2}\right).$$
+What is the limit of $S_N$ as $N\to\infty$?
+
+The numbers $a_n$ are such that 
+$${a_n\over a_{n-1}}={(n-1)(2n-1)\over (n+2)(2n-3)}.$$
+Find an expression for $a_n/a_1$  and hence, or otherwise,
+evaluate $\sum\limits_{n=1}^\infty a_n$ when $\displaystyle a_1=\frac{2}{9}\;$.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The integral $I_n$ is defined by
+$$I_n=\int_0^\pi(\pi/2-x)\sin(nx+x/2)\,{\rm cosec}\,(x/2)\,\d x,$$
+where $n$ is a positive integer.
+Evaluate $I_n-I_{n-1}$,
+and hence evaluate  $I_n$ leaving your
+answer in the form of a sum.
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Define the modulus of a complex number $z$ and give the geometric
+interpretation
+of $\vert\,z_1-z_2\,\vert$ for two complex numbers $z_1$ and $z_2$. On the 
+basis of this interpretation establish the inequality
+$$\vert\,z_1+z_2\,\vert\le \vert\,z_1\,\vert+\vert\,z_2\,\vert.$$
+
+Use this result to prove, by induction, the corresponding inequality for
+$\vert\,z_1+\cdots+z_n\,\vert$.
+
+The complex numbers $a_1,\,a_2,\,\ldots,\,a_n$ 
+satisfy $|a_i|\le 3$ ($i=1, 2,  \ldots ,  n$). Prove that the equation
+$$a_1z+a_2z^2\cdots +a_nz^n=1$$
+has no solution $z$ with $\vert\,z\,\vert\le 1/4$.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Two curves are given parametrically by
+\[
+x_{1}=(\theta+\sin\theta),\qquad y_{1}=(1+\cos\theta),\tag{1}
+\]and
+\[
+x_{2}=(\theta-\sin\theta),\qquad y_{1}=-(1+\cos\theta),\tag{2}
+\]
+Find the gradients of the tangents to the curves at the points where 
+$\theta= \pi/2$ and $\theta=3\pi/2$. 
+
+Sketch, using the same axes, the
+curves
+for $0\le\theta \le 2\pi$.
+
+Find the equation of the normal to the
+curve (1) at the point with parameter $\theta$. Show that this normal is
+a tangent to the curve (2).
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+\begin{eqnarray*}
+{\rm f}(x)&=& \tan x-x,\\
+{\rm g}(x)&=& 2-2\cos x-x\sin x,\\
+{\rm h}(x)&=& 2x+x\cos 2x-\tfrac{3}{2}\sin 2x,\\
+{\rm F}(x)&=& {x(\cos x)^{1/3}\over\sin x}.
+\end{eqnarray*}
+\vspace{1mm}
+\begin{questionparts}
+\item By considering $\f(0)$ and $\f'(x)$, show that $\f(x)>0$
+for $0<x<\tfrac{1}{2}\pi$.
+
+\item Show similarly that $\g(x)>0$ for $0<x<\tfrac{1}{2}\pi$.
+
+\item Show that $\h(x)>0$ for $0<x<\tfrac{1}{4}\pi$, and hence that
+\[x(\sin^2x+3\cos^2x)-3\sin x\cos x>0\] for $0<x<\tfrac{1}{4}\pi$.
+
+\item By considering $\displaystyle {{\rm F}'(x)\over {\rm F}(x)}$,
+ show that ${\rm F}'(x)<0$ for $0<x<\tfrac{1}{4}\pi$.
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Points $\mathbf{A},\mathbf{B},\mathbf{C}$ in three dimensions have coordinate vectors
+$\mathbf{a},\mathbf{b},\mathbf{c}$, respectively. Show that the lines joining the vertices of the
+triangle $ABC$ to the mid-points of the opposite sides meet at a point $R$.
+
+$P$ is a point which is {\bf not} in the plane $ABC$.
+Lines are drawn through the mid-points of $BC$, $CA$ and $AB$ parallel to
+$PA$, $PB$ and $PC$ respectively. Write down the vector equations of the
+lines and show by inspection that these lines
+meet at a common point $Q$.
+
+Prove further that the line $PQ$ meets the plane $ABC$ at $R$.
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A light smoothly jointed planar framework in the form of a regular hexagon
+$ABCDEF$ is
+suspended smoothly from $A$ and a weight 1kg is suspended from $C$. 
+The framework is kept rigid by three light
+rods $BD$, $BE$ and $BF$.
+What is the 
+direction and magnitude of the supporting force which must be exerted on the
+framework at $A$?
+
+Indicate on a labelled
+diagram which rods are in thrust (compression) and which are in tension.
+
+Find the magnitude of the force in $BE$.
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A wedge of mass $M$ rests on a smooth horizontal surface. The face of the
+wedge is a smooth plane inclined at an angle $\alpha$ to the horizontal.
+A particle of mass $m$ slides down the face of the wedge, starting from rest.
+At a later time $t$, the speed $V$ of the wedge, the speed $v$ of the particle
+and the angle $\beta$ of the velocity of the particle below the horizontal
+are as shown in the diagram.
+
+\begin{center}
+\psset{xunit=0.55cm,yunit=0.55cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-3.96,-2.9)(9.6,6.78) \psline(0,0)(0,6) \psline(8,0)(0,6) \psline(8,0)(0,0) \psline{->}(1.13,2.31)(-1.98,2.31) \rput[tl](6.8,0.52){$\alpha$} \rput[tl](3.05,2.02){$v$} \psline(3.31,1.38)(4.47,-2.55) \rput[tl](4.08,-0.14){$\beta$} \rput[tl](-2.83,2.54){$V$} \psline{->}(2.41,4.53)(3.03,2.24) \begin{scriptsize} \psdots[dotsize=10pt 0,dotstyle=*](2.41,4.53) \end{scriptsize} \end{pspicture*}
+\par\end{center}
+
+\noindent Let $y$ be the vertical distance
+descended by the particle. Derive the following results, stating in \textbf{(ii)}
+and \textbf{(iii)} the mechanical principles you use:
+
+\begin{questionparts}
+\item $V\sin\alpha=v\sin(\beta-\alpha)$;
+
+\item $\tan\beta=(1+m/M)\tan\alpha$;
+
+\item $2gy=v^2(M+m\cos^2\beta)/M$.
+\end{questionparts}
+
+Write down a differential equation for $y$ and hence show that
+$$y={gMt^2\sin^2\beta \over 2\,(M+m\cos^2\beta)}.$$
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A fielder, who is perfectly placed to catch
+a ball struck by the batsman in a game of cricket, watches the
+ball in flight. 
+Assuming that the ball is struck at the fielder's eye level and is caught
+just in front of her eye,
+show that $\frac{ {\rm d}}{{\rm d t}} (\tan\theta ) $ is constant,
+where $\theta$ is  the 
+angle between the horizontal and the fielder's line of sight.
+
+In order to catch the next  ball, which is also struck towards her but
+at a different velocity, the fielder runs at constant
+speed $v$ towards the batsman. Assuming that the ground is horizontal,
+show that the fielder should choose $v$ so that
+ $\frac{ {\rm d}}{{\rm d t}} (\tan\theta ) $
+remains constant.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+The diagnostic test AL has a probability 0.9 of giving a positive result when
+applied to a person suffering from the rare disease mathematitis. It also
+has a probability 1/11 of giving a false positive result when applied to a 
+non-sufferer. It is known that only $1\%$ of the population suffer from the 
+disease. Given that the test AL is positive when applied to Frankie, who is
+chosen at random from the population, what is
+the probability that Frankie is a sufferer?
+
+In an attempt to identify sufferers more accurately, a second diagnostic test
+STEP is given to those for whom the test AL gave a positive result. The 
+probablility of STEP giving a positive result on a sufferer is
+0.9, and the probability that it gives a false positive 
+result on a non-sufferer is $p$.
+Half of those for whom AL was positive and on whom STEP then also gives
+a positive result are sufferers. Find $p$.
+
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A random variable $X$ has the probability density function
+\[
+\mathrm{f}(x)=\begin{cases}
+\lambda\mathrm{e}^{-\lambda x} & x\geqslant0,\\
+0 & x<0.
+\end{cases}
+\]
+Show that
+$${\rm  P}(X>s+t\,\vert X>t) = {\rm P}(X>s).$$
+
+The time it takes an assistant to serve a customer in a certain shop
+is a random variable with the above distribution
+and the times for different customers are independent. If, when I enter the
+shop, the only two assistants are
+serving one customer each, what is the probability that these customers
+are both still being served at time $t$ after I arrive?
+
+One of the assistants finishes serving his customer
+and immediately starts serving me.
+ What is the probability that I am still
+being served when the other  customer has finished being served?
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+The staff of Catastrophe College are paid a salary of $A$ pounds per year.
+With a Teaching Assessment Exercise impending it is decided to try to lower
+the student failure rate  by offering each lecturer an alternative
+salary of $B/(1+X)$ pounds, where $X$ is the number of his or her 
+students who fail
+the end of year examination. Dr Doom has $N$ students,
+each with independent probability $p$ of failure. Show that
+she should accept the new salary scheme if
+$$A(N+1)p<B(1-(1-p)^{N+1}).$$
+
+Under what circumstances could $X$, for Dr Doom,
+be modelled by a Poisson random variable?
+What would Dr Doom's expected salary be under this model?
+\end{question}
+	
+\end{document}

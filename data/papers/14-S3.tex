@@ -1,0 +1,548 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2014
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+ 
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+\def\i{{\mathrm i}}
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+\DeclareMathOperator{\sech}{sech}
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+\renewcommand{\.}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\+}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\ud}{\mathop{}\!\mathrm{d}}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Let $a$, $b$ and $c$ be real numbers such that $a+b+c=0$ and let
+\[(1+ax)(1+bx)(1+cx) = 1+qx^2 +rx^3\,\]
+for all real $x$. Show that $q = bc+ca+ab$ and $r= abc$.
+\begin{questionparts}
+\item Show that the coefficient of $x^n$ in the series expansion
+(in ascending powers of $x$)   
+ of $\ln (1+qx^2+rx^3)$ is $(-1)^{n+1} S_n$ where
+\[S_n = \frac{a^n+b^n+c^n}{n} \,,  \ \ \ \ \ \ \ \ (n\ge1).\]
+\item Find, in terms of $q$ and $r$, the coefficients of $x^2$,
+$x^3$ and~$x^5$ in the series expansion (in ascending powers of $x$)
+of $\ln (1+qx^2+rx^3)$ and hence show that $S_2S_3 =S_5$\,.
+\item Show that $S_2S_5 =S_7$\,.
+\item Give a proof of, or find a counterexample to, the claim that $S_2S_7=S_9$\,.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+  \begin{questionparts}
+  \item Show, by means of the  substitution $u=\cosh x\,$, that
+    \[
+    \int \frac{\sinh x}{\cosh 2x} \ud x 
+= \frac 1{2\sqrt2} 
+\ln \left\vert \frac{\sqrt2 \cosh x - 1}{\sqrt2 \cosh x + 1 } \right\vert
++ C
+    \,.\]
+
+  \item Use a similar substitution to find an expression for     
+    \[
+    \int \frac{\cosh x}{\cosh 2x} \ud x
+    \,.\]
+
+  \item Using parts (i) and (ii) above, show that
+    \[
+    \int_0^1 \frac 1{1+u^4} \ud u = \frac{\pi + 2\ln(\sqrt2 +1)}{4\sqrt2}\,.
+    \]
+  \end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+  \begin{questionparts}
+  \item The line $L$ has equation $y=mx+c$, where $m>0$ and $c>0$.
+    Show that, in the case  $mc>a>0$, 
+the shortest distance between $L$ and the parabola
+    $y^2=4ax$ is 
+    \[ \frac{mc-a}{m\sqrt{m^2+1}}\,.\]
+
+    What is the shortest distance in the case that $mc\le a$?
+  \item Find the shortest distance between the point $(p,0)$, where
+    $p>0$, and the parabola $y^2=4ax$, where $a>0$, in the different
+    cases that arise according to the value of $p/a$.  [\textit{You
+      may wish to use the parametric coordinates $(at^2, 2at)$ of
+      points on the parabola.}]
+
+    Hence find the shortest distance between the circle $(x-p)^2 + y^2
+    =b^2$, where $p>0$ and $b>0$, and the parabola $y^2=4ax$, where $a>0$,
+ in the
+    different cases that arise according to the values of $p$, $a$
+    and~$b$.
+  \end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+  \begin{questionparts}
+  \item Let
+    \[
+    I = \int_0^1 \bigl((y')^2 -y^2\bigr)\ud x \qquad\text{and}\qquad
+    I_1=\int_0^1 (y'+y\tan x)^2 \ud x \,,
+    \]
+    where $y$ is a given function of $x$ satisfying $y=0$ at 
+    $x=1$.  Show that $I-I_1=0$ and deduce that $I\ge0$. Show further
+    that $I=0$ only if $y=0$ for all $x$ ($0\le x \le 1$).
+
+  \item 
+Let 
+\[
+J  = \int_0^1 \bigl((y')^2 -a^2y^2\bigr)\ud x 
+\,,
+\]
+where $a$ is a given positive constant and  $y$ is a given function of $x$,
+not identically zero, satisfying $y=0$ at 
+    $x=1$. 
+By considering an integral of the form
+\[
+\int_0^1 (y'+ay\tan bx)^2 \ud x \,,
+\]
+where  $b$ is suitably chosen, show that
+$J\ge0$. You should state the range of values of~$a$, in the form
+ $a<k$, for which your proof is valid.
+
+In the case $a=k$, find a function $y$ (not everywhere zero)
+such that $J=0$.
+
+  \end{questionparts} 
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+  A quadrilateral drawn in the complex plane has vertices $A$,
+  $B$, $C$ and~$D$, labelled anticlockwise.  These vertices are
+  represented, respectively, by the complex numbers $a$, $b$, $c$
+  and~$d$.  Show that $ABCD$ is a parallelogram (defined as a quadrilateral
+  in which  opposite sides are parallel and equal in length)
+  if and only if
+  $a+c =b+d\,$.  Show further that, in this case,
+  $ABCD$ is a square if and only if ${\rm i}(a-c)=b-d$.
+
+  Let $PQRS$ be a quadrilateral in the complex plane, with vertices
+  labelled anticlockwise, the internal angles of which are all less
+  than~$180^\circ$.  Squares with centres $X$, $Y$, $Z$ and~$T$ are
+  constructed externally to the quadrilateral on the sides $PQ$, $QR$,
+  $RS$ and~$SP$, respectively.
+
+  \begin{questionparts}
+  \item If $P$ and $Q$ are represented by the complex numbers $p$
+    and~$q$, respectively, show that $X$ can be represented by
+    \[
+    \tfrac 12 \big( p(1+{\rm i} ) + q (1-{\rm i})\big) \,.
+    \]
+  \item Show that $XY\!ZT$ is a square if and only if $PQRS$ is a
+    parallelogram.
+  \end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+  Starting from the result that
+  \[
+  \.h(t) >0\ \mathrm{for}\ 0< t < x \Longrightarrow \int_0^x \.h(t)\ud t
+  > 0 \,,
+  \]
+  show that, if $\.f''(t)>0$ for $0<t<x_0$ and $\.f(0)=\.f'(0) =0$,
+  then $\.f(t)>0$ for $0<t<x_0$.
+
+  \begin{questionparts}
+  \item Show that,
+for $0<x < \frac12\pi$,
+ \[
+\cos x \cosh x <1 
+\,.
+\] 
+
+  \item Show that, for $0<x < \frac12\pi$,
+    \[
+    \frac 1 {\cosh x} < \frac {\sin x} x < \frac x {\sinh x} \,.
+    \]
+
+%  \item Show that, for $0<x<\frac12\pi$, $\tanh x < \tan x$.
+  \end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+The four distinct points $P_i$ ($i=1$, $2$, $3$, $4$) are the
+    vertices, labelled anticlockwise, of a cyclic quadrilateral.  The
+    lines $P_1P_3$ and $P_2P_4$ intersect at $Q$. 
+
+  \begin{questionparts}
+  \item 
+By considering the
+    triangles $P_1QP_4$ and $P_2QP_3$ show that
+    $(P_1Q)( QP_3) = (P_2Q) (QP_4)\,$.
+  \item Let $\+p_i$ be the position vector of the point $P_i$
+ ($i=1$, $2$, $3$, $4$). Show that there
+    exist numbers $a_i$, not all zero, such
+    that
+    \begin{equation}
+      \sum\limits_{i=1}^4 a_i =0 \qquad\text{and}\qquad
+      \sum\limits_{i=1}^4 a_i \+p_i ={\bf 0} \,. \tag{$*$}
+    \end{equation}
+  \item Let $a_i$ ($i=1$,~$2$, $3$,~$4$) be any numbers, not all zero,
+   that  satisfy~$(*)$.  Show that $a_1+a_3\ne 0$ and that the lines
+    $P_1P_3$ and $P_2P_4$ intersect at the point with position vector
+    \[
+    \frac{a_1 \+p_1 + a_3 \+p_3}{a_1+a_3} \,.
+    \]
+    Deduce that $a_1a_3 (P_1P_3)^2 = a_2a_4 (P_2P_4)^2\,$.
+  \end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+  The numbers $\.f(r)$ satisfy $\.f(r)>\.f(r+1)$ for $r=1$, $2$,
+  \dots.  Show that, for any non-negative integer $n$,
+  \[
+  k^n(k-1) \, \.f(k^{n+1}) \le \sum_{r=k^n}^{k^{n+1}-1}\.f(r) \le k^n(k-1)\,
+  \.f(k^n)\,
+  \]
+where $k$ is an integer greater than 1.
+
+  \begin{questionparts}
+  \item By taking $\.f(r) = 1/r$, show that
+    \[
+    \frac{N+1}2 \le \sum_{r=1}^{2^{N+1}-1} \frac1r \le N+1 \,.
+    \]
+
+    Deduce that the sum $\sum\limits_{r=1}^\infty \frac1r$ does not
+    converge.
+  \item By taking $\.f(r)= 1/r^3$, show that
+    \[
+    \sum_{r=1}^\infty \frac1 {r^3} \le  1 \tfrac 13 \,.
+    \]
+
+  \item Let $S(n)$ be the set of positive integers less than $n$ which
+    do not have a $2$ in their decimal representation and let
+    $\sigma(n)$ be the sum of the reciprocals of the numbers in
+    $S(n)$, so for example $\sigma(5) = 1+\frac13+\frac14$. Show that
+    $S(1000)$ contains $9^3-1$ distinct numbers.
+
+    Show  that $\sigma (n) < 80$ for all $n$.
+  \end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+  A particle of mass $m$ is projected with velocity $\+ u$. It is
+  acted upon by the force $m\+g$ due to gravity and by a resistive
+  force $-mk \+v$, where $\+v$ is its velocity and $k$ is a positive
+  constant.
+
+  Given that, at time $t$ after projection, its position $\+r$
+  relative to the point of projection is given by
+  \[
+  \+r = \frac{kt -1 +\.e^{-kt}} {k^2} \, \+g + \frac{ 1-\.e^{-kt}}{k}
+  \, \+u \,,
+  \]
+  find an expression for $\+v$ in terms of $k$, $t$, $\+g$ and
+  $\+u$. Verify that the equation of motion and the initial conditions
+  are satisfied.
+
+  Let $\+u = u\cos\alpha \, \+i + u \sin\alpha \, \+j$ and $\+g = -g\,
+  \+j$, where $0<\alpha<90^\circ$, and let $T$ be the time after projection at
+  which $\+r \,.\, \+j =0$. Show that
+  \[
+  uk \sin\alpha = \left(\frac{kT}{1-\.e^{-kT}} -1\right)g\,.
+  \]
+
+  Let $\beta$ be the acute angle between $\+v$ and $\+i$ at time
+  $T$. Show that
+  \[
+  \tan\beta = \frac{(\.e^{kT}-1)g}{uk\cos\alpha}-\tan\alpha \,.
+  \]
+
+  Show further that $\tan\beta >\tan\alpha$ (you may assume that
+ $\sinh kT >kT$) and deduce that~$\beta >\alpha$.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+Two particles $X$ and $Y$, of equal mass $m$, lie on a
+smooth horizontal table and are connected by a 
+light elastic spring of natural
+length $a$ and modulus of elasticity $\lambda$.  Two more springs,
+identical to the first, 
+connect 
+$X$ to a point $P$ on the table and 
+$Y$  
+to a point $Q$ on the table. The distance between $P$ and $Q$ is $3a$.
+
+
+  Initially, the particles are held so that $XP=a$,     
+$YQ= \frac12 a\,$, and $PXYQ$ is a straight line. 
+   The particles are then released.
+
+  At time $t$, the particle $X$ is a distance $a+x$ from $P$ and the
+  particle $Y$ is a distance $a+y$ from $Q$.  Show that
+  \[
+  m \frac{\.d ^2 x}{\.d t^2} = -\frac\lambda a (2x+y)
+  \]
+  and find a similar expression involving $\dfrac{\.d^2 y}{\.d t^2}$.
+  Deduce that
+  \[
+  x-y = A\cos \omega t +B \sin\omega t
+  \]
+  where $A$ and $B$ are constants to be determined and
+  $ma\omega^2=\lambda$.  Find a similar expression for $x+y$.
+
+  Show that $Y$ will never return to its initial position.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+  A particle $P$ of mass $m$ is connected by two light inextensible
+  strings to two fixed points $A$ and $B$, with $A$ vertically above
+  $B$. The string $AP$ has length $x$.  The particle is rotating about
+  the vertical through $A$ and $B$ with angular velocity $\omega$, and
+  both strings are taut.  Angles $PAB$ and $PBA$ are $\alpha$ and
+  $\beta$, respectively.
+
+  Find the tensions $T_A$ and $T_B$ in the strings $AP$ and $BP$
+  (respectively), and hence show that $\omega^2 x\cos\alpha \ge g$.
+
+  Consider now the case that $\omega^2 x\cos\alpha = g$.  Given that
+  $AB=h$ and $BP=d$, where $h>d$,  show that
+$h\cos\alpha \ge \sqrt{h^2-d^2}$. Show further that 
+  \[
+  mg < T_A \le \frac{mgh}{\sqrt{h^2-d^2}\,}\,.
+  \]
+  Describe the geometry of the strings when $T_A$ 
+attains its upper bound.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+  The random variable $X$ has probability density function 
+$\.f(x)$ (which you may assume is differentiable)
+  and cumulative distribution function $\.F(x)$ where $-\infty < x <
+  \infty$.  The random variable $Y$ is defined by $Y= \.e^X$.
+You may assume throughout this question that $X$ and $Y$ have unique modes.
+  \begin{questionparts}
+  \item Find  the median value $y_m$ of $Y$ in terms of the
+    median value $x_m$ of $X$.
+
+
+  \item Show that the probability density function of $Y$ is $\.f(\ln
+    y)/y$, and deduce that the mode~$\lambda$ of $Y$ satisfies 
+$\.f'(\ln \lambda)
+    = \.f(\ln \lambda)$.
+
+  \item Suppose now that $X \sim {\rm N} (\mu,\sigma^2)$, so that
+    \[
+    \.f(x) = \frac{1}{\sigma \sqrt{2\pi}\,} \.e^{-(x-\mu)^2/(2\sigma^2)}
+    \,.
+    \]
+    Explain why 
+\[
+\frac{1}{\sigma \sqrt{2\pi}\,}
+    \int_{-\infty}^{\infty}\.e^{-(x-\mu-\sigma^2)^2/(2\sigma^2)} \ud x = 1
+\] and hence show
+    that $ \.E(Y) = \.e ^{\mu+\frac12\sigma^2}$.
+
+  \item Show that, when $X \sim {\rm N} (\mu,\sigma^2)$,
+    \[
+   \lambda <y_m< \.E(Y)\,.
+    \]
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+  I play a game which has repeated rounds. Before the
+  first round, my score is $0$. Each round can have three outcomes:
+  \begin{compactenum}[1.]
+  \item my score is unchanged and the game ends;
+  \item my score is unchanged and I continue to the next round;
+  \item my score is increased by one and I continue to the next
+    round.
+  \end{compactenum}
+   The probabilities of these outcomes  are $a$, $b$
+  and~$c$, respectively (the same in each round), 
+where $a+b+c=1$ and $abc\ne0$.  The random
+  variable $N$ represents my score at the end of a randomly chosen
+game.  
+
+  Let $\.G(t)$ be the probability generating function of
+    $N$. 
+  \begin{questionparts}
+  \item 
+Suppose in the first round, the game ends. 
+Show that the probability generating
+function conditional on this happening is 1.
+
+\item
+Suppose in the first round, 
+the game continues to the next round with no change in
+score. 
+Show that the probability generating function conditional on this happening
+is~$\.G(t)$.
+
+\item By comparing the coefficients of $t^n$, show that 
+$   
+    \.G(t) = a + b\.G(t) + ct\.G(t)\,.
+ $  
+      Deduce that,
+for $n\ge0$,
+    \[
+P(N=n)  = \frac{ac^n}{(1-b)^{n+1}}\,.
+    \]
+  \item Show further that, for $n\ge0$,
+    \[
+ P(N=n)  = \frac{\mu^n}{(1+\mu)^{n+1}}\,,
+    \]
+where  $\mu=\.E(N)$.
+  \end{questionparts}
+\end{question}
+\end{document}

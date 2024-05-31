@@ -1,0 +1,475 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2001
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Given that $y = \ln ( x + \sqrt{x^2 + 1})$, show that 
+$ \displaystyle \frac{\d y}{\d x} = \frac1 {\sqrt{x^2 + 1} }\;$.
+
+Prove by induction that, for $n \ge 0\,$,
+\[
+\l x^2 + 1 \r y^{\l n + 2 \r} + \l 2n + 1 \r x y^{\l n + 1 \r} + n^2
+y^{\l n \r} = 0\;,
+\]
+where $\displaystyle y^{\l n \r} = {\mathrm{d}^n y \over \mathrm{d}
+x^n}$ and $y^{(0)} =y\,$.
+
+Using this result in the case $x = 0\,$, or otherwise, show that the
+ Maclaurin series for $y$ begins
+\[
+x - {x^3 \over 6} +{3 x^5 \over 40}
+\]
+and find the next non-zero term.
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Show that 
+$
+\cosh^{-1} x = \ln ( x + \sqrt{x^2-1}) \;.
+$
+
+Show that the area of the region defined by the inequalities $\displaystyle y^2 \ge x^2-8$ 
+and $\displaystyle x^2\ge 25y^2 -16 $ is~$\displaystyle  (72/5) \ln 2$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Consider the equation
+\[
+x^2 - b x + c = 0 \;,
+\]
+where  $b$ and $c$ are real numbers.
+
+\begin{questionparts}
+\item Show that the roots of the equation
+are  real and positive if and only if $b>0$ and \phantom{} $b^2\ge4c>0$, and sketch the region of the 
+$b\,$-$c$ plane in which these conditions hold.
+
+\item  Sketch the region of 
+the $b\,$-$c$ plane in which the roots of the equation are real and less
+than $1$ in magnitude.
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+In this question, the  function $\sin^{-1}$ is defined to have domain $ -1\le x \le 1$ 
+and range \linebreak $ - \frac{1}{2}\pi \le x \le \frac{1}{2}\pi$ and the function $\tan^{-1}$ is defined to have the real numbers as its
+domain and range $ - \frac{1}{2}\pi <x < \frac{1}{2}\pi$.
+
+\begin{questionparts}
+\item
+Let 
+$$
+\g(x) = \displaystyle {2x \over 1 + x^2}\;,  \ \ \ \ \ \ \ \ \ \ -\infty <x<\infty\;.
+$$
+Sketch the graph of $\g(x)$ and state the range of $\g$.
+\item
+Let 
+\[
+\displaystyle \f \l x \r = \sin^{-1} \l {2x \over 1 + x^2} \r \;,\ 
+\ \ \ \ \ \ \ \ -\infty<x<\infty\;.
+\] 
+Show that
+$
+\f(x ) =  
+2 \tan^{-1} x$   for $ -1 \le x \le 1\,$ and $\f(x) =
+\pi - 2 \tan^{-1} x $ for $x\ge1\,$. 
+
+Sketch the graph of $\f(x)$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Show that the equation $x^3 + px + q=0$ has exactly one real
+solution if  $p \ge 0\,$.
+
+A parabola $C$ is given parametrically by
+\[
+x = at^2, \: \ \ y = 2at \: \: \: \ \ \  \ \ \  \l a > 0 \r \;.
+\]
+
+Find an equation which must be satisfied by $t$ at points on $C$ at
+which the normal passes through the point $\l h , \; k \r\,$. Hence
+show that, if $h \le 2a \,$, exactly one normal to $C$ will pass through
+ $\l h , \; k \r \, $.
+
+
+Find, in Cartesian form, the equation of the locus of the  points
+from which exactly two normals can be drawn to $C\,$. Sketch the locus.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+The plane
+\[
+{x \over a} + {y \over b} +{z \over c} = 1
+\]
+meets the co-ordinate axes at the points $A$, $B$ and $C\,$. The point $M$ has
+ coordinates $\left( \frac12 a, \frac12 b, \frac 12 c \right)$
+%$\displaystyle \l {a \over 2} \, , \; {b \over 2} \, , \; {c \over 2}\r$
+and $O$ is the origin.
+
+Show that $OM$ meets the plane at the centroid  
+$\left( \frac13 a, \frac13 b, \frac 13 c \right)$
+%$\displaystyle \l {a \over 3} \, , \; {b \over 3} \, , \; {c \over 3}\r$
+of triangle~$ABC$.
+Show also that the perpendiculars to the plane from $O$ and from $M$ meet the
+plane at the orthocentre and at the circumcentre of triangle $ABC$ respectively.
+
+
+Hence prove that the centroid of a triangle lies on the line segment
+joining its orthocentre and circumcentre, and that it divides this
+line segment in the ratio $2 : 1\,$.
+
+\noindent[The {\sl orthocentre} of a triangle is the point at which
+the three altitudes intersect; the {\sl circumcentre}
+of a triangle is the point equidistant from the three vertices.]
+
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Sketch the graph of the function $\ln x - {1 \over 2} x^2$.
+
+Show that the differential equation 
+\[
+{\mathrm{d} y \over \mathrm{d} x} = {2xy \over x^2 - 1}
+\]
+describes a family of parabolas  each of which
+passes  through the points $\l 1 \, , \; 0 \r$
+and $\l -1 \, , \; 0 \r$ and has its vertex on the $y$--axis.
+
+Hence find the equation of the curve that passes through the point
+$\l 1 \, , \, 1 \r$ and intersects   each of the above parabolas orthogonally.
+Sketch this curve.
+
+\noindent[Two curves intersect {\sl orthogonally} if their tangents at the point of 
+intersection are perpendicular.]
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+\begin{questionparts}
+\item Prove that the equations
+$$
+\left|z - (1 + \mathrm{i}) \right|^2 = 2
+\eqno(*)
+$$
+and
+$$
+\qquad \quad \ \left|z - (1 - \mathrm{i}) \right|^2 = 2 \left|z - 1 \right|^2 
+$$
+describe the same locus in the complex $z$--plane. Sketch this
+locus.
+
+\item Prove that the equation
+$$
+\arg \l {z - 2 \over z} \r = {\pi \over 4} \eqno(**)
+$$
+describes part of this same locus, and show on your sketch which part.
+
+\item The complex number $w$ is related to $z$ by
+\[
+w = {2 \over z}\;.
+\]
+Determine the locus produced in the complex $w$--plane if $z$
+satisfies $(*)$. Sketch this locus and
+indicate the part of this locus that corresponds to $(**)$.
+
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+$B_1$ and $B_2$ are  parallel, thin, horizontal fixed beams.
+$B_1$ is a vertical distance $d \sin \alpha $ above $B_2$, and a horizontal distance
+$d\cos\alpha $ from $B_2\,$,
+where $0<\alpha<\pi/2\,$. A long heavy
+plank  is held so that it rests on the two beams, perpendicular to each, 
+with its centre of gravity at  $B_1\,$.
+The coefficients of friction between
+the plank and $B_1$ and $B_2$ are $\mu_1$ and $\mu_2\,$, respectively, where $\mu_1<\mu_2$
+and $\mu_1+\mu_2=2\tan\alpha\,$.
+
+The plank is released and slips over the beams  
+experiencing a force of resistance from each beam equal to the limiting
+frictional force (i.e. the product of the appropriate coefficient of friction and the 
+normal reaction). Show that it will come to rest with its centre of gravity over $B_2$
+in a time 
+\[
+\pi \left(\frac{d}{g(\mu_2-\mu_1)\cos\alpha }\right)^{\!\frac12}\;.
+\]
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+Three ships $A$,  $B$ and $C$ move with velocities ${\bf v}_1$,
+${\bf v}_2$ and $\bf u$ respectively. The velocities of $A$ and $B$ 
+relative to $C$ are equal in magnitude and
+perpendicular. Write down conditions that $\bf u$, ${\bf v}_1$ and ${\bf v}_2$ must satisfy
+and show that
+\[
+\left| {\bf u} -{\textstyle\frac12} \l {\bf v}_1 + {\bf v}_2 \r \right|^2 =
+\left|{\textstyle\frac12}  \l {\bf v}_1 - {\bf v}_2 \r \right|^2
+\]
+and
+\[
+\l {\bf u} -{\textstyle\frac12} \l {\bf v}_1 + {\bf v}_2 \r \r \cdot \l {\bf v}_1 -
+{\bf v}_2 \r = 0 \;.
+\]
+Explain why these equations determine, for given ${\bf v}_1$ and ${\bf v}_2$, 
+two possible velocities for  $C\,$, provided ${\bf v}_1 \ne {\bf v}_2 \,$.
+
+If ${\bf v}_1$ and ${\bf v}_2$ are equal in magnitude and perpendicular,
+show that if ${\bf u} \ne {\bf 0}$ then ${\bf u} = {\bf v}_1 + {\bf v}_2\,$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A uniform cylinder of radius $a$ rotates freely about its axis,
+which is fixed and horizontal. The moment of inertia of the cylinder about 
+its axis is $I\,$. A light string is wrapped around the
+cylinder and supports a mass $m$ which hangs freely. A particle of mass
+$M$ is fixed to the surface of the cylinder. The system is held at
+rest with the particle  vertically below the axis of the cylinder, and
+then released. Find, in terms of $I$, $a$, $M$, $m$,  $g$ and $\theta$, 
+the angular velocity of
+the cylinder when it has rotated through angle $\theta\,$.
+
+
+Show that the cylinder will 
+ rotate without coming to a halt  if
+$m/M>\sin\alpha\,$, where $\alpha$ satisifes $\alpha=\tan \frac12\alpha$ and 
+$0<\alpha<\pi\,$. 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+A bag contains $b$ black balls and $w$ white balls. Balls are drawn
+at random from the bag and when a white ball is drawn it is put aside.
+\begin{questionparts}
+\item If the black balls drawn are also put aside, find an
+expression for the expected number of black balls that have been drawn
+when the last white ball is removed.
+\item  If instead the black balls drawn are put back  into the bag,
+prove that the expected number of times a black ball has been drawn when
+the first  white ball is removed is $b/w\,$. Hence write down, in the form of
+a sum,  an expression for the expected number of times a black ball has been drawn when
+the last  white ball is removed.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+In a  game for two players,  a fair coin is tossed repeatedly. Each player 
+is assigned a sequence of heads and tails and the player whose sequence appears first wins.
+Four players, $A$, $B$, $C$ and $D$ take turns to play the game. 
+Each time they play, $A$ is assigned the sequence
+TTH (i.e.~Tail then Tail then Head),  $B$ is  assigned  THH,
+$C$ is assigned HHT and $D$ is assigned~HTT.
+
+\begin{questionparts}
+\item
+$A$ and $B$ play the   game. 
+Let 
+$p_{\mathstrut\mbox{\tiny HH}}$, 
+$p_{\mathstrut\mbox{\tiny HT}}$, 
+$p_{\mathstrut\mbox{\tiny TH}}$ and 
+$p_{\mathstrut\mbox{\tiny TT}}$ 
+be the probabilities of $A$ winning the
+game  given that the first two tosses of the coin show HH,  HT, TH and TT, respectively.
+Explain why 
+$p_{\mathstrut\mbox{\tiny TT}} = 1\,$, 
+and why 
+$p_{\mathstrut\mbox{\tiny HT}} = {1 \over 2} \,
+p_{\mathstrut\mbox{\tiny TH}} + 
+{1\over 2} \,
+p_{\mathstrut\mbox{\tiny TT}}\,$.
+Show that 
+$p_{\mathstrut\mbox{\tiny HH}} = 
+p_{\mathstrut\mbox{\tiny HT}} 
+= {2 \over 3}$ 
+and that 
+$p_{\mathstrut\mbox{\tiny TH}} = {1\over 3}\,$. 
+Deduce that the probability that A wins the game is ${2\over 3}\,$.
+
+\item $B$ and $C$ play the game.
+Find the probability that  $B$ wins.
+
+\item Show that if $C$ plays $D$, then  $C$ is more likely to win than $D$, 
+but that if $D$ plays $A$, then $D$ is more likely to win than $A$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+A random variable $X$ is distributed uniformly on $[\, 0\, , \, a\,]$. 
+Show that the variance of $X$ is\phantom{ }${1 \over 12} a^2$.
+
+A sample, $X_1$ and $X_2$, of two independent values of the random
+variable is drawn, and the variance $V$ of the sample is determined. Show that
+$V = {1 \over 4} \l X_1 -X_2 \r ^2$, and hence prove that $2 V$ 
+is an unbiased estimator of the variance of X.
+
+Find an exact expression for the probability that the value of $V$ is less
+than ${1 \over 12} a^2$ and estimate the value of this probability
+correct to one significant figure.
+\end{question}
+	
+\end{document}

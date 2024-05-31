@@ -1,0 +1,481 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1987
+\ \ \ \ \ }               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Find the stationary points of the function $\mathrm{f}$ given by
+\[
+\mathrm{f}(x)=\mathrm{e}^{ax}\cos bx,\mbox{ }(a>0,b>0).
+\]
+Show that the values of $\mathrm{f}$ at the stationary points with
+$x>0$ form a geometric progression with common ratio $-\mathrm{e}^{a\pi/b}$. 
+
+
+Give a rough sketch of the graph of $\mathrm{f}$. 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+$\ $
+
+\vspace{-0.5cm}
+\noindent \begin{center}
+\newrgbcolor{aqaqaq}{0.5 0.5 0.5} \psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-0.45,1.84)(8.6,7.17) \pspolygon[linecolor=white,fillcolor=black,fillstyle=solid,opacity=0.05](1.82,3.17)(1.91,3.21)(2.04,3.27)(2.16,3.32)(2.28,3.36)(2.45,3.42)(2.58,3.45)(2.75,3.48)(2.93,3.51)(3.06,3.52)(3.24,3.53)(3.33,3.53)(3.23,3.54)(3.13,3.57)(2.99,3.62)(2.88,3.67)(2.76,3.75)(2.66,3.84)(2.56,3.95)(2.47,4.08)(2.41,4.19)(2.35,4.35)(2.38,4.16)(2.38,4.02)(2.36,3.92)(2.33,3.8)(2.3,3.71)(2.24,3.58)(2.18,3.49)(2.1,3.38)(2.02,3.3)(1.93,3.23) \pspolygon[linecolor=white,fillcolor=black,fillstyle=solid,opacity=0.05](4.51,4.24)(4.49,4.1)(4.48,3.99)(4.49,3.88)(4.5,3.76)(4.53,3.65)(4.58,3.52)(4.64,3.4)(4.7,3.3)(4.78,3.2)(4.85,3.12)(5.05,2.96)(4.83,3.1)(4.71,3.17)(4.51,3.26)(4.34,3.33)(4.19,3.39)(4.03,3.43)(3.89,3.46)(3.76,3.49)(3.67,3.5)(3.62,3.51)(3.4,3.52)(3.52,3.52)(3.68,3.54)(3.82,3.58)(3.95,3.64)(4.08,3.71)(4.18,3.79)(4.28,3.88)(4.38,4)(4.45,4.12) \pspolygon[linecolor=white,fillcolor=black,fillstyle=solid,opacity=0.05](0.77,5.07)(0.94,5.17)(1.14,5.27)(1.3,5.34)(1.47,5.41)(1.59,5.46)(1.74,5.51)(1.86,5.55)(2.02,5.6)(2.2,5.64)(2.35,5.68)(2.55,5.72)(2.7,5.74)(2.84,5.76)(2.97,5.77)(3.13,5.79)(3.27,5.8)(3.44,5.8)(3.34,5.79)(3.2,5.77)(3.09,5.74)(2.97,5.69)(2.87,5.64)(2.76,5.56)(2.66,5.48)(2.58,5.39)(2.5,5.29)(2.43,5.17)(2.37,5.03)(2.34,4.9)(2.32,4.77)(2.31,4.6)(2.34,4.41)(2.27,4.59)(2.21,4.7)(2.14,4.8)(2.04,4.9)(1.93,5)(1.84,5.05)(1.75,5.1)(1.62,5.15)(1.51,5.18)(1.37,5.2)(1.25,5.2)(1.16,5.2)(1.02,5.17)(0.89,5.13) \pspolygon[linecolor=white,fillcolor=black,fillstyle=solid,opacity=0.05](6.31,5.02)(6.1,5.15)(5.92,5.24)(5.77,5.31)(5.61,5.38)(5.39,5.46)(5.12,5.56)(4.88,5.62)(4.64,5.68)(4.49,5.71)(4.24,5.75)(4.02,5.78)(3.8,5.79)(3.6,5.8)(3.51,5.79)(3.67,5.77)(3.79,5.74)(3.9,5.7)(4.03,5.64)(4.13,5.57)(4.24,5.48)(4.36,5.34)(4.46,5.17)(4.52,5.05)(4.56,4.9)(4.58,4.75)(4.59,4.59)(4.57,4.43)(4.63,4.57)(4.71,4.7)(4.78,4.79)(4.9,4.9)(5.03,5)(5.16,5.08)(5.3,5.14)(5.43,5.17)(5.57,5.19)(5.69,5.2)(5.82,5.19)(5.97,5.17)(6.15,5.11) \parametricplot{0.0}{3.141592653589793}{1*5.5*cos(t)+0*5.5*sin(t)+3.5|0*5.5*cos(t)+1*5.5*sin(t)+0.3} \parametricplot{0.07153894626263729}{3.2131315998524306}{1*3.08*cos(t)+0*3.08*sin(t)+3.27|0*3.08*cos(t)+1*3.08*sin(t)+0.45} \pscircle(1.29,4.12){1.09} \pscircle(3.45,4.66){1.14} \pscircle(5.69,3.99){1.21} \psline(1.29,4.12)(2.35,4.38) \psline(3.45,4.66)(3.46,5.8) \psline(5.69,3.99)(4.93,3.04) \psline{->}(2.14,6.66)(2.16,5.1) \psline{->}(4.72,6.7)(4.72,5.14) \psline{->}(2.56,2.5)(2.56,3.74) \psline{->}(4.4,2.42)(4.4,3.62) \rput[tl](1.9,7.1){$X/n$} \rput[tl](4.5,7.1){$X/n$} \rput[tl](2.34,2.43){$Y/n$} \rput[tl](4.16,2.41){$Y/n$} \rput[tl](3.7,5.2){$r$} \rput[tl](5.54,3.53){$r$} \rput[tl](1.74,4.1){$r$} \rput[tl](7.55,4.43){$R+r$} \rput[tl](5.95,2.41){$R-r$}  \end{pspicture*}
+\par\end{center}
+
+
+The region $A$ between concentric circles of radii $R+r$, $R-r$
+contains $n$ circles of radius $r$. Each circle of radius $r$ touches
+both of the larger circles as well as its two neighbours of radius
+$r$, as shown in the figure. Find the relationship which must hold
+between $n,R$ and $r$. 
+
+
+Show that $Y$, the total area of $A$ outside the circle of radius
+$r$ and adjacent to the circle of radius $R-r$, is given by 
+\[
+Y=nr\sqrt{R^{2}-r^{2}}-\pi(R-r)^{2}-n\pi r^{2}\left(\frac{1}{2}-\frac{1}{n}\right).
+\]
+Find similar expressions for $X$, the total area of $A$ outside
+the circles of radius $r$ and adjacent to the circle of radius $R+r$,
+and for $Z$, the total area inside the circle of radius $r$. 
+
+
+What value does $(X+Y)/Z$ approach when $n$ becomes large?
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+By substituting $y(x)=xv(x)$ in the differential equation 
+\[
+x^{3}\frac{\mathrm{d}v}{\mathrm{d}x}+x^{2}v=\frac{1+x^{2}v^{2}}{\left(1+x^{2}\right)v},
+\]
+or otherwise, find the solution $v(x)$ that satisfies $v=1$ when
+$x=1$. 
+
+
+What value does this solution approach when $x$ becomes large?
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}$\ $
+Show that the sum of the infinite series 
+\[
+\log_{2}\mathrm{e}-\log_{4}\mathrm{e}+\log_{16}\mathrm{e}-\ldots+(-1)^{n}\log\low_{2^{2^{n}}}\mathrm{e}+\ldots
+\]
+is 
+\[
+\frac{1}{\ln(2\sqrt{2})}.
+\]
+{[}$\log_{a}b=c$ is equivalent to $a^{c}=b$.{]} 
+
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+	Using the substitution $x=\alpha\cos^{2}\theta+\beta\sin^{2}\theta,$
+	show that, if $\alpha<\beta$, 
+	\[
+	\int_{\alpha}^{\beta}\frac{1}{\sqrt{(x-\alpha)(\beta-x)}}\,\mathrm{d}x=\pi.
+	\]
+	What is the value of the above integral if $\alpha>\beta$?
+
+
+	Show also that, if $0<\alpha<\beta$, 
+	\[
+	\int_{\alpha}^{\beta}\frac{1}{x\sqrt{(x-\alpha)(\beta-x)}}\,\mathrm{d}x=\frac{\pi}{\sqrt{\alpha\beta}}.
+	\]
+
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+Let $y=\mathrm{f}(x)$, $(0\leqslant x\leqslant a)$, be a continuous
+curve lying in the first quadrant and passing through the origin.
+Suppose that, for each non-negative value of $y$ with $0\leqslant y\leqslant\mathrm{f}(a)$,
+there is \textit{exactly} one value of $x$ such that $\mathrm{f}(x)=y$;
+thus we may write $x=\mathrm{g}(y)$, for a suitable \phantom{} function $\mathrm{g}.$ 
+
+
+For $0\leqslant s\leqslant a,$ $0\leqslant t\leqslant\mathrm{f}(a)$,
+define 
+\[
+\mathrm{F}(s)=\int_{0}^{s}\mathrm{f}(x)\,\mathrm{d}x,\qquad\mathrm{G}(t)=\int_{0}^{t}\mathrm{g}(y)\,\mathrm{d}y.
+\]
+By a geometrical argument, show that 
+\[
+\mathrm{F}(s)+\mathrm{G}(t)\geqslant st.\tag{\ensuremath{*}}
+\]
+When does equality occur in $(*)$?
+
+
+Suppose that $y=\sin x$ and that the ranges of $x,y,s,t$ are restricted
+to $0\leqslant x\leqslant s\leqslant\frac{1}{2}\pi,$ $0\leqslant y\leqslant t\leqslant1$.
+By considering $s$ such that the equality holds in $(*)$, show that
+\[
+\int_{0}^{t}\sin^{-1}y\,\mathrm{d}y=t\sin^{-1}t-\left(1-\cos(\sin^{-1}t)\right).
+\]
+Check this result by differentiating both sides with respect to $t$. 
+
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+Sum each of the series
+\[
+\sin\left(\frac{2\pi}{23}\right)+\sin\left(\frac{6\pi}{23}\right)+\sin\left(\frac{10\pi}{23}\right)+\cdots+\sin\left(\frac{38\pi}{23}\right)+\sin\left(\frac{42\pi}{23}\right)
+\]
+and 
+\[
+\sin\left(\frac{2\pi}{23}\right)-\sin\left(\frac{6\pi}{23}\right)+\sin\left(\frac{10\pi}{23}\right)-\cdots-\sin\left(\frac{38\pi}{23}\right)+\sin\left(\frac{42\pi}{23}\right),
+\]
+giving each answer in terms of the tangent of a single angle. 
+
+
+{[}No credit will be given for a numerical answer obtained purely
+by use of a calculator.{]}  
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+
+Explain why the use of the substitution $x=\dfrac{1}{t}$ does not
+demonstrate that the integrals 
+\[
+\int_{-1}^{1}\frac{1}{(1+x^{2})^{2}}\,\mathrm{d}x\quad\mbox{ and }\quad\int_{-1}^{1}\frac{-t^{2}}{(1+t^{2})^{2}}\,\mathrm{d}t
+\]
+are equal. 
+
+
+Evaluate both integrals correctly.
+		
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+\begin{question}
+$ABC$ is a triangle whose vertices have position vectors $\mathbf{a,b,c}$
+respectively, relative to an origin in the plane $ABC$. Show that
+an arbitrary point $P$ on the segment $AB$ has position vector 
+\[
+\rho\mathbf{a}+\sigma\mathbf{b},
+\]
+where $\rho\geqslant0$, $\sigma\geqslant0$ and $\rho+\sigma=1$. 
+
+
+Give a similar expression for an arbitrary point on the segment $PC$,
+and deduce that any point inside $ABC$ has position vector 
+\[
+\lambda\mathbf{a}+\mu\mathbf{b}+\nu\mathbf{c},
+\]
+where $\lambda\geqslant0$, $\mu\geqslant0$, $\nu\geqslant0$ and
+$\lambda+\mu+\nu=1$. 
+
+
+Sketch the region of the plane in which the point $\lambda\mathbf{a}+\mu\mathbf{b}+\nu\mathbf{c}$
+lies in each of the following cases: 
+\begin{questionparts}
+\item $\lambda+\mu+\nu=-1$, $\lambda\leqslant0$, $\mu\leqslant0$, $\nu\leqslant0$;
+\item $\lambda+\mu+\nu=1$, $\mu\leqslant0$, $\nu\leqslant0$.
+\end{questionparts}
+\end{question}
+
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q10
+\begin{question}
+A rubber band band of length $2\pi$ and modulus of elasticity $\lambda$
+encircles a smooth cylinder of unit radius, whose axis is horizontal.
+A particle of mass $m$ is attached to the lowest point of the band,
+and hangs in equilibrium at a distance $x$ below the axis of the
+cylinder. Obtain an expression in terms of $x$ for the stretched
+length of the band in equilibrium. 
+
+
+What is the value of $\lambda$ if $x=2$? 
+
+	\end{question}
+	
+%%%%%%%%%% Q11
+\begin{question}	
+A smooth sphere of radius $r$ stands fixed on a horizontal floor.
+A particle of mass $m$ is displaced gently from equilibrium on top
+of the sphere. Find the angle its velocity makes with the horizontal
+when it loses contact with the sphere during the subsequent motion. 
+
+
+By energy considerations, or otherwise, find the vertical component
+of the momentum of the particle as it strikes the floor. 
+\end{question}
+
+%%%%%%%%%% Q12
+
+\begin{question}$\,$
+	\vspace{-1cm}
+\begin{center}
+\psset{xunit=1.3cm,yunit=1.3cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.4pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-1.09,-1.66)(7.83,4.42)
+\psline(-0.59,4)(0,4)
+\psline(0,4)(0,2.5)
+\psline(2.5,2.5)(0,2.5)
+\psline(2.5,2.5)(2.5,1)
+\psline(2.5,1)(5,1)
+\psline(5,1)(5,-0.5)
+\psline(5,-0.5)(7.5,-0.5)
+\psline(7.5,-0.5)(7.49,-0.87)
+\psline[linestyle=dashed,dash=3pt 3pt](-0.59,4)(-1,4)
+\psline[linestyle=dashed,dash=3pt 3pt](7.49,-0.87)(7.49,-1.37)
+\psline{->}(-0.31,4)(-0.31,2.51)
+\psline{->}(-0.31,2.51)(-0.31,4)
+\psline{->}(0,2.19)(2.5,2.19)
+\psline{->}(2.5,2.19)(0,2.19)
+\psline{->}(2.72,2.5)(2.72,1)
+\psline{->}(2.72,1)(2.72,2.5)
+\psline{->}(2.5,0.69)(5,0.69)
+\psline{->}(5,0.69)(2.5,0.69)
+\psline{->}(5.27,1)(5.27,-0.5)
+\psline{->}(5.27,-0.5)(5.27,1)
+\psline{->}(-0.08,4.09)(0.46,4.09)
+\rput[tl](-0.55,3.55){$h$}
+\rput[tl](2.81,2.02){$h$}
+\rput[tl](5.43,0.47){$h$}
+\rput[tl](0.95,2.05){$2d$}
+\rput[tl](3.66,0.58){$2d$}
+\begin{scriptsize}
+\psdots[dotsize=7pt 0,dotstyle=*](-0.08,4.09)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+A particle is placed at the edge of the top step of a flight of steps.
+Each step is of width $2d$ and height $h$. The particle is kicked
+horizontally perpendicular to the edge of the top step. On its first
+and second bounces it lands exactly in the middle of each of the first
+and second steps from the top. Find the coefficient of restitution
+between the particle and the steps. 
+
+
+Determine whether it is possible for the particle to continue bouncing
+down the steps, hitting the middle of each successive step.
+\end{question}
+	
+%%%%%%%%%% Q13
+\begin{question}
+A particle of mass $m$ moves along the $x$-axis. At time $t=0$
+it passes through $x=0$ with velocity $v_{0}>0$. The particle is
+acted on by a force $\mathrm{F}(x)$, directed along the $x$-axis
+and measured in the direction of positive $x$, which is given by
+\[
+\mathrm{F}(x)=\begin{cases}
+-m\mu^{2}x & \qquad(x\geqslant0),\\
+-m\kappa\dfrac{\mathrm{d}x}{\mathrm{d}t} & \qquad(x<0),
+\end{cases}
+\]
+where $\mu$ and $\kappa$ are positive constants. Obtain the particle's
+subsequent position as a function of time, and give a rough sketch
+of the $x$-$t$ graph. 
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q14
+\begin{question}
+$A,B$ and $C$ play a table tennis tournament. The winner of the
+tournament will be the first person to win two games in a row. In
+any game, whoever is not playing acts as a referee, and each player
+has equal chance of winning the game. The first game of the tournament
+is played between $A$ and $B$, with $C$ as referee. Thereafter,
+if the tournament is still undecided at the end of any game, the winner
+and referee of that game play the next game. The tournament is recorded
+by listing in order the winners of each game, so that, for example,
+$ACC$ records a three-game tournament won by $C$, the first game
+having been won by $A$. Determine which of the following sequences
+of letters could be the record of a complete tournament, giving brief
+reasons for your answers: 
+
+\begin{questionparts}
+\item $ACB$, 
+\item $ABB$, 
+\item $ACBB$. 
+\end{questionparts}
+
+Find the probability that the tournament is still undecided after
+5 games have been played. Find also the probabilities that each of
+$A,B$ and $C$ wins in 5 or fewer games. 
+
+
+Show that the probability that $A$ wins eventually is $\frac{5}{14}$,
+and find the corresponding probabilities for $B$ and $C$. 
+
+\end{question}
+
+%%%%%%%%%% Q15
+\begin{question}
+A point $P$ is chosen at random (with uniform distribution) on the
+circle $x^{2}+y^{2}=1$. The random variable $X$ denotes the distance
+of $P$ from $(1,0)$. Find the mean and variance of $X$. 
+
+
+Find also the probability that $X$ is greater than its mean. 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+	The parliament of Laputa consists of 60 Preservatives and 40 Progressives.
+	Preservatives never change their mind, always voting the same way
+	on any given issue. Progressives vote at random on any given issue. 
+
+	\begin{questionparts}
+	\item A randomly selected member is known to have voted the same way twice
+	on a given issue. Find the probability that the member will vote the
+	same way a third time on that issue. 
+	\item Following a policy change, a proportion $\alpha$ of Preservatives
+	now consistently votes against Preservative policy. The Preservative
+	leader decides that an election must be called if the value of $\alpha$
+	is such that, at any vote on an item of Preservative policy, the chance
+	of a simple majority would be less than 80\%. By making a suitable
+	normal approximation, estimate the least value of $\alpha$ which
+	will result in an election being called.
+\end{questionparts}
+	\end{question}
+\end{document}

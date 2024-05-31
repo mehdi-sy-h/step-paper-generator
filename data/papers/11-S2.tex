@@ -1,0 +1,641 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2011
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+\item
+Sketch the curve  $y=\sqrt{1-x} + \sqrt{3+x}\;$.
+
+Use your sketch to show that only one  real value of $x$  satisfies
+\[
+\sqrt{1-x} + \sqrt{3+x} = x+1\,,
+\]
+and give this value.
+
+\item
+Determine graphically the number of real values of $x$ that satisfy
+\[
+2\sqrt{1-x} = \sqrt{3+x} + \sqrt{3-x}\;.
+\]
+Solve this equation.         
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Write down the cubes of the integers 1, 2, $\ldots$ , 10\,.
+
+The positive integers $x$, $y$ and $z$, where $x<y$, satisfy
+\[
+x^3+y^3 = kz^3\,,
+\tag{$*$}
+\]
+where $k$ is a given positive integer.
+
+\begin{questionparts}
+\item
+In the case  $x+y =k$, show that 
+\[
+z^3 = k^2  -3kx+3x^2\,.
+\]
+Deduce that $(4z^3 - k^2)/3$ is a perfect square
+and that $\frac14 {k^2} \le z^3 < k^2\,$.
+
+Use these results to  find a solution of $(*)$ when $k=20$.
+
+\item By considering the case $x+y = z^2$, 
+find two solutions of $(*)$ when  
+$k=19$. 
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+In this question, you may assume without proof that 
+ any function $\f$ for which  $\f'(x)\ge 0$ is {\em 
+ increasing}; that is,
+$\f(x_2)\ge \f(x_1)$ if $x_2\ge x_1\,$. 
+
+\begin{questionparts}
+\item 
+\begin{itemize}
+\item[{\bf (a)}]
+ Let $\f(x) =\sin x -x\cos x$.
+ Show that $\f(x)$ is 
+increasing 
+for $0\le x \le \frac12\pi\,$
+and deduce that $\f(x)\ge 0\,$ for 
+$0\le x \le \frac12\pi\,$.
+\\
+\item[{\bf (b)}] 
+Given that $\dfrac{\d}{\d x} (\arcsin x)  \ge1$ for 
+$0\le x< 1$,
+show that 
+\[
+\hspace {1.1cm}
+\arcsin x\ge  x
+\hspace*{3.8cm}(0\le x <   1).
+\]
+\item[{\bf (c)}] Let $\g(x)= x\cosec x\,$ for $0<x<\frac12\pi$. Show that
+$\g$ is increasing and deduce that
+\[
+\hspace{1cm}
+({\arcsin x})\,  x^{-1} \ge    x\,{\cosec x}
+\hspace{1.7cm} (0<x<1). 
+\]
+\end{itemize}
+ \item
+Given that $\dfrac{\d}{\d x}
+ (\arctan x)\le 1$ for $x\ge 0$, show
+by considering the function $x^{-1} \tan x$ 
+that 
+\[
+\hspace{2cm}(\tan x)( \arctan x) \ge x^2
+\hspace{2.3cm}
+(0<x<\tfrac12\pi).
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+\begin{questionparts}
+\item
+ Find all the values of $\theta$, in the range $0^\circ <\theta<180^\circ$,
+for which $\cos\theta=\sin 4\theta$. Hence show that
+\[
+\sin 18^\circ = \frac14\left( \sqrt 5 -1\right).
+\]
+
+\item Given that 
+\[
+4\sin^2 x + 1 = 4\sin^2 2x
+\,,
+\]
+find
+  all possible values of $\sin x\,$, giving your answers in the 
+form $p+q\sqrt5$ where $p$ and $q$ are rational numbers.
+
+\item
+Hence find two values of  $\alpha$ with $0^\circ <\alpha<90^\circ$
+for which
+\[
+\sin^23\alpha + \sin^25\alpha = \sin^2 6\alpha\,.
+\]
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q5
+\begin{question}
+The points  $A$ and $B$ have position vectors $\bf a $ and $\bf b$ 
+with respect to an origin $O$, and $O$, $A$~and~$B$ are non-collinear.
+The point $C$, with position vector $\bf c$,
+ is the reflection of $B$ in the line through
+$O$ and $A$. Show that $\bf c$ can be written in the 
+form 
+\[
+\bf c = \lambda \bf a -\bf b
+\]
+where  $\displaystyle \lambda = \frac{2\,{\bf a .b}}{{\bf a.a}}$.
+
+The point $D$, with position  vector $\bf d$, is the reflection of $C$ in 
+the line through $O$ and $B$.
+Show that  $\bf d$ can be written in the form
+\[
+\bf d = \mu\bf b - \lambda \bf a
+\]
+for some scalar $\mu$ to be determined. 
+
+Given that $A$, $B$ and $D$ are collinear, find the relationship
+between $\lambda$ and $\mu$. In the case $\lambda = -\frac12$, determine
+the cosine of $\angle AOB$ and describe the relative positions
+of $A$, $B$ and $D$.
+\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+For any given function $\f$, let
+\[
+I = \int [\f'(x)]^2 \,[\f(x)]^n \d x\,,
+\tag{$*$}
+\]
+where $n$ is a positive integer.
+Show that, if $\f(x)$ satisfies $\f''(x) =k \f(x)\f'(x)$ for some constant
+$k$, then ($*$) can be integrated to obtain an expression 
+for $I$ in terms of $\f(x)$, $\f'(x)$, $k$ and $n$.  
+
+\begin{questionparts}
+\item 
+Verify your result in the case $\f(x) = \tan x\,$.
+Hence find
+\[
+\displaystyle \int \frac{\sin^4x}{\cos^{8}x} \, \d x\;.
+\]
+\item Find
+ \[
+\displaystyle \int \sec^2x\, (\sec x + \tan x)^6\,\d x\;.
+\]
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q7
+\begin{question}
+The two sequences $a_0$, $a_1$, $a_2$, $\ldots$
+and   
+ $b_0$, $b_1$, $b_2$, $\ldots$
+have general terms
+\[
+a_n = \lambda^n +\mu^n
+\text { \ \ \ and \ \ \ }
+b_n = \lambda^n - \mu^n\,,
+\]
+respectively, where $\lambda = 1+\sqrt2$ and $\mu= 1-\sqrt2\,$.
+
+
+\begin{questionparts}
+\item Show that $\displaystyle \sum_{r=0}^nb_r = -\sqrt2 + \frac
+1 {\sqrt2} \,a_{\low n+1}\,$,
+and give a corresponding result for
+ $\displaystyle \sum_{r=0}^na_r\,$.
+\item Show that, if $n$ is odd,
+ $$\sum_{m=0}^{2n}\left( \sum_{r=0}^m a_{\low r}\right) 
+= \tfrac12 b_{n+1}^2\,,$$ 
+ and give a corresponding result when $n$
+is even.
+\item Show that, if $n$ is even,
+ $$\left(\sum_{r=0}^na_r\right)^{\!2}
+ -\sum_{r=0}^n a_{\low 2r+1} =2\,,$$
+and give a corresponding result when
+$n$ is odd.
+\end{questionparts}
+\end{question}	
+
+%%%%%%%%% Q8
+\begin{question}
+The end $A$ of an inextensible string $AB$ of length $\pi$
+is attached to a point  on the circumference 
+of a fixed circle of unit radius and 
+centre $O$. Initially the string is straight
+and tangent to the circle. The string is then wrapped round the circle
+until the end $B$ comes into
+contact with the circle. 
+The string remains taut during the motion,
+so that a section of the string is in contact with the circumference
+and the remaining section is straight. 
+
+Taking $O$ to be the origin of cartesian coordinates with $A$ at $(-1,0)$
+and $B$ initially at $(-1, \pi)$, show that the
+curve described by $B$  is given parametrically by
+\[
+x= \cos t + t\sin t\,, \ \ \ \ \ \
+y=  \sin t - t\cos t\,,
+\]
+where $t$ is the angle shown in the diagram.
+
+\begin{center}
+\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-5.4,-1)(7,7)
+\pspolygon(-1.22,3.03)(-0.87,3.17)(-1.01,3.52)(-1.36,3.38)
+\parametricplot{-0.17}{3.3}{1*3.64*cos(t)+0*3.64*sin(t)+0|0*3.64*cos(t)+1*3.64*sin(t)+0}
+\psline(-1.36,3.38)(6.23,6.37)
+\psline[linestyle=dashed,dash=1pt 1pt](0,0)(-1.36,3.38)
+\parametricplot{-0.0}{1.9540453733056695}{1.06*cos(t)+0|1.03*sin(t)+0}
+\rput[tl](-0.45,-0.1){$O$}
+\rput[tl](-4.12,0.46){$A$}
+\rput[tl](6.11,6.8){$B$}
+\rput[tl](0.25,0.6){$t$}
+\psline{->}(-7.22,0)(5.78,0)
+\psline{->}(0,-1.53)(0,6)
+\rput[tl](-0.08,6.45){$y$}
+\rput[tl](5.85,0.1){$x$}
+\end{pspicture*}
+\end{center}
+
+Find the value, $t_0$, of $t$ for which $x$
+takes its maximum value on the curve,
+and sketch the curve.
+
+Use   the area integral $\displaystyle \int y \frac{\d x}{\d t} \,
+\d t\,$
+to find the area between the curve and the $x$ axis 
+for~\hbox{$\pi \ge t \ge t_0$}.
+
+Find the area swept out by the string (that is, the area between the 
+curve described by 
+$B$ and the semicircle shown in the diagram).
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+Two particles, $A$ of mass $2m$ and $B$ of mass $m$, are moving towards
+each  other in   a straight line on a smooth horizontal plane, with speeds
+$2u$ and $u$ respectively. They collide directly. Given that the
+coefficient of restitution between the particles is $e$, where 
+$0<e\le1$, determine the speeds of the particles after the collision.
+
+After the collision, $B$ collides directly with a smooth vertical wall,
+rebounding and then colliding directly with $A$ for a second time.
+The coefficient of restitution between $B$ and the wall is $f$, where
+$0<f\le1$.
+Show that the velocity of $B$ after  
+its second collision with $A$ is
+\[
+\tfrac23 (1-e^2)u - \tfrac13(1-4e^2)fu
+\]
+towards the wall
+and that 
+$B$ moves towards (not away from) the wall for all values of $e$~and~$f$.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A particle is projected from a point on a 
+horizontal plane, at speed
+$u$ and at an angle~$\theta$ above the horizontal.
+Let $H$ be 
+the maximum height of the particle above the plane.
+ Derive an expression
+for $H$ in terms of $u$, $g$ and 
+$\theta$.
+
+A particle $P$ is projected from a point $O$ on a  smooth
+horizontal plane,
+at speed $u$ and at an angle~$\theta$ above the horizontal. At the 
+same instant, a second particle $R$ is projected horizontally from $O$
+in such a way that $R$ is vertically below $P$ in the ensuing motion. 
+A light inextensible string of length $\frac12 H$ connects
+$P$ and $R$. Show that the time that elapses
+before the string becomes taut is 
+\[
+(\sqrt2 -1)\sqrt{H/g\,}\,.
+\]
+
+When the string becomes taut, $R$ leaves the plane,  the string
+remaining taut. Given that $P$ and $R$ have equal masses, 
+determine 
+the total horizontal distance, $D$, travelled by $R$
+from the moment its motion begins  to the moment it lands on the plane
+again, giving your answer
+in terms of $u$, $g$ and $\theta$.
+
+Given that $D=H$, find the value of $\tan\theta$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Three non-collinear points $A$, $B$ and $C$ lie in
+a horizontal ceiling. A particle $P$ of weight $W$
+is suspended from this ceiling by means of three
+light inextensible strings $AP$, $BP$ and $CP$,
+as shown in the diagram. The point $O$ lies
+vertically above $P$ in the ceiling.
+
+
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-1.15,-1)(10.53,4.67)
+\psline(-1,2)(6,2)
+\psline(-1,2)(3.5,4.5)
+\psline(6,2)(10.5,4.5)
+\psline(10.5,4.5)(3.5,4.5)
+\psline[linestyle=dashed,dash=1pt 2.5pt](3.99,3.19)(4,-0.26)
+\psline[linewidth=1.2pt](4,-0.26)(2.06,2.05)
+\psline[linewidth=1.2pt](4,-0.26)(3.41,2)
+\psline[linewidth=1.2pt](4,-0.26)(5.78,2)
+\psline[linewidth=1pt,linestyle=dashed,dash=2pt 2.5pt](5.78,2)(7.02,3.66)
+\psline[linewidth=1pt,linestyle=dashed,dash=2pt 2.5pt](3.41,2)(2.99,3.62)
+\psline[linewidth=1pt,linestyle=dashed,dash=2pt 2.5pt](2.06,2.05)(1.56,2.64)
+\rput[tl](3.87,3.6){$O$}
+\rput[tl](7.05,4.05){$C$}
+\rput[tl](2.81,4){$A$}
+\rput[tl](1.28,3){$B$}
+\rput[tl](3.85,-0.65){$P$}
+\begin{scriptsize}
+\psdots[dotsize=13pt 0,dotstyle=*](4,-0.26)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+The angles $AOB$ and $AOC$ are $90^\circ+\theta$
+and $90^\circ+\phi$, respectively, where $\theta$ and $\phi$
+are acute angles such that $\tan\theta = \sqrt2$ and 
+$\tan\phi =\frac14\sqrt2$. 
+
+The strings $AP$, $BP$ and $CP$ make angles $30^\circ$, $90^\circ-\theta$
+and $60^\circ$, respectively, with the vertical, and the tensions
+in these strings have magnitudes $T$, $U$ and $V$ respectively.
+
+\begin{questionparts}
+\item
+Show that the unit vector in the direction $PB$ can be written
+in the form
+\[
+ -\frac13\, {\bf i} - \frac{\sqrt2\,}3\, {\bf j} + 
+\frac{\sqrt2\, }{\sqrt3 \,} \,{\bf k}
+\,,\]
+where $\bf i\,$, $\, \bf j$ and $\bf k$ are the usual mutually perpendicular
+unit vectors 
+with $\bf j$ parallel to $OA$ and $\bf k$ vertically upwards.
+
+\item
+Find expressions in vector form for the forces acting on $P$.
+
+\item
+Show  that $U=\sqrt6 V$ and find $T$, $U$ and $V$ in terms of $W$.
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Xavier and Younis are playing a match.
+The match consists of a series of games and 
+ each game consists of three points.
+
+
+Xavier has
+probability $p$ 
+and Younis has probability $1-p$
+of winning the first point of any game.
+In the second and third points of each game,
+the player who won the previous point
+ has
+probability $p$ 
+and the player who lost the previous point
+ has probability $1-p$
+of winning the  point.
+If a player wins two consecutive points in a single game,
+the match ends and that player has won; otherwise the 
+match continues with another game.
+
+
+\begin{questionparts}
+\item Let $w$ be the probability that Younis wins the match.
+ Show that, for $p\ne0$, 
+\[
+w = \frac{1-p^2}{2-p}.
+\]
+Show that $w>\frac12$ if $p<\frac12$, and $w<\frac12$ if $p>\frac12$. Does $w$ increase whenever 
+$p$ decreases? 
+
+\item If Xavier wins the match, Younis gives him $\pounds1$; if 
+Younis wins the match, Xavier gives him $\pounds k$.
+      Find the value of $k$ for which the game is `fair' 
+in the case when  $p =\frac23$.
+
+\item What happens when  $p = 0$?
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+What property of a distribution is measured by its 
+{\em skewness}?
+
+\begin{questionparts}
+\item 
+One measure of  skewness, $\gamma$,  is given by 
+\[
+\displaystyle
+\gamma=
+\frac{ \E\big((X-\mu)^3\big)}{\sigma^3}\,,
+\] 
+where $\mu$ and $\sigma^2$ are the mean and variance of the random
+variable  $X$.
+Show that 
+\[
+\gamma = \frac{ \E(X^3) -3\mu \sigma^2 - \mu^3}{\sigma^3}\,.
+\]
+
+The continuous random variable $X$
+has probability density function $\f$ where 
+\[
+\f(x) 
+= \begin{cases}
+2x & \text{for } 0\le x\le 1\,, \\[2mm]
+0 & \text{otherwise}\,.
+\end{cases}
+\]
+Show that for this distribution $\gamma= -\dfrac{2\sqrt2}{5}$.
+
+\item The {\em decile skewness}, $D$,  of a distribution is defined by
+\[D=
+\frac { {\rm F}^{-1}(\frac9{10}) - 2{\rm F} ^{-1}(\frac12) + {\rm F}^{-1} (\frac1{10}) } 
+{{\rm F}^{-1}(\frac9{10}) - {\rm F} ^{-1} (\frac1{10})}\,,
+\]
+where ${\rm F}^{-1}$ is the inverse of the 
+cumulative distribution function.
+Show that, for the above distribution,
+$ 
+D= 2 -\sqrt5\,.
+$ 
+
+ 
+ The {\em Pearson skewness},~$P$, of a distribution is defined by
+\[
+P = \frac{3(\mu-M)}{\sigma}
+\,,\]
+where $M$ is the median.
+Find $P$ for the above distribution and show 
+that
+  $D>P>\gamma\,$.
+
+\end{questionparts}
+\end{question}
+
+\end{document}

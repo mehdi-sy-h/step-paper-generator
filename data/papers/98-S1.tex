@@ -1,0 +1,421 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1998
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+How many integers between $10\,000$ and $100\,000$
+(inclusive) contain exactly two different digits?
+($23\,332$ contains exactly two different digits but neither
+of $33\,333$ and $12\,331$ does.)
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Show, by means of a suitable change of variable,
+or otherwise, that
+\[
+\int_{0}^{\infty}\mathrm{f}((x^{2}+1)^{1/2}+x)\,{\mathrm d}x
+=\frac{1}{2}
+\int_{1}^{\infty}(1+t^{-2})\mathrm{f}(t)\,{\mathrm d}t.
+\]
+
+Hence, or otherwise, show that
+\[
+\int_{0}^{\infty}((x^{2}+1)^{1/2}+x)^{-3}\,{\mathrm d}x
+=\frac{3}{8}.
+\]        
+
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Which of the following statements are true
+and which are false? Justify your answers.
+\begin{questionparts}
+\item $a^{\ln b}=b^{\ln a}$ for all $a,b>0$.
+
+\item $\cos(\sin\theta)=\sin(\cos\theta)$ for all real $\theta$.
+
+\item There exists  a polynomial $\mathrm{P}$ such that
+$|\mathrm{P}(\theta)-\cos\theta|\leqslant 10^{-6}$
+for all real $\theta$.
+\item $x^{4}+3+x^{-4}\geqslant 5$ for all $x>0$.
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Prove that the rectangle of greatest
+perimeter which can be inscribed in a given
+circle is a square. 
+
+The result changes if, instead of maximising the sum
+of lengths of sides of the rectangle, we seek to
+maximise the sum of $n$th powers of the lengths of those
+sides for $n\geqslant 2$. What happens if $n=2$? 
+What happens if $n=3$? Justify your answers.
+
+
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item In the Argand diagram, the points $Q$ and
+$A$ represent the complex numbers $4+6i$ and
+$10+2i$. If $A$, $B$, $C$, $D$, $E$, $F$
+are the vertices, taken in clockwise order, of 
+a regular hexagon (regular six-sided polygon)
+with centre $Q$, find the complex number which
+represents $B$.
+
+\item Let $a$, $b$ and $c$ be real numbers. Find a condition 
+of the form $Aa+Bb+Cc=0$,
+where $A$, $B$ and $C$ are integers,  which ensures that
+\[\frac{a}{1+i}+\frac{b}{1+2i}+\frac{c}{1+3i}\]
+is real. 
+\end{questionparts}
+
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Let $a_{1}=\cos x$ with $0<x<\pi/2$
+and let $b_{1}=1$. Given that
+\begin{eqnarray*}
+a_{n+1}&=&{\textstyle \frac{1}{2}}(a_{n}+b_{n}),\\[2mm]
+b_{n+1}&=&(a_{n+1}b_{n})^{1/2},
+\end{eqnarray*}
+find $a_{2}$ and $b_{2}$ and show that
+\[a_{3}=\cos\frac{x}{2}\cos^{2}\frac{x}{4}
+\ \quad\mbox{and}\quad
+\ b_{3}=\cos\frac{x}{2}\cos\frac{x}{4}.\] 
+Guess general expressions for $a_{n}$ and $b_{n}$ (for $n\ge2$)
+as products of cosines
+and verify that they satisfy the given equations.
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+My bank pays $\rho$\% interest at the end of
+each year. I start with nothing in my account.
+Then for $m$ years I deposit $\pounds a$
+in my  account at the beginning of each year. After the end of the $m$th year, 
+I neither deposit nor withdraw for $l$ years.
+Show that the total amount in my account at the end
+of this period is
+\[\pounds a\frac{r^{l+1}(r^{m}-1)}{r-1}\]
+where $r=1+{\displaystyle \frac{\rho}{100}}$.
+
+At the beginning of each
+of the  $n$ years following this period I withdraw $\pounds b$
+and this leaves my account empty after the $n$th withdrawal.
+Find an expression for $a/b$ in terms of $r$, $l$, $m$ and $n$.
+
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Fluid flows steadily under a constant pressure
+gradient along a straight tube of circular 
+cross-section of radius $a$. The velocity $v$
+of a particle of the fluid is parallel to the axis of the tube 
+and depends only on the distance $r$
+from the axis. The equation satisfied by $v$ is
+\[\frac{1}{r}\frac{{\mathrm d}\ }{{\mathrm d}r}
+\left(r\frac{{\mathrm d}v}{{\mathrm d}r}\right)
+=-k,\]
+where $k$ is constant. 
+Find the general solution for $v$. 
+
+Show that $|v|\rightarrow\infty$ as $r\rightarrow 0$ 
+unless one of the constants in your solution 
+is chosen to be~$0$.
+Suppose that this constant is, in fact, $0$ and
+that $v=0$ when $r=a$.
+Find $v$ in terms of $k$, $a$ and $r$. 
+
+The volume $F$ flowing through the tube
+per unit time is given by
+\[F=2\pi\int_{0}^{a}rv\,{\mathrm d}r.
+\]
+Find $F$.
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+Two small spheres $A$ and $B$ of equal mass $m$
+are suspended in contact by two light inextensible strings
+of equal length so that
+the strings are vertical and
+the line of centres is horizontal.
+The coefficient of restitution between the spheres is $e$.
+The sphere $A$ is
+drawn aside through a very small distance
+in the plane of the strings
+and allowed
+to fall back and collide with the other sphere $B$, its speed
+on impact being $u$.
+Explain briefly why the succeeding collisions will all occur
+at the lowest point. (Hint: Consider the periods of the
+two pendulums involved.)
+
+Show that the speed of sphere $A$
+immediately after the second impact is 
+$\frac{1}{2}u(1+e^{2})$
+and find the speed, then, of sphere $B$.
+
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A shell explodes on the surface of horizontal ground.
+Earth is scattered in all directions with varying velocities.
+Show that particles of earth with initial speed $v$
+landing a  distance $r$ from the centre of explosion
+will do so at times $t$ given by
+\[
+{\textstyle \frac{1}{2}}
+g^2t^2=v^{2}\pm\surd(v^{4}-g^{2}r^{2}).
+\]
+
+Find an expression in terms of $v$, $r$ and $g$ for 
+the greatest height reached by such particles.
+
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Hank's Gold Mine has a very long vertical shaft
+of height $l$.
+A light chain of length $l$
+passes over a 
+small smooth
+light fixed pulley at the top of the shaft.
+To one end of the chain is attached a bucket $A$ of
+negligible mass and to the other a bucket $B$ of mass
+$m$. The system is used to raise ore from the mine as follows.
+When bucket $A$ is at the top it is filled with mass $2m$
+of water and bucket $B$ is filled with mass $\lambda m$
+of ore, where $0<\lambda<1$. The buckets are then released,
+so that bucket $A$ descends and bucket $B$ ascends. 
+When bucket $B$
+reaches the top both buckets are emptied and released,
+so that bucket $B$ descends and bucket $A$ ascends. The time to
+fill and empty the buckets is negligible. Find the
+time taken from the moment bucket $A$ is released at the top
+until the first time it reaches the top again.
+
+This process
+goes on for a very long time. Show that, if the greatest
+amount of ore is to be raised in that time, then
+$\lambda$ must satisfy the condition $\mathrm{f}'(\lambda)=0$
+where
+\[\mathrm{f}(\lambda)=\frac{\lambda(1-\lambda)^{1/2}}
+{(1-\lambda)^{1/2}+(3+\lambda)^{1/2}}.\]
+
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Suppose that a solution $(X,Y,Z)$ of the equation
+\[X+Y+Z=20,\]
+with $X$, $Y$ and $Z$ non-negative
+integers, is chosen at
+random (each such solution being equally likely).
+Are $X$ and $Y$ independent? Justify your answer.
+
+Show that the probability that $X$ is divisible by $5$
+is $5/21$.
+What is the probability that $XYZ$ is divisible by 5?
+
+
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+I have a bag initially containing $r$ red fruit pastilles
+(my favourites)
+and $b$ fruit pastilles of other colours. From time to time
+I shake the bag thoroughly and remove a pastille at random.
+(It may be assumed that all pastilles have an equal chance
+of being selected.) If the pastille is red I eat it
+but otherwise I replace it in the bag. After $n$ such
+drawings, I find that I have only eaten one pastille.
+Show that the probability that I ate it on my last drawing
+is
+\[\frac{(r+b-1)^{n-1}}{(r+b)^{n}-(r+b-1)^{n}}.\]
+
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+To celebrate the opening of the financial year
+the finance minister of Genland flings a Slihing, a circular
+coin of radius $a$ cm, where $0<a<1$, onto a 
+large board divided
+into squares by two sets
+of parallel lines 2 cm apart. If the coin does not
+cross any line, or if the coin covers an intersection,
+the tax on yaks remains unchanged. Otherwise
+the tax is doubled. Show that, in order to raise most tax,
+the value of $a$ should be
+ \[\left(1+{\displaystyle \frac{\pi}{4}}\right)^{-1}.\]
+
+If, indeed, $a=\left(1+{\displaystyle \frac{\pi}{4}}\right)^{-1}$
+and 
+the tax on yaks is 1 Slihing per yak this year, show that
+its expected value after $n$ years will have passed is
+\[ \left(\frac{8+\pi}{4+\pi}\right)^{n}.\]
+\end{question}
+	
+\end{document}

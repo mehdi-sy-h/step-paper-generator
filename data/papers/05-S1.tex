@@ -1,0 +1,484 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2005
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+$47231$ is a five-digit number whose digits sum to $4+7+2+3+1 = 17\,$.
+\begin{itemize}
+ \setlength{\itemsep}{3mm}
+\item[\bf (i)] Show that there are $15$ five-digit numbers whose digits sum to $43$. 
+You should explain  your reasoning clearly.
+\item[\bf (ii)] How many five-digit numbers are there whose digits sum to $39$?
+\end{itemize}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The point $P$ has coordinates $\l p^2  ,  2p \r$ 
+and the point $Q$ has coordinates $\l q^2  ,  2q \r$, 
+where $p$ and~$q$ are non-zero and $p \neq q$. 
+The curve $C$ is given by  $y^2 = 4x\,$.
+The point $R$ is the intersection of the tangent to $C$  at $P$ 
+and the tangent 
+to $C$ at $Q$. 
+Show that $R$ has coordinates $\l pq ,  p+q \r$.
+
+
+The point $S$ is the intersection of the normal to $C$ at $P$ 
+and the normal to $C$ at $Q$. 
+If $p$ and $q$ are such  that $\l 1  ,  0 \r$ 
+lies on the line $PQ$, 
+show that $S$ has coordinates $\l p^2 + q^2 + 1  , \, p+q \r$, 
+and that the quadrilateral $PSQR$ is a rectangle.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+In this question $a$ and $b$ are distinct, 
+non-zero real numbers, and $c$ is a real number.
+\begin{questionparts}
+\item Show that, if $a$ and $b$ are 
+either both positive or both negative, then the equation 
+\[
+\displaystyle \frac {x }{ x-a} + \frac{x }{ x-b} = 1
+\]
+has two distinct real solutions.
+\item Show that, if $c\ne1$, the equation 
+\[\displaystyle \frac x { x-a} + \frac{x}{ x-b} = 1 + c\] 
+has exactly one real solution if 
+$
+\displaystyle c^2 = - \frac {4ab}{\l a - b \r ^2}\;. \;\;
+$
+Show that
+this condition can be written $\displaystyle
+c^2= 1 - \l \frac {a+b}{a-b} \r ^2 $
+and deduce that it  can only hold if $0 < c^2 \le 1\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+\begin{questionparts}
+\item Given that $\displaystyle \cos \theta = \frac{3}{ 5}$ 
+and that $\displaystyle \frac{3\pi }{ 2} \le \theta \le 2\pi$, 
+show that $\displaystyle \sin 2 \theta =  -
+\frac{24 }{ 25}\,$, and evaluate $ \cos 3 \theta\,$.
+\item Prove the identity 
+$\displaystyle 
+\tan 3\theta 
+\equiv \frac {3 \tan \theta - \tan^3 \theta}{1 - 3 \tan^2 \theta}\;$. 
+
+Hence evaluate $\tan \theta$, 
+given that $\displaystyle \tan 3\theta = \frac{11}{ 2}$ 
+and that $\displaystyle \frac{\pi}{ 4} \le \theta \le \frac{\pi}{ 2}\;$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item Evaluate the integral
+\[
+\int_0^1  \l x + 1 \r ^{k-1} \; \mathrm{d}x
+\]
+in the cases  $k\ne0$ and $k = 0\,$.
+
+Deduce that  $\displaystyle \frac{2^k - 1}{k} \approx \ln 2$ when $k \approx 0\,$.
+
+
+\item Evaluate the integral
+\[
+\int_0^1  x  \l x + 1 \r ^m \; \mathrm{d}x \;
+\]
+in the different cases that arise according to the value of $m$.
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item The point $A$ has coordinates $\l 5 \, , 16 \r$ and the point 
+$B$ has coordinates $\l -4 \, , 4 \r$. 
+The variable point $P$ has coordinates $\l x \, ,  y \r\,$ 
+and moves on a path such that $AP=2BP$. 
+Show that the Cartesian equation of the path of $P$ is
+\[
+\displaystyle \l x+7 \r^2 + y^2 =100 \;.
+\]
+
+\item The point $C$ has coordinates $\l a \, ,  0 \r$ 
+and the point $D$ has coordinates $\l b \, ,  0 \r$, where $a\ne b$.
+ The variable point $Q$ moves on a path such that
+\[
+QC = k \times QD\;,
+\]
+where $k>1\,$.
+Given that the path of $Q$ is the same as the path of $P$,
+show that 
+\[
+\frac{a+7}{b+7}=\frac{a^2+51}{b^2+51}\;.
+\]
+Show further that $(a+7)(b+7)=100\,$.
+
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+The notation $\displaystyle \prod^n_{r=1} \f (r)$ 
+denotes the product $\f (1) \times \f (2) \times \f(3) \times \cdots \times
+\f(n)$. 
+%For example, $\displaystyle \prod_{r=1}^4 r = 24$.
+
+%Simplify $\displaystyle \prod^n_{r=1} \frac{\g (r) }{ \g (r-1) }$. 
+%You may assume that $\g (r) \neq 0$ for any integer $0 \le r \le n $.
+
+Simplify the following products as far as possible:
+
+\begin{questionparts}
+\item $\displaystyle \prod^n_{r=1} \l \frac{r+ 1 }{ r } \r\,$;
+\item $\displaystyle \prod^n_{r=2} \l \frac{r^2 -1}{r^2 } \r\,$;
+\item $\displaystyle \prod^n_{r=1} \l {\cos \frac{2\pi }{ n} 
++ \sin \frac{2\pi}{ n} \cot \frac{\l 2r-1 \r \pi  }{ n} }\r\,$,
+ where $n$ is even.
+
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Show that, if $y^2 = x^k \f(x)$, 
+then $\displaystyle 2xy \frac{\mathrm{d}y }{ \mathrm{d}x} = ky^2 + x^{k+1} 
+\frac{\mathrm{d}\f }{ \mathrm{d}x}$\,. 
+\begin{questionparts}
+\item By setting $k=1$ in this result, find the solution of the differential equation
+\[
+\displaystyle 2xy \frac{\mathrm{d}y }{ \mathrm{d}x} = y^2 + x^2 - 1
+\]
+for which  $y=2$ when $x=1$. Describe geometrically this solution.
+\item Find the solution of the differential equation 
+\[
+2x^2y\displaystyle \frac{\mathrm{d}y}{\mathrm{d}x} = 2 \ln(x) - xy^2
+\]
+for which  $y=1$ when $x=1\,$.
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A non-uniform rod $AB$ has weight $W$ and  length $3l$. 
+When the rod  is suspended horizontally in equilibrium by  vertical 
+strings attached to the ends $A$ and $B$, 
+the tension in the string 
+attached to $A$ is $T$.
+
+
+
+When  instead the rod is held
+in equilibrium in a horizontal position by means of  a smooth pivot at a distance $l$ from $A$
+and a vertical 
+string attached to  $B$, the tension in the string  is~$T$. 
+Show that $5T = 2W$.
+
+When instead the end $B$ of the rod
+rests on rough horizontal ground and the rod is held in equilibrium
+at an angle $\theta$ to the horizontal
+by means of    
+a string that is perpendicular to the rod and  attached to $A$, 
+the tension in the string is $\frac12 T$. 
+Calculate $\theta$ and find the smallest value of 
+the 
+coefficient of friction between the rod and the ground that will prevent slipping.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+Three collinear, non-touching particles $A$, $B$ and $C$ have masses $a$, $b$ and $c$,
+respectively, and  are 
+at rest on a smooth horizontal surface. 
+The particle $A$ is given an initial velocity $u$ towards~$B$. 
+These particles collide, giving $B$ a velocity $v$ towards $C$. 
+These two particles then collide, giving $C$ a velocity $w$. 
+
+The coefficient of 
+restitution is $e$ in both collisions. 
+Determine an expression for $v$, and show that 
+\[
+\displaystyle w = \frac {abu \l 1+e \r^2}{\l a + b \r \l b+c \r}\;.
+\]
+
+Determine the final velocities of each of the three particles in the cases:
+\begin{questionparts}
+\item $\displaystyle \frac ab  = \frac bc = e\,$;
+\item $\displaystyle \frac ba  = \frac cb  = e\,$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A particle moves so that ${\bf r}$, 
+its displacement from a fixed origin at time $t$, 
+is given by 
+\[{\bf r} = \l \sin{2t} \r {\bf i} + \l 2\cos t \r \bf{j}\,,\] 
+where $0 \le t < 2\pi$.
+\begin{questionparts}
+\item  Show that the particle passes through the origin exactly twice.
+
+\item  Determine 
+the times when the velocity of the particle is perpendicular to its displacement. 
+
+\item  Show that, when the particle is not at the origin,
+its velocity is never parallel to its displacement.
+
+\item  Determine the maximum distance of the particle from the origin, 
+and sketch the path of the particle.
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+\begin{questionparts}
+\item The probability that a hobbit smokes a pipe is 0.7 
+and the probability that a hobbit wears a hat is 0.4\,. 
+The probability that a hobbit smokes a pipe but does not wear a hat is $p$. 
+Determine the range of values of $p$ consistent with this information.
+
+\item  The probability that a wizard wears a hat is 0.7\,;
+the probability that a wizard wears a cloak is 0.8\,; 
+and the probability that a wizard wears a ring is 0.4\,. 
+The probability that a wizard does not wear a hat, 
+does not wear a cloak and does not wear a ring is 0.05\,. 
+The probability that a wizard wears a hat, a cloak and also a ring is 0.1\,. 
+Determine the probability that a wizard wears exactly two of a hat, a cloak, and a ring. 
+
+
+The probability that a wizard wears a hat 
+but not a ring, {\bf given} that he wears a cloak, is $q$. 
+Determine the range of values of $q$ consistent with this information.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+The random variable $X$ has mean $\mu$ and standard deviation $\sigma$.
+The distribution of $X$
+is symmetrical about $\mu$ and satisfies:
+\[
+\P \l X \le \mu + \sigma \r = a 
+\mbox{ \ \ \ \ \ and  \ \ \ \ \ } 
+\P \l X \le \mu + \tfrac{1}{ 2}\sigma \r = b\,,\]
+ where $a$ and $b$ are fixed numbers. Do not assume that $X$ is Normally distributed.
+
+\begin{questionparts}
+\item 
+Determine expressions (in terms of $a$ and $b$) 
+for 
+\[
+\P \l \mu-\tfrac12 \sigma \le X \le \mu + \sigma \r
+\mbox{ \ \ \ \ \ and \ \ \ \ \ \ } 
+\P \l X \le \mu +\tfrac12 \sigma \; \big\vert \; X \ge \mu - \tfrac12 \sigma \r.\]
+
+\item  My local supermarket sells cartons of skimmed 
+milk and cartons of full-fat milk: 60\% of the cartons 
+it sells  contain skimmed milk, and the rest contain full-fat milk. 
+
+
+The volume of skimmed milk in a carton  is  modelled by 
+$X$ ml, with $\mu = 500$ and $\sigma =10\,$.
+The volume of full-fat milk in a  carton is  modelled by  $X$ ml,
+ with $\mu = 495$ and $\sigma = 10\,$.
+
+(a) 
+Today, I bought one carton of milk, chosen at random, from this supermarket. 
+When I get home, I find that it contains less than 505 ml. 
+Determine an expression (in terms of $a$ and $b$) 
+for the probability that this carton of milk contains more than 500 ml.
+
+
+(b) Over the years, I have bought a very large number of cartons of milk, 
+all chosen at random, 
+from this supermarket. 70\% of the cartons 
+I have bought have contained at most 505 ml of milk. 
+Of all the cartons that have contained at least 495 ml of milk, 
+one third of them have contained full-fat milk. 
+Use this information to estimate the values of $a$ and $b$. 
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+The random variable $X$ can take the value \mbox{$X=-1$}, and also any
+value in the range \mbox{$0\le X <\infty\,$}. The distribution of $X$ is given by
+\[
+\P(X=-1) =m  \,, \ \ \ \ \ \ \ \P(0\le X\le x) = k(1-\e^{-x})\,,
+\]
+for any non-negative number $x$, where $k$ and $m$ are  constants, and 
+$m <\frac12\,$.
+
+\begin{questionparts}
+\item Find $k$ in terms of $m$. 
+\item Show that $\E(X)= 1-2m\,$. 
+\item Find, in terms of $m$, $\var (X)$ and 
+  the median value of~$X$.
+\item Given that 
+\[
+\int_0^\infty y^2 \e^{-y^2} \d y = \tfrac14 \sqrt{ \pi}\;,\]
+find  $\E\big(\vert X \vert^{\frac12}\big)\,$ in terms of $m$.
+\end{questionparts}
+\end{question}
+	
+\end{document}

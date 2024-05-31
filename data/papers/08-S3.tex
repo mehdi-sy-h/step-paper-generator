@@ -1,0 +1,508 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 2008
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Find all values of $a$, $b$, $x$ and $y$ that satisfy the
+simultaneous
+equations
+\begin{alignat*}{3}
+a&+b &  &=1 &\\
+ax&+by & &= \tfrac13& \\
+ax^2&+by^2& &=\tfrac15& \\
+ax^3 &+by^3& &=\tfrac17\,.&
+\end{alignat*}
+
+
+\noindent{\bf [} {\bf Hint}: you may wish to start by multiplying the second
+equation by $x+y$. {\bf ]}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Let $S_k(n) \equiv \sum\limits_{r=0}^n r^k\,$, where $k$ is a
+positive
+integer, so that
+\[
+S_1(n) \equiv  \tfrac12 n(n+1)
+\text{ \ \ \ \ and \ \ \ \ }
+S_2(n) \equiv \tfrac16 n(n+1)(2n+1)\,.
+\]
+
+\begin{questionparts}
+\item
+By considering $\sum\limits_{r=0}^n \left[ (r+1)^k-r^k\right]\, $,
+show that 
+\[
+kS_{k-1}(n)=(n+1)^k -(n+1) -  
+\binom{k}{2} S_{k-2}(n) 
+- \binom {k}{3} S_{k-3}(n) - \cdots
+- \binom{k}{k-1} S_{1}(n)
+\;.
+\tag{$*$}
+\] 
+Obtain simplified expressions for $S_3(n)$ and~$S_4(n)$.
+
+\item
+Explain, using $(*)$, why $S_k(n)$ is a polynomial of degree $k+1$ in
+$n$.   Show that in this polynomial the constant term is zero and 
+the sum of the coefficients is 1.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The point $P(a\cos\theta\,,\, b\sin\theta)$, where $a>b>0$, lies
+on the ellipse 
+\[\dfrac {x^2}{a^2} + \dfrac {y^2}{b^2}=1\,.\]
+The point $S(-ea\,,\,0)$, where $b^2=a^2(1-e^2)\,$, is a focus of
+the ellipse. The point $N$ is the foot of the perpendicular from 
+the origin, $O$, to the tangent to the ellipse at $P$. The lines
+$SP$ and $ON$ intersect at $T$. Show that the $y$-coordinate of 
+$T$ is 
+\[\dfrac{b\sin\theta}{1+e\cos\theta}\,.\]
+
+Show that $T$ lies on the circle with centre $S$ and radius $a$.
+
+
+
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+\begin{questionparts}
+\item Show, with the aid of  a sketch, that $y>  \tanh (y/2)$ for $y>0$ 
+and deduce
+that 
+\begin{equation}
+\arcosh x > \dfrac{x-1}{\sqrt{x^2-1}} 
+\text{  \ \ for \ \ } x>1.
+\tag{$*$}
+\end{equation}
+
+\item By integrating $(*)$, show that $\arcosh x > 2
+  \dfrac{{x-1}}{\sqrt{x^2-1}} $ for $x>1$.
+
+\item Show that 
+ $\arcosh x >3
+  \dfrac{\sqrt{x^2-1}}{{x+2}} 
+$ for $x>1$.
+
+\end{questionparts}
+
+\noindent[{\bf Note:} $\arcosh x $ is another notation for
+  $\cosh^{-1}x$.\ ]
+
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The functions ${\rm T}_n(x)$, for $n=0$, 1, 2, $\ldots\,$, satisfy
+the recurrence relation
+\[
+{\rm T}_{n+1}(x) -2x {\rm T}_n(x) + {\rm T}_{n-1}(x) =0\,
+\ \ \ \ \ \ \ (n\ge1).
+\tag{$*$}
+\]
+
+Show by induction that 
+\[
+\left({\rm T}_n(x)\right)^2 - {\rm T}_{n-1}(x) {\rm T}_{n+1}(x) = \f(x)\,,
+\]
+where $\f(x) = \left({\rm T}_1(x)\right)^2 - {\rm T}_0(x){\rm T}_2(x)\,$.
+
+In the case $\f(x)\equiv 0$, determine (with proof) an expression
+for ${\rm T}_n(x)$ in terms of ${\rm T}_0(x)$ (assumed to be non-zero)
+and  ${\rm r}(x)$, where 
+${\rm r}(x) =   {\rm T}_1(x)/ {\rm T}_0(x)$. 
+Find the two possible expressions for  ${\rm r}(x)$
+ in terms of $x$.
+
+%Conjecture (without proof) the general form of the solution of $(*)$.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+In this question, $p$ denotes $\dfrac{\d y}{\d x}\,$.
+\begin{questionparts}
+\item Given that 
+\[
+y=p^2 +2 xp\,,
+\]
+show by differentiating with respect to $x$ that 
+\[
+\frac{\d x}{\d p} = -2 -  \frac {2x} p .
+\]
+Hence show that $x = -\frac23p +Ap^{-2}\,,$ where $A$ is an arbitrary
+ constant.
+
+Find $y$ in terms of $x$ if $p=-3$ when $x=2$.
+
+\item Given instead that 
+\[ y=2xp +p \ln p\,,\]
+and that $p=1$ when $x=-\frac14$, show that 
+$x=-\frac12 \ln p - \frac14\,$ and find $y$ in terms of $x$.
+
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+The  points $A$, $B$ and  $C$ 
+ in the Argand diagram are the vertices of an equilateral triangle
+ described
+anticlockwise. 
+Show that the complex numbers
+$a$, $b$ and $c$ representing $A$, $B$ and $C$
+satisfy  \[2c= (a+b) +\mathrm{i}\sqrt3(b-a).\]
+Find a similar relation in the case that
+$A$, $B$ and  $C$ 
+  are the vertices of an equilateral triangle
+ described
+clockwise. 
+
+\begin{questionparts}
+\item The quadrilateral $DEFG$ lies in the Argand diagram. Show that
+points $P$, $Q$, $R$ and $S$ can be chosen so that  
+$PDE$, $QEF$, $RFG$ and $SGD$ are equilateral triangles and $PQRS$ is 
+a parallelogram.
+
+\item The triangle $LMN$ lies in the Argand diagram.
+  Show that the centroids $U$, $V$ and $W$ of the
+  equilateral
+triangles drawn externally on the sides of  $LMN$ are the vertices
+of an equilateral triangle.
+
+\noindent
+[{\bf Note:} The {\em centroid} of a triangle with vertices 
+represented by the complex numbers $x$,~$y$ and~$z$ is the point
+represented by $\frac13(x+y+z)\,$.]
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+\begin{questionparts}
+\item
+The coefficients in the series
+\[
+S= \tfrac13 x + \tfrac 16 x^2 + \tfrac1{12} x^3 + \cdots +  a_rx^r +
+\cdots
+\]
+satisfy a recurrence relation of the form $a_{r+1} + p a_r =0$. Write
+down the value of $p$.
+
+By considering $(1+px)S$, find an expression for the sum to infinity 
+of $S$  (assuming that it exists). Find also
+an expression for the sum of the first $n+1$ terms of $S$.
+
+\item
+The coefficients in the series 
+\[
+T=2 + 8x +18x^2+37 x^3 +\cdots + a_rx^r + \cdots
+\]
+satisfy a recurrence relation of the form $a_{r+2}+pa_{r+1} +qa_r=0$.
+Find an expression for the sum to infinity of $T$ (assuming that it
+exists). By expressing $T$ in partial fractions, or
+otherwise,
+find 
+an expression for the sum of the first $n+1$ terms of $T$.
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A particle of mass $m$  is initially at rest 
+on a rough horizontal surface. The particle experiences a force 
+$mg\sin \pi t$, where $t$ is time, acting  in 
+a fixed horizontal direction. 
+The coefficient of  friction between the particle and the surface is $\mu$. 
+Given that the particle starts to 
+move first at $t=T_0$,  state the relation between
+$T_0$ and $\mu$.
+
+\begin{questionparts}
+\item For $\mu = \mu_0$, 
+the particle comes to rest for the first time at $t=1$.
+Sketch the acceleration-time graph for $0\le t \le 1$. Show that
+\[
+1+\left(1-\mu_0^2\right)^{\frac12}
+ -\mu_0\pi +\mu_0 \arcsin \mu_0 =0\,. 
+\]
+
+\item For $\mu=\mu_0$
+sketch the acceleration-time graph for $0\le t\le 3$.
+Describe the motion of the particle in this case and in the case $\mu=0$.
+\end{questionparts}
+
+\noindent[{\bf Note:} $\arcsin x$ is another notation for
+  $\sin^{-1}x$.\ ]
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A long string consists of $n$ short
+light strings joined together, each of natural length
+$\ell$ and modulus of elasticity $\lambda$. 
+It hangs vertically at rest, suspended from one end.
+Each of the short strings has a particle of mass $m$ attached to its lower
+end.  The short strings are numbered $1$ to $n$, the $n$th short
+string  being at the top. By considering the tension in the $r$th
+short string, determine the length
+of the long string. Find also the elastic energy stored in the long string.
+
+
+A uniform heavy rope of mass $M$ and natural length $L_0$
+has modulus of elasticity $\lambda$.
+The rope hangs vertically at rest, suspended from one end. 
+Show that the length, $L$,  of the rope  is given by
+\[
+L=L_0\biggl(1+ \frac{Mg}{2\lambda}\biggr),
+\]
+and find an expression in  terms of $L$, $L_0$ and $\lambda$ for the 
+elastic energy stored in the rope.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A circular wheel of radius $r$ has moment of inertia $I$ about
+its
+axle, which is fixed in a horizontal position. A light string is
+wrapped around the circumference of the wheel and a particle of 
+mass $m$ hangs from the free end. The system is released from rest
+and the particle descends.
+The string does not slip on the wheel.
+
+As the particle descends, the wheel turns through
+$n_1$ revolutions, and the string then detaches from the wheel. At this
+moment, the angular speed of the wheel is $\omega_0$.  The wheel then
+turns through a further
+ $n_2$ revolutions, in time $T$, before coming to rest.
+The couple on the wheel due to resistance is constant.
+
+Show that
+\[ \frac12 \omega_0 T = 2 \pi n_2\]
+and
+\[
+I =\dfrac {mgrn_1T^2 -4\pi mr^2n_2^2}{4\pi n_2(n_1+n_2)}\;.
+\]
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Let $X$ be a random variable with a  Laplace distribution, so that  
+its probability 
+density function is given by
+\[
+\f(x) = \frac12 \e^{-\vert x \vert }\;, 
+\text{ \ \ \ $-\infty < x < \infty $\ }.
+\tag{$*$}
+\]
+Sketch $\f(x)$. Show that its moment generating function 
+${\rm M}_X(\theta)$
+  is given by 
+${\rm M}_X(\theta)
+= (1-\theta^2)^{-1}$ and hence find the variance of $X$.
+
+A frog
+is jumping up and down, attempting to land on the same 
+spot each time. In fact, in each of $n$ successive jumps
+he always lands on a fixed
+straight line but when he lands
+ from  the $i$th jump ($i=1\,,2\,,\ldots\,,n$) 
+his displacement from the point from which he jumped is $X_i\,$cm, 
+where $X_i$ has the distribution $(*)$. His displacement from his starting
+point after
+$n$~jumps is $Y\,$cm (so that 
+$Y=\sum\limits_{i=1}^n X_i$).
+Each jump
+is independent of the others.
+
+Obtain the moment generating function  for $Y/ \sqrt {2n}$
+ and, by considering
+its logarithm, show that this moment generating function tends to 
+$\exp(\frac12\theta^2)$ as $n\to\infty$.
+
+Given that 
+$\exp(\frac12\theta^2)$ is the moment generating function
+ of the standard Normal
+random variable, estimate the least number of jumps such that there
+is a $5\%$ chance that the frog lands 25~cm or more from his starting
+point.
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+A box contains $n$ 
+pieces of string, each of which has two
+ends. I select two string ends at random and tie them together. This
+creates
+either a ring (if the two ends are from the same string) or a longer
+piece of string. I repeat the process of tying together string ends
+chosen
+at random until there are none left.
+
+Find the expected number of rings created at the first step and
+hence obtain an expression for the expected number of rings created
+by the end of the process. Find also an expression for the variance
+of the number of rings created.
+
+Given that $\ln 20 \approx 3$ and that
+$1+ \frac12 + \cdots + \frac 1n \approx \ln n$ for large $n$,
+ determine approximately the expected
+number of rings created in the case $n=40\,000$. 
+\end{question}
+
+\end{document}

@@ -1,0 +1,477 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1990
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Show, using de Moivre's theorem, or otherwise, that 
+\[
+\tan9\theta=\frac{t(t^{2}-3)(t^{6}-33t^{4}+27t^{2}-3)}{(3t^{2}-1)(3t^{6}-27t^{4}+33t^{2}-1)},\qquad\mbox{ where }t=\tan\theta.
+\]
+By considering the equation $\tan9\theta=0,$ or otherwise, obtain
+a cubic equation with integer coefficients whose roots are 
+\[
+\tan^{2}\left(\frac{\pi}{9}\right),\qquad\tan^{2}\left(\frac{2\pi}{9}\right)\qquad\mbox{ and }\qquad\tan^{2}\left(\frac{4\pi}{9}\right).
+\]
+Deduce the value of 
+\[
+\tan\left(\frac{\pi}{9}\right)\tan\left(\frac{2\pi}{9}\right)\tan\left(\frac{4\pi}{9}\right).
+\]
+Show that 
+\[
+\tan^{6}\left(\frac{\pi}{9}\right)+\tan^{6}\left(\frac{2\pi}{9}\right)+\tan^{6}\left(\frac{4\pi}{9}\right)=33273.
+\]
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+The distinct points $O\,(0,0,0),$ $A\,(a^{3},a^{2},a),$ $B\,(b^{3},b^{2},b)$
+and $C\,(c^{3},c^{2},c)$ lie in 3-dimensional space. 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] Prove that the lines $OA$ and $BC$ do not intersect. 
+\item[\bf (ii)] Given that $a$ and $b$ can vary with $ab=1,$ show that $\angle AOB$
+can take any value in the interval $0<\angle AOB<\frac{1}{2}\pi$,
+but no others. 
+\end{itemize}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The elements $a,b,c,d$ belong to the group $G$ with binary operation
+$*.$ Show that
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] if $a,b$ and $a*b$ are of order 2, then $a$ and $b$ commute; 
+\item[\bf (ii)] $c*d$ and $d*c$ have the same order; 
+\item[\bf (iii)] if $c^{-1}*b*c=b^{r},$ then $c^{-1}*b^{s}*c=b^{sr}$ and $c^{-n}*b^{s}*c^{n}=b^{sr^{n}}.$
+\end{itemize}
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}
+Given that $\sin\beta\neq0,$ sum the series 
+\[
+\cos\alpha+\cos(\alpha+2\beta)+\cdots+\cos(\alpha+2r\beta)+\cdots+\cos(\alpha+2n\beta)
+\]
+and 
+\[
+\cos\alpha+\binom{n}{1}\cos(\alpha+2\beta)+\cdots+\binom{n}{r}\cos(\alpha+2r\beta)+\cdots+\cos(\alpha+2n\beta).
+\]
+Given that $\sin\theta\neq0,$ prove that 
+\[
+1+\cos\theta\sec\theta+\cos2\theta\sec^{2}\theta+\cdots+\cos r\theta\sec^{r}\theta+\cdots+\cos n\theta\sec^{n}\theta=\frac{\sin(n+1)\theta\sec^{n}\theta}{\sin\theta}.
+\]
+
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+Prove that, for any integers $n$ and $r$, with $1\leqslant r\leqslant n,$
+\[
+\binom{n}{r}+\binom{n}{r-1}=\binom{n+1}{r}.
+\]
+Hence or otherwise, prove that 
+\[
+(uv)^{(n)}=u^{(n)}v+\binom{n}{1}u^{(n-1)}v^{(1)}+\binom{n}{2}u^{(n-2)}v^{(2)}+\cdots+uv^{(n)},
+\]
+where $u$ and $v$ are functions of $x$ and $z^{(r)}$ means $\dfrac{\mathrm{d}^{r}z}{\mathrm{d}x^{r}}$. 
+
+
+Prove that, if $y=\sin^{-1}y,$ then $(1-x^{2})y^{(n+2)}-(2n+1)xy^{(n+1)}-n^{2}y^{(n)}=0.$  
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+The transformation $T$ from $\begin{pmatrix}x\\
+y
+\end{pmatrix}$ to $\begin{pmatrix}X\\
+Y
+\end{pmatrix}$ is given by 
+\[
+\begin{pmatrix}X\\
+Y
+\end{pmatrix}=\frac{2}{5}\begin{pmatrix}9 & -2\\
+-2 & 6
+\end{pmatrix}\begin{pmatrix}x\\
+y
+\end{pmatrix}.
+\]
+Show that $T$ leaves the vector $\begin{pmatrix}1\\
+2
+\end{pmatrix}$ unchanged in direction but multiplied by a scalar, and that $\begin{pmatrix}2\\
+-1
+\end{pmatrix}$ is similarly transformed. 
+
+
+The circle $C$ whose equation is $x^{2}+y^{2}=1$ transforms under
+$T$ to a curve $E$. Show that $E$ has equation 
+\[
+8X^{2}+12XY+17Y^{2}=80,
+\]
+and state the area of the region bounded by $E$. Show also that the
+greatest value of $X$ on $E$ is $2\sqrt{17/5}.$ 
+
+
+Find the equation of the tangent to $E$ at the point which corresponds
+to the point $\frac{1}{5}(3,4)$ on $C$.
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+The points $P\,(0,a),$ $Q\,(a,0)$ and $R\,(a,-a)$ lie on the curve
+$C$ with cartesian equation 
+\[
+xy^{2}+x^{3}+a^{2}y-a^{3}=0,\qquad\mbox{ where }a>0.
+\]
+At each of $P,Q$ and $R$, express $y$ as a Taylor series in $h$,
+where $h$ is a small increment in $x$, as far as the term in $h^{2}.$
+Hence, or otherwise, sketch the shape of $C$ near each of these points. 
+
+
+Show that, if $(x,y)$ lies on $C$, then 
+\[
+4x^{4}-4a^{3}x-a^{4}\leqslant0.
+\]
+Sketch the graph of $y=4x^{4}-4a^{3}-a^{4}.$
+
+
+Given that the $y$-axis is an asymptote to $C$, sketch the curve
+$C$.
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+Let $P,Q$ and $R$ be functions of $x$. Prove that, for any function
+$y$ of $x$, the function 
+\[
+Py''+Qy'+Ry
+\]
+can be written in the form
+$\dfrac{\mathrm{d}}{\mathrm{d}x}(py'+qy),$ where $p$ and $q$ are
+functions of $x$, if and only if $P''-Q'+R=0.$ 
+
+
+Solve the differential equation 
+\[
+(x-x^{4})y''+(1-7x^{3})y'-9x^{2}y=(x^{3}+3x)\mathrm{e}^{x},
+\]
+given that when $x=2,y=2\mathrm{e}^{2}$ and $y'=0.$ 
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+		\begin{question}
+The real variables $\theta$ and $u$ are related by the equation
+$\tan\theta=\sinh u$ and $0\leqslant\theta<\frac{1}{2}\pi.$ Let
+$v=\mathrm{sech}u.$ Prove that 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  $v=\cos\theta;$
+\item[\bf (ii)] $\dfrac{\mathrm{d}\theta}{\mathrm{d}u}=v;$ 
+\item[\bf (iii)] $\sin2\theta=-2\dfrac{\mathrm{d}v}{\mathrm{d}u}\quad$ and $\quad\cos2\theta=-\cosh u\dfrac{\mathrm{d}^{2}v}{\mathrm{d}u^{2}};$
+\item[\bf (iv)] ${\displaystyle \frac{\mathrm{d}u}{\mathrm{d}\theta}\frac{\mathrm{d}^{2}u}{\mathrm{d}\theta^{2}}+\frac{\mathrm{d}v}{\mathrm{d}\theta}\frac{\mathrm{d}^{2}u}{\mathrm{d}\theta^{2}}+\left(\frac{\mathrm{d}u}{\mathrm{d}\theta}\right)^{2}=0.}$ 
+\end{itemize}
+\end{question}
+		
+	
+%%%%%%%%%% 10
+\begin{question}
+By considering the graphs of $y=kx$ and $y=\sin x,$ show that the
+equation $kx=\sin x,$ where $k>0,$ may have $0,1,2$ or $3$ roots
+in the interval $(4n+1)\frac{\pi}{2}<x<(4n+5)\frac{\pi}{2},$
+where $n$ is a positive integer. 
+
+
+For a certain given value of $n$, the equation has exactly one root
+in this interval. Show that $k$ lies in an interval which may be
+written $\sin\delta<k<\dfrac{2}{(4n+1)\pi},$ where $0<\delta<\frac{1}{2}\pi$
+and 
+\[
+\cos\delta=\left((4n+5)\frac{\pi}{2}-\delta\right)\sin\delta.
+\]
+Show that, if $n$ is large, then $\delta\approx\dfrac{2}{(4n+5)\pi}$
+and obtain a second, improved, approximation. 
+\end{question}
+			
+		
+		
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+The points $O,A,B$ and $C$ are the vertices of a uniform square
+lamina of mass $M.$ The lamina can turn freely under gravity about
+a horizontal axis perpendicular to the plane of the lamina through
+$O$. The sides of the lamina are of length $2a.$ When the lamina
+is haning at rest with the diagonal $OB$ vertically downwards it
+is struck at the midpoint of $OC$ by a particle of mass $6M$ moving
+horizontally in the plane of the lamina with speed $V$. The particle
+adheres to the lamina. Find, in terms of $a,M$ and $g$, the value
+which $V^{2}$ must exceed for the lamina and particle to make complete
+revolutions about the axis.  
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+A uniform smooth wedge of mass $m$ has congruent triangular end faces
+$A_{1}B_{1}C_{1}$ and $A_{2}B_{2}C_{2},$ and $A_{1}A_{2},B_{1}B_{2}$
+and $C_{1}C_{2}$ are perpendicular to these faces. The points $A,B$
+and $C$ are the midpoints of $A_{1}A_{2},B_{1}B_{2}$ and $C_{1}C_{2}$
+respectively. The sides of the triangle $ABC$ have lengths $AB=AC=5a$
+and $BC=6a.$ The wedge is placed with $BC$ on a smooth horizontal
+table, a particle of mass $2m$ is placed at $A$ on $AC,$ and the
+system is released from rest. The particle slides down $AC,$ strikes
+the table, bounces perfectly elastically and lands again on the table
+at $D$. At this time the point $C$ of the wedge has reached the
+point $E$. 
+
+Show that $DE=\frac{192}{19}a.$ 
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+A particle $P$ is projected, from the lowest point, along the smooth
+inside surface of a fixed sphere with centre $O$. It leaves the surface
+when $OP$ makes an angle $\theta$ with the upward vertical. Find
+the smallest angle that must be exceeded by $\theta$ to ensure that
+$P$ will strike the surface below the level of $O$. 
+
+
+{[}You may find it helpful to find the time at which the particle
+strikes the sphere.{]} 
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+	The edges $OA,OB,OC$ of a rigid cube are taken as coordinate axes
+	and $O',A',B',C'$ are the vertices diagonally opposite $O,A,B,C,$
+	respectively. The four forces acting on the cube are 
+	\[
+	\begin{pmatrix}\alpha\\
+	\beta\\
+	\gamma
+	\end{pmatrix}\mbox{ at }O\ (0,0,0),\ \begin{pmatrix}\lambda\\
+	0\\
+	1
+	\end{pmatrix}\mbox{ at }O'\ (a,a,a),\ \begin{pmatrix}-1\\
+	0\\
+	2
+	\end{pmatrix}\mbox{ at }B\ (0,a,0),\ \mbox{ and }\begin{pmatrix}1\\
+	\mu\\
+	\nu
+	\end{pmatrix}\mbox{ at }B'\ (a,0,a).
+	\]
+	The moment of the system about $O$ is zero: find $\lambda,\mu$ and
+	$\nu$.
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  Given that $\alpha=\beta=\gamma=0,$ find the system consisting of
+a single force at $B$ together with a couple which is equivalent
+to the given system. 
+\item[\bf (ii)] Given that $\alpha=2,\beta=3$ and $\gamma=2,$ find the equation
+of the locus about each point of which the moment of the system is
+zero. Find the number of units of work done on the cube when it moves
+(without rotation) a distance in the direction of this line under
+the action of the given forces only.  
+\end{itemize}
+
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+An unbiased twelve-sided die has its faces marked $A,A,A,B,B,B,B,B,B,B,B,B.$
+In a series of throws of the die the first $M$ throws show $A,$
+the next $N$ throws show $B$ and the $(M+N+1)$th throw shows $A$.
+Write down the probability that $M=m$ and $N=n$, where $m\geqslant0$
+and $n\geqslant1.$ Find
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  the marginal distributions of $M$ and $N$, 
+\item[\bf (ii)] the mean values of $M$ and $N$. 
+\end{itemize}
+Investigate whether $M$ and $N$ are independent. 
+
+
+Find the probability that $N$ is greater than a given integer $k$,
+where $k\geqslant1,$ and find $\mathrm{P}(N>M).$ Find also $\mathrm{P}(N=M)$
+and show that $\mathrm{P}(N<M)=\frac{1}{52}.$ 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+
+\begin{questionparts}
+\item A rod of unit length is cut into pieces of
+length $X$ and $1-X$; the latter is then cut in half. The random
+variable $X$ is uniformly distributed over $[0,1].$ For some values
+of $X$ a triangle can be formed from the three pieces of the rod.
+Show that the conditional probability that, if a triangle can be formed,
+it will be obtuse-angled is $3-2\sqrt{2.}$
+
+
+\item The bivariate distribution of the random variables $X$ and
+$Y$ is uniform over the triangle with vertices $(1,0),(1,1)$ and
+$(0,1).$ A pair of values $x,y$ is chosen at random from this distribution
+and a (perhaps degenerate) triangle $ABC$ is constructed with $BC=x$
+and $CA=y$ and $AB=2-x-y.$ Show that the construction is always
+possible and that $\angle ABC$ is obtuse if and only if 
+\[
+y>\frac{x^{2}-2x+2}{2-x}.
+\]
+Deduce that the probability that $\angle ABC$ is obtuse is $3-4\ln2.$
+\end{questionparts}
+
+\end{question}
+\end{document}

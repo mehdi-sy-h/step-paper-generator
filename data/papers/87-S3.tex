@@ -1,0 +1,480 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper III, 1987
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Find the set of positive integers $n$ for which $n$ does not divide
+$(n-1)!.$ Justify your answer. [Note that small values of $n$
+may require special consideration.]
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Let ${\displaystyle I_{m,n}=\int\cos^{m}x\sin nx\,\mathrm{d}x,}$
+where $m$ and $n$ are non-negative integers. Prove that for $m,n\geqslant1,$
+\[
+(m+n)I_{m,n}=-\cos^{m}\cos nx+mI_{m-1,n-1}.
+\]
+
+
+\begin{questionparts}
+\item Show that ${\displaystyle \int_{0}^{\pi}\cos^{m}x\sin nx\,\mathrm{d}x=0}$
+whenever $m,n$ are both even or both odd. 
+\item Evaluate ${\displaystyle \int_{0}^{\frac{\pi}{2}}\sin^{2}x\sin3x\,\mathrm{d}x.}$
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+	\item If $z=x+\mathrm{i}y,$ with $x,y$ real,
+	show that 
+	\[
+	\left|x\right|\cos\alpha+\left|y\right|\sin\alpha\leqslant\left|z\right|\leqslant\left|x\right|+\left|y\right|
+	\]
+	for all real $\alpha.$
+
+
+	\item By considering $(5-\mathrm{i})^{4}(1+\mathrm{i}),$ show that
+	\[
+	\frac{\pi}{4}=4\tan^{-1}\left(\frac{1}{5}\right)-\tan^{-1}\left(\frac{1}{239}\right).
+	\]
+	Prove similarly that 
+	\[
+	\frac{\pi}{4}=3\tan^{-1}\left(\frac{1}{4}\right)+\tan^{-1}\left(\frac{1}{20}\right)+\tan^{-1}\left(\frac{1}{1985}\right).
+	\]
+\end{questionparts}
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}$\ $
+\begin{center}
+\noindent\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-5.36,-4.84)(11.3,6.54) \pscustom{\moveto(-2.84,0.47) \lineto(-2.79,0.42) \lineto(-2.75,0.37) \lineto(-2.7,0.33) \lineto(-2.65,0.28) \lineto(-2.61,0.25) \lineto(-2.56,0.21) \lineto(-2.51,0.18) \lineto(-2.47,0.14) \lineto(-2.42,0.12) \lineto(-2.37,0.09) \lineto(-2.33,0.07) \lineto(-2.28,0.05) \lineto(-2.23,0.04) \lineto(-2.18,0.02) \lineto(-2.14,0.01) \lineto(-2.09,0.01) \lineto(-2.04,0) \lineto(-2,0) \lineto(-1.95,0) \lineto(-1.9,0.01) \lineto(-1.86,0.01) \lineto(-1.81,0.02) \lineto(-1.76,0.04) \lineto(-1.72,0.05) \lineto(-1.67,0.07) \lineto(-1.62,0.1) \lineto(-1.58,0.12) \lineto(-1.53,0.15) \lineto(-1.48,0.18) \lineto(-1.43,0.21) \lineto(-1.39,0.25) \lineto(-1.34,0.29) \lineto(-1.29,0.33) \lineto(-1.25,0.38) \lineto(-1.2,0.43) \lineto(-1.15,0.48) \lineto(-1.11,0.53) \lineto(-1.06,0.59) \lineto(-1.01,0.65) \lineto(-0.97,0.71) \lineto(-0.92,0.78) \lineto(-0.87,0.85) \lineto(-0.83,0.92) \lineto(-0.78,0.99) \lineto(-0.73,1.07) \lineto(-0.68,1.15) \lineto(-0.64,1.24) \lineto(-0.59,1.32) \lineto(-0.54,1.41) \lineto(-0.5,1.51) \lineto(-0.45,1.6) \lineto(-0.4,1.7) \lineto(-0.38,1.75) \lineto(-0.36,1.8) \lineto(-0.33,1.85) \lineto(-0.31,1.9) \lineto(-0.29,1.96) \lineto(-0.26,2.01) \lineto(-0.24,2.07) \lineto(-0.22,2.12) \lineto(-0.19,2.18) \lineto(-0.17,2.23) \lineto(-0.15,2.29) \lineto(-0.12,2.35) \lineto(-0.1,2.41) \lineto(-0.08,2.47) \lineto(-0.05,2.53) \lineto(-0.03,2.59) \lineto(-0.01,2.65) \lineto(0.02,2.72) \lineto(0.04,2.78) \lineto(0.07,2.84) \lineto(0.09,2.91) \lineto(0.11,2.97) \lineto(0.14,3.04) \lineto(0.16,3.11) \lineto(0.18,3.18) \lineto(0.21,3.24) \lineto(0.23,3.31) \lineto(0.25,3.38) \lineto(0.28,3.45) \lineto(0.3,3.53) \lineto(0.32,3.6) \lineto(0.35,3.67) \lineto(0.37,3.74) \lineto(0.39,3.82) \lineto(0.42,3.89) \lineto(0.44,3.97) \lineto(0.46,4.05) \lineto(0.49,4.12) \lineto(0.51,4.2) \lineto(0.53,4.28) \lineto(0.56,4.36) \lineto(0.58,4.44) \lineto(0.6,4.52) \lineto(0.63,4.6) \lineto(0.65,4.69) \lineto(0.67,4.77) \lineto(0.7,4.85) \lineto(0.72,4.94) \lineto(0.74,5.02) \lineto(0.77,5.11) \lineto(0.79,5.2) \lineto(0.82,5.28) \lineto(0.84,5.37) \lineto(0.86,5.46) \lineto(0.89,5.55) \lineto(0.91,5.64) \lineto(0.93,5.73) \lineto(0.96,5.82) \lineto(0.98,5.92) \lineto(0.99,5.96) \lineto(1,5.99) \lineto(1,6) \lineto(1,6) \lineto(1,6) \lineto(1,6) \lineto(1,6) \lineto(1,6) \lineto(1,6) \lineto(1,6) \moveto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,6) \lineto(-5,5.99) \lineto(-5,5.98) \lineto(-4.99,5.97) \lineto(-4.98,5.94) \lineto(-4.97,5.87) \lineto(-4.95,5.81) \lineto(-4.94,5.75) \lineto(-4.92,5.69) \lineto(-4.91,5.63) \lineto(-4.89,5.57) \lineto(-4.87,5.51) \lineto(-4.86,5.45) \lineto(-4.84,5.39) \lineto(-4.83,5.33) \lineto(-4.81,5.27) \lineto(-4.8,5.21) \lineto(-4.78,5.15) \lineto(-4.76,5.09) \lineto(-4.75,5.04) \lineto(-4.73,4.98) \lineto(-4.72,4.92) \lineto(-4.7,4.86) \lineto(-4.69,4.81) \lineto(-4.67,4.75) \lineto(-4.65,4.7) \lineto(-4.64,4.64) \lineto(-4.62,4.59) \lineto(-4.61,4.53) \lineto(-4.59,4.48) \lineto(-4.58,4.42) \lineto(-4.56,4.37) \lineto(-4.54,4.31) \lineto(-4.53,4.26) \lineto(-4.51,4.21) \lineto(-4.5,4.16) \lineto(-4.48,4.1) \lineto(-4.47,4.05) \lineto(-4.45,4) \lineto(-4.43,3.95) \lineto(-4.42,3.9) \lineto(-4.4,3.85) \lineto(-4.39,3.8) \lineto(-4.37,3.75) \lineto(-4.34,3.65) \lineto(-4.32,3.58) \lineto(-4.29,3.5) \lineto(-4.27,3.43) \lineto(-4.25,3.36) \lineto(-4.22,3.29) \lineto(-4.2,3.22) \lineto(-4.18,3.15) \lineto(-4.15,3.09) \lineto(-4.13,3.02) \lineto(-4.11,2.95) \lineto(-4.08,2.89) \lineto(-4.06,2.82) \lineto(-4.03,2.76) \lineto(-4.01,2.7) \lineto(-3.99,2.63) \lineto(-3.96,2.57) \lineto(-3.94,2.51) \lineto(-3.92,2.45) \lineto(-3.89,2.39) \lineto(-3.87,2.33) \lineto(-3.85,2.27) \lineto(-3.82,2.22) \lineto(-3.8,2.16) \lineto(-3.78,2.1) \lineto(-3.75,2.05) \lineto(-3.73,2) \lineto(-3.71,1.94) \lineto(-3.68,1.89) \lineto(-3.66,1.84) \lineto(-3.64,1.78) \lineto(-3.61,1.73) \lineto(-3.59,1.68) \lineto(-3.54,1.59) \lineto(-3.5,1.49) \lineto(-3.45,1.4) \lineto(-3.4,1.31) \lineto(-3.36,1.22) \lineto(-3.31,1.14) \lineto(-3.26,1.06) \lineto(-3.21,0.98) \lineto(-3.17,0.91) \lineto(-3.12,0.84) \lineto(-3.07,0.77) \lineto(-3.03,0.7) \lineto(-2.98,0.64) \lineto(-2.93,0.58) \lineto(-2.89,0.52) \lineto(-2.84,0.47) } \pscustom{\moveto(3.95,3.51) \lineto(4,3.49) \lineto(4.04,3.46) \lineto(4.09,3.44) \lineto(4.13,3.41) \lineto(4.18,3.39) \lineto(4.22,3.36) \lineto(4.27,3.34) \lineto(4.31,3.31) \lineto(4.36,3.29) \lineto(4.4,3.26) \lineto(4.44,3.23) \lineto(4.49,3.21) \lineto(4.53,3.18) \lineto(4.58,3.15) \lineto(4.62,3.13) \lineto(4.66,3.1) \lineto(4.71,3.07) \lineto(4.75,3.04) \lineto(4.79,3.02) \lineto(4.83,2.99) \lineto(4.88,2.96) \lineto(4.92,2.93) \lineto(4.96,2.9) \lineto(5,2.87) \lineto(5.04,2.85) \lineto(5.08,2.82) \lineto(5.12,2.79) \lineto(5.16,2.76) \lineto(5.2,2.73) \lineto(5.24,2.69) \lineto(5.28,2.66) \lineto(5.32,2.63) \lineto(5.36,2.6) \lineto(5.4,2.57) \lineto(5.44,2.54) \lineto(5.47,2.51) \lineto(5.51,2.47) \lineto(5.55,2.44) \lineto(5.59,2.41) \lineto(5.62,2.37) \lineto(5.66,2.34) \lineto(5.7,2.3) \lineto(5.73,2.27) \lineto(5.77,2.23) \lineto(5.8,2.2) \lineto(5.84,2.16) \lineto(5.87,2.13) \lineto(5.9,2.09) \lineto(5.94,2.05) \lineto(5.97,2.02) \lineto(6,1.98) \lineto(6.03,1.94) \lineto(6.07,1.9) \lineto(6.1,1.86) \lineto(6.13,1.82) \lineto(6.16,1.78) \lineto(6.19,1.74) \lineto(6.22,1.7) \lineto(6.25,1.66) \lineto(6.27,1.62) \lineto(6.3,1.58) \lineto(6.33,1.53) \lineto(6.36,1.49) \lineto(6.38,1.45) \lineto(6.41,1.4) \lineto(6.44,1.36) \lineto(6.46,1.31) \lineto(6.49,1.27) \lineto(6.51,1.22) \lineto(6.53,1.17) \lineto(6.56,1.13) \lineto(6.58,1.08) \lineto(6.6,1.03) \lineto(6.62,0.98) \lineto(6.65,0.93) \lineto(6.67,0.88) \lineto(6.69,0.83) \lineto(6.7,0.78) \lineto(6.72,0.73) \lineto(6.74,0.68) \lineto(6.76,0.63) \lineto(6.78,0.57) \lineto(6.79,0.52) \lineto(6.81,0.46) \lineto(6.82,0.41) \lineto(6.84,0.35) \lineto(6.85,0.3) \lineto(6.87,0.24) \lineto(6.88,0.18) \lineto(6.89,0.13) \lineto(6.9,0.07) \lineto(6.92,0.01) \lineto(6.93,-0.05) \lineto(6.94,-0.11) \lineto(6.94,-0.17) \lineto(6.95,-0.24) \lineto(6.96,-0.3) \lineto(6.97,-0.36) \lineto(6.97,-0.43) \lineto(6.98,-0.49) \lineto(6.98,-0.56) \lineto(6.99,-0.62) \lineto(6.99,-0.69) \lineto(7,-0.76) \lineto(7,-0.82) \lineto(7,-0.89) \lineto(7,-0.96) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \moveto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3,4) \lineto(3.01,4) \lineto(3.02,3.99) \lineto(3.03,3.98) \lineto(3.06,3.97) \lineto(3.11,3.95) \lineto(3.16,3.92) \lineto(3.2,3.9) \lineto(3.25,3.87) \lineto(3.3,3.85) \lineto(3.34,3.83) \lineto(3.39,3.8) \lineto(3.44,3.78) \lineto(3.48,3.76) \lineto(3.53,3.73) \lineto(3.58,3.71) \lineto(3.62,3.69) \lineto(3.67,3.66) \lineto(3.72,3.64) \lineto(3.76,3.61) \lineto(3.81,3.59) \lineto(3.85,3.56) \lineto(3.9,3.54) \lineto(3.95,3.52) \lineto(3.95,3.51) } \pscustom{\moveto(7.68,1.55) \lineto(7.71,1.6) \lineto(7.74,1.64) \lineto(7.77,1.68) \lineto(7.8,1.72) \lineto(7.83,1.76) \lineto(7.86,1.8) \lineto(7.89,1.84) \lineto(7.92,1.88) \lineto(7.95,1.92) \lineto(7.98,1.96) \lineto(8.02,2) \lineto(8.05,2.03) \lineto(8.08,2.07) \lineto(8.11,2.11) \lineto(8.15,2.14) \lineto(8.18,2.18) \lineto(8.22,2.22) \lineto(8.25,2.25) \lineto(8.29,2.29) \lineto(8.32,2.32) \lineto(8.36,2.36) \lineto(8.4,2.39) \lineto(8.43,2.42) \lineto(8.47,2.46) \lineto(8.51,2.49) \lineto(8.54,2.52) \lineto(8.58,2.55) \lineto(8.62,2.59) \lineto(8.66,2.62) \lineto(8.7,2.65) \lineto(8.74,2.68) \lineto(8.78,2.71) \lineto(8.82,2.74) \lineto(8.86,2.77) \lineto(8.9,2.8) \lineto(8.94,2.83) \lineto(8.98,2.86) \lineto(9.02,2.89) \lineto(9.06,2.92) \lineto(9.1,2.95) \lineto(9.15,2.97) \lineto(9.19,3) \lineto(9.23,3.03) \lineto(9.27,3.06) \lineto(9.32,3.09) \lineto(9.36,3.11) \lineto(9.4,3.14) \lineto(9.45,3.17) \lineto(9.49,3.19) \lineto(9.53,3.22) \lineto(9.58,3.25) \lineto(9.62,3.27) \lineto(9.67,3.3) \lineto(9.71,3.32) \lineto(9.76,3.35) \lineto(9.8,3.38) \lineto(9.85,3.4) \lineto(9.89,3.43) \lineto(9.94,3.45) \lineto(9.98,3.48) \lineto(10.03,3.5) \lineto(10.07,3.52) \lineto(10.12,3.55) \lineto(10.16,3.57) \lineto(10.21,3.6) \lineto(10.26,3.62) \lineto(10.3,3.65) \lineto(10.35,3.67) \lineto(10.4,3.69) \lineto(10.44,3.72) \lineto(10.49,3.74) \lineto(10.53,3.77) \lineto(10.58,3.79) \lineto(10.63,3.81) \lineto(10.67,3.84) \lineto(10.72,3.86) \lineto(10.77,3.88) \lineto(10.82,3.91) \lineto(10.86,3.93) \lineto(10.91,3.95) \lineto(10.96,3.98) \lineto(10.98,3.99) \lineto(10.99,4) \lineto(11,4) \lineto(11,4) \lineto(11,4) \lineto(11,4) \lineto(11,4) \lineto(11,4) \lineto(11,4) \lineto(11,4) \lineto(11,4) \moveto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-0.99) \lineto(7,-0.99) \lineto(7,-0.98) \lineto(7,-0.95) \lineto(7,-0.91) \lineto(7,-0.84) \lineto(7,-0.77) \lineto(7.01,-0.7) \lineto(7.01,-0.63) \lineto(7.01,-0.57) \lineto(7.02,-0.5) \lineto(7.02,-0.44) \lineto(7.03,-0.37) \lineto(7.04,-0.31) \lineto(7.05,-0.25) \lineto(7.05,-0.19) \lineto(7.06,-0.12) \lineto(7.07,-0.06) \lineto(7.08,0) \lineto(7.09,0.06) \lineto(7.11,0.11) \lineto(7.12,0.17) \lineto(7.13,0.23) \lineto(7.14,0.29) \lineto(7.16,0.34) \lineto(7.17,0.4) \lineto(7.19,0.45) \lineto(7.2,0.51) \lineto(7.22,0.56) \lineto(7.24,0.62) \lineto(7.25,0.67) \lineto(7.27,0.72) \lineto(7.29,0.77) \lineto(7.31,0.82) \lineto(7.33,0.87) \lineto(7.35,0.92) \lineto(7.37,0.97) \lineto(7.39,1.02) \lineto(7.42,1.07) \lineto(7.44,1.12) \lineto(7.46,1.16) \lineto(7.48,1.21) \lineto(7.51,1.26) \lineto(7.53,1.3) \lineto(7.56,1.35) \lineto(7.58,1.39) \lineto(7.61,1.44) \lineto(7.64,1.48) \lineto(7.66,1.52) \lineto(7.68,1.55) } \pscustom{\moveto(0.66,-4.14) \lineto(0.75,-4.16) \lineto(0.85,-4.18) \lineto(0.95,-4.2) \lineto(1,-4.21) \lineto(1.05,-4.22) \lineto(1.1,-4.23) \lineto(1.15,-4.24) \lineto(1.2,-4.24) \lineto(1.25,-4.25) \lineto(1.31,-4.26) \lineto(1.36,-4.26) \lineto(1.41,-4.27) \lineto(1.46,-4.27) \lineto(1.51,-4.28) \lineto(1.56,-4.28) \lineto(1.61,-4.28) \lineto(1.67,-4.28) \lineto(1.72,-4.28) \lineto(1.77,-4.29) \lineto(1.82,-4.29) \lineto(1.87,-4.29) \lineto(1.93,-4.29) \lineto(1.98,-4.28) \lineto(2.03,-4.28) \lineto(2.08,-4.28) \lineto(2.14,-4.28) \lineto(2.19,-4.28) \lineto(2.24,-4.27) \lineto(2.3,-4.27) \lineto(2.35,-4.26) \lineto(2.4,-4.26) \lineto(2.45,-4.26) \lineto(2.51,-4.25) \lineto(2.56,-4.24) \lineto(2.61,-4.24) \lineto(2.66,-4.23) \lineto(2.72,-4.22) \lineto(2.77,-4.21) \lineto(2.82,-4.21) \lineto(2.87,-4.2) \lineto(2.93,-4.19) \lineto(2.98,-4.18) \lineto(3.03,-4.17) \lineto(3.08,-4.16) \lineto(3.14,-4.15) \lineto(3.19,-4.14) \lineto(3.24,-4.12) \lineto(3.29,-4.11) \lineto(3.35,-4.1) \lineto(3.4,-4.09) \lineto(3.45,-4.07) \lineto(3.5,-4.06) \lineto(3.55,-4.04) \lineto(3.6,-4.03) \lineto(3.65,-4.01) \lineto(3.71,-4) \lineto(3.76,-3.98) \lineto(3.81,-3.97) \lineto(3.86,-3.95) \lineto(3.91,-3.93) \lineto(3.96,-3.92) \lineto(4.01,-3.9) \lineto(4.06,-3.88) \lineto(4.16,-3.85) \lineto(4.26,-3.81) \lineto(4.35,-3.77) \lineto(4.45,-3.73) \lineto(4.55,-3.69) \lineto(4.64,-3.64) \lineto(4.73,-3.6) \lineto(4.83,-3.55) \lineto(4.92,-3.5) \lineto(5.01,-3.46) \lineto(5.1,-3.41) \lineto(5.18,-3.36) \lineto(5.27,-3.31) \lineto(5.35,-3.25) \lineto(5.44,-3.2) \lineto(5.52,-3.15) \lineto(5.6,-3.09) \lineto(5.68,-3.03) \lineto(5.75,-2.98) \lineto(5.83,-2.92) \lineto(5.9,-2.86) \lineto(5.97,-2.8) \lineto(6.04,-2.74) \lineto(6.11,-2.68) \lineto(6.17,-2.62) \lineto(6.24,-2.56) \lineto(6.3,-2.49) \lineto(6.36,-2.43) \lineto(6.41,-2.36) \lineto(6.47,-2.3) \lineto(6.52,-2.23) \lineto(6.57,-2.17) \lineto(6.62,-2.1) \lineto(6.66,-2.03) \lineto(6.7,-1.97) \lineto(6.74,-1.9) \lineto(6.78,-1.83) \lineto(6.81,-1.76) \lineto(6.85,-1.69) \lineto(6.87,-1.63) \lineto(6.9,-1.56) \lineto(6.92,-1.49) \lineto(6.94,-1.42) \lineto(6.96,-1.35) \lineto(6.97,-1.28) \lineto(6.99,-1.21) \lineto(6.99,-1.14) \lineto(7,-1.07) \lineto(7,-1.03) \lineto(7,-1.01) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \lineto(7,-1) \moveto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,0) \lineto(-2,-0.01) \lineto(-2,-0.01) \lineto(-2,-0.03) \lineto(-2,-0.05) \lineto(-2,-0.11) \lineto(-2,-0.16) \lineto(-2,-0.22) \lineto(-2,-0.27) \lineto(-1.99,-0.32) \lineto(-1.99,-0.38) \lineto(-1.99,-0.43) \lineto(-1.99,-0.48) \lineto(-1.98,-0.53) \lineto(-1.98,-0.58) \lineto(-1.97,-0.63) \lineto(-1.96,-0.73) \lineto(-1.96,-0.8) \lineto(-1.95,-0.88) \lineto(-1.94,-0.95) \lineto(-1.93,-1.02) \lineto(-1.92,-1.09) \lineto(-1.91,-1.16) \lineto(-1.89,-1.22) \lineto(-1.88,-1.29) \lineto(-1.87,-1.36) \lineto(-1.85,-1.42) \lineto(-1.84,-1.49) \lineto(-1.82,-1.55) \lineto(-1.81,-1.61) \lineto(-1.79,-1.68) \lineto(-1.77,-1.74) \lineto(-1.75,-1.8) \lineto(-1.73,-1.86) \lineto(-1.71,-1.92) \lineto(-1.69,-1.97) \lineto(-1.67,-2.03) \lineto(-1.65,-2.09) \lineto(-1.63,-2.14) \lineto(-1.6,-2.2) \lineto(-1.58,-2.25) \lineto(-1.56,-2.3) \lineto(-1.53,-2.36) \lineto(-1.51,-2.41) \lineto(-1.48,-2.46) \lineto(-1.43,-2.56) \lineto(-1.37,-2.65) \lineto(-1.31,-2.75) \lineto(-1.25,-2.84) \lineto(-1.19,-2.92) \lineto(-1.12,-3.01) \lineto(-1.06,-3.09) \lineto(-0.99,-3.17) \lineto(-0.92,-3.24) \lineto(-0.85,-3.31) \lineto(-0.77,-3.38) \lineto(-0.7,-3.45) \lineto(-0.62,-3.51) \lineto(-0.54,-3.57) \lineto(-0.46,-3.63) \lineto(-0.37,-3.69) \lineto(-0.29,-3.74) \lineto(-0.2,-3.79) \lineto(-0.12,-3.84) \lineto(-0.03,-3.88) \lineto(0.06,-3.93) \lineto(0.15,-3.97) \lineto(0.24,-4) \lineto(0.34,-4.04) \lineto(0.43,-4.07) \lineto(0.53,-4.1) \lineto(0.62,-4.13) \lineto(0.66,-4.14) } \psline(-4.12,2.99)(0.11,2.96) \psline[linestyle=dashed,dash=2pt 2pt](0.11,2.96)(4.83,2.99) \psline(4.83,2.99)(9.19,3) \psline[linestyle=dashed,dash=2pt 2pt](-4,0)(0,0) \psline[linestyle=dashed,dash=2pt 2pt](-4,-1)(9,-1) \psline{->}(-0.4,0)(-0.38,-1) \psline{->}(-0.38,-1)(-0.4,0) \rput[tl](-0.18,-0.25){$1 \text{ unit}$} \psline{->}(3,2.98)(3,-1) \psline{->}(3,-1)(3,2.98) \rput[tl](3.06,1.18){$h$} \rput[tl](-2.68,5.12){$A$} \rput[tl](6.98,4.48){$B$} \end{pspicture*}
+\par\end{center}
+
+
+Two funnels $A$ and $B$ have surfaces formed by rotating the curves
+$y=x^{2}$ and $y=2\sinh^{-1}x$ $(x>0)$ above the $y$-axis. The
+bottom of $B$ is one unit lower than the bottom of $A$ and they
+are connected by a thin rubber tube with a tap in it. The tap is closed
+and $A$ is filled with water to a depth of 4 units. The tap is then
+closed. When the water comes to rest, both surfaces are at a height
+$h$ above the bottom of $B$, as shown in the diagram. Show that
+$h$ satisfies the equation 
+\[
+h^{2}-3h+\sinh h=15.
+\]
+
+
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+A secret message consists of the numbers $1,3,7,23,24,37,39,43,43,43,45,47$
+arranged in some order as $a_{1},a_{2},\ldots,a_{12}.$ The message
+is encoded as $b_{1},b_{2},\ldots,b_{12}$ with $0\leqslant b_{j}\leqslant49$
+and 
+\begin{alignat*}{1}
+b_{2j} & \equiv a_{2j}+n_{0}+j\pmod{50},\\
+b_{2j+1} & \equiv a_{2j+1}+n_{1}+j\pmod{50},
+\end{alignat*}
+for some integers $n_{0}$ and $n_{1}.$ If the coded message is $35,27,2,36,15,35,8,40,40,37,24,48,$
+find the original message, explaining your method carefully. 
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+The functions $x(t)$ and $y(t)$ satisfy the simultaneous differential
+equations 
+\begin{alignat*}{1}
+\dfrac{\mathrm{d}x}{\mathrm{d}t}+2x-5y & =0\\
+\frac{\mathrm{d}y}{\mathrm{d}t}+ax-2y & =2\cos t,
+\end{alignat*}
+subject to $x=0,$ $\dfrac{\mathrm{d}y}{\mathrm{d}t}=0$ at $t=0.$ 
+
+
+Solve these equations for $x$ and $y$ in the case when $a=1$. 
+
+Without
+solving the equations explicitly, state briefly how the form of the
+solutions for $x$ and $y$ if $a>1$ would differ from the form when
+$a=1.$ 
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+Prove that 
+\[
+\tan^{-1}t=t-\frac{t^{3}}{3}+\frac{t^{5}}{5}-\cdots+\frac{(-1)^{n}t^{2n+1}}{2n+1}+(-1)^{n+1}\int_{0}^{t}\frac{x^{2n+2}}{1+x^{2}}\,\mathrm{d}x.
+\]
+Hence show that, if $0\leqslant t\leqslant1,$ then 
+\[
+\frac{t^{2n+3}}{2(2n+3)}\leqslant\left|\tan^{-1}t-\sum_{r=0}^{n}\frac{(-1)^{r}t^{2r+1}}{2r+1}\right|\leqslant\frac{t^{2n+3}}{2n+3}.
+\]
+Show that, as $n\rightarrow\infty,$ 
+\[
+4\sum_{r=0}^{n}\frac{(-1)^{r}}{(2r+1)}\rightarrow\pi,
+\]
+but that the error in approximating $\pi$ by ${\displaystyle 4\sum_{r=0}^{n}\frac{(-1)^{r}}{(2r+1)}}$
+is at least $10^{-2}$ if $n$ is less than or equal to $98$. 
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+Show that, if the lengths of the diagonals of a parallelogram are
+specified, then the parallogram has maximum area when the diagonals
+are perpendicular. Show also that the area of a parallelogram is less
+than or equal to half the square of the length of its longer diagonal. 
+
+
+The set $A$ of points $(x,y)$ is given by 
+\begin{alignat*}{1}
+\left|a_{1}x+b_{1}y-c_{1}\right| & \leqslant\delta,\\
+\left|a_{2}x+b_{2}y-c_{2}\right| & \leqslant\delta,
+\end{alignat*}
+ with $a_{1}b_{2}\neq a_{2}b_{1}.$ Sketch this set and show that
+it is possible to find $(x_{1},y_{1}),(x_{2},y_{2})\in A$ with 
+\[
+(x_{1}-x_{2})^{2}+(y_{1}-y_{2})^{2}\geqslant\frac{8\delta^{2}}{\left|a_{1}b_{2}-a_{2}b_{1}\right|}.
+\]
+		
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+		\begin{question}
+Let $(G,*)$ and $(H,\circ)$ be two groups and $G\times H$ be the
+set of ordered pairs $(g,h)$ with $g\in G$ and $h\in H.$ A multiplication
+on $G\times H$ is defined by 
+\[
+(g_{1},h_{1})(g_{2},h_{2})=(g_{1}*g_{2},h_{1}\circ h_{2})
+\]
+for all $g_{1},g_{2}\in G$ and $h_{1},h_{2}\in H$. 
+
+
+Show that, with this multiplication, $G\times H$ is a group. 
+
+
+State whether the following are true or false and prove your answers. 
+\begin{enumerate}
+\item[\bf (i)] $G\times H$ is abelian if and only if both $G$ and $H$ are abelian. 
+\item[\bf (ii)] $G\times H$ contains a subgroup isomorphic to $G$. 
+\item[\bf (iii)] $\mathbb{Z}_{2}\times\mathbb{Z}_{2}$ is isomorphic to $\mathbb{Z}_{4}.$
+\item[\bf (iv)] $S_{2}\times S_{3}$ is isomorphic to $S_{6}.$
+\end{enumerate}
+
+{[}$\mathbb{Z}_{n}$ is the cyclic group of order $n$, and $S_{n}$
+is the permutation group on $n$ objects.{]} 
+		\end{question}
+		
+	
+%%%%%%%%%% 10
+\begin{question}
+The \textit{Bernoulli polynomials} $P_{n}(x)$, where $n$ is a non-negative
+integer, are defined by $P_{0}(x)=1$ and, for $n\geqslant1$, 
+\[
+\frac{\mathrm{d}P_{n}}{\mathrm{d}x}=nP_{n-1}(x),\qquad\int_{0}^{1}P_{n}(x)\,\mathrm{d}x=0
+\]
+Show by induction or otherwise, that 
+\[
+P_{n}(x+1)-P_{n}(x)=nx^{n-1},\quad\mbox{ for }n\geqslant1.
+\]
+Deduce that
+\[
+n\sum_{m=0}^{k}m^{n-1}=P_{n}(k+1)-P_{n}(0)
+\]
+Hence show that ${\displaystyle \sum_{m=0}^{1000}m^{3}=(500500)^{2}}$
+			\end{question}
+			
+		
+		
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+A woman stands in a field at a distance of $a\,\mathrm{m}$ from the
+straight bank of a river which flows with negligible speed. She sees
+her frightened child clinging to a tree stump standing in the river
+$b\,\mathrm{m}$ downstream from where she stands and $c\,\mathrm{m}$
+from the bank. She runs at a speed of $u\,\mathrm{ms}^{-1}$ and swims
+at $v\,\mathrm{ms}^{-1}$ in straight lines. Find an equation to be
+satisfied by $x,$ where $x\,\mathrm{m}$ is the distance upstream from the
+stump at which she should enter the river if she is to reach the child
+in the shortest possible time. 
+
+
+Suppose now that the river flows with speed $v$ ms$^{-1}$ and the
+stump remains fixed. Show that, in this case, $x$ must satisfy the
+equation 
+\[
+2vx^{2}(b-x)=u(x^{2}-c^{2})[a^{2}+(b-x)^{2}]^{\frac{1}{2}}.
+\]
+For this second case, draw sketches of the woman's path for the three
+possibilities $b>c,$ $b=c$ and $b<c$. 
+
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+A firework consists of a uniform rod of mass $M$ and length $2a$,
+pivoted smoothly at one end so that it can rotate in a fixed horizontal
+plane, and a rocket attached to the other end. The rocket is a uniform
+rod of mass $m(t)$ and length $2l(t)$, with $m(t)=2\alpha l(t)$
+and $\alpha$ constant. It is attached to the rod by its front end
+and it lies at right angles to the rod in the rod's plane of rotation.
+The rocket burns fuel in such a way that $\mathrm{d}m/\mathrm{d}t=-\alpha\beta,$
+with $\beta$ constant. The burnt fuel is ejected from the back of
+the rocket, with speed $u$ and directly backwards relative to the
+rocket. Show that, until the fuel is exhausted, the firework's angular
+velocity $\omega$ at time $t$ satisfies 
+\[
+\frac{\mathrm{d}\omega}{\mathrm{d}t}=\frac{3\alpha\beta au}{2[Ma^{2}+2\alpha l(3a^{2}+l^{2})]}.
+\] 
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+A uniform rod, of mass $3m$ and length $2a,$ is freely hinged at
+one end and held by the other end in a horizontal position. A rough
+particle, of mass $m$, is placed on the rod at its mid-point. If
+the free end is then released, prove that, until the particle begins
+to slide on the rod, the inclination $\theta$ of the rod to the horizontal
+satisfies the equation 
+\[
+5a\dot{\theta}^{2}=8g\sin\theta.
+\]
+The coefficient of friction between the particle and the rod is $\frac{1}{2}.$
+Show that, when the particle begins to slide, $\tan\theta=\frac{1}{26}.$
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+It is given that the gravitational force between a disc, of radius
+$a,$ thickness $\delta x$ and uniform density $\rho,$ and a particle
+of mass $m$ at a distance $b(\geqslant0)$ from the disc on its axis
+is 
+\[
+2\pi mk\rho\delta x\left(1-\frac{b}{(a^{2}+b^{2})^{\frac{1}{2}}}\right),
+\]
+where $k$ is a constant. Show that the gravitational force on a particle
+of mass $m$ at the surface of a uniform sphere of mass $M$ and radius
+$r$ is $kmM/r^{2}.$ Deduce that in a spherical cloud of particles
+of uniform density, which all attract one another gravitationally,
+the radius $r$ and inward velocity $v=-\dfrac{\d r}{\d t}$
+of a particle at the surface satisfy the equation 
+\[
+v\frac{\mathrm{d}v}{\mathrm{d}r}=-\frac{kM}{r^{2}},
+\]
+where $M$ is the mass of the cloud. 
+
+
+At time $t=0$, the cloud is instantaneously at rest and has radius
+$R$. Show that $r=R\cos^{2}\alpha$ after a time 
+\[
+\left(\frac{R^{3}}{2kM}\right)^{\frac{1}{2}}(\alpha+\tfrac{1}{2}\sin2\alpha).
+\]
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+A patient arrives with blue thumbs at the doctor's surgery. With probability
+$p$ the patient is suffering from Fenland fever and requires treatment
+costing $\pounds 100.$ With probability $1-p$ he is suffering from
+Steppe syndrome and will get better anyway. A test exists which infallibly
+gives positive results if the patient is suffering from Fenland fever
+but also has probability $q$ of giving positive results if the patient
+is not. The test cost $\pounds 10.$ The doctor decides to proceed
+as follows. She will give the test repeatedly until \textit{either
+}the last test is negative, in which case she dismisses the patient
+with kind words, \textit{or }she has given the test $n$ times with
+positive results each time, in which case she gives the treatment.
+In the case $n=0,$ she treats the patient at once. She wishes to
+minimise the expected cost $\pounds E_{n}$ to the National Health
+Service. \begin{questionparts}
+\item Show that 
+\[
+E_{n+1}-E_{n}=10p-10(1-p)q^{n}(9-10q),
+\]
+and deduce that if $p=10^{-4},q=10^{-2},$ she should choose $n=3.$ 
+\item Show that if $q$ is larger than some fixed value $q_{0},$ to be
+determined explicitly, then whatever the value of $p,$ she should
+choose $n=0.$ 
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+\begin{questionparts} \item $X_{1},X_{2},\ldots,X_{n}$ are independent
+identically distributed random variables drawn from a uniform distribution
+on $[0,1].$ The random variables $A$ and $B$ are defined by 
+\[
+A=\min(X_{1},\ldots,X_{n}),\qquad B=\max(X_{1},\ldots,X_{n}).
+\]
+For any fixed $k$, such that $0<k<\frac{1}{2},$ let 
+\[
+p_{n}=\mathrm{P}(A\leqslant k\mbox{ and }B\geqslant1-k).
+\]
+What happens to $p_{n}$ as $n\rightarrow\infty$? Comment briefly
+on this result. 
+
+
+\item Lord Copper, the celebrated and imperious newspaper proprietor,
+has decided to run a lottery in which each of the $4,000,000$ readers
+of his newspaper will have an equal probability $p$ of winning $\pounds 1,000,000$
+and their changes of winning will be independent. He has fixed all
+the details leaving to you, his subordinate, only the task of choosing
+$p$. If nobody wins $\pounds 1,000,000$, you will be sacked, and
+if more than two readers win $\pounds 1,000,000,$ you will also be
+sacked. Explaining your reasoning, show that however you choose $p,$
+you will have less than a 60\% change of keeping your job. \end{questionparts}
+\end{question}
+\end{document}

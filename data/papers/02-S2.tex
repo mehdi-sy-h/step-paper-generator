@@ -1,0 +1,468 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2002
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Show that
+\[
+\int_{\frac{1}{6}\pi}^{\frac{1}{4}\pi} \frac 1{1-\cos2\theta} \;\d\theta = \frac{\sqrt3}2 - \frac12\;.
+\]
+
+By using the substitution $x=\sin2\theta$, or otherwise, show that
+\[
+\int_{\sqrt3/2}^1 \frac 1 {1-\sqrt{1-x^2}} \, \d x = \sqrt 3 -1 -\frac\pi 6 \;.
+\]
+
+Hence evaluate the integral
+\[
+\int_1^{2/\sqrt3} \frac  1{y ( y - \sqrt{y^2-1^2})} \, \d y \;.
+\]
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Show that setting $z - z^{-1}=w$ in the quartic equation
+\[
+z^4 +5z^3 +4z^2 -5z +1=0
+\]
+results in the quadratic equation $w^2+5w+6=0$. Hence  
+solve the above quartic equation.
+
+Solve similarly the equation
+\[
+2z^8 -3z^7-12z^6 +12z^5 +22z^4-12z^3 -12 z^2 +3z +2=0 \;.
+\]
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The $n$th  Fermat number, $F_n$, is defined by
+\[
+F_n = 2^{2^n} +1\, ,
+\ \ \ \ \ \ \ n=0, \ 1, \ 2, \ \ldots \ ,
+\]    
+where $\ds  2^{2^n}$ means $2$ raised to the power $2^n\,$.
+Calculate $F_0$, $F_1$, $F_2$ and $F_3\,$. Show that,
+for $k=1$, $k=2$ and $k=3\,$,
+$$
+F_0F_1 \ldots F_{k-1} = F_k-2 \;. \eqno(*)
+$$
+
+
+Prove, by induction, or otherwise, that 
+$(*)$ holds for all  $k\ge1$.  Deduce that no two Fermat numbers
+have a common factor greater than $1$.
+
+Hence
+show that there are infinitely many  prime numbers.
+
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Give a sketch to show that, if $\f(x)>0$ for $p<x<q\,$, then
+$\int_p^{ \raisebox{2pt}{$\scriptstyle \hspace {1pt} q$}} \f(x) \d x >0\,$.
+
+\begin{questionparts}
+\item By considering $\f(x) = ax^2-bx+c\,$ show that,
+if $a>0$ and $b^2<4ac$, then $3b<2a+6c\,$.
+\item By considering $\f(x)= a\sin^2x - b\sin x + c\,$
+show that, if $a>0$ and $b^2<4ac$, then 
+$
+4b<(a+2c)\pi \;.
+$
+\item Show that,  if $a>0$, $b^2<4ac$ and $q>p>0\,$, then
+$$
+ b\ln(q/p) < a\left(\frac1p -\frac1q\right) +c(q-p)\;.
+$$
+\end{questionparts}
+
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The numbers $x_n$,  where $n=0$, $1$, $2$, $\ldots$ , satisfy 
+\[
+x_{n+1} = kx_n(1-x_n) \;.
+\]
+
+\begin{questionparts}
+\item Prove that, if $0<k<4$ and $0<x_0<1$, then $0<x_n<1$ for all $n\,$.
+\item Given that $x_0=x_1=x_2 = \cdots =a\,$, with  $a\ne0$ and $a\ne1$, find
+$k$ in terms of $a\,$.
+\item Given instead that $x_0=x_2=x_4 = \cdots = a\,$, with   $a\ne0$ and $a\ne1$,
+show that $ab^3 -b^2 +(1-a)=0$, where $b=k(1-a)\,$. Given, in addition, that
+$x_1 \ne a$, find the possible values of $k$ in terms of $a\,$.
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+The lines $l_1$, $l_2$ and $l_3$ lie in an inclined plane $P$ and    pass through 
+a common point $A$.  The line $l_2$ is a
+line of greatest slope in $P$.  The line $l_1$ is  perpendicular to $l_3$ and
+makes an acute angle $\alpha$ with $l_2$.
+The angles between the horizontal and 
+$l_1$, $l_2$  and $l_3$ are  $\pi/6$, $\beta$  and $\pi/4$, respectively. 
+Show that $\cos\alpha\sin\beta = \frac12\,$
+and find the value of $\sin\alpha \sin\beta\,$. Deduce that 
+$\beta = \pi/3\,$.
+
+The lines $l_1$ and $l_3$ are rotated in $P$ about 
+$A$ so that $l_1$ and $l_3$ remain perpendicular to each other.
+The new acute angle between
+$l_1$ and $l_2$ is $\theta$.  The new angles which $l_1$ and $l_3$
+ make with the horizontal are $\phi$ and $2\phi$, respectively.  Show that
+\[
+             \tan^2\theta = \frac{3+\sqrt{13}}2\;.
+\]
+
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+In 3-dimensional space, the lines $m_1$ and $m_2$ pass through the origin and 
+have directions $\bf i + j$ and $\bf i +k $, respectively. Find the directions  of
+the two lines $m_3$ and $m_4$  that  pass through the origin and make
+angles of $\pi/4$   with both $m_1$ and $m_2$. Find also the cosine of the 
+acute angle between $m_3$ and $m_4$.
+
+The points $A$ and $B$ lie on $m_1$ and $m_2$ respectively, and are each at 
+distance $\lambda \surd2$ units from~$O$. The points $P$ and $Q$ 
+lie on $m_3$ and $m_4$ respectively, and are each at 
+distance $1$ unit from~$O$. 
+If all the coordinates (with respect to axes $\bf i$, $\bf j$ and $\bf k$)
+ of $A$, $B$, $P$ and $Q$ are non-negative, prove that:
+\begin{questionparts}
+\item there are only two values of $\lambda$ for which $AQ$ is perpendicular
+to $BP\,$;
+\item there are no non-zero values of $\lambda$ for which $AQ$ and $BP$
+intersect.
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Find $y$ in terms of $x$, given that:
+\begin{eqnarray*}
+    \mbox{for $x < 0\,$}, && \frac{\d y}{\d x} = -y \mbox{ \ \ and \ \ } 
+y = a \mbox{ when } x = -1\;;
+\\
+    \mbox{for $x > 0\,$}, && \frac{\d y}{\d x} = y \mbox{ \ \  \ \ and \ \ }
+y = b  \ \mbox{ when } x = 1\;.
+\end{eqnarray*}
+
+
+Sketch a solution curve.  Determine the condition on $a$ and $b$
+for the solution curve  to be continuous (that is,  for there to be no `jump' in the value of 
+$y$) at $x = 0$.
+
+
+Solve the differential equation
+\[
+             \frac{\d y}{\d x} = \left\vert \e^x-1\right\vert y
+\]
+given that $y=\e^{\e}$ when $x=1$ and that $y$ is continuous at $x=0\,$.
+Write down  the following limits:
+
+\
+\[
+  \text{\textbf{(i)}} \ \   \lim_ {x \to +\infty} y\exp(-\e^x)\;; 
+ \ \ \ \ \ \ \ \ \ 
+\text{\textbf{(ii)}} \ \ \lim_{x \to -\infty}y \e^{-x}\,.
+\]
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+ A particle is projected from a point $O$ on a horizontal plane
+with speed $V$ and at an angle
+of elevation $\alpha$. The vertical plane in which the motion takes place
+is perpendicular to two vertical walls, both of height $h$, at distances
+$a$ and $b$ from $O$. Given that the particle just passes over the
+walls, find $\tan\alpha$ in terms of $a$, $b$ and $h$ and
+show that
+\[
+\frac{2V^2} g = \frac {ab} h +\frac{ (a+b)^2 h}{ab} \;.
+\]
+
+The heights of the walls  are now increased  by the same  small positive
+amount $\delta h\,$. 
+A  second particle is projected so that it just passes over
+both walls,  and  the new angle and speed of projection 
+are  $\alpha +\delta \alpha $ and $V+\delta V$, respectively.
+Show that 
+\[
+\sec^2 \alpha \, \delta \alpha  \approx \frac {a+b}{ab}\,\delta h \;,
+\]
+and deduce that $\delta \alpha >0\,$. Show also that 
+$\delta V$ is positive if $h> ab/(a+b)$ and negative if $h<ab/(a+b)\,$.
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A competitor in a Marathon of $42 \frac38$ km 
+ runs the first $t$ hours of the race at a constant speed of 13 km h$^{-1}$
+and the remainder at a constant speed of $14 + 2t/T$ km h$^{-1}$, where $T$ hours
+is her time for the race. Show that the minimum possible value of $T$ over
+all possible values of $t$ is 3.
+
+The speed of another competitor decreases linearly with respect
+to time from 16~km~h$^{-1}$ at the start of the race.  If both of these
+competitors have a run time of 3 hours, find the maximum distance between
+them at any stage of the race.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A rigid straight beam $AB$ has length $l$ and weight $W$. Its 
+weight per unit length at a distance $x$ from $B$ is 
+$\alpha Wl^{-1} (x/l)^{\alpha-1}\,$, where $\alpha$ is a positive 
+constant. Show that the centre of mass of the beam is at a distance 
+$\alpha l/(\alpha+1)$ from $B$.
+
+The beam is placed with the end $A$ on a rough horizontal floor and the
+end $B$ resting against a rough vertical wall. The beam is in a vertical
+plane at right angles to the plane of the wall and makes an angle of
+$\theta$ with the floor. The coefficient of friction
+between the floor and the beam is $\mu$ and the coefficient of friction 
+between the wall and the beam is also $\mu\,$.
+Show that, if the equilibrium is limiting at both $A$ and $B$, then
+\[
+\tan\theta = \frac{1-\alpha \mu^2}{(1+\alpha)\mu}\;.
+\]
+Given that $\alpha =3/2\,$ and given also that the beam slides for any $\theta<\pi/4\,$
+find the greatest  possible value of $\mu\,$. 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+On $K$ consecutive days each of $L$ identical coins
+ is thrown $M$ times.  For each coin, the probability
+of throwing a head in any one throw is $p$ (where $0 < p < 1$).
+Show that the
+probability that on exactly $k$ of these days more than $l$ of the coins
+will each produce fewer than $m$ heads can be approximated by
+\[
+          {K \choose  k}q^k(1-q)^{K-k},
+\]
+where 
+\[
+q=\Phi\left( \frac{2h-2l-1}{2\sqrt{h} }\right),
+\ \ \ \ \ \ 
+h=L\Phi\left( \frac{2m-1-2Mp}{2\sqrt{ Mp(1-p)}}\right)
+\]
+and $\Phi(.)$ is the cumulative distribution function of a standard
+normal variate.
+
+Would you expect this approximation to be accurate in the case
+$K=7$, $k=2$, $L=500$, $l=4$, $M=100$, $m=48$ and $p=0.6\;$?
+
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+Let $\F(x)$ be the cumulative distribution function of a random variable
+$X$, which satisfies $\F(a)=0$ and $\F(b)=1$,  where $a>0$.  Let
+\[
+\G(y) = \frac{\F(y)}{2-\F(y)}\;.
+\]
+Show that $\G(a)=0\,$, $\G(b)=1\,$ and that $\G'(y)\ge0\,$.
+Show also that
+\[
+\frac12 \le \frac2{(2-\F(y))^2} \le 2\;.
+\]
+
+The random variable $Y$ has cumulative distribution function $\G(y)\,$. Show that
+\[
+{\ts \frac12} \,\E(X) \le \E(Y) \le 2 \E(X) \;,
+\]
+and that
+ \[
+\var(Y) \le 2\var(X) +{\ts \frac 74} \big(\E(X)\big)^2\;.
+\]
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+A densely populated circular island is divided into $N$ concentric 
+regions $R_1$, $R_2$, $\ldots\,$, $R_N$, such that the inner and outer
+radii of $R_n$ are $n-1$ km and $n$ km, respectively. The average number
+of road accidents  that occur in any one day in $R_n$ is $2-n/N\,$, 
+independently of the number of accidents in any other region.
+
+Each day an observer selects a region at random, with a probability that
+is proportional to the area of the region, and records the number of 
+road accidents, $X$, that occur in it. Show that, in the long term, the
+average number of recorded accidents per day will be
+\[
+2-\frac16\left(1+\frac1N\right)\left(4-\frac1N\right)\;.
+\]
+
+[Note: $\sum\limits_{n=1}^N n^2 = \frac16 N(N+1)(2N+1) \;$.]
+
+Show also that 
+\[
+\P(X=k) = \frac{\e^{-2}N^{-k-2}}{k!}\sum_{n=1}^N (2n-1)(2N-n)^k\e^{n/N} \;.
+\]
+
+
+Suppose now that $N=3$ and that, on a particular day, two accidents  were recorded.
+Show that the probability that $R_2$ had been selected is 
+\[
+\frac{48}{48 + 45\e^{1/3} +25 \e^{-1/3}}\;.
+\]
+\end{question}
+	
+\end{document}

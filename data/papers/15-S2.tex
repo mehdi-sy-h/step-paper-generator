@@ -1,0 +1,410 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2015
+\ \ \ \ \ 
+\today 
+}               
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+\RequirePackage{asymptote}
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+ 
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+\def\i{{\mathrm i}}
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+\begin{asydef}
+  import markers;
+  import geometry;
+  import graph;
+  usepackage("amsmath");
+\end{asydef}
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+\renewcommand{\.}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\+}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\ud}{\mathop{}\!\mathrm{d}}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts}
+\item By use of calculus, show that $x- \ln(1+x)$ is positive for all positive $x$. Use this result to  show that
+\[
+\sum_{k=1}^n \frac 1 k > \ln (n+1)
+\,.
+\]
+\item By considering $ x+\ln (1-x)$, show that
+\[
+\sum_{k=1}^\infty \frac 1 {k^2} <1+ \ln 2 
+\,.
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+In the triangle $ABC$,  angle $BAC = \alpha$ and angle $CBA= 2\alpha$, where $2\alpha$ is acute, and $BC= x$. Show that $AB = (3-4 \sin^2\alpha)x$.
+The point $D$ is the midpoint of $AB$ and the point $E$ is the foot of the perpendicular from $C$ to $AB$. Find an expression for $DE$ in terms of $x$. 
+
+The point $F$ lies on the perpendicular bisector of $AB$ and is a distance $x$ from $C$. The points $F$ and $B$ lie on the same side of the line through $A$ and $C$. Show that the line $FC$ trisects the angle $ACB$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+ Three rods have lengths $a$, $b$ and $c$, where $a<   b<   c$. The three rods can be made into a triangle (possibly of zero area) if $a+b\ge c$.
+Let $T_{n}$ be the number of triangles that can be made with three rods chosen from $n$ rods of lengths $1$, $2$, $3$, $\ldots$ , $n$ (where $n\ge3$). Show that $T_8-T_7 = 2+4+6$ and evaluate $T_8 -T_6$. Write down  expressions for $T_{2m}-T_{2m-1}$ and $T_{2m} - T_{2m-2}$.
+ Prove by induction  that $T_{2m}=\frac 16 m (m-1)(4m+1)\,$, and find the corresponding result for an odd number of rods.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+\begin{questionparts}
+\item The continuous function $\f$ is defined by 
+\[
+\tan \f(x) = x    \ \ \ \ \ (-\infty < x <\infty)
+\]
+and $\f(0)=\pi$. Sketch the curve $y=\f(x)$\,. 
+\item The continuous function $\g$ is defined by 
+\[
+\tan \g(x) = \frac x {1+x^2} \ \ \ \ \ \  (-\infty < x <\infty)
+\]
+and $\g(0)=\pi$. Sketch the curves $y=  \dfrac x {1+x^2} \ $ and  $y=\g(x)$\,. 
+\item 
+The continuous function $\h  $ is defined by $\h  (0)=\pi$ and 
+\[
+\tan \h  (x)=  \frac x {1-x^2}\,
+\ \ \ \ \ (x \ne \pm 1)
+\,.
+\]
+(The values of $\h  (x)$ at $x=\pm1$ are such that $\h  (x)$ is continuous at these points.) 
+Sketch the curves $y=  \dfrac x {1-x^2} \ $ and $y=\h  (x)$.
+
+%\item The continuous functions $\h_1$ and $\h_2$ are
+% defined by: $\h_1(0)=\h_2(0)=\pi $, 
+%\[
+%\tan \h_1(x) = \frac {x+x^4} {1+x^2+x^4} 
+%\ \ \ \ \  \text{and} \ \ \ \ \ \  
+%\tan \h_2(x) = \frac {4x-x^3} {1-x^4} 
+%\,.
+%\]
+%for values of $x$ at which the right hand sides are defined.
+%Find $\lim\limits_{x\to\infty}\h_1(x)$ and $\lim\limits_{x\to\infty}\h_2(x)\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+In this question,  the $\mathrm{arctan}$ function satisfies $0\le \arctan x <\frac12 \pi$ for $x\ge0\,$.
+\begin{questionparts}
+\item Let 
+\[
+S_n= \sum_{m=1}^n \arctan \left(\frac1 {2m^2}\right) 
+\,,
+\]
+for $n=1$, 2, 3, $\ldots$ . Prove by induction that
+\[
+\tan S_n = \frac n {n+1} \,.
+\]
+Prove also  that
+\[
+S_n = \arctan  \frac n {n+1} \,.
+\]
+\item In a triangle $ABC$, the lengths of the sides $AB$ and $BC$ are $4n^2$ and $4n^4-1$, respectively, and the angle at $B$ is a right angle. Let $\angle BCA = 2\alpha_n$. Show that
+\[
+\sum_{n=1}^\infty \alpha_n = \tfrac14\pi \,.
+\]
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+\begin{questionparts}
+\item Show that  
+\[ \mathrm{sec}^2\left(\tfrac14\pi-\tfrac12 x\right)=\frac{2}{1+\sin x} \,.
+\]
+Hence integrate $\dfrac{1}{1+\sin x}$ with respect to $x$.
+
+\item By means of the substitution $y=\pi -x$,  show that
+\[
+\int_0^\pi x  \f (\sin x)\, \d x = \frac \pi 2 \int_0^\pi \f(\sin x) \, \d x
+,\]
+where $\mathrm{f}$ is any function for which these integrals exist.Hence evaluate
+\[
+\int_0^\pi \frac x {1+\sin x} \, \d x
+\,.
+\]
+\item Evaluate
+\[
+\int_0^\pi\frac{ 2x^3 -3\pi x^2}{(1+\sin x)^2}\,   \d x
+.\]
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+A circle $C$ is said to be {\em bisected} by a curve $X$ if $X$ meets $C$ in exactly two points and these points are diametrically opposite each other on $C$.
+\begin{questionparts}
+\item Let $C$ be the  circle of radius $a$  in the $x$-$y$ plane with centre at the origin.
+Show, by giving its equation, that it is possible to find a circle of given radius $r$ that bisects $C$ provided  $r>a$. Show that no circle of radius $r$ bisects $C$ if $r\le a\,$.
+
+\item Let $C_1$ and $C_2$ be circles with centres at $(-d,0)$ and $(d,0)$ and radii $a_1$ and $a_2$, respectively, where $d>a_1$ and $d>a_2$. Let $D$ be a  circle of radius~$r$ that bisects both $C_1$ and $C_2$. Show that the $x$-coordinate of the centre of $D$ is $\dfrac{a_2^2 - a_1^2}{4d}$.
+Obtain an expression in terms of $d$, $r$, $a_1$ and $a_2$ for the $y$-coordinate of the centre of~$D$, and deduce that $r$ must satisfy
+\[
+16r^2d^2 \ge \big (4d^2 +(a_2-a_1)^2\big) \, \big (4d^2 +(a_2+a_1)^2\big) 
+\,.
+\]
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+\noindent
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.3pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.94,-1.87)(7.07,3.86)
+\pscircle(0,1){1.25}
+\pscircle(3,0){0.55}
+\rput[tl](5.33,-0.41){$P$}
+\psline(-2.44,-0.03)(6.18,-0.85)
+\psline(-2.04,3.71)(6.55,-1.48)
+\rput[tl](-0.18,1.1){$C_1$}
+\rput[tl](2.85 ,0.15){$C_2$}
+\rput[tl](-0.65,3.29){$L'$}
+\rput[tl](-1.5,-0.34){$L$}
+\end{pspicture*}
+\end{center}
+The diagram above shows two non-overlapping circles $C_1$ and $C_2$ of different sizes. The lines $L$ and $L'$ are the two common tangents to $C_1$ and $C_2$ such that the two circles lie on the same side of each of the tangents. The lines $L$ and $L'$ intersect at the point $P$ which is called the {\em focus} of $C_1$ and $C_2$.
+
+\begin{questionparts}
+\item Let ${\bf x}_1$ and ${\bf x}_2$ be the position vectors of the centres of $C_1$ and $C_2$, respectively. Show that the position vector of $P$ is 
+\[
+\frac{r_1 {\bf x}_2- r_2 {\bf x}_1}{r_1-r_2} \,,
+\]
+where $r_1$ and $r_2$ are the radii of $C_1$ and $C_2$, respectively.\item The circle $C_3$  does not overlap either $C_1$ or $C_2$ and its   radius, $r_3$, satisfies  $r_1 \ne r_3 \ne r_2$. The focus of $C_1$ and $C_3$ is $Q$, and the focus of $C_2$ and $C_3$ is $R$. Show that $P$, $Q$ and~$R$ lie on the same straight line.\item Find a condition on $r_1$, $r_2$ and $r_3$ for $Q$ to lie half-way between $P$ and $R$.\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}	
+An equilateral triangle $ABC$ is made of three light rods each of length $a$. It is free to rotate in a vertical plane about a horizontal axis through $A$.  Particles of mass $3m$ and $5m$ are attached to $B$ and $C$ respectively. Initially, the system hangs in equilibrium with $BC$ below~$A$.
+\begin{questionparts}\item Show that, initially, the angle $\theta$ that $BC$ makes with the horizontal is given by $\sin\theta = \frac17$.
+\item The triangle  receives an impulse that imparts a speed $v$ to the particle $B$. Find the minimum speed $v_0$ such that the system will perform complete rotations if $v>v_0$.
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}
+A particle of mass $m$ is pulled along the floor of a room in a straight line by a light string which is pulled at constant speed $V$ through a hole in the ceiling. The floor is smooth and horizontal, and the height of the room is $h$. Find, in terms of $V$ and $\theta$, the speed  of the particle when the string makes an angle of $\theta$ with the vertical (and the particle is still in contact with the floor). Find also the acceleration, in terms of $V$, $h$ and $\theta$.Find the tension in the string and hence show that the particle will leave the floor when
+\[
+\tan^4\theta = \frac{V^2}{gh}\,.
+\]
+\end{question}
+
+
+%%%%%%%%%% Q11
+
+\begin{question}
+Three particles, $A$, $B$ and $C$, each of mass $m$, lie on a smooth horizontal table. Particles $A$ and $C$ are attached to the two ends of a light inextensible string of length $2a$ and  particle~$B$ is attached to the midpoint of the string. Initially, $A$, $B$ and $C$ are at rest at points $(0,a)$, $(0,0)$ and $(0,-a)$, respectively. 
+
+An  impulse is delivered to $B$, imparting to it a speed $u$ in the positive $x$ direction. The string remains taut throughout the subsequent motion.
+
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.18,-3.26)(6.26,3.18)
+\psline[linewidth=2pt](2.,1.5)(3.,0.)
+\psline[linewidth=2pt](3.,0.)(2.,-1.5)
+\psline(-2.,0.)(6.,0.)
+\psline(0.,3.)(0.,-3.)
+\parametricplot{2.1587989303424644}{3.1415926535897936}{0.7*cos(t)+3.|0.7*sin(t)+0.}
+\rput[tl](-0.25,2.96){$y$}
+\rput[tl](5.76,-0.1){$x$}
+\rput[tl](2.5,0.38){$\theta$}
+\rput[tl](2.1,1.94){$A$}
+\rput[tl](3.2,0.4){$B$}
+\rput[tl](2.16,-1.46){$C$}
+\begin{scriptsize}
+\psdots[dotsize=8pt 0,dotstyle=*](2.,1.5)
+\psdots[dotsize=8pt 0,dotstyle=*](3.,0.)
+\psdots[dotsize=8pt 0,dotstyle=*](2.,-1.5)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+\begin{questionparts}\item At time $t$, the angle between the $x$-axis and the string joining $A$ and $B$ is $\theta$, as shown in the diagram, and $B$ is at $(x,0)$. Write down the coordinates of $A$ in terms of $x,a$ and $\theta$. Given that the velocity of $B$ is $(v,0)$, show that the velocity of $A$ is $(\dot x + a\sin\theta \,\dot \theta\,,\, a\cos\theta\, \dot\theta)$, where the dot denotes differentiation with respect to time. 
+
+\item Show that,  before particles $A$ and $C$ first collide,
+\[
+3\dot x + 2a \dot\theta \sin\theta =v \text{ \ \ \ \ \ \ and \ \ \ \ \ \ } \dot \theta^2  = \frac{v^2}{a^2(3-2\sin^2\theta)}
+\,.
+\]
+\item When $A$ and $C$ collide, the collision is elastic (no energy is lost). At what value of $\theta$ does the second collision between particles $A$ and $C$ occur? (You should justify your answer.)
+\item When $v=0$, what are the possible values of $\theta$? Is $v =0$ whenever $\theta$ takes these values?
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Four players $A$, $B$, $C$ and $D$ play a coin-tossing game with a fair coin. Each player chooses a sequence of heads and tails, as follows:
+
+\noindent
+Player A: HHT; \ \ Player B: THH; \ \ Player C: TTH; \ \ Player D: HTT.\noindent 
+
+The coin is then tossed until one of these sequences occurs, in which case the corresponding player is the winner.
+\begin{questionparts}
+\item Show that, if only $A$ and $B$ play, then $A$ has a probability of $\frac14$ of winning.\item If all four players play together, find the probabilities of each one winning.\item Only $B$ and $C$ play. What is the probability of $C$ winning if the first two tosses are~TT?
+Let the probabilities of $C$ winning if the first two tosses are HT, TH and HH be $p$, $q$ and $r$, respectively. Show that $p=\frac12 +\frac12q$.
+Find the probability that $C$ wins.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+The maximum height $X$ of flood water each year on a certain river is a random variable with probability density function $\f$ given by
+\[
+\f(x) = \begin{cases}
+\lambda \e^{-\lambda x} & \text{for $x\ge0$}\,, \\
+0 & \text{otherwise,}
+\end{cases}
+\]where $\lambda$ is a positive constant.
+It costs $ky$ pounds each year to prepare for flood water of height $y$ or less, where $k$ is a positive constant and $y\ge0$.  If $X \le y$ no further costs are incurred but if $X> y$ the additional cost of flood damage is  $a(X - y )$ pounds where $a$ is a positive constant. \begin{questionparts}\item Let $C$ be the total cost of dealing with the floods in the year. Show that the expectation of $C$ is given by 
+\[\mathrm{E}(C)=ky+\frac{a}{\lambda}\mathrm{e}^{-\lambda y} \, .
+\]
+How should $y$ be chosen in order to minimise $\mathrm{E}(C)$, in the different cases that arise according to the value of $a/k$?
+\item Find  the variance of $C$,  and show that the more that is spent on preparing for flood water in advance the smaller this variance.
+\end{questionparts}
+\end{question}
+\end{document}

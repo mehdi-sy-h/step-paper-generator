@@ -1,0 +1,516 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2006
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+The sequence of real numbers $u_1$, $u_2$, $u_3$, $\ldots$ is defined by
+\begin{equation*}
+u_1=2 \,,
+\qquad\text{and} \qquad  u_{n+1} = k - \frac{36}{u_n} 
+\quad \text{for } n\ge1,
+\tag{$*$}
+\end{equation*}
+where $k$ is a constant.
+
+\begin{questionparts}
+\item Determine the values of $k$ for which the sequence $(*)$ is:
+
+\textbf{(a)} constant;
+
+\textbf{(b)} periodic with period 2;
+
+\textbf{(c)} periodic with period 4.
+
+\item
+In the case $k=37$, show that $u_n\ge 2$ for all $n$. Given that  in this
+case the sequence $(*)$ converges to a limit
+$\ell$, find the value of $\ell$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Using the series
+\[
+\e^x = 1 + x +\frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!}+\cdots\,,
+\]
+show that $\e>\frac83$. 
+
+Show that   $n!>2^n$ for $n\ge4$ and hence show that
+$\e<\frac {67}{24}$.
+
+
+Show that the curve with equation 
+\[
+y= 3\e^{2x} +14 \ln (\tfrac43-x)\,,
+\qquad
+{x<\tfrac43}
+\]
+has a minimum turning point between $x=\frac12$ and $x=1$ and 
+give a  sketch to show the shape of the curve.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+\begin{questionparts}
+\item Show that 
+$\displaystyle \big( 5 + \sqrt {24}\;\big)^4 
++ \frac{1 }{\big(5 + \sqrt {24}\;\big)^4} \ $ is an integer.
+
+Show also 
+that 
+\[\displaystyle 0.1 < \frac{1}{  5 + \sqrt {24}} <\frac 2 {19}< 0.11\,.\] 
+
+Hence determine, with clear reasoning, 
+the value of $\l 5 + \sqrt {24}\r^4$ correct to four decimal places.
+
+\item If $N$ is an integer greater than 1, 
+show that  $( N + \sqrt {N^2 - 1} \,) ^k$, where $k$ is a positive
+integer,  differs from 
+the integer nearest to it by less than $\big( 2N - \frac12 \big)^{-k}$.
+\end{questionparts}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+By making the substitution $x=\pi-t\,$, show that
+\[
+ \! \int_0^\pi x\f(\sin x) \d x = \tfrac12 \pi \! \int_0^\pi \f(\sin x) \d x\,,
+\]
+where $\f(\sin x)$ is a given function of $\sin x$.
+
+Evaluate the following integrals:
+\begin{questionparts}
+ \item $\displaystyle \int_0^\pi \frac {x \sin x}{3+\sin^2 x}\,\d x\,$;
+\item  $\displaystyle \int_0^{2\pi} 
+\frac {x \sin x}{3+\sin^2 x}\,\d x\,$;
+\item   $\displaystyle \int_{0}^{\pi} 
+\frac {x \big\vert\sin 2x\big\vert}{3+\sin^2 x}\,\d x\,$.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The notation ${\boldsymbol \lfloor } x \rfloor$ 
+denotes the greatest integer less than or equal to the real
+number $x$. Thus, for example, $\lfloor \pi\rfloor =3\,$, $\lfloor
+18\rfloor =18\,$ 
+and $\lfloor-4.2\rfloor = -5\,$.
+
+\begin{questionparts}
+\item Two curves are given by $y= x^2+3x-1$ and 
+$y=x^2 +3\lfloor  x\rfloor -1\,$.
+Sketch the curves, for~$1\le x \le 3\,$, on the same axes.
+
+Find the area between the two curves for $1\le x \le n$, where 
+$n$ is  a positive integer.
+
+\item
+Two curves are given by $y= x^2+3x-1$ and $y=\lfloor x\rfloor ^2
++3\lfloor x\rfloor -1\,$.
+Sketch the curves, for $1\le x \le 3\,$, on the same axes.
+
+Show that  the area  between the two curves for $1\le x \le n$, where 
+$n$ is  a positive integer,~is 
+\[
+\tfrac 16 (n-1)(3n+11)\,.
+\]
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+By considering a suitable scalar product, prove that 
+\[
+(ax+by+cz)^2 \le (a^2+b^2+c^2)(x^2+y^2+z^2)
+\]
+for any real numbers $a$, $b$, $c$, $x$, $y$ and $z$. Deduce a necessary and 
+sufficient condition on  $a$, $b$, $c$, $x$, $y$ and $z$ for
+the following equation to hold:
+\[
+(ax+by+cz)^2 = (a^2+b^2+c^2)(x^2+y^2+z^2) \,.
+\]
+
+\begin{questionparts}
+\item Show that $(x+2y+2z)^2 \le 9(x^2+y^2+z^2)$ for all real numbers
+$x$, $y$ and $z$.
+\item Find real numbers $p$, $q$ and $r$ that   satisfy both
+\[
+p^2+4q^2+9r^2 = 729
+ \text{ \ and \ }
+8p+8q+3r = 243\,.
+\]
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+An ellipse has equation $\dfrac{x^2}{a^2}  +\dfrac {y^2}{b^2} =
+1$. Show that 
+the equation of the tangent at the point $(a\cos\alpha, b\sin\alpha)$ is
+\[
+y=- \frac {b  \cot \alpha} a \, x + b\, {\rm cosec\,}\alpha\,.
+\]
+
+
+The point $A$ has coordinates $(-a,-b)$, where $a$ and $b$ are
+positive. The point $E$ has coordinates $(-a,0)$
+and the point $P$ has coordinates $(a,kb)$, where $0<k<1$.
+The line through $E$ parallel to  $AP$ meets the line $y=b$ at
+the point $Q$. Show that the line $PQ$ is tangent to the above ellipse
+at the point given by $\tan(\alpha/2)=k$.
+
+Determine by means of sketches, or otherwise, whether this result
+holds also for $k=0$ and $k=1$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Show that the line through the points with position
+vectors $\bf x$ and $\bf y$ has equation 
+\[{\bf r} = (1-\alpha){\bf x} +\alpha {\bf y}\,,
+\]
+where $\alpha$ is a scalar parameter.
+
+The sides $OA$ and $CB$ of a trapezium $OABC$ are parallel, and $OA>CB$.
+The point $E$ on $OA$ is such that $OE : EA = 1:2$, and $F$ is the midpoint of 
+$CB$. The point $D$ is the intersection of $OC$ produced and $AB$ produced;
+the point $G$ is the intersection of $OB$ and $EF$; and the point $H$ 
+is the intersection of $DG$ produced and $OA$. Let $\bf a$ and $\bf c$ be the 
+position vectors of the points $A$ and $C$, respectively, with respect to
+the origin $O$.
+
+\begin{questionparts}
+\item Show that $B$ has position vector $\lambda {\bf a} + {\bf c}$ for
+some scalar parameter $\lambda$.
+
+\item Find, in terms of $\bf a$, $\bf c$ and $\lambda$
+only, the position vectors of $D$, $E$, $F$, $G$ and $H$.
+Determine the ratio  $OH:HA$.
+\end{questionparts}
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A 
+painter of weight $kW$ uses a ladder to reach the guttering on the
+outside wall of  a house. The wall is vertical and the ground
+is horizontal.
+The ladder is modelled as a uniform rod of weight $W$ and length $6a$.
+
+
+The ladder is not long enough, so the painter
+stands the ladder on a uniform table. The table has weight $2W$ and a square 
+top of side $\frac12 a$ with  a leg of length $a$ at each corner.
+The foot of the ladder is at the centre of the table top and the ladder
+is inclined at an angle $\arctan 2$ to the horizontal.
+The edge of the table nearest the wall is parallel to the wall.
+
+ The coefficient of friction
+between the foot of the ladder and the table top is $\frac12$.
+The contact between the ladder and the wall is sufficiently smooth
+for the effects of friction to be ignored.
+
+\begin{questionparts}
+\item Show that, if the legs of the table are fixed to the ground,
+ the ladder does not slip on the table
+however high the painter stands on the ladder.
+\item It is given that $k=9$  and
+that the
+coefficient of friction between each table leg 
+and the ground is $\frac13$. If the legs of the table are not fixed 
+to the ground, 
+so that  the table can tilt or slip, determine which 
+occurs first when
+ the painter slowly climbs the ladder.
+\end{questionparts}
+
+[Note: $\arctan 2$ is another notation for $\tan^{-1}2$.]
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+Three particles, $A$, $B$ and $C$, of masses $m$, $km$ and $3m$ respectively,
+are initially at rest lying in a straight line on a smooth horizontal surface.
+Then $A$ is projected towards  $B$ at speed $u$. After the 
+collision, $B$ collides with  $C$. The coefficient of 
+restitution between  $A$ and $B$ is $\frac12$ and 
+the coefficient of 
+restitution between $B$ and $C$ is $\frac14$.
+
+\begin{questionparts}
+\item Find the range of values of $k$ for which $A$ and 
+$B$ collide for a second time.
+\item Given that $k=1$ and that $B$ and $C$ are initially 
+a distance $d$ apart, show that 
+ the time that elapses between the two collisions 
+of $A$ and $B$ is $\dfrac{60d}{13u}\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A projectile of unit mass
+is fired in a northerly direction
+from a point on a horizontal plain at speed $u$ and an angle 
+$\theta$ above the horizontal.  It lands at a point $A$ on the plain.
+In flight, the 
+projectile experiences two forces: 
+gravity, of magnitude $g$; and 
+a horizontal force of
+constant magnitude $f$ due to a wind blowing from North to South. Derive an
+expression, in terms of $u$, $g$, $f$ and $\theta$ for the distance $OA$.
+
+\begin{questionparts} 
+\item Determine the angle $\alpha$ such that, for all $\theta>\alpha$,
+the wind starts to blow the projectile back towards $O$ before it 
+lands at $A$.
+\item An identical projectile, which experiences the same forces,
+ is fired from $O$ in a northerly direction
+at speed $u$ and angle $45^\circ$ above the 
+horizontal and lands at a point $B$ on the plain. Given that $\theta$ is
+chosen to maximise $OA$, show that 
+\[
+\frac{OB}{OA} = \frac{ g-f}{\; \sqrt{g^2+f^2\;}- f \;\;}\;.
+\]
+
+Describe carefully the motion of the second  projectile when $f=g$.
+\end{questionparts}
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+A cricket team has only three bowlers, Arthur, Betty and 
+Cuba, each of whom bowls 30
+balls in any match. Past performance reveals that, on average, 
+ Arthur  takes one wicket for every~36 balls bowled, 
+Betty  takes one wicket for every 25 balls bowled,
+and Cuba  takes one wicket for every 41 balls bowled.
+
+\begin{questionparts}
+\item In one match, the team took exactly one wicket, but 
+the name of the bowler was
+not recorded. Using a binomial model,
+find the probability that
+ Arthur  was the bowler.
+\item Show that the  average 
+number of wickets taken by the team in a match is approximately~3.
+Give  with brief justification a suitable model for the number of
+wickets taken by the team in a match and show that  
+the probability of the team taking at least five wickets in a given match
+is approximately $\frac15$. 
+
+\noindent[You may use the approximation $\e^3 = 20$.]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+I know that 
+ice-creams come in $n$ different sizes, but I don't know what the sizes are.
+I am offered one of each in 
+succession, in random order.
+I am certainly going to choose one - the bigger
+the better -  but I
+am not allowed more than one. My strategy is to reject the first  
+ice-cream I am offered
+ and choose the  first one thereafter  that is bigger than the first 
+one I was offered; if the first ice-cream offered is in fact the biggest one,
+then I have to put up with the last one, however small.
+
+Let $\P_n(k)$ be the probability that I choose the $k$th biggest ice-cream,
+where $k=1$ is the biggest and $k=n$ is the smallest.
+
+\begin{questionparts}
+\item Show that $\P_4(1) = \frac{11}{24}$ and find $\P_4(2)$, $\P_4(3)$
+and $\P_4(4)$.
+\item Find an expression  for $\P_n(1)$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+Sketch the graph of 
+$
+ y= \dfrac1 { x \ln x}
+\text{ \ \ for $x>0$, \ $x\ne1$}.
+$
+You may assume that $x\ln x \to 0$ as $x\to 0$.
+
+
+The continuous random variable $X$ has probability density function 
+\[
+\f(x) = 
+\begin{cases}
+\dfrac \lambda {x\ln x}& \text{for $a\le x \le b$}\;, \\[3mm]
+\ \ \  0 & \text{otherwise },
+\end{cases}
+\]
+where $a$, $b$ and $\lambda$ are suitably chosen constants.
+
+\begin{questionparts}
+
+\item In the case $a=1/4$ and $b=1/2$, find $\lambda\,$.
+\item In the case $\lambda=1$ and $a>1$, show that $b=a^\e$.
+\item In the case $\lambda =1$ and $a=\e$, show that 
+$\P(\e^{3/2}\le X \le \e^2)\approx \frac {31}{108}\,$.
+\item In the case $\lambda =1$ and $a=\e^{1/2}$, find  
+$\P(\e^{3/2}\le X \le \e^2)\;$.
+
+\end{questionparts}
+\end{question}
+	
+\end{document}

@@ -1,0 +1,465 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1994
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+In this question we consider only positive, non-zero integers written
+out in the usual (decimal) way. We say, for example, that 207 ends
+in 7 and that 5310 ends in 1 followed by 0. Show that, if $n$ does
+not end in 5 or an even number, then there exists $m$ such that $n\times m$
+ends in 1. 
+
+
+Show that, given any $n$, we can find $m$ such that $n\times m$
+ends either in 1 or in 1 followed by one or more zeros. 
+
+
+Show that, given any $n$ which ends in 1 or in 1 followed by one
+or more zeros, we can find $m$ such that $n\times m$ contains all
+the digits $0,1,2,\ldots,9$. 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+If $\mathrm{Q}$ is a polynomial, $m$ is an integer, $m\geqslant1$
+and $\mathrm{P}(x)=(x-a)^{m}\mathrm{Q}(x),$ show that \[
+\mathrm{P}'(x)=(x-a)^{m-1}\mathrm{R}(x)
+\]
+where $\mathrm{R}$ is a polynomial. Explain why $\mathrm{P}^{(r)}(a)=0$
+whenever $1\leqslant r\leqslant m-1$. ($\mathrm{P}^{(r)}$ is the
+$r$th derivative of $\mathrm{P}.$)
+
+
+If 
+\[
+\mathrm{P}_{n}(x)=\frac{\mathrm{d}^{n}}{\mathrm{d}x^{n}}(x^{2}-1)^{n}
+\]
+for $n\geqslant1$ show that $\mathrm{P}_{n}$ is a polynomial of
+degree $n$. By repeated integration by parts, or otherwise, show
+that, if $n-1\geqslant m\geqslant0,$ 
+\[
+\int_{-1}^{1}x^{m}\mathrm{P}_{n}(x)\,\mathrm{d}x=0
+\]
+and find the value of 
+\[
+\int_{-1}^{1}x^{n}\mathrm{P}_{n}(x)\,\mathrm{d}x.
+\]
+{[}\textbf{Hint. }\textit{You may use the formula 
+\[
+{\displaystyle \int_{0}^{\frac{\pi}{2}}\cos^{2n+1}t\,\mathrm{d}t=\frac{(2^{2n})(n!)^{2}}{(2n+1)!}}
+\]
+ without proof if you need it. However some ways of doing this question
+do not use this formula.}{]}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+The function $\mathrm{f}$ satisfies $\mathrm{f}(0)=1$ and 
+\[
+\mathrm{f}(x-y)=\mathrm{f}(x)\mathrm{f}(y)-\mathrm{f}(a-x)\mathrm{f}(a+y)
+\]
+for some fixed number $a$ and all $x$ and $y$. Without making any
+further assumptions about the nature of the function show that $\mathrm{f}(a)=0$. 
+
+
+Show that, for all $t$, 
+
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+
+\item[\bf (i)] $\mathrm{f}(t)=\mathrm{f}(-t)$, 
+\item[\bf (ii)] $\mathrm{f}(2a)=-1$, 
+\item[\bf (iii)] $\mathrm{f}(2a-t)=-\mathrm{f}(t)$, 
+\item[\bf (iv)] $\mathrm{f}(4a+t)=\mathrm{f}(t)$. 
+\end{itemize}
+
+Give an example of a non-constant function satisfying the conditions
+of the first paragraph with $a=\pi/2$. Give an example of an non-constant
+function satisfying the conditions of the first paragraph with $a=-2$. 
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+By considering the area of the region defined in terms of Cartesian
+coordinates $(x,y)$ by \[
+\{(x,y):\ x^{2}+y^{2}=1,\ 0\leqslant y,\ 0\leqslant x\leqslant c\},
+\]
+show that 
+\[
+\int_{0}^{c}(1-x^{2})^{\frac{1}{2}}\,\mathrm{d}x=\tfrac{1}{2}[c(1-c^{2})^{\frac{1}{2}}+\sin^{-1}c],
+\]
+if $0<c\leqslant1.$
+
+
+Show that the area of the region defined by 
+\[
+\left\{ (x,y):\ \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1,\ 0\leqslant y,\ 0\leqslant x\leqslant c\right\} ,
+\]
+is 
+\[
+\frac{ab}{2}\left[\frac{c}{a}\left(1-\frac{c^{2}}{a^{2}}\right)^{\frac{1}{2}}+\sin^{-1}\left(\frac{c}{a}\right)\right],
+\]
+if $0<c\leqslant a$ and $0<b.$ 
+
+
+Suppose that $0<b\leqslant a.$ Show that the area of intersection
+$E\cap F$ of the two regions defined by 
+\[
+E=\left\{ (x,y):\ \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}\leqslant1\right\} \qquad\mbox{ and }\qquad F=\left\{ (x,y):\ \frac{x^{2}}{b^{2}}+\frac{y^{2}}{a^{2}}\leqslant1\right\} 
+\]
+is 
+\[
+4ab\sin^{-1}\left(\frac{b}{\sqrt{a^{2}+b^{2}}}\right).
+\]
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item Show that the equation 
+\[
+(x-1)^{4}+(x+1)^{4}=c
+\]
+has exactly two real roots if $c>2,$ one root if $c=2$ and no roots
+if $c<2$. 
+\item How many real roots does the equation $\left(x-3\right)^{4}+\left(x-1\right)^{4}=c$
+have?
+\item How many real roots does the equation $\left|x-3\right|+\left|x-1\right|=c$
+have?
+\item How many real roots does the equation $\left(x-3\right)^{3}+\left(x-1\right)^{3}=c$
+have?
+\end{questionparts}
+
+{[}The answers to parts \textbf{(ii)}, \textbf{(iii)} and \textbf{(iv)}
+may depend on the value of $c$. You should give reasons for your
+answers.{]}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+Prove by induction, or otherwise, that, if $0<\theta<\pi$, 
+\[
+\frac{1}{2}\tan\frac{\theta}{2}+\frac{1}{2^{2}}\tan\frac{\theta}{2^{2}}+\cdots+\frac{1}{2^{n}}\tan\frac{\theta}{2^{n}}=\frac{1}{2^{n}}\cot\frac{\theta}{2^{n}}-\cot\theta.
+\]
+Deduce that 
+\[
+\sum_{r=1}^{\infty}\frac{1}{2^{r}}\tan\frac{\theta}{2^{r}}=\frac{1}{\theta}-\cot\theta.
+\]
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Show that the equation 
+\[
+ax^{2}+ay^{2}+2gx+2fy+c=0
+\]
+where $a>0$ and $f^{2}+g^{2}>ac$ represents a circle in Cartesian
+coordinates and find its centre. 
+
+
+The smooth and level parade ground of the First Ruritanian Infantry
+Division is ornamented by two tall vertical flagpoles of heights $h_{1}$
+and $h_{2}$ a distance $d$ apart. As part of an initiative test
+a soldier has to march in such a way that he keeps the angles of elevation
+of the tops of the two flagpoles equal to one another. Show that if
+the two flagpoles are of different heights he will march in a circle.
+What happens if the two flagpoles have the same height?
+
+
+To celebrate the King's birthday a third flagpole is added. Soldiers
+are then assigned to each of the three different pairs of flagpoles
+and are told to march in such a way that they always keep the tops
+of their two assigned flagpoles at equal angles of elevation to one
+another. Show that, if the three flagpoles have different heights
+$h_{1},h_{2}$ and $h_{3}$ and the circles in which the soldiers
+march have centres of $(x_{ij},y_{ij})$ (for the flagpoles of height
+$h_{i}$ and $h_{j}$) relative to Cartesian coordinates fixed in
+the parade ground, then the $x_{ij}$ satisfy 
+\[
+h_{3}^{2}\left(h_{1}^{2}-h_{2}^{2}\right)x_{12}+h_{1}^{2}\left(h_{2}^{2}-h_{3}^{2}\right)x_{23}+h_{2}^{2}\left(h_{3}^{2}-h_{1}^{2}\right)x_{31}=0,
+\]
+and the same equation connects the $y_{ij}$. Deduce that the three
+centres lie in a straight line. 
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+`24 Hour Spares' stocks a small, widely used and cheap component.
+Every $T$ hours $X$ units arrive by lorry from the wholesaler, for
+which the owner pays a total $\pounds (a+qX)$. It costs the owner $\pounds b$
+per hour to store one unit. If she has the units in stock she expects
+to sell $r$ units per hour at $\pounds(p+q)$ per unit. The other running
+costs of her business remain at $\pounds c$ pounds an hour irrespective
+of whether she has stock or not. (All of the quantities $T,X,a,b,r,q,p$
+and $c$ are greater than 0.) Explain why she should take $X\leqslant rT$. 
+
+
+Given that the process may be assumed continuous (the items are very
+small and she sells many each hour), sketch $S(t)$ the amount of
+stock remaining as a function of $t$ the time from the last delivery.
+Compute the total profit over each period of $T$ hours. Show that,
+if $T$ is fixed with $T\geqslant p/b$, the business can be made
+profitable if 
+\[
+p^{2}>2\frac{(a+cT)b}{r}.
+\]
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A light rod of length $2a$ is hung from a point $O$ by two light
+inextensible strings $OA$ and $OB$ each of length $b$ and each
+fixed at $O$. A particle of mass $m$ is attached to the end $A$
+and a particle of mass $2m$ is attached to the end $B.$ Show that,
+in equilibrium, the angle $\theta$ that the rod makes the horizontal
+satisfies the equation 
+\[
+\tan\theta=\frac{a}{3\sqrt{b^{2}-a^{2}}}.
+\]
+Express the tension in the string $AO$ in terms of $m,g,a$ and $b$.  
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+A truck is towing a trailer of mass $m$ across level ground by means
+of an elastic rope of natural length $l$ whose modulus of elasticity
+is $\lambda.$ At first the rope is slack and the trailer stationary.
+The truck then accelerates until the rope becomes taut and thereafter
+the truck travels in a straight line at a constant speed $u$. Assuming
+that the effect of friction on the trailer is negligible, show that
+the trailer will collide with the truck at a time 
+\[
+\pi\left(\frac{lm}{\lambda}\right)^{\frac{1}{2}}+\frac{l}{u}
+\]
+after the rope first becomes taut.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+As part of a firework display a shell is fired vertically upwards
+with velocity $v$ from a point on a level stretch of ground. When
+it reaches the top of its trajectory an explosion it splits into two
+equal fragments each travelling at speed $u$ but (since momentum
+is conserved) in exactly opposite (not necessarily horizontal) directions.
+Show, neglecting air resistance, that the greatest possible distance
+between the points where the two fragments hit the ground is $2uv/g$
+if $u\leqslant v$ and $(u^{2}+v^{2})/g$ if $v\leqslant u.$ 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Calamity Jane sits down to play the game of craps with Buffalo Bill.
+In this game she rolls two fair dice. If, on the first throw, the
+sum of the dice is $2,3$ or $12$ she loses, while if it is $7$
+or $11$ she wins. Otherwise Calamity continues to roll the dice until
+either the first sum is repeated, in which case she wins, or the sum
+is $7$, in which case she loses. Find the probability that she wins
+on the first throw. 
+
+
+Given that she throws more than once, show that the probability that
+she wins on the $n$th throw is 
+\[
+\frac{1}{48}\left(\frac{3}{4}\right)^{n-2}+\frac{1}{27}\left(\frac{13}{18}\right)^{n-2}+\frac{25}{432}\left(\frac{25}{36}\right)^{n-2}.
+\]
+Given that she throws more than $m$ times, where $m>1,$ what is
+the probability that she wins on the $n$th throw?
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+The makers of Cruncho (`The Cereal Which Cares') are giving away a
+series of cards depicting $n$ great mathematicians. Each packet of
+Cruncho contains one picture chosen at random. Show that when I have
+collected $r$ different cards the expected number of packets I must
+open to find a new card is $n/(n-r)$ where $0\leqslant r\leqslant n-1.$
+
+
+Show by means of a diagram, or otherwise, that 
+\[
+\frac{1}{r+1}\leqslant\int_{r}^{r+1}\frac{1}{x}\,\mathrm{d}x\leqslant\frac{1}{r}
+\]
+and deduce that 
+\[
+\sum_{r=2}^{n}\frac{1}{r}\leqslant\ln n\leqslant\sum_{r=1}^{n-1}\frac{1}{r}
+\]
+for all $n\geqslant2.$ 
+
+
+My children will give me no peace until we have the complete set of
+cards, but I am the only person in our household prepared to eat Cruncho
+and my spouse will only buy the stuff if I eat it. If $n$ is large,
+roughly how many packets must I expect to consume before we have the
+set?
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+	When Septimus Moneybags throws darts at a dart board they are certain
+	to end on the board (a disc of radius $a$) but, it must be admitted,
+	otherwise are uniformly randomly distributed over the board. 
+
+	\begin{questionparts}
+	\item Show that the distance $R$ that his shot lands from the centre of
+	the board is a random variable with variance $a^{2}/18.$
+	
+	\item At a charity fête he can buy $m$ throws for $\pounds(12+m)$, but
+	he must choose $m$ before he starts to throw. If at least one of
+	his throws lands with $a/\sqrt{10}$ of the centre he wins back $\pounds 12$.
+	In order to show that a good sport he is, he is determined to play
+	but, being a careful man, he wishes to choose $m$ so as to minimise
+	his expected loss. What values of $m$ should he choose? 
+\end{questionparts}
+\end{question}
+	
+\end{document}

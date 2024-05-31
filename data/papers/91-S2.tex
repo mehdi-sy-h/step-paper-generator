@@ -1,0 +1,509 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1991
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Let $\mathrm{h}(x)=ax^{2}+bx+c,$ where $a,b$ and $c$ are constants,
+and $a\neq0$. Give a condition which $a,b$ and $c$ must satisfy
+in order that $\mathrm{h}(x)$ can be written in the form 
+\[
+a(x+k)^{2},\tag{\ensuremath{*}}
+\]
+where $k$ is a constant. 
+
+
+If $\mathrm{f}(x)=3x^{2}+4x$ and $\mathrm{g}(x)=x^{2}-2$, find the
+two constant values of $\lambda$ such that $\mathrm{f}(x)+\lambda\mathrm{g}(x)$
+can be written in the form $(*)$. Hence, or otherwise, find constants
+$A,B,C,D,m$ and $n$ such that 
+\begin{alignat*}{1}
+\mathrm{f}(x) & =A(x+m)^{2}+B(x+n)^{2}\\
+\mathrm{g}(x) & =C(x+m)^{2}+D(x+n)^{2}.
+\end{alignat*}
+If $\mathrm{f}(x)=3x^{2}+4x$ and $\mathrm{g}(x)=x^{2}+\alpha$ and
+it is given by that there is only one value of $\lambda$ for which
+$\mathrm{f}(x)+\lambda\mathrm{g}(x)$ can be written in the form $(*)$,
+find $\alpha$. 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+	The equation of a hyperbola (with respect to axes which are displaced
+	and rotated with respect to the standard axes) is 
+	\[
+	3y^{2}-10xy+3x^{2}+16y-16x+15=0.\tag{\ensuremath{\dagger}}
+	\]
+	By differentiating $(\dagger)$, or otherwise, show that the equation
+	of the tangent through the point $(s,t)$ on the curve is 
+	\[
+	y=\left(\frac{5t-3s+8}{3t-5s+8}\right)x-\left(\frac{8t-8s+15}{3t-5s+8}\right).
+	\]
+	Show that the equations of the asymptote (the limiting tangents as
+	$s\rightarrow\infty$) are 
+	\[
+	y=3x-4\qquad\mbox{ and }\qquad3y=x-4.
+	\]
+	{[}\textbf{Hint}:\textbf{ }You will need to find a relationship between
+	$s$ and $t$ which is valid in the limit as $s\rightarrow\infty.${]}
+
+
+	Show that the angle between one asymptote and the $x$-axis is the
+	same as the angle between the other asymptote and the $y$-axis. Deduce
+	the slopes of the lines that bisect the angles between the asymptotes
+	and find the equations of the axes of the hyperbola.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+	It is given that $x,y$ and $z$ are distinct and non-zero, and that
+	they satisfy 
+	\[
+	x+\frac{1}{y}=y+\frac{1}{z}=z+\frac{1}{x}.
+	\]
+	Show that $x^{2}y^{2}z^{2}=1$ and that the value of $x+\dfrac{1}{y}$
+	is either $+1$ or $-1$.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+	Let $y=\cos\phi+\cos2\phi$, where $\phi=\dfrac{2\pi}{5}.$ Verify
+	by direct substitution that $y$ satisfies the quadratic equation
+	$2y^{2}=3y+2$ and deduce that the value of $y$ is $-\frac{1}{2}.$
+
+
+	Let $\theta=\dfrac{2\pi}{17}.$ Show that 
+	\[
+	\sum_{k=0}^{16}\cos k\theta=0.
+	\]
+	If $z=\cos\theta+\cos2\theta+\cos4\theta+\cos8\theta,$ show that
+	the value of $z$ is $-(1-\sqrt{17})/4$.
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+	Give a rough sketch of the function $\tan^{k}\theta$ for $0\leqslant\theta\leqslant\frac{1}{4}\pi$
+	in the two cases $k=1$ and $k\gg1$ (i.e. $k$ is much greater than
+	1). 
+
+
+	Show that for any positive integer $n$ 
+	\[
+	\int_{0}^{\frac{1}{4}\pi}\tan^{2n+1}\theta\,\mathrm{d}\theta=(-1)^{n}\left(\tfrac{1}{2}\ln2+\sum_{m=1}^{n}\frac{(-1)^{m}}{2m}\right),
+	\]
+	and deduce that 
+	\[
+	\sum_{m=1}^{\infty}\frac{(-1)^{m-1}}{2m}=\tfrac{1}{2}\ln2.
+	\]
+	Show similarly that 
+	\[
+	\sum_{m=1}^{\infty}\frac{(-1)^{m-1}}{2m-1}=\frac{\pi}{4}.
+	\]
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+	Show by means of a sketch, or otherwise, that if $0\leqslant\mathrm{f}(y)\leqslant\mathrm{g}(y)$
+	for $0\leqslant y\leqslant x$ then 
+	\[
+	0\leqslant\int_{0}^{x}\mathrm{f}(y)\,\mathrm{d}y\leqslant\int_{0}^{x}\mathrm{g}(y)\,\mathrm{d}y.
+	\]
+	Starting from the inequality $0\leqslant\cos y\leqslant1,$ or otherwise,
+	prove that if $0\leqslant x\leqslant\frac{1}{2}\pi$ then $0\leqslant\sin x\leqslant x$
+	and $\cos x\geqslant1-\frac{1}{2}x^{2}.$ Deduce that 
+	\[
+	\frac{1}{1800}\leqslant\int_{0}^{\frac{1}{10}}\frac{x}{(2+\cos x)^{2}}\,\mathrm{d}x\leqslant\frac{1}{1797}.
+	\]
+	Show further that if $0\leqslant x\leqslant\frac{1}{2}\pi$ then $\sin x\geqslant x-\frac{1}{6}x^{3}.$
+	Hence prove that 
+	\[
+	\frac{1}{3000}\leqslant\int_{0}^{\frac{1}{10}}\frac{x^{2}}{(1-x+\sin x)^{2}}\,\mathrm{d}x\leqslant\frac{2}{5999}.
+	\]
+	\end{question}
+	
+	%%%%%%%%% Q7
+	\begin{question}
+		The function $\mathrm{g}$ satisfies, for all positive $x$ and $y$,
+		\[
+		\mathrm{g}(x)+\mathrm{g}(y)=\mathrm{g}(z),\tag{\ensuremath{*}}
+		\]
+		where $z=xy/(x+y+1).$ By treating $y$ as a constant, show that 
+		\[
+		\mathrm{g}'(x)=\frac{y^{2}+y}{(x+y+1)^{2}}\mathrm{g}'(z)=\frac{z(z+1)}{x(x+1)}\mathrm{g}'(z),
+		\]
+		and deduce that $2\mathrm{g}'(1)=(u^{2}+u)\mathrm{g}'(u)$ for all
+		$u$ satisfying $0<u<1.$ Now by treating $u$ as a variable, show
+		that 
+		\[
+		\mathrm{g}(u)=A\ln\left(\frac{u}{u+1}\right)+B,
+		\]
+		where $A$ and $B$ are constants. Verify that $\mathrm{g}$ satisfies
+		$(*)$ for a suitable value of $B$. Can $A$ be determined from $(*)$? 
+
+
+		The function $\mathrm{f}$ satisfies, for all positive $x$ and $y$,
+		\[
+		\mathrm{f}(x)+\mathrm{f}(y)=\mathrm{f}(z)
+		\]
+		where $z=xy.$ Show that $\mathrm{f}(x)=C\ln x$ where $C$ is a constant.
+		\end{question}
+		
+%%%%%%%%% Q8
+	\begin{question}	
+		Solve the quadratic equation $u^{2}+2u\sinh x-1=0$, giving $u$ in
+		terms of $x$. 
+
+
+		Find the solution of the differential equation 
+		\[
+		\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^{2}+2\frac{\mathrm{d}y}{\mathrm{d}x}\sinh x-1=0
+		\]
+		which satisfies $y=0$ and $y'>0$ at $x=0$. 
+
+
+		Find the solution of the differential equation 
+		\[
+		\sinh x\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^{2}+2\frac{\mathrm{d}y}{\mathrm{d}x}-\sinh x=0
+		\]
+		which satisfies $y=0$ at $x=0$.
+		\end{question}	
+		
+		%%%%%%%%%% Q9
+		\begin{question}
+			Let $G$ be the set of all matrices of the form 
+			\[
+			\begin{pmatrix}a & b\\
+			0 & c
+			\end{pmatrix},
+			\]
+			where $a,b$ and $c$ are integeres modulo 5, and $a\neq0\neq c$.
+			Show that $G$ forms a group under matrix multiplication (which may
+			be assumed to be associative). What is the order of $G$? Determine
+			whether or not $G$ is commutative. 
+
+
+			Determine whether or not the set consisting of all elements in $G$
+			of order $1$ or $2$ is a subgroup of $G$.
+			\end{question}
+			
+		
+			
+%%%%%%%%%% Q10
+		\begin{question} A straight stick of length $h$ stands vertically. On a sunny day,
+the stick casts a shadow on flat horizontal ground. In cartesian axes
+based on the centre of the Earth, the position of the Sun may be taken
+to be $R(\cos\theta,\sin\theta,0)$ where $\theta$ varies but $R$
+is constant. The positions of the base and tip of the stick are $a(0,\cos\phi,\sin\phi)$
+and $b(0,\cos\phi,\sin\phi)$, respectively, where $b-a=h$. Show
+that the displacement vector from the base of the stick to the tip
+of the shadow is 
+\[
+Rh(R\cos\phi\sin\theta-b)^{-1}\begin{pmatrix}-\cos\theta\\
+-\sin^{2}\phi\sin\theta\\
+\cos\phi\sin\phi\sin\theta
+\end{pmatrix}.
+\]
+{[}`Stands vertically' means that the centre of the Earth, the base
+of the stick and the tip of the stick are collinear, `horizontal'
+means perpendicular to the stick. 
+\end{question}
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q11
+\begin{question}
+	The Ruritanian army is supplied with shells which may explode at any
+	time in flight but not before the shell reaches its maximum height.
+	The effect of the explosion on any observer depends only on the distance
+	between the exploding shell and the observer (and decreases with distance).
+	Ruritanian guns fire the shells with fixed muzzle speed, and it is
+	the policy of the gunners to fire the shell at an angle of elevation
+	which minimises the possible damages to themselves (assuming the ground
+	is level) - i.e. they aim so that the point on the descending trajectory
+	that is nearest to them is as far away as possible. With that intention,
+	they choose the angle of elevation that minimises the damage to themselves
+	if the shell explodes at its maximum height. What angle do they choose? 
+
+
+	Does the shell then get any nearer to the gunners during its descent?
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+A particle is attached to one end $B$ of a light elastic string of
+unstretched length $a$. Initially the other end $A$ is at rest and
+the particle hangs at rest at a distance $a+c$ vertically below $A$.
+At time $t=0$, the end $A$ is forced to oscillate vertically, its
+downwards displacement at time $t$ being $b\sin pt$. Let $x(t)$
+be the downwards displacement of the particle at time $t$ from its
+initial equilibrium position. Show that, while the string remains
+taut, $x(t)$ satisfies 
+\[
+\frac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}}=-n^{2}(x-b\sin pt),
+\]
+where $n^{2}=g/c$, and that if $0<p<n$, $x(t)$ is given by 
+\[
+x(t)=\frac{bn}{n^{2}-p^{2}}(n\sin pt-p\sin nt).
+\]
+Write down a necessary and sufficient condition that the string remains
+taut throughout the subsequent motion, and show that it is satisfied
+if $pb<(n-p)c.$ 
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+A non-uniform rod $AB$ of mass $m$ is pivoted at one end $A$ so
+that it can swing freely in a vertical plane. Its centre of mass is
+a distance $d$ from $A$ and its moment of inertia about any axis
+perpendicular to the rod through $A$ is $mk^{2}.$ A small ring of
+mass $\alpha m$ is free to slide along the rod and the coefficient
+of friction between the ring and rod is $\mu.$ The rod is initially
+held in a horizontal position with the ring a distance $x$ from $A$.
+If $k^{2}>xd$, show that when the rod is released, the ring will
+start to slide when the rod makes an angle $\theta$ with the downward
+vertical, where 
+\[
+\mu\tan\theta=\frac{3\alpha x^{2}+k^{2}+2xd}{k^{2}-xd}.
+\]
+Explain what will happen if (i) $k^{2}=xd$ and (ii) $k^{2}<xd$.
+\end{question}
+	
+%%%%%%%%%% Q14
+\begin{question}
+	The current in a straight river of constant width $h$ flows at uniform
+	speed $\alpha v$ parallel to the river banks, where $0<\alpha<1$.
+	A boat has to cross from a point $A$ on one bank to a point $B$
+	on the other bank directly opposite to $A$. The boat moves at constant
+	speed $v$ relative to the water. When the position of the boat is
+	$(x,y)$, where $x$ is the perpendicular distance from the opposite
+	bank and $y$ is the distance downstream from $AB$, the boat is pointing
+	in a direction which makes an angle $\theta$ with $AB$. Determine
+	the velocity vector of the boat in terms of $v,\theta$ and $\alpha.$
+
+
+	The pilot of the boat steers in such a way that the boat always points
+	exactly towards $B$. Show that the velocity vector of the boat is
+	\[
+	\begin{pmatrix}\dfrac{\mathrm{d}x}{\mathrm{d}t}\\
+	\tan\theta\dfrac{\mathrm{d}x}{\mathrm{d}t}+x\sec^{2}\theta\dfrac{\mathrm{d}\theta}{\mathrm{d}t}
+	\end{pmatrix}.
+	\]
+	By comparing this with your previous expression deduce that 
+	\[
+	\alpha\frac{\mathrm{d}x}{\mathrm{d}\theta}=-x\sec\theta
+	\]
+	and hence show that
+	\[
+	(x/h)^{\alpha}=(\sec\theta+\tan\theta)^{-1}.
+	\]
+	Let $s(t)$ be a new variable defined by $\tan\theta=\sinh(\alpha s).$
+	Show that $x=h\mathrm{e}^{-s},$ and that 
+	\[
+	h\mathrm{e}^{-s}\cosh(\alpha s)\frac{\mathrm{d}s}{\mathrm{d}t}=v.
+	\]
+	Hence show that the time of crossing is $hv^{-1}(1-\alpha^{2})^{-1}.$
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q15
+\begin{question}
+Integers $n_{1},n_{2},\ldots,n_{r}$ (possibly the same) are chosen
+independently at random from the integers $1,2,3,\ldots,m$. Show
+that the probability that $\left|n_{1}-n_{2}\right|=k$, where $1\leqslant k\leqslant m-1$,
+is $2(m-k)/m^{2}$ and show that the expectation of $\left|n_{1}-n_{2}\right|$
+is $(m^{2}-1)/(3m)$. Verify, for the case $m=2$, the result that
+the expection of $\left|n_{1}-n_{2}\right|+\left|n_{2}-n_{3}\right|$
+is $2(m^{2}-1)/(3m).$ Write down the expectation, for general $m$,
+of 
+\[
+\left|n_{1}-n_{2}\right|+\left|n_{2}-n_{3}\right|+\cdots+\left|n_{r-1}-n_{r}\right|.
+\]
+Desks in an examination hall are placed a distance $d$ apart in straight
+lines. Each invigilator looks after one line of $m$ desks. When called
+by a candidate, the invigilator walks to that candidate's desk, and
+stays there until called again. He or she is equally likely to be
+called by any of the $m$ candidates in the line but candidates never
+call simultaneously or while the invigilator is attending to another
+call. At the beginning of the examination the invigilator stands by
+the first desk. Show that the expected distance walked by the invigilator
+in dealing with $N+1$ calls is 
+\[
+\frac{d(m-1)}{6m}[2N(m+1)+3m].
+\]
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+	Each time it rains over the Cabbibo dam, a volume $V$ of water is
+	deposited, almost instanetaneously, in the reservoir. Each day (midnight
+	to midnight) water flows from the reservoir at a constant rate $u$
+	units of volume per day. An engineer, if present, may choose to alter
+	the value of $u$ at any midnight. 
+
+	\begin{questionparts}
+	\item Suppose that it rains at most once in any day, that there is a probability
+	$p$ that it will rain on any given day and that, if it does, the
+	rain is equally likely to fall at any time in the 24 hours (i.e. the
+	time at which the rain falls is a random variable uniform on the interval
+	$[0,24]$). The engineers decides to take two days' holiday starting
+	at midnight. If at this time the volume of water in the reservoir
+	is $V$ below the top of the dam, find an expression for $u$ such
+	that the probability of overflow in the two days is $Q$, where $Q<p^{2}.$
+
+
+	For the engineer's summer holidays, which last 18 days, the reservoir
+	is drained to a volume $kV$ below the top of the dam and the rate
+	of outflow $u$ is set to zero. The engineer wants to drain off as
+	little as possible, consistent with the requirement that the probability
+	that the dam will overflow is less than $\frac{1}{10}.$ In the case
+	$p=\frac{1}{3},$ find by means of a suitable approximation the required
+	value of $k$. 
+
+	\item Suppose instead that it may rain at most once before noon and at most
+	once after noon each day, that the probability of rain in any given
+	half-day is $\frac{1}{6}$ and that it is equally likely to rain at
+	any time in each half-day. Is the required value of $k$ lower or
+	higher? \end{questionparts}
+	\end{question}
+\end{document}

@@ -1,0 +1,481 @@
+
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1989
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+$\,$
+
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-2.7,0.1)(4.82,5.5) \parametricplot{0.0}{3.141592653589793}{1*3*cos(t)+0*3*sin(t)+1|0*3*cos(t)+1*3*sin(t)+1.8} \parametricplot{3.141592653589793}{6.283185307179586}{1*1*cos(t)+0*1*sin(t)+1|0*1*cos(t)+1*1*sin(t)+1.8} \parametricplot{0.0}{3.141592653589793}{1*1*cos(t)+0*1*sin(t)+-1|0*1*cos(t)+1*1*sin(t)+1.8} \parametricplot{0.0}{3.141592653589793}{1*1*cos(t)+0*1*sin(t)+3|0*1*cos(t)+1*1*sin(t)+1.8} \rput[tl](-2.38,1.92){$A$} \rput[tl](1.1,5.3){$H$} \rput[tl](-1.02,3.3){$B$} \rput[tl](-0.44,2.14){$C$} \rput[tl](0.74,0.72){$D$} \rput[tl](2.2,2.14){$E$} \rput[tl](2.96,3.3){$F$} \rput[tl](4.14,1.92){$G$} \end{pspicture*}
+\par\end{center}
+
+
+In the above diagram, $ABC,CDE,EFG$ and $AHG$ are semicircles and
+$A,C,E,G$ lie on a straight line. The radii of $ABC,EFG,AHG$ are
+$h$, $h$ and $r$ respectively, where $2h<r$. Show that the area
+enclosed by $ABCDEFGH$ is equal to that of a circle with diameter
+$HD$. 
+
+
+Each semicircle is now replaced by a portion of a parabola, with vertex
+at the midpoint of the semicircle arc, passing through the endpoints
+(so, for example, $ABC$ is replaced by part of a parabola passing
+through $A$ and $C$ and with vertex at $B$). Find a formula in
+terms of $r$ and $h$ for the area enclosed by $ABCDEFGH$. 
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+For $x>0$ find $\int x\ln x\,\mathrm{d}x$. 
+
+
+By approximating the area corresponding to $\int_{0}^{1}x\ln(1/x)\, \d x$
+by $n$ rectangles of equal width and with their top right-hand vertices
+on the curve $y=x\ln(1/x)$, show that, as $n\rightarrow\infty$,
+\[
+\frac{1}{2}\left(1+\frac{1}{n}\right)\ln n-\frac{1}{n^{2}}\left[\ln\left(\frac{n!}{0!}\right)+\ln\left(\frac{n!}{1!}\right)+\ln\left(\frac{n!}{2!}\right)+\cdots+\ln\left(\frac{n!}{(n-1)!}\right)\right]\rightarrow\frac{1}{4}.
+\]
+
+
+
+{[}You may assume that $x\ln x\rightarrow0$ as $x\rightarrow0$.{]}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+In the triangle $OAB,$ $\overrightarrow{OA}=\mathbf{a},$ $\overrightarrow{OB}=\mathbf{b}$
+and $OA=OB=1$. Points $C$ and $D$ trisect $AB$ (i.e. $AC=CD=DB=\frac{1}{3}AB$).
+$X$ and $Y$ lie on the line-segments $OA$ and $OB$ respectively,
+in such a way that $CY$ and $DX$ are perpendicular, and $OX+OY=1$.
+Denoting $OX$ by $x$, obtain a condition relating $x$ and $\mathbf{a\cdot b}$,
+and prove that 
+\[
+\frac{8}{17}\leqslant\mathbf{a\cdot b}\leqslant1.
+\]
+If the angle $AOB$ is as large as possible, determine the distance
+$OE,$ where $E$ is the point of intersection of $CY$ and $DX$. 
+\end{question}
+
+
+%%%%%% Q4 
+
+\begin{question}
+Six points $A,B,C,D,E$ and $F$ lie in three dimensional space and
+are in general positions, that is, no three are collinear and no four
+lie on a plane. All possible line segments joining pairs of points
+are drawn and coloured either gold or silver. Prove that there is
+a triangle whose edges are entirely of one colour. {[}\textbf{Hint}:
+consider segments radiating from $A.${]}
+
+
+Give a sketch showing that the result is false for five points in
+general positions. 
+\end{question}
+
+
+%%%%%%%%% Q5
+\begin{question}
+Write down the binomial expansion of $(1+x)^{n}$, where $n$ is a
+positive integer. 
+
+\begin{questionparts}
+\item By substituting particular values of $x$ in the above expression,
+or otherwise, show that, if $n$ is an even positive integer, 
+\[
+\binom{n}{0}+\binom{n}{2}+\binom{n}{4}+\cdots+\binom{n}{n}=\binom{n}{1}+\binom{n}{3}+\binom{n}{5}+\cdots+\binom{n}{n-1}=2^{n-1}.
+\]
+
+\item Show that, if $n$ is any positive integer, then 
+\[
+\binom{n}{1}+2\binom{n}{2}+3\binom{n}{3}+\cdots+n\binom{n}{n}=n2^{n-1}.
+\]
+
+\end{questionparts}
+
+Hence evaluate 
+\[
+\sum_{r=0}^{n}\left(r+(-1)^{r}\right)\binom{n}{r}\,.
+\]
+\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+The normal to the curve $y=\mathrm{f}(x)$ at the point $P$ with
+coordinates $(x,\mathrm{f}(x))$ cuts the $y$-axis at the point $Q$.
+Derive an expression in terms of $x$, $\mathrm{f}(x)$ and $\mathrm{f}'(x)$
+for the $y$-coordinate of $Q$. 
+
+
+If, for all $x$, $PQ=\sqrt{\mathrm{e}^{x^{2}}+x^{2}}$, find a differential
+equation satisfied by $\mathrm{f}(x)$. If the curve also has a minimum
+point $(0,-2)$, find its equation.
+	 \end{question}
+	 
+	 %%%%%%%%% Q7
+\begin{question}
+Sketch the curve $y^{2}=1-\left|x\right|$. A rectangle, with sides
+parallel to the axes, is inscribed within this curve. Show that the
+largest possible area of the rectangle is $8/\sqrt{27}$. 
+
+
+Find the maximum area of a rectangle similarly inscribed within the
+curve given by $y^{2m}=\left(1-\left|x\right|\right)^{n}$, where
+$m$ and $n$ are positive integers, with $n$ odd. 
+	\end{question}
+	
+	%%%%%%%%% Q8
+	\begin{question}
+By using de Moivre's theorem, or otherwise, show that 
+
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] $\cos4\theta=8\cos^{4}\theta-8\cos^{2}\theta+1;$
+\item[\bf (ii)] $\cos6\theta=32\cos^{6}\theta-48\cos^{4}\theta+18\cos^{2}\theta-1.$
+\end{itemize}
+
+Hence, or otherwise, find all the real roots of the equation 
+\[
+16x^{6}-28x^{4}+13x^{2}-1=0.
+\]
+{[}No credit will be given for numerical approximations.{]} 
+		\end{question}
+		
+		
+%%%%%%%%% Q9
+\begin{question}
+Sketch the graph of $8y=x^{3}-12x$ for $-4\leqslant x\leqslant4$,
+marking the coordinates of the turning points. Similarly marking the
+turning points, sketch the corresponding graphs in the $(X,Y)$-plane,
+if
+\begin{alignat*}{3}
+\rm{(a)} & \quad &  & X=\tfrac{1}{2}x, & \qquad & Y=y,\\
+\rm{(b)} &  &  & X=x, &  & Y=\tfrac{1}{2}y,\\
+\rm{(c)} &  &  & X=\tfrac{1}{2}x+1, &  & Y=y,\\
+\rm{(d)} &  &  & X=x, &  & Y=\tfrac{1}{2}y+1.
+\end{alignat*}
+ Find values for $a,b,c,d$ such that, if $X=ax+b,$ $Y=cy+d$, then
+the graph in the $(X,Y)$-plane corresponding to $8y=x^{3}-12x$ has
+turning points at $(X,Y)=(0,0)$ and $(X,Y)=(1,1)$. 
+\end{question}
+
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q10
+\begin{question}
+A spaceship of mass $M$ is travelling at constant speed $V$ in a
+straight line when it enters a force field which applies a resistive
+force acting directly backwards and of magnitude \phantom{ }$M\omega(v^{2}+V^{2})/v$,
+where $v$ is the instantaneous speed of the spaceship, and $\omega$
+is a positive constant. No other forces act on the spaceship. Find
+the distance travelled from the edge of the force field until the
+speed is reduced to $\frac{1}{2}V$. 
+
+
+As soon as the spaceship has travelled this distance within the force
+field, the field is altered to a constant resistive force, acting
+directly backwards, whose magnitude is within 10\% of that of the
+force acting on the spaceship immediately before the change. If $z$
+is the extra distance travelled by the spaceship before coming instantaneously
+to rest, determine limits between which $z$ must lie. 
+	\end{question}
+	
+%%%%%%%%%% Q11
+\begin{question}	
+A shot-putter projects a shot at an angle $\theta$ above the horizontal,
+releasing it at height $h$ above the level ground, with speed $v$.
+Show that the distance $R$ travelled horizontally by the shot from
+its point of release until it strikes the ground is given by 
+\[
+R=\frac{v^{2}}{2g}\sin2\theta\left(1+\sqrt{1+\frac{2hg}{v^{2}\sin^{2}\theta}}\right).
+\]
+The shot-putter's style is such that currently $\theta=45^{\circ}$.
+Determine (with justification) whether a small decrease in $\theta$
+will increase $R$. 
+
+
+{[}Air resistance may be neglected.{]}
+\end{question}
+
+%%%%%%%%%% Q12
+
+\begin{question}A regular tetrahedron $ABCD$ of mass $M$ is made of 6 identical
+uniform rigid rods, each of length $2a.$ Four light elastic strings
+$XA,XB,XC$ and $XD$, each of natural length $a$ and modulus of
+elasticity $\lambda,$ are fastened together at $X$, the other end
+of each string being attached to the corresponding vertex. Given that
+$X$ lies at the centre of mass of the tetrahedron, find the tension
+in each string. 
+
+
+The tetrahedron is at rest on a smooth horizontal table, with $B,C$
+and $D$ touching the table, and the ends of the strings at $X$ attached
+to a point $O$ fixed in space. Initially the centre of mass of the
+tetrahedron coincides with $O.$ Suddenly the string $XA$ breaks,
+and the tetrahedron as a result rises vertically off the table. If
+the maximum height subsequently attained is such that $BCD$ is level
+with the fixed point $O,$ show that (to 2 significant figures) 
+\[
+\frac{Mg}{\lambda}=0.098.
+\]
+\end{question}
+	
+%%%%%%%%%% Q13
+\begin{question}
+A uniform ladder of mass $M$ rests with its upper end against a smooth
+vertical wall, and with its lower end on a rough slope which rises
+upwards towards the wall and makes an angle of $\phi$ with the horizontal.
+The acute angle between the ladder and the wall is $\theta$. If the
+ladder is in equilibrium, show that $N$ and $F$, the normal reaction
+and frictional force at the foot of the ladder are given by 
+\[
+N=Mg\left(\cos\phi-\frac{\tan\theta\sin\phi}{2}\right),
+\]
+\[
+F=Mg\left(\sin\phi+\frac{\tan\theta\cos\phi}{2}\right).
+\]
+If the coefficient of friction between the ladder and the slope is
+$2$, and $\phi=45^{\circ}$, what is the largest value of $\theta$
+for which the ladder can rest in equilibrium?
+\end{question}
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q14
+\begin{question}
+The prevailing winds blow in a constant southerly direction from an
+enchanted castle. Each year, according to an ancient tradiction, a
+princess releases 96 magic seeds from the castle, which are carried
+south by the wind before falling to rest. South of the castle lies
+one league of grassy parkland, then one league of lake, then one league
+of farmland, and finally the sea. If a seed falls on land it will
+immediately grow into a fever tree. (Fever trees do not grow in water).
+Seeds are blown independently of each other. The random variable $L$
+is the distance in leagues south of the castle at which a seed falls
+to rest (either on land or water). It is known that the probability
+density function $\mathrm{f}$ of $L$ is given by 
+\[
+\mathrm{f}(x)=\begin{cases}
+\frac{1}{2}-\frac{1}{8}x & \mbox{ for }0\leqslant x\leqslant4,\\
+0 & \mbox{ otherwise.}
+\end{cases}
+\]
+What is the mean number of fever trees which begin to grow each year?
+
+\begin{questionparts}
+\item The random variable $Y$ is defined as the distance in leagues south
+of the castle at which a new fever tree grows from a seed carried
+by the wind. Sketch the probability density function of $Y$, and
+find the mean of $Y$. 
+\item One year messengers bring the king the news that 23 new fever trees
+have grown in the farmland. The wind never varies, and so the king
+suspects that the ancient tradition have not been followed properly.
+Is he justified in his suspicions?
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q15
+\begin{question}
+I can choose one of three routes to cycle to school. Via Angle Avenue
+the distance is 5$\,$km, and I am held up at a level crossing for
+$A$ minutes, where $A$ is a continuous random variable uniformly
+distributed between $0$ and 10. Via Bend Boulevard the distance is
+4$\,$km, and I am delayed, by talking to each of $B$ friends for
+3$\,$minutes, for a total of $3B$ minutes, where $B$ is a random
+variable whose distribution is Poisson with mean 4. Via Detour Drive
+the distance should be only 2$\,$km, but in addition, due to never-ending
+road works, there are five places at each of which, with probability
+$\frac{4}{5},$ I have to make a detour that increases the distance
+by 1$\,$km. Except when delayed by talking to friends or at the level
+crossing, I cycle at a steady 12$\,$km$\,$h$^{-1}$. For each of
+the three routs, calculate the probability that a journey lasts at
+least 27 minutes. 
+
+
+Each day I choose one of the three routes at random, and I am equally
+likely to choose any of the three alternatives. One day I arrive at
+school after a journey of at least 27 minutes. What is the probability
+that I came via Bend Boulevard?
+
+
+Which route should I use all the time: 
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)] if I wish my average journey time to be as small as possible; 
+\item[\bf (ii)] if I wish my journey time to be less than 32 minutes as often as possible?
+\end{itemize}
+
+Justify your answers. 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+ A and B play a guessing game. Each simultaneously names one of the
+numbers $1,2,3.$ If the numbers differ by 2, whoever guessed the
+\textit{smaller }pays the opponent $\pounds 2$. If the numbers differ
+by 1, whoever guessed the \textit{larger }pays the opponent $\pounds 1.$
+Otherwise no money changes hands. Many rounds of the game are played. 
+
+\begin{questionparts}
+\item If A says he will always guess the same number $N$, explain (for
+each value of $N$) how B can maximise his winnings. 
+\item In an attempt to improve his play, A announces that he will guess
+each number at random with probability $\frac{1}{3},$ guesses on
+different rounds being independent. To counter this, B secretly decides
+to guess $j$ with probability $b_{j}$ ($j=1,2,3,\, b_{1}+b_{2}+b_{3}=1$),
+guesses on different rounds being independent. Derive an expression
+for B's expected winnings on any round. How should the probabilities
+$b_{j}$ be chosen so as to maximize this expression? 
+\item A now announces that he will guess $j$ with probability $a_{j}$
+($j=1,2,3,\, a_{1}+a_{2}+a_{3}=1$). If B guesses $j$ with probability
+$b_{j}$ ($j=1,2,3,\, b_{1}+b_{2}+b_{3}=1$), obtain an expression
+for his expected winnings in the form 
+\[
+Xa_{1}+Ya_{2}+Za_{3}.
+\]
+Show that he can choose $b_{1},b_{2}$ and $b_{3}$ such that $X,Y$
+and $Z$ are all non-negative. Deduce that, whatever values for $a_{j}$
+are chosen by A, B can ensure that in the long run he loses no money.
+ \end{questionparts}
+\end{question}
+\end{document}

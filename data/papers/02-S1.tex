@@ -1,0 +1,517 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2002
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Show that the equation of any circle passing through the points of 
+intersection of the ellipse  $(x+2)^2 +2y^2 =18$ and the ellipse
+$9(x-1)^2  +16y^2 =  25$ can be written in the form
+\[
+x^2-2ax +y^2 =5-4a\;.
+\]
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Let $\f(x) = x^m(x-1)^n$, where $m$ and $n$ are both integers greater than $1$.
+Show that the curve $y=\f(x)$ has a stationary point with $0<x<1$. By 
+considering $\f\hspace{0.5pt}''(x)$, show that this
+stationary point is a maximum if $n$ is even and a minimum if $n$ is odd.
+
+Sketch the graphs of $\f(x)$
+in the four cases that arise according to the values of $m$ and $n$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Show that $(a+b)^2\le 2a^2+2b^2\,$.
+
+Find the stationary points on the curve  
+$y=\big(a^2\cos^2\theta +b^2\sin^2\theta\big)^{\frac12}
++ \big(a^2\sin^2\theta +b^2\cos^2\theta\big)^{\frac12}\,$, where 
+$a$ and $b$ are constants. State, with brief reasons, which points
+are maxima and which are minima. Hence prove that
+\[
+\vert a\vert +\vert b \vert 
+\le \big(a^2\cos^2\theta +b^2\sin^2\theta\big)^{\frac12}
++ \big(a^2\sin^2\theta +b^2\cos^2\theta\big)^{\frac12}
+\le \big(2a^2+2b^2\big)^{\frac12} \;.
+\]
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Give a sketch of  the curve  $ \;\displaystyle y= \frac1 {1+x^2}\;$, 
+for $x\ge0$. 
+
+Find the equation of the line that intersects  the curve 
+at $x=0$ and is tangent to the curve
+at some point with $x>0\,$. Prove 
+that there are no further 
+intersections between the line and the curve. Draw the line
+on your sketch.
+
+
+By considering the area under the curve for $0\le x\le1$, show that $\pi>3\,$.
+
+Show also, by considering the volume formed by rotating the curve about
+the $y$ axis, that $\ln 2 >2/3\,$.
+
+\vspace{2mm}
+[\hspace{1pt}
+{\bf Note}: $\displaystyle \int_0^ 1 \frac1 {1+x^2}\, \d x = \frac\pi 4\,.\;$]
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+Let 
+\[
+\f(x) = x^n + a_1 x^{n-1} + \cdots + a_n\;,
+\]
+where $a_1$, $a_2$, $\ldots$\,, $a_n$ are given numbers.
+It is given that $\f(x)$ can be written in the form
+\[
+\f(x) = (x+k_1)(x+k_2)\cdots(x+k_n)\;.
+\]
+By considering
+$\f(0)$, or otherwise, show that $k_1k_2 \ldots k_n =a_n$.
+
+Show also that $$(k_1+1)(k_2+1)\cdots(k_n+1)= 1+a_1+a_2+\cdots+a_n$$ and give a 
+corresponding result for $(k_1-1)(k_2-1)\cdots(k_n-1)$.
+
+
+Find the roots of the equation
+\[
+x^4 +22x^3 +172x^2 +552x+576=0\;,
+\]
+given that they are all integers.
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+A   pyramid stands on horizontal ground. Its base is an equilateral triangle with sides of length~$a$,  the other three 
+ sides of the pyramid are of length $b$ and its volume is $V$. Given that the 
+formula for the volume of any pyramid is   
+$
+ \textstyle
+\frac13 \times \mbox{area of base} \times \mbox {height} \,,
+$
+show that 
+\[
+V= \frac1{12} {a^2(3b^2-a^2)}^{\frac12}\;.
+\]
+
+The pyramid is then placed  so that a non-equilateral face  lies on the ground.
+Show that the new height, $h$, of the pyramid is given by 
+\[
+h^2 = \frac{a^2(3b^2-a^2)}{4b^2-a^2}\;.
+\]
+Find, in terms of $a$ and $b\,$, the angle between the 
+equilateral triangle and the horizontal.
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Let
+\[
+I= \int_0^a \frac {\cos x}{\sin x + \cos x} \; \d x \,
+\mbox{ \ \ \ \ and  \ \ \ \ }
+J= \int_0^a \frac {\sin  x}{\sin x + \cos x} \; \d x \;,
+\]
+where $0\le a <\frac{3}{4}\pi\,$.
+By considering $I+J$ and $I-J$,  show that 
+$
+2I= a + \ln (\sin a +\cos a)\;.
+$
+
+Find also:
+\begin{questionparts}
+\item 
+$\displaystyle \int_0^{\frac{1}{2}\pi} \frac {\cos x}{p\sin x + q\cos x} \; \d x \,$, where $p$ and $q$ 
+are positive numbers;
+%\item [(ii)] 
+%$\displaystyle \int_0^{\frac{1}{2}\pi/2} \frac {\cos x}{\sin (x+k)} \; \d x \,$, where $0<k<\pi/2\,$;
+\item 
+$\displaystyle \int_0^{\frac{1}{2}\pi} \frac {\cos x+4}{3\sin x + 4\cos x+ 25} \; \d x \,$.
+\end{questionparts}
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+I borrow $C$ pounds at interest rate $100\alpha \,\%$ per year.
+The interest is added at the end of each year. Immediately after the 
+interest is added, I make 
+a repayment. The amount I repay  at the end of the $k$th year is $R_k$
+pounds and the amount I owe
+at the beginning of   $k$th year is $C_k$ pounds (with $C_1=C$).
+Express $C_{n+1}$ in terms of $R_k$ ($k= 1$, $2$, $\ldots$, $n$), $\alpha$ and $C$
+and show that,  if I pay off the loan in $N$ years with repayments
+given by $R_k= (1+\alpha)^kr\,$, where $r$ is constant, then $r=C/N\,$.
+
+
+
+If instead I pay off the loan in  $N$ years with $N$ equal repayments
+of $R$ pounds, show that 
+\[
+\frac R C = \frac{\alpha (1+\alpha)^{N} }{(1+\alpha)^N-1} \;,
+\]
+and that $R/C\approx 27/103$ in the case $\alpha =1/50$, $N=4\,$.
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}$\,$
+\vspace*{-0.5in}
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.23,-0.31)(9.2,7.46)
+\psline(0,0)(8,0)
+\psline(0,0)(6.96,2.35)
+\psline(1.01,0.34)(-0.61,5.05)
+\psline(-0.61,5.05)(5.3,7.1)
+\psline(5.3,7.1)(6.96,2.35)
+\psline(0.84,0.83)(6.77,2.87)
+\psline[linestyle=dashed,dash=2pt 2pt](3,4)(4.16,0.56)
+\psline{->}(3,4)(9,4)
+\psline[linestyle=dashed,dash=2pt 2pt](3,4)(-1.37,2.42)
+\psline[linewidth=0.4pt,linestyle=dashed,dash=2pt 2pt]{->}(-0.43,2.76)(0.43,0.16)
+\psline[linestyle=dashed,dash=2pt 2pt]{->}(0.43,0.15)(-0.43,2.75)
+\psline[linestyle=dashed,dash=2pt 2pt](6.96,2.35)(7.29,1.39)
+\parametricplot{0.0}{0.32693321010422505}{1.28*cos(t)+0|1.28*sin(t)+0}
+\psline{->}(4.02,0.97)(7.1,1.93)
+\psline{->}(7.1,1.93)(4.02,0.97)
+\psline[linewidth=0.4pt,linestyle=dashed,dash=2pt 2pt]{->}(-0.71,5.29)(5.24,7.32)
+\psline[linestyle=dashed,dash=2pt 2pt]{->}(5.24,7.32)(-0.71,5.29)
+\psline(6.96,2.35)(7.98,2.71)
+\rput[tl](2.58,3.67){$G$}
+\rput[tl](8.9,3.81){$P$}
+\rput[tl](5.64,1.39){$d$}
+\rput[tl](1.81,6.79){$2d$}
+\rput[tl](-0.59,1.5){$h$}
+\rput[tl](1.52,0.32){$\alpha$}
+\begin{scriptsize}
+\psdots[dotstyle=*](3,4)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+
+A lorry of weight $W$ stands on a plane inclined at an angle $\alpha$ to the
+horizontal. Its wheels are a distance $2d$ apart, and its centre of
+gravity $G$ is at a distance $h$ from the plane, and halfway between the sides
+of the lorry. A horizontal  force $P$ acts on the lorry 
+through $G\,$, as shown.
+
+\begin{questionparts}
+\item If the normal reactions on the lower and 
+higher  wheels of the lorry  are equal,
+show that the sum of the  frictional forces between the  wheels  and the ground is zero. 
+
+\item If  $P$ is such  that the lorry does not tip
+over (but the normal reactions on the lower and 
+higher  wheels of the lorry  need not be equal), show that
+\[
+W\tan(\alpha - \beta)
+\le P
+\le
+W\tan(\alpha+\beta)\;,
+\]
+where $\tan\beta = d/h\,$.
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A bicycle pump consists of a cylinder and a piston. The piston is pushed
+in with steady speed~$u$. A particle of air moves to and fro between the 
+piston and the  end of the cylinder, colliding  perfectly elastically with the piston
+and the end of the cylinder, and always moving parallel with the axis of the cylinder.
+Initially, the particle is moving towards the piston at speed $v$.
+Show that the speed, $v_n$, of the particle just after the
+$n$th collision with the piston is given by $v_n=v+2nu$.
+
+Let $d_n$ be the distance between the piston and the end of the cylinder
+at the $n$th collision, and let $t_n$ be the time between the 
+$n$th and $(n+1)$th collisions. Express $d_n - d_{n+1}$ in terms
+of $u$ and $t_n$, and show that
+\[
+d_{n+1} = \frac{v+(2n-1)u}{v+(2n+1)u} \, d_n \;.
+\]
+Express $d_n$ in terms of $d_1$, $u$, $v$  and $n$. 
+
+In the case $v=u$, show that $ut_n = \displaystyle \frac {d_1} {n(n+1)}$.
+%%%%%Verify that $\sum\limits_1^\infty t_n = d/u$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}$\,$
+	
+\begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.62,-2.1)(6.82,1.68)
+\psline{->}(-1.7,0)(-0.22,0)
+\psline[linestyle=dashed,dash=1pt 1pt](3,0)(6,0)
+\psline{->}(4,0)(5.38,0.88)
+\psline{->}(4,0)(5,-1)
+\rput[tl](-2.36,0.71){$P_1$}
+\rput[tl](0.54,0.71){$P_2$}
+\rput[tl](-2.51,-0.16){$m$}
+\rput[tl](0.61,-0.16){$km$}
+\rput[tl](4.59,0.34){$\theta$}
+\rput[tl](4.53,-0.08){$\phi$}
+\rput[tl](5.87,1.55){$P_1$}
+\rput[tl](5.33,-1.17){$P_2$}
+\begin{scriptsize}
+\psdots[dotsize=5pt 0,dotstyle=*](-2,0)
+\psdots[dotsize=5pt 0,dotstyle=*](0.46,0)
+\psdots[dotsize=5pt 0,dotstyle=*](5.62,1)
+\psdots[dotsize=5pt 0,dotstyle=*](5.13,-1.18)
+\end{scriptsize}
+\end{pspicture*}
+\end{center}
+A particle $P_1$ of mass $m$ collides with  a particle $P_2$
+of mass $km$ which is at rest. No energy is lost in the collision.
+ The direction of motion 
+of $P_1$ and $P_2$ after the collision make 
+non-zero
+angles of  $\theta$ and $\phi$, respectively, with the direction of motion 
+of $P_1$ before the collision, as shown. Show that
+\[
+\sin^2\theta + k\sin^2\phi = k\sin^2(\theta+\phi) \;.
+\] 
+
+Show that, if the angle between the particles after the collision is a right angle,
+then $k=1\,$.
+
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+Harry the Calculating Horse will do any mathematical problem I set  him,
+providing the answer is 1, 2, 3 or 4. When I set  him a problem,
+he   places a  hoof on
+a large  grid consisting of unit squares and  his   answer is  the 
+number of squares partly covered by his hoof.
+Harry has circular hoofs, of radius $1/4$ unit.
+
+
+After many years of collaboration, I suspect that Harry no longer bothers to 
+do the calculations, instead merely placing his hoof on the grid completely at random.
+I often ask him to  divide 4 by 4, but only  about $1/4$ of his answers are right; 
+I often ask him to add 2 and 2, but disappointingly only about 
+$\pi/16$ of his answers are right. Is this consistent with my suspicions?
+
+I decide to investigate  further by setting  Harry many problems,  the answers to which 
+are 1, 2, 3, or 4 with equal frequency. If Harry is placing his hoof at random,
+find the expected value of his answers. The average of Harry's answers turns out to 
+be 2. Should I get a new horse? 
+
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+The random variable $U$ takes the values $+1$, $0$ and $-1\,$, each with probability
+$\frac13\,$. The random variable $V$ takes the values $+1$ and $-1$ as follows:
+\begin{center}
+
+\begin{tabular}{ll}
+if $U=1\,$,&then $\P(V=1)= \frac13$ and $\P(V=-1)=\frac23\,$;\\[2mm]
+if $U=0\,$,&then $\P(V=1)= \frac12$ and $\P(V=-1)=\frac12\,$;\\[2mm]
+if $U=-1\,$,&then $\P(V=1)= \frac23$ and $\P(V=-1)=\frac13\,$.
+\end{tabular}
+
+\end{center}
+
+
+\begin{questionparts}
+\item Show that  the probability that
+ both roots of the equation $x^2+Ux+V=0$ are real is $\frac12\;$.
+
+\item Find the expected value of the larger root of the equation 
+ $x^2+Ux+V=0\,$, given that both roots  are real.
+
+\item
+Find the probability that the roots of the equation
+$$x^3+(U-2V)x^2+(1-2UV)x + U=0$$ are all positive.
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+In order to get money from a cash dispenser 
+I have to punch in an
+identification  number.  I have forgotten my  identification number, 
+but I do know that it is equally likely to be any one of the 
+integers $1$, $2$, \ldots , $n$.
+I plan to punch in integers  in order until I get the right 
+one. I can do this at the rate of $r$ integers  per minute. 
+As soon as I punch in the first  wrong number, the police will be alerted. 
+The probability that  they will arrive within  a time $t$ minutes 
+is $1-\e^{-\lambda t}$, where $\lambda$ is a  positive constant.
+If I follow my plan, show that the probability of the police arriving
+before I get my money is
+\[
+\sum_{k=1}^n \frac{1-\e^{-\lambda(k-1)/r}}n\;.
+\]
+Simplify the sum.
+
+On past experience, I know that I will  be so flustered that I will 
+just punch in possible integers at random, without noticing which  I have 
+already tried. Show that the probability of the police arriving before
+I get my money is
+\[
+1-\frac1{n-(n-1)\e^{-\lambda/r}} \;.
+\]
+\end{question}
+	
+\end{document}

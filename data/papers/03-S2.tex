@@ -1,0 +1,486 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2003
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Consider the equations
+\begin{alignat*}{2}
+ax-&y- \ z  && =3 \;,\\
+2ax -&y -3z && = 7 \;,\\
+3ax-&y-5z   && =b \;,
+\end{alignat*}
+where $a$ and $b$ are given constants.
+\begin{questionparts}
+\item In the case $a=0\,$, show that the equations have a solution if and only if
+$b=11\,$.
+\item In the case $a\ne0$ and $b=11\,$ show that the equations have
+a solution with $z=\lambda$ for any given number $\lambda\,$.
+\item  In the case $a=2$ and $b=11\,$ find the solution
+for which $x^2+y^2+z^2$ is least.
+\item Find a value for $a$ for which there is a solution such that
+$x>10^6$ and $y^2+z^2<1\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+ Write down a value of $\theta\,$ in the interval $\frac{1}{4}\pi< \theta <\frac{1}{2}\pi$ that satisfies
+the  equation
+\[
+             4\cos\theta+ 2\sqrt3\, \sin\theta = 5 \;.
+\]
+Hence, or otherwise,  show that
+\[
+         \pi=3\arccos(5/\sqrt28) + 3\arctan(\sqrt3/2)\;.
+\]
+
+Show that
+\[
+         \pi=4\arcsin(7\sqrt2/10) - 4\arctan(3/4)\;.
+\]
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Prove that the cube root of any irrational number is an
+irrational number.
+
+Let $\ds u_n = {5\vphantom{\dot A}}^{1/{(3^n)}}\,$.
+Given that $\sqrt[3]5$ is an irrational number, prove by
+induction that
+$u_n$ is an irrational number 
+for every positive integer $n$.
+
+Hence, or otherwise, give an example of  an infinite sequence
+of irrational numbers which converges to a given  integer $m\,$.
+
+
+
+\noindent
+[An irrational number is a number that  cannot be expressed as the ratio 
+of two integers.]
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+The line $y=d\,$, where $d>0\,$,
+intersects the circle $x^2+y^2=R^2$ at $G$ and $H$. Show
+that the area of the minor segment $GH$ is equal to
+\begin{equation}
+R^2\arccos \left({d \over R}\right) -d\sqrt{R^2 - d^2}\;.
+\tag
+{$*$}
+\end{equation}
+
+
+In the following cases, the given line intersects the
+given circle. Determine how, in each case, the expression $(*)$ should be modified
+to give the area of the minor
+segment.
+
+
+  
+\begin{questionparts}
+\item
+Line: $y=c\,$; \ \ \ circle: $(x-a)^2+(y-b)^2=R^2\,$. 
+
+\item
+Line: $y=mx+c\, $;  \ \ \  circle: $x^2+y^2=R^2\,$. 
+
+
+\item
+Line: $y=mx+c\,$; \ \ \ circle: $(x-a)^2+(y-b)^2=R^2\,$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+The position vectors of 
+the points $A\,$, $B\,$ and $P$ with respect to an origin $O$ 
+are $a{\bf i}\,$,  $b{\bf j}\,$ and  $l{\bf i}+m{\bf j}+n{\bf k}\,$, respectively,
+where $a$, $b$, and $n$ are all non-zero. The points $E$, $F$, $G$ and~$H$ 
+are the midpoints of $OA$, $BP$, $OB$ and  $AP$, respectively.  
+Show that the lines
+$EF$ and $GH$  intersect.
+
+
+Let $D$ be the point with position vector $d{\bf k}$, where $d$ is non-zero, 
+and let $S$ be the point of intersection of $EF$ and $GH.$
+The point $T$ is such that the mid-point of $DT$ is $S$. 
+Find the position vector of $T$ and hence find $d$ in terms of $n$
+if $T$ lies  in the plane $OAB$. 
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+ The function $\f$  is defined by 
+$$
+\f(x)=  \vert x-1 \vert\;,
+$$
+where the domain is ${\bf R}\,$, the set of all real numbers. 
+The function $\g_n =\f^n$, with domain ${\bf R}\,$, 
+so for example $\g_3(x) = \f(\f(\f(x)))\,$.
+In separate diagrams, sketch graphs of $\g_1\,$, $\g_2\,$, $\g_3\,$ and~$\g_4\,$.
+
+
+
+The function $\h$ is defined by
+\[
+\h(x) = \left\vert \sin {{{\pi}x} \over 2} \right\vert\;,
+\]
+where  the domain is ${\bf R}\,$. Show that if $n$ is even,
+\[
+\int_0^n\,\big( \h(x)-\g_n(x)\big)\,\d x = \frac{2n}{\pi} -\frac{n}2\;.
+\]
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Show that, 
+ if $n>0\,$, then
+$$
+\int_{e^{1/n}}^\infty\,{{\ln x} \over {x^{n+1}}}\,\d x
+=  {2 \over  {n^2\e}}\;.  
+$$
+You may assume that $\ds \frac{\ln x} x \to 0\;$ as $x\to\infty\,$.
+
+
+Explain why, if $1<a<b\,$, then
+$$
+\int_b^\infty\,{{\ln x} \over {x^{n+1}}}\,\d x  
+<
+\int_a^\infty\,{{\ln x} \over {x^{n+1}}}\,\d x\;.
+$$
+
+
+Deduce that
+$$
+\sum_{n=1}^{N}{1 \over n^2} <
+{\e \over 2}\int_{\e^{1/N}}^{\infty}
+\left({1-x^{-N}} \over {x^2-x}\right) \ln x\,\d x\;,
+$$
+where  $N\,$ is any integer greater than $1$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+It is given that $y$ satisfies
+ $$
+{{\d y} \over { \d t}} + 
+k\left({{t^2-3t+2} \over {t+1}}\right)y = 0\;,
+$$
+where $k$ is a constant,  and $y=A $ when $t=0\,$, where $A$ is a positive constant.
+Find $y$ in terms of $t\,$, $k$ and $A\,$.
+
+
+Show that $y$ has two stationary values whose 
+ratio is 
+$(3/2)^{6k}
+\e^{-5{k}/2}.$
+
+
+Describe the behaviour of $y$ as $t \to +\infty$ for the case
+where $k> 0$ and for the case where $k<0\,.$
+
+In separate diagrams, sketch the graph of $y$  for $t>0$
+for each of these cases. 
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+$AB$ is a uniform rod of weight $W\,$.
+The point $C$  on $AB$ is such that $AC>CB\,$. The 
+rod is in contact with a rough horizontal floor  at $A\,$ 
+and with a cylinder at $C\,$. The cylinder   
+is fixed to the floor with its axis horizontal.
+The rod makes an angle ${\alpha}$ with 
+the horizontal and lies in a vertical plane perpendicular to
+the axis of the cylinder.
+The coefficient  of friction between the rod
+and the floor  is $\tan \lambda_1$ and the coefficient of friction
+between the rod and the 
+cylinder is $\tan \lambda_2\,$.  
+
+Show that if friction is limiting 
+both at $A$ and at $C$, and ${\alpha} \ne {\lambda}_2 - {\lambda}_1\,$, 
+then the frictional force acting on the rod 
+at $A$ has magnitude 
+$$
+\frac{ W\sin {\lambda}_1  \, \sin({\alpha}-{\lambda}_2)}
+{\sin ({\alpha}+{\lambda}_1-{\lambda}_2)}
+\;.$$
+%and that
+%$$
+%p=\frac{\cos{\alpha} \, \sin({\alpha}+{\lambda}_1-{\lambda}_2)}
+%{2\cos{\lambda}_1 \, \sin {\lambda}_2}\;.
+%$$
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A bead $B$ of mass $m$ can slide along a rough horizontal wire.
+A light inextensible string of length $2\ell$ has one end attached 
+to a fixed point $A$
+of the wire and the other to $B\,$. 
+A particle $P$ of mass $3m$ is attached to the mid-point of the string
+and $B$ is held at a distance
+$\ell$ from~$A\,$. The bead is released from rest.
+
+
+Let $a_1$ and $a_2$ be the magnitudes of the horizontal and vertical components of the
+initial acceleration of $P\,$. Show by considering the motion of $P$ relative to $A\,$, or 
+otherwise, that $a_1= \sqrt 3 a_2\,$. Show also that the magnitude
+of the initial acceleration of $B$ is 
+$2a_1\,$.
+
+Given that the frictional force opposing the motion
+of $B$ is equal to $({\sqrt{3}}/6)R$, where $R$ is the normal reaction 
+between $B$ and the wire, show that the magnitude of the initial acceleration of 
+$P$ is~$g/18\,$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A particle $P_1$ is projected with speed $V$ at an angle of elevation
+${\alpha}\,\,\,( > 45^{\circ})\,,\,\,\,$ 
+from a point in a horizontal plane. 
+Find $T_1$, the flight time of $P_1$, in terms of
+${\alpha}, V \hbox{    and    } g\,$.
+Show that the time after projection at 
+which the direction of motion of $P_1$ first 
+makes an angle of 
+$45^{\circ}$ with the horizontal is $\frac12 (1-\cot \alpha)T_1\,$.
+
+
+A particle $P_2$  is projected 
+under the same conditions.
+When the direction of the motion of $P_2$ 
+first makes an angle of  $45^{\circ}$ with the horizontal, the speed of
+$P_2$ is instantaneously doubled. If $T_2$ is the total flight time of
+$P_2$,  show that 
+$$
+\frac{2T_2}{T_1}
+=  1+\cot{\alpha}
++\sqrt{1+3\cot^2{\alpha}} \;.
+$$ 
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+The life of a certain species of elementary particles
+can be described as follows. Each particle has a life time 
+of $T$ seconds, after which it disintegrates into $X$ particles
+of the same species, where $X$ is a random variable with 
+binomial distribution $\mathrm{B}(2,p)\,$.
+A population of these particles starts with the creation
+of a single such particle at $t=0\,$. Let $X_n$ be 
+the number of particles in existence in the time interval 
+$nT < t < (n+1)T\,$, where $n=1\,$, $2\,$, $\ldots$.  
+
+Show that $\P(X_1=2 \mbox { and } X_2=2) = 6p^4q^2\;$, where $q=1-p\,$.
+Find the possible values of $p$ if it is known that 
+$\P(X_1=2 \vert X_2=2) =9/25\,$.
+
+Explain briefly why  $\E(X_n) =2p\E(X_{n-1})$ and hence determine $\E(X_n)$
+in terms of $p$.
+Show that for one of the values of $p$ found above  
+$\lim_{n \to \infty}\E(X_n) = 0$ 
+and that for the other
+$\lim_{n \to \infty}\E(X_n) = + \infty\,$. 
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+The random variable $X$ takes the values $k=1$, $2$, $3$, $\dotsc$,
+and has probability distribution 
+$$
+\P(X=k)= A{{{\lambda}^k\e^{-{\lambda}}} \over {k!}}\,,
+$$
+where $\lambda $ is a positive constant.
+Show that $A = (1-\e^{-\lambda})^{-1}\,$. Find
+the mean ${\mu}$ in terms of  ${\lambda}$  and show that
+$$
+\var(X) = {\mu}(1-{\mu}+{\lambda})\;.
+$$
+Deduce that ${\lambda} < {\mu} < 1+{\lambda}\,$.
+
+Use a normal approximation to find
+the value of $P(X={\lambda})$
+in the case where ${\lambda}=100\,$, giving your answer to 2 decimal places.
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+The probability of throwing a 6 with a biased die
+is $p\,$. It is known that  $p$
+is equal to one or other of the numbers $A$ and $B$
+where  $0< A <B<1 \,$. 
+Accordingly the following  statistical 
+test of the hypothesis $H_0: \,p=B$ against the alternative
+hypothesis $H_1: \,p=A$ is performed.
+
+The die is thrown  repeatedly until a 6 is obtained. Then if
+$X$ is the total number of throws,  $H_0$ is accepted if $X \le M\,$,
+where $M$ is a given positive integer;  otherwise $H_1$ is accepted.
+Let ${\alpha}$ be the probability that $H_1$ is accepted
+if $H_0$ is true, and let ${\beta}$ be  the probability that $H_0$
+is accepted if $H_1$ is true.  
+
+Show that ${\beta} = 1- {\alpha}^K,$ where $K$ is independent of $M$ and 
+is to be determined in terms of 
+$A$ and $B\,$.  Sketch the graph of ${\beta}$ 
+against ${\alpha}\,$.
+\end{question}
+	
+\end{document}

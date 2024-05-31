@@ -1,0 +1,447 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 1996
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+\begin{questionparts} 
+\item Find the
+coefficient of $x^{6}$ in
+\[(1-2x+3x^{2}-4x^{3}+5x^{4})^{3}.\]
+You should set out your working clearly.
+ 
+\item By considering the binomial expansions of $(1+x)^{-2}$
+and $(1+x)^{-6}$, or otherwise, find the
+coefficient of $x^{6}$ in
+\[(1-2x+3x^{2}-4x^{3}+5x^{4}-6x^{5}+7x^{6})^{3}.\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+Consider the system of equations
+\begin{alignat*}{1}
+2yz+zx-5xy & =2\\
+yz-zx+2xy & =1\\
+yz-2zx+6xy & =3
+\end{alignat*}             
+Show that 
+\[xyz=\pm 6\] and find
+the possible values of $x$, $y$ and $z$.
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+ The Fibonacci numbers $F_{n}$ are defined by the conditions
+$F_{0}=0$, $F_{1}=1$ and
+\[F_{n+1}=F_{n}+F_{n-1}\]
+for all $n\geqslant 1$. Show that $F_{2}=1$,
+$F_{3}=2$, $F_{4}=3$ and compute
+$F_{5}$, $F_{6}$ and~$F_{7}$.
+
+Compute $F_{n+1}F_{n-1}-F_{n}^{2}$ for a few values of $n$; guess
+a general formula and prove it by induction, or otherwise.
+
+By induction on $k$, or otherwise, show that
+\[F_{n+k}=F_{k}F_{n+1}+F_{k-1}F_{n}\]
+for all positive integers $n$ and $k$.
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Show that $\cos 4u=8\cos^{4}u-8\cos^{2}u+1$.
+
+If
+\[
+I=\int_{-1}^{1}
+\frac{1}{\vphantom{{\big(}^2}\; 
+\surd(1+x)+\surd(1-x)+2\;
+}\;{\rm d}x  ,\]
+show, by using the change of variable $x=\cos t$, that
+\[
+I= \int_0^\pi
+\frac{\sin t}{4\cos^{2}\left(\frac{t}{4}-\frac{\pi}{8}\right)}\,{\rm
+d}t.\]
+
+By using the further change of variable $u=\frac{t}{4}-\frac{\pi}{8}$,
+or otherwise, show that
+\[I=4\surd{2}-\pi-2.\]
+
+\noindent[You may assume that $\tan\frac{\pi}{8}=\surd{2}-1$.]
+	\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+If
+$$                 
+z^{4}+z^{3}+z^{2}+z+1=0\eqno(*) 
+$$               
+and $u=z+z^{-1}$,
+find the possible values of $u$. Hence find the possible
+values of $z$. [Do not try to simplify your answers.]
+
+Show that, if $z$ satisfies $(*)$, then
+\[z^{5}-1=0.\]
+Hence write the solutions of $(*)$ in the form
+$z=r(\cos\theta+i\sin\theta)$ for suitable real $r$ and $\theta$.
+Deduce that
+\[\sin\frac{2\pi}{5}=\frac{\surd(10+2\surd 5)}{4}
+\ \ \hbox{and}\ \ \cos\frac{2\pi}{5}=\frac{-1+\surd 5}{4}.\]
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+A {\sl proper factor} of a positive integer $N$
+is an integer $M$, with $M\ne 1$ and $M\ne N$, which divides $N$ without remainder.
+Show that $12$ has $4$ proper factors and $16$ has $3$.
+
+Suppose that $N$ has the prime factorisation
+\[N=p_{1}^{m_{1}}p_{2}^{m_{2}}\dots p_{r}^{m_{r}},\]
+where  $p_{1}$, $p_{2}$, \dots, $p_{r}$ are distinct 
+primes and
+$m_{1}$, $m_{2}$, \dots, $m_{r}$ are positive integers.
+How many proper factors does $N$ have and why?
+
+Find:
+
+\begin{questionparts} 
+\item the smallest positive integer which has
+precisely 12 proper factors;
+
+\item the smallest positive integer which has
+at least 12 proper factors.
+\end{questionparts}
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Consider a fixed square $ABCD$ and a variable
+point $P$ in the plane of the square. We write the perpendicular
+distance from $P$ to $AB$ as $p$, from $P$ to $BC$ as $q$,
+from $P$ to $CD$ as $r$ and from $P$ to $DA$ as $s$.
+(Remember that distance is never negative, so $p,q,r,s\geqslant 0$.)
+If $pr=qs$, show that the only possible positions of $P$
+lie on two straight lines and a circle and that every point
+on these two lines and a circle is indeed a possible position
+of $P$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}	
+Suppose that
+\[{\rm f}''(x)+{\rm f}(-x)=x+3\cos 2x\]
+and ${\rm f}(0)=1$, ${\rm f}'(0)=-1$.
+If ${\rm g}(x)={\rm f}(x)+{\rm f}(-x)$,  find ${\rm g}(0)$
+and show that ${\rm g}'(0)=0$.
+Show that
+\[{\rm g}''(x)+{\rm g}(x)=6\cos 2x,\]
+and hence find ${\rm g}(x)$.
+
+Similarly, if
+${\rm h}(x)={\rm f}(x)-{\rm f}(-x)$, find ${\rm h}(x)$
+and show that
+\[{\rm f}(x)=2\cos x -\cos2x-x.\]
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A child's toy consists of a  solid cone
+of height $\lambda a$ and a 
+solid hemisphere
+of radius $a$,
+made out of the same uniform material and fastened together
+so that their plane faces coincide. (Thus the diameter
+of the hemisphere is equal to that of the base of the cone.)
+Show that if 
+$\lambda<\sqrt{3}$ the toy will always move to an upright
+position if placed with the surface of the hemisphere on a
+horizontal table, but that if
+$\lambda>\sqrt{3}$ the toy may overbalance.
+
+Show, however, that if the toy is placed with the surface of the cone
+touching the table it will remain there whatever the value of $\lambda$.
+
+\noindent[The centre of gravity of a uniform 
+solid cone of height $h$
+is a height $h/4$ above its base. The centre of gravity of
+a uniform solid hemisphere of radius $a$ is at distance $3a/8$
+from the centre of its base.] 
+	\end{question}
+	
+%%%%%%%%%% Q10
+\begin{question}	
+The plot of `Rhode Island Red and the Henhouse of Doom' calls
+for the heroine to cling on to the circumference of a
+fairground wheel of radius $a$ rotating with constant angular
+velocity $\omega$ about its horizontal axis
+and then let go. Let $\omega_{0}$ be the largest value
+of $\omega$ for which it is not possible for her subsequent
+path to carry her higher than the top
+of the wheel. Find $\omega_{0}$ in terms of $a$ and $g$.
+
+If $\omega>\omega_{0}$ show that the greatest height
+above          the top of the wheel to which she
+can rise is
+\[\frac{a}{2}\left(\frac{\omega}{\omega_{0}}
+-\frac{\omega_{0}}{\omega}\right)^{\!\!2}.\]
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A particle hangs in equilibrium from the ceiling
+of a stationary lift, to which it is attached by an elastic
+string of natural length $l$ extended to a length $l+a$.
+The lift now descends with constant acceleration $f$
+such that $0<f<g/2$. Show that the extension $y$ of the
+string from its equilibrium length satisfies the 
+differential equation 
+$$
+{{\rm  d}^2 y \over {\rm d} t^2}  +{g \over a}\, y = g-f.
+$$
+Hence show that 
+the string never becomes slack and the
+amplitude of the oscillation of the particle is $af/g$.
+
+After a time $T$ the lift stops accelerating and moves with constant
+velocity. Show that the string never becomes slack
+and the amplitude of the oscillation is now
+\[\frac{2af}{g}|\sin {\textstyle \frac{1}{2}}\omega T|,\]
+where $\omega^{2}=g/a$.
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+\begin{questionparts} 
+\item Let $X_{1}$, $X_{2}$, \dots, $X_{n}$
+be independent
+random variables each of which is
+uniformly distributed on $[0,1]$.
+Let $Y$ be the
+largest of $X_{1}$, $X_{2}$, \dots, $X_{n}$. By using the fact
+that $Y<\lambda$ if and only if $X_{j}<\lambda$ for
+$1\leqslant j\leqslant n$, find the probability density function of $Y$.
+Show that the variance of $Y$
+is 
+\[\frac{n}{(n+2)(n+1)^{2}}.\]
+
+\item 
+The probability that a neon light switched on at time $0$ will have failed
+by a time $t>0$ is $1-\mathrm{e}^{-t/\lambda}$ where $\lambda>0$. I switch
+on $n$ independent neon lights at time zero. Show that the expected time
+until the first failure is $\lambda/n$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+By considering the coefficients of $t^{n}$
+in the equation
+\[(1+t)^{n}(1+t)^{n}=(1+t)^{2n},\]
+or otherwise,
+show that
+\[\binom{n}{0}\binom{n}{n}+\binom{n}{1}\binom{n}{n-1}+\cdots
++\binom{n}{r}\binom{n}{n-r}+\cdots+\binom{n}{n}\binom{n}{0}
+=\binom{2n}{n}.\]
+
+The large American city of Triposville is laid out in
+a square grid with equally
+spaced streets running east-west and avenues
+running north-south. My friend is staying
+at a hotel $n$ avenues west and $n$  streets north
+of my hotel. Both hotels are at intersections.
+We set out from our own hotels at the same
+time. We walk at the same speed, taking 1 minute to go from
+one intersection to the next. Every time I reach an intersection 
+I go north with probability $1/2$ or west with probability
+$1/2$. Every time my friend reaches an intersection 
+she goes south with probability $1/2$ or east with probability
+$1/2$. Our choices are independent of each other
+and of our previous decisions.
+Indicate by a sketch or by a brief description
+the set of points where we could meet. Find the
+probability that we meet.
+
+Suppose that I oversleep and leave my hotel $2k$ minutes
+later than my friend leaves hers, 
+where $k$ is an integer and $0\leqslant 2k\leqslant n$. 
+Find the probability
+that we meet. Have you any comment?
+If $n=1$ and I leave my hotel $1$ minute later than my friend
+leaves hers, what is the probability that we meet and why?
+\end{question}
+
+%%%%%%%%%% Q14
+\begin{question}
+The random variable $X$ is
+uniformly distributed on $[0,1]$. A new random variable
+$Y$ is defined by the rule 
+\[
+Y=\begin{cases}
+1/4 & \mbox{ if }X\leqslant1/4,\\
+X & \mbox{ if }1/4\leqslant X\leqslant3/4\\
+3/4 & \mbox{ if }X\geqslant3/4.
+\end{cases}
+\]
+Find ${\mathrm E}(Y^{n})$ for all integers $n\geqslant 1$.
+
+Show that ${\mathrm E}(Y)={\mathrm E}(X)$ and that
+\[{\mathrm E}(X^{2})-{\mathrm E}(Y^{2})=\frac{1}{24}.\]
+By using the fact that $4^{n}=(3+1)^{n}$, or otherwise,
+show that ${\mathrm E}(X^{n})>{\mathrm E}(Y^{n})$ for $n\geqslant 2$.
+
+Suppose that $Y_{1}$, $Y_{2}$, \dots are independent random variables
+each having the same distribution as $Y$.
+Find, to a good approximation, $K$ such that
+\[{\rm P}(Y_{1}+Y_{2}+\cdots+Y_{240000}<K)=3/4.\]
+
+\end{question}
+	
+\end{document}

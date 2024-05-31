@@ -1,0 +1,534 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper II, 2012
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\q{{\mathrm q}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\arcosh{{\rm arcosh}\,}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+\def\l{\left(}
+\def\r{\right)}
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Write down the general term in the expansion in powers of 
+$x$ of 
+$(1-x^6)^{-2}\,$.
+\begin{questionparts}
+\item
+Find      the coefficient of $x^{24}$ in 
+the expansion in powers of $x$ of 
+\[
+(1-x^6)^{-2} (1-x^3)^{-1}\,.\]
+
+
+
+Obtain also, and simplify, formulae for the 
+coefficient of $x^n$ in the different
+cases that arise.
+
+\item Show that the coefficient of $x^{24}$ 
+in the expansion in powers of $x$ of
+\[ 
+(1-x^6)^{-2} (1-x^3)^{-1} (1-x)^{-1}\,\] is $55$,
+and find the coefficients of 
+$x^{25}$ and $x^{66}$.
+
+
+
+
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+If $\p(x)$ and $\q(x)$ are polynomials of degree $m$ and $n$,
+respectively, what is the degree of $\p(\q(x))$?
+
+\begin{questionparts}
+\item
+The polynomial $\p(x)$ satisfies
+\[
+\p(\p(\p(x)))- 3 \p(x)= -2x\,
+\]
+for all $x$.
+Explain carefully why $\p(x)$ must be of degree 1, and 
+find all polynomials that satisfy this equation.
+
+\item 
+Find all polynomials that satisfy
+\[
+2\p(\p(x)) +3 [\p(x)]^2 -4\p(x) =x^4
+\]   
+for all $x$. 
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Show that, for any function f (for which the integrals exist),
+\[
+\int_0^\infty \f\big(x+\sqrt{1+x^2}\big) \,\d x = \frac12 \int_1^\infty
+\left(1+\frac 1 {t^2}\right) \f(t)\, \d t \,.
+\] 
+Hence 
+evaluate
+\[
+\int_0^\infty \frac1 {2x^2 +1 + 2 x\sqrt{x^2+1} \ } \, \, \d x
+\,,
+\]
+and, using the substitution $x=\tan\theta$,
+\[
+\int_0^{\frac12\pi} \frac{1}{(1+\sin\theta)^3}\,\d \theta
+\,.
+\] 
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+In this question, you may assume that the infinite series 
+\[
+\ln(1+x) = x-\frac{x^2}2 + \frac{x^3}{3} -\frac {x^4}4 +\cdots
++ (-1)^{n+1} \frac {x^n}{n} + \cdots
+\]
+is valid for $\vert x \vert <1$.
+
+\begin{questionparts}
+\item
+Let $n$ be an integer greater than 1. Show that, for any positive
+integer $k$,
+\[
+\frac1{(k+1)n^{k+1}} 
+<
+\frac1{kn^{k}}\,.
+\]
+Hence show that $\displaystyle \ln\! \left(1+\frac1n\right) <\frac1n\,$. Deduce
+that
+\[
+\left(1+\frac1n\right)^{\!n}<\e\,.
+\]
+\item
+Show, using  an expansion in powers of $\dfrac1y\,$,  
+that 
+$ \displaystyle
+ \ln \! \left(\frac{2y+1}{2y-1}\right) 
+> \frac 1y
+%= \sum _{r=0}^\infty \frac 1{(2r+1)(2y)^{2r}}\,.
+$ 
+for $y>\frac12$. 
+
+Deduce that, for any positive integer $n$, 
+\[
+\e < \left(1+\frac1n\right)^{\! n+\frac12}\,.
+\] 
+\item Use parts (i) and (ii) to show that as $n\to\infty$ 
+\[
+ \left(1+\frac1n\right)^{\!n}  
+\to \e\,.
+\]
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+\begin{questionparts}
+\item Sketch the curve $y=\f(x)$, where
+\[
+\text{\hphantom{($x\e a\pm1$)}\hspace{2cm}}
+\f(x) = \frac 1 {(x-a)^2 -1} 
+\hspace{2cm}(x\ne a\pm1),
+\]
+and $a$ is a constant.
+
+\item  The function $\g(x)$ is defined by
+\[
+\text{\hphantom{($x\e a\pm1, \ x\ne b\pm1$)}\hspace{1mm}}
+\g(x) = \frac 1 {\big( (x-a)^2-1 \big) \big( (x-b)^2 -1\big)}
+\hspace{1cm}(x\ne a\pm1, \ x\ne b\pm1),
+\]
+where $a$ and $b$ are constants, and $b>a$.
+Sketch the curves $y=\g(x)$
+in the two cases $b>a+2$ and $b=a+2$, finding the  
+ values of $x$ at the stationary points.  
+
+\end{questionparts}
+	\end{question}
+	
+%%%%%%%%% Q6
+\begin{question}
+A cyclic quadrilateral $ABCD$ has sides $AB$, $BC$, $CD$ and $DA$
+of lengths $a$, $b$, $c$ and $d$, respectively. The area of the 
+quadrilateral is $Q$, and   angle $DAB$ is $\theta$.
+
+Find an expression for $\cos\theta$ in terms of $a$, $b$, $c$ and $d$,
+and an expression 
+for $\sin\theta$ in terms of  $a$, $b$, $c$, $d$ and $Q$.
+Hence show  that
+\[
+16Q^2 = 4(ad+bc)^2 - (a^2+d^2-b^2-c^2)^2
+\,,
+\]
+and deduce that 
+\[
+Q^2 = (s-a)(s-b)(s-c)(s-d)\,,
+\]
+where  $s= \frac12(a+b+c+d)$.
+
+Deduce a formula for the area of a triangle with sides of length
+$a$, $b$ and $c$.
+\end{question}
+	
+%%%%%%%%% Q7
+\begin{question}
+Three distinct points, $X_1$, $X_2$ and $X_3$,
+with position vectors ${\bf x}_1$, ${\bf x}_2$ and ${\bf x}_3$ 
+respectively, lie on a   circle of radius 1 with 
+its centre at the origin $O$.
+The point  $G$ 
+has position vector $\frac13({\bf x}_1+{\bf x}_2+{\bf x}_3)$.
+        The line through $X_1$ and $G$ meets the circle again at 
+the point $Y_1$ and the points
+$Y_2$ and $Y_3$ are defined correspondingly.
+
+Given that $\overrightarrow{GY_1} =-\lambda_1 \overrightarrow{GX_1}$,
+where $\lambda_1$  is a positive scalar, show that
+\[
+\overrightarrow{OY_1}= \tfrac13 \big(
+(1-2\lambda_1){\bf x}_1 +(1+\lambda_1)({\bf x}_2+{\bf x}_3)\big)
+\]
+and hence that
+\[
+\lambda_1 = \frac
+{3-\alpha-\beta-\gamma} {3+\alpha -2\beta-2\gamma}
+\,,\]
+where $\alpha = {\bf x}_2 \,.\, {\bf x}_3$,
+$\beta = {\bf x}_3\,.\, {\bf x}_1$ and
+$\gamma = {\bf x}_1\,.\, {\bf x}_2$.
+
+Deduce that $\dfrac {GX_1}{GY_1} + \dfrac {GX_2}{GY_2} +
+\dfrac {GX_3}{GY_3} =3
+\,$.
+\end{question}
+		
+%%%%%%%%% Q8
+\begin{question}
+The positive numbers $\alpha$, $\beta$ and $q$ satisfy
+$\beta-\alpha >q$. Show that
+\[
+\frac{\alpha^2+\beta^2 -q^2}{\alpha\beta}-2>0\,.
+\]
+
+The sequence $u_0$, $u_1$, $\ldots$ is defined by $u_0=\alpha$,
+$u_1=\beta$ and 
+\[
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+u_{n+1} = \frac {u_{n}^2 -q^2}{u_{n-1}}
+\ \ \ \ \ \ \ \ \ \ \ (n\ge1),
+\]
+where $\alpha$, $\beta$ and $q$ are given positive numbers (and $\alpha$ and $\beta$
+are such that
+no term in the sequence is zero). 
+Prove that $u_n(u_n+u_{n+2}) = u_{n+1}(u_{n-1}+u_{n+1})\,$.
+Prove also that                  
+\[
+u_{n+1} -pu_n + u_{n-1}=0
+\]
+for some number $p$ which you should express in terms of $\alpha$, $\beta$ and $q$. 
+
+Hence, or otherwise, show that if $\beta> \alpha+q$, the sequence is strictly increasing
+(that is, $u_{n+1}-u_n > 0$ for all $n$). 
+Comment on the case $\beta =\alpha +q$.
+\end{question}	
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+
+	
+%%%%%%%%%% Q9
+\begin{question}
+A tennis ball
+is projected from a height of 
+$2h$ above horizontal ground with speed $u$ and  at an angle of $\alpha$
+below the horizontal. It travels in a plane 
+perpendicular to a vertical net of height $h$ which 
+is a horizontal distance of $a$ from the point of 
+projection. Given that the ball passes over the net,
+show that 
+\[
+\frac 1{u^2}< 
+ \frac 
+{2(h-a\tan\alpha)}
+{ga^2\sec^2\alpha}\,.
+\]  
+
+The ball lands before it has travelled a horizontal distance
+of $b$ from the point of projection. Show that
+\[ 
+\sqrt{u^2\sin^2\alpha +4gh \ } < \frac{bg}{u\cos\alpha} + u \sin\alpha\,.
+\]
+
+Hence show that 
+\[
+\tan\alpha < \frac{h(b^2-2a^2)}{ab(b-a)}\,.
+\]
+	\end{question}
+	
+%%%%%%%%%% Q10 
+\begin{question}	
+A hollow circular cylinder of internal radius $r$
+is held fixed with its axis 
+horizontal. A uniform rod of length $2a$ (where $a<r$)
+ rests in equilibrium
+inside the cylinder inclined at an angle of 
+$\theta$ to the horizontal, where $\theta\ne0$.
+The vertical plane containing the rod is perpendicular to the 
+axis of the cylinder. The coefficient of friction
+between the cylinder and each end of the rod is $\mu$, where $\mu>0$. 
+
+Show that, if the rod is on the point of slipping, then
+the normal reactions $R_1$ and $R_2$ of the lower and higher
+ends of the
+rod, respectively, on the cylinder are related by
+\[
+\mu(R_1+R_2) = (R_1-R_2)\tan\phi
+\]
+where $\phi$ is the angle between the rod and the radius to
+an  end of the rod.
+
+Show further that
+\[
+\tan\theta = \frac {\mu r^2}{r^2 -a^2(1+\mu^2)}\,.
+\]
+
+Deduce that $\lambda <\phi $, where $\tan\lambda =\mu$.
+\end{question}
+
+%%%%%%%%%% Q11
+
+\begin{question}
+A small block of mass $km$
+is initially at rest on a smooth horizontal surface.
+Particles $P_1$, $P_2$, $P_3$, $\ldots$ are fired, in order, along the 
+surface from a fixed point
+towards the
+ block. 
+The mass of the $i$th particle is $im$ ($i$ = 1, 2, $\ldots$)
+and the speed
+at which it is fired is $u/i\,$.
+ Each particle that collides with the block is
+embedded in it. 
+Show that, if the $n$th particle collides with the block, the 
+ speed of the block after the collision is
+\[
+\frac{2nu}{2k +n(n+1)}\,.
+\]
+
+In the case $2k = N(N+1)$, where $N$ is a positive integer,
+determine the number of collisions that occur.
+Show that the total kinetic energy lost in all the collisions
+is
+\[
+\tfrac12 mu^2\bigg( \sum_{n=2}^{N+1} \frac 1 n \bigg)\,.
+\]
+\end{question}
+	
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+
+%%%%%%%%%% Q12
+\begin{question}
+A modern villa has complicated lighting controls. In order 
+for the light in the swimming pool to be on, a particular switch in the 
+hallway must be on and a particular switch in the kitchen must be on.
+There are four identical switches in the hallway and
+four identical switches in the kitchen. Guests
+cannot tell whether the switches are on or off, or what they 
+control.
+
+Each Monday morning a guest arrives, and 
+the switches in the hallway are either all  on or all off.
+The  probability that they are all on is $p$
+and the  probability that they are all off is $1-p$.
+The switches in the kitchen are each on or off, independently,
+ with probability
+$\frac12$. 
+
+\begin{questionparts}
+\item
+On the first Monday, a guest 
+presses one switch in the hallway at random and one 
+switch in the kitchen at random. Find the probability that
+the swimming pool light is on at the end of this process.
+Show that the probability that the guest has pressed the 
+ swimming pool light switch
+in the hallway, given that the light is on at the end of the process,
+is~$\displaystyle \frac{1-p}{1+2p}$.
+
+\item On each of seven Mondays,  guests go through the above process
+independently of each other, and each time the swimming pool light
+is found to be on at the end of the process.
+ Given that the most likely number of days on which
+ the swimming pool light switch in the hallway was pressed is 3, 
+show that $\frac14 <p< \frac{5}{14}$.
+\end{questionparts}
+\end{question}
+
+%%%%%%%%%% Q13
+\begin{question}
+In this question, you may assume that 
+$\displaystyle \int_0^\infty \!\!\! 
+\e^{-x^2/2} \d x = \sqrt{\tfrac12 \pi}\,$.
+
+The number of supermarkets situated in any given region
+can be modelled by a Poisson random variable, where the 
+mean is $k$ times the area of the given region.
+Find the probability that
+there are no supermarkets  within a circle of radius $y$.
+
+The random variable $Y$ denotes the distance
+between a randomly chosen point in the region and
+the nearest  supermarket. Write down
+$\P(Y<y)$ and hence show that the probability density function
+of $Y$ is  $\displaystyle 2\pi y k \e^{-\pi k y^2}$ for $y\ge0$.
+
+Find $\E(Y)$ and show that $\var(Y) = \dfrac{4-\pi}{4\pi k}$.  
+\end{question}
+
+\end{document}

@@ -1,0 +1,715 @@
+\documentclass[a4, 11pt]{report}
+
+
+%\pagestyle{myheadings}
+%\markboth{}{Paper III, 2007  second vetter draft 
+%\ \ \ \ \ 
+%\today 
+%}               
+\pagestyle{empty}
+
+\usepackage{pstricks-add}
+\usepackage{epsfig}
+
+%\usepackage{relsize}
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage{xcolor}
+
+
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bct}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\rct}[1]{{\color{red}#1}}
+
+
+
+
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{15pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{3pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\C{{\rm C}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+\def\T{{\rm T}}
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\makeatletter
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+\makeatother
+%%%To raise suffices: e.g.  $\Pi_{\raisemath{2pt}{-}}$.
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%%%%% Q1
+
+\begin{question}
+\begin{questionparts}
+\item
+Prove that, for any positive integers $n$ and $r$,
+\[
+\frac{1}{^{n+r}\C_{r+1}}
+=\frac{r+1}{r} \left(\frac{1}{^{n+r-1}\C_{r}}-\frac{1}{^{n+r}\C_{r}}\right).
+\]
+Hence determine
+\[
+\sum_{n=1}^{\infty}{\frac{1}{^{n+r}\C_{r+1}}} 
+\,,
+\]
+and deduce that \  
+$\displaystyle \sum_{n=2}^\infty \frac 1 {^{n+2}\C_3} = \frac12\,$.
+\item Show that, 
+for $n \ge 3\,$, 
+\[
+\frac{3!}{n^3}  <  \frac{1}{^{n+1}\C_{3}}
+\ \ \ \ \ 
+\text{and}
+\ \ \ \ \ 
+\frac{20}{^{n+1}\C_3} - \frac{1}{^{n+2}\C_{5}}
+< \frac{5!}{n^3} 
+\,.
+\]
+
+
+
+By summing these inequalities for $n \ge 3\,$, show that
+\[
+\frac{115}{96} < \sum_{n=1}^{\infty}{\frac{1}{n^3}} <
+ \frac{116}{96} \, .
+\]
+\end{questionparts}
+{\bf Note: } $^n\C_r$ is another notation for $\displaystyle \binom n r $.
+
+
+\end{question}
+
+%%%%%%%%%%%%%% Q2
+\begin{question}
+The transformation $R$ in the complex plane is a rotation (anticlockwise) 
+by an angle $\theta$ 
+about the point represented by the complex number $a$.
+The transformation $S$ in the complex plane is a rotation 
+(anticlockwise)
+by an angle $\phi$ 
+about the point represented by the complex number $b$.
+
+\begin{questionparts}
+\item
+The point $P$ is represented by the complex number~$z$.
+Show that the image of $P$ under $R$ is represented by 
+\[
+\e^{{\mathrm i} \theta}z  + a(1-\e^{{\rm i} \theta})\,.
+\]
+
+
+\item Show that 
+the transformation $SR$ (equivalent to $R$ followed by $S$)
+is a rotation about the point represented by
+$c$, where
+\[ 
+%\textstyle
+c\,\sin
+ \tfrac12 (\theta+\phi)
+= a\,\e^{ {\mathrm i}\phi/2}\sin  \tfrac12\theta
++  b\,\e^{-{\mathrm i} \theta/2}\sin  \tfrac12 \phi 
+\,,
+\]
+provided $\theta+\phi \ne 2n\pi$ for any integer $n$.
+
+
+What is the transformation $SR$ if $\theta +\phi = 2\pi$?
+\item
+Under what circumstances is $RS =SR$?
+\end{questionparts}
+
+\end{question}
+
+
+%%%%%%%%%%% Q3
+\begin{question}
+Let $\alpha$, $\beta$, $\gamma$ and $\delta$ be the roots of the 
+quartic equation
+\[
+x^4 +px^3 +qx^2 +r x +s =0
+\,.
+\]
+
+You are given that,  
+for any such equation, 
+  $\,\alpha \beta + \gamma\delta\,$, \, $\alpha\gamma+\beta\delta\,$
+and $\,\alpha \delta + \beta\gamma\,$ 
+satisfy a 
+cubic equation of the form 
+\[
+y^3+Ay^2+ 
+(pr-4s)y+ (4qs-p^2s -r^2)
+=0
+\,.
+\]
+Determine  $A\,$.
+
+\vspace{3mm}
+Now consider  the quartic equation given by $p=0\,$, $q= 3\,$, $r=-6\,$
+and $s=10\,$.
+\begin{questionparts}
+\item
+
+
+Find the value of $\alpha\beta + \gamma \delta$,
+given that it is the largest root of the corresponding cubic equation.
+
+\item
+Hence, using the values of $q$ and $s$, find  
+the value of $(\alpha +\beta)(\gamma+\delta)\,$
+and
+ the value of~$\alpha\beta$ given that $\alpha\beta >\gamma\delta\,$.
+
+\item
+Using these results, and the values of $p$ and $r$,
+solve the quartic equation.  
+\end{questionparts}
+
+\end{question}
+
+
+%%%%%%%%%Q4
+\begin{question}
+For any 
+ function $\f$  satisfying 
+$\f(x) > 0$,  we define the  {\em geometric mean}, F,
+ by   
+\[
+\F(y)
+\;
+= 
+\mbox{
+\fontsize{12}{15.6}\selectfont
+$\e$}
+\mbox{ 
+\fontsize{14}{15.6}\selectfont
+$
+^{\!
+\raisemath {3pt}
+{\frac{1}{y}
+\!
+\int_{\raisemath{-1pt}{0}}^{\raisemath{1pt}{y}}
+ \ln \f(x) \, \d x}
+}
+$ } 
+\ \ \ \ \ \ (y>0)\,.
+\]
+
+\begin{questionparts}
+\item The function f satisfies 
+$\f(x) > 0$ and  
+$a$ is a positive number with $a\ne1$. Prove that
+\[
+\F(y) =
+\mbox{
+\fontsize{12}{15.6}\selectfont
+$a$}
+\mbox{ 
+\fontsize{14}{15.6}\selectfont
+$
+^{
+\!
+\raisemath {3pt}
+{\frac{1}{y}
+\!
+\int_{\raisemath{-1pt}{0}}^{\raisemath{1pt}{y}} 
+\log_a  \f(x) \, \d x}
+}
+$ }
+.
+\]
+
+\item The functions f and  g satisfy 
+$\f(x) > 0$ and $\g(x) > 0$, and  the function $\h$ is 
+defined by $\h(x) = \f(x)\g(x)$. Their
+ geometric means are F, G and H, respectively.
+Show that  $\H(y)= \F(y) \G(y)\,$.
+
+\item Prove that, for any positive number  $b$, 
+the geometric mean of  $b^x$ 
+is  
+$\sqrt{b^y}\,$.
+
+\item Prove that, if $\f(x)>0$ and
+ the geometric mean of $\f(x)$ 
+is $\sqrt{\f(y)}\,$, 
+then $\f(x) = b^x$ for some positive number $b$.
+
+\end{questionparts}
+\end{question}
+
+
+%%%%%%%%%%%%%% Q5
+\begin{question}
+The  point with cartesian coordinates $(x,y)$ lies on a
+curve with polar equation $r=\f(\theta)\,$. 
+Find an  expression for $\dfrac{\d y}{\d x}$ in terms of $\f(\theta)$,
+$\f'(\theta)$ and $\tan\theta\,$.
+
+Two curves, with polar equations $r=\f(\theta)$ and 
+$r=\g(\theta)$, meet at right angles.
+Show
+that where they meet 
+\[
+\f'(\theta) \g'(\theta) +\f(\theta)\g(\theta) = 0 \,.
+\]
+
+The curve $C$ has polar equation $r=\f(\theta)$ and passes through
+the point given by $r=4$, $\theta = - \frac12\pi$. 
+For each positive value of $a$,   
+the curve with polar equation
+$r= a(1+\sin\theta)$ 
+meets~$C$ at right angles. Find $\f(\theta)\,$.
+
+Sketch on a single diagram the three curves 
+with polar equations $r= 1+\sin\theta\,$, \   
+$r= 4(1+\sin\theta)$  and $r=\f(\theta)\,$.
+
+
+\end{question}
+
+\vspace{-3mm}
+%%%%%%%%%%%%%% Q6
+
+
+\begin{question}
+{\em In this question, you are not permitted to use any properties of 
+trigonometric functions or inverse trigonometric functions.}
+
+The function $\T$ is defined for  $x>0$ by
+\[
+\T(x) = \int_0^x \! \frac 1 {1+u^2} \, \d u\,,
+\]
+and $\displaystyle T_\infty = 
+ \int_0^\infty \!\! \frac 1 {1+u^2} \, \d u\,$ (which has a finite value).
+
+\begin{questionparts}
+\item 
+By making an appropriate substitution in the integral for $\T(x)$,
+ show that \[\T(x) = \T_\infty - \T(x^{-1})\,.\]
+
+
+\item
+Let  $v= \dfrac{u+a}{1-au}$, where $a$ is a constant. Verify that, for
+$u\ne a^{-1}$, 
+\[
+\frac{\d v}{\d u} = \frac{1+v^2}{1+u^2}
+\,.
+\]
+
+Hence show that, for $a>0$ and $x< \dfrac1a\,$, 
+\[
+\T(x)  = \T\left(\frac{x+a}{1-ax}\right) -\T(a) \,.
+\]
+Deduce that
+\[
+\T(x^{-1}) 
+ = 2\T_\infty -\T\left(\frac{x+a}{1-ax}\right) 
+-\T(a^{-1})  
+\]
+and hence that, for
+ $b>0$ and $y>\dfrac1b\,$, 
+\[
+\T(y)   =2\T_\infty - \T\left(\frac{y+b}{by-1}\right) - \T(b) \,.
+\]
+
+\item Use the above results to show that 
+$\T(\sqrt3)= \tfrac23 \T_\infty \,$
+and 
+$\T(\sqrt2 -1)= \frac14 \T_\infty\,$.
+\end{questionparts}
+\end{question}
+
+
+%%%%%%%%%%%%%  Q7
+\begin{question}
+Show that the point $T$ with coordinates
+\[
+\left( \frac{a(1-t^2)}{1+t^2} \; , \; \frac{2bt}{1+t^2}\right)
+\tag{$*$}
+\]
+(where $a$ and $b$ are non-zero) lies on the ellipse
+\[
+\frac{x^2}{a^2} + \frac{y^2}{b^2} =1
+\,.
+\]
+\begin{questionparts}
+\item
+The line $L$ is the  
+tangent to the ellipse at $T$.
+The point $(X,Y)$ lies on $L$,
+ and $X^2\ne a^2$. Show that
+\[
+(a+X)bt^2 -2aYt +b(a-X) =0
+\,.
+\]
+Deduce that
+if $a^2Y^2>(a^2-X^2)b^2$, then
+there are
+ two distinct
+lines through $(X,Y)$ that are tangents to the ellipse. Interpret
+this
+result geometrically. Show, by means of a sketch,
+that the result  holds also  if $X^2=a^2\,$.
+
+\item
+The distinct points  $P$ and $Q$ are given by 
+$(*)$, with $t=p$ and $t=q$,
+respectively.
+The tangents to the ellipse at 
+$P$
+and 
+$Q$
+meet at the point   with coordinates $(X,Y)$, where $X^2\ne a^2\,$.
+Show that \[
+(a+X)pq = a-X\]
+ and find an expression for $p+q$ in terms
+of $a$, $b$, $X$ and $Y$.
+
+
+
+Given that the tangents meet the $y$-axis
+at points $(0,y_1)$ and $(0,y_2)$, where $y_1+y_2 = 2b\,$, show that
+\[
+\frac{X^2}{a^2} +\frac{Y}{b}= 1  
+\,.
+\]
+\end{questionparts}
+\end{question}
+%%%%%%%%%%%%%% Q8
+\begin{question}
+
+Prove that, for any numbers $a_1$, $a_2$, $\ldots$\,,
+and $b_1$, $b_2$, $\ldots$\,, and for $n\ge1$,
+\[
+\sum_{m=1}^n a_m(b_{m+1} -b_m) = a_{n+1}b_{n+1} -a_1b_1
+-\sum_{m=1}^n b_{m+1}(a_{m+1} -a_m)
+\,.
+\]
+
+\begin{questionparts}
+\item
+By setting $b_m = \sin mx$, show that
+\[
+\sum_{m=1}^n \cos (m+\tfrac12)x 
+= \tfrac12 
+\big(\sin (n+1)x - \sin x \big)
+\cosec \tfrac12 x
+\,.
+\]
+{\bf Note:} 
+$\sin A - \sin B = 
+\displaystyle 
+2 
+\cos \big( \tfrac{{\displaystyle A+B\vphantom{_1}}}
+{\displaystyle 2\vphantom{^1}} \big)\,
+\sin\big( \tfrac{{\displaystyle A-B\vphantom{_1}}}{\displaystyle 2\vphantom{^1}} \big)\,
+$.
+
+\item
+Show that
+\[
+\sum_{m=1}^n m\sin mx 
+= 
+\big (p \sin(n+1)x +q \sin nx\big)
+\cosec^2 \tfrac12 x 
+\,,
+\]
+where $p$ and $q$ are to be determined in terms of $n$.
+
+\vspace{3mm}
+{\bf Note:} 
+$2\sin A \sin B =  \cos (A-B) - \cos (A+B)\,$;
+\\[2mm] 
+\phantom
+{\bf Note:} 
+$2\cos A \sin B =  \sin (A+B) - \sin (A-B)\,$.
+
+\end{questionparts}
+\end{question}
+
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+%%%%%%%%%%%%%% Q9
+\begin{question}
+
+Two  particles  $A$  and  $B$ of masses	 $m$ and $2 m$,  respectively,
+are connected  by a light spring	 of natural	 
+length	  $a$   and  modulus of	 elasticity $\lambda$.	They 
+are placed on a	  smooth horizontal table with	$AB$ 
+perpendicular to the edge of the table,	and $A$ is  held on
+the edge of the table.	  Initially  the  
+spring	 is at  its  natural  length.  
+
+Particle  $A$ is released. At a	 time	 $t$  later, 
+particle $A$  has dropped a distance $y$  and particle $ B$ 
+has moved a distance $x$ from its initial position (where $x<a$).
+ Show  that $ y + 2x= \frac12 gt^2$. 
+
+The value of $\lambda$ is such  that 
+particle $B$  reaches the edge of the table at a time $T$ given by
+$T= \sqrt{6a/g\,}\,$.  
+By considering the total energy of the system (without solving any
+differential equations), 
+show that the speed of particle $B$ at this
+time is $\sqrt{2ag/3\,}\,$.
+
+\end{question}
+%%%%%%%%%%%%%% Q10
+\begin{question}
+A uniform rod $PQ$ of mass $m$ and length $3a$ is freely  hinged at $P$.
+
+The rod is held horizontally and a particle of mass $m$ is placed on
+top of the rod at a distance~$\ell$ from $P$, where $\ell <2a$. 
+The coefficient of friction between the rod and the particle is $\mu$.
+
+The rod is then released. Show that, while the particle does not 
+slip along the rod,
+\[
+(3a^2+\ell^2)\dot \theta^2 = g(3a+2\ell)\sin\theta \,,
+\]
+where $\theta$ is the angle through which the rod 
+has turned,
+and the dot denotes the time derivative.
+
+Hence, or otherwise, find an expression for $\ddot \theta$ and
+ show 
+that
+the normal reaction of the rod on the 
+particle is non-zero
+ when~$\theta$ is acute. 
+
+Show further that, when the particle is on the point of slipping,
+\[
+\tan\theta = \frac{\mu a (2a-\ell)}{2(\ell^2 + a\ell +a^2)}
+\,.
+\]  
+
+What happens at the moment the rod is released  if, instead,  $\ell>2a$?
+
+
+\end{question}
+
+
+
+
+
+
+\begin{question}
+A railway truck, initially at rest, can move forwards
+ without friction on a long straight \mbox{horizontal} track. 
+On the truck, $n$ guns are mounted parallel to the track and 
+facing backwards, where $n>1$. 
+Each of the guns is loaded with a single projectile of mass $m$. 
+The mass of the truck and guns (but not including the 
+projectiles) is $M$. 
+
+When a gun is fired, the projectile leaves its 
+muzzle horizontally with a speed  $v-V$ relative to the ground, 
+where~$V$ is the
+speed of the truck immediately before the gun is fired.
+
+\begin{questionparts}
+
+\item All $n$ guns are fired simultaneously. 
+Find the speed, $u$, with which the truck moves, 
+and show that the  kinetic energy, $K$, which is gained by the system
+(truck, guns and projectiles) is given by
+\[
+K=  \tfrac{1}{2}nmv^2\left(1   +\frac{nm}{M} \right)
+.
+\]
+
+\item Instead, the guns are fired one at a time. 
+Let $u_r$ be the speed  of the truck
+when $r$ guns have been fired, so that $u_0= 0$. 
+Show that, for $1\le r \le n\,$,  
+\[
+u_r - u_{r-1} = \frac{mv}{M+(n-r)m}
+\tag{$*$}
+\]
+and hence that $u_n < u\,$.
+
+
+\item 
+Let $K_r$ 
+be the total kinetic energy of the system 
+when $r$ guns have been fired (one at a time), so that $K_0 = 0$. 
+Using $(*)$, show that, for $1\le r\le n\,$,
+\[
+K_r -K_{r-1} = \tfrac 12 mv^2 + \tfrac12 mv (u_r-u_{r-1})
+\]
+and hence 
+show that
+\[
+K_n = \tfrac{1}{2}nmv^2 +\tfrac{1}{2}mvu_n
+\,.
+\] 
+Deduce that $K_n<K$.
+
+\end{questionparts}
+\end{question}
+
+
+
+\newpage
+
+
+\section*{Section C: \ \ \ Probability and Statistics}
+%%%%%%%%%%%%%% Q12
+\begin{question}
+The discrete random variables $X$ and $Y$ can each take the values 
+$1$, $\ldots\,$, $n$ (where $n\ge2$). Their joint probability distribution is given by
+\[
+\P(X=x, \  Y=y) = k(x+y) \,,
+\] 
+where $k$ is a  constant.
+\begin{questionparts}
+
+\item Show that \[
+\P(X=x) = \dfrac{n+1+2x}{2n(n+1)}\,. 
+\]
+Hence determine whether $X$ and $Y$
+are independent.
+
+
+\item Show that the covariance of $X$ and $Y$ is negative.
+
+\end{questionparts}
+\end{question}
+ 
+%%%%%%%%%%%%%% Q13
+
+\begin{question}
+The random variable $X$ has mean $\mu$ and 
+variance $\sigma^2$, and  the function ${\rm V}$
+is defined, for $-\infty<x<\infty$,   by
+\[
+{\rm V}(x) = \E \big( (X-x)^2\big)
+.
+\]
+Express ${\rm V}(x)$ in terms of $x$, $ \mu$ and $\sigma$.
+
+
+The random variable $Y$ is defined by $Y={\rm V}(X)$.
+Show that 
+\[
+\E(Y) = 2 \sigma^2
+%\text{ \ \ and \ \ }
+%\Var(Y) = \E(X-\mu)^4 -\sigma^4
+.
+\tag{$*$}
+\]
+
+Now suppose that $X$ is uniformly distributed on the interval $0\le x \le1\,$.
+Find ${\rm V}(x)\,$. 
+Find also the probability density function of $Y\!$ and use it to
+verify that $(*)$ holds in this case.
+\end{question}
+\end{document}
+
+

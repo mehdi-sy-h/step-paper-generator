@@ -1,0 +1,475 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 1992
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+\def\f{{\rm f}}
+\def\p{{\rm p}}
+\def\s{{\rm s}}
+\def\t{{\rm t}}
+
+
+\def\A{{\rm A}}
+\def\B{{\rm B}}
+\def\E{{\rm E}}
+\def\F{{\rm F}}
+\def\G{{\rm G}}
+\def\H{{\rm H}}
+\def\P{{\rm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+
+
+\begin{document}
+\setcounter{page}{2}
+
+ 
+\section*{Section A: \ \ \ Pure Mathematics}
+
+%%%%%%%%%%Q1
+\begin{question}
+Today's date is June 26th 1992 and the day of the week is Friday.
+Find which day of the week was April 3rd 1905, explaining your method
+\textbf{carefully. }
+
+
+{[}30 days hath September, April, June and November. All the rest
+have 31, excepting February alone which has 28 days clear and 29 in
+each leap year.{]}
+\end{question}
+
+%%%%%%%%%%Q2
+\begin{question}
+A $3\times3$ magic square is a $3\times3$ array 
+\[
+\begin{array}{ccc}
+a & b & c\\
+d & e & f\\
+g & h & k
+\end{array}
+\]
+whose entries are the nine distinct integers $1,2,3,4,5,6,7,8,9$
+and which has the property that all its rows, columns and main diagonals
+add up to the same number $n$. (Thus $a+b+c=d+e+f=g+h+k=a+d+g=b+e+h=c+f+k=a+e+k=c+e+g=n.)$
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  Show that $n=15.$
+\item[\bf (ii)] Show that $e=5.$
+\item[\bf (iii)] Show that one of $b,d,h$ or $f$ must have value $9$. 
+\item[\bf (iv)] Find all $3\times3$ magic squares with $b=9.$
+\item[\bf (v)] How many different $3\times3$ magic squares are there? Why?
+\end{itemize}
+{[}Two magic squares are different if they have different entries
+in any place of the array.{]} 
+\end{question}
+
+%%%%%%%%% Q3
+\begin{question}
+Evaluate 
+\begin{itemize}
+\setlength{\itemsep}{3mm}
+\item[\bf (i)]  ${\displaystyle \int_{-\pi}^{\pi}\left|\sin x\right|\,\mathrm{d}x,}$
+\item[\bf (ii)] ${\displaystyle \int_{-\pi}^{\pi}\sin\left|x\right|\,\mathrm{d}x},$ 
+\item[\bf (iii)] ${\displaystyle \int_{-\pi}^{\pi}x\sin x\,\mathrm{d}x},$ 
+\item[\bf (iv)] ${\displaystyle \int_{-\pi}^{\pi}x^{10}\sin x\,\mathrm{d}x.}$
+\end{itemize}
+\end{question}
+
+%%%%%% Q4 
+\begin{question}
+Sketch the following subsets of the complex plane using Argand diagrams.
+Give reasons for your answers. 
+\begin{questionparts}
+\item $\{z:\mathrm{Re}((1+\mathrm{i})z)\geqslant0\}.$ 
+\item $\{z:\left|z^{2}\right|\leqslant2,\mathrm{Re}(z^{2})\geqslant0\}.$
+\item $\{z=z_{1}+z_{2}:\left|z_{1}\right|=2,\left|z_{2}\right|=1\}.$
+\end{questionparts}
+\end{question}
+
+%%%%%%%%% Q5
+\begin{question}
+	Let $\mathrm{p}_{0}(x)=(1-x)(1-x^{2})(1-x^{4}).$ Show that $(1-x)^{3}$
+is a factor of $\mathrm{p}_{0}(x).$ If $\mathrm{p}_{1}(x)=x\mathrm{p}_{0}'(x)$
+show, by considering factors of the polynomials involved, that $\mathrm{p}_{0}'(1)=0$
+and $\mathrm{p}_{1}'(1)=0.$ 
+
+
+By writing $\mathrm{p}_{0}(x)$ in the form 
+\[
+\mathrm{p}_{0}(x)=c_{0}+c_{1}x+c_{2}x^{2}+c_{3}x^{3}+c_{4}x^{4}+c_{5}x^{5}+c_{6}x^{6}+c_{7}x^{7},
+\]
+deduce that 
+\begin{alignat*}{2}
+1+2+4+7 & \quad=\quad &  & 3+5+6\\
+1^{2}+2^{2}+4^{2}+7^{2} & \quad=\quad &  & 3^{2}+5^{2}+6^{2}.
+\end{alignat*}
+Show that we can write the integers $1,2,\ldots,15$ in some order
+as $a_{1},a_{2},\ldots,a_{15}$ in such a way that 
+\[
+a_{1}^{r}+a_{2}^{r}+\cdots+a_{8}^{r}=a_{9}^{r}+a_{10}^{r}+\cdots+a_{15}^{r}
+\]
+for $r=1,2,3.$ 
+	\end{question}
+	
+	%%%%%%%%% Q6
+	\begin{question}
+Explain briefly, by means of a diagram, or otherwise, why 
+\[
+\mathrm{f}(\theta+\delta\theta)\approx\mathrm{f}(\theta)+\mathrm{f}'(\theta)\delta\theta,
+\]
+when $\delta\theta$ is small. 
+
+
+Two powerful telescopes are placed at points $A$ and $B$ which are
+a distance $a$ apart. A very distant point $C$ is such that $AC$
+makes an angle $\theta$ with $AB$ and $BC$ makes an angle $\theta+\phi$
+with $AB$ produced. (A sketch of the arrangement is given in the
+diagram.) 
+
+
+\noindent \begin{center}
+\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-4.18,-0.94)(4.4,5.22) \psline(-4,0)(4,0) \psline(-2,0)(2,5) \psline(2,5)(1,0) \rput[tl](-2.3,-0.14){$A$} \rput[tl](1.08,-0.14){$B$} \rput[tl](-1.6,0.46){$\theta$} \rput[tl](1.24,0.52){$\theta+\phi$} \rput[tl](2.14,5.1){$C$} \end{pspicture*}
+\par\end{center}
+
+
+If the perpendicular distance $h$ of $C$ from $AB$ is very large
+compared with $a$ show that $h$ is approximately $(a\sin^{2}\theta)/\phi$
+and find the approximate value of $AC$ in terms of $a,\theta$ and
+$\phi.$ 
+
+
+It is easy to show (but you are not asked to show it) that errors
+in measuring $\phi$ are much more important than errors in measuring
+$\theta.$ If we make an error of $\delta\phi$ in measuring $\phi$
+(but measure $\theta$ correctly) what is the approximate error in
+our estimate of $AC$ and, roughly, in what proportion is it reduced
+by doubling the distance between $A$ and $B$? 
+	\end{question}
+	
+	%%%%%%%%% Q7
+	\begin{question}
+Let $\mathrm{g}(x)=ax+b.$ Show that, if $\mathrm{g}(0)$ and $\mathrm{g}(1)$
+are integers, then $\mathrm{g}(n)$ is an integer for all integers
+$n$. 
+
+
+Let $\mathrm{f}(x)=Ax^{2}+Bx+C.$ Show that, if $\mathrm{f}(-1),\mathrm{f}(0)$
+and $\mathrm{f}(1)$ are integers, then $\mathrm{f}(n)$ is an integer
+for all integers $n$. 
+
+
+Show also that, if $\alpha$ is any real number and $\mathrm{f}(\alpha-1),$
+$\mathrm{f}(\alpha)$ and $\mathrm{f}(\alpha+1)$ are integers, then
+$\mathrm{f}(\alpha+n)$ is an integer for all integers $n$. 
+\end{question}
+		
+%%%%%%%%% Q8
+	\begin{question}	
+Explain diagrammatically, or otherwise, why 
+\[
+\frac{\mathrm{d}}{\mathrm{d}x}\int_{a}^{x}\mathrm{f}(t)\,\mathrm{d}t=\mathrm{f}(x).
+\]
+Show that, if 
+\[
+\mathrm{f}(x)=\int_{0}^{x}\mathrm{f}(t)\,\mathrm{d}t+1,
+\]
+then $\mathrm{f}(x)=\mathrm{e}^{x}.$
+
+
+What is the solution of 
+\[
+\mathrm{f}(x)=\int_{0}^{x}\mathrm{f}(t)\,\mathrm{d}t?
+\]
+Given that 
+\[
+\int_{0}^{x}\mathrm{f}(t)\,\mathrm{d}t=\int_{x}^{1}t^{2}\mathrm{f}(t)\,\mathrm{d}t+x-\frac{x^{5}}{5}+C,
+\]
+find $\mathrm{f}(x)$ and show that $C=-2/15.$ 
+\end{question}	
+		
+%%%%%%%%%% Q9
+\begin{question}
+The diagram shows a coffee filter consisting of an inverted hollow
+right circular cone of height $H$ cm and base radius $a$ cm. 
+
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-1.67,-2.3)(2.85,3.85) \rput{0}(0,3){\psellipse(0,0)(1.23,0.72)} \rput{0.69}(0,0.01){\psellipse(0,0)(0.49,0.23)} \psline(-1.23,2.95)(0,-2) \psline(0,-2)(1.23,2.96) \psline{->}(0,3)(0.66,3.61) \psline{->}(0.66,3.61)(0,3) \rput[tl](0.35,3.27){$a$} \psline{<->}(1,0)(1,-2) 
+ \rput[tl](1.05,-0.86){$x$} \psline{<->}(2,3)(2,-2) \rput[tl](2.09,0.97){$H$} \end{pspicture*}
+\par\end{center}
+
+
+When the water level is $x$ cm above the vertex, water leaves the
+cone at a rate $Ax$ $\mathrm{cm}^{3}\mathrm{sec}^{-1},$ where $A$
+is a positive constant. Suppose that the cone is initially filled
+to a height $h$ cm with $0<h<H.$ Show that it will take $\pi a^{2}h^{2}/(2AH^{2})$
+seconds to empty. 
+
+
+Suppose now that the cone is initially filled to a height $h$ cm,
+but that water is poured in at a constant rate $B$ $\mathrm{cm}^{3}\mathrm{sec}^{-1}$
+and continues to drain as before. Establish, by considering the sign
+of $\mathrm{d}x/\mathrm{d}t$, or otherwise, what will happen subsequently
+to the water level in the different cases that arise. (You are not
+asked to find an explicit formula for $x$.) 
+\end{question}
+			
+		
+
+		
+	
+\newpage
+\section*{Section B: \ \ \ Mechanics}
+
+			
+%%%%%%%%%% Q10
+\begin{question}
+A projectile of mass $m$ is fired horizontally from a toy cannon
+of mass $M$ which slides freely on a horizontal floor. The length
+of the barrel is $l$ and the force exerted on the projectile has
+the constant value $P$ for so long as the projectile remains in the
+barrel. Initially the cannon is at rest. Show that the projectile
+emerges from the barrel at a speed relative to the ground of 
+\[
+\sqrt{\frac{2PMl}{m(M+m)}}.
+\]
+\end{question}
+	
+%%%%%%%%%% Q11
+\begin{question}
+Three light elastic strings $AB,BC$ and $CD$, each of natural length
+$a$ and modulus of elasticity $\lambda,$ are joined together as
+shown in the diagram. 
+
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-2.46,-1.7)(5.55,2.55) \psline(-2,2)(-2,-1) \psline(-2,-1)(4,-1) \psline(4,-1)(4,2) \psline(4,2)(-2,2) \psline[linestyle=dashed,dash=2pt 2pt](1,2)(1,-1) \psline{<->}(5,2)(5,-1)  \rput[tl](5.15,0.77){$3d$} \rput[tl](1.08,2.35){$A$} \rput[tl](1.14,0.63){$B$} \rput[tl](1.17,-0.32){$C$} \rput[tl](1.14,-1.1){$D$} \begin{scriptsize} \psdots[dotstyle=*](1,2) \psdots[dotstyle=*](1,-1) \psdots[dotstyle=*](1,0.5) \psdots[dotstyle=*](1,-0.37) \end{scriptsize} \end{pspicture*}
+\par\end{center}
+
+
+$A$ is attached to the ceiling and $D$ to the floor of a room of
+height $3d$ in such a way that $A,B,C$ and $D$ are in a vertical
+line. Particles of mass $m$ are attached at $B$ and $C$. Find the
+heights of $B$ and $C$ above the floor. 
+
+
+Find the set of values of $d$ for which it is possible, by choosing
+$m$ suitably, to have $CD=a$?
+	\end{question}
+	
+%%%%%%%%%% Q12
+\begin{question}	
+The diagram shows a crude step-ladder constructed by smoothly hinging-together
+two light ladders $AB$ and $AC,$ each of length $l,$ at $A$. A
+uniform rod of wood, of mass $m$, is pin-jointed to $X$ on $AB$
+and to $Y$ on $AC$, where $AX=\frac{3}{4}l=AY.$ The angle $\angle XAY$
+is $2\theta.$ 
+
+
+\noindent \begin{center}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.5pt,arrowsize=3pt 2,arrowinset=0.25} \begin{pspicture*}(-4.3,-1.22)(4.6,6) \psline(-4,0)(4,0) \psline(-2,0)(0,5) \psline(0,5)(2,0) \psline(-1.21,1.97)(1.21,1.97) \parametricplot{-1.9513027039072617}{-1.190289949682532}{1.2*cos(t)+0|1.2*sin(t)+5} \rput[tl](-0.2,4.26){$2\theta$} \rput[tl](-0.1,5.5){$A$} \rput[tl](-1.8,2.1){$X$} \rput[tl](1.5,2.1){$Y$} \rput[tl](-2.36,-0.1){$B$} \rput[tl](2.02,-0.1){$C$} \end{pspicture*}
+\par\end{center}
+
+
+The rod $XY$ will break if the tension in it exceeds $T$. The step-ladder
+stands on rough horizontal ground (coefficient of friction $\mu$).
+Given that $\tan\theta>\mu,$ find how large a mass $M$ can safely
+be placed at $A$ and show that if 
+\[
+\tan\theta>\frac{6T}{mg}+4\mu
+\]
+the step-ladder will fail under its own weight. 
+
+
+{[}You may assume that friction is limiting at the moment of collapse.{]} 
+\end{question}
+
+%%%%%%%%%% Q13
+
+\begin{question}
+A comet, which may be regarded as a particle of mass $m$, moving
+in the sun's gravitational field, at a distance $x$ from the sun,
+experiences a force $Gm/x^{2}$ (where $G$ is a constant) directly towards the sun. Show that
+if, at some time, $x=h$ and the comet is travelling directly away
+from the sun with speed $V$, then $x$ cannot become arbitrarily
+large unless $V^{2}\geqslant2G/h$. 
+
+
+A comet is initially motionless at a great distance from the sun.
+If, at some later time, it is at a distance $h$ from the sun, how
+long after that will it take to fall into the sun? 
+\end{question}
+
+	
+	\newpage
+\section*{Section C: \ \ \ Probability and Statistics}
+
+%%%%%%%%%% Q14
+\begin{question}
+The average number of pedestrians killed annually in road accidents
+in Poldavia during the period 1974-1989 was 1080 and the average number
+killed annually in commercial flight accidents during the same period
+was 180. Discuss the following newspaper headlines which appeared
+in 1991. (The percentage figures in square brackets give a rough indication
+of the weight of marks attached to each discussion.)
+\begin{questionparts}
+\item {[}10\%{]} Six Times Safer To Fly Than To Walk. 1974-1989 Figures
+Prove It.
+\item {[}10\%{]} Our Skies Are Safer. Only 125 People Killed In Air
+Accidents In 1990. 
+\item {[}30\%{]} Road Carnage Increasing. 7 People Killed On Tuesday.
+\item {[}50\%{]} Alarming Rise In Pedestrian Casualties. 1350 Pedestrians
+Killed In Road Accidents During 1990.
+\end{questionparts}
+\end{question}
+
+
+
+%%%%%%%%%% Q15
+\begin{question}
+Trains leave Barchester Station for London at 12 minutes past the
+hour, taking 60 minutes to complete the journey and at 48 minutes
+past the hour taking 75 minutes to complete the journey. The arrival
+times of passengers for London at Barchester Station are uniformly
+distributed over the day and all passengers take the first available
+train. Show that their average journey time from arrival at Barchester
+Station to arrival in London is 84.6 minutes. 
+
+
+Suppose that British Rail decide to retime the fast 60 minute train
+so that it leaves at $x$ minutes past the hour. What choice of $x$
+will minimise the average journey time? 
+\end{question}
+
+%%%%%%%%%% Q16
+\begin{question}
+The four towns $A,B,C$ and $D$ are linked by roads $AB,AC,CB,BD$
+and $CD.$ The probability that any one road will be blocked by snow
+on the 1st of January is $p$, independent of what happens to any
+other $[0<p<1]$. Show that the probability that any open route from
+$A$ to $D$ is $ABCD$ is 
+\[
+p^{2}(1-p)^{3}.
+\]
+In order to increase the probability that it is possible to get from
+$A$ to $D$ by a sequence of unblocked roads the government proposes
+either to snow-proof the road $AB$ (so that it can never be blocked)
+or to snow-proof the road $CB.$ Because of the high cost it cannot
+do both. Which road should it choose (or are both choices equally
+advantageous)? 
+
+
+In fact, $p=\frac{1}{10}$ and the government decides that it is only
+worth going ahead if the present probability of $A$ being cut off
+from $D$ is greater than $\frac{1}{100}.$ Will it go ahead?
+\end{question}
+\end{document}
